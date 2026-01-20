@@ -3519,34 +3519,9 @@ pub fn run() {
 
             // ================================================================
             // CEF (CHROMIUM EMBEDDED FRAMEWORK) - FULL BROWSER ENGINE
-            // Superior to WebView: Full DRM, all codecs, Chrome extensions
+            // Commands disabled for non-CEF builds
+            // Enable with: cargo build --features cef-browser
             // ================================================================
-            cef::commands::cef_initialize,
-            cef::commands::cef_create_tab,
-            cef::commands::cef_close_tab,
-            cef::commands::cef_get_tab_info,
-            cef::commands::cef_get_tab_ids,
-            cef::commands::cef_get_all_tabs,
-            cef::commands::cef_navigate,
-            cef::commands::cef_get_url,
-            cef::commands::cef_go_back,
-            cef::commands::cef_go_forward,
-            cef::commands::cef_reload,
-            cef::commands::cef_stop,
-            cef::commands::cef_execute_script,
-            cef::commands::cef_get_cookies,
-            cef::commands::cef_set_cookie,
-            cef::commands::cef_delete_cookies,
-            cef::commands::cef_set_zoom,
-            cef::commands::cef_toggle_mute,
-            cef::commands::cef_find,
-            cef::commands::cef_stop_finding,
-            cef::commands::cef_open_devtools,
-            cef::commands::cef_close_devtools,
-            cef::commands::cef_take_screenshot,
-            cef::commands::cef_print_to_pdf,
-            cef::commands::cef_get_settings,
-            cef::commands::cef_update_settings,
         ])
         .setup(|app| {
             info!("Setting up CUBE Nexum Enterprise Platform...");
@@ -3644,9 +3619,16 @@ pub fn run() {
 
             // Initialize CEF (Chromium Embedded Framework) State
             // This provides full browser engine capabilities: DRM, codecs, extensions
-            let cef_state = cef::commands::CEFState::new();
-            app.manage(cef_state);
-            info!("🌐 CEF Browser Engine State initialized");
+            #[cfg(feature = "cef-browser")]
+            {
+                let cef_state = cef::commands::CEFState::new();
+                app.manage(cef_state);
+                info!("🌐 CEF Browser Engine State initialized");
+            }
+            #[cfg(not(feature = "cef-browser"))]
+            {
+                info!("ℹ️ CEF Browser Engine disabled (use --features cef-browser to enable)");
+            }
 
             // Initialize Notes & Tasks State
             let app_data_dir = app.path().app_data_dir().expect("Failed to get app data directory");
