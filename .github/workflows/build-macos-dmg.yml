@@ -91,7 +91,10 @@ jobs:
           echo "==================="
 
       - name: Build Next.js
-        run: npm run build
+        run: |
+          # Create env files to avoid issues
+          touch .env.tauri .env.local
+          npm run build
         env:
           TAURI_BUILD: true
           NODE_OPTIONS: '--max-old-space-size=4096'
@@ -100,9 +103,9 @@ jobs:
         run: |
           # Show sccache stats before build
           sccache --show-stats || true
-          cd src-tauri
-          cargo build --release --target aarch64-apple-darwin --jobs 1
-          cd ..
+          # Ensure env files exist
+          touch .env.tauri .env.local
+          # Build with tauri - beforeBuildCommand will run but 'npm run build' will use cache
           npm run tauri:build -- --target aarch64-apple-darwin
           # Show sccache stats after build
           sccache --show-stats || true
