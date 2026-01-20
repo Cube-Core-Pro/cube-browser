@@ -1,0 +1,101 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Premium gradient background -->
+    <linearGradient id="bgGrad128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Inner cube face gradients -->
+    <linearGradient id="faceTop128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:0.85" />
+    </linearGradient>
+    
+    <linearGradient id="faceLeft128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c7d2fe;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#a5b4fc;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="faceRight128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ddd6fe;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:0.75" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow128" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow -->
+    <filter id="shadow128" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#7c3aed" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Rounded rectangle background -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad128)"/>
+  
+  <!-- 4D Hypercube (Tesseract) Projection -->
+  <g transform="translate(64, 64)" filter="url(#shadow128)">
+    
+    <!-- Connecting lines from outer to inner cube -->
+    <g stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none">
+      <line x1="-38" y1="-38" x2="-22" y2="-22"/>
+      <line x1="38" y1="-38" x2="22" y2="-22"/>
+      <line x1="-38" y1="38" x2="-22" y2="22"/>
+      <line x1="38" y1="38" x2="22" y2="22"/>
+    </g>
+    
+    <!-- Outer cube (back cube of tesseract) -->
+    <rect x="-38" y="-38" width="76" height="76" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    
+    <!-- Inner cube faces -->
+    <!-- Top face -->
+    <polygon points="-22,-22 22,-22 14,-8 -14,-8" fill="url(#faceTop128)" stroke="white" stroke-width="1.5"/>
+    
+    <!-- Left face -->
+    <polygon points="-22,-22 -14,-8 -14,8 -22,22" fill="url(#faceLeft128)" stroke="white" stroke-width="1.5"/>
+    
+    <!-- Right face -->
+    <polygon points="22,-22 22,22 14,8 14,-8" fill="url(#faceRight128)" stroke="white" stroke-width="1.5"/>
+    
+    <!-- Front face (semi-transparent) -->
+    <polygon points="-14,-8 14,-8 14,8 -14,8" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1"/>
+    
+    <!-- Bottom edges -->
+    <path d="M-22 22 L22 22 L14 8" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+    <path d="M-22 22 L-14 8" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+    
+    <!-- Central glow point -->
+    <circle cx="0" cy="0" r="4" fill="white" opacity="0.9" filter="url(#glow128)"/>
+    
+    <!-- Inner cube corners -->
+    <g fill="white" opacity="0.8">
+      <circle cx="-14" cy="-8" r="2"/>
+      <circle cx="14" cy="-8" r="2"/>
+      <circle cx="-14" cy="8" r="2"/>
+      <circle cx="14" cy="8" r="2"/>
+      <circle cx="-22" cy="-22" r="2"/>
+      <circle cx="22" cy="-22" r="2"/>
+      <circle cx="-22" cy="22" r="2"/>
+      <circle cx="22" cy="22" r="2"/>
+    </g>
+    
+    <!-- Outer cube corners -->
+    <g fill="white" opacity="0.5">
+      <circle cx="-38" cy="-38" r="1.5"/>
+      <circle cx="38" cy="-38" r="1.5"/>
+      <circle cx="-38" cy="38" r="1.5"/>
+      <circle cx="38" cy="38" r="1.5"/>
+    </g>
+  </g>
+  
+  <!-- Shine overlay -->
+  <ellipse cx="48" cy="36" rx="32" ry="24" fill="white" opacity="0.08"/>
+</svg>

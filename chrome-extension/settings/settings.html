@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum - Settings</title>
+  <!-- Elite Utilities for enhanced interactions -->
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+  <style>
+    :root {
+      --primary: #7c3aed;
+      --primary-hover: #6d28d9;
+      --bg: #ffffff;
+      --bg-secondary: #f9fafb;
+      --bg-card: #ffffff;
+      --text: #1f2937;
+      --text-secondary: #6b7280;
+      --border: #e5e7eb;
+      --success: #10b981;
+      --error: #ef4444;
+      --warning: #f59e0b;
+      --input-bg: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-card: #16161d;
+      --text: #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --border: rgba(255, 255, 255, 0.1);
+      --input-bg: #1e1e26;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), #a855f7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .header h1 { font-size: 24px; font-weight: 700; }
+    .header p { color: var(--text-secondary); font-size: 14px; }
+
+    .theme-btn {
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .theme-btn:hover { border-color: var(--primary); }
+
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section h2 .icon {
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    .section p.desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group:last-child { margin-bottom: 0; }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .form-label small {
+      display: block;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .form-label small a { color: var(--primary); }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      background: var(--input-bg);
+      color: var(--text);
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .input-row .form-input { flex: 1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      background: rgba(124, 58, 237, 0.05);
+    }
+
+    .btn-icon {
+      padding: 10px;
+      min-width: 42px;
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--error);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.2);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .status.success {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--success);
+    }
+
+    .status.error {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--error);
+    }
+
+    .status.neutral {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    /* Theme Cards */
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .theme-card {
+      padding: 16px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .theme-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .theme-card.active {
+      border-color: var(--primary);
+      background: rgba(124, 58, 237, 0.1);
+    }
+
+    .theme-card.active::after {
+      content: '✓';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .theme-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .theme-card p { font-size: 12px; color: var(--text-secondary); }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: white;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.success { background: var(--success); }
+    .toast.error { background: var(--error); }
+
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .footer a { color: var(--primary); text-decoration: none; }
+
+    .ml-sm { margin-left: 8px; }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body data-theme="light">
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">🔮</div>
+        <div>
+          <h1>CUBE Nexum Settings</h1>
+          <p>Configure your AI assistants and preferences</p>
+        </div>
+      </div>
+      <button class="theme-btn" id="themeToggle">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Dark</span>
+      </button>
+    </div>
+
+    <!-- AI Configuration -->
+    <div class="section">
+      <h2><span class="icon">🤖</span> AI Configuration</h2>
+      <p class="desc">Configure your AI providers for intelligent automation.</p>
+
+      <!-- OpenAI -->
+      <div class="form-group">
+        <label class="form-label">
+          OpenAI API Key
+          <small>Get from <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a></small>
+        </label>
+        <div class="input-row">
+          <input type="password" id="openaiKey" class="form-input" placeholder="sk-proj-...">
+          <button class="btn btn-secondary btn-icon" id="toggleOpenai">👁️</button>
+        </div>
+        <div id="openaiStatus" class="status neutral">
+          <span class="status-dot"></span>
+          <span>Not configured</span>
+        </div>
+      </div>
+
+      <!-- Gemini -->
+      <div class="form-group">
+        <label class="form-label">
+          Google Gemini API Key
+          <small>Get from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+        </label>
+        <div class="input-row">
+          <input type="password" id="geminiKey" class="form-input" placeholder="AIza...">
+          <button class="btn btn-secondary btn-icon" id="toggleGemini">👁️</button>
+        </div>
+        <div id="geminiStatus" class="status neutral">
+          <span class="status-dot"></span>
+          <span>Not configured</span>
+        </div>
+      </div>
+
+      <!-- Claude -->
+      <div class="form-group">
+        <label class="form-label">
+          Anthropic Claude API Key
+          <small>Get from <a href="https://console.anthropic.com/settings/keys" target="_blank">Anthropic Console</a></small>
+        </label>
+        <div class="input-row">
+          <input type="password" id="claudeKey" class="form-input" placeholder="sk-ant-...">
+          <button class="btn btn-secondary btn-icon" id="toggleClaude">👁️</button>
+        </div>
+        <div id="claudeStatus" class="status neutral">
+          <span class="status-dot"></span>
+          <span>Not configured</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Provider Selection -->
+      <div class="form-group">
+        <label class="form-label">Preferred AI Provider</label>
+        <select id="aiProvider" class="form-select">
+          <option value="auto">Auto (use available)</option>
+          <option value="openai">OpenAI (GPT-5.2)</option>
+          <option value="gemini">Google Gemini (3 Pro)</option>
+          <option value="claude">Anthropic Claude (Opus 4.5)</option>
+        </select>
+      </div>
+
+      <!-- Model Selection -->
+      <div class="form-group">
+        <label class="form-label">OpenAI Model</label>
+        <select id="openaiModel" class="form-select">
+          <option value="gpt-5.2">GPT-5.2 (Latest)</option>
+          <option value="gpt-5.2-pro">GPT-5.2 Pro (Premium)</option>
+          <option value="gpt-5.1">GPT-5.1</option>
+          <option value="gpt-5.1-codex">GPT-5.1 Codex (Coding)</option>
+          <option value="gpt-5-mini">GPT-5 Mini (Fast)</option>
+          <option value="gpt-5-nano">GPT-5 Nano (Fastest)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Gemini Model</label>
+        <select id="geminiModel" class="form-select">
+          <option value="gemini-3-pro">Gemini 3 Pro (Latest)</option>
+          <option value="gemini-2.5-flash">Gemini 2.5 Flash (Fast)</option>
+          <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite (Fastest)</option>
+          <option value="gemini-2.5-pro">Gemini 2.5 Pro (Thinking)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Claude Model</label>
+        <select id="claudeModel" class="form-select">
+          <option value="claude-opus-4-5">Claude Opus 4.5 (Most Intelligent)</option>
+          <option value="claude-sonnet-4-5">Claude Sonnet 4.5 (Best Balance)</option>
+          <option value="claude-haiku-4-5">Claude Haiku 4.5 (Fastest)</option>
+        </select>
+      </div>
+
+      <button id="testConnection" class="btn btn-primary">🧪 Test AI Connection</button>
+    </div>
+
+    <!-- Extension Settings -->
+    <div class="section">
+      <h2><span class="icon">⚙️</span> Extension Settings</h2>
+      <p class="desc">Configure extension behavior.</p>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="autoDetect" checked>
+        <label for="autoDetect">Automatically detect forms on page load</label>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="showFloating" checked>
+        <label for="showFloating">Show floating assistant button</label>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="enableNotifications" checked>
+        <label for="enableNotifications">Enable desktop notifications</label>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="macroAutoLearn" checked>
+        <label for="macroAutoLearn">Enable macro auto-learning</label>
+      </div>
+    </div>
+
+    <!-- Appearance -->
+    <div class="section">
+      <h2><span class="icon">🎨</span> Appearance</h2>
+      <p class="desc">Customize the look and feel.</p>
+
+      <div class="theme-grid">
+        <div class="theme-card active" data-theme="elite-purple">
+          <h4>🔮 Elite Purple</h4>
+          <p>Default CUBE theme</p>
+        </div>
+        <div class="theme-card" data-theme="dark">
+          <h4>🌙 Dark Mode</h4>
+          <p>Easy on the eyes</p>
+        </div>
+        <div class="theme-card" data-theme="light">
+          <h4>☀️ Light Mode</h4>
+          <p>Clean and bright</p>
+        </div>
+        <div class="theme-card" data-theme="midnight">
+          <h4>🌌 Midnight Blue</h4>
+          <p>Deep blue tones</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Management -->
+    <div class="section">
+      <h2><span class="icon">💾</span> Data Management</h2>
+      <p class="desc">Manage your saved data.</p>
+
+      <div class="form-group">
+        <button id="exportData" class="btn btn-secondary">📤 Export All Data</button>
+        <button id="importData" class="btn btn-secondary ml-sm">📥 Import Data</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="form-group">
+        <button id="clearMacros" class="btn btn-secondary">🗑️ Clear Macros</button>
+        <button id="clearChat" class="btn btn-secondary ml-sm">🗑️ Clear Chat History</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <button id="resetAll" class="btn btn-danger">⚠️ Reset All Settings</button>
+    </div>
+
+    <!-- Account & License -->
+    <div class="section" id="licenseSection">
+      <h2><span class="icon">👤</span> Account & License</h2>
+      <p class="desc">Manage your CUBE Nexum subscription and license.</p>
+
+      <!-- Current Plan -->
+      <div class="form-group">
+        <label class="form-label">Current Plan</label>
+        <div id="currentPlan" class="status neutral">
+          <span class="status-dot"></span>
+          <span>Loading...</span>
+        </div>
+      </div>
+
+      <!-- Device ID -->
+      <div class="form-group">
+        <label class="form-label">Device ID</label>
+        <input type="text" id="deviceId" class="form-input" readonly placeholder="Loading...">
+      </div>
+
+      <!-- Trial Status -->
+      <div id="trialInfo" class="form-group" style="display: none;">
+        <div class="status success">
+          <span class="status-dot"></span>
+          <span id="trialText">Trial active</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- License Key Activation -->
+      <div class="form-group">
+        <label class="form-label">
+          Activate License
+          <small>Enter your license key to unlock premium features</small>
+        </label>
+        <div class="input-row">
+          <input type="text" id="licenseKey" class="form-input" placeholder="CUBE-XXXX-XXXX-XXXX-XXXX">
+          <button class="btn btn-primary btn-icon" id="activateLicense">✓</button>
+        </div>
+        <div id="licenseStatus" class="status neutral" style="display: none;">
+          <span class="status-dot"></span>
+          <span>License status</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Actions -->
+      <div class="form-group">
+        <button id="startTrial" class="btn btn-primary">🎁 Start 30-Day Free Trial</button>
+      </div>
+
+      <div class="form-group">
+        <button id="viewPricing" class="btn btn-secondary">💳 View Pricing Plans</button>
+        <button id="manageBilling" class="btn btn-secondary ml-sm" style="display: none;">📊 Manage Billing</button>
+      </div>
+
+      <div class="form-group">
+        <button id="deactivateLicense" class="btn btn-danger" style="display: none;">🔓 Deactivate License</button>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="section">
+      <h2><span class="icon">ℹ️</span> About</h2>
+      <p><strong>CUBE Nexum Connect</strong> v7.0.2</p>
+      <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">
+        Enterprise browser automation and AI-powered productivity tools.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>Made with 💜 by CUBE Team • <a href="https://cube-nexum.com" target="_blank">cube-nexum.com</a></p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Hidden file input -->
+  <input type="file" id="importFile" accept=".json" class="hidden">
+
+  <script src="settings.js"></script>
+</body>
+</html>

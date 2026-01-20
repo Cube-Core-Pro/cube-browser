@@ -1,0 +1,120 @@
+name: Build macOS DMG
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: 'Enable debug mode'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+  # Optimizaciones de memoria para Rust
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  RUSTFLAGS: "-C codegen-units=1 -C opt-level=s"
+  RUSTUP_MAX_RETRIES: 10
+
+jobs:
+  build-macos-dmg:
+    # macos-14 es M1 con mejor rendimiento
+    runs-on: macos-14
+    timeout-minutes: 120
+    
+    steps:
+      - name: Free disk space
+        run: |
+          df -h
+          sudo rm -rf /Library/Developer/CommandLineTools
+          sudo rm -rf /Users/runner/Library/Android
+          df -h
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Rust (minimal)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+
+      - name: Cache Cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-registry-
+
+      - name: Cache Cargo build
+        uses: actions/cache@v4
+        with:
+          path: src-tauri/target
+          key: ${{ runner.os }}-cargo-build-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-build-
+
+      - name: Install dependencies
+        run: |
+          npm ci --prefer-offline --no-audit
+          echo "Node modules installed"
+
+      - name: Check memory before build
+        run: |
+          echo "=== System Info ==="
+          sysctl hw.memsize | awk '{print "RAM: " $2/1024/1024/1024 " GB"}'
+          df -h /
+          echo "==================="
+
+      - name: Build Next.js (static export)
+        run: |
+          npm run build
+        env:
+          TAURI_BUILD: true
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Build Tauri DMG
+        run: |
+          cd src-tauri
+          # Build con optimizaciones de memoria
+          cargo build --release --target aarch64-apple-darwin --jobs 2
+          cd ..
+          npm run tauri:build -- --target aarch64-apple-darwin
+        env:
+          CEF_PATH: ""  # Sin CEF por ahora para reducir memoria
+          CARGO_BUILD_JOBS: 2
+
+      - name: List build artifacts
+        run: |
+          echo "=== Build Artifacts ==="
+          find src-tauri/target -name "*.dmg" -o -name "*.app" 2>/dev/null | head -20
+          ls -la src-tauri/target/aarch64-apple-darwin/release/bundle/ 2>/dev/null || echo "No bundle yet"
+
+      - name: Upload DMG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CUBE-Browser-macOS-arm64
+          path: |
+            src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg
+            src-tauri/target/aarch64-apple-darwin/release/bundle/macos/*.app
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Upload to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum Connect v7.0.0</title>
+  <!-- Enterprise Elite Styles -->
+  <link rel="stylesheet" href="../styles/popup-elite.css">
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-title">
+      <div class="logo">🚀</div>
+      <div>
+        <h1>CUBE Nexum</h1>
+      </div>
+    </div>
+    <div class="version">v7.0.0</div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" data-tab="docs">
+      <span class="tab-icon">📄</span>
+      Docs
+    </button>
+    <button class="tab" data-tab="autofill">
+      <span class="tab-icon">📝</span>
+      Autofill
+    </button>
+    <button class="tab" data-tab="social">
+      <span class="tab-icon">📱</span>
+      Social
+    </button>
+    <button class="tab" data-tab="macros">
+      <span class="tab-icon">🎬</span>
+      Macros
+    </button>
+    <button class="tab" data-tab="capture">
+      <span class="tab-icon">📸</span>
+      Capture
+    </button>
+    <button class="tab" data-tab="remote">
+      <span class="tab-icon">🖥️</span>
+      Remote
+    </button>
+    <button class="tab" data-tab="settings">
+      <span class="tab-icon">⚙️</span>
+      Settings
+    </button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- DOCS PANEL - Document Detection & Parsing -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="docs-panel" class="tab-panel active">
+      
+      <!-- STATS -->
+      <div class="section">
+        <div class="section-title">📊 Document Stats</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-docs-total">0</div>
+            <div class="stat-label">Detected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-docs-parsed">0</div>
+            <div class="stat-label">Parsed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-downloads">0</div>
+            <div class="stat-label">Downloads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-profiles">0</div>
+            <div class="stat-label">Profiles</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETECTION -->
+      <div class="section">
+        <div class="section-title">🔍 Document Detection</div>
+        
+        <div id="detection-status" class="status info hidden">
+          <div class="spinner"></div>
+          <span id="detection-message">Scanning page...</span>
+        </div>
+
+        <button class="btn btn-primary" id="btn-detect-docs">
+          <span>🔍</span>
+          <span>Detect Documents</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-parse-all">
+          <span>⚡</span>
+          <span>Parse All Documents</span>
+        </button>
+      </div>
+
+      <!-- DOCUMENT LIST -->
+      <div class="section">
+        <div class="section-title">📑 Detected Documents</div>
+        
+        <div id="doc-list" class="doc-list">
+          <div class="empty-state">
+            <div class="empty-icon">📄</div>
+            <p>No documents detected</p>
+            <small>Click "Detect Documents" to scan the page</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOWNLOAD MANAGER -->
+      <div class="section">
+        <div class="section-title">📥 Download Manager</div>
+        
+        <button class="btn btn-success" id="btn-download-all">
+          <span>📥</span>
+          <span>Download All Parsed Docs</span>
+        </button>
+
+        <div id="download-status" class="hidden download-status-text">
+          <span id="download-progress">0</span> / <span id="download-total">0</span> downloads
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- AUTOFILL PANEL - Smart Form Filling -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="autofill-panel" class="tab-panel">
+      
+      <!-- PROFILE SELECTOR -->
+      <div class="section">
+        <div class="section-title">👤 Autofill Profile</div>
+        
+        <div class="input-group">
+          <label>Select Profile:</label>
+          <select id="profile-selector" class="select-styled">
+            <option value="">-- Create from Document --</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary" id="btn-autofill-form">
+          <span>✨</span>
+          <span>Fill Current Form</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-create-profile">
+          <span>➕</span>
+          <span>Create Profile from Docs</span>
+        </button>
+      </div>
+
+      <!-- FORM DETECTION -->
+      <div class="section">
+        <div class="section-title">📝 Form Detection</div>
+        
+        <div id="form-stats" class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="form-fields-count">0</div>
+            <div class="stat-label">Fields</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="form-fillable-count">0</div>
+            <div class="stat-label">Fillable</div>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-sm" id="btn-analyze-form">
+          <span>🔍</span>
+          <span>Analyze Current Form</span>
+        </button>
+      </div>
+
+      <!-- AI ENHANCEMENT -->
+      <div class="section">
+        <div class="section-title">🤖 AI Enhancement <span class="badge badge-pro">PRO</span></div>
+        
+        <button class="btn btn-secondary" id="btn-ai-suggest">
+          <span>✨</span>
+          <span>AI Field Suggestions</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-ai-validate">
+          <span>✓</span>
+          <span>AI Validation Check</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SOCIAL HUB PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="social-panel" class="tab-panel">
+      
+      <div class="section">
+        <div class="section-title">🚀 Social Media Command Center <span class="badge badge-new">NEW</span></div>
+        
+        <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(236, 72, 153, 0.2)); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <span style="font-size: 28px;">📱</span>
+            <div>
+              <div style="font-size: 16px; font-weight: 700;">All-in-One Social Hub</div>
+              <div style="font-size: 12px; opacity: 0.8;">Manage all platforms from one place</div>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px;">
+            <div style="text-align: center; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+              <div style="font-size: 20px;">📸</div>
+              <div style="font-size: 10px; opacity: 0.8;">Instagram</div>
+            </div>
+            <div style="text-align: center; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+              <div style="font-size: 20px;">🎵</div>
+              <div style="font-size: 10px; opacity: 0.8;">TikTok</div>
+            </div>
+            <div style="text-align: center; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+              <div style="font-size: 20px;">▶️</div>
+              <div style="font-size: 10px; opacity: 0.8;">YouTube</div>
+            </div>
+            <div style="text-align: center; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 8px;">
+              <div style="font-size: 20px;">𝕏</div>
+              <div style="font-size: 10px; opacity: 0.8;">Twitter/X</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid" style="margin-bottom: 16px;">
+          <div class="stat-card">
+            <div class="stat-value" style="background: linear-gradient(135deg, #7c3aed, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">487K</div>
+            <div class="stat-label">Total Followers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color: #10b981;">8.7%</div>
+            <div class="stat-label">Engagement</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">✨ Quick Actions</div>
+        
+        <button class="btn btn-primary" id="btn-open-social-hub" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">
+          <span>🎯</span>
+          <span>Open Social Command Center</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-quick-post">
+          <span>📝</span>
+          <span>Quick Post to All Platforms</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-video-creator">
+          <span>🎬</span>
+          <span>Create Short Video</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-viral-analytics">
+          <span>📊</span>
+          <span>View Viral Analytics</span>
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🔥 Trending Now</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: rgba(0,0,0,0.15); border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 16px;">📈</span>
+              <span style="font-size: 12px;">#AITools</span>
+            </div>
+            <span style="font-size: 11px; opacity: 0.7;">2.4M posts</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: rgba(0,0,0,0.15); border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 16px;">⚡</span>
+              <span style="font-size: 12px;">#Productivity</span>
+            </div>
+            <span style="font-size: 11px; opacity: 0.7;">1.8M posts</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background: rgba(0,0,0,0.15); border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 16px;">🚀</span>
+              <span style="font-size: 12px;">#Growth</span>
+            </div>
+            <span style="font-size: 11px; opacity: 0.7;">1.2M posts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🤖 AI Assistant</div>
+        <div style="background: rgba(0,0,0,0.15); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 12px; color: rgba(255,255,255,0.9); margin-bottom: 8px;">
+            💡 <strong>AI Tip:</strong> Your audience is most active between 6-9 PM. Schedule your next post for optimal reach!
+          </div>
+          <button class="btn btn-secondary" style="margin-top: 8px; font-size: 12px; padding: 8px 12px;">
+            <span>✨</span>
+            <span>Generate Post Ideas</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- MACROS PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="macros-panel" class="tab-panel">
+      
+      <div class="section">
+        <div class="section-title">🎬 Macro Recording <span class="badge badge-pro">PRO</span></div>
+        
+        <div id="recording-status" class="status info hidden">
+          <div class="spinner"></div>
+          <span>Recording in progress...</span>
+        </div>
+
+        <button class="btn btn-primary" id="btn-record-macro">
+          <span>⏺️</span>
+          <span id="btn-record-text">Start Recording</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-view-macros">
+          <span>📋</span>
+          <span>View Saved Macros</span>
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📊 Macro Stats</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="macro-count">0</div>
+            <div class="stat-label">Saved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="macro-runs">0</div>
+            <div class="stat-label">Runs</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- CAPTURE PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="capture-panel" class="tab-panel">
+      
+      <div class="section">
+        <div class="section-title">📸 Screen Capture <span class="badge badge-pro">PRO</span></div>
+        
+        <button class="btn btn-primary" id="btn-capture-area">
+          <span>📐</span>
+          <span>Capture Area</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-capture-window">
+          <span>🪟</span>
+          <span>Capture Window</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-capture-full">
+          <span>🖥️</span>
+          <span>Capture Full Screen</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-capture-scroll">
+          <span>📜</span>
+          <span>Capture Scrolling</span>
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🔍 OCR Settings</div>
+        
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="ocr-enabled" checked>
+            Enable OCR (Text Recognition)
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="ocr-auto-copy">
+            Auto-copy extracted text
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- REMOTE PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="remote-panel" class="tab-panel">
+      
+      <div class="section">
+        <div class="section-title">🖥️ Remote Control <span class="badge badge-pro">PRO</span></div>
+        
+        <button class="btn btn-primary" id="btn-remote-host">
+          <span>🎮</span>
+          <span>Start as Host</span>
+        </button>
+
+        <div class="input-group">
+          <label>Or connect with code:</label>
+          <input type="text" id="remote-code" placeholder="Enter 6-digit code" maxlength="6">
+        </div>
+
+        <button class="btn btn-secondary" id="btn-remote-client">
+          <span>🔌</span>
+          <span>Connect to Host</span>
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📁 P2P File Sharing</div>
+        
+        <button class="btn btn-secondary" id="btn-p2p-send">
+          <span>📤</span>
+          <span>Send Files</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-p2p-receive">
+          <span>📥</span>
+          <span>Receive Files</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SETTINGS PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="settings-panel" class="tab-panel">
+      
+      <!-- WHY CUBE IS BETTER -->
+      <div class="section" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(236, 72, 153, 0.3)); border-color: rgba(124, 58, 237, 0.5);">
+        <div class="section-title">🏆 Why CUBE Elite Beats Competition</div>
+        
+        <div style="display: grid; gap: 8px; margin-top: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 6px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+            <span style="font-size: 16px;">🛡️</span>
+            <div style="font-size: 11px;"><strong>Built-in VPN</strong> - Enterprise privacy</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; padding: 6px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+            <span style="font-size: 16px;">📹</span>
+            <div style="font-size: 11px;"><strong>Video Conferencing</strong> - Like Zoom</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; padding: 6px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+            <span style="font-size: 16px;">🤖</span>
+            <div style="font-size: 11px;"><strong>50+ Robots</strong> - Ready to use</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; padding: 6px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+            <span style="font-size: 16px;">👁️</span>
+            <div style="font-size: 11px;"><strong>Website Monitor</strong> - Track changes</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; padding: 6px; background: rgba(255,255,255,0.1); border-radius: 6px;">
+            <span style="font-size: 16px;">🔒</span>
+            <div style="font-size: 11px;"><strong>100% Self-Hosted</strong> - Your data stays yours</div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 12px; text-align: center; font-size: 10px; opacity: 0.8;">
+          Unlike Zapier, Make, n8n, Browse.ai, or Bardeen
+        </div>
+      </div>
+      
+      <!-- AI PROVIDERS -->
+      <div class="section">
+        <div class="section-title">🤖 AI Providers</div>
+        
+        <div class="input-group">
+          <label>OpenAI API Key:</label>
+          <input type="password" id="openai-key" placeholder="sk-...">
+        </div>
+
+        <div class="input-group">
+          <label>Claude API Key:</label>
+          <input type="password" id="claude-key" placeholder="sk-ant-...">
+        </div>
+
+        <div class="input-group">
+          <label>Gemini API Key:</label>
+          <input type="password" id="gemini-key" placeholder="AIza...">
+        </div>
+
+        <button class="btn btn-primary" id="btn-save-keys">
+          <span>💾</span>
+          <span>Save API Keys</span>
+        </button>
+      </div>
+
+      <!-- GENERAL SETTINGS -->
+      <div class="section">
+        <div class="section-title">⚙️ General Settings</div>
+        
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="auto-detect-docs" checked>
+            Auto-detect documents on page load
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="auto-parse-docs">
+            Auto-parse detected documents
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="notifications-enabled" checked>
+            Enable notifications
+          </label>
+        </div>
+
+        <button class="btn btn-secondary" id="btn-reset-settings">
+          <span>🔄</span>
+          <span>Reset to Defaults</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Enterprise Edition | World's First AI-Powered Browser Automation
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="popup-ultimate-v6.js"></script>
+</body>
+</html>

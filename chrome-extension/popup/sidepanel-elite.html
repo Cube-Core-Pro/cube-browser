@@ -1,0 +1,3632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum - Enterprise Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/sidepanel-elite.css">
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+</head>
+<body data-theme="dark">
+  <div class="app-shell">
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-top">
+          <div class="logo-section">
+            <div class="logo">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <rect x="7" y="7" width="10" height="10" rx="1"/>
+                <line x1="3" y1="3" x2="7" y2="7"/>
+                <line x1="21" y1="3" x2="17" y2="7"/>
+                <line x1="3" y1="21" x2="7" y2="17"/>
+                <line x1="21" y1="21" x2="17" y2="17"/>
+              </svg>
+            </div>
+            <div class="brand-info">
+              <h1 data-i18n="appTitle">CUBE Nexum</h1>
+              <div class="version" data-i18n="version">v7.0.0 Enterprise</div>
+            </div>
+          </div>
+          
+          <div class="header-utilities">
+            <button class="btn btn-ghost btn-sm" id="btnThemeToggle" data-i18n-title="toggleTheme" title="Toggle theme">
+              🌙
+            </button>
+            <button class="btn btn-ghost btn-sm" id="btnStartTour" data-i18n-title="startTour" title="Start Interactive Tour">
+              🎓 <span data-i18n="tours">Tours</span>
+            </button>
+            <div class="status-badge">
+              <div class="status-dot"></div>
+              <span data-i18n="active">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-value" id="formsDetected">0</div>
+            <div class="stat-label" data-i18n="forms">Forms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="macrosSaved">0</div>
+            <div class="stat-label" data-i18n="macros">Macros</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="screenshotsTaken">0</div>
+            <div class="stat-label" data-i18n="captures">Captures</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="timeSaved">0h</div>
+            <div class="stat-label" data-i18n="saved">Saved</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         MAIN CONTENT
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <main class="main-content">
+      
+      <!-- AI SEARCH TAB -->
+      <div class="tab-content" id="tab-ai-search">
+        <div class="ai-search-container">
+          <div class="ai-search-header">
+            <div class="search-branding">
+              <span class="search-logo">🔮</span>
+              <h2 data-i18n="aiSearch">CUBE AI Search</h2>
+              <span class="search-beta" data-i18n="beta">BETA</span>
+            </div>
+            <p class="search-tagline" data-i18n="aiPoweredSearch">AI-powered search that understands context</p>
+          </div>
+
+          <!-- Search Input -->
+          <div class="ai-search-input-wrapper">
+            <div class="ai-search-input">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="aiSearchInput" data-i18n-placeholder="askAnything" placeholder="Ask anything..." autocomplete="off">
+              <button class="voice-btn" id="btnVoiceSearch" data-i18n-title="voiceSearch" title="Voice search">🎤</button>
+              <button class="search-btn" id="btnAISearch" data-i18n="search">Search</button>
+            </div>
+            <div class="search-modes">
+              <button class="mode-btn active" data-mode="instant">⚡ <span data-i18n="instant">Instant</span></button>
+              <button class="mode-btn" data-mode="deep">🔬 <span data-i18n="deep">Deep</span></button>
+              <button class="mode-btn" data-mode="creative">🎨 <span data-i18n="creative">Creative</span></button>
+              <button class="mode-btn" data-mode="code">💻 <span data-i18n="code">Code</span></button>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="quick-actions-grid" id="aiSearchQuickActions">
+            <button class="quick-action" data-action="explain">📖 <span data-i18n="explain">Explain</span></button>
+            <button class="quick-action" data-action="summarize">📝 <span data-i18n="summarize">Summarize</span></button>
+            <button class="quick-action" data-action="compare">⚖️ <span data-i18n="compare">Compare</span></button>
+            <button class="quick-action" data-action="analyze">📊 <span data-i18n="analyze">Analyze</span></button>
+          </div>
+
+          <!-- Search Results -->
+          <div class="ai-search-results" id="aiSearchResults">
+            <div class="search-empty-state">
+              <span class="empty-icon">✨</span>
+              <h3 data-i18n="readyToSearch">Ready to Search</h3>
+              <p data-i18n="readyToSearchDesc">Ask any question and get AI-powered answers with verified sources</p>
+            </div>
+          </div>
+
+          <!-- Trending -->
+          <div class="trending-section">
+            <h4>🔥 <span data-i18n="trending">Trending</span></h4>
+            <div class="trending-topics" id="trendingTopics">
+              <span class="trending-topic">AI Agents 2025</span>
+              <span class="trending-topic">Climate Summit</span>
+              <span class="trending-topic">Quantum Computing</span>
+              <span class="trending-topic">Space Tourism</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTELLIGENCE TAB -->
+      <div class="tab-content" id="tab-intelligence">
+        <div class="intelligence-container">
+          <div class="intel-header">
+            <div class="intel-branding">
+              <span class="intel-logo">🎯</span>
+              <h2 data-i18n="intelligenceCenter">Intelligence Center</h2>
+            </div>
+            <p class="intel-tagline" data-i18n="osintInvestigations">OSINT & Due Diligence Investigations</p>
+          </div>
+
+          <!-- Investigation Type -->
+          <div class="intel-types">
+            <button class="intel-type-btn active" data-type="person">
+              <span>👤</span> <span data-i18n="person">Person</span>
+            </button>
+            <button class="intel-type-btn" data-type="company">
+              <span>🏢</span> <span data-i18n="company">Company</span>
+            </button>
+            <button class="intel-type-btn" data-type="domain">
+              <span>🌐</span> <span data-i18n="domain">Domain</span>
+            </button>
+            <button class="intel-type-btn" data-type="email">
+              <span>📧</span> <span data-i18n="email">Email</span>
+            </button>
+          </div>
+
+          <!-- Investigation Input -->
+          <div class="intel-input-wrapper">
+            <input type="text" id="intelSearchInput" placeholder="Enter name, company, domain, or email...">
+            <button class="btn btn-primary" id="btnStartInvestigation">
+              🔍 Investigate
+            </button>
+          </div>
+
+          <!-- Investigation Results -->
+          <div class="intel-results" id="intelResults">
+            <div class="intel-empty-state">
+              <span class="empty-icon">🕵️</span>
+              <h3>Start an Investigation</h3>
+              <p>Enter a subject to begin comprehensive intelligence gathering</p>
+            </div>
+          </div>
+
+          <!-- Investigation History -->
+          <div class="intel-history">
+            <h4>📋 Recent Investigations</h4>
+            <div class="history-list" id="intelHistoryList">
+              <div class="history-empty">No recent investigations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- DASHBOARD TAB -->
+      <div class="tab-content active" id="tab-dashboard">
+        <div class="dashboard-grid">
+          
+          <!-- Quick Actions -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">⚡</div>
+              <div>
+                <div class="card-title">Quick Actions</div>
+                <div class="card-subtitle">Do things super fast! ✨</div>
+              </div>
+            </div>
+            <div class="card-cta-group">
+              <button class="btn btn-primary btn-full" id="btnAutoFill" title="🪄 Magic! Fill all the boxes on this page automatically">
+                <span class="btn-content">
+                  <span class="btn-icon">🎯</span>
+                  <span class="btn-text">Auto-Fill Form</span>
+                </span>
+              </button>
+              <button class="btn btn-secondary btn-full" id="btnDetectForms" title="🔍 Find all the boxes you can write in on this page">
+                <span class="btn-content">
+                  <span class="btn-icon">🔍</span>
+                  <span class="btn-text">Detect Forms</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Document Detection -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📄</div>
+              <div>
+                <div class="card-title">Documents</div>
+                <div class="card-subtitle">AI-powered extraction</div>
+              </div>
+            </div>
+            <div class="card-cta-group">
+              <button class="btn btn-primary btn-full" id="btnDetectDocuments" title="Use AI to detect and categorize documents on the current page">
+                <span class="btn-content">
+                  <span class="btn-icon">📄</span>
+                  <span class="btn-text">Detect Documents</span>
+                </span>
+              </button>
+            </div>
+            <div id="documentsList" class="documents-list hidden"></div>
+          </div>
+
+          <!-- Macro Controls -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🎬</div>
+              <div>
+                <div class="card-title">Macro Recording</div>
+                <div class="card-subtitle">Record & replay actions</div>
+              </div>
+            </div>
+            <div class="card-cta-group">
+              <button class="btn btn-primary btn-full" id="btnRecordMacro" title="Start recording your mouse clicks and keyboard inputs">
+                <span class="btn-content">
+                  <span class="btn-icon">⏺️</span>
+                  <span class="btn-text">Record Macro</span>
+                </span>
+              </button>
+              <button class="btn btn-secondary btn-full" id="btnPlayMacro" title="Replay the last recorded macro sequence">
+                <span class="btn-content">
+                  <span class="btn-icon">▶️</span>
+                  <span class="btn-text">Play Last Macro</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Screenshot -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">📸</div>
+              <div>
+                <div class="card-title">Screen Capture</div>
+                <div class="card-subtitle">Full or area capture</div>
+              </div>
+            </div>
+            <div class="card-cta-group">
+              <button class="btn btn-primary btn-full" id="btnScreenshotFull" title="Capture a screenshot of the entire visible page">
+                <span class="btn-content">
+                  <span class="btn-icon">🖼️</span>
+                  <span class="btn-text">Full Screenshot</span>
+                </span>
+              </button>
+              <button class="btn btn-secondary btn-full" id="btnScreenshotArea" title="Select a specific area of the page to capture">
+                <span class="btn-content">
+                  <span class="btn-icon">✂️</span>
+                  <span class="btn-text">Select Area</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- LendingPad Integration -->
+          <div class="card card-highlight">
+            <div class="card-header">
+              <div class="card-icon">🏦</div>
+              <div>
+                <div class="card-title">LendingPad</div>
+                <div class="card-subtitle">Document automation for lending</div>
+              </div>
+            </div>
+            <div class="card-cta-group">
+              <button class="btn btn-primary btn-full" id="btnLendingPadDetect" title="Detect loan documents on the current LendingPad page">
+                <span class="btn-content">
+                  <span class="btn-icon">📑</span>
+                  <span class="btn-text">Detect Documents</span>
+                </span>
+              </button>
+              <button class="btn btn-secondary btn-full" id="btnLendingPadDownload" title="Download all detected documents to your computer">
+                <span class="btn-content">
+                  <span class="btn-icon">⬇️</span>
+                  <span class="btn-text">Download All</span>
+                </span>
+              </button>
+              <button class="btn btn-secondary btn-full" id="btnLendingPadExtract" title="Extract structured data from detected documents">
+                <span class="btn-content">
+                  <span class="btn-icon">📋</span>
+                  <span class="btn-text">Extract Data</span>
+                </span>
+              </button>
+            </div>
+            <div id="lendingpadDocsList" class="documents-list hidden"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MACRO TAB -->
+      <div class="tab-content" id="tab-macro">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🎬</div>
+            <div>
+              <div class="card-title">Macro Studio</div>
+              <div class="card-subtitle">AI-powered teachable automation</div>
+            </div>
+          </div>
+          
+          <!-- Macro Tour Banner -->
+          <div class="macro-tour-banner" id="macroTourBanner">
+            <div class="macro-tour-content">
+              <div class="macro-tour-icon">🎓</div>
+              <div>
+                <div class="macro-tour-title">New to Macro Recording?</div>
+                <div class="macro-tour-description">Take a 2-minute guided tour to learn the basics</div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" id="btnStartMacroTour">🚀 Start Tour</button>
+          </div>
+          
+          <!-- Macro Tour Carousel (hidden by default) -->
+          <div class="macro-tour-carousel hidden" id="macroTourCarousel">
+            <div class="macro-tour-header">
+              <div class="macro-tour-progress" id="macroTourProgress">
+                <span class="macro-tour-dot active"></span>
+                <span class="macro-tour-dot"></span>
+                <span class="macro-tour-dot"></span>
+              </div>
+              <button class="btn btn-secondary btn-sm" id="btnCloseTour">✕ Close</button>
+            </div>
+            
+            <div class="macro-tour-slide active" data-step="1">
+              <div class="macro-tour-slide-icon">⏺️</div>
+              <div class="macro-tour-slide-title">Step 1: Record Actions</div>
+              <div class="macro-tour-slide-text">
+                Click "Record New Macro" to start capturing your actions. Every click, form fill, and navigation will be recorded automatically.
+              </div>
+            </div>
+            
+            <div class="macro-tour-slide" data-step="2">
+              <div class="macro-tour-slide-icon">✏️</div>
+              <div class="macro-tour-slide-title">Step 2: Review & Edit</div>
+              <div class="macro-tour-slide-text">
+                After recording, you can review each step, edit selectors, add delays, or remove unwanted actions for precision.
+              </div>
+            </div>
+            
+            <div class="macro-tour-slide" data-step="3">
+              <div class="macro-tour-slide-icon">▶️</div>
+              <div class="macro-tour-slide-title">Step 3: Play & Automate</div>
+              <div class="macro-tour-slide-text">
+                Play your macro anytime with one click. Share it with your team or schedule it to run automatically.
+              </div>
+            </div>
+            
+            <div class="macro-tour-nav">
+              <button class="btn btn-secondary" id="btnTourPrev" disabled>← Previous</button>
+              <button class="btn btn-primary" id="btnTourNext">Next →</button>
+              <button class="btn btn-success hidden" id="btnTourFinish">🎉 Got it!</button>
+            </div>
+          </div>
+          
+          <div class="macro-controls">
+            <button class="btn btn-success" id="btnStartRecording">
+              <span class="btn-icon">⏺️</span> Record New Macro
+            </button>
+            <button class="btn btn-secondary" id="btnStopRecording" disabled>
+              <span class="btn-icon">⏹️</span> Stop Recording
+            </button>
+            <button class="btn btn-primary" id="btnPlayLastMacro">
+              <span class="btn-icon">▶️</span> Play Last
+            </button>
+          </div>
+          
+          <div id="recordingStatus" class="recording-status hidden">
+            <div class="recording-dot"></div>
+            <div>
+              <strong>Recording in Progress</strong>
+              <div class="text-meta">
+                Steps captured: <span id="stepCount">0</span> • Duration: <span id="recordingTime">00:00</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-title mt-xl mb-md">Saved Macros</div>
+          <div class="macro-list" id="macroList">
+            <div class="macro-empty-state">
+              <span class="macro-empty-icon">🎬</span>
+              <div>No macros saved yet</div>
+              <div class="macro-empty-hint">Click "Record New Macro" above to get started</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTOMATION TAB -->
+      <div class="tab-content" id="tab-automation">
+        <!-- Quick Actions Panel -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">⚡</div>
+            <div>
+              <div class="card-title">Quick Automation</div>
+              <div class="card-subtitle">One-click actions for common tasks</div>
+            </div>
+          </div>
+          
+          <div class="automation-quick-actions">
+            <button class="automation-action-card" id="btnQuickAutoFill" title="Automatically fill all form fields on the current page">
+              <span class="action-icon">🎯</span>
+              <span class="action-name">Auto-Fill</span>
+              <span class="action-desc">Fill all forms</span>
+              <span class="action-shortcut"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></span>
+            </button>
+            
+            <button class="automation-action-card" id="btnQuickDetect" title="Scan page for forms, fields, and interactive elements">
+              <span class="action-icon">🔍</span>
+              <span class="action-name">Detect</span>
+              <span class="action-desc">Find all elements</span>
+              <span class="action-shortcut"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></span>
+            </button>
+            
+            <button class="automation-action-card" id="btnQuickRecord" title="Start recording your clicks and keystrokes">
+              <span class="action-icon">⏺️</span>
+              <span class="action-name">Record</span>
+              <span class="action-desc">Capture actions</span>
+              <span class="action-shortcut"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></span>
+            </button>
+            
+            <button class="automation-action-card" id="btnQuickPlay" title="Replay the last recorded macro">
+              <span class="action-icon">▶️</span>
+              <span class="action-name">Play</span>
+              <span class="action-desc">Run last macro</span>
+              <span class="action-shortcut"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Automation Shell -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">🔧</div>
+            <div>
+              <div class="card-title">Automation Shell</div>
+              <div class="card-subtitle">Execute custom automation commands</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnAutomationHelp" title="View command reference">
+              <span>❓</span>
+            </button>
+          </div>
+          
+          <!-- Command Examples -->
+          <div class="automation-examples" id="automationExamples">
+            <div class="examples-header">
+              <span class="examples-title">💡 Quick Commands</span>
+              <button class="btn btn-sm btn-ghost" id="btnToggleExamples">Hide</button>
+            </div>
+            <div class="examples-grid">
+              <button class="example-chip" data-command="fill all inputs">fill all inputs</button>
+              <button class="example-chip" data-command="click submit">click submit</button>
+              <button class="example-chip" data-command="wait 2s">wait 2s</button>
+              <button class="example-chip" data-command="scroll down">scroll down</button>
+              <button class="example-chip" data-command="type 'hello'">type 'hello'</button>
+              <button class="example-chip" data-command="screenshot">screenshot</button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Command</label>
+            <textarea class="form-textarea form-input" id="automationCommand" rows="3" placeholder="Enter command or try one above... Examples:
+• fill email with 'test@example.com'
+• click button 'Submit'
+• wait for element '.success'"></textarea>
+          </div>
+          
+          <div class="btn-row">
+            <button class="btn btn-primary btn-flex" id="btnRunAutomation">
+              <span class="btn-icon">▶️</span> Execute
+            </button>
+            <button class="btn btn-secondary btn-flex" id="btnClearAutomation" title="Clear command and output">
+              <span class="btn-icon">🗑️</span> Clear
+            </button>
+          </div>
+          
+          <div class="form-group mt-md">
+            <label class="form-label">Output</label>
+            <div id="automationOutput" class="form-input automation-output">
+              <span class="output-placeholder">Ready for automation commands...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saved Macros -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">📁</div>
+            <div>
+              <div class="card-title">Saved Macros</div>
+              <div class="card-subtitle" id="macroCount">0 macros saved</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnNewMacro" title="Create new macro">
+              <span>➕</span>
+            </button>
+          </div>
+          
+          <div class="macro-list" id="savedMacrosList">
+            <div class="macro-empty-state">
+              <span class="empty-icon">📝</span>
+              <span class="empty-text">No saved macros yet</span>
+              <span class="empty-hint">Record your first macro using the button above!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scheduled Tasks -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">⏰</div>
+            <div>
+              <div class="card-title">Scheduled Tasks</div>
+              <div class="card-subtitle">Run automations on a schedule</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnNewSchedule" title="Create new scheduled task">
+              <span>➕</span>
+            </button>
+          </div>
+          
+          <div class="schedule-list" id="scheduledTasksList">
+            <div class="schedule-empty-state">
+              <span class="empty-icon">📅</span>
+              <span class="empty-text">No scheduled tasks</span>
+              <span class="empty-hint">Schedule a macro to run automatically!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI NEXUS TAB - With Multiple Modes -->
+      <div class="tab-content" id="tab-ai-nexus">
+        <div class="card ai-nexus-card">
+          <div class="card-header">
+            <div class="card-icon" id="aiPersonalityAvatar">🔮</div>
+            <div>
+              <div class="card-title" id="aiPersonalityName">CIPHER</div>
+              <div class="card-subtitle" id="aiPersonalityDesc">Main AI Assistant</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnChangePersonality" title="Change AI Personality">
+              <span>⚙️</span>
+            </button>
+          </div>
+          
+          <!-- AI Personality Selector (hidden by default) -->
+          <div class="ai-personality-selector hidden" id="aiPersonalitySelector">
+            <div class="personality-grid">
+              <button class="personality-card active" data-personality="cipher">
+                <span class="personality-avatar">🔮</span>
+                <span class="personality-name">CIPHER</span>
+                <span class="personality-specialty">Automation & Analysis</span>
+              </button>
+              <button class="personality-card" data-personality="nexus">
+                <span class="personality-avatar">⚡</span>
+                <span class="personality-name">NEXUS</span>
+                <span class="personality-specialty">Code & Architecture</span>
+              </button>
+              <button class="personality-card" data-personality="sentinel">
+                <span class="personality-avatar">🛡️</span>
+                <span class="personality-name">SENTINEL</span>
+                <span class="personality-specialty">Data & Security</span>
+              </button>
+              <button class="personality-card" data-personality="forge">
+                <span class="personality-avatar">🔥</span>
+                <span class="personality-name">FORGE</span>
+                <span class="personality-specialty">Design & Workflows</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- AI Mode Tabs -->
+          <div class="ai-mode-tabs">
+            <button class="ai-mode-tab active" data-mode="assistant">
+              <span class="mode-icon">💬</span>
+              <span class="mode-label">Assistant</span>
+            </button>
+            <button class="ai-mode-tab" data-mode="code">
+              <span class="mode-icon">💻</span>
+              <span class="mode-label">Code</span>
+            </button>
+            <button class="ai-mode-tab" data-mode="workflow">
+              <span class="mode-icon">⚡</span>
+              <span class="mode-label">Workflow</span>
+            </button>
+            <button class="ai-mode-tab" data-mode="selector">
+              <span class="mode-icon">🎯</span>
+              <span class="mode-label">Selector</span>
+            </button>
+            <button class="ai-mode-tab" data-mode="security">
+              <span class="mode-icon">🛡️</span>
+              <span class="mode-label">Security</span>
+            </button>
+            <button class="ai-mode-tab" data-mode="analysis">
+              <span class="mode-icon">📊</span>
+              <span class="mode-label">Analysis</span>
+            </button>
+          </div>
+          
+          <!-- AI Mode Contents -->
+          <div class="ai-mode-content active" id="ai-mode-assistant">
+            <div class="ai-chat-container">
+              <div class="ai-chat-messages" id="aiChatMessages">
+                <div class="ai-message ai-message-assistant">
+                  <div class="ai-message-avatar">🔮</div>
+                  <div class="ai-message-bubble">
+                    <div class="ai-message-name">CIPHER</div>
+                    CIPHER system active. I am your main AI assistant. How can I optimize your workflow today?
+                    <ul class="ai-capabilities">
+                      <li>📄 Document Analysis</li>
+                      <li>🔧 Form Automation</li>
+                      <li>📊 Data Extraction</li>
+                      <li>🤖 Script Generation</li>
+                    </ul>
+                    What can I help you with?
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ai-chat-input-container">
+                <button class="btn btn-sm btn-ghost" id="btnAiAttach" title="Attach file">📎</button>
+                <button class="btn btn-sm btn-ghost" id="btnEmojiPicker" title="Emoji picker">😊</button>
+                <button class="btn btn-sm btn-ghost" id="btnVoiceMessage" title="Record voice message">🎤</button>
+                <input type="text" class="form-input ai-chat-input" id="aiChatInput" placeholder="Ask me anything...">
+                <button class="btn btn-sm btn-ghost" id="btnSendNudge" title="Send nudge/zumbido">🔔</button>
+                <button class="btn btn-primary btn-sm" id="btnSendAiMessage">➤</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ai-mode-content" id="ai-mode-code">
+            <div class="ai-code-container">
+              <div class="form-group">
+                <label class="form-label">Describe what code you need</label>
+                <textarea class="form-textarea" id="aiCodePrompt" rows="3" placeholder="e.g., Create a function to extract all email addresses from a webpage..."></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="aiCodeLanguage">Language</label>
+                <select class="form-input" id="aiCodeLanguage" aria-label="Select programming language for code generation">
+                  <option value="javascript">JavaScript</option>
+                  <option value="typescript">TypeScript</option>
+                  <option value="python">Python</option>
+                  <option value="css">CSS Selector</option>
+                  <option value="xpath">XPath</option>
+                </select>
+              </div>
+              <button class="btn btn-primary btn-full" id="btnGenerateCode">
+                <span class="btn-icon">✨</span> Generate Code
+              </button>
+              <div class="ai-code-output hidden" id="aiCodeOutput">
+                <div class="code-output-header">
+                  <span>Generated Code</span>
+                  <button class="btn btn-sm btn-ghost" id="btnCopyCode" title="Copy">📋</button>
+                </div>
+                <pre class="code-block" id="generatedCode"></pre>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ai-mode-content" id="ai-mode-workflow">
+            <div class="ai-workflow-container">
+              <div class="form-group">
+                <label class="form-label">Describe your workflow in natural language</label>
+                <textarea class="form-textarea" id="aiWorkflowPrompt" rows="4" placeholder="e.g., Navigate to the login page, fill in the username and password fields, click submit, then wait for the dashboard to load..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-full" id="btnGenerateWorkflow">
+                <span class="btn-icon">⚡</span> Generate Workflow
+              </button>
+              <div class="ai-workflow-output hidden" id="aiWorkflowOutput">
+                <div class="workflow-steps" id="generatedWorkflowSteps"></div>
+                <button class="btn btn-secondary btn-full" id="btnRunWorkflow">
+                  <span class="btn-icon">▶️</span> Run Workflow
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ai-mode-content" id="ai-mode-selector">
+            <div class="ai-selector-container">
+              <div class="form-group">
+                <label class="form-label">Describe the element you want to select</label>
+                <textarea class="form-textarea" id="aiSelectorPrompt" rows="2" placeholder="e.g., The blue submit button at the bottom of the form..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-full" id="btnGenerateSelector">
+                <span class="btn-icon">🎯</span> Generate Selector
+              </button>
+              <div class="ai-selector-output hidden" id="aiSelectorOutput">
+                <div class="selector-result">
+                  <span class="selector-label">CSS Selector:</span>
+                  <code class="selector-code" id="generatedCssSelector"></code>
+                  <button class="btn btn-sm btn-ghost" id="btnCopySelector" title="Copy">📋</button>
+                </div>
+                <div class="selector-result">
+                  <span class="selector-label">XPath:</span>
+                  <code class="selector-code" id="generatedXpath"></code>
+                  <button class="btn btn-sm btn-ghost" id="btnCopyXpath" title="Copy">📋</button>
+                </div>
+                <button class="btn btn-secondary btn-full" id="btnTestSelector">
+                  <span class="btn-icon">🔍</span> Test Selector
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- AI Security Scanner Mode -->
+          <div class="ai-mode-content" id="ai-mode-security">
+            <div class="ai-security-container">
+              <div class="security-intro">
+                <div class="intro-icon">🛡️</div>
+                <div class="intro-text">
+                  <strong>AI Security Scanner</strong>
+                  <span>Powered by CIPHER + Tauri Backend</span>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Target URL</label>
+                <div class="url-input-group">
+                  <input type="text" class="form-input" id="aiSecurityUrl" placeholder="https://example.com">
+                  <button class="btn btn-sm btn-secondary" id="btnUseCurrentUrl" title="Use Current Page">🔗</button>
+                </div>
+              </div>
+              
+              <div class="security-scan-types">
+                <label class="form-label">Scan Types</label>
+                <div class="scan-type-grid">
+                  <label class="scan-type-item">
+                    <input type="checkbox" id="aiScanSql" checked>
+                    <span class="scan-type-icon">💉</span>
+                    <span class="scan-type-name">SQL Injection</span>
+                  </label>
+                  <label class="scan-type-item">
+                    <input type="checkbox" id="aiScanXss" checked>
+                    <span class="scan-type-icon">📜</span>
+                    <span class="scan-type-name">XSS</span>
+                  </label>
+                  <label class="scan-type-item">
+                    <input type="checkbox" id="aiScanCsrf" checked>
+                    <span class="scan-type-icon">🔐</span>
+                    <span class="scan-type-name">CSRF</span>
+                  </label>
+                  <label class="scan-type-item">
+                    <input type="checkbox" id="aiScanHeaders">
+                    <span class="scan-type-icon">📋</span>
+                    <span class="scan-type-name">Headers</span>
+                  </label>
+                  <label class="scan-type-item">
+                    <input type="checkbox" id="aiScanSsl">
+                    <span class="scan-type-icon">🔒</span>
+                    <span class="scan-type-name">SSL/TLS</span>
+                  </label>
+                  <label class="scan-type-item">
+                    <input type="checkbox" id="aiScanDirTraversal">
+                    <span class="scan-type-icon">📂</span>
+                    <span class="scan-type-name">Dir Traversal</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">AI Analysis Depth</label>
+                <select class="form-input" id="aiSecurityDepth">
+                  <option value="quick">Quick Scan (30s)</option>
+                  <option value="standard" selected>Standard Scan (2-3min)</option>
+                  <option value="deep">Deep Scan (5-10min)</option>
+                  <option value="comprehensive">Comprehensive (15-30min)</option>
+                </select>
+              </div>
+              
+              <button class="btn btn-primary btn-full" id="btnStartAIScan">
+                <span class="btn-icon">🔍</span> Start AI Security Scan
+              </button>
+              
+              <div class="ai-security-results hidden" id="aiSecurityResults">
+                <div class="results-header">
+                  <span class="results-title">Scan Results</span>
+                  <button class="btn btn-sm btn-ghost" id="btnExportSecurityReport">📄 Export</button>
+                </div>
+                
+                <div class="security-summary" id="aiSecuritySummary">
+                  <div class="summary-stat critical">
+                    <span class="stat-value" id="aiCriticalCount">0</span>
+                    <span class="stat-label">Critical</span>
+                  </div>
+                  <div class="summary-stat high">
+                    <span class="stat-value" id="aiHighCount">0</span>
+                    <span class="stat-label">High</span>
+                  </div>
+                  <div class="summary-stat medium">
+                    <span class="stat-value" id="aiMediumCount">0</span>
+                    <span class="stat-label">Medium</span>
+                  </div>
+                  <div class="summary-stat low">
+                    <span class="stat-value" id="aiLowCount">0</span>
+                    <span class="stat-label">Low</span>
+                  </div>
+                </div>
+                
+                <div class="vulnerability-list" id="aiVulnerabilityList">
+                  <!-- Vulnerabilities will be dynamically inserted -->
+                </div>
+                
+                <div class="ai-recommendations" id="aiRecommendations">
+                  <div class="recommendations-header">
+                    <span class="recommendations-icon">🤖</span>
+                    <span class="recommendations-title">AI Recommendations</span>
+                  </div>
+                  <div class="recommendations-content" id="aiRecommendationsContent">
+                    <!-- AI-generated recommendations will appear here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- AI Analysis Mode -->
+          <div class="ai-mode-content" id="ai-mode-analysis">
+            <div class="ai-analysis-container">
+              <div class="analysis-intro">
+                <div class="intro-icon">📊</div>
+                <div class="intro-text">
+                  <strong>AI Page Analysis</strong>
+                  <span>Deep insights with CIPHER</span>
+                </div>
+              </div>
+              
+              <div class="analysis-quick-actions">
+                <button class="analysis-action-btn" id="btnAnalyzeStructure">
+                  <span class="action-icon">🏗️</span>
+                  <span class="action-label">Page Structure</span>
+                </button>
+                <button class="analysis-action-btn" id="btnAnalyzeForms">
+                  <span class="action-icon">📝</span>
+                  <span class="action-label">Form Analysis</span>
+                </button>
+                <button class="analysis-action-btn" id="btnAnalyzeLinks">
+                  <span class="action-icon">🔗</span>
+                  <span class="action-label">Link Analysis</span>
+                </button>
+                <button class="analysis-action-btn" id="btnAnalyzePerformance">
+                  <span class="action-icon">⚡</span>
+                  <span class="action-label">Performance</span>
+                </button>
+                <button class="analysis-action-btn" id="btnAnalyzeSEO">
+                  <span class="action-icon">🔍</span>
+                  <span class="action-label">SEO Analysis</span>
+                </button>
+                <button class="analysis-action-btn" id="btnAnalyzeAccessibility">
+                  <span class="action-icon">♿</span>
+                  <span class="action-label">Accessibility</span>
+                </button>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Custom Analysis Query</label>
+                <textarea class="form-textarea" id="aiAnalysisQuery" rows="2" placeholder="e.g., Find all interactive elements with missing ARIA labels..."></textarea>
+              </div>
+              
+              <button class="btn btn-primary btn-full" id="btnRunCustomAnalysis">
+                <span class="btn-icon">🔮</span> Run AI Analysis
+              </button>
+              
+              <div class="analysis-results hidden" id="aiAnalysisResults">
+                <div class="results-header">
+                  <span class="results-title">Analysis Results</span>
+                  <button class="btn btn-sm btn-ghost" id="btnExportAnalysis">📄 Export</button>
+                </div>
+                <div class="analysis-content" id="aiAnalysisContent">
+                  <!-- Analysis results will appear here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIAGNOSTICS TAB -->
+      <div class="tab-content" id="tab-diagnostics">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🔍</div>
+            <div>
+              <div class="card-title">System Diagnostics</div>
+              <div class="card-subtitle">Health checks & monitoring</div>
+            </div>
+          </div>
+          
+          <div class="diagnostic-grid">
+            <div class="diagnostic-item">
+              <div class="diagnostic-status ok"></div>
+              <div class="diagnostic-label">Extension Core</div>
+            </div>
+            <div class="diagnostic-item">
+              <div class="diagnostic-status ok"></div>
+              <div class="diagnostic-label">Content Scripts</div>
+            </div>
+            <div class="diagnostic-item">
+              <div class="diagnostic-status ok"></div>
+              <div class="diagnostic-label">AI Services</div>
+            </div>
+            <div class="diagnostic-item">
+              <div class="diagnostic-status ok"></div>
+              <div class="diagnostic-label">Storage</div>
+            </div>
+          </div>
+          
+          <button class="btn btn-secondary btn-full mt-lg" id="btnRunDiagnostics">
+            <span class="btn-icon">🔄</span> Run Full Diagnostics
+          </button>
+        </div>
+        
+        <!-- Activity Log -->
+        <div class="card mt-lg">
+          <div class="card-header">
+            <div class="card-icon">📜</div>
+            <div>
+              <div class="card-title">Activity Log</div>
+              <div class="card-subtitle">Recent operations</div>
+            </div>
+          </div>
+          <div class="activity-list" id="activityLog">
+            <div class="activity-item info">
+              <span class="activity-time">--:--</span>
+              <span class="activity-message">System initialized</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PRODUCTIVITY ANALYTICS TAB -->
+      <div class="tab-content" id="tab-analytics">
+        <div class="analytics-dashboard">
+          
+          <!-- Productivity Score Card -->
+          <div class="card card-highlight">
+            <div class="card-header">
+              <div class="card-icon">📊</div>
+              <div>
+                <div class="card-title">Productivity Score</div>
+                <div class="card-subtitle">Your automation efficiency</div>
+              </div>
+            </div>
+            <div class="productivity-score-container">
+              <div class="score-circle">
+                <svg viewBox="0 0 100 100">
+                  <circle class="score-bg" cx="50" cy="50" r="45" fill="none" stroke="var(--border-color)" stroke-width="8"/>
+                  <circle class="score-progress" cx="50" cy="50" r="45" fill="none" stroke="var(--primary-500)" stroke-width="8" 
+                    stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" transform="rotate(-90 50 50)" id="scoreCircle"/>
+                </svg>
+                <div class="score-value" id="productivityScore">75</div>
+              </div>
+              <div class="score-details">
+                <div class="score-label">🔥 <span id="streakDays">0</span> day streak</div>
+                <div class="score-subtitle" id="mostProductiveFeature">Form Autofill</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Time Saved Card -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">⏰</div>
+              <div>
+                <div class="card-title">Time Saved</div>
+                <div class="card-subtitle">Lifetime automation savings</div>
+              </div>
+            </div>
+            <div class="time-saved-stats">
+              <div class="stat-big">
+                <span class="stat-value" id="totalTimeSaved">0h</span>
+                <span class="stat-label">Total Saved</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-big">
+                <span class="stat-value" id="sessionTimeSaved">0m</span>
+                <span class="stat-label">This Session</span>
+              </div>
+            </div>
+            <div class="roi-highlight">
+              <span class="roi-icon">💰</span>
+              <span class="roi-text">Estimated ROI: $<span id="totalROI">0</span></span>
+            </div>
+          </div>
+
+          <!-- Activity Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">📝</div>
+              <div class="stat-number" id="totalFormsAutofilled">0</div>
+              <div class="stat-name">Forms Filled</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🤖</div>
+              <div class="stat-number" id="totalMacrosRun">0</div>
+              <div class="stat-name">Macros Run</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📄</div>
+              <div class="stat-number" id="totalDocumentsProcessed">0</div>
+              <div class="stat-name">Docs Processed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🧠</div>
+              <div class="stat-number" id="totalAiQueries">0</div>
+              <div class="stat-name">AI Queries</div>
+            </div>
+          </div>
+
+          <!-- Daily Goal Progress -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🎯</div>
+              <div>
+                <div class="card-title">Daily Goal</div>
+                <div class="card-subtitle">Save <span id="goalMinutes">30</span> minutes today</div>
+              </div>
+            </div>
+            <div class="goal-progress-container">
+              <div class="goal-progress-bar">
+                <div class="goal-progress-fill" id="goalProgressFill" style="width: 0%"></div>
+              </div>
+              <div class="goal-progress-text">
+                <span id="goalProgressPercent">0</span>% Complete
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements Section -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🏆</div>
+              <div>
+                <div class="card-title">Achievements</div>
+                <div class="card-subtitle"><span id="achievementsCount">0</span> of 12 unlocked</div>
+              </div>
+            </div>
+            <div class="achievements-grid" id="achievementsGrid">
+              <!-- Achievements will be populated by JS -->
+            </div>
+          </div>
+
+          <!-- Productivity Tips -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">💡</div>
+              <div>
+                <div class="card-title">Recommendations</div>
+                <div class="card-subtitle">Boost your productivity</div>
+              </div>
+            </div>
+            <div class="tips-list" id="productivityTips">
+              <!-- Tips will be populated by JS -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BACKUP & LEARNING TAB -->
+      <div class="tab-content" id="tab-backup">
+        <div class="backup-dashboard">
+          
+          <!-- Backup Card -->
+          <div class="card card-highlight">
+            <div class="card-header">
+              <div class="card-icon">💾</div>
+              <div>
+                <div class="card-title">Data Backup</div>
+                <div class="card-subtitle">Export and import your CUBE data</div>
+              </div>
+            </div>
+            <div class="backup-actions">
+              <button class="btn btn-primary btn-lg" id="btnExportBackup">
+                <span class="btn-icon">📤</span>
+                Export Full Backup
+              </button>
+              <div class="backup-note">Includes: macros, settings, AI config, passwords, learning data</div>
+            </div>
+            
+            <div class="backup-import">
+              <div class="form-group">
+                <label class="form-label">Import Backup File</label>
+                <div class="file-input-wrapper">
+                  <input type="file" id="backupFileInput" accept=".json" class="hidden">
+                  <button class="btn btn-secondary" id="btnSelectBackupFile">
+                    <span class="btn-icon">📂</span>
+                    Select File
+                  </button>
+                  <span class="file-name" id="selectedBackupFileName">No file selected</span>
+                </div>
+              </div>
+              <div class="import-options">
+                <label class="checkbox-item">
+                  <input type="checkbox" id="backupMergeMode" checked>
+                  <span class="checkbox-label">Merge with existing data (instead of replace)</span>
+                </label>
+              </div>
+              <button class="btn btn-primary" id="btnImportBackup" disabled>
+                <span class="btn-icon">📥</span>
+                Import Backup
+              </button>
+            </div>
+          </div>
+
+          <!-- Encryption Card -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🔐</div>
+              <div>
+                <div class="card-title">Encrypted Export</div>
+                <div class="card-subtitle">Password-protected backup</div>
+              </div>
+            </div>
+            <div class="encryption-options">
+              <div class="form-group">
+                <label class="form-label">Encryption Password</label>
+                <div class="password-input-group">
+                  <input type="password" class="form-input" id="backupPassword" placeholder="Enter password for encryption">
+                  <button class="btn btn-sm btn-ghost" id="btnToggleBackupPassword" title="Show/hide password">👁️</button>
+                </div>
+              </div>
+              <button class="btn btn-secondary" id="btnExportEncrypted">
+                <span class="btn-icon">🔒</span>
+                Export Encrypted Backup
+              </button>
+            </div>
+          </div>
+
+          <!-- Auto-Backup Card -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">⏰</div>
+              <div>
+                <div class="card-title">Auto-Backup</div>
+                <div class="card-subtitle">Scheduled automatic backups</div>
+              </div>
+            </div>
+            <div class="auto-backup-settings">
+              <label class="toggle-label">
+                <input type="checkbox" id="autoBackupEnabled">
+                <span class="toggle-slider"></span>
+                <span class="toggle-text">Enable auto-backup</span>
+              </label>
+              <div class="form-group">
+                <label class="form-label">Backup Frequency</label>
+                <select class="form-select" id="autoBackupFrequency">
+                  <option value="daily">Daily</option>
+                  <option value="weekly" selected>Weekly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+              <div class="last-backup-info">
+                <span class="info-icon">📅</span>
+                <span>Last backup: <span id="lastBackupDate">Never</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Field Learning Stats Card -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-icon">🎓</div>
+              <div>
+                <div class="card-title">Field Learning</div>
+                <div class="card-subtitle">AI learns from your corrections</div>
+              </div>
+            </div>
+            <div class="learning-stats">
+              <div class="stats-grid compact">
+                <div class="stat-item">
+                  <div class="stat-value" id="learnedMappings">0</div>
+                  <div class="stat-label">Learned Mappings</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value" id="learnedSites">0</div>
+                  <div class="stat-label">Sites Trained</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value" id="learningConfidence">0%</div>
+                  <div class="stat-label">Avg Confidence</div>
+                </div>
+              </div>
+              <div class="learning-actions">
+                <button class="btn btn-secondary btn-sm" id="btnExportLearning">
+                  <span class="btn-icon">📤</span>
+                  Export Learning Data
+                </button>
+                <button class="btn btn-danger btn-sm" id="btnClearLearning">
+                  <span class="btn-icon">🗑️</span>
+                  Reset Learning
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Factory Reset Card -->
+          <div class="card card-danger">
+            <div class="card-header">
+              <div class="card-icon">⚠️</div>
+              <div>
+                <div class="card-title">Factory Reset</div>
+                <div class="card-subtitle">Reset CUBE to default settings</div>
+              </div>
+            </div>
+            <div class="danger-zone">
+              <p class="warning-text">This will delete all your data including macros, profiles, passwords, and learning data. This action cannot be undone.</p>
+              <button class="btn btn-danger" id="btnFactoryReset">
+                <span class="btn-icon">💥</span>
+                Factory Reset
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- SECURITY SCANNER TAB -->
+      <div class="tab-content" id="tab-security">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🛡️</div>
+            <div>
+              <div class="card-title">Security Scanner</div>
+              <div class="card-subtitle">Enterprise vulnerability detection</div>
+            </div>
+            <span class="feature-badge enterprise">🌟 Enterprise</span>
+          </div>
+          
+          <div class="security-scanner-container">
+            <!-- Scanner URL Input -->
+            <div class="form-group">
+              <label class="form-label">Target URL</label>
+              <div class="scanner-url-input">
+                <input type="text" class="form-input" id="scannerTargetUrl" placeholder="https://example.com">
+                <button class="btn btn-sm btn-secondary" id="btnUseCurrentPageScan" title="Use Current Page">🔗</button>
+              </div>
+            </div>
+            
+            <!-- Scan Type Selection -->
+            <div class="scan-options">
+              <label class="form-label">Vulnerability Tests</label>
+              <div class="scan-type-checkboxes">
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanSqlInjection" checked>
+                  <span class="checkbox-icon">💉</span>
+                  <span class="checkbox-label">SQL Injection</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanXss" checked>
+                  <span class="checkbox-icon">📜</span>
+                  <span class="checkbox-label">XSS (Cross-Site Scripting)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanCsrf" checked>
+                  <span class="checkbox-icon">🔐</span>
+                  <span class="checkbox-label">CSRF Tokens</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanHeaders">
+                  <span class="checkbox-icon">📋</span>
+                  <span class="checkbox-label">Security Headers</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanSsl">
+                  <span class="checkbox-icon">🔒</span>
+                  <span class="checkbox-label">SSL/TLS Analysis</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanDirTraversal">
+                  <span class="checkbox-icon">📂</span>
+                  <span class="checkbox-label">Directory Traversal</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanOpenRedirect">
+                  <span class="checkbox-icon">↪️</span>
+                  <span class="checkbox-label">Open Redirect</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" id="scanCookies">
+                  <span class="checkbox-icon">🍪</span>
+                  <span class="checkbox-label">Cookie Security</span>
+                </label>
+              </div>
+            </div>
+            
+            <!-- Scan Depth -->
+            <div class="form-group">
+              <label class="form-label">Scan Depth</label>
+              <select class="form-input" id="scanDepth">
+                <option value="quick">Quick Scan (30 seconds)</option>
+                <option value="normal" selected>Normal Scan (2-3 minutes)</option>
+                <option value="deep">Deep Scan (5-10 minutes)</option>
+                <option value="comprehensive">Comprehensive (15-30 minutes)</option>
+              </select>
+            </div>
+            
+            <!-- Scan Actions -->
+            <div class="card-cta-group">
+              <button class="btn btn-primary btn-full" id="btnStartSecurityScan">
+                <span class="btn-icon">🔍</span> Start Vulnerability Scan
+              </button>
+            </div>
+            
+            <!-- Scan Progress -->
+            <div class="scan-progress hidden" id="scanProgress">
+              <div class="progress-header">
+                <span class="progress-label">Scanning...</span>
+                <span class="progress-percent" id="scanPercent">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="scanProgressBar"></div>
+              </div>
+              <div class="progress-status" id="scanStatus">Initializing scanner...</div>
+            </div>
+            
+            <!-- Scan Results -->
+            <div class="scan-results hidden" id="scanResults">
+              <div class="results-summary">
+                <div class="summary-header">
+                  <span class="summary-title">Scan Complete</span>
+                  <span class="summary-time" id="scanTime">Completed in 0s</span>
+                </div>
+                <div class="severity-grid">
+                  <div class="severity-item critical">
+                    <span class="severity-count" id="criticalCount">0</span>
+                    <span class="severity-label">Critical</span>
+                  </div>
+                  <div class="severity-item high">
+                    <span class="severity-count" id="highCount">0</span>
+                    <span class="severity-label">High</span>
+                  </div>
+                  <div class="severity-item medium">
+                    <span class="severity-count" id="mediumCount">0</span>
+                    <span class="severity-label">Medium</span>
+                  </div>
+                  <div class="severity-item low">
+                    <span class="severity-count" id="lowCount">0</span>
+                    <span class="severity-label">Low</span>
+                  </div>
+                  <div class="severity-item info">
+                    <span class="severity-count" id="infoCount">0</span>
+                    <span class="severity-label">Info</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="vulnerabilities-list" id="vulnerabilitiesList">
+                <!-- Vulnerabilities will be dynamically inserted -->
+              </div>
+              
+              <div class="results-actions">
+                <button class="btn btn-secondary" id="btnExportReport">
+                  <span class="btn-icon">📄</span> Export Report
+                </button>
+                <button class="btn btn-secondary" id="btnShareReport">
+                  <span class="btn-icon">📤</span> Share
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- PROJECT MANAGEMENT TAB (Monday.com-like) -->
+      <div class="tab-content" id="tab-projects">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div>
+              <div class="card-title">Project Management</div>
+              <div class="card-subtitle">Boards, tasks & workflows</div>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-sm btn-ghost" id="btnProjectSearch" title="Search">🔍</button>
+              <button class="btn btn-sm btn-primary" id="btnNewProject" title="New Project">➕</button>
+            </div>
+          </div>
+          
+          <!-- Project Tabs -->
+          <div class="project-tabs">
+            <button class="project-tab active" data-view="boards">
+              <span class="tab-icon">📋</span>
+              <span>Boards</span>
+            </button>
+            <button class="project-tab" data-view="timeline">
+              <span class="tab-icon">📅</span>
+              <span>Timeline</span>
+            </button>
+            <button class="project-tab" data-view="calendar">
+              <span class="tab-icon">🗓️</span>
+              <span>Calendar</span>
+            </button>
+            <button class="project-tab" data-view="dashboard">
+              <span class="tab-icon">📊</span>
+              <span>Dashboard</span>
+            </button>
+          </div>
+          
+          <!-- Boards View -->
+          <div class="project-view active" id="projectBoardsView">
+            <div class="boards-list" id="boardsList">
+              <!-- Sample Board -->
+              <div class="board-item" data-board-id="1">
+                <div class="board-color" style="background: linear-gradient(135deg, #7c3aed, #a855f7);"></div>
+                <div class="board-info">
+                  <div class="board-name">CUBE Development</div>
+                  <div class="board-meta">
+                    <span class="board-tasks">12 tasks</span>
+                    <span class="board-members">3 members</span>
+                  </div>
+                </div>
+                <div class="board-progress">
+                  <div class="progress-ring">
+                    <svg viewBox="0 0 36 36">
+                      <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                      <path class="progress-ring-fill" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <span class="progress-text">75%</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="board-item" data-board-id="2">
+                <div class="board-color" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);"></div>
+                <div class="board-info">
+                  <div class="board-name">Marketing Campaign</div>
+                  <div class="board-meta">
+                    <span class="board-tasks">8 tasks</span>
+                    <span class="board-members">2 members</span>
+                  </div>
+                </div>
+                <div class="board-progress">
+                  <div class="progress-ring">
+                    <svg viewBox="0 0 36 36">
+                      <path class="progress-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                      <path class="progress-ring-fill" stroke-dasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <span class="progress-text">40%</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Add New Board Button -->
+              <button class="board-item board-add-new" id="btnAddBoard">
+                <span class="add-icon">+</span>
+                <span class="add-text">Add New Board</span>
+              </button>
+            </div>
+            
+            <!-- Selected Board Tasks -->
+            <div class="board-tasks-section hidden" id="boardTasksSection">
+              <div class="tasks-header">
+                <button class="btn btn-sm btn-ghost" id="btnBackToBoards">←</button>
+                <span class="tasks-board-name" id="tasksBoardName">Board Name</span>
+                <div class="tasks-actions">
+                  <button class="btn btn-sm btn-ghost" id="btnTaskFilter" title="Filter">🔽</button>
+                  <button class="btn btn-sm btn-ghost" id="btnTaskSort" title="Sort">↕️</button>
+                  <button class="btn btn-sm btn-primary" id="btnAddTask">+ Task</button>
+                </div>
+              </div>
+              
+              <!-- Kanban Columns -->
+              <div class="kanban-board" id="kanbanBoard">
+                <div class="kanban-column" data-status="todo">
+                  <div class="column-header">
+                    <span class="column-title">To Do</span>
+                    <span class="column-count">3</span>
+                  </div>
+                  <div class="column-tasks" id="todoTasks">
+                    <div class="task-card" draggable="true" data-task-id="1">
+                      <div class="task-priority high"></div>
+                      <div class="task-content">
+                        <div class="task-title">Implement QR invites</div>
+                        <div class="task-tags">
+                          <span class="task-tag">Feature</span>
+                        </div>
+                        <div class="task-meta">
+                          <span class="task-assignee">👤</span>
+                          <span class="task-due">Dec 15</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="add-task-btn">+ Add Task</button>
+                </div>
+                
+                <div class="kanban-column" data-status="in-progress">
+                  <div class="column-header">
+                    <span class="column-title">In Progress</span>
+                    <span class="column-count">2</span>
+                  </div>
+                  <div class="column-tasks" id="inProgressTasks">
+                    <div class="task-card" draggable="true" data-task-id="2">
+                      <div class="task-priority medium"></div>
+                      <div class="task-content">
+                        <div class="task-title">Security scanner integration</div>
+                        <div class="task-tags">
+                          <span class="task-tag">Security</span>
+                        </div>
+                        <div class="task-meta">
+                          <span class="task-assignee">👤</span>
+                          <span class="task-due">Dec 18</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="add-task-btn">+ Add Task</button>
+                </div>
+                
+                <div class="kanban-column" data-status="review">
+                  <div class="column-header">
+                    <span class="column-title">Review</span>
+                    <span class="column-count">1</span>
+                  </div>
+                  <div class="column-tasks" id="reviewTasks">
+                    <!-- Tasks will be dynamically inserted -->
+                  </div>
+                  <button class="add-task-btn">+ Add Task</button>
+                </div>
+                
+                <div class="kanban-column" data-status="done">
+                  <div class="column-header">
+                    <span class="column-title">Done</span>
+                    <span class="column-count">5</span>
+                  </div>
+                  <div class="column-tasks" id="doneTasks">
+                    <!-- Tasks will be dynamically inserted -->
+                  </div>
+                  <button class="add-task-btn">+ Add Task</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline View -->
+          <div class="project-view hidden" id="projectTimelineView">
+            <div class="timeline-container">
+              <div class="timeline-header">
+                <button class="btn btn-sm btn-ghost" id="btnPrevWeek">←</button>
+                <span class="timeline-range" id="timelineRange">Dec 11 - Dec 17, 2024</span>
+                <button class="btn btn-sm btn-ghost" id="btnNextWeek">→</button>
+              </div>
+              <div class="timeline-grid" id="timelineGrid">
+                <div class="timeline-days">
+                  <div class="timeline-day">Mon</div>
+                  <div class="timeline-day">Tue</div>
+                  <div class="timeline-day">Wed</div>
+                  <div class="timeline-day">Thu</div>
+                  <div class="timeline-day">Fri</div>
+                  <div class="timeline-day">Sat</div>
+                  <div class="timeline-day">Sun</div>
+                </div>
+                <div class="timeline-tasks" id="timelineTasks">
+                  <!-- Timeline items will be dynamically inserted -->
+                  <div class="timeline-item" style="grid-column: 1 / 4;">
+                    <span class="timeline-task-name">QR Invites Implementation</span>
+                  </div>
+                  <div class="timeline-item" style="grid-column: 2 / 6;">
+                    <span class="timeline-task-name">Security Scanner</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Calendar View -->
+          <div class="project-view hidden" id="projectCalendarView">
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <button class="btn btn-sm btn-ghost" id="btnPrevMonth">←</button>
+                <span class="calendar-month" id="calendarMonth">December 2024</span>
+                <button class="btn btn-sm btn-ghost" id="btnNextMonth">→</button>
+              </div>
+              <div class="calendar-grid" id="calendarGrid">
+                <div class="calendar-weekdays">
+                  <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <div class="calendar-days" id="calendarDays">
+                  <!-- Calendar days will be dynamically generated -->
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Dashboard View -->
+          <div class="project-view hidden" id="projectDashboardView">
+            <div class="dashboard-stats">
+              <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <div class="stat-info">
+                  <div class="stat-value" id="totalTasks">24</div>
+                  <div class="stat-label">Total Tasks</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                  <div class="stat-value" id="completedTasks">18</div>
+                  <div class="stat-label">Completed</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                  <div class="stat-value" id="pendingTasks">6</div>
+                  <div class="stat-label">Pending</div>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                  <div class="stat-value" id="teamMembers">5</div>
+                  <div class="stat-label">Team Members</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="dashboard-charts">
+              <div class="chart-card">
+                <div class="chart-header">
+                  <span class="chart-title">Task Progress</span>
+                </div>
+                <div class="chart-content" id="progressChart">
+                  <div class="donut-chart">
+                    <svg viewBox="0 0 100 100">
+                      <circle class="donut-hole" cx="50" cy="50" r="40"/>
+                      <circle class="donut-ring" cx="50" cy="50" r="40"/>
+                      <circle class="donut-segment done" cx="50" cy="50" r="40" stroke-dasharray="75 25" stroke-dashoffset="25"/>
+                      <circle class="donut-segment in-progress" cx="50" cy="50" r="40" stroke-dasharray="15 85" stroke-dashoffset="100"/>
+                      <circle class="donut-segment todo" cx="50" cy="50" r="40" stroke-dasharray="10 90" stroke-dashoffset="115"/>
+                    </svg>
+                    <div class="donut-center">
+                      <span class="donut-value">75%</span>
+                      <span class="donut-label">Complete</span>
+                    </div>
+                  </div>
+                  <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-color done"></span>Done (75%)</div>
+                    <div class="legend-item"><span class="legend-color in-progress"></span>In Progress (15%)</div>
+                    <div class="legend-item"><span class="legend-color todo"></span>To Do (10%)</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="chart-card">
+                <div class="chart-header">
+                  <span class="chart-title">Recent Activity</span>
+                </div>
+                <div class="activity-feed" id="activityFeed">
+                  <div class="activity-item">
+                    <span class="activity-icon">✅</span>
+                    <span class="activity-text">Task "Video QR" completed</span>
+                    <span class="activity-time">2h ago</span>
+                  </div>
+                  <div class="activity-item">
+                    <span class="activity-icon">📝</span>
+                    <span class="activity-text">New task "Security audit" added</span>
+                    <span class="activity-time">4h ago</span>
+                  </div>
+                  <div class="activity-item">
+                    <span class="activity-icon">👤</span>
+                    <span class="activity-text">John joined the project</span>
+                    <span class="activity-time">1d ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREENSHOT TAB - Enhanced -->
+      <div class="tab-content" id="tab-screenshot">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📸</div>
+            <div>
+              <div class="card-title">Screen Capture</div>
+              <div class="card-subtitle">Capture, annotate & share</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnScreenshotSettings" title="Settings">
+              <span>⚙️</span>
+            </button>
+          </div>
+          
+          <!-- Capture Modes -->
+          <div class="screenshot-modes">
+            <div class="screenshot-mode active" data-mode="fullpage" id="screenshotModeFullpage">
+              <div class="screenshot-mode-icon">📜</div>
+              <div class="screenshot-mode-label">Full Page</div>
+              <div class="screenshot-mode-hint">Scrolling capture</div>
+            </div>
+            <div class="screenshot-mode" data-mode="visible" id="screenshotModeVisible">
+              <div class="screenshot-mode-icon">👁️</div>
+              <div class="screenshot-mode-label">Visible</div>
+              <div class="screenshot-mode-hint">Current view</div>
+            </div>
+            <div class="screenshot-mode" data-mode="area" id="screenshotModeArea">
+              <div class="screenshot-mode-icon">✂️</div>
+              <div class="screenshot-mode-label">Select Area</div>
+              <div class="screenshot-mode-hint">Custom region</div>
+            </div>
+            <div class="screenshot-mode" data-mode="element" id="screenshotModeElement">
+              <div class="screenshot-mode-icon">🎯</div>
+              <div class="screenshot-mode-label">Element</div>
+              <div class="screenshot-mode-hint">Pick element</div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-full" id="btnTakeScreenshot">
+            <span class="btn-icon">📷</span> Capture Screenshot
+          </button>
+        </div>
+
+        <!-- Screenshot Preview & Tools -->
+        <div class="card mt-md hidden" id="screenshotPreviewCard">
+          <div class="card-header">
+            <div class="card-icon">🖼️</div>
+            <div>
+              <div class="card-title">Preview</div>
+              <div class="card-subtitle" id="screenshotDimensions">--</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnClosePreview" title="Close">✕</button>
+          </div>
+
+          <div class="screenshot-preview-container">
+            <img id="screenshotPreviewImg" class="screenshot-preview-img hidden" alt="Screenshot preview">
+            <canvas id="screenshotCanvas" class="screenshot-canvas"></canvas>
+          </div>
+
+          <!-- Annotation Tools -->
+          <div class="screenshot-tools">
+            <button class="annotation-tool active" data-tool="pen" title="Pen">
+              <span>✏️</span>
+            </button>
+            <button class="annotation-tool" data-tool="highlighter" title="Highlighter">
+              <span>🖍️</span>
+            </button>
+            <button class="annotation-tool" data-tool="arrow" title="Arrow">
+              <span>➡️</span>
+            </button>
+            <button class="annotation-tool" data-tool="rectangle" title="Rectangle">
+              <span>⬜</span>
+            </button>
+            <button class="annotation-tool" data-tool="circle" title="Circle/Ellipse">
+              <span>⭕</span>
+            </button>
+            <button class="annotation-tool" data-tool="text" title="Add Text">
+              <span>💬</span>
+            </button>
+            <button class="annotation-tool" data-tool="eraser" title="Eraser">
+              <span>🧹</span>
+            </button>
+            <button class="annotation-tool" data-tool="blur" title="Blur sensitive info">
+              <span>🔳</span>
+            </button>
+            <div class="tool-divider"></div>
+            <input type="color" id="annotationColor" class="color-picker" value="#ef4444" title="Color">
+            <div class="line-width-control">
+              <input type="range" id="annotationLineWidth" min="1" max="20" value="3" title="Line width">
+              <span id="lineWidthValue">3px</span>
+            </div>
+            <div class="tool-divider"></div>
+            <button class="btn btn-sm btn-ghost" id="btnAnnotationUndo" title="Undo" disabled>
+              <span>↩️</span>
+            </button>
+            <button class="btn btn-sm btn-ghost" id="btnAnnotationRedo" title="Redo" disabled>
+              <span>↪️</span>
+            </button>
+            <button class="btn btn-sm btn-ghost" id="btnAnnotationClear" title="Clear all">
+              <span>🗑️</span>
+            </button>
+          </div>
+
+          <!-- Actions -->
+          <div class="screenshot-actions">
+            <button class="btn btn-secondary" id="btnAnnotationCopy" title="Copy to clipboard">
+              <span class="btn-icon">📋</span> Copy
+            </button>
+            <button class="btn btn-secondary" id="btnAnnotationSave" title="Save to device">
+              <span class="btn-icon">💾</span> Save
+            </button>
+            <button class="btn btn-secondary" id="btnShareScreenshot" title="Share">
+              <span class="btn-icon">📤</span> Share
+            </button>
+            <button class="btn btn-primary" id="btnUploadScreenshot" title="Upload to cloud">
+              <span class="btn-icon">☁️</span> Upload
+            </button>
+          </div>
+        </div>
+
+        <!-- Screen Recording Section -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">🎥</div>
+            <div>
+              <div class="card-title">Screen Recording</div>
+              <div class="card-subtitle">Record screen with audio</div>
+            </div>
+          </div>
+          
+          <!-- Recording Options -->
+          <div class="recording-options-grid">
+            <label class="recording-option">
+              <input type="checkbox" id="recordWithMic">
+              <span class="option-icon">🎤</span>
+              <span class="option-text">Microphone</span>
+            </label>
+            <label class="recording-option">
+              <input type="checkbox" id="recordWithSystem">
+              <span class="option-icon">🔊</span>
+              <span class="option-text">System Audio</span>
+            </label>
+            <label class="recording-option">
+              <input type="checkbox" id="recordWithCam">
+              <span class="option-icon">📹</span>
+              <span class="option-text">Webcam</span>
+            </label>
+            <label class="recording-option">
+              <input type="checkbox" id="recordShowClicks" checked>
+              <span class="option-icon">🖱️</span>
+              <span class="option-text">Show Clicks</span>
+            </label>
+          </div>
+
+          <!-- Quality Selection -->
+          <div class="form-group">
+            <label class="form-label">Recording Quality</label>
+            <select class="form-input" id="recordingQuality">
+              <option value="720">720p (Good)</option>
+              <option value="1080" selected>1080p (HD)</option>
+              <option value="1440">1440p (QHD)</option>
+              <option value="4k">4K (Ultra HD)</option>
+            </select>
+          </div>
+          
+          <div class="card-cta-group">
+            <button class="btn btn-danger btn-full" id="btnStartScreenRecording">
+              <span class="btn-icon">⏺️</span>
+              <span class="btn-text">Start Recording</span>
+            </button>
+            <button class="btn btn-secondary btn-full hidden" id="btnPauseRecording">
+              <span class="btn-icon">⏸️</span>
+              <span class="btn-text">Pause</span>
+            </button>
+            <button class="btn btn-danger btn-full hidden" id="btnStopScreenRecording">
+              <span class="btn-icon">⏹️</span>
+              <span class="btn-text">Stop Recording</span>
+            </button>
+          </div>
+
+          <div class="screen-recording-status hidden" id="screenRecordingStatus">
+            <div class="recording-indicator">
+              <div class="recording-dot"></div>
+              <span class="recording-text">Recording</span>
+              <span id="screenRecordingTime" class="recording-timer">00:00</span>
+            </div>
+            <div class="recording-stats">
+              <span id="recordingSize">0 MB</span>
+              <span class="stats-divider">•</span>
+              <span id="recordingFPS">-- FPS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Captures -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">📁</div>
+            <div>
+              <div class="card-title">Recent Captures</div>
+              <div class="card-subtitle" id="captureCount">0 items</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnOpenCaptureFolder" title="Open folder">📂</button>
+          </div>
+          <div class="captures-grid" id="recentCapturesGrid">
+            <div class="empty-state compact">
+              <span class="empty-icon">📭</span>
+              <span class="empty-text">No captures yet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REMOTE TAB - Enhanced Remote Desktop -->
+      <div class="tab-content" id="tab-remote">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🖥️</div>
+            <div>
+              <div class="card-title">Remote Desktop</div>
+              <div class="card-subtitle">Control & collaborate in real-time</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="btnRemoteSettings" title="Remote Settings">
+              <span>⚙️</span>
+            </button>
+          </div>
+          
+          <!-- Connection Status -->
+          <div class="remote-connection-status">
+            <div class="status-row">
+              <div class="remote-status-indicator" id="remoteStatusIndicator"></div>
+              <div class="remote-status-text" id="remoteStatusText">Not connected</div>
+            </div>
+            <div class="remote-quality hidden" id="remoteQuality">
+              <span class="quality-label">Quality:</span>
+              <div class="quality-bars">
+                <span class="bar active"></span>
+                <span class="bar active"></span>
+                <span class="bar active"></span>
+                <span class="bar"></span>
+              </div>
+              <span class="latency-text" id="remoteLatency">--ms</span>
+            </div>
+          </div>
+
+          <!-- Mode Selection -->
+          <div class="remote-mode-tabs">
+            <button class="remote-mode-tab active" data-remote-mode="host" id="btnRemoteModeHost">
+              <span>📡</span> Host (Share Screen)
+            </button>
+            <button class="remote-mode-tab" data-remote-mode="client" id="btnRemoteModeClient">
+              <span>🔗</span> Connect (Control)
+            </button>
+          </div>
+
+          <!-- HOST MODE -->
+          <div class="remote-mode-content active" id="remoteModeHost">
+            <div class="remote-preview" id="remoteHostPreview">
+              <div class="preview-placeholder">
+                <span class="preview-icon">🖥️</span>
+                <span class="preview-text">Your screen will appear here</span>
+              </div>
+            </div>
+
+            <!-- QR Code for Easy Sharing -->
+            <div class="remote-qr-section" id="remoteQRSection">
+              <div class="qr-container" id="remoteQRContainer">
+                <div class="qr-placeholder">
+                  <span>📱</span>
+                  <span>QR Code</span>
+                </div>
+              </div>
+              <div class="qr-info">
+                <span class="qr-label">Scan to connect instantly</span>
+                <div class="qr-actions">
+                  <button class="btn btn-sm btn-ghost" id="btnDownloadRemoteQR" title="Download QR">💾</button>
+                  <button class="btn btn-sm btn-ghost" id="btnShareRemoteQR" title="Share">📤</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">📤 Your Connection Code</label>
+              <textarea class="form-input form-textarea" id="remoteHostOfferCode" readonly placeholder="Click 'Start Hosting' to generate..." rows="2"></textarea>
+              <button class="btn btn-sm btn-secondary" id="btnCopyRemoteOffer">📋 Copy Code</button>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">📥 Viewer's Response Code</label>
+              <textarea class="form-input form-textarea" id="remoteHostAnswerInput" placeholder="Paste viewer's response..." rows="2"></textarea>
+              <button class="btn btn-sm btn-primary" id="btnApplyRemoteAnswer">✅ Connect</button>
+            </div>
+
+            <!-- Host Options -->
+            <div class="remote-options collapsible" id="remoteHostOptions">
+              <div class="options-header" id="btnToggleRemoteOptions">
+                <span>⚙️ Sharing Options</span>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="options-content hidden">
+                <label class="option-row">
+                  <input type="checkbox" id="remoteAllowControl" checked>
+                  <span>Allow remote control</span>
+                </label>
+                <label class="option-row">
+                  <input type="checkbox" id="remoteShowCursor" checked>
+                  <span>Show cursor</span>
+                </label>
+                <label class="option-row">
+                  <input type="checkbox" id="remoteShareAudio">
+                  <span>Share system audio</span>
+                </label>
+                <label class="option-row">
+                  <input type="checkbox" id="remoteHighQuality" checked>
+                  <span>High quality (more bandwidth)</span>
+                </label>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="btnStartHost">
+              <span class="btn-icon">🚀</span> Start Hosting
+            </button>
+            <button class="btn btn-danger btn-full hidden" id="btnStopHost">
+              <span class="btn-icon">⏹️</span> Stop Hosting
+            </button>
+          </div>
+
+          <!-- CLIENT MODE -->
+          <div class="remote-mode-content hidden" id="remoteModeClient">
+            <div class="remote-preview" id="remoteClientPreview">
+              <div class="preview-placeholder">
+                <span class="preview-icon">🔗</span>
+                <span class="preview-text">Remote screen will appear here</span>
+              </div>
+              <canvas id="remoteCanvas" class="hidden"></canvas>
+            </div>
+
+            <!-- Remote Controls -->
+            <div class="remote-controls hidden" id="remoteViewerControls">
+              <button class="control-btn" id="btnRemoteFullscreen" title="Fullscreen">⛶</button>
+              <button class="control-btn" id="btnRemoteFitScreen" title="Fit to screen">📐</button>
+              <button class="control-btn" id="btnRemoteActualSize" title="Actual size">🔲</button>
+              <button class="control-btn" id="btnRemoteKeyboard" title="Send keyboard shortcut">⌨️</button>
+              <button class="control-btn" id="btnRemoteCtrlAltDel" title="Ctrl+Alt+Del">🔐</button>
+              <button class="control-btn" id="btnRemoteClipboard" title="Sync clipboard">📋</button>
+              <button class="control-btn danger" id="btnRemoteDisconnect" title="Disconnect">📴</button>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">📥 Paste Host's Code or Scan QR</label>
+              <textarea class="form-input form-textarea" id="remoteClientOfferInput" placeholder="Paste the connection code..." rows="2"></textarea>
+              <div class="btn-row">
+                <button class="btn btn-sm btn-secondary" id="btnScanRemoteQR" title="Scan QR Code">📱 Scan QR</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">📤 Your Response Code (send to host)</label>
+              <textarea class="form-input form-textarea" id="remoteClientAnswerOutput" readonly placeholder="Response will appear here..." rows="2"></textarea>
+              <button class="btn btn-sm btn-secondary" id="btnCopyRemoteAnswer">📋 Copy Response</button>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="btnConnectRemote">
+              <span class="btn-icon">🔗</span> Connect & Generate Response
+            </button>
+          </div>
+        </div>
+
+        <!-- Session History -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">📜</div>
+            <div>
+              <div class="card-title">Recent Sessions</div>
+              <div class="card-subtitle">Quick reconnect</div>
+            </div>
+          </div>
+          <div class="remote-history-list" id="remoteHistoryList">
+            <div class="empty-state compact">
+              <span class="empty-icon">📭</span>
+              <span class="empty-text">No recent sessions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P2P TAB -->
+      <div class="tab-content" id="tab-p2p">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📁</div>
+            <div>
+              <div class="card-title">P2P File Sharing</div>
+              <div class="card-subtitle">Secure peer-to-peer transfers</div>
+            </div>
+          </div>
+          
+          <div class="p2p-status">
+            <div class="remote-status-indicator" id="p2pStatusIndicator"></div>
+            <div class="remote-status-text" id="p2pStatusText">Disconnected</div>
+          </div>
+          
+          <!-- Connection Mode Toggle -->
+          <div class="p2p-mode-toggle">
+            <button class="mode-btn active" id="btnP2PHostMode" data-mode="host">
+              📤 Host (Send Files)
+            </button>
+            <button class="mode-btn" id="btnP2PClientMode" data-mode="client">
+              📥 Join (Receive Files)
+            </button>
+          </div>
+          
+          <!-- HOST MODE -->
+          <div class="p2p-host-section" id="p2pHostSection">
+            <div class="form-group">
+              <label class="form-label">📤 Your Connection Code</label>
+              <textarea class="form-input form-textarea" id="p2pHostOfferCode" readonly placeholder="Click 'Start Hosting' to generate your code..." rows="3"></textarea>
+              <div class="btn-row">
+                <button class="btn btn-sm btn-secondary" id="btnCopyP2PHostCode">📋 Copy Code</button>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">📥 Friend's Response Code</label>
+              <textarea class="form-input form-textarea" id="p2pHostAnswerInput" placeholder="Paste your friend's response code here..." rows="3"></textarea>
+              <div class="btn-row">
+                <button class="btn btn-sm btn-primary" id="btnP2PApplyAnswer">✅ Connect</button>
+              </div>
+            </div>
+            
+            <button class="btn btn-primary btn-full" id="btnP2PStartHostDirect">
+              <span class="btn-icon">🚀</span> Start Hosting
+            </button>
+          </div>
+          
+          <!-- CLIENT MODE -->
+          <div class="p2p-client-section hidden" id="p2pClientSection">
+            <div class="form-group">
+              <label class="form-label">📥 Paste Host's Code</label>
+              <textarea class="form-input form-textarea" id="p2pClientOfferInput" placeholder="Paste the connection code from your friend..." rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">📤 Your Response Code (send to host)</label>
+              <textarea class="form-input form-textarea" id="p2pClientAnswerCode" readonly placeholder="Response code will appear here..." rows="3"></textarea>
+              <div class="btn-row">
+                <button class="btn btn-sm btn-secondary" id="btnCopyP2PClientAnswer">📋 Copy Response</button>
+              </div>
+            </div>
+            
+            <button class="btn btn-primary btn-full" id="btnP2PJoinDirect">
+              <span class="btn-icon">🔗</span> Join & Generate Response
+            </button>
+          </div>
+          
+          <button class="btn btn-danger btn-full hidden" id="btnP2PDisconnectDirect">
+            <span class="btn-icon">❌</span> Disconnect
+          </button>
+        </div>
+        
+        <!-- Shared Files Section -->
+        <div class="card card-section">
+          <div class="card-header">
+            <div class="card-icon">📂</div>
+            <div>
+              <div class="card-title">Shared Files</div>
+              <div class="card-subtitle">Files available for sharing</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">📁 Share Folder</label>
+            <div class="directory-selector">
+              <input type="text" class="form-input" id="p2pShareDirectory" placeholder="Click Browse to select..." readonly>
+              <button class="btn btn-secondary" id="btnSelectShareDir">
+                <span class="btn-icon">📁</span> Browse
+              </button>
+            </div>
+            <div class="form-hint">🎯 Click Browse to pick a folder - easy!</div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">💾 Download Folder</label>
+            <div class="directory-selector">
+              <input type="text" class="form-input" id="p2pDownloadDirectory" placeholder="Click Browse to select..." readonly>
+              <button class="btn btn-secondary" id="btnSelectDownloadDir">
+                <span class="btn-icon">💾</span> Browse
+              </button>
+            </div>
+            <div class="form-hint">📥 Where received files will be saved</div>
+          </div>
+          
+          <div class="shared-files-list" id="sharedFilesList">
+            <div class="empty-state">
+              <div class="empty-icon">📭</div>
+              <div class="empty-text">No files shared yet</div>
+              <div class="empty-hint">Select a folder above to see files</div>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary btn-full" id="btnP2PSendFilesDirect" disabled>
+            <span class="btn-icon">📤</span> Send Selected Files
+          </button>
+        </div>
+        
+        <!-- Transfer Progress -->
+        <div class="card card-section transfer-progress-card" id="transferProgressCard">
+          <div class="card-header">
+            <div class="card-icon">⬇️</div>
+            <div>
+              <div class="card-title">Active Transfers</div>
+              <div class="card-subtitle" id="transferCount">0 transfers</div>
+            </div>
+          </div>
+          <div class="transfer-list" id="transferList"></div>
+        </div>
+      </div>
+
+      <!-- VIDEO CONFERENCING TAB -->
+      <div class="tab-content" id="tab-video">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📹</div>
+            <div>
+              <div class="card-title">Video Conference</div>
+              <div class="card-subtitle">HD video calls with QR invites</div>
+            </div>
+            <div class="connection-status" id="videoConnectionStatus">
+              <span class="status-dot offline"></span>
+              <span class="status-text">Disconnected</span>
+            </div>
+          </div>
+          
+          <div class="video-conference-container">
+            <!-- Video Preview Section -->
+            <div class="video-preview-section">
+              <div class="video-preview" id="videoPreview">
+                <div class="video-placeholder">
+                  <span class="video-placeholder-icon">📹</span>
+                  <span class="video-placeholder-text">Camera Off</span>
+                </div>
+                <video id="localVideo" autoplay muted webkit-playsinline playsinline></video>
+                <div class="video-overlay-controls hidden" id="videoOverlayControls">
+                  <span class="video-timer" id="callTimer">00:00:00</span>
+                  <span class="video-quality" id="videoQuality">HD</span>
+                </div>
+              </div>
+              
+              <div class="remote-video-grid" id="remoteVideoGrid">
+                <!-- Remote video feeds will be inserted here -->
+              </div>
+            </div>
+            
+            <!-- Video Controls Bar -->
+            <div class="video-controls">
+              <!-- Media Controls Group -->
+              <div class="video-control-group">
+                <button class="video-control-btn" id="btnToggleCamera" title="Toggle Camera">
+                  <span class="control-icon" id="cameraIcon">📷</span>
+                </button>
+                <button class="video-control-btn" id="btnToggleMic" title="Toggle Microphone">
+                  <span class="control-icon" id="micIcon">🎤</span>
+                </button>
+                <button class="video-control-btn" id="btnToggleScreen" title="Share Screen">
+                  <span class="control-icon">🖥️</span>
+                </button>
+              </div>
+              
+              <!-- Recording & View Group -->
+              <div class="video-control-group">
+                <button class="video-control-btn" id="btnRecordCall" title="Record Call">
+                  <span class="control-icon" id="recordIcon">⏺️</span>
+                </button>
+                <button class="video-control-btn" id="btnToggleFullscreen" title="Fullscreen Mode">
+                  <span class="control-icon" id="fullscreenIcon">⛶</span>
+                </button>
+                <button class="video-control-btn" id="btnTogglePiP" title="Picture-in-Picture">
+                  <span class="control-icon" id="pipIcon">🗗</span>
+                </button>
+              </div>
+              
+              <!-- Settings & End Group -->
+              <div class="video-control-group">
+                <button class="video-control-btn" id="btnVideoSettings" title="Video Settings">
+                  <span class="control-icon">⚙️</span>
+                </button>
+                <button class="video-control-btn danger" id="btnEndCall" title="End Call">
+                  <span class="control-icon">📴</span>
+                </button>
+              </div>
+            </div>
+            
+            <!-- QR Code Invite Section -->
+            <div class="video-invite-section">
+              <div class="invite-header">
+                <span class="invite-title">📲 Invite Participants</span>
+                <span class="invite-subtitle">Share QR code or link</span>
+              </div>
+              
+              <div class="invite-mode-toggle">
+                <button class="invite-mode-btn active" data-invite-mode="qr">
+                  <span class="mode-icon">📱</span>
+                  <span>QR Code</span>
+                </button>
+                <button class="invite-mode-btn" data-invite-mode="link">
+                  <span class="mode-icon">🔗</span>
+                  <span>Link</span>
+                </button>
+                <button class="invite-mode-btn" data-invite-mode="code">
+                  <span class="mode-icon">🔢</span>
+                  <span>Code</span>
+                </button>
+              </div>
+              
+              <!-- QR Code Display -->
+              <div class="invite-content active" id="inviteQRContent">
+                <div class="qr-code-container" id="videoQRContainer">
+                  <div class="qr-placeholder">
+                    <span class="qr-icon">📱</span>
+                    <span class="qr-text">Create room to generate QR</span>
+                  </div>
+                </div>
+                <div class="qr-actions">
+                  <button class="btn btn-sm btn-secondary" id="btnDownloadVideoQR" title="Download QR">
+                    <span class="btn-icon">💾</span> Save QR
+                  </button>
+                  <button class="btn btn-sm btn-secondary" id="btnShareVideoQR" title="Share QR">
+                    <span class="btn-icon">📤</span> Share
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Link Display -->
+              <div class="invite-content hidden" id="inviteLinkContent">
+                <div class="invite-link-box">
+                  <input type="text" class="form-input" id="videoInviteLink" readonly placeholder="Room link will appear here...">
+                  <button class="btn btn-sm btn-primary" id="btnCopyVideoLink" title="Copy Link">📋</button>
+                </div>
+                <div class="share-buttons">
+                  <button class="btn btn-sm share-btn share-email" id="btnShareEmail" title="Share via Email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span>Email</span>
+                  </button>
+                  <button class="btn btn-sm share-btn share-whatsapp" id="btnShareWhatsApp" title="Share via WhatsApp">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span>WhatsApp</span>
+                  </button>
+                  <button class="btn btn-sm share-btn share-telegram" id="btnShareTelegram" title="Share via Telegram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    <span>Telegram</span>
+                  </button>
+                  <button class="btn btn-sm share-btn share-slack" id="btnShareSlack" title="Share via Slack">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+                    <span>Slack</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Manual Code Exchange -->
+              <div class="invite-content hidden" id="inviteCodeContent">
+                <div class="code-exchange-mode">
+                  <div class="form-group">
+                    <label class="form-label">📤 Your Room Code</label>
+                    <textarea class="form-input form-textarea" id="videoOfferCode" readonly placeholder="Click 'Create Room' to generate..." rows="2"></textarea>
+                    <button class="btn btn-sm btn-secondary" id="btnCopyVideoOffer">📋 Copy</button>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">📥 Guest's Answer Code</label>
+                    <textarea class="form-input form-textarea" id="videoAnswerInput" placeholder="Paste guest's answer code..." rows="2"></textarea>
+                    <button class="btn btn-sm btn-primary" id="btnApplyVideoAnswer">✅ Connect</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Join Room Section (for guests) -->
+            <div class="video-join-section hidden" id="videoJoinSection">
+              <div class="join-header">
+                <span class="join-title">🎫 Join a Room</span>
+              </div>
+              
+              <div class="join-mode-toggle">
+                <button class="join-mode-btn active" data-join-mode="scan">
+                  <span class="mode-icon">📷</span>
+                  <span>Scan QR</span>
+                </button>
+                <button class="join-mode-btn" data-join-mode="link">
+                  <span class="mode-icon">🔗</span>
+                  <span>Paste Link</span>
+                </button>
+                <button class="join-mode-btn" data-join-mode="code">
+                  <span class="mode-icon">🔢</span>
+                  <span>Enter Code</span>
+                </button>
+              </div>
+              
+              <div class="join-content active" id="joinScanContent">
+                <div class="qr-scanner-container" id="videoQRScanner">
+                  <div class="scanner-placeholder">
+                    <span class="scanner-icon">📷</span>
+                    <span class="scanner-text">Click to scan QR code</span>
+                  </div>
+                  <video id="qrScannerVideo" class="hidden"></video>
+                </div>
+                <button class="btn btn-primary btn-full" id="btnStartQRScan">
+                  <span class="btn-icon">📷</span> Start Camera to Scan
+                </button>
+              </div>
+              
+              <div class="join-content hidden" id="joinLinkContent">
+                <div class="form-group">
+                  <label class="form-label">Paste Room Link or ID</label>
+                  <input type="text" class="form-input" id="videoJoinLink" placeholder="Paste room link here...">
+                </div>
+                <button class="btn btn-primary btn-full" id="btnJoinViaLink">
+                  <span class="btn-icon">🚀</span> Join Room
+                </button>
+              </div>
+              
+              <div class="join-content hidden" id="joinCodeContent">
+                <div class="form-group">
+                  <label class="form-label">📥 Paste Host's Room Code</label>
+                  <textarea class="form-input form-textarea" id="videoOfferInput" placeholder="Paste the room code from host..." rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">📤 Your Answer Code (send to host)</label>
+                  <textarea class="form-input form-textarea" id="videoAnswerOutput" readonly placeholder="Answer code will appear after processing..." rows="2"></textarea>
+                  <button class="btn btn-sm btn-secondary" id="btnCopyVideoAnswer">📋 Copy</button>
+                </div>
+                <button class="btn btn-primary btn-full" id="btnProcessOffer">
+                  <span class="btn-icon">⚡</span> Generate Answer Code
+                </button>
+              </div>
+            </div>
+            
+            <!-- Room Controls -->
+            <div class="room-controls">
+              <div class="form-group">
+                <label class="form-label">Room ID</label>
+                <div class="room-id-container">
+                  <input type="text" class="form-input" id="videoRoomId" placeholder="Enter room ID or create new">
+                  <button class="btn btn-sm btn-secondary" id="btnGenerateRoomId" title="Generate Room">🎲</button>
+                </div>
+              </div>
+              
+              <div class="card-cta-group">
+                <button class="btn btn-secondary" id="btnVideoSwitchMode" title="Switch between host and join mode">
+                  <span class="btn-icon">🔄</span> Switch to Join
+                </button>
+                <button class="btn btn-primary" id="btnJoinRoom">
+                  <span class="btn-icon">🚀</span> Create Room
+                </button>
+              </div>
+              
+              <div class="card-cta-group" style="margin-top: 10px;">
+                <button class="btn btn-ghost" id="btnOpenVideoFullPage" title="Open video in full page">
+                  <span class="btn-icon">🖥️</span> Open Full Page Video
+                </button>
+              </div>
+              
+              <div class="form-help" style="margin-top: 8px; text-align: center; font-size: 11px; color: #94a3b8;">
+                💡 If camera doesn't work, try Full Page mode for better permissions
+              </div>
+            </div>
+            
+            <!-- Participants Section -->
+            <div class="room-participants" id="roomParticipants">
+              <div class="participants-header">
+                <span class="participants-title">Participants</span>
+                <span class="participants-count" id="participantsCount">0</span>
+              </div>
+              <div class="participants-list" id="participantsList">
+                <div class="empty-state compact">
+                  <span class="empty-icon small">👥</span>
+                  <span class="empty-text">No participants yet</span>
+                </div>
+              </div>
+              <div class="participant-actions hidden" id="participantActions">
+                <button class="btn btn-sm btn-ghost" id="btnMuteAll" title="Mute All">🔇 Mute All</button>
+                <button class="btn btn-sm btn-ghost" id="btnRemoveAll" title="Remove All">🚫 Remove All</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MESSAGING TAB -->
+      <div class="tab-content" id="tab-messaging">
+        <div class="card messaging-card">
+          <div class="card-header">
+            <div class="card-icon">💬</div>
+            <div>
+              <div class="card-title">Team Messaging</div>
+              <div class="card-subtitle">Chat, VoIP & Collaboration</div>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-sm btn-ghost" id="btnInviteToChat" title="Invite via QR">📱</button>
+              <button class="btn btn-sm btn-ghost" id="btnNewChat" title="New Chat">➕</button>
+            </div>
+          </div>
+          
+          <!-- Chat List View -->
+          <div class="chat-list-view" id="chatListView">
+            <div class="chat-search">
+              <input type="text" class="form-input" id="chatSearchInput" placeholder="Search conversations...">
+              <button class="btn btn-sm btn-ghost" id="btnFilterChats" title="Filter">🔽</button>
+            </div>
+            
+            <div class="chat-tabs">
+              <button class="chat-tab active" data-chat-type="direct">
+                <span>Direct</span>
+                <span class="badge" id="directUnread">0</span>
+              </button>
+              <button class="chat-tab" data-chat-type="groups">
+                <span>Groups</span>
+                <span class="badge" id="groupsUnread">0</span>
+              </button>
+              <button class="chat-tab" data-chat-type="channels">
+                <span>Channels</span>
+                <span class="badge" id="channelsUnread">0</span>
+              </button>
+              <button class="chat-tab" data-chat-type="voip">
+                <span>VoIP</span>
+                <span class="badge" id="voipMissed">0</span>
+              </button>
+            </div>
+            
+            <!-- Quick VoIP Panel -->
+            <div class="voip-quick-panel" id="voipQuickPanel">
+              <div class="voip-dialer">
+                <input type="text" class="form-input" id="voipDialNumber" placeholder="Enter number or extension...">
+                <div class="voip-dial-actions">
+                  <button class="btn btn-sm btn-primary" id="btnVoipDial" title="Voice Call">
+                    <span class="btn-icon">📞</span>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" id="btnVoipVideo" title="Video Call">
+                    <span class="btn-icon">📹</span>
+                  </button>
+                </div>
+              </div>
+              <div class="voip-recent">
+                <div class="voip-recent-header">
+                  <span>Recent Calls</span>
+                  <button class="btn btn-xs btn-ghost" id="btnClearCallHistory">Clear</button>
+                </div>
+                <div class="voip-call-list" id="voipCallList">
+                  <div class="empty-state compact">
+                    <span class="empty-icon small">📞</span>
+                    <span class="empty-text">No recent calls</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="chat-list" id="chatList">
+              <div class="empty-state">
+                <span class="empty-icon">💬</span>
+                <span class="empty-text">No conversations yet</span>
+                <button class="btn btn-sm btn-primary" id="btnStartConversation">Start a conversation</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Chat Invite Modal -->
+          <div class="chat-invite-modal hidden" id="chatInviteModal">
+            <div class="invite-modal-header">
+              <span class="invite-modal-title">📲 Invite to Chat</span>
+              <button class="btn btn-sm btn-ghost" id="btnCloseChatInvite">✕</button>
+            </div>
+            <div class="invite-modal-content">
+              <div class="qr-code-container" id="chatQRContainer">
+                <div class="qr-placeholder">
+                  <span class="qr-icon">📱</span>
+                  <span class="qr-text">Generating QR...</span>
+                </div>
+              </div>
+              <div class="invite-link-section">
+                <label class="form-label">Or share this link:</label>
+                <div class="invite-link-box">
+                  <input type="text" class="form-input" id="chatInviteLink" readonly value="">
+                  <button class="btn btn-sm btn-primary" id="btnCopyChatLink">📋</button>
+                </div>
+              </div>
+              <div class="share-options">
+                <button class="btn btn-sm btn-ghost" id="btnShareChatEmail" title="Email">📧</button>
+                <button class="btn btn-sm btn-ghost" id="btnShareChatSMS" title="SMS">📱</button>
+                <button class="btn btn-sm btn-ghost" id="btnShareChatWhatsApp" title="WhatsApp">💬</button>
+                <button class="btn btn-sm btn-ghost" id="btnShareChatTelegram" title="Telegram">✈️</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Active Call Overlay -->
+          <div class="active-call-overlay hidden" id="activeCallOverlay">
+            <div class="call-info">
+              <div class="call-avatar" id="callAvatar">👤</div>
+              <div class="call-details">
+                <span class="call-name" id="callName">Unknown</span>
+                <span class="call-status" id="callStatus">Calling...</span>
+                <span class="call-timer" id="chatCallTimer">00:00</span>
+              </div>
+            </div>
+            <div class="call-controls">
+              <button class="call-control-btn" id="btnCallMute" title="Mute">
+                <span class="control-icon">🎤</span>
+              </button>
+              <button class="call-control-btn" id="btnCallSpeaker" title="Speaker">
+                <span class="control-icon">🔊</span>
+              </button>
+              <button class="call-control-btn" id="btnCallKeypad" title="Keypad">
+                <span class="control-icon">⌨️</span>
+              </button>
+              <button class="call-control-btn" id="btnCallHold" title="Hold">
+                <span class="control-icon">⏸️</span>
+              </button>
+              <button class="call-control-btn" id="btnCallTransfer" title="Transfer">
+                <span class="control-icon">↗️</span>
+              </button>
+              <button class="call-control-btn danger" id="btnCallEnd" title="End Call">
+                <span class="control-icon">📴</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Chat Conversation View -->
+          <div class="chat-conversation-view hidden" id="chatConversationView">
+            <div class="chat-conv-header">
+              <button class="btn btn-sm btn-ghost" id="btnBackToList">←</button>
+              <div class="chat-conv-info">
+                <span class="chat-conv-name" id="chatConvName">Chat Name</span>
+                <span class="chat-conv-status" id="chatConvStatus">Online</span>
+              </div>
+              <div class="chat-conv-actions">
+                <button class="btn btn-sm btn-ghost" id="btnVideoCall" title="Video Call">📹</button>
+                <button class="btn btn-sm btn-ghost" id="btnVoiceCall" title="Voice Call">📞</button>
+                <button class="btn btn-sm btn-ghost" id="btnScreenShare" title="Share Screen">🖥️</button>
+                <button class="btn btn-sm btn-ghost" id="btnChatInfo" title="Info">ℹ️</button>
+              </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+              <!-- Messages will be dynamically inserted -->
+            </div>
+            
+            <div class="chat-typing-indicator hidden" id="typingIndicator">
+              <span class="typing-dots">
+                <span></span><span></span><span></span>
+              </span>
+              <span class="typing-text">Someone is typing...</span>
+            </div>
+            
+            <div class="chat-input-container">
+              <button class="btn btn-sm btn-ghost" id="btnAttachFile" title="Attach">📎</button>
+              <button class="btn btn-sm btn-ghost" id="btnEmoji" title="Emoji">😀</button>
+              <input type="text" class="form-input chat-input" id="chatMessageInput" placeholder="Type a message...">
+              <button class="btn btn-sm btn-primary" id="btnSendMessage">
+                <span>➤</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════
+           HELP & COMMANDS TAB - Complete Documentation
+           ═══════════════════════════════════════════════════════════════════════ -->
+      <div class="tab-content" id="tab-help">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📚</div>
+            <div>
+              <div class="card-title">Help & Commands</div>
+              <div class="card-subtitle">Everything you need to know about CUBE Nexum</div>
+            </div>
+          </div>
+          
+          <!-- Search -->
+          <div class="form-group">
+            <input type="text" class="form-input" id="helpSearchInput" placeholder="🔍 Search commands, features, or help topics...">
+          </div>
+        </div>
+
+        <!-- Quick Start Guide -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">🚀</div>
+            <div>
+              <div class="card-title">Quick Start Guide</div>
+              <div class="card-subtitle">Get started in 2 minutes</div>
+            </div>
+          </div>
+          
+          <div class="help-section">
+            <div class="help-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <div class="step-title">Auto-Fill Forms</div>
+                <div class="step-desc">Click the 🎯 <strong>Auto-Fill Form</strong> button on any webpage with forms. CUBE will detect and fill all fields automatically.</div>
+              </div>
+            </div>
+            <div class="help-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <div class="step-title">Record a Macro</div>
+                <div class="step-desc">Click ⏺️ <strong>Record Macro</strong> to capture your clicks and keystrokes. Play them back anytime with ▶️ <strong>Play Macro</strong>.</div>
+              </div>
+            </div>
+            <div class="help-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <div class="step-title">Ask the AI</div>
+                <div class="step-desc">Go to <strong>AI Nexus</strong> and ask CIPHER anything. It can generate code, create workflows, and help with automation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automation Commands -->
+        <div class="card mt-md">
+          <div class="card-header collapsible-header" data-target="cmd-automation">
+            <div class="card-icon">🤖</div>
+            <div>
+              <div class="card-title">Automation Commands</div>
+              <div class="card-subtitle">Click to expand</div>
+            </div>
+            <span class="collapse-icon">▼</span>
+          </div>
+          
+          <div class="collapsible-content" id="cmd-automation">
+            <table class="command-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Shortcut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Auto-Fill Form</code></td>
+                  <td>Fill all detected form fields with saved data</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Detect Forms</code></td>
+                  <td>Scan current page for fillable forms</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Record Macro</code></td>
+                  <td>Start recording clicks and keystrokes</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Play Macro</code></td>
+                  <td>Replay the last recorded macro</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Stop Recording</code></td>
+                  <td>Stop current macro recording</td>
+                  <td><kbd>Esc</kbd></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- AI Commands -->
+        <div class="card mt-md">
+          <div class="card-header collapsible-header" data-target="cmd-ai">
+            <div class="card-icon">🧠</div>
+            <div>
+              <div class="card-title">AI Commands (CIPHER)</div>
+              <div class="card-subtitle">Click to expand</div>
+            </div>
+            <span class="collapse-icon">▼</span>
+          </div>
+          
+          <div class="collapsible-content" id="cmd-ai">
+            <table class="command-table">
+              <thead>
+                <tr>
+                  <th>Mode</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Assistant</code></td>
+                  <td>General AI chat for any questions</td>
+                  <td>"How do I extract data from this page?"</td>
+                </tr>
+                <tr>
+                  <td><code>Code Gen</code></td>
+                  <td>Generate JavaScript, CSS, XPath selectors</td>
+                  <td>"Get all email addresses on this page"</td>
+                </tr>
+                <tr>
+                  <td><code>Workflow</code></td>
+                  <td>Create multi-step automations in natural language</td>
+                  <td>"Login, go to orders, download latest invoice"</td>
+                </tr>
+                <tr>
+                  <td><code>Selector</code></td>
+                  <td>Generate CSS/XPath for any element</td>
+                  <td>"The blue submit button at the bottom"</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="help-tip mt-md">
+              <div class="tip-icon">💡</div>
+              <div class="tip-content">
+                <strong>Pro Tip:</strong> You can ask CIPHER to analyze the current page by saying "analyze this page" or "what forms are on this page?"
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen Capture Commands -->
+        <div class="card mt-md">
+          <div class="card-header collapsible-header" data-target="cmd-capture">
+            <div class="card-icon">📸</div>
+            <div>
+              <div class="card-title">Screen Capture Commands</div>
+              <div class="card-subtitle">Click to expand</div>
+            </div>
+            <span class="collapse-icon">▼</span>
+          </div>
+          
+          <div class="collapsible-content" id="cmd-capture">
+            <table class="command-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Shortcut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Full Screenshot</code></td>
+                  <td>Capture entire visible page</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Area Select</code></td>
+                  <td>Select and capture specific area</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Start Recording</code></td>
+                  <td>Begin screen recording</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd></td>
+                </tr>
+                <tr>
+                  <td><code>Stop Recording</code></td>
+                  <td>End and save recording</td>
+                  <td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- P2P & Remote Commands -->
+        <div class="card mt-md">
+          <div class="card-header collapsible-header" data-target="cmd-p2p">
+            <div class="card-icon">📁</div>
+            <div>
+              <div class="card-title">P2P & Remote Commands</div>
+              <div class="card-subtitle">Click to expand</div>
+            </div>
+            <span class="collapse-icon">▼</span>
+          </div>
+          
+          <div class="collapsible-content" id="cmd-p2p">
+            <table class="command-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Start Hosting</code></td>
+                  <td>Generate a connection code to share files</td>
+                </tr>
+                <tr>
+                  <td><code>Join</code></td>
+                  <td>Connect using someone else's code</td>
+                </tr>
+                <tr>
+                  <td><code>Send Files</code></td>
+                  <td>Transfer selected files to connected peer</td>
+                </tr>
+                <tr>
+                  <td><code>Start Host Session</code></td>
+                  <td>Allow others to view/control your screen</td>
+                </tr>
+                <tr>
+                  <td><code>Connect to Remote</code></td>
+                  <td>Connect to another user's shared screen</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Document & LendingPad -->
+        <div class="card mt-md">
+          <div class="card-header collapsible-header" data-target="cmd-docs">
+            <div class="card-icon">📄</div>
+            <div>
+              <div class="card-title">Document & LendingPad Commands</div>
+              <div class="card-subtitle">Click to expand</div>
+            </div>
+            <span class="collapse-icon">▼</span>
+          </div>
+          
+          <div class="collapsible-content" id="cmd-docs">
+            <table class="command-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Detect Documents</code></td>
+                  <td>Find PDFs, images, and documents on the page</td>
+                </tr>
+                <tr>
+                  <td><code>LendingPad Detect</code></td>
+                  <td>Automatically detect loan documents in LendingPad</td>
+                </tr>
+                <tr>
+                  <td><code>Download All</code></td>
+                  <td>Download all detected documents to your computer</td>
+                </tr>
+                <tr>
+                  <td><code>Extract Data</code></td>
+                  <td>Use AI to extract structured data from documents</td>
+                </tr>
+                <tr>
+                  <td><code>OCR Scan</code></td>
+                  <td>Extract text from images using AI vision</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Keyboard Shortcuts Summary -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">⌨️</div>
+            <div>
+              <div class="card-title">Keyboard Shortcuts</div>
+              <div class="card-subtitle">Quick reference</div>
+            </div>
+          </div>
+          
+          <div class="shortcuts-grid">
+            <div class="shortcut-item">
+              <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>
+              <span>Auto-Fill</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>
+              <span>Record Macro</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
+              <span>Play Macro</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>
+              <span>Screenshot</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>
+              <span>Area Select</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>Esc</kbd>
+              <span>Cancel/Stop</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscription Info -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">⭐</div>
+            <div>
+              <div class="card-title">Your Subscription</div>
+              <div class="card-subtitle" id="subscriptionStatus">Loading...</div>
+            </div>
+          </div>
+          
+          <div class="subscription-info" id="subscriptionInfo">
+            <div class="sub-tier" id="subTierDisplay">
+              <span class="tier-badge elite">Elite Trial</span>
+              <span class="tier-expiry">30 days remaining</span>
+            </div>
+            <p class="sub-desc">You have access to all Elite features during your trial.</p>
+            <button class="btn btn-primary btn-full mt-md" id="btnManageSubscription">
+              Manage Subscription
+            </button>
+          </div>
+        </div>
+
+        <!-- Support Links -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">🆘</div>
+            <div>
+              <div class="card-title">Need More Help?</div>
+              <div class="card-subtitle">Contact our support team</div>
+            </div>
+          </div>
+          
+          <div class="support-links">
+            <a href="https://docs.cubecollective.io" target="_blank" class="support-link">
+              <span class="link-icon">📖</span>
+              <span class="link-text">Documentation</span>
+            </a>
+            <a href="https://cubecollective.io/tutorials" target="_blank" class="support-link">
+              <span class="link-icon">🎥</span>
+              <span class="link-text">Video Tutorials</span>
+            </a>
+            <a href="https://discord.gg/cubecollective" target="_blank" class="support-link">
+              <span class="link-icon">💬</span>
+              <span class="link-text">Discord Community</span>
+            </a>
+            <a href="mailto:support@cubecollective.io" class="support-link">
+              <span class="link-icon">✉️</span>
+              <span class="link-text">Email Support</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════════
+           TAB: SUBSCRIPTION MANAGEMENT
+           ═══════════════════════════════════════════════════════════════════════ -->
+      <div class="tab-content" id="tab-subscription">
+        <!-- Current Plan Card -->
+        <div class="card subscription-card">
+          <div class="card-header">
+            <div class="card-icon">👑</div>
+            <div>
+              <div class="card-title">Your Plan</div>
+              <div class="card-subtitle" id="currentPlanSubtitle">Manage your subscription</div>
+            </div>
+            <span class="tier-badge-large" id="currentTierBadge">Free</span>
+          </div>
+          
+          <div class="current-plan-info" id="currentPlanInfo">
+            <div class="plan-status">
+              <span class="status-dot active"></span>
+              <span id="planStatusText">Active</span>
+            </div>
+            <div class="plan-expiry" id="planExpiry">No expiration</div>
+          </div>
+          
+          <div class="ai-quota-display" id="aiQuotaDisplay">
+            <div class="quota-header">
+              <span>🤖 AI Requests Today</span>
+              <span id="aiQuotaText">0 / 50</span>
+            </div>
+            <div class="quota-bar">
+              <div class="quota-fill" id="aiQuotaFill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- License Key Input -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">🔑</div>
+            <div>
+              <div class="card-title">Activate License</div>
+              <div class="card-subtitle">Enter your license key to unlock features</div>
+            </div>
+          </div>
+          
+          <div class="license-input-group">
+            <input type="text" class="form-input" id="licenseKeyInput" 
+                   placeholder="CUBE-XXXXX-XXXXX-XXXXX-XXXXX" 
+                   pattern="[A-Za-z0-9-]+" 
+                   maxlength="29">
+            <button class="btn btn-primary" id="btnActivateLicense">
+              <span class="btn-icon">✓</span> Activate
+            </button>
+          </div>
+          <div class="license-feedback hidden" id="licenseFeedback"></div>
+          <button class="btn btn-sm btn-ghost mt-sm" id="btnRemoveLicense">Remove License</button>
+        </div>
+
+        <!-- Pricing Plans -->
+        <div class="card mt-md">
+          <div class="card-header">
+            <div class="card-icon">💎</div>
+            <div>
+              <div class="card-title">Upgrade Your Plan</div>
+              <div class="card-subtitle">Unlock all features</div>
+            </div>
+          </div>
+          
+          <div class="pricing-grid">
+            <!-- Free Plan -->
+            <div class="pricing-plan" data-tier="free">
+              <div class="plan-header">
+                <span class="plan-icon">🆓</span>
+                <span class="plan-name">Free</span>
+              </div>
+              <div class="plan-price">
+                <span class="price-amount">$0</span>
+                <span class="price-period">/forever</span>
+              </div>
+              <ul class="plan-features">
+                <li>✓ Basic autofill</li>
+                <li>✓ 5 workflows</li>
+                <li>✓ 50 AI requests/day</li>
+                <li>✓ 3 VPN locations</li>
+                <li>✗ Advanced automation</li>
+                <li>✗ Video calls</li>
+              </ul>
+              <button class="btn btn-secondary btn-full plan-btn" data-plan="free" disabled>Current Plan</button>
+            </div>
+            
+            <!-- Pro Plan -->
+            <div class="pricing-plan featured" data-tier="pro">
+              <div class="plan-badge">Most Popular</div>
+              <div class="plan-header">
+                <span class="plan-icon">⭐</span>
+                <span class="plan-name">Pro</span>
+              </div>
+              <div class="plan-price">
+                <span class="price-amount">$19.99</span>
+                <span class="price-period">/month</span>
+              </div>
+              <ul class="plan-features">
+                <li>✓ Smart autofill + OCR</li>
+                <li>✓ 50 workflows</li>
+                <li>✓ 500 AI requests/day</li>
+                <li>✓ All VPN locations</li>
+                <li>✓ Video conferencing</li>
+                <li>✓ Security scanner</li>
+              </ul>
+              <button class="btn btn-primary btn-full plan-btn" data-plan="pro">Upgrade to Pro</button>
+            </div>
+            
+            <!-- Elite Plan -->
+            <div class="pricing-plan elite" data-tier="elite">
+              <div class="plan-badge elite">Enterprise</div>
+              <div class="plan-header">
+                <span class="plan-icon">👑</span>
+                <span class="plan-name">Elite</span>
+              </div>
+              <div class="plan-price">
+                <span class="price-amount">$49.99</span>
+                <span class="price-period">/month</span>
+              </div>
+              <ul class="plan-features">
+                <li>✓ Everything in Pro</li>
+                <li>✓ Unlimited workflows</li>
+                <li>✓ Unlimited AI requests</li>
+                <li>✓ Custom AI training</li>
+                <li>✓ Priority support</li>
+                <li>✓ API access</li>
+              </ul>
+              <button class="btn btn-accent btn-full plan-btn" data-plan="elite">Go Elite</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Comparison -->
+        <div class="card mt-md">
+          <div class="card-header collapsible-header" data-target="featureComparison">
+            <div class="card-icon">📊</div>
+            <div>
+              <div class="card-title">Feature Comparison</div>
+              <div class="card-subtitle">See all features by tier</div>
+            </div>
+            <span class="collapse-icon">▼</span>
+          </div>
+          
+          <div class="collapsible-content hidden" id="featureComparison">
+            <table class="feature-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Free</th>
+                  <th>Pro</th>
+                  <th>Elite</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Smart Autofill</td>
+                  <td>Basic</td>
+                  <td>Advanced</td>
+                  <td>AI-Powered</td>
+                </tr>
+                <tr>
+                  <td>Workflows</td>
+                  <td>5</td>
+                  <td>50</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td>AI Requests/Day</td>
+                  <td>50</td>
+                  <td>500</td>
+                  <td>Unlimited</td>
+                </tr>
+                <tr>
+                  <td>AI Model</td>
+                  <td>GPT-4o-mini</td>
+                  <td>GPT-4o</td>
+                  <td>GPT-4 Turbo</td>
+                </tr>
+                <tr>
+                  <td>OCR File Detection</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Video Conferencing</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Remote Desktop</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Security Scanner</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Custom AI Training</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Priority Support</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         BOTTOM NAVIGATION BAR - Apple Style
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <nav class="bottom-nav" id="bottomNav" role="navigation" aria-label="Main navigation">
+      <button class="bottom-nav-item active" data-target="tab-dashboard" data-nav-tab="dashboard" title="🏠 Home - Your main control panel" aria-label="Go to Dashboard">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="nav-label">Home</span>
+      </button>
+      
+      <button class="bottom-nav-item" data-target="tab-automation" data-nav-tab="automation" title="🤖 Auto - Make the computer do things for you!" aria-label="Open Automation Shell">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="3" y1="9" x2="21" y2="9"></line>
+          <line x1="9" y1="21" x2="9" y2="9"></line>
+        </svg>
+        <span class="nav-label" data-i18n="automation">Auto</span>
+      </button>
+      
+      <button class="bottom-nav-item" data-target="tab-video" data-nav-tab="video" title="📹 Video - Video calls with friends!" aria-label="Open Video Conference">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="23 7 16 12 23 17 23 7"></polygon>
+          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+        </svg>
+        <span class="nav-label">Video</span>
+      </button>
+      
+      <button class="bottom-nav-item" data-target="tab-messaging" data-nav-tab="messaging" title="💬 Chat - Talk to your friends!" aria-label="Open Messages">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="nav-label">Chat</span>
+        <span class="nav-badge hidden" id="chatBadge" data-count="0">0</span>
+      </button>
+      
+      <button class="bottom-nav-item" data-target="tab-more" data-more-menu="true" title="⚙️ More - Extra cool features!" aria-label="Show more options" id="btnMoreNav">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="1"></circle>
+          <circle cx="19" cy="12" r="1"></circle>
+          <circle cx="5" cy="12" r="1"></circle>
+        </svg>
+        <span class="nav-label">More</span>
+      </button>
+    </nav>
+
+    <!-- More Menu Overlay -->
+    <div class="more-menu-overlay hidden" id="moreMenuOverlay">
+      <div class="more-menu">
+        <div class="more-menu-header">
+          <span>✨ More Fun Things!</span>
+          <button class="btn btn-sm btn-ghost" id="btnCloseMoreMenu">✕</button>
+        </div>
+        
+        <div class="more-menu-grid">
+          <button class="more-menu-item" data-target="tab-ai-search" title="🔍 AI-powered search that replaces Google & ChatGPT!">
+            <span class="more-icon">🔮</span>
+            <span class="more-label">AI Search</span>
+            <span class="badge-new">NEW</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-intelligence" title="🕵️ OSINT & Due Diligence investigations">
+            <span class="more-icon">🎯</span>
+            <span class="more-label">Intelligence</span>
+            <span class="badge-new">NEW</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-ai-nexus" title="🧠 Your smart helper robot that answers questions!">
+            <span class="more-icon">🤖</span>
+            <span class="more-label">AI Nexus</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-projects" title="📋 Manage projects like Monday.com!">
+            <span class="more-icon">📊</span>
+            <span class="more-label">Projects</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-macro" title="📹 Record what you do and play it back like magic!">
+            <span class="more-icon">⚡</span>
+            <span class="more-label">Macros</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-screenshot" title="📷 Take pictures of your screen!">
+            <span class="more-icon">📸</span>
+            <span class="more-label">Capture</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-remote" title="🖥️ Share your screen with friends!">
+            <span class="more-icon">🖥️</span>
+            <span class="more-label">Remote</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-security" title="🛡️ Security Scanner">
+            <span class="more-icon">🛡️</span>
+            <span class="more-label">Security</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-p2p" title="📁 Send files directly to your friends - super fast!">
+            <span class="more-icon">📁</span>
+            <span class="more-label">P2P</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-diagnostics" title="🔧 Check if everything is working okay">
+            <span class="more-icon">🔍</span>
+            <span class="more-label">Diagnostics</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-analytics" title="📊 Track your productivity and time savings!">
+            <span class="more-icon">📊</span>
+            <span class="more-label">Analytics</span>
+            <span class="badge-new">NEW</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-backup" title="💾 Backup your data and learning">
+            <span class="more-icon">💾</span>
+            <span class="more-label">Backup</span>
+            <span class="badge-new">NEW</span>
+          </button>
+          <button class="more-menu-item" data-action="settings" title="⚙️ Change how things work">
+            <span class="more-icon">⚙️</span>
+            <span class="more-label">Settings</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-subscription" title="👑 Manage your subscription">
+            <span class="more-icon">💎</span>
+            <span class="more-label">Subscription</span>
+          </button>
+          <button class="more-menu-item" data-target="tab-help" title="❓ Help, commands, and documentation">
+            <span class="more-icon">📚</span>
+            <span class="more-label">Help</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════ -->
+  <!-- MACRO EDITOR MODAL -->
+  <!-- ═══════════════════════════════════════════════════════════════════════════ -->
+  <div id="macroEditorModal" class="modal-overlay hidden">
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-icon">✏️</span>
+          <span id="macroEditorTitle">Edit Macro</span>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="btnCloseMacroEditor">✕</button>
+      </div>
+      
+      <div class="modal-body">
+        <!-- Macro Info Section -->
+        <div class="macro-editor-section">
+          <div class="section-header">
+            <span class="section-icon">📝</span>
+            <span>Macro Details</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-input" id="macroEditName" placeholder="My Macro">
+            </div>
+            <div class="form-group flex-1">
+              <label class="form-label">Description</label>
+              <input type="text" class="form-input" id="macroEditDescription" placeholder="What does this macro do?">
+            </div>
+          </div>
+        </div>
+
+        <!-- Parameters Section -->
+        <div class="macro-editor-section">
+          <div class="section-header">
+            <span class="section-icon">🔧</span>
+            <span>Parameters</span>
+            <button class="btn btn-sm btn-ghost" id="btnAddParameter" title="Add Parameter">+ Add</button>
+          </div>
+          <div id="macroParametersList" class="parameters-list">
+            <div class="parameters-empty">No parameters defined. Add parameters to make this macro reusable.</div>
+          </div>
+        </div>
+
+        <!-- Steps Section -->
+        <div class="macro-editor-section">
+          <div class="section-header">
+            <span class="section-icon">📋</span>
+            <span>Steps</span>
+            <span class="step-count-badge" id="macroStepCountBadge">0 steps</span>
+          </div>
+          <div id="macroStepsList" class="steps-list">
+            <!-- Steps will be rendered here -->
+          </div>
+        </div>
+
+        <!-- AI Enhancement Section -->
+        <div class="macro-editor-section">
+          <div class="section-header">
+            <span class="section-icon">🤖</span>
+            <span>AI Enhancement</span>
+          </div>
+          <div class="ai-enhancement-options">
+            <button class="btn btn-outline" id="btnAIOptimize" title="Use AI to optimize this macro">
+              <span class="btn-icon">⚡</span> Optimize Steps
+            </button>
+            <button class="btn btn-outline" id="btnAISelfHeal" title="Make macro resilient to UI changes">
+              <span class="btn-icon">🩹</span> Add Self-Healing
+            </button>
+            <button class="btn btn-outline" id="btnAIGenerateVariants" title="Generate variations of this macro">
+              <span class="btn-icon">🔀</span> Generate Variants
+            </button>
+            <button class="btn btn-outline" id="btnAIExplain" title="Get AI explanation of what this macro does">
+              <span class="btn-icon">💡</span> Explain Macro
+            </button>
+          </div>
+          <div id="aiEnhancementOutput" class="ai-output hidden">
+            <div class="ai-output-header">
+              <span>🤖 AI Response</span>
+              <button class="btn btn-sm btn-ghost" id="btnCloseAIOutput">✕</button>
+            </div>
+            <div class="ai-output-content" id="aiOutputContent"></div>
+          </div>
+        </div>
+
+        <!-- Conditions & Loops Section -->
+        <div class="macro-editor-section">
+          <div class="section-header">
+            <span class="section-icon">🔄</span>
+            <span>Advanced Flow Control</span>
+          </div>
+          <div class="flow-control-options">
+            <div class="flow-option">
+              <label class="toggle-label">
+                <input type="checkbox" id="macroLoopEnabled">
+                <span class="toggle-text">Enable Loop</span>
+              </label>
+              <div class="flow-option-details" id="loopDetails">
+                <select class="form-select" id="macroLoopType" title="Loop type" aria-label="Loop type">
+                  <option value="count">Repeat N times</option>
+                  <option value="condition">Until condition</option>
+                  <option value="infinite">Until stopped</option>
+                </select>
+                <input type="number" class="form-input form-input-sm" id="macroLoopCount" value="1" min="1" max="1000" title="Loop count" aria-label="Loop count">
+              </div>
+            </div>
+            <div class="flow-option">
+              <label class="toggle-label">
+                <input type="checkbox" id="macroErrorHandling">
+                <span class="toggle-text">Continue on Error</span>
+              </label>
+            </div>
+            <div class="flow-option">
+              <label class="toggle-label">
+                <input type="checkbox" id="macroSlowMode">
+                <span class="toggle-text">Slow Mode (visible steps)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCancelMacroEdit">Cancel</button>
+        <button class="btn btn-outline" id="btnTestMacro">
+          <span class="btn-icon">🧪</span> Test Run
+        </button>
+        <button class="btn btn-primary" id="btnSaveMacroEdit">
+          <span class="btn-icon">💾</span> Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════ -->
+  <!-- STEP EDITOR MODAL -->
+  <!-- ═══════════════════════════════════════════════════════════════════════════ -->
+  <div id="stepEditorModal" class="modal-overlay hidden">
+    <div class="modal-content modal-medium">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-icon">🔧</span>
+          <span>Edit Step</span>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="btnCloseStepEditor">✕</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="stepEditType">Action Type</label>
+          <select class="form-select" id="stepEditType" disabled title="Action type" aria-label="Action type">
+            <option value="click">Click</option>
+            <option value="input">Input Text</option>
+            <option value="scroll">Scroll</option>
+            <option value="wait">Wait</option>
+            <option value="keypress">Key Press</option>
+          </select>
+        </div>
+        
+        <div class="form-group" id="stepValueGroup">
+          <label class="form-label" for="stepEditValue">Value</label>
+          <input type="text" class="form-input" id="stepEditValue" placeholder="Enter value...">
+          <div class="form-hint">Use {{paramName}} for dynamic values</div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="stepEditSelector">Selector</label>
+          <input type="text" class="form-input" id="stepEditSelector" placeholder="CSS selector">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="stepEditDelay">Wait After (ms)</label>
+          <input type="number" class="form-input" id="stepEditDelay" value="0" min="0" max="10000" title="Delay in milliseconds" aria-label="Delay after step">
+        </div>
+        
+        <div class="form-group">
+          <label class="toggle-label">
+            <input type="checkbox" id="stepEditOptional">
+            <span class="toggle-text">Optional Step (continue if fails)</span>
+          </label>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btnCancelStepEdit">Cancel</button>
+        <button class="btn btn-danger" id="btnDeleteStep">
+          <span class="btn-icon">🗑️</span> Delete
+        </button>
+        <button class="btn btn-primary" id="btnSaveStepEdit">
+          <span class="btn-icon">💾</span> Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <script src="../src/services/tour/TourService.js"></script>
+  <script src="../src/services/chat/ChatFeaturesService.js"></script>
+  <script src="../src/services/signaling/SignalingService.js"></script>
+  <script src="../src/services/analytics/ProductivityAnalytics.js"></script>
+  <script src="../src/services/notifications/SmartNotifications.js"></script>
+  <script src="../src/services/backup/BackupService.js"></script>
+  <script src="../src/services/actions/QuickActions.js"></script>
+  <script src="../src/services/ai/AIContextEnhancer.js"></script>
+  <script src="../src/services/learning/FieldLearningService.js"></script>
+  
+  <!-- Libraries -->
+  <script src="../libs/qrcode.js"></script>
+  
+  <!-- i18n System -->
+  <script src="../src/i18n.js"></script>
+  
+  <!-- Elite v6.0 Modules -->
+  <script src="download-manager.js"></script>
+  <script src="password-manager.js"></script>
+  <script src="vpn-manager.js"></script>
+  
+  <!-- Subscription Service -->
+  <script src="../src/services/subscription/SubscriptionService.js"></script>
+  
+  <!-- Main App -->
+  <script src="sidepanel.js"></script>
+  
+  <!-- Apply i18n after DOM loaded (external script for CSP compliance) -->
+  <script src="sidepanel-i18n-init.js"></script>
+</body>
+</html>

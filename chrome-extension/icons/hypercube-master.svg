@@ -1,0 +1,136 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Premium gradient background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Inner cube face gradients -->
+    <linearGradient id="faceTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:0.85" />
+    </linearGradient>
+    
+    <linearGradient id="faceLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c7d2fe;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#a5b4fc;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="faceRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ddd6fe;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:0.75" />
+    </linearGradient>
+    
+    <!-- Outer cube (tesseract projection) gradients -->
+    <linearGradient id="outerEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#a5b4fc;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#7c3aed" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Inner glow for depth -->
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Rounded rectangle background -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle background pattern for depth -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)" opacity="0.5"/>
+  
+  <!-- 4D Hypercube (Tesseract) Projection -->
+  <g transform="translate(64, 64)" filter="url(#shadow)">
+    
+    <!-- Outer cube vertices (larger, behind) -->
+    <!-- Connecting lines from outer to inner cube -->
+    <g stroke="url(#outerEdge)" stroke-width="1.5" fill="none" opacity="0.7">
+      <!-- Back-top-left to front-top-left -->
+      <line x1="-38" y1="-38" x2="-22" y2="-22"/>
+      <!-- Back-top-right to front-top-right -->
+      <line x1="38" y1="-38" x2="22" y2="-22"/>
+      <!-- Back-bottom-left to front-bottom-left -->
+      <line x1="-38" y1="38" x2="-22" y2="22"/>
+      <!-- Back-bottom-right to front-bottom-right -->
+      <line x1="38" y1="38" x2="22" y2="22"/>
+    </g>
+    
+    <!-- Outer cube (back cube of tesseract) -->
+    <g stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none">
+      <!-- Top face -->
+      <path d="M-38 -38 L38 -38"/>
+      <!-- Bottom face -->
+      <path d="M-38 38 L38 38"/>
+      <!-- Left edge -->
+      <path d="M-38 -38 L-38 38"/>
+      <!-- Right edge -->
+      <path d="M38 -38 L38 38"/>
+    </g>
+    
+    <!-- Inner cube (front cube of tesseract) - the main visible cube -->
+    <g filter="url(#innerGlow)">
+      
+      <!-- Top face of inner cube -->
+      <polygon points="-22,-22 22,-22 14,-8 -14,-8" fill="url(#faceTop)" stroke="white" stroke-width="1.5"/>
+      
+      <!-- Left face of inner cube -->
+      <polygon points="-22,-22 -14,-8 -14,8 -22,22" fill="url(#faceLeft)" stroke="white" stroke-width="1.5"/>
+      
+      <!-- Right face of inner cube -->
+      <polygon points="22,-22 22,22 14,8 14,-8" fill="url(#faceRight)" stroke="white" stroke-width="1.5"/>
+      
+      <!-- Front face of inner cube (semi-transparent to show depth) -->
+      <polygon points="-14,-8 14,-8 14,8 -14,8" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1"/>
+      
+      <!-- Bottom visible edges -->
+      <path d="M-22 22 L22 22 L14 8" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+      <path d="M-22 22 L-14 8" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+    </g>
+    
+    <!-- Central glow point (4D intersection illusion) -->
+    <circle cx="0" cy="0" r="4" fill="white" opacity="0.9" filter="url(#glow)"/>
+    
+    <!-- Corner vertices as small dots for clarity -->
+    <g fill="white" opacity="0.8">
+      <!-- Inner cube corners -->
+      <circle cx="-14" cy="-8" r="2"/>
+      <circle cx="14" cy="-8" r="2"/>
+      <circle cx="-14" cy="8" r="2"/>
+      <circle cx="14" cy="8" r="2"/>
+      <circle cx="-22" cy="-22" r="2"/>
+      <circle cx="22" cy="-22" r="2"/>
+      <circle cx="-22" cy="22" r="2"/>
+      <circle cx="22" cy="22" r="2"/>
+    </g>
+    
+    <!-- Outer cube corners (smaller, more transparent) -->
+    <g fill="white" opacity="0.5">
+      <circle cx="-38" cy="-38" r="1.5"/>
+      <circle cx="38" cy="-38" r="1.5"/>
+      <circle cx="-38" cy="38" r="1.5"/>
+      <circle cx="38" cy="38" r="1.5"/>
+    </g>
+    
+  </g>
+  
+  <!-- Subtle shine overlay -->
+  <ellipse cx="48" cy="36" rx="32" ry="24" fill="white" opacity="0.08"/>
+  
+</svg>

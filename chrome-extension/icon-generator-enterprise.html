@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE OmniFill - Icon Generator Enterprise v2.0</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+      color: white;
+      padding: 40px;
+      margin: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .icon-card {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .icon-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    canvas {
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      background: white;
+    }
+    .icon-label {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    button {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    .download-all {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      padding: 16px 40px;
+      font-size: 18px;
+      margin: 40px auto;
+      display: block;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    }
+    .instructions {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .instructions h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .instructions code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 CUBE OmniFill - Icon Generator</h1>
+    <p class="subtitle">Enterprise-grade icons with premium 3D design • Version 2.0</p>
+
+    <div class="grid">
+      <div class="icon-card">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <div class="icon-label">16x16 px</div>
+        <button onclick="downloadIcon('icon16', 16)">Download</button>
+      </div>
+      
+      <div class="icon-card">
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <div class="icon-label">32x32 px</div>
+        <button onclick="downloadIcon('icon32', 32)">Download</button>
+      </div>
+      
+      <div class="icon-card">
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <div class="icon-label">48x48 px</div>
+        <button onclick="downloadIcon('icon48', 48)">Download</button>
+      </div>
+      
+      <div class="icon-card">
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <div class="icon-label">128x128 px</div>
+        <button onclick="downloadIcon('icon128', 128)">Download</button>
+      </div>
+    </div>
+
+    <button class="download-all" onclick="downloadAll()">📦 Download All Icons</button>
+
+    <div class="instructions">
+      <h3>📋 Instructions</h3>
+      <ol>
+        <li>Click "Download All Icons" to save all 4 icon sizes</li>
+        <li>Place the PNG files in <code>chrome-extension/icons/</code></li>
+        <li>Replace existing files: <code>icon16.png</code>, <code>icon32.png</code>, <code>icon48.png</code>, <code>icon128.png</code></li>
+        <li>Reload the Chrome extension to see the new icons</li>
+      </ol>
+      <p><strong>Design Features:</strong></p>
+      <ul>
+        <li>✅ Premium 3D cube with enhanced depth and shadows</li>
+        <li>✅ Vibrant blue gradient (Enterprise grade)</li>
+        <li>✅ Green checkmark for autofill success visual</li>
+        <li>✅ Subtle glow effects for modern look</li>
+        <li>✅ Optimized for all sizes (16px to 128px)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="icon-generator-enterprise.js"></script>
+</body>
+</html>
+      // Scale factors
+      const cubeWidth = 56 * scale;
+      const cubeHeight = 70 * scale;
+      
+      // Enable anti-aliasing
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      
+      // Draw shadow/glow
+      if (size >= 32) {
+        ctx.save();
+        const gradient = ctx.createRadialGradient(cx, cy + 10 * scale, 0, cx, cy + 10 * scale, 40 * scale);
+        gradient.addColorStop(0, 'rgba(37, 99, 235, 0.4)');
+        gradient.addColorStop(0.5, 'rgba(37, 99, 235, 0.2)');
+        gradient.addColorStop(1, 'rgba(37, 99, 235, 0)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, size, size);
+        ctx.restore();
+      }
+      
+      // 3D Cube coordinates
+      const top = cy - 20 * scale;
+      const bottom = cy + 35 * scale;
+      const left = cx - 28 * scale;
+      const right = cx + 28 * scale;
+      const topY = top;
+      const midY = top + 10 * scale;
+      
+      // Top face (lightest)
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx, topY);
+      ctx.lineTo(right, midY);
+      ctx.lineTo(cx, midY + 10 * scale);
+      ctx.lineTo(left, midY);
+      ctx.closePath();
+      
+      const topGradient = ctx.createLinearGradient(cx, topY, cx, midY + 10 * scale);
+      topGradient.addColorStop(0, '#dbeafe');
+      topGradient.addColorStop(1, '#bfdbfe');
+      ctx.fillStyle = topGradient;
+      ctx.fill();
+      
+      if (size >= 32) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.lineWidth = 1.5 * scale;
+        ctx.stroke();
+      }
+      ctx.restore();
+      
+      // Left face (medium)
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(left, midY);
+      ctx.lineTo(left, bottom);
+      ctx.lineTo(cx, bottom + 10 * scale);
+      ctx.lineTo(cx, midY + 10 * scale);
+      ctx.closePath();
+      
+      const leftGradient = ctx.createLinearGradient(left, midY, left, bottom);
+      leftGradient.addColorStop(0, '#93c5fd');
+      leftGradient.addColorStop(1, '#60a5fa');
+      ctx.fillStyle = leftGradient;
+      ctx.fill();
+      
+      if (size >= 32) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.lineWidth = 1.5 * scale;
+        ctx.stroke();
+      }
+      ctx.restore();
+      
+      // Right face (darkest)
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx, midY + 10 * scale);
+      ctx.lineTo(cx, bottom + 10 * scale);
+      ctx.lineTo(right, bottom);
+      ctx.lineTo(right, midY);
+      ctx.closePath();
+      
+      const rightGradient = ctx.createLinearGradient(right, midY, right, bottom);
+      rightGradient.addColorStop(0, '#60a5fa');
+      rightGradient.addColorStop(1, '#3b82f6');
+      ctx.fillStyle = rightGradient;
+      ctx.fill();
+      
+      if (size >= 32) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.lineWidth = 1.5 * scale;
+        ctx.stroke();
+      }
+      ctx.restore();
+      
+      // Green glow for checkmark (if size permits)
+      if (size >= 32) {
+        ctx.save();
+        const checkGlow = ctx.createRadialGradient(cx, cy + 12 * scale, 0, cx, cy + 12 * scale, 18 * scale);
+        checkGlow.addColorStop(0, 'rgba(16, 185, 129, 0.25)');
+        checkGlow.addColorStop(1, 'rgba(16, 185, 129, 0)');
+        ctx.fillStyle = checkGlow;
+        ctx.fillRect(0, 0, size, size);
+        ctx.restore();
+      }
+      
+      // Checkmark circle
+      ctx.save();
+      const checkRadius = size >= 32 ? 10 * scale : 8 * scale;
+      ctx.beginPath();
+      ctx.arc(cx, cy + 12 * scale, checkRadius, 0, Math.PI * 2);
+      
+      const checkCircleGradient = ctx.createLinearGradient(
+        cx, cy + 12 * scale - checkRadius,
+        cx, cy + 12 * scale + checkRadius
+      );
+      checkCircleGradient.addColorStop(0, '#34d399');
+      checkCircleGradient.addColorStop(1, '#10b981');
+      ctx.fillStyle = checkCircleGradient;
+      ctx.fill();
+      
+      if (size >= 32) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.lineWidth = 1 * scale;
+        ctx.stroke();
+      }
+      ctx.restore();
+      
+      // Checkmark
+      ctx.save();
+      ctx.strokeStyle = 'white';
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = size >= 32 ? 2.5 * scale : 2 * scale;
+      
+      const checkOffset = cy + 12 * scale;
+      const checkSize = size >= 32 ? 7 * scale : 5 * scale;
+      
+      ctx.beginPath();
+      ctx.moveTo(cx - checkSize * 0.5, checkOffset);
+      ctx.lineTo(cx - checkSize * 0.15, checkOffset + checkSize * 0.4);
+      ctx.lineTo(cx + checkSize * 0.6, checkOffset - checkSize * 0.5);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // Draw all icons
+    ['icon16', 'icon32', 'icon48', 'icon128'].forEach(id => {
+      const size = parseInt(id.replace('icon', ''));
+      drawIcon(id, size);
+    });
+
+    // Download single icon
+    function downloadIcon(canvasId, size) {
+      const canvas = document.getElementById(canvasId);
+      const link = document.createElement('a');
+      link.download = `icon${size}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    // Download all icons
+    function downloadAll() {
+      const sizes = [16, 32, 48, 128];
+      sizes.forEach((size, index) => {
+        setTimeout(() => {
+          downloadIcon(`icon${size}`, size);
+        }, index * 200); // Stagger downloads
+      });
+      
+      // Show success message
+      setTimeout(() => {
+        alert('✅ All 4 icons downloaded! Check your Downloads folder.\n\nPlace them in: chrome-extension/icons/');
+      }, sizes.length * 200 + 100);
+    }
+  </script>
+</body>
+</html>

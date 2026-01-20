@@ -1,0 +1,199 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "version": "7.1.0",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "downloads",
+    "downloads.shelf",
+    "notifications",
+    "webNavigation",
+    "contextMenus",
+    "tabs",
+    "webRequest",
+    "alarms",
+    "offscreen",
+    "sidePanel",
+    "clipboardRead",
+    "clipboardWrite",
+    "desktopCapture",
+    "tabCapture",
+    "system.display",
+    "nativeMessaging",
+    "identity"
+  ],
+  
+  "host_permissions": [
+    "<all_urls>",
+    "file:///*"
+  ],
+  
+  "background": {
+    "service_worker": "background-service.js"
+  },
+  
+  "side_panel": {
+    "default_path": "popup/sidepanel-elite.html"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "libs/external/xlsx.full.min.js",
+        "libs/external/pdf.min.js",
+        "src/config/production.js",
+        "src/services/security/EncryptionService.js",
+        "src/services/ConnectionManager.js",
+        "src/autofill/similarity.js",
+        "src/autofill/validation.js",
+        "src/document/parser.js",
+        "src/services/macro/MacroRecorder.js",
+        "src/services/macro/MacroPlayer.js",
+        "src/services/macro/MacroAI.js",
+        "src/services/ai/OpenAIService.js",
+        "src/services/ai/ClaudeService.js",
+        "src/services/ai/GeminiService.js",
+        "src/services/ai/AIContextEnhancer.js",
+        "src/services/capture/ScreenCaptureService.js",
+        "src/services/remote/RemoteControlService.js",
+        "src/services/p2p/P2PFileService.js",
+        "src/services/signaling/SignalingService.js",
+        "src/services/chat/ChatFeaturesService.js",
+        "src/services/tour/TourService.js",
+        "src/services/analytics/ProductivityAnalytics.js",
+        "src/services/notifications/SmartNotifications.js",
+        "src/services/backup/BackupService.js",
+        "src/services/actions/QuickActions.js",
+        "src/services/learning/FieldLearningService.js",
+        "advanced-image-processor.js",
+        "barcode-qr-scanner.js",
+        "document-layout-analyzer.js",
+        "dynamic-download-detector.js",
+        "pdf-download-engine-ultimate.js",
+        "advanced-detection-algorithms.js",
+        "ocr-engine-tesseract.js",
+        "lendingpad-detector.js",
+        "src/services/LendingPadService.js",
+        "src/services/DownloadServiceFactory.js",
+        "src/services/DropboxDownloadService.js",
+        "universal-document-engine.js",
+        "universal-parsers.js",
+        "smart-autofill-engine.js",
+        "content-script.js",
+        "content-script-elite.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/external/xlsx.full.min.js",
+        "libs/external/pdf.min.js",
+        "libs/external/pdf.worker.min.js",
+        "src/autofill/similarity.js",
+        "src/autofill/validation.js",
+        "src/document/parser.js",
+        "src/config/production.js",
+        "src/services/ConnectionManager.js",
+        "src/services/ai/OpenAIService.js",
+        "src/services/ai/ClaudeService.js",
+        "src/services/ai/GeminiService.js",
+        "src/services/macro/MacroRecorder.js",
+        "src/services/macro/MacroPlayer.js",
+        "src/services/macro/MacroAI.js",
+        "src/services/capture/ScreenCaptureService.js",
+        "src/services/remote/RemoteControlService.js",
+        "src/services/p2p/P2PFileService.js",
+        "src/services/signaling/SignalingService.js",
+        "src/services/chat/ChatFeaturesService.js",
+        "src/services/tour/TourService.js",
+        "src/enterprise-service.js",
+        "src/notification-service.js",
+        "src/analytics-service.js",
+        "advanced-image-processor.js",
+        "barcode-qr-scanner.js",
+        "document-layout-analyzer.js",
+        "dynamic-download-detector.js",
+        "pdf-download-engine-ultimate.js",
+        "advanced-detection-algorithms.js",
+        "ocr-engine-tesseract.js",
+        "lendingpad-detector.js",
+        "src/services/LendingPadService.js",
+        "src/services/DownloadServiceFactory.js",
+        "src/services/DropboxDownloadService.js",
+        "universal-document-engine.js",
+        "universal-parsers.js",
+        "smart-autofill-engine.js",
+        "libs/utils.js",
+        "libs/fieldMapper.js",
+        "libs/pdfParser.js",
+        "libs/domAutofill.js",
+        "pdfjs/pdf.min.js",
+        "pdfjs/pdf.worker.min.js",
+        "docs/help.html",
+        "settings/settings.html",
+        "settings/settings-v7.html",
+        "settings/settings-v7.css",
+        "settings/settings-v7.js",
+        "popup/popup-v7.html",
+        "popup/popup-enterprise.css",
+        "popup/popup-v7.js",
+        "popup/video-conference.html",
+        "popup/video-conference.js",
+        "popup/video-conference-pro.html",
+        "popup/video-conference-pro.js",
+        "popup/camera-test.html",
+        "offscreen/video-capture.html",
+        "offscreen/video-capture.js"
+      ],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "action": {
+    "default_title": "Open CUBE Nexum Command Center",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "run-autofill": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Run auto-fill"
+    },
+    "record-macro": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+M",
+        "mac": "Command+Shift+M"
+      },
+      "description": "Start/Stop Macro Recording"
+    },
+    "screenshot-capture": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Screenshot (opens mode selector)"
+    }
+  }
+}
+

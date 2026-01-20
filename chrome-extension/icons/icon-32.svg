@@ -1,0 +1,47 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad32" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1565c0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logo32" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded background -->
+  <rect width="32" height="32" rx="6" fill="url(#bgGrad32)"/>
+  
+  <!-- Logo circle (like header) -->
+  <circle cx="16" cy="16" r="12" fill="url(#logo32)"/>
+  
+  <!-- Document with LP -->
+  <g transform="translate(8, 6)">
+    <!-- Document shape -->
+    <rect x="0" y="0" width="16" height="19" rx="1.5" fill="white" opacity="0.95"/>
+    
+    <!-- Folded corner -->
+    <path d="M14 0 L16 2 L14 2 Z" fill="white" opacity="0.7"/>
+    
+    <!-- LP Text -->
+    <text x="8" y="12" 
+          font-family="Arial, sans-serif" 
+          font-size="8" 
+          font-weight="900" 
+          fill="#1976d2" 
+          text-anchor="middle" 
+          letter-spacing="-0.3">LP</text>
+    
+    <!-- Green checkmark badge -->
+    <circle cx="13" cy="15" r="2" fill="#4caf50"/>
+    <path d="M12 15 L12.7 15.7 L14 14.5" 
+          stroke="white" 
+          stroke-width="0.8" 
+          stroke-linecap="round" 
+          fill="none"/>
+  </g>
+  
+  <!-- Scan line -->
+  <line x1="6" x2="26" y="16" stroke="white" opacity="0.4"/>
+</svg>

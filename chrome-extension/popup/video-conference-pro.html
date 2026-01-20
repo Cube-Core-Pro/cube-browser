@@ -1,0 +1,2413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum Pro Video Conference</title>
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+  <style>
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       CUBE NEXUM PRO VIDEO CONFERENCE - ENTERPRISE GRADE
+       Better than Zoom • Fortune 500 Quality • Zero Omissions
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      /* Dark theme (default) */
+      --bg-primary: #0f0f14;
+      --bg-secondary: #1a1a24;
+      --bg-card: #242430;
+      --bg-hover: #2d2d3a;
+      --bg-active: #3a3a4a;
+      
+      --text-primary: #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      
+      --accent: #8b5cf6;
+      --accent-light: #a78bfa;
+      --accent-glow: rgba(124, 58, 237, 0.3);
+      
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --info: #3b82f6;
+      
+      --border: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(124, 58, 237, 0.4);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 18px;
+      
+      --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 30px var(--accent-glow);
+    }
+    
+    /* Light Theme */
+    @media (prefers-color-scheme: light) {
+      :root:not(.dark) {
+        --bg-primary: #f8fafc;
+        --bg-secondary: #ffffff;
+        --bg-card: #f1f5f9;
+        --bg-hover: #e2e8f0;
+        --bg-active: #cbd5e1;
+        
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        
+        --border: rgba(0, 0, 0, 0.1);
+        --border-accent: rgba(124, 58, 237, 0.3);
+        
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    /* Force dark theme class */
+    .dark {
+      --bg-primary: #0f0f14;
+      --bg-secondary: #1a1a24;
+      --bg-card: #242430;
+      --bg-hover: #2d2d3a;
+      --bg-active: #3a3a4a;
+      --text-primary: #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Force light theme class */
+    .light {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #f1f5f9;
+      --bg-hover: #e2e8f0;
+      --bg-active: #cbd5e1;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --border: rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #1e1b4b 50%, var(--bg-primary) 100%);
+      min-height: 100vh;
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      body:not(.dark) {
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f8fafc 100%);
+      }
+    }
+    
+    .light body, body.light {
+      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f8fafc 100%);
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       LAYOUT
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(26, 26, 36, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    
+    .logo-text span {
+      background: linear-gradient(135deg, var(--accent-light), #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .meeting-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-left: 16px;
+      border-left: 1px solid var(--border);
+    }
+    
+    .meeting-id {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      font-family: 'SF Mono', 'Consolas', monospace;
+      font-size: 0.85rem;
+    }
+    
+    .meeting-id .copy-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 2px;
+      transition: color 0.2s;
+    }
+    
+    .meeting-id .copy-btn:hover {
+      color: var(--accent-light);
+    }
+    
+    .participants-count {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .header-center {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .recording-indicator {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.2);
+      color: var(--error);
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 500;
+      animation: pulse-red 2s infinite;
+    }
+    
+    .recording-indicator.active {
+      display: flex;
+    }
+    
+    @keyframes pulse-red {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    .recording-indicator .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--error);
+      border-radius: 50%;
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .time-display {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .main-content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       VIDEO GRID
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .video-area {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .video-grid {
+      flex: 1;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-auto-rows: minmax(200px, 1fr);
+    }
+    
+    .video-grid.single {
+      grid-template-columns: 1fr;
+    }
+    
+    .video-grid.duo {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .video-grid.gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .video-tile {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    
+    .video-tile:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .video-tile.speaking {
+      border-color: var(--success);
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    }
+    
+    .video-tile.pinned {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    
+    .video-tile video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .video-tile .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+    }
+    
+    .video-tile .avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 12px;
+    }
+    
+    .video-tile .name {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .video-tile .status-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    }
+    
+    .video-tile .participant-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .video-tile .status-icons {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .video-tile .status-icon {
+      width: 24px;
+      height: 24px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+    
+    .video-tile .status-icon.muted {
+      color: var(--error);
+    }
+    
+    .video-tile .hand-raised {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      animation: wave 0.5s infinite alternate;
+    }
+    
+    @keyframes wave {
+      from { transform: rotate(-10deg); }
+      to { transform: rotate(10deg); }
+    }
+    
+    .video-tile .reaction {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      animation: pop 0.5s ease-out forwards;
+      pointer-events: none;
+    }
+    
+    @keyframes pop {
+      0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+    }
+    
+    .video-tile .tile-actions {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    
+    .video-tile:hover .tile-actions {
+      opacity: 1;
+    }
+    
+    .tile-action-btn {
+      width: 32px;
+      height: 32px;
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    
+    .tile-action-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Screen Share View */
+    .screen-share-container {
+      display: none;
+      flex: 1;
+      position: relative;
+    }
+    
+    .screen-share-container.active {
+      display: flex;
+    }
+    
+    .screen-share-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      border-radius: var(--radius-lg);
+    }
+    
+    .screen-share-strip {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      bottom: 16px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+    }
+    
+    .screen-share-strip .video-tile {
+      aspect-ratio: 16/9;
+      flex-shrink: 0;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       SIDE PANEL
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .side-panel {
+      width: 320px;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border);
+      display: none;
+      flex-direction: column;
+    }
+    
+    .side-panel.active {
+      display: flex;
+    }
+    
+    .side-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .side-panel-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .side-panel-close {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 4px;
+      font-size: 1.2rem;
+    }
+    
+    .side-panel-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+    
+    /* Chat Panel */
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .chat-message {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .chat-message .sender {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+    
+    .chat-message .sender-name {
+      font-weight: 600;
+      color: var(--accent-light);
+    }
+    
+    .chat-message .time {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+    
+    .chat-message .content {
+      background: var(--bg-card);
+      padding: 10px 14px;
+      border-radius: 12px;
+      border-top-left-radius: 4px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
+    .chat-message.self .content {
+      background: var(--accent);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 4px;
+      margin-left: auto;
+    }
+    
+    .chat-input-area {
+      padding: 16px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .chat-input-wrapper {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .chat-input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+    
+    .chat-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .chat-send-btn {
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius-md);
+      color: white;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .chat-send-btn:hover {
+      background: var(--accent-light);
+    }
+    
+    /* Participants Panel */
+    .participants-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .participant-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      transition: background 0.2s;
+    }
+    
+    .participant-item:hover {
+      background: var(--bg-hover);
+    }
+    
+    .participant-item .avatar {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .participant-item .info {
+      flex: 1;
+    }
+    
+    .participant-item .name {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .participant-item .role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    .participant-item .actions {
+      display: flex;
+      gap: 4px;
+    }
+    
+    .participant-item .action-btn {
+      width: 28px;
+      height: 28px;
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    
+    .participant-item .action-btn:hover {
+      background: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    
+    .participant-item .action-btn.muted {
+      color: var(--error);
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       CONTROL BAR - IMPROVED RESPONSIVE DESIGN
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .control-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 16px;
+      background: rgba(26, 26, 36, 0.95);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      flex-wrap: wrap;
+    }
+    
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 8px;
+      border-right: 1px solid var(--border);
+    }
+    
+    .control-group:last-child {
+      border-right: none;
+    }
+    
+    .control-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 8px 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 54px;
+    }
+    
+    .control-btn:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+    
+    .control-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    .control-btn.danger {
+      background: var(--error);
+      border-color: var(--error);
+    }
+    
+    .control-btn.danger:hover {
+      background: #dc2626;
+    }
+    
+    .control-btn .icon {
+      font-size: 1.2rem;
+    }
+    
+    .control-btn .label {
+      font-size: 0.6rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    
+    .control-btn.active .label,
+    .control-btn.danger .label {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .control-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--border);
+      margin: 0 4px;
+    }
+    
+    /* Responsive control bar */
+    @media (max-width: 800px) {
+      .control-bar {
+        padding: 10px 12px;
+        gap: 4px;
+      }
+      
+      .control-group {
+        padding: 0 6px;
+      }
+      
+      .control-btn {
+        padding: 6px 8px;
+        min-width: 48px;
+      }
+      
+      .control-btn .icon {
+        font-size: 1.1rem;
+      }
+      
+      .control-btn .label {
+        font-size: 0.55rem;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .control-bar {
+        justify-content: space-around;
+      }
+      
+      .control-group {
+        border-right: none;
+        padding: 0 4px;
+      }
+      
+      .control-btn {
+        padding: 6px;
+        min-width: 42px;
+      }
+      
+      .control-btn .label {
+        display: none;
+      }
+      
+      .control-divider {
+        display: none;
+      }
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       MODALS
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+    }
+    
+    .modal-overlay.active {
+      display: flex;
+    }
+    
+    .modal {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .modal-header h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 4px;
+    }
+    
+    .modal-body {
+      padding: 24px;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .modal-large {
+      max-width: 700px;
+      width: 95%;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       INVITE SYSTEM - ENTERPRISE GRADE
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .invite-tabs {
+      display: flex;
+      gap: 4px;
+      padding: 0 24px;
+      margin: -24px -24px 24px -24px;
+      padding-top: 0;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .invite-tab {
+      padding: 14px 20px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.2s;
+    }
+    
+    .invite-tab:hover {
+      color: var(--text-primary);
+    }
+    
+    .invite-tab.active {
+      color: var(--accent);
+    }
+    
+    .invite-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+    }
+    
+    .invite-tab-content {
+      display: none;
+    }
+    
+    .invite-tab-content.active {
+      display: block;
+    }
+    
+    /* Quick Invite Grid */
+    .quick-invite-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    
+    @media (max-width: 600px) {
+      .quick-invite-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .qr-code {
+      width: 200px;
+      min-height: 200px;
+      background: white;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    
+    .qr-code canvas {
+      max-width: 176px !important;
+      max-height: 176px !important;
+    }
+    
+    .qr-actions {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .qr-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    
+    /* Meeting Info Section */
+    .meeting-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .meeting-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .meeting-detail label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    
+    .copy-field {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+    }
+    
+    .copy-field input,
+    .copy-field textarea {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-family: 'SF Mono', 'Monaco', monospace;
+      font-size: 0.85rem;
+      outline: none;
+      resize: none;
+    }
+    
+    .copy-field-large {
+      align-items: flex-start;
+    }
+    
+    .copy-field-large textarea {
+      min-height: 60px;
+    }
+    
+    .meeting-id-display,
+    .password-display {
+      font-family: 'SF Mono', 'Monaco', monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    
+    .btn-icon {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 4px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    
+    .btn-icon:hover {
+      opacity: 1;
+    }
+    
+    /* Quick Share Methods */
+    .quick-share-methods {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+    
+    @media (max-width: 600px) {
+      .quick-share-methods {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .share-method-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .share-method-btn:hover {
+      border-color: var(--accent);
+      background: var(--bg-hover);
+      transform: translateY(-2px);
+    }
+    
+    .share-method-btn .icon {
+      font-size: 1.4rem;
+    }
+    
+    .share-method-btn .label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Contacts Tab */
+    .contacts-search {
+      margin-bottom: 16px;
+    }
+    
+    .contacts-search input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+    
+    .contacts-search input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .contacts-list {
+      max-height: 250px;
+      overflow-y: auto;
+      margin-bottom: 16px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      transition: background 0.2s;
+    }
+    
+    .contact-item:hover {
+      background: var(--bg-card);
+    }
+    
+    .contact-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .contact-info {
+      flex: 1;
+    }
+    
+    .contact-name {
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    
+    .contact-email {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    .contacts-empty {
+      text-align: center;
+      padding: 32px;
+      color: var(--text-secondary);
+    }
+    
+    .invite-email-direct {
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .invite-email-direct label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    
+    .email-input-group {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .email-input-group input {
+      flex: 1;
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+    }
+    
+    /* Calendar Tab */
+    .calendar-integrations {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .calendar-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .calendar-btn:hover {
+      border-color: var(--accent);
+      background: var(--bg-hover);
+    }
+    
+    .calendar-icon {
+      font-size: 2rem;
+    }
+    
+    .calendar-name {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .calendar-action {
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+    
+    .schedule-meeting {
+      padding: 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+    }
+    
+    .schedule-meeting h4 {
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+    
+    /* Advanced Tab */
+    .advanced-options {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .option-group {
+      padding: 16px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+    }
+    
+    .option-group h4 {
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    
+    .option-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .option-item:last-child {
+      border-bottom: none;
+    }
+    
+    .option-hint {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      margin-left: 44px;
+    }
+    
+    .option-subfield {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      margin-left: 44px;
+    }
+    
+    .option-subfield input {
+      flex: 1;
+      padding: 8px 12px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+    }
+    
+    /* Toggle Switches */
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    
+    .toggle-label input {
+      display: none;
+    }
+    
+    .toggle-slider {
+      width: 36px;
+      height: 20px;
+      background: var(--bg-hover);
+      border-radius: 10px;
+      position: relative;
+      transition: background 0.2s;
+    }
+    
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s;
+    }
+    
+    .toggle-label input:checked + .toggle-slider {
+      background: var(--accent);
+    }
+    
+    .toggle-label input:checked + .toggle-slider::before {
+      transform: translateX(16px);
+    }
+    
+    /* Small Buttons */
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+    
+    /* Share Modal Legacy (keeping for compatibility) */
+    .share-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .share-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+    }
+    
+    .qr-code {
+      width: 220px;
+      min-height: 200px;
+      background: white;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow: hidden;
+    }
+    
+    .qr-code canvas {
+      max-width: 180px !important;
+      max-height: 180px !important;
+    }
+    
+    .share-link-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .share-link-input {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .share-link-input input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: var(--text-primary);
+      font-family: 'SF Mono', monospace;
+      font-size: 0.85rem;
+    }
+    
+    .share-link-input input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .share-methods {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    
+    .share-method-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .share-method-btn:hover {
+      border-color: var(--accent);
+      background: var(--bg-hover);
+    }
+    
+    .share-method-btn .icon {
+      font-size: 1.5rem;
+    }
+    
+    .share-method-btn .label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Join Modal */
+    .join-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .form-group label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+      font-family: 'SF Mono', monospace;
+      font-size: 0.85rem;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-light);
+    }
+    
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--bg-hover);
+    }
+    
+    /* Reactions Picker */
+    .reactions-picker {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      display: none;
+      gap: 8px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 8px;
+    }
+    
+    .reactions-picker.active {
+      display: flex;
+    }
+    
+    .reaction-btn {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    
+    .reaction-btn:hover {
+      background: var(--bg-hover);
+      transform: scale(1.2);
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       FLOATING PIP WINDOW
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .pip-container {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 280px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: none;
+      z-index: 500;
+      resize: both;
+      min-width: 200px;
+      max-width: 500px;
+    }
+    
+    .pip-container.active {
+      display: block;
+    }
+    
+    .pip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--bg-secondary);
+      cursor: move;
+    }
+    
+    .pip-header span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    .pip-actions {
+      display: flex;
+      gap: 4px;
+    }
+    
+    .pip-action-btn {
+      width: 24px;
+      height: 24px;
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+    }
+    
+    .pip-action-btn:hover {
+      background: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    
+    .pip-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+    
+    .pip-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       WAITING ROOM
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .waiting-room {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    
+    .waiting-room.active {
+      display: flex;
+    }
+    
+    .waiting-content {
+      text-align: center;
+      max-width: 400px;
+    }
+    
+    .waiting-spinner {
+      width: 60px;
+      height: 60px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 24px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .waiting-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    
+    .waiting-content p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       TOOLBAR TOOLTIPS
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    [data-tooltip] {
+      position: relative;
+    }
+    
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+    }
+    
+    [data-tooltip]:hover::after {
+      opacity: 1;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       NOTIFICATIONS/TOASTS
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    .toast-container {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 3000;
+    }
+    
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 280px;
+      box-shadow: var(--shadow-lg);
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .toast.success {
+      border-left: 3px solid var(--success);
+    }
+    
+    .toast.error {
+      border-left: 3px solid var(--error);
+    }
+    
+    .toast.info {
+      border-left: 3px solid var(--info);
+    }
+    
+    .toast .icon {
+      font-size: 1.2rem;
+    }
+    
+    .toast .content {
+      flex: 1;
+    }
+    
+    .toast .title {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .toast .message {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    .toast .close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+    }
+    
+    /* ═══════════════════════════════════════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════════════════════════════════════ */
+    
+    @media (max-width: 768px) {
+      .header {
+        padding: 8px 12px;
+      }
+      
+      .meeting-info {
+        display: none;
+      }
+      
+      .side-panel {
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 200;
+        width: 100%;
+        max-width: 320px;
+      }
+      
+      .control-bar {
+        padding: 12px;
+        gap: 4px;
+        flex-wrap: wrap;
+      }
+      
+      .control-btn {
+        padding: 8px 12px;
+        min-width: auto;
+      }
+      
+      .control-btn .label {
+        display: none;
+      }
+      
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <div class="logo-icon">🎥</div>
+          <div class="logo-text"><span>CUBE Nexum</span> Pro</div>
+        </div>
+        <div class="meeting-info" id="meetingInfo" style="display: none;">
+          <div class="meeting-id">
+            <span id="displayMeetingId">ABC-123</span>
+            <button class="copy-btn" onclick="copyMeetingId()" title="Copy ID">📋</button>
+          </div>
+          <div class="participants-count">
+            <span>👥</span>
+            <span id="participantsCount">1</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-center">
+        <div class="recording-indicator" id="recordingIndicator">
+          <div class="dot"></div>
+          <span>Recording</span>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="time-display" id="meetingTime">00:00:00</div>
+        <button class="btn btn-secondary" onclick="openShareModal()" id="btnInvite" style="display: none;">
+          📤 Invite
+        </button>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Video Area -->
+      <div class="video-area">
+        <div class="video-grid" id="videoGrid">
+          <!-- Local Video -->
+          <div class="video-tile" id="localTile">
+            <video id="localVideo" autoplay muted playsinline></video>
+            <div class="placeholder" id="localPlaceholder">
+              <div class="avatar" id="localAvatar">Y</div>
+              <div class="name">You</div>
+            </div>
+            <div class="status-bar">
+              <span class="participant-name">
+                <span id="localDisplayName">You</span>
+                <span class="host-badge" style="display: none; background: var(--accent); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">Host</span>
+              </span>
+              <div class="status-icons">
+                <span class="status-icon" id="localMicStatus">🎤</span>
+                <span class="status-icon" id="localCamStatus">📷</span>
+              </div>
+            </div>
+            <div class="tile-actions">
+              <button class="tile-action-btn" onclick="togglePinTile('local')" title="Pin">📌</button>
+              <button class="tile-action-btn" onclick="togglePiP()" title="Pop out">↗️</button>
+            </div>
+          </div>
+          
+          <!-- Remote Tiles will be added dynamically -->
+        </div>
+        
+        <!-- Screen Share Container -->
+        <div class="screen-share-container" id="screenShareContainer">
+          <video class="screen-share-video" id="screenShareVideo" autoplay playsinline></video>
+          <div class="screen-share-strip" id="screenShareStrip">
+            <!-- Participants will be moved here during screen share -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Side Panel -->
+      <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-header">
+          <h3 id="sidePanelTitle">Chat</h3>
+          <button class="side-panel-close" onclick="closeSidePanel()">✕</button>
+        </div>
+        
+        <!-- Chat Panel -->
+        <div class="side-panel-content" id="chatPanel" style="display: none;">
+          <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here -->
+          </div>
+        </div>
+        <div class="chat-input-area" id="chatInputArea" style="display: none;">
+          <div class="chat-input-wrapper">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKeypress(event)">
+            <button class="chat-send-btn" onclick="sendChatMessage()">➤</button>
+          </div>
+        </div>
+        
+        <!-- Participants Panel -->
+        <div class="side-panel-content" id="participantsPanel" style="display: none;">
+          <div class="participants-list" id="participantsList">
+            <!-- Participants will be added here -->
+          </div>
+        </div>
+      </aside>
+    </main>
+    
+    <!-- Control Bar - Improved Responsive Design -->
+    <footer class="control-bar">
+      <!-- Media Controls -->
+      <div class="control-group">
+        <button class="control-btn" id="btnMic" onclick="toggleMic()" title="Toggle Microphone">
+          <span class="icon">🎤</span>
+          <span class="label">Mute</span>
+        </button>
+        
+        <button class="control-btn" id="btnCam" onclick="toggleCam()" title="Toggle Camera">
+          <span class="icon">📷</span>
+          <span class="label">Camera</span>
+        </button>
+      </div>
+      
+      <!-- Sharing Controls -->
+      <div class="control-group">
+        <button class="control-btn" id="btnScreen" onclick="toggleScreenShare()" title="Share Screen">
+          <span class="icon">🖥️</span>
+          <span class="label">Share</span>
+        </button>
+        
+        <button class="control-btn" id="btnRecord" onclick="toggleRecording()" title="Record Meeting">
+          <span class="icon">⏺️</span>
+          <span class="label">Record</span>
+        </button>
+      </div>
+      
+      <!-- Communication Controls -->
+      <div class="control-group">
+        <button class="control-btn" id="btnChat" onclick="toggleChat()" title="Open Chat">
+          <span class="icon">💬</span>
+          <span class="label">Chat</span>
+        </button>
+        
+        <button class="control-btn" id="btnParticipants" onclick="toggleParticipants()" title="View Participants">
+          <span class="icon">👥</span>
+          <span class="label">People</span>
+        </button>
+        
+        <div style="position: relative;">
+          <button class="control-btn" id="btnReactions" onclick="toggleReactions()" title="Send Reaction">
+            <span class="icon">😀</span>
+            <span class="label">React</span>
+          </button>
+          <div class="reactions-picker" id="reactionsPicker">
+            <button class="reaction-btn" onclick="sendReaction('👍')">👍</button>
+            <button class="reaction-btn" onclick="sendReaction('👏')">👏</button>
+            <button class="reaction-btn" onclick="sendReaction('❤️')">❤️</button>
+            <button class="reaction-btn" onclick="sendReaction('😂')">😂</button>
+            <button class="reaction-btn" onclick="sendReaction('😮')">😮</button>
+            <button class="reaction-btn" onclick="sendReaction('🎉')">🎉</button>
+          </div>
+        </div>
+        
+        <button class="control-btn" id="btnHand" onclick="toggleHand()" title="Raise Hand">
+          <span class="icon">✋</span>
+          <span class="label">Hand</span>
+        </button>
+      </div>
+      
+      <!-- View Controls -->
+      <div class="control-group">
+        <button class="control-btn" id="btnPiP" onclick="togglePiP()" title="Picture in Picture">
+          <span class="icon">↗️</span>
+          <span class="label">PiP</span>
+        </button>
+        
+        <button class="control-btn" id="btnFullscreen" onclick="toggleFullscreen()" title="Toggle Fullscreen">
+          <span class="icon">⛶</span>
+          <span class="label">Full</span>
+        </button>
+      </div>
+      
+      <!-- End Call -->
+      <div class="control-group">
+        <button class="control-btn danger" id="btnEnd" onclick="endCall()" title="Leave Meeting">
+          <span class="icon">📴</span>
+          <span class="label">Leave</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Share Modal - Enterprise Grade Invite System -->
+  <div class="modal-overlay" id="shareModal">
+    <div class="modal modal-large">
+      <div class="modal-header">
+        <h2>👥 Invite Participants</h2>
+        <button class="modal-close" onclick="closeShareModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="invite-tabs">
+          <button class="invite-tab active" onclick="switchInviteTab('quick')" data-tab="quick">Quick Invite</button>
+          <button class="invite-tab" onclick="switchInviteTab('contacts')" data-tab="contacts">Contacts</button>
+          <button class="invite-tab" onclick="switchInviteTab('calendar')" data-tab="calendar">Calendar</button>
+          <button class="invite-tab" onclick="switchInviteTab('advanced')" data-tab="advanced">Advanced</button>
+        </div>
+        
+        <!-- Quick Invite Tab -->
+        <div class="invite-tab-content active" id="tab-quick">
+          <div class="quick-invite-grid">
+            <!-- QR Code Section -->
+            <div class="qr-section">
+              <div class="qr-code" id="qrCode">
+                <div style="text-align: center; color: var(--text-muted);">
+                  <div style="font-size: 3rem; margin-bottom: 8px;">📱</div>
+                  <div>QR Code</div>
+                </div>
+              </div>
+              <div class="qr-actions">
+                <button class="btn btn-sm btn-secondary" onclick="downloadQR()" title="Download QR">
+                  <span>⬇️</span> Save
+                </button>
+                <button class="btn btn-sm btn-secondary" onclick="printQR()" title="Print QR">
+                  <span>🖨️</span> Print
+                </button>
+              </div>
+              <p class="qr-hint">Scan with phone camera to join instantly</p>
+            </div>
+            
+            <!-- Meeting Info Section -->
+            <div class="meeting-info-section">
+              <div class="meeting-detail">
+                <label>Meeting ID</label>
+                <div class="copy-field">
+                  <span id="shareMeetingId" class="meeting-id-display">---</span>
+                  <button class="btn-icon" onclick="copyMeetingId()" title="Copy Meeting ID">📋</button>
+                </div>
+              </div>
+              
+              <div class="meeting-detail">
+                <label>Join Link</label>
+                <div class="copy-field">
+                  <input type="text" id="shareJoinLink" readonly value="https://cubeai.tools/video?room=...">
+                  <button class="btn-icon" onclick="copyJoinLink()" title="Copy Link">📋</button>
+                </div>
+              </div>
+              
+              <div class="meeting-detail">
+                <label>Meeting Password</label>
+                <div class="copy-field">
+                  <span id="shareMeetingPassword" class="password-display">No password</span>
+                  <button class="btn-icon" onclick="copyPassword()" title="Copy Password">📋</button>
+                  <button class="btn-icon" onclick="togglePasswordVisibility()" title="Show/Hide">👁️</button>
+                </div>
+              </div>
+              
+              <div class="meeting-detail">
+                <label>Connection Code (P2P)</label>
+                <div class="copy-field copy-field-large">
+                  <textarea id="shareCodeInput" readonly rows="3" placeholder="Connection code will appear here..."></textarea>
+                  <button class="btn-icon" onclick="copyShareCode()" title="Copy Code">📋</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Quick Share Buttons -->
+          <div class="quick-share-methods">
+            <button class="share-method-btn" onclick="shareViaEmail()">
+              <span class="icon">📧</span>
+              <span class="label">Email</span>
+            </button>
+            <button class="share-method-btn" onclick="shareViaSMS()">
+              <span class="icon">💬</span>
+              <span class="label">SMS</span>
+            </button>
+            <button class="share-method-btn" onclick="shareViaWhatsApp()">
+              <span class="icon">📱</span>
+              <span class="label">WhatsApp</span>
+            </button>
+            <button class="share-method-btn" onclick="shareViaTelegram()">
+              <span class="icon">✈️</span>
+              <span class="label">Telegram</span>
+            </button>
+            <button class="share-method-btn" onclick="shareViaSlack()">
+              <span class="icon">💼</span>
+              <span class="label">Slack</span>
+            </button>
+            <button class="share-method-btn" onclick="shareViaLink()">
+              <span class="icon">🔗</span>
+              <span class="label">Copy All</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Contacts Tab -->
+        <div class="invite-tab-content" id="tab-contacts">
+          <div class="contacts-search">
+            <input type="text" id="contactSearch" placeholder="🔍 Search contacts by name or email..." oninput="searchContacts(this.value)">
+          </div>
+          <div class="contacts-list" id="contactsList">
+            <div class="contact-item">
+              <div class="contact-avatar">JD</div>
+              <div class="contact-info">
+                <div class="contact-name">John Doe</div>
+                <div class="contact-email">john.doe@company.com</div>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="inviteContact('john.doe@company.com')">Invite</button>
+            </div>
+            <div class="contact-item">
+              <div class="contact-avatar">JS</div>
+              <div class="contact-info">
+                <div class="contact-name">Jane Smith</div>
+                <div class="contact-email">jane.smith@company.com</div>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="inviteContact('jane.smith@company.com')">Invite</button>
+            </div>
+            <div class="contacts-empty" id="contactsEmpty" style="display: none;">
+              <span style="font-size: 3rem;">📇</span>
+              <p>No contacts found</p>
+              <button class="btn btn-secondary" onclick="importContacts()">Import Contacts</button>
+            </div>
+          </div>
+          <div class="invite-email-direct">
+            <label>Or invite by email directly:</label>
+            <div class="email-input-group">
+              <input type="email" id="directEmailInput" placeholder="Enter email address...">
+              <button class="btn btn-primary" onclick="sendDirectInvite()">Send Invite</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Calendar Tab -->
+        <div class="invite-tab-content" id="tab-calendar">
+          <div class="calendar-integrations">
+            <button class="calendar-btn" onclick="addToGoogleCalendar()">
+              <span class="calendar-icon">📅</span>
+              <span class="calendar-name">Google Calendar</span>
+              <span class="calendar-action">Add Event</span>
+            </button>
+            <button class="calendar-btn" onclick="addToOutlookCalendar()">
+              <span class="calendar-icon">📆</span>
+              <span class="calendar-name">Outlook Calendar</span>
+              <span class="calendar-action">Add Event</span>
+            </button>
+            <button class="calendar-btn" onclick="addToAppleCalendar()">
+              <span class="calendar-icon">🗓️</span>
+              <span class="calendar-name">Apple Calendar</span>
+              <span class="calendar-action">Download .ics</span>
+            </button>
+            <button class="calendar-btn" onclick="addToYahooCalendar()">
+              <span class="calendar-icon">📋</span>
+              <span class="calendar-name">Yahoo Calendar</span>
+              <span class="calendar-action">Add Event</span>
+            </button>
+          </div>
+          <div class="schedule-meeting">
+            <h4>Schedule for Later</h4>
+            <div class="form-group">
+              <label>Date & Time</label>
+              <input type="datetime-local" id="scheduledTime">
+            </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <select id="meetingDuration">
+                <option value="15">15 minutes</option>
+                <option value="30">30 minutes</option>
+                <option value="45">45 minutes</option>
+                <option value="60" selected>1 hour</option>
+                <option value="90">1.5 hours</option>
+                <option value="120">2 hours</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Reminder</label>
+              <select id="meetingReminder">
+                <option value="0">No reminder</option>
+                <option value="5">5 minutes before</option>
+                <option value="10" selected>10 minutes before</option>
+                <option value="15">15 minutes before</option>
+                <option value="30">30 minutes before</option>
+                <option value="60">1 hour before</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="scheduleMeeting()" style="width: 100%;">
+              📅 Schedule & Send Invites
+            </button>
+          </div>
+        </div>
+        
+        <!-- Advanced Tab -->
+        <div class="invite-tab-content" id="tab-advanced">
+          <div class="advanced-options">
+            <div class="option-group">
+              <h4>🔒 Security Settings</h4>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optWaitingRoom" checked>
+                  <span class="toggle-slider"></span>
+                  Enable Waiting Room
+                </label>
+                <span class="option-hint">Participants wait for host approval</span>
+              </div>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optRequirePassword">
+                  <span class="toggle-slider"></span>
+                  Require Password
+                </label>
+                <div class="option-subfield" id="passwordField" style="display: none;">
+                  <input type="text" id="meetingPasswordInput" placeholder="Enter password...">
+                  <button class="btn-icon" onclick="generatePassword()">🎲</button>
+                </div>
+              </div>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optLockMeeting">
+                  <span class="toggle-slider"></span>
+                  Lock Meeting After Start
+                </label>
+                <span class="option-hint">No one can join after you start</span>
+              </div>
+            </div>
+            
+            <div class="option-group">
+              <h4>👤 Participant Permissions</h4>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optAllowScreenShare" checked>
+                  <span class="toggle-slider"></span>
+                  Allow Screen Sharing
+                </label>
+              </div>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optAllowChat" checked>
+                  <span class="toggle-slider"></span>
+                  Allow Chat
+                </label>
+              </div>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optAllowRecording">
+                  <span class="toggle-slider"></span>
+                  Allow Participants to Record
+                </label>
+              </div>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optMuteOnEntry" checked>
+                  <span class="toggle-slider"></span>
+                  Mute Participants on Entry
+                </label>
+              </div>
+            </div>
+            
+            <div class="option-group">
+              <h4>📊 Meeting Options</h4>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optAutoRecord">
+                  <span class="toggle-slider"></span>
+                  Auto-Record Meeting
+                </label>
+              </div>
+              <div class="option-item">
+                <label class="toggle-label">
+                  <input type="checkbox" id="optEnableTranscription">
+                  <span class="toggle-slider"></span>
+                  Enable Live Transcription
+                </label>
+              </div>
+              <div class="option-item">
+                <label>Maximum Participants</label>
+                <select id="optMaxParticipants">
+                  <option value="0">Unlimited</option>
+                  <option value="5">5 participants</option>
+                  <option value="10">10 participants</option>
+                  <option value="25">25 participants</option>
+                  <option value="50">50 participants</option>
+                  <option value="100">100 participants</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="applyAdvancedSettings()" style="width: 100%; margin-top: 16px;">
+            ✅ Apply Settings
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Join Modal -->
+  <div class="modal-overlay active" id="joinModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>🎥 CUBE Nexum Pro Conference</h2>
+        <button class="modal-close" onclick="closeJoinModal()" style="display: none;">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="join-form">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="inputDisplayName" placeholder="Enter your name" value="">
+          </div>
+          
+          <div style="display: flex; gap: 12px;">
+            <button class="btn btn-primary" style="flex: 1;" onclick="createNewRoom()">
+              🚀 Create Room
+            </button>
+            <button class="btn btn-secondary" style="flex: 1;" onclick="showJoinSection()">
+              📥 Join Room
+            </button>
+          </div>
+          
+          <div id="joinSection" style="display: none; margin-top: 16px;">
+            <div class="form-group">
+              <label>Connection Code</label>
+              <textarea id="inputOfferCode" placeholder="Paste the host's connection code here..."></textarea>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="joinExistingRoom()">
+              🔗 Connect
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Waiting Room -->
+  <div class="waiting-room" id="waitingRoom">
+    <div class="waiting-content">
+      <div class="waiting-spinner"></div>
+      <h2>Waiting for host...</h2>
+      <p>You'll be admitted to the meeting shortly</p>
+      <button class="btn btn-secondary" onclick="cancelWaiting()">Cancel</button>
+    </div>
+  </div>
+  
+  <!-- PIP Container -->
+  <div class="pip-container" id="pipContainer">
+    <div class="pip-header">
+      <span>You</span>
+      <div class="pip-actions">
+        <button class="pip-action-btn" onclick="maximizeFromPiP()" title="Maximize">↖️</button>
+        <button class="pip-action-btn" onclick="closePiP()" title="Close">✕</button>
+      </div>
+    </div>
+    <div class="pip-video">
+      <video id="pipVideo" autoplay muted playsinline></video>
+    </div>
+  </div>
+  
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+  
+  <!-- QR Code Library -->
+  <script src="../libs/qrcode.js"></script>
+  <script src="video-conference-pro.js"></script>
+</body>
+</html>

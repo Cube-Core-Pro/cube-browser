@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUBE Nexum • Biblioteca de Manuales</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: radial-gradient(circle at top, #0f172a, #030712 55%);
+        --panel: rgba(15, 17, 28, 0.75);
+        --panel-strong: rgba(11, 13, 24, 0.92);
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #f8fafc;
+        --text-soft: rgba(226, 232, 240, 0.75);
+        --accent: #7266ff;
+        --accent-soft: rgba(114, 102, 255, 0.25);
+        --accent-strong: #45f0c2;
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --font-display: "Inter", "SF Pro Display", "Sora", system-ui, -apple-system;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font-display);
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"%3E%3Crect width="100%25" height="100%25" fill="rgba(0,0,0,0)"/%3E%3Cg fill="rgba(255,255,255,0.03)"%3E%3Ccircle cx="10" cy="10" r="1"/%3E%3Ccircle cx="80" cy="40" r="1"/%3E%3Ccircle cx="140" cy="70" r="1"/%3E%3Ccircle cx="30" cy="120" r="1"/%3E%3Ccircle cx="120" cy="130" r="1"/%3E%3C/g%3E%3C/svg%3E');
+        opacity: 0.7;
+        mix-blend-mode: screen;
+      }
+
+      main {
+        position: relative;
+        padding: clamp(32px, 4vw, 64px);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: clamp(32px, 4vw, 60px);
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.45);
+        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(24px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% -10%, rgba(114, 102, 255, 0.6), transparent 45%),
+                    radial-gradient(circle at 80% 0%, rgba(69, 240, 194, 0.35), transparent 35%);
+        opacity: 0.4;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .hero-eyebrow {
+        letter-spacing: 0.4em;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      .hero-title {
+        font-size: clamp(32px, 5vw, 52px);
+        margin: 0;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        color: var(--text-soft);
+        max-width: 640px;
+        line-height: 1.6;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .stat-block {
+        min-width: 140px;
+      }
+
+      .stat-value {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .stat-label {
+        font-size: 13px;
+        color: var(--text-soft);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .library {
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+
+      .doc-card {
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: rgba(10, 11, 20, 0.8);
+        cursor: pointer;
+        transition: transform 0.25s ease, border-color 0.25s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .doc-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 55%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .doc-card:hover,
+      .doc-card.is-active {
+        border-color: var(--accent);
+        transform: translateY(-4px);
+      }
+
+      .doc-card:hover::after,
+      .doc-card.is-active::after {
+        opacity: 1;
+      }
+
+      .doc-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        padding: 4px 12px;
+        font-size: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 14px;
+      }
+
+      .doc-title {
+        font-size: 18px;
+        margin: 0 0 6px;
+      }
+
+      .doc-desc {
+        font-size: 13px;
+        color: var(--text-soft);
+      }
+
+      .detail-panel {
+        margin-top: 48px;
+        border-radius: 28px;
+        border: 1px solid var(--border);
+        background: var(--panel-strong);
+        padding: clamp(28px, 4vw, 48px);
+        box-shadow: 0 35px 100px rgba(0, 0, 0, 0.55);
+      }
+
+      .detail-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 28px;
+      }
+
+      .detail-title {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 40px);
+      }
+
+      .detail-meta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        color: var(--text-soft);
+        font-size: 14px;
+      }
+
+      .badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        padding: 4px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .badge.design { border-color: var(--accent); color: var(--accent); }
+      .badge.qa { border-color: var(--success); color: var(--success); }
+      .badge.security { border-color: var(--warning); color: var(--warning); }
+
+      .detail-body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 32px;
+      }
+
+      .detail-card {
+        padding: 20px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .detail-card h3 {
+        margin: 0 0 12px;
+        font-size: 15px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+      }
+
+      .detail-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .detail-card li {
+        display: flex;
+        gap: 10px;
+        line-height: 1.5;
+      }
+
+      .detail-card li span {
+        color: var(--accent-strong);
+      }
+
+      .detail-actions {
+        margin-top: 32px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: none;
+        border-radius: 999px;
+        padding: 14px 28px;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s;
+      }
+
+      .btn-primary {
+        background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+        color: #0b0d18;
+        box-shadow: 0 18px 40px rgba(114, 102, 255, 0.35);
+      }
+
+      .btn-ghost {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .toast {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        padding: 14px 20px;
+        border-radius: 999px;
+        background: rgba(15, 17, 28, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+
+      .toast.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 640px) {
+        .detail-body {
+          grid-template-columns: 1fr;
+        }
+        .detail-head {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero-stats {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-eyebrow">Manual premium</div>
+          <h1 class="hero-title">Biblioteca de experiencia CUBE Nexum</h1>
+          <p class="hero-subtitle">
+            Cada módulo cuenta con instrucciones curadas y listas para ejecutar. Selecciona un manual para ver los pasos clave,
+            las métricas recomendadas y los puntos de control antes de ir a producción.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-block">
+              <div class="stat-value" id="statTotal">—</div>
+              <div class="stat-label">Manuales disponibles</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Contenido offline</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-value">Premium</div>
+              <div class="stat-label">Diseño y copy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="library" id="docLibrary"></section>
+
+      <section class="detail-panel" id="docDetail">
+        <div class="detail-head">
+          <div>
+            <p class="detail-meta" id="detailMeta">—</p>
+            <h2 class="detail-title" id="detailTitle">Selecciona un manual</h2>
+            <p class="hero-subtitle" id="detailSummary">Elige un documento para visualizar instrucciones precisas y acciones recomendadas.</p>
+          </div>
+          <div class="badges" id="detailBadges"></div>
+        </div>
+        <div class="detail-body">
+          <article class="detail-card">
+            <h3>Checklist</h3>
+            <ul id="detailChecklist"></ul>
+          </article>
+          <article class="detail-card">
+            <h3>Acciones Clave</h3>
+            <ul id="detailActions"></ul>
+          </article>
+        </div>
+        <div class="detail-actions">
+          <button class="btn btn-primary" id="btnCopyChecklist">Copiar checklist</button>
+          <button class="btn btn-ghost" id="btnShare">Compartir enlace</button>
+        </div>
+      </section>
+    </main>
+    <div class="toast" id="toast">Copiado en portapapeles</div>
+    <script>
+      const DOCS = [
+        {
+          id: 'rgba-migration',
+          title: 'Reinicio de Tokens & Temas',
+          subtitle: 'Reestablece el sistema cromático premium para cualquier cliente enterprise.',
+          summary: 'Guía ejecutiva para restaurar variables, superficies y estados de foco sin romper la UI existente.',
+          audience: 'Design Ops • UI Platform',
+          duration: '12 minutos',
+          badges: ['Diseño', 'Tokens', 'UI'],
+          checklist: [
+            'Auditar los valores actuales de :root y detectar huecos en spacing/typography.',
+            'Sincronizar los temas light/dark usando atributos data-theme controlados por Tauri.',
+            'Aplicar controles visuales (focus ring, glass, sombras) alineados al brand book.'
+          ],
+          actions: [
+            'Ejecutar el script de verificación RGBA → Tokens y documentar los cambios.',
+            'Sincronizar tema con `chrome.runtime.sendMessage({ type: "SYNC_THEME" })` y validar en CUBE Desktop.',
+            'Cerrar con captura antes/después para el canal de QA visual.'
+          ]
+        },
+        {
+          id: 'testing-checklist',
+          title: 'Testing Ritual • Phase 8',
+          subtitle: 'Checklist para validar IA, automatización y extensiones híbridas.',
+          summary: 'Secuencia de 11 pruebas manuales + smoke automatizado para garantizar builds nocturnos estables.',
+          audience: 'QA • Release Managers',
+          duration: '15 minutos',
+          badges: ['QA', 'Release'],
+          checklist: [
+            'Ejecutar `npm run build` y registrar duración + advertencias.',
+            'Correr `./test-ai-mock-ui.sh` para validar prompts sin API key.',
+            'Revisar la consola del sidepanel y capturar anomalías en P2P / Remote Ops.'
+          ],
+          actions: [
+            'Actualizar `TESTING_GUIDE_OPENAI_API.md` con resultados reales si se usa clave productiva.',
+            'Adjuntar evidencias en `test-results-automated.json` cuando haya diffs.',
+            'Publicar estado en QUICK_STATUS con indicadores verdes/ámbar.'
+          ]
+        },
+        {
+          id: 'ux-analysis',
+          title: 'Diagnóstico UX x Elite',
+          subtitle: 'Heurísticas premium para asegurar que la experiencia siga siendo “caro y elegante”.',
+          summary: 'Checklist de micro-interacciones, latencias percibidas y jerarquía visual para cada módulo.',
+          audience: 'UX Research • Motion',
+          duration: '9 minutos',
+          badges: ['UX', 'Motion'],
+          checklist: [
+            'Validar estados hover/active en botones fantasma y FABs.',
+            'Revisar el ritmo tipográfico en headers H1-H4 dentro del sidepanel.',
+            'Auditar tiempos de animación (<= 300ms) y asegurar ease-in-out consistente.'
+          ],
+          actions: [
+            'Comparar contra capturas oficiales (folder `/screenshots/elite-baseline`).',
+            'Documentar gaps en `UI_UX_ANALYSIS_CRITICAL.md` con fecha y responsable.',
+            'Crear plan de micro-ajustes y compartirlo con el squad Front Vanguardia.'
+          ]
+        },
+        {
+          id: 'security-lab',
+          title: 'Security Lab • Zero Trust',
+          subtitle: 'Playbook para validar permisos MV3, almacenamiento seguro y native messaging.',
+          summary: 'Incluye pasos para auditar CSP, revisar permisos “<all_urls>” y probar el canal nativo CUBE.',
+          audience: 'SecOps • Compliance',
+          duration: '14 minutos',
+          badges: ['Seguridad'],
+          checklist: [
+            'Ejecutar la auditoría en `sidepanel-elite.js` (botón Check Security).',
+            'Inspeccionar `manifest.json` y confirmar exclusiones de dominios sensibles.',
+            'Validar que Native Messaging rechace requests sin firma (mock).'
+          ],
+          actions: [
+            'Actualizar `SECURITY_LAB_IMPLEMENTATION.md` con hallazgos.',
+            'Escalar permisos peligrosos al Security Guild en menos de 2 horas.',
+            'Programar retesteo cuando cambie la lista de permisos.'
+          ]
+        },
+        {
+          id: 'p2p-bridge',
+          title: 'P2P Bridge & Desktop Sync',
+          subtitle: 'Procedimiento para activar túneles WebRTC y validar directorio remoto.',
+          summary: 'Cobertura completa sobre handshakes, blobs, permisos y la nueva tarjeta “Bridge Health”.',
+          audience: 'Remote Ops • Field Teams',
+          duration: '10 minutos',
+          badges: ['P2P', 'Remote'],
+          checklist: [
+            'Generar handshake host, copiar blob y validar código de 6 dígitos.',
+            'Sincronizar directorio remoto desde la tarjeta Live Transfers.',
+            'Comprobar el panel Bridge Health (FTP/Downloads/P2P) antes de enviar archivos.'
+          ],
+          actions: [
+            'Registrar cada transferencia en `Mission Log` con addActivityLog.',
+            'Elevar ticket inmediato si el estado cambia a "Offline" por >2 minutos.',
+            'Actualizar permisos desde el botón Request Write cuando corresponda.'
+          ]
+        },
+        {
+          id: 'automation-shell',
+          title: 'Automation Shell Elite',
+          subtitle: 'Macrocomandos rápidos estilo FTP con retroalimentación inmediata.',
+          summary: 'Aprende cómo utilizar chips rápidos, historial y respuestas mock para no bloquear QA.',
+          audience: 'Automation • Integrations',
+          duration: '8 minutos',
+          badges: ['Automation'],
+          checklist: [
+            'Probar comandos `ls`, `sync`, `get`, `put` y validar mensajes.',
+            'Exportar log (`automation-shell-*.log`) como artefacto QA.',
+            'Confirmar actualización del cwd tras ejecutar comandos remotos.'
+          ],
+          actions: [
+            'Implementar comandos reales via content script cuando el bridge esté “Online”.',
+            'Mapear errores repetidos en `state.automationShell.output` para tuning.',
+            'Documentar nuevas macros en `ACTION_PLAN_COMPLETE.md`.'
+          ]
+        },
+        {
+          id: 'ai-nexus',
+          title: 'AI Nexus & Floating Assistant',
+          subtitle: 'Uso correcto del input dual y del transcriptor de voz.',
+          summary: 'Diferencia entre el panel Nexus (workflow) y el asistente flotante (comandos instantáneos).',
+          audience: 'Automation • AI Ops',
+          duration: '11 minutos',
+          badges: ['AI'],
+          checklist: [
+            'Confirmar que `aiNexusInput` y `aiChatInput` estén aislados (sin IDs duplicados).',
+            'Probar speech-to-text usando `webkitSpeechRecognition` y verificar activity log.',
+            'Revisar `processAICommand` para comandos download/form/theme.'
+          ],
+          actions: [
+            'Agregar nuevos comandos mapeando keywords → funciones específicas.',
+            'Definir prompts por defecto en chips “Build Workflow / Optimize / Schema”.',
+            'Actualizar `state.aiNexus.context` antes de enviar requests reales.'
+          ]
+        }
+      ];
+
+      const libraryEl = document.getElementById('docLibrary');
+      const detailTitle = document.getElementById('detailTitle');
+      const detailSummary = document.getElementById('detailSummary');
+      const detailMeta = document.getElementById('detailMeta');
+      const detailBadges = document.getElementById('detailBadges');
+      const detailChecklist = document.getElementById('detailChecklist');
+      const detailActions = document.getElementById('detailActions');
+      const btnCopyChecklist = document.getElementById('btnCopyChecklist');
+      const btnShare = document.getElementById('btnShare');
+      const toast = document.getElementById('toast');
+      const statTotal = document.getElementById('statTotal');
+
+      let activeDocId = new URLSearchParams(window.location.search).get('doc') || DOCS[0].id;
+
+      function renderLibrary() {
+        libraryEl.innerHTML = DOCS.map((doc) => `
+          <article class="doc-card ${doc.id === activeDocId ? 'is-active' : ''}" data-doc-id="${doc.id}">
+            <div class="doc-pill">${doc.duration}</div>
+            <h3 class="doc-title">${doc.title}</h3>
+            <p class="doc-desc">${doc.subtitle}</p>
+          </article>
+        `).join('');
+
+        libraryEl.querySelectorAll('.doc-card').forEach((card) => {
+          card.addEventListener('click', () => selectDoc(card.dataset.docId));
+        });
+
+        statTotal.textContent = `${DOCS.length}`;
+      }
+
+      function renderDetail(doc) {
+        if (!doc) {
+          detailTitle.textContent = 'Selecciona un manual';
+          detailSummary.textContent = 'Elige un documento para visualizar instrucciones precisas y acciones recomendadas.';
+          detailBadges.innerHTML = '';
+          detailChecklist.innerHTML = '';
+          detailActions.innerHTML = '';
+          detailMeta.textContent = '—';
+          return;
+        }
+
+        detailTitle.textContent = doc.title;
+        detailSummary.textContent = doc.summary;
+        detailMeta.textContent = `${doc.audience} • ${doc.duration}`;
+        detailBadges.innerHTML = doc.badges
+          .map((badge) => `<span class="badge ${badge.toLowerCase()}">${badge}</span>`)
+          .join('');
+
+        detailChecklist.innerHTML = doc.checklist
+          .map((item) => `<li><span>•</span>${item}</li>`)
+          .join('');
+
+        detailActions.innerHTML = doc.actions
+          .map((item) => `<li><span>→</span>${item}</li>`)
+          .join('');
+      }
+
+      function selectDoc(docId) {
+        activeDocId = docId;
+        const doc = DOCS.find((item) => item.id === docId) || DOCS[0];
+        renderLibrary();
+        renderDetail(doc);
+        const url = new URL(window.location.href);
+        url.searchParams.set('doc', docId);
+        window.history.replaceState({}, '', url);
+      }
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('is-visible');
+        setTimeout(() => toast.classList.remove('is-visible'), 2200);
+      }
+
+      btnCopyChecklist.addEventListener('click', async () => {
+        const doc = DOCS.find((item) => item.id === activeDocId);
+        if (!doc) {
+          return;
+        }
+        const text = [`Checklist • ${doc.title}`, '', ...doc.checklist.map((step, idx) => `${idx + 1}. ${step}`)].join('\n');
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast('Checklist copiada');
+        } catch (error) {
+          console.error('Clipboard error', error);
+        }
+      });
+
+      btnShare.addEventListener('click', async () => {
+        const shareUrl = `${window.location.origin}${window.location.pathname}?doc=${activeDocId}`;
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          showToast('Enlace copiado');
+        } catch (error) {
+          console.error('Share link error', error);
+        }
+      });
+
+      renderLibrary();
+      selectDoc(activeDocId);
+    </script>
+  </body>
+</html>

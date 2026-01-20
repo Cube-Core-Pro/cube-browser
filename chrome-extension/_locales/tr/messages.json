@@ -1,0 +1,170 @@
+{
+  "extensionName": {
+    "message": "CUBE Nexum Connect",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Kurumsal Tarayıcı Otomasyon Platformu: Yapay Zeka Destekli Makrolar (GPT-5.1, Claude 4, Gemini 2.5), Uzaktan Kontrol, OCR ile Profesyonel Ekran Yakalama, Belge Zekası, P2P Dosya Paylaşımı, Tauri Masaüstü Entegrasyonu ve Akıllı Otomatik Doldurma.",
+    "description": "Extension description"
+  },
+  "appTitle": {
+    "message": "CUBE Nexum",
+    "description": "App title"
+  },
+  "dashboard": {
+    "message": "Kontrol Paneli",
+    "description": "Dashboard tab"
+  },
+  "automation": {
+    "message": "Otomasyon",
+    "description": "Automation tab"
+  },
+  "macros": {
+    "message": "Makrolar",
+    "description": "Macros section"
+  },
+  "screenshot": {
+    "message": "Ekran Yakalama",
+    "description": "Screenshot section"
+  },
+  "remote": {
+    "message": "Uzaktan Kontrol",
+    "description": "Remote control section"
+  },
+  "settings": {
+    "message": "Ayarlar",
+    "description": "Settings section"
+  },
+  "help": {
+    "message": "Yardım",
+    "description": "Help section"
+  },
+  "about": {
+    "message": "Hakkında",
+    "description": "About section"
+  },
+  "startRecording": {
+    "message": "Kaydı Başlat",
+    "description": "Start recording button"
+  },
+  "stopRecording": {
+    "message": "Kaydı Durdur",
+    "description": "Stop recording button"
+  },
+  "autoFill": {
+    "message": "Otomatik Doldur",
+    "description": "Auto fill button"
+  },
+  "detectForms": {
+    "message": "Formları Algıla",
+    "description": "Detect forms button"
+  },
+  "detectDocuments": {
+    "message": "Belgeleri Algıla",
+    "description": "Detect documents button"
+  },
+  "connected": {
+    "message": "Bağlı",
+    "description": "Connection status"
+  },
+  "disconnected": {
+    "message": "Bağlantı Kesildi",
+    "description": "Disconnection status"
+  },
+  "loading": {
+    "message": "Yükleniyor...",
+    "description": "Loading text"
+  },
+  "error": {
+    "message": "Hata",
+    "description": "Error text"
+  },
+  "success": {
+    "message": "Başarılı",
+    "description": "Success text"
+  },
+  "formsDetected": {
+    "message": "Algılanan Formlar",
+    "description": "Forms detected label"
+  },
+  "documentsDetected": {
+    "message": "Algılanan Belgeler",
+    "description": "Documents detected label"
+  },
+  "screenshotsTaken": {
+    "message": "Alınan Ekran Görüntüleri",
+    "description": "Screenshots taken label"
+  },
+  "macrosPlayed": {
+    "message": "Çalıştırılan Makrolar",
+    "description": "Macros played label"
+  },
+  "aiAssistant": {
+    "message": "AI Asistan",
+    "description": "AI assistant label"
+  },
+  "fullPage": {
+    "message": "Tam Sayfa",
+    "description": "Full page screenshot"
+  },
+  "visibleArea": {
+    "message": "Görünür Alan",
+    "description": "Visible area screenshot"
+  },
+  "selectArea": {
+    "message": "Alan Seç",
+    "description": "Select area screenshot"
+  },
+  "element": {
+    "message": "Öğe",
+    "description": "Element screenshot"
+  },
+  "screenRecording": {
+    "message": "Ekran Kaydı",
+    "description": "Screen recording feature"
+  },
+  "includeAudio": {
+    "message": "Ses dahil et",
+    "description": "Include audio checkbox"
+  },
+  "recordingInProgress": {
+    "message": "Kayıt devam ediyor...",
+    "description": "Recording status"
+  },
+  "moreOptions": {
+    "message": "Daha Fazla Seçenek",
+    "description": "More options menu"
+  },
+  "diagnostics": {
+    "message": "Tanılama",
+    "description": "Diagnostics section"
+  },
+  "p2pSharing": {
+    "message": "P2P Dosya Paylaşımı",
+    "description": "P2P sharing section"
+  },
+  "close": {
+    "message": "Kapat",
+    "description": "Close button"
+  },
+  "save": {
+    "message": "Kaydet",
+    "description": "Save button"
+  },
+  "cancel": {
+    "message": "İptal",
+    "description": "Cancel button"
+  },
+  "companyName": {
+    "message": "CUBE Advisors, Inc.",
+    "description": "Company name"
+  },
+  "companyLocation": {
+    "message": "Miami, FL",
+    "description": "Company location"
+  },
+  "madeWith": {
+    "message": "Miami'de ❤️ ile yapıldı",
+    "description": "Made with love text"
+  }
+}

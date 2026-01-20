@@ -1,0 +1,170 @@
+{
+  "extensionName": {
+    "message": "CUBE Nexum Connect",
+    "description": "Nombre de la extensión"
+  },
+  "extensionDescription": {
+    "message": "Plataforma profesional de automatización de navegador con asistencia de IA",
+    "description": "Descripción de la extensión"
+  },
+  "appTitle": {
+    "message": "CUBE Nexum",
+    "description": "Título de la app"
+  },
+  "dashboard": {
+    "message": "Panel Principal",
+    "description": "Pestaña del panel"
+  },
+  "automation": {
+    "message": "Automatización",
+    "description": "Pestaña de automatización"
+  },
+  "macros": {
+    "message": "Macros",
+    "description": "Sección de macros"
+  },
+  "screenshot": {
+    "message": "Captura de Pantalla",
+    "description": "Sección de capturas"
+  },
+  "remote": {
+    "message": "Control Remoto",
+    "description": "Sección de control remoto"
+  },
+  "settings": {
+    "message": "Configuración",
+    "description": "Sección de configuración"
+  },
+  "help": {
+    "message": "Ayuda",
+    "description": "Sección de ayuda"
+  },
+  "about": {
+    "message": "Acerca de",
+    "description": "Sección acerca de"
+  },
+  "startRecording": {
+    "message": "Iniciar Grabación",
+    "description": "Botón iniciar grabación"
+  },
+  "stopRecording": {
+    "message": "Detener Grabación",
+    "description": "Botón detener grabación"
+  },
+  "autoFill": {
+    "message": "Auto Completar",
+    "description": "Botón auto completar"
+  },
+  "detectForms": {
+    "message": "Detectar Formularios",
+    "description": "Botón detectar formularios"
+  },
+  "detectDocuments": {
+    "message": "Detectar Documentos",
+    "description": "Botón detectar documentos"
+  },
+  "connected": {
+    "message": "Conectado",
+    "description": "Estado de conexión"
+  },
+  "disconnected": {
+    "message": "Desconectado",
+    "description": "Estado de desconexión"
+  },
+  "loading": {
+    "message": "Cargando...",
+    "description": "Texto de carga"
+  },
+  "error": {
+    "message": "Error",
+    "description": "Texto de error"
+  },
+  "success": {
+    "message": "Éxito",
+    "description": "Texto de éxito"
+  },
+  "formsDetected": {
+    "message": "Formularios Detectados",
+    "description": "Etiqueta formularios detectados"
+  },
+  "documentsDetected": {
+    "message": "Documentos Detectados",
+    "description": "Etiqueta documentos detectados"
+  },
+  "screenshotsTaken": {
+    "message": "Capturas Realizadas",
+    "description": "Etiqueta capturas realizadas"
+  },
+  "macrosPlayed": {
+    "message": "Macros Ejecutados",
+    "description": "Etiqueta macros ejecutados"
+  },
+  "aiAssistant": {
+    "message": "Asistente IA",
+    "description": "Etiqueta asistente IA"
+  },
+  "fullPage": {
+    "message": "Página Completa",
+    "description": "Captura página completa"
+  },
+  "visibleArea": {
+    "message": "Área Visible",
+    "description": "Captura área visible"
+  },
+  "selectArea": {
+    "message": "Seleccionar Área",
+    "description": "Seleccionar área captura"
+  },
+  "element": {
+    "message": "Elemento",
+    "description": "Captura de elemento"
+  },
+  "screenRecording": {
+    "message": "Grabación de Pantalla",
+    "description": "Función de grabación"
+  },
+  "includeAudio": {
+    "message": "Incluir audio",
+    "description": "Checkbox incluir audio"
+  },
+  "recordingInProgress": {
+    "message": "Grabación en progreso...",
+    "description": "Estado de grabación"
+  },
+  "moreOptions": {
+    "message": "Más Opciones",
+    "description": "Menú más opciones"
+  },
+  "diagnostics": {
+    "message": "Diagnósticos",
+    "description": "Sección diagnósticos"
+  },
+  "p2pSharing": {
+    "message": "Compartir P2P",
+    "description": "Sección compartir P2P"
+  },
+  "close": {
+    "message": "Cerrar",
+    "description": "Botón cerrar"
+  },
+  "save": {
+    "message": "Guardar",
+    "description": "Botón guardar"
+  },
+  "cancel": {
+    "message": "Cancelar",
+    "description": "Botón cancelar"
+  },
+  "companyName": {
+    "message": "CUBE Advisors, Inc.",
+    "description": "Nombre de la empresa"
+  },
+  "companyLocation": {
+    "message": "Miami, FL",
+    "description": "Ubicación de la empresa"
+  },
+  "madeWith": {
+    "message": "Hecho con ❤️ en Miami",
+    "description": "Texto hecho con amor"
+  }
+}

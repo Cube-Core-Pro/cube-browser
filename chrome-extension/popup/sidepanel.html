@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum v7.0.0 - Command Center</title>
+  <link rel="stylesheet" href="../styles/arc-foundation.css">
+  <link rel="stylesheet" href="../styles/sidepanel.css">
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+</head>
+<body data-theme="dark">
+  <div class="app-shell">
+  <!-- ============================================================================
+       HEADER - Command Center
+       ============================================================================ -->
+  <header class="header">
+    <div class="header-content">
+      <div class="header-top">
+        <div class="logo-section">
+          <div class="logo">C</div>
+          <div class="brand-info">
+            <h1>CUBE Nexum</h1>
+            <div class="version">v7.0.0 Ultimate • Enterprise</div>
+          </div>
+        </div>
+        <div class="stats-bar" role="list">
+          <div class="stat-item" role="listitem">
+            <div class="stat-value" id="formsDetected">0</div>
+            <div class="stat-label">Forms</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-value" id="macrosSaved">0</div>
+            <div class="stat-label">Macros</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-value" id="screenshotsTaken">0</div>
+            <div class="stat-label">Captures</div>
+          </div>
+          <div class="stat-item" role="listitem">
+            <div class="stat-value" id="timeSaved">0h</div>
+            <div class="stat-label">Saved</div>
+          </div>
+        </div>
+        <div class="header-utilities">
+          <div class="status-badge">
+            <div class="status-dot"></div>
+            <span>System Active</span>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="btnQuickRemote" type="button" aria-label="Jump to remote operations">
+            🛰 Remote
+          </button>
+          <div class="docs-dropdown-wrapper">
+            <button class="btn btn-secondary btn-sm" id="btnDocsMenu" aria-haspopup="true" aria-expanded="false">
+              📚 Docs
+            </button>
+            <div class="docs-dropdown-menu" id="docsDropdownMenu" role="menu" aria-hidden="true">
+            <a href="#" class="docs-menu-item" data-doc="rgba-migration" role="menuitem">
+              <span class="docs-menu-icon">🎨</span>
+              <div>
+                <div class="docs-menu-title">RGBA Migration Guide</div>
+                <div class="docs-menu-desc">Token system reference</div>
+              </div>
+            </a>
+            <a href="#" class="docs-menu-item" data-doc="testing-checklist" role="menuitem">
+              <span class="docs-menu-icon">✅</span>
+              <div>
+                <div class="docs-menu-title">Testing Checklist</div>
+                <div class="docs-menu-desc">QA procedures</div>
+              </div>
+            </a>
+            <a href="#" class="docs-menu-item" data-doc="ux-analysis" role="menuitem">
+              <span class="docs-menu-icon">🎯</span>
+              <div>
+                <div class="docs-menu-title">UX Analysis</div>
+                <div class="docs-menu-desc">Critical issues & fixes</div>
+              </div>
+            </a>
+            <a href="#" class="docs-menu-item" data-doc="security-lab" role="menuitem">
+              <span class="docs-menu-icon">🔒</span>
+              <div>
+                <div class="docs-menu-title">Security Lab</div>
+                <div class="docs-menu-desc">Compliance procedures</div>
+              </div>
+            </a>
+              <div class="docs-menu-divider"></div>
+              <a href="#" class="docs-menu-item" data-doc="all-docs" role="menuitem">
+              <span class="docs-menu-icon">📖</span>
+              <div>
+                <div class="docs-menu-title">View All Documentation</div>
+                <div class="docs-menu-desc">Open docs index</div>
+              </div>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arc-navigation-container">
+        <!-- Hamburger Menu Trigger -->
+        <button class="hamburger-btn" id="navToggle" aria-label="Toggle Navigation">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </button>
+
+        <!-- Rotating Space Switcher (The "Rotating Menu") -->
+        <div class="space-switcher-container">
+          <div class="space-switcher" id="spaceSwitcher">
+            <div class="space-item active" data-target="tab-dashboard" title="Dashboard">
+              <span class="space-icon">📊</span>
+            </div>
+            <div class="space-item" data-target="tab-macro" title="Macro Studio">
+              <span class="space-icon">⚡</span>
+            </div>
+            <div class="space-item" data-target="tab-automation" title="Automation">
+              <span class="space-icon">🛠️</span>
+            </div>
+            <div class="space-item" data-target="tab-ai-nexus" title="AI Nexus">
+              <span class="space-icon">🤖</span>
+            </div>
+            <div class="space-item" data-target="tab-diagnostics" title="Diagnostics">
+              <span class="space-icon">🔍</span>
+            </div>
+            <div class="space-item" data-target="tab-screenshot" title="Capture">
+              <span class="space-icon">📸</span>
+            </div>
+            <div class="space-item" data-target="tab-remote" title="Remote">
+              <span class="space-icon">🖥️</span>
+            </div>
+            <div class="space-item" data-target="tab-p2p" title="P2P Share">
+              <span class="space-icon">📁</span>
+            </div>
+          </div>
+          <div class="space-label" id="currentSpaceLabel">Dashboard</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================================
+       MAIN CONTENT
+       ============================================================================ -->
+  <main class="main-content">
+    
+    <!-- DASHBOARD TAB -->
+    <div class="tab-content active" id="tab-dashboard">
+      <div class="dashboard-grid">
+        
+        <!-- Quick Actions Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">⚡</div>
+            <div>
+              <div class="card-title">Quick Actions</div>
+              <div class="card-subtitle">One-click automation</div>
+            </div>
+          </div>
+          <div class="card-cta-group compact">
+            <button class="btn btn-primary btn-full" id="btnAutoFill">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">🎯</span>
+                <span class="btn-text">Auto-Fill Current Form</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+            <button class="btn btn-secondary btn-full" id="btnDetectForms">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">🔍</span>
+                <span class="btn-text">Detect Forms</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Document Detection Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📄</div>
+            <div>
+              <div class="card-title">Document Detection</div>
+              <div class="card-subtitle">AI-powered extraction</div>
+            </div>
+          </div>
+          <div class="card-cta-group compact">
+            <button class="btn btn-primary btn-full" id="btnDetectDocuments">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">📄</span>
+                <span class="btn-text">Detect Documents</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+          </div>
+          <div id="documentsList" class="documents-list hidden">
+            <!-- Documents will be populated here -->
+          </div>
+        </div>
+
+        <!-- Macro Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🎬</div>
+            <div>
+              <div class="card-title">Macro Control</div>
+              <div class="card-subtitle">Record & playback</div>
+            </div>
+          </div>
+          <div class="card-cta-group compact">
+            <button class="btn btn-success btn-full" id="btnRecordMacro">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">⏺️</span>
+                <span class="btn-text">Start Recording</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+            <button class="btn btn-secondary btn-full" id="btnPlayMacro">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">▶️</span>
+                <span class="btn-text">Play Last Macro</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Screenshot Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📸</div>
+            <div>
+              <div class="card-title">Screen Capture</div>
+              <div class="card-subtitle">Professional quality</div>
+            </div>
+          </div>
+          <div class="card-cta-group compact">
+            <button class="btn btn-primary btn-full" id="btnScreenshotArea">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">✂️</span>
+                <span class="btn-text">Capture Area</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+            <button class="btn btn-secondary btn-full" id="btnScreenshotFull">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">🖼️</span>
+                <span class="btn-text">Full Screen</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remote Control Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🖥️</div>
+            <div>
+              <div class="card-title">Remote Access</div>
+              <div class="card-subtitle">&lt; 20ms latency</div>
+            </div>
+          </div>
+          <div class="card-cta-group compact">
+            <button class="btn btn-primary btn-full" id="btnStartHost">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">🎯</span>
+                <span class="btn-text">Start Host Session</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+            <button class="btn btn-secondary btn-full" id="btnConnectRemote">
+              <span class="btn-content">
+                <span class="btn-icon" aria-hidden="true">🔗</span>
+                <span class="btn-text">Connect as Client</span>
+              </span>
+              <span class="btn-chevron" aria-hidden="true">⟶</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- System Status -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">💎</div>
+          <div>
+            <div class="card-title">System Status</div>
+            <div class="card-subtitle">All systems operational</div>
+          </div>
+        </div>
+        <div class="status-metrics-inline" role="list">
+          <div class="status-metric-tile" role="listitem">
+            <span class="status-metric-icon" aria-hidden="true">🤖</span>
+            <div class="status-metric-details">
+              <span class="status-metric-label">AI Engines</span>
+              <span class="status-metric-value">✓ Online</span>
+            </div>
+          </div>
+          <div class="status-metric-tile" role="listitem">
+            <span class="status-metric-icon" aria-hidden="true">🧩</span>
+            <div class="status-metric-details">
+              <span class="status-metric-label">Services</span>
+              <span class="status-metric-value">✓ Active</span>
+            </div>
+          </div>
+          <div class="status-metric-tile" role="listitem">
+            <span class="status-metric-icon" aria-hidden="true">📡</span>
+            <div class="status-metric-details">
+              <span class="status-metric-label">WebRTC</span>
+              <span class="status-metric-value">✓ Ready</span>
+            </div>
+          </div>
+          <div class="status-metric-tile" role="listitem">
+            <span class="status-metric-icon" aria-hidden="true">💾</span>
+            <div class="status-metric-details">
+              <span class="status-metric-label">Storage</span>
+              <span class="status-metric-value">✓ OK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MACRO TAB -->
+    <div class="tab-content" id="tab-macro">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">⚡</div>
+          <div>
+            <div class="card-title">Macro Studio</div>
+            <div class="card-subtitle">AI-powered teachable automation</div>
+          </div>
+        </div>
+
+        <div class="macro-tour-banner" id="macroTourBanner">
+          <div class="macro-tour-content">
+            <div class="macro-tour-icon">🎓</div>
+            <div>
+              <div class="macro-tour-title">New to Macro Recording?</div>
+              <div class="macro-tour-description">Take a 2-minute guided tour to learn the basics</div>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="btnStartMacroTour">🚀 Start Tour</button>
+        </div>
+
+        <div class="macro-tour-carousel hidden" id="macroTourCarousel">
+          <div class="macro-tour-header">
+            <div class="macro-tour-progress" id="macroTourProgress">
+              <span class="macro-tour-dot active"></span>
+              <span class="macro-tour-dot"></span>
+              <span class="macro-tour-dot"></span>
+            </div>
+            <button class="btn btn-secondary btn-sm" id="btnCloseTour">✕ Close</button>
+          </div>
+
+          <div class="macro-tour-slide active" data-step="1">
+            <div class="macro-tour-slide-icon">⏺️</div>
+            <div class="macro-tour-slide-title">Step 1: Record Actions</div>
+            <div class="macro-tour-slide-text">
+              Click "Record New Macro" to start capturing your actions. Every click, form fill, and navigation will be recorded automatically.
+            </div>
+          </div>
+
+          <div class="macro-tour-slide" data-step="2">
+            <div class="macro-tour-slide-icon">✏️</div>
+            <div class="macro-tour-slide-title">Step 2: Review & Edit</div>
+            <div class="macro-tour-slide-text">
+              After recording, you can review each step, edit selectors, add delays, or remove unwanted actions for precision.
+            </div>
+          </div>
+
+          <div class="macro-tour-slide" data-step="3">
+            <div class="macro-tour-slide-icon">▶️</div>
+            <div class="macro-tour-slide-title">Step 3: Play & Automate</div>
+            <div class="macro-tour-slide-text">
+              Play your macro anytime with one click. Share it with your team or schedule it to run automatically.
+            </div>
+          </div>
+
+          <div class="macro-tour-nav">
+            <button class="btn btn-secondary" id="btnTourPrev" disabled>← Previous</button>
+            <button class="btn btn-primary" id="btnTourNext">Next →</button>
+            <button class="btn btn-success hidden" id="btnTourFinish">🎉 Got it!</button>
+          </div>
+        </div>
+
+        <div class="macro-controls">
+          <button class="btn btn-success" id="btnStartRecording">⏺️ Record New Macro</button>
+          <button class="btn btn-secondary" id="btnStopRecording" disabled>⏹️ Stop Recording</button>
+          <button class="btn btn-primary" id="btnPlayLastMacro">▶️ Play Last</button>
+        </div>
+
+        <div id="recordingStatus" class="recording-status hidden">
+          <div class="recording-dot"></div>
+          <div>
+            <strong>Recording in Progress</strong>
+            <div class="text-meta">
+              Steps captured: <span id="stepCount">0</span> • Duration: <span id="recordingTime">00:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-title mt-xl mb-xl">Saved Macros</div>
+        <div class="macro-list" id="macroList">
+          <!-- Macros will be loaded here -->
+          <div class="text-center text-muted macro-empty-state">
+            <span class="macro-empty-icon" aria-hidden="true">🎬</span>
+            <div>No macros saved yet</div>
+            <div class="macro-empty-hint">
+              Click "Record New Macro" above to get started, or 
+              <button class="macro-empty-link" id="btnMacroEmptyTour">take the tour</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTOMATION SHELL TAB -->
+    <div class="tab-content" id="tab-automation">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🛠️</div>
+          <div>
+            <div class="card-title">Automation Shell</div>
+            <div class="card-subtitle">FTP-style operations • Script execution</div>
+          </div>
+        </div>
+
+        <div class="automation-shell-toolbar">
+          <button class="btn btn-secondary" id="btnAutomationClear">🗑️ Clear</button>
+          <button class="btn btn-secondary" id="btnAutomationExport">💾 Export Log</button>
+          <span class="automation-shell-cwd" id="automationShellCwd">/</span>
+        </div>
+
+        <div class="automation-shell-quick-commands">
+          <div class="automation-shell-section-title">Quick Commands</div>
+          <div class="automation-quick-chips">
+            <button class="automation-chip" data-command="ls">📁 ls</button>
+            <button class="automation-chip" data-command="pwd">📍 pwd</button>
+            <button class="automation-chip" data-command="sync">🔄 sync</button>
+            <button class="automation-chip" data-command="get README.md">⬇️ get file</button>
+            <button class="automation-chip" data-command="put local.txt">⬆️ put file</button>
+            <button class="automation-chip" data-command="help">❓ help</button>
+          </div>
+        </div>
+
+        <div class="automation-shell-output" id="automationShellOutput" role="log" aria-live="polite" aria-label="Command output">
+          <div class="automation-output-line automation-output-welcome">
+            <span class="automation-output-prompt">CUBE Automation Shell v1.0</span>
+          </div>
+          <div class="automation-output-line automation-output-welcome">
+            <span class="automation-output-text">Type 'help' for available commands or use quick chips above.</span>
+          </div>
+        </div>
+
+        <div class="automation-shell-input-wrapper">
+          <span class="automation-input-prompt" id="automationInputPrompt" aria-hidden="true">$</span>
+          <input
+            type="text"
+            class="automation-shell-input"
+            id="automationShellInput"
+            placeholder="Enter command..."
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Command input"
+          />
+          <button class="btn btn-primary automation-execute-btn" id="btnAutomationExecute">⏎ Run</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI NEXUS TAB -->
+    <div class="tab-content" id="tab-ai-nexus">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <div>
+            <div class="card-title">AI Nexus</div>
+            <div class="card-subtitle">Workflow builder • Selector optimizer</div>
+          </div>
+        </div>
+
+        <div class="ai-nexus-layout">
+          <section class="ai-chat-panel" aria-labelledby="aiChatTitle">
+            <div class="ai-chat-header">
+              <div class="ai-panel-title" id="aiChatTitle">Chat</div>
+              <button class="btn btn-secondary btn-sm" id="btnAIClearChat">🗑️ Clear</button>
+            </div>
+
+            <div class="ai-chat-transcript" id="aiChatTranscript" role="log" aria-live="polite">
+              <div class="ai-message ai-message-system">
+                <div class="ai-message-icon">🤖</div>
+                <div class="ai-message-content">
+                  <div class="ai-message-text">Hello! I'm your AI Nexus. I can help you build workflows, optimize selectors, improve macros, and generate automation schemas. What would you like to accomplish today?</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-chat-url-pill" aria-live="polite">
+              <div class="ai-chat-url-label">Current Page</div>
+              <div class="ai-chat-url-value" id="aiChatUrl">No tab active</div>
+            </div>
+
+            <div class="ai-chat-input-wrapper">
+              <div class="ai-attachment-chips">
+                <label class="ai-attachment-chip">
+                  <input type="checkbox" id="aiAttachDom" checked />
+                  <span>📄 DOM Snapshot</span>
+                </label>
+                <label class="ai-attachment-chip">
+                  <input type="checkbox" id="aiAttachMacros" />
+                  <span>🎬 Last Macro</span>
+                </label>
+                <label class="ai-attachment-chip">
+                  <input type="checkbox" id="aiAttachContext" checked />
+                  <span>🧩 Page Context</span>
+                </label>
+              </div>
+              <div class="ai-input-row">
+                <textarea
+                  class="ai-chat-input"
+                  id="aiNexusInput"
+                  placeholder="Describe your automation task or ask for help..."
+                  rows="2"
+                  aria-label="AI Nexus input"
+                ></textarea>
+                <button class="btn btn-primary" id="btnAISend">➤ Send</button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="ai-context-sidebar" aria-labelledby="aiContextTitle">
+            <div class="ai-sidebar-header">
+              <div class="ai-panel-title" id="aiContextTitle">Context</div>
+              <button class="btn btn-secondary btn-sm" id="btnAIRefreshContext">🔄</button>
+            </div>
+
+            <div class="ai-context-cards">
+              <div class="ai-context-card">
+                <div class="ai-context-label">Forms Detected</div>
+                <div class="ai-context-value" id="aiContextForms">0</div>
+              </div>
+              <div class="ai-context-card">
+                <div class="ai-context-label">Smart Selectors</div>
+                <div class="ai-context-value" id="aiContextSelectors">0</div>
+              </div>
+              <div class="ai-context-card">
+                <div class="ai-context-label">Active Macros</div>
+                <div class="ai-context-value" id="aiContextMacros">0</div>
+              </div>
+            </div>
+
+            <div class="ai-context-url">
+              <div class="ai-context-label">Current Page</div>
+              <div class="ai-context-url-value" id="aiContextUrl">No tab active</div>
+            </div>
+
+            <div class="ai-quick-actions">
+              <div class="ai-panel-title">Quick Actions</div>
+              <div class="card-cta-group compact">
+                <button class="btn btn-secondary btn-full" id="btnAIWorkflow">
+                  <span class="btn-content">
+                    <span class="btn-icon" aria-hidden="true">✨</span>
+                    <span class="btn-text">Build Workflow</span>
+                  </span>
+                  <span class="btn-chevron" aria-hidden="true">⟶</span>
+                </button>
+                <button class="btn btn-secondary btn-full" id="btnAIOptimize">
+                  <span class="btn-content">
+                    <span class="btn-icon" aria-hidden="true">🎯</span>
+                    <span class="btn-text">Optimize Selectors</span>
+                  </span>
+                  <span class="btn-chevron" aria-hidden="true">⟶</span>
+                </button>
+                <button class="btn btn-secondary btn-full" id="btnAISchema">
+                  <span class="btn-content">
+                    <span class="btn-icon" aria-hidden="true">📋</span>
+                    <span class="btn-text">Generate Schema</span>
+                  </span>
+                  <span class="btn-chevron" aria-hidden="true">⟶</span>
+                </button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIAGNOSTICS TAB -->
+    <div class="tab-content" id="tab-diagnostics">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🔍</div>
+          <div>
+            <div class="card-title">System Diagnostics</div>
+            <div class="card-subtitle">Health monitoring • Performance metrics</div>
+          </div>
+        </div>
+
+        <div class="diagnostics-toolbar">
+          <button class="btn btn-primary" id="btnDiagnosticsRunAll">🔄 Run All Checks</button>
+          <button class="btn btn-secondary" id="btnDiagnosticsExport">💾 Export Report</button>
+          <span class="diagnostics-last-check" id="diagnosticsLastCheck">Never checked</span>
+        </div>
+
+        <div class="diagnostics-grid">
+          <div class="diagnostic-card" id="diagnosticFormScanner">
+            <div class="diagnostic-header">
+              <div class="diagnostic-icon">📋</div>
+              <div>
+                <div class="diagnostic-title">Form Scanner</div>
+                <div class="diagnostic-subtitle">Detection & parsing health</div>
+              </div>
+            </div>
+
+            <div class="diagnostic-metrics">
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Status</div>
+                <div class="diagnostic-metric-value" id="formScannerStatus">
+                  <span class="diagnostic-badge diagnostic-badge-unknown">Unknown</span>
+                </div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Forms Detected</div>
+                <div class="diagnostic-metric-value" id="formScannerForms">0</div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Avg Parse Time</div>
+                <div class="diagnostic-metric-value" id="formScannerParseTime">-- ms</div>
+              </div>
+            </div>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-secondary btn-full" id="btnCheckFormScanner">
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">🔍</span>
+                  <span class="btn-text">Run Check</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="diagnostic-card" id="diagnosticMacroEngine">
+            <div class="diagnostic-header">
+              <div class="diagnostic-icon">⚡</div>
+              <div>
+                <div class="diagnostic-title">Macro Engine</div>
+                <div class="diagnostic-subtitle">Recording & playback</div>
+              </div>
+            </div>
+
+            <div class="diagnostic-metrics">
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Status</div>
+                <div class="diagnostic-metric-value" id="macroEngineStatus">
+                  <span class="diagnostic-badge diagnostic-badge-unknown">Unknown</span>
+                </div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Last Recording</div>
+                <div class="diagnostic-metric-value" id="macroEngineLastDuration">-- s</div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Errors</div>
+                <div class="diagnostic-metric-value" id="macroEngineErrors">0</div>
+              </div>
+            </div>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-secondary btn-full" id="btnCheckMacroEngine">
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">🔍</span>
+                  <span class="btn-text">Run Check</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="diagnostic-card" id="diagnosticRemoteOps">
+            <div class="diagnostic-header">
+              <div class="diagnostic-icon">🖥️</div>
+              <div>
+                <div class="diagnostic-title">Remote Operations</div>
+                <div class="diagnostic-subtitle">QR & connectivity</div>
+              </div>
+            </div>
+
+            <div class="diagnostic-metrics">
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Status</div>
+                <div class="diagnostic-metric-value" id="remoteOpsStatus">
+                  <span class="diagnostic-badge diagnostic-badge-unknown">Unknown</span>
+                </div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">QR Active</div>
+                <div class="diagnostic-metric-value" id="remoteOpsQR">No</div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Connectivity</div>
+                <div class="diagnostic-metric-value" id="remoteOpsConnectivity">Unknown</div>
+              </div>
+            </div>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-secondary btn-full" id="btnCheckRemoteOps">
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">🔍</span>
+                  <span class="btn-text">Run Check</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="diagnostic-card" id="diagnosticAIProviders">
+            <div class="diagnostic-header">
+              <div class="diagnostic-icon">🤖</div>
+              <div>
+                <div class="diagnostic-title">AI Providers</div>
+                <div class="diagnostic-subtitle">API keys & routing</div>
+              </div>
+            </div>
+
+            <div class="diagnostic-metrics">
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Status</div>
+                <div class="diagnostic-metric-value" id="aiProvidersStatus">
+                  <span class="diagnostic-badge diagnostic-badge-unknown">Unknown</span>
+                </div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Configured</div>
+                <div class="diagnostic-metric-value" id="aiProvidersCount">0 / 3</div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Strategy</div>
+                <div class="diagnostic-metric-value" id="aiProvidersStrategy">Auto</div>
+              </div>
+            </div>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-secondary btn-full" id="btnCheckAIProviders">
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">🔍</span>
+                  <span class="btn-text">Run Check</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="diagnostic-card diagnostic-card-wide" id="diagnosticSecurity">
+            <div class="diagnostic-header">
+              <div class="diagnostic-icon">🔒</div>
+              <div>
+                <div class="diagnostic-title">Security & Compliance</div>
+                <div class="diagnostic-subtitle">CSP, permissions & audits</div>
+              </div>
+            </div>
+
+            <div class="diagnostic-metrics">
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Manifest Version</div>
+                <div class="diagnostic-metric-value" id="securityManifestVersion">--</div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">CSP Status</div>
+                <div class="diagnostic-metric-value" id="securityCSPStatus">
+                  <span class="diagnostic-badge diagnostic-badge-unknown">Unknown</span>
+                </div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">Permissions</div>
+                <div class="diagnostic-metric-value" id="securityPermissions">-- granted</div>
+              </div>
+              <div class="diagnostic-metric">
+                <div class="diagnostic-metric-label">RGBA Audit</div>
+                <div class="diagnostic-metric-value" id="securityRGBAAudit">
+                  <span class="diagnostic-badge diagnostic-badge-unknown">Not Run</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="diagnostic-actions">
+              <button class="btn btn-secondary" id="btnCheckSecurity">🔍 Run Security Audit</button>
+              <button class="btn btn-secondary" id="btnViewPermissions">🔐 View Permissions</button>
+              <button class="btn btn-secondary" id="btnRunRGBAAudit">🎨 RGBA Audit</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="diagnostics-summary" id="diagnosticsSummary">
+          <div class="diagnostics-summary-icon">ℹ️</div>
+          <div class="diagnostics-summary-text">
+            Run diagnostics to check system health and identify potential issues.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREENSHOT TAB -->
+    <div class="tab-content" id="tab-screenshot">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📸</div>
+          <div>
+            <div class="card-title">Professional Screen Capture</div>
+            <div class="card-subtitle">OCR-ready, enterprise quality</div>
+          </div>
+        </div>
+
+        <div class="screenshot-modes">
+          <div class="screenshot-mode" data-mode="area">
+            <div class="icon">✂️</div>
+            <h3>Area Capture</h3>
+            <p>Select specific region to capture</p>
+          </div>
+          <div class="screenshot-mode" data-mode="window">
+            <div class="icon">🪟</div>
+            <h3>Window Capture</h3>
+            <p>Capture active window</p>
+          </div>
+          <div class="screenshot-mode" data-mode="fullscreen">
+            <div class="icon">🖼️</div>
+            <h3>Full Screen</h3>
+            <p>Capture entire screen</p>
+          </div>
+          <div class="screenshot-mode" data-mode="scrolling">
+            <div class="icon">📜</div>
+            <h3>Scrolling Capture</h3>
+            <p>Capture long webpage</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label checkbox-inline" for="enableOCR">
+            <input type="checkbox" id="enableOCR" class="form-checkbox">
+            <span>Enable OCR (text extraction)</span>
+          </label>
+        </div>
+
+        <div class="card-cta-group compact">
+          <button class="btn btn-primary btn-full">
+            <span class="btn-content">
+              <span class="btn-icon" aria-hidden="true">💾</span>
+              <span class="btn-text">Save Settings</span>
+            </span>
+            <span class="btn-chevron" aria-hidden="true">⟶</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- REMOTE CONTROL TAB -->
+    <div class="tab-content" id="tab-remote">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🖥️</div>
+          <div>
+            <div class="card-title">Elite Remote Control</div>
+            <div class="card-subtitle">&lt; 20ms latency • 120 FPS</div>
+          </div>
+        </div>
+
+        <div class="connection-card">
+          <div class="connection-grid">
+            <section class="connection-details" aria-label="Remote pairing controls">
+              <div>
+                <div class="connection-meta-row">
+                  <div>
+                    <div class="connection-meta-label">CONNECTION CODE</div>
+                    <div class="connection-code" id="connectionCode" title="Click to copy">------</div>
+                  </div>
+                  <div class="connection-security-pill" id="connectionSecurityPill">Mobile Ready</div>
+                </div>
+                <p class="connection-instructions">Share this code with your operator or tap to copy instantly.</p>
+              </div>
+
+              <div class="connection-actions">
+                <button class="btn btn-primary" id="btnGenerateCode">🎯 Generate New Code</button>
+                <button class="btn btn-secondary" id="btnCopyCode">📋 Copy Code</button>
+              </div>
+
+              <div>
+                <p class="connection-hint">Codes auto-rotate every 10 minutes. Works over segmented networks—regenerate anytime.</p>
+                <p class="connection-hint connection-rotation-timer" id="connectionRotationTimer" role="status" aria-live="polite">
+                  Rotation idle — generate a code to enable automatic refresh.
+                </p>
+                <div class="connection-feedback hidden" id="remoteCodeFeedback" role="status" aria-live="polite"></div>
+              </div>
+            </section>
+
+            <section class="connection-qr-block" aria-label="Secure QR channel">
+              <div class="connection-qr-header">
+                <span>Secure QR</span>
+                <span class="connection-meta-label">CUBE Remote</span>
+              </div>
+              <div class="qr-code is-empty" id="qrCodeContainer" role="img" aria-live="polite" aria-label="Secure remote pairing QR code">
+                <div class="qr-code-placeholder">Tap "Generate New Code" to issue a secure QR credential without leaving offline mode</div>
+              </div>
+              <p class="connection-hint compact">Scan from the CUBE Remote mobile hub or share as an image.</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Connect to Remote Session</label>
+          <div class="form-row">
+            <input type="text" class="form-input" placeholder="Enter 6-digit code" id="remoteCodeInput" maxlength="6">
+            <button class="btn btn-success" id="btnConnect">🔗 Connect</button>
+          </div>
+        </div>
+
+        <div class="module-health" aria-live="polite">
+          <div class="module-health-header">
+            <div>
+              <div class="module-health-title">Bridge Health</div>
+              <div class="module-health-subtitle">Desktop agents required for FTP, downloads, and P2P orchestration</div>
+            </div>
+            <button class="btn btn-secondary btn-sm" id="btnModuleHealthRefresh">🔄 Refresh</button>
+          </div>
+          <div class="module-health-list" id="moduleHealthList">
+            <div class="module-health-item" data-module="ftp">
+              <div>
+                <div class="module-health-name">FTP Bridge</div>
+                <div class="module-health-detail" id="moduleDetail-ftp">Checking status…</div>
+              </div>
+              <div class="module-health-status" id="moduleStatus-ftp">
+                <span class="module-status-dot is-checking"></span>
+                <span class="module-status-text">Checking</span>
+              </div>
+            </div>
+            <div class="module-health-item" data-module="downloads">
+              <div>
+                <div class="module-health-name">Downloads Manager</div>
+                <div class="module-health-detail" id="moduleDetail-downloads">Checking status…</div>
+              </div>
+              <div class="module-health-status" id="moduleStatus-downloads">
+                <span class="module-status-dot is-checking"></span>
+                <span class="module-status-text">Checking</span>
+              </div>
+            </div>
+            <div class="module-health-item" data-module="p2p">
+              <div>
+                <div class="module-health-name">P2P Bridge</div>
+                <div class="module-health-detail" id="moduleDetail-p2p">Checking status…</div>
+              </div>
+              <div class="module-health-status" id="moduleStatus-p2p">
+                <span class="module-status-dot is-checking"></span>
+                <span class="module-status-text">Checking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI SETTINGS TAB -->
+    <div class="tab-content" id="tab-ai">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🤖</div>
+          <div>
+            <div class="card-title">AI Provider Settings</div>
+            <div class="card-subtitle">Multi-provider intelligent routing</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">OpenAI API Key</label>
+          <input type="password" class="form-input" id="openaiKey" placeholder="sk-...">
+          <div class="form-help">Used for GPT-4 Vision and document intelligence</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Anthropic Claude API Key</label>
+          <input type="password" class="form-input" id="claudeKey" placeholder="sk-ant-...">
+          <div class="form-help">Used for complex reasoning and macro learning</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Google Gemini API Key</label>
+          <input type="password" class="form-input" id="geminiKey" placeholder="AIza...">
+          <div class="form-help">Used as cost-effective fallback option</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="aiStrategy">Provider Selection Strategy</label>
+          <select class="form-input" id="aiStrategy">
+            <option value="auto">Auto (Smart Routing)</option>
+            <option value="cost">Cost Optimized</option>
+            <option value="speed">Speed Optimized</option>
+            <option value="quality">Quality Optimized</option>
+          </select>
+        </div>
+
+        <div class="card-cta-group compact">
+          <button class="btn btn-primary btn-full" id="btnSaveAI">
+            <span class="btn-content">
+              <span class="btn-icon" aria-hidden="true">💾</span>
+              <span class="btn-text">Save API Keys</span>
+            </span>
+            <span class="btn-chevron" aria-hidden="true">⟶</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2P FILE SHARING TAB -->
+    <div class="tab-content" id="tab-p2p">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📁</div>
+          <div>
+            <div class="card-title">P2P File Sharing</div>
+            <div class="card-subtitle">WebRTC • Up to 100 MB/s</div>
+          </div>
+        </div>
+
+        <div class="p2p-status-row">
+          <div>
+            <div class="p2p-status-pill" id="p2pStatusPill">Ready to connect</div>
+            <div class="p2p-status-meta" id="p2pStatusMeta">No active P2P sessions</div>
+          </div>
+          <div class="p2p-status-actions">
+            <button class="btn btn-secondary" id="btnP2PRefresh">🔄 Sync Status</button>
+            <button class="btn btn-secondary" id="btnP2PDisconnect" disabled>⛔ Disconnect</button>
+          </div>
+        </div>
+
+        <div class="p2p-grid">
+          <section class="p2p-panel" aria-labelledby="p2pHostTitle">
+            <div class="p2p-panel-header">
+              <div class="p2p-panel-icon" aria-hidden="true">📤</div>
+              <div>
+                <div class="p2p-panel-title" id="p2pHostTitle">Host Session</div>
+                <div class="p2p-panel-subtitle">Generate a secure drop zone</div>
+              </div>
+            </div>
+
+            <p class="p2p-hint">1) Generate a handshake, 2) share the code and blob with your partner, 3) paste their answer to finalize.</p>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-primary btn-full" id="btnP2PStartHost">
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">🎯</span>
+                  <span class="btn-text">Generate Host Handshake</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+
+            <div class="p2p-value-block">
+              <div class="p2p-label">Connection Code</div>
+              <div class="p2p-code-row">
+                <div class="p2p-code-value" id="p2pHostCode">------</div>
+                <button class="btn btn-secondary" id="btnCopyHostCode">📋 Copy</button>
+              </div>
+            </div>
+
+            <div class="p2p-field-group">
+              <label for="p2pHostOffer">Host Handshake Blob</label>
+              <textarea class="form-input p2p-textarea" id="p2pHostOffer" rows="5" readonly placeholder="Generate a handshake to populate this field"></textarea>
+              <div class="card-cta-group compact">
+                <button class="btn btn-secondary btn-full" id="btnCopyHostOffer">
+                  <span class="btn-content">
+                    <span class="btn-icon" aria-hidden="true">📥</span>
+                    <span class="btn-text">Copy Handshake</span>
+                  </span>
+                  <span class="btn-chevron" aria-hidden="true">⟶</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="p2p-field-group">
+              <label for="p2pHostAnswerInput">Client Answer (paste)</label>
+              <textarea class="form-input p2p-textarea" id="p2pHostAnswerInput" rows="4" placeholder="Paste the answer blob from the client"></textarea>
+              <div class="card-cta-group compact">
+                <button class="btn btn-success btn-full" id="btnApplyHostAnswer">
+                  <span class="btn-content">
+                    <span class="btn-icon" aria-hidden="true">✅</span>
+                    <span class="btn-text">Apply Client Answer</span>
+                  </span>
+                  <span class="btn-chevron" aria-hidden="true">⟶</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-primary btn-full" id="btnP2PSendFiles" disabled>
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">📤</span>
+                  <span class="btn-text">Select Files to Send</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="p2p-panel" aria-labelledby="p2pClientTitle">
+            <div class="p2p-panel-header">
+              <div class="p2p-panel-icon" aria-hidden="true">📥</div>
+              <div>
+                <div class="p2p-panel-title" id="p2pClientTitle">Join as Client</div>
+                <div class="p2p-panel-subtitle">Connect with a host in seconds</div>
+              </div>
+            </div>
+
+            <p class="p2p-hint">Have the host's code and handshake ready. We'll generate an answer blob you can send back.</p>
+
+            <div class="form-group">
+              <label class="form-label" for="p2pClientCode">Host Code</label>
+              <input type="text" class="form-input" placeholder="Enter 6-digit code" id="p2pClientCode" maxlength="6">
+            </div>
+
+            <div class="p2p-field-group">
+              <label for="p2pClientOfferInput">Host Handshake Blob</label>
+              <textarea class="form-input p2p-textarea" id="p2pClientOfferInput" rows="5" placeholder="Paste handshake shared by host"></textarea>
+            </div>
+
+            <div class="card-cta-group compact">
+              <button class="btn btn-primary btn-full" id="btnP2PJoinClient">
+                <span class="btn-content">
+                  <span class="btn-icon" aria-hidden="true">🔗</span>
+                  <span class="btn-text">Generate Client Answer</span>
+                </span>
+                <span class="btn-chevron" aria-hidden="true">⟶</span>
+              </button>
+            </div>
+
+            <div class="p2p-field-group">
+              <label for="p2pClientAnswerOutput">Client Answer (share back)</label>
+              <textarea class="form-input p2p-textarea" id="p2pClientAnswerOutput" rows="4" readonly placeholder="Answer blob will appear here"></textarea>
+              <div class="card-cta-group compact">
+                <button class="btn btn-secondary btn-full" id="btnCopyClientAnswer">
+                  <span class="btn-content">
+                    <span class="btn-icon" aria-hidden="true">📋</span>
+                    <span class="btn-text">Copy Client Answer</span>
+                  </span>
+                  <span class="btn-chevron" aria-hidden="true">⟶</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="p2p-transfer-section">
+          <div class="p2p-transfer-header">
+            <div>
+              <div class="p2p-panel-title">Live Transfers</div>
+              <div class="p2p-panel-subtitle" id="p2pTransferMeta">Progress for inbound and outbound files</div>
+            </div>
+            <button class="btn btn-secondary" id="btnP2PClearTransfers">🧹 Clear History</button>
+          </div>
+          <div class="p2p-transfer-list" id="p2pTransferList">
+            <div class="p2p-transfer-empty">
+              No active transfers yet — once connected, file progress will appear here in real time.
+            </div>
+          </div>
+        </div>
+
+        <div class="p2p-directory-panel" aria-labelledby="p2pDirectoryTitle">
+          <div class="p2p-directory-header">
+            <div>
+              <div class="p2p-panel-title" id="p2pDirectoryTitle">Remote Directory Browser</div>
+              <div class="p2p-panel-subtitle">Explore files shared over the secure tunnel</div>
+            </div>
+            <div class="p2p-directory-actions">
+              <button class="btn btn-secondary" id="btnP2PDirectoryRefresh">🔄 Refresh Tree</button>
+              <button class="btn btn-secondary" id="btnP2PDirectoryPreview">👁️ Preview</button>
+              <button class="btn btn-primary" id="btnP2PDirectoryDownload">⬇️ Download</button>
+              <button class="btn btn-success" id="btnP2PDirectoryRequestWrite">📝 Request Write Access</button>
+            </div>
+          </div>
+
+          <div class="p2p-directory-status" id="p2pDirectoryStatus" role="status" aria-live="polite">
+            Awaiting secure channel before loading directory structure.
+          </div>
+
+          <div class="p2p-directory-layout">
+            <section class="p2p-directory-tree" aria-label="Remote directory tree">
+              <header>
+                <div class="p2p-directory-tree-title">Shared Tree</div>
+                <span class="p2p-permission-pill" id="p2pDirectoryPermission">Read-only</span>
+              </header>
+              <ul class="p2p-tree" id="p2pDirectoryTree">
+                <li class="p2p-tree-empty">Connect to a host and refresh to load directories.</li>
+              </ul>
+            </section>
+
+            <section class="p2p-directory-preview" aria-label="File preview">
+              <header>
+                <div class="p2p-directory-tree-title">Preview & Metadata</div>
+                <span class="p2p-bandwidth-indicator" id="p2pDirectoryBandwidth">Bandwidth: --</span>
+              </header>
+              <div class="p2p-preview-card" id="p2pDirectoryPreview">
+                <div class="p2p-preview-empty">
+                  Select a file from the tree to see metadata, quick preview, and transfer actions.
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVITY TAB -->
+    <div class="tab-content" id="tab-activity">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📊</div>
+          <div>
+            <div class="card-title">Activity Log</div>
+            <div class="card-subtitle">Real-time system events</div>
+          </div>
+        </div>
+
+        <div class="activity-log" id="activityLog">
+          <!-- Log entries will be added here -->
+        </div>
+
+        <div class="form-row mt-xl">
+          <button class="btn btn-secondary" id="btnClearLog">🗑️ Clear Log</button>
+          <button class="btn btn-secondary" id="btnExportLog">💾 Export Log</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  </div>
+
+  <!-- THEME TOGGLE BUTTON -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="theme-icon theme-icon-light">☀️</span>
+    <span class="theme-icon theme-icon-dark">🌙</span>
+  </button>
+
+  <!-- FLOATING AI CHAT -->
+  <div class="ai-chat-float" id="aiChatFloat">
+    <div class="ai-chat-header">
+      <div class="ai-chat-title">
+        <span class="ai-chat-icon">🤖</span>
+        <span>CUBE AI Assistant</span>
+      </div>
+      <div class="ai-chat-controls">
+        <button class="ai-chat-minimize" id="aiChatMinimize" aria-label="Minimize">─</button>
+        <button class="ai-chat-close" id="aiChatClose" aria-label="Close">×</button>
+      </div>
+    </div>
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-chat-message ai-message">
+        <div class="ai-avatar">🤖</div>
+        <div class="ai-bubble">
+          Hi! I'm your AI assistant. I can help you with:
+          <ul>
+            <li>Control the extension with voice or text</li>
+            <li>Manage downloads, FTP, and P2P transfers</li>
+            <li>Auto-detect and parse files for autofill</li>
+            <li>Sync between Chrome and CUBE browser</li>
+          </ul>
+          Try: <strong>"Download all images from this page"</strong>
+        </div>
+      </div>
+    </div>
+    <div class="ai-chat-input-wrapper">
+      <button class="ai-voice-btn" id="aiVoiceBtn" aria-label="Voice input">
+        <span class="voice-icon">🎤</span>
+        <span class="voice-recording">⏺️</span>
+      </button>
+      <input 
+        type="text" 
+        class="ai-chat-input" 
+        id="aiChatInput" 
+        placeholder="Type a command or ask anything..."
+        autocomplete="off"
+      />
+      <button class="ai-send-btn" id="aiSendBtn" aria-label="Send message">
+        <span>➤</span>
+      </button>
+    </div>
+    <div class="ai-chat-status" id="aiChatStatus">
+      <span class="status-dot status-connected"></span>
+      <span class="status-text">Connected to CUBE System</span>
+    </div>
+  </div>
+
+  <!-- AI CHAT TOGGLE FAB -->
+  <button class="ai-fab" id="aiFab" aria-label="Open AI Assistant">
+    <span class="ai-fab-icon">🤖</span>
+    <span class="ai-fab-pulse"></span>
+  </button>
+
+  <script src="libs/qrcode.js"></script>
+  <script src="sidepanel-elite.js"></script>
+</body>
+</html>

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum v7.1 - Enterprise Settings</title>
+  <link rel="stylesheet" href="settings-v7.css">
+</head>
+<body data-theme="dark">
+  <div class="settings-container">
+    <!-- Header -->
+    <header class="settings-header">
+      <div class="header-left">
+        <div class="logo">
+          <span class="logo-icon">🧊</span>
+        </div>
+        <div class="header-info">
+          <h1>CUBE Nexum Connect</h1>
+          <p class="version">Version 7.1.0 Enterprise</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" id="themeToggle" class="icon-btn" title="Toggle Theme">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </button>
+        <button type="button" id="exportSettings" class="icon-btn" title="Export Settings">
+          📤
+        </button>
+        <button type="button" id="importSettings" class="icon-btn" title="Import Settings">
+          📥
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="settings-nav">
+      <button type="button" class="nav-tab active" data-tab="general">
+        <span class="tab-icon">⚙️</span>
+        <span class="tab-label">General</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="enterprise">
+        <span class="tab-icon">🏢</span>
+        <span class="tab-label">Enterprise</span>
+        <span class="tab-badge" id="enterpriseBadge" hidden>SSO</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="notifications">
+        <span class="tab-icon">🔔</span>
+        <span class="tab-label">Notifications</span>
+        <span class="tab-badge" id="notificationBadge" hidden>0</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="analytics">
+        <span class="tab-icon">📊</span>
+        <span class="tab-label">Analytics</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="ai">
+        <span class="tab-icon">🤖</span>
+        <span class="tab-label">AI Services</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="automation">
+        <span class="tab-icon">🎬</span>
+        <span class="tab-label">Automation</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="security">
+        <span class="tab-icon">🔒</span>
+        <span class="tab-label">Security</span>
+      </button>
+      <button type="button" class="nav-tab" data-tab="advanced">
+        <span class="tab-icon">🛠️</span>
+        <span class="tab-label">Advanced</span>
+      </button>
+    </nav>
+
+    <!-- Tab Content Container -->
+    <main class="settings-content">
+      
+      <!-- General Tab -->
+      <section id="tab-general" class="tab-panel active">
+        <div class="panel-header">
+          <h2>General Settings</h2>
+          <p>Configure basic extension behavior and appearance</p>
+        </div>
+
+        <div class="settings-card">
+          <h3>Appearance</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Theme</label>
+              <p>Choose your preferred color scheme</p>
+            </div>
+            <select id="themeSelect" class="setting-select" aria-label="Theme selection">
+              <option value="system">System Default</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Accent Color</label>
+              <p>Customize the primary accent color</p>
+            </div>
+            <input type="color" id="accentColor" class="setting-color" value="#7c3aed" aria-label="Accent color picker">
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Compact Mode</label>
+              <p>Use smaller UI elements for more screen space</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="compactMode" aria-label="Enable compact mode">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Behavior</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Auto-start on Browser Launch</label>
+              <p>Automatically activate extension services on startup</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="autoStart" checked aria-label="Auto-start on browser launch">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Show Floating Assistant</label>
+              <p>Display the AI assistant button on all pages</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="showFloatingAssistant" checked aria-label="Show floating assistant">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Context Menu Integration</label>
+              <p>Add CUBE options to the right-click menu</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="contextMenuEnabled" checked aria-label="Enable context menu integration">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Language & Region</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Language</label>
+              <p>Select your preferred language</p>
+            </div>
+            <select id="languageSelect" class="setting-select" aria-label="Language selection">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="pt">Português</option>
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Date Format</label>
+              <p>Choose how dates are displayed</p>
+            </div>
+            <select id="dateFormat" class="setting-select" aria-label="Date format selection">
+              <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+              <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+              <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enterprise Tab -->
+      <section id="tab-enterprise" class="tab-panel">
+        <div class="panel-header">
+          <h2>Enterprise Settings</h2>
+          <p>Configure SSO, organization, and enterprise features</p>
+        </div>
+
+        <!-- Enterprise Status Card -->
+        <div class="settings-card status-card" id="enterpriseStatusCard">
+          <div class="status-header">
+            <div class="status-icon" id="enterpriseStatusIcon">🔒</div>
+            <div class="status-info">
+              <h3 id="enterpriseStatusTitle">Not Connected</h3>
+              <p id="enterpriseStatusDesc">Sign in with your enterprise account to unlock features</p>
+            </div>
+          </div>
+          <div class="status-actions">
+            <button type="button" id="enterpriseConnectBtn" class="btn btn-primary">
+              Connect Enterprise Account
+            </button>
+          </div>
+        </div>
+
+        <!-- SSO Configuration -->
+        <div class="settings-card">
+          <h3>Single Sign-On (SSO)</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>SSO Provider</label>
+              <p>Select your organization's identity provider</p>
+            </div>
+            <select id="ssoProvider" class="setting-select" aria-label="SSO provider selection">
+              <option value="">Select Provider...</option>
+              <option value="okta">Okta</option>
+              <option value="azure">Microsoft Azure AD</option>
+              <option value="google">Google Workspace</option>
+              <option value="onelogin">OneLogin</option>
+              <option value="auth0">Auth0</option>
+              <option value="custom">Custom OIDC</option>
+              <option value="saml">SAML 2.0</option>
+            </select>
+          </div>
+          
+          <div id="ssoConfigFields" class="sso-config-fields" hidden>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Client ID</label>
+                <p>OAuth 2.0 Client ID from your IdP</p>
+              </div>
+              <input type="text" id="ssoClientId" class="setting-input" placeholder="your-client-id">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Issuer URL</label>
+                <p>OpenID Connect issuer URL</p>
+              </div>
+              <input type="url" id="ssoIssuerUrl" class="setting-input" placeholder="https://your-domain.okta.com">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Authorization Endpoint</label>
+                <p>OAuth authorization URL (optional for well-known)</p>
+              </div>
+              <input type="url" id="ssoAuthEndpoint" class="setting-input" placeholder="https://...">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Token Endpoint</label>
+                <p>OAuth token URL (optional for well-known)</p>
+              </div>
+              <input type="url" id="ssoTokenEndpoint" class="setting-input" placeholder="https://...">
+            </div>
+          </div>
+          
+          <div id="samlConfigFields" class="saml-config-fields" hidden>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Entity ID</label>
+                <p>SAML Service Provider Entity ID</p>
+              </div>
+              <input type="text" id="samlEntityId" class="setting-input" placeholder="urn:cube:nexum:sp">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>SSO URL</label>
+                <p>Identity Provider SSO endpoint</p>
+              </div>
+              <input type="url" id="samlSsoUrl" class="setting-input" placeholder="https://idp.example.com/sso">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Certificate</label>
+                <p>X.509 certificate for signature verification</p>
+              </div>
+              <textarea id="samlCertificate" class="setting-textarea" rows="4" placeholder="-----BEGIN CERTIFICATE-----"></textarea>
+            </div>
+          </div>
+          
+          <div class="setting-actions">
+            <button type="button" id="testSsoBtn" class="btn btn-secondary" disabled>
+              Test Connection
+            </button>
+            <button type="button" id="saveSsoBtn" class="btn btn-primary" disabled>
+              Save SSO Config
+            </button>
+          </div>
+        </div>
+
+        <!-- Organization Settings -->
+        <div class="settings-card">
+          <h3>Organization</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Organization ID</label>
+              <p>Your enterprise organization identifier</p>
+            </div>
+            <input type="text" id="organizationId" class="setting-input" placeholder="org_xxxxxxxxx" readonly>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Organization Name</label>
+              <p>Display name for your organization</p>
+            </div>
+            <input type="text" id="organizationName" class="setting-input" placeholder="Acme Corporation" readonly>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>License Type</label>
+              <p>Your current enterprise license tier</p>
+            </div>
+            <div class="license-badge" id="licenseBadge">
+              <span class="license-icon">👑</span>
+              <span class="license-text">Enterprise</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audit Logging -->
+        <div class="settings-card">
+          <h3>Audit & Compliance</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Enable Audit Logging</label>
+              <p>Track all user actions for compliance</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="auditLoggingEnabled" aria-label="Enable audit logging">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Log Retention Period</label>
+              <p>How long to keep audit logs</p>
+            </div>
+            <select id="auditRetention" class="setting-select" aria-label="Log retention period">
+              <option value="30">30 days</option>
+              <option value="90">90 days</option>
+              <option value="180">180 days</option>
+              <option value="365">1 year</option>
+              <option value="730">2 years</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Export Audit Logs</label>
+              <p>Download audit logs for external analysis</p>
+            </div>
+            <button type="button" id="exportAuditLogs" class="btn btn-secondary">
+              Export Logs
+            </button>
+          </div>
+        </div>
+
+        <!-- White Label / Branding -->
+        <div class="settings-card">
+          <h3>Branding (White Label)</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Enable Custom Branding</label>
+              <p>Apply organization branding to the extension</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="customBrandingEnabled" aria-label="Enable custom branding">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div id="brandingFields" class="branding-fields" hidden>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Primary Color</label>
+                <p>Main brand color</p>
+              </div>
+              <input type="color" id="brandPrimaryColor" class="setting-color" value="#7c3aed">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Secondary Color</label>
+                <p>Accent brand color</p>
+              </div>
+              <input type="color" id="brandSecondaryColor" class="setting-color" value="#6366f1">
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Logo URL</label>
+                <p>Custom logo image URL</p>
+              </div>
+              <input type="url" id="brandLogoUrl" class="setting-input" placeholder="https://...">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notifications Tab -->
+      <section id="tab-notifications" class="tab-panel">
+        <div class="panel-header">
+          <h2>Notification Settings</h2>
+          <p>Configure how and when you receive notifications</p>
+        </div>
+
+        <!-- Master Toggle -->
+        <div class="settings-card highlight-card">
+          <div class="setting-row">
+            <div class="setting-info">
+              <label class="main-label">Enable Notifications</label>
+              <p>Master switch for all notification types</p>
+            </div>
+            <label class="toggle-switch large">
+              <input type="checkbox" id="notificationsEnabled" checked aria-label="Enable notifications">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Notification Channels -->
+        <div class="settings-card">
+          <h3>Notification Channels</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Browser Notifications</label>
+              <p>Show system notifications in your browser</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="browserNotifications" checked aria-label="Enable browser notifications">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>In-App Notifications</label>
+              <p>Show notifications within the extension popup</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="inAppNotifications" checked aria-label="Enable in-app notifications">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Sound Effects</label>
+              <p>Play sounds for important notifications</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="soundNotifications" aria-label="Enable sound notifications">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Push Notifications</label>
+              <p>Receive notifications even when browser is closed</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="pushNotifications" aria-label="Enable push notifications">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Notification Categories -->
+        <div class="settings-card">
+          <h3>Notification Categories</h3>
+          <p class="card-description">Choose which types of notifications you want to receive</p>
+          
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">🎬</span>
+              <div class="category-info">
+                <label>Automation</label>
+                <p>Macro recordings, playback status, workflow completion</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifAutomation" checked aria-label="Enable automation notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">📄</span>
+              <div class="category-info">
+                <label>Documents</label>
+                <p>Document processing, PDF extraction, OCR results</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifDocuments" checked aria-label="Enable document notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">📝</span>
+              <div class="category-info">
+                <label>Autofill</label>
+                <p>Form filling completion, field detection</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifAutofill" checked aria-label="Enable autofill notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">🤖</span>
+              <div class="category-info">
+                <label>AI Assistant</label>
+                <p>AI responses, suggestions, workflow generation</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifAI" checked aria-label="Enable AI notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">⬇️</span>
+              <div class="category-info">
+                <label>Downloads</label>
+                <p>File downloads, batch operations progress</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifDownloads" checked aria-label="Enable download notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">⚠️</span>
+              <div class="category-info">
+                <label>System & Errors</label>
+                <p>Extension updates, errors, important alerts</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifSystem" checked aria-label="Enable system notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="notification-category">
+            <div class="category-header">
+              <span class="category-icon">📢</span>
+              <div class="category-info">
+                <label>Marketing & Tips</label>
+                <p>Product updates, tips, promotional content</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="notifMarketing" aria-label="Enable marketing notifications">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiet Hours -->
+        <div class="settings-card">
+          <h3>Quiet Hours</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Enable Quiet Hours</label>
+              <p>Mute notifications during specified times</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="quietHoursEnabled" aria-label="Enable quiet hours">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div id="quietHoursConfig" class="quiet-hours-config" hidden>
+            <div class="time-range">
+              <div class="time-input">
+                <label>Start Time</label>
+                <input type="time" id="quietHoursStart" value="22:00">
+              </div>
+              <span class="time-separator">to</span>
+              <div class="time-input">
+                <label>End Time</label>
+                <input type="time" id="quietHoursEnd" value="08:00">
+              </div>
+            </div>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Allow Critical Alerts</label>
+                <p>Still show high-priority notifications during quiet hours</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="allowCriticalDuringQuiet" checked aria-label="Allow critical alerts during quiet hours">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digest Mode -->
+        <div class="settings-card">
+          <h3>Notification Digest</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Enable Digest Mode</label>
+              <p>Bundle notifications and deliver at scheduled times</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="digestModeEnabled" aria-label="Enable digest mode">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div id="digestConfig" class="digest-config" hidden>
+            <div class="setting-row">
+              <div class="setting-info">
+                <label>Digest Frequency</label>
+                <p>How often to send notification summaries</p>
+              </div>
+              <select id="digestFrequency" class="setting-select">
+                <option value="hourly">Every Hour</option>
+                <option value="daily">Daily</option>
+                <option value="twice_daily">Twice Daily</option>
+              </select>
+            </div>
+            <div class="setting-row" id="digestTimeRow">
+              <div class="setting-info">
+                <label>Digest Time</label>
+                <p>When to receive your daily digest</p>
+              </div>
+              <input type="time" id="digestTime" value="09:00" class="setting-time">
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification History -->
+        <div class="settings-card">
+          <h3>History</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Keep Notification History</label>
+              <p>Store notifications for later review</p>
+            </div>
+            <select id="notificationHistoryDays" class="setting-select" aria-label="Notification history retention period">
+              <option value="7">7 days</option>
+              <option value="14">14 days</option>
+              <option value="30" selected>30 days</option>
+              <option value="90">90 days</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Clear Notification History</label>
+              <p>Remove all stored notifications</p>
+            </div>
+            <button type="button" id="clearNotificationHistory" class="btn btn-danger">
+              Clear History
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics Tab -->
+      <section id="tab-analytics" class="tab-panel">
+        <div class="panel-header">
+          <h2>Analytics Settings</h2>
+          <p>Control usage tracking and data collection preferences</p>
+        </div>
+
+        <!-- Consent Card -->
+        <div class="settings-card consent-card">
+          <div class="consent-header">
+            <span class="consent-icon">📊</span>
+            <div class="consent-info">
+              <h3>Analytics & Telemetry</h3>
+              <p>Help improve CUBE Nexum by sharing anonymous usage data</p>
+            </div>
+          </div>
+          <div class="consent-details">
+            <p>We collect:</p>
+            <ul>
+              <li>Feature usage statistics (which features you use most)</li>
+              <li>Performance metrics (load times, error rates)</li>
+              <li>Anonymized session data (no personal information)</li>
+            </ul>
+            <p>We <strong>never</strong> collect:</p>
+            <ul>
+              <li>Personal data or form contents</li>
+              <li>Passwords or sensitive information</li>
+              <li>Browsing history or visited URLs</li>
+            </ul>
+          </div>
+          <div class="consent-action">
+            <label class="toggle-switch large">
+              <input type="checkbox" id="analyticsConsent" checked aria-label="Enable analytics consent">
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="consent-label" id="consentLabel">Analytics Enabled</span>
+          </div>
+        </div>
+
+        <!-- Data Collection Options -->
+        <div class="settings-card">
+          <h3>Data Collection</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Feature Usage Tracking</label>
+              <p>Track which features you use and how often</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="trackFeatureUsage" checked aria-label="Enable feature usage tracking">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Performance Monitoring</label>
+              <p>Collect performance metrics to improve speed</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="trackPerformance" checked aria-label="Enable performance monitoring">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Error Reporting</label>
+              <p>Send anonymous error reports to help fix bugs</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="trackErrors" checked aria-label="Enable error reporting">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>A/B Testing</label>
+              <p>Participate in feature experiments</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="participateABTesting" checked aria-label="Participate in AB testing">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Usage Dashboard -->
+        <div class="settings-card">
+          <h3>Your Usage Statistics</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-icon">📝</span>
+              <div class="stat-value" id="statAutofills">0</div>
+              <div class="stat-label">Forms Filled</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">🎬</span>
+              <div class="stat-value" id="statMacros">0</div>
+              <div class="stat-label">Macros Run</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">📄</span>
+              <div class="stat-value" id="statDocuments">0</div>
+              <div class="stat-label">Documents Processed</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">🤖</span>
+              <div class="stat-value" id="statAIRequests">0</div>
+              <div class="stat-label">AI Requests</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">⏱️</span>
+              <div class="stat-value" id="statTimeSaved">0h</div>
+              <div class="stat-label">Time Saved</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">📅</span>
+              <div class="stat-value" id="statDaysActive">0</div>
+              <div class="stat-label">Days Active</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Usage Breakdown -->
+        <div class="settings-card">
+          <h3>Feature Usage Breakdown</h3>
+          <div class="feature-usage-list" id="featureUsageList">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Active Experiments -->
+        <div class="settings-card">
+          <h3>Active Experiments</h3>
+          <p class="card-description">Features currently being tested</p>
+          <div class="experiments-list" id="experimentsList">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="settings-card">
+          <h3>Data Management</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Export My Data</label>
+              <p>Download all your analytics data in JSON format</p>
+            </div>
+            <button type="button" id="exportAnalyticsData" class="btn btn-secondary">
+              Export Data
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Delete My Data</label>
+              <p>Permanently remove all your analytics data</p>
+            </div>
+            <button type="button" id="deleteAnalyticsData" class="btn btn-danger">
+              Delete Data
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Services Tab -->
+      <section id="tab-ai" class="tab-panel">
+        <div class="panel-header">
+          <h2>AI Services</h2>
+          <p>Configure AI providers and assistant behavior</p>
+        </div>
+
+        <div class="settings-card">
+          <h3>AI Provider</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Primary AI Provider</label>
+              <p>Select your preferred AI service</p>
+            </div>
+            <select id="aiProvider" class="setting-select" aria-label="AI provider selection">
+              <option value="openai">OpenAI (GPT-4)</option>
+              <option value="claude">Anthropic (Claude)</option>
+              <option value="gemini">Google (Gemini)</option>
+              <option value="local">Local/Self-hosted</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>API Key</label>
+              <p>Your AI provider API key (stored securely)</p>
+            </div>
+            <div class="api-key-input">
+              <input type="password" id="aiApiKey" class="setting-input" placeholder="sk-...">
+              <button type="button" id="toggleApiKeyVisibility" class="icon-btn-small">👁️</button>
+            </div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Model</label>
+              <p>Select the AI model to use</p>
+            </div>
+            <select id="aiModel" class="setting-select" aria-label="AI model selection">
+              <option value="gpt-4o">GPT-4o (Recommended)</option>
+              <option value="gpt-4-turbo">GPT-4 Turbo</option>
+              <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Faster)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Assistant Behavior</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Response Style</label>
+              <p>How the AI assistant communicates</p>
+            </div>
+            <select id="aiResponseStyle" class="setting-select" aria-label="AI response style">
+              <option value="concise">Concise</option>
+              <option value="detailed">Detailed</option>
+              <option value="technical">Technical</option>
+              <option value="friendly">Friendly</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Auto-suggestions</label>
+              <p>Automatically suggest actions based on page context</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="aiAutoSuggestions" checked aria-label="Enable auto-suggestions">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Include Page Context</label>
+              <p>Send page information to improve AI responses</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="aiIncludeContext" checked aria-label="Include page context">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Automation Tab -->
+      <section id="tab-automation" class="tab-panel">
+        <div class="panel-header">
+          <h2>Automation Settings</h2>
+          <p>Configure macros, autofill, and workflow options</p>
+        </div>
+
+        <div class="settings-card">
+          <h3>Macro Recording</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Record Mouse Movements</label>
+              <p>Include mouse position in macro recordings</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="recordMouseMovements" aria-label="Record mouse movements">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Record Timing</label>
+              <p>Preserve delays between actions</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="recordTiming" checked aria-label="Record timing">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Default Playback Speed</label>
+              <p>Speed multiplier for macro playback</p>
+            </div>
+            <select id="macroPlaybackSpeed" class="setting-select" aria-label="Macro playback speed">
+              <option value="0.5">0.5x (Slower)</option>
+              <option value="1" selected>1x (Normal)</option>
+              <option value="1.5">1.5x (Fast)</option>
+              <option value="2">2x (Very Fast)</option>
+              <option value="0">Max Speed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Autofill Settings</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Auto-detect Forms</label>
+              <p>Automatically scan pages for fillable forms</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="autoDetectForms" checked aria-label="Enable auto-detect forms">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Fuzzy Matching</label>
+              <p>Use AI to match fields with similar names</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="fuzzyMatching" checked aria-label="Enable fuzzy matching">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Minimum Confidence</label>
+              <p>Required confidence level for auto-fill</p>
+            </div>
+            <input type="range" id="fillConfidence" min="50" max="100" value="80" class="setting-range" aria-label="Fill confidence slider">
+            <span class="range-value" id="fillConfidenceValue">80%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Tab -->
+      <section id="tab-security" class="tab-panel">
+        <div class="panel-header">
+          <h2>Security Settings</h2>
+          <p>Configure security and privacy options</p>
+        </div>
+
+        <div class="settings-card">
+          <h3>Data Protection</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Encrypt Stored Data</label>
+              <p>Encrypt all locally stored data</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="encryptLocalData" checked aria-label="Encrypt local data">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Clear Data on Logout</label>
+              <p>Remove all stored data when signing out</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="clearDataOnLogout" aria-label="Clear data on logout">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Session Timeout</label>
+              <p>Auto-logout after inactivity</p>
+            </div>
+            <select id="sessionTimeout" class="setting-select" aria-label="Session timeout">
+              <option value="0">Never</option>
+              <option value="15">15 minutes</option>
+              <option value="30">30 minutes</option>
+              <option value="60">1 hour</option>
+              <option value="240">4 hours</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Permissions</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Site Blacklist</label>
+              <p>Sites where the extension is disabled</p>
+            </div>
+            <button type="button" id="manageSiteBlacklist" class="btn btn-secondary">
+              Manage Sites
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advanced Tab -->
+      <section id="tab-advanced" class="tab-panel">
+        <div class="panel-header">
+          <h2>Advanced Settings</h2>
+          <p>Developer options and advanced configuration</p>
+        </div>
+
+        <div class="settings-card">
+          <h3>Developer Options</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Debug Mode</label>
+              <p>Enable detailed console logging</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="debugMode" aria-label="Enable debug mode">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Performance Overlay</label>
+              <p>Show FPS and memory usage overlay</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="perfOverlay" aria-label="Show performance overlay">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Data Management</h3>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Export All Settings</label>
+              <p>Download all settings as JSON file</p>
+            </div>
+            <button type="button" id="exportAllSettings" class="btn btn-secondary">
+              Export
+            </button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Import Settings</label>
+              <p>Restore settings from JSON file</p>
+            </div>
+            <button type="button" id="importAllSettings" class="btn btn-secondary">
+              Import
+            </button>
+            <input type="file" id="importSettingsFile" accept=".json" hidden>
+          </div>
+          <div class="setting-row">
+            <div class="setting-info">
+              <label>Reset to Defaults</label>
+              <p>Restore all settings to factory defaults</p>
+            </div>
+            <button type="button" id="resetAllSettings" class="btn btn-danger">
+              Reset All
+            </button>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>About</h3>
+          <div class="about-info">
+            <div class="about-row">
+              <span class="about-label">Version</span>
+              <span class="about-value">7.1.0 Enterprise</span>
+            </div>
+            <div class="about-row">
+              <span class="about-label">Build</span>
+              <span class="about-value" id="buildNumber">2025.12.25</span>
+            </div>
+            <div class="about-row">
+              <span class="about-label">Extension ID</span>
+              <span class="about-value" id="extensionId">-</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="settings-footer">
+      <div class="footer-left">
+        <button type="button" id="saveAllSettings" class="btn btn-primary btn-large">
+          💾 Save All Settings
+        </button>
+        <span class="save-status" id="saveStatus"></span>
+      </div>
+      <div class="footer-right">
+        <a href="https://cube.nexum.io/docs" target="_blank" rel="noopener" class="footer-link">Documentation</a>
+        <a href="https://cube.nexum.io/support" target="_blank" rel="noopener" class="footer-link">Support</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modals -->
+  <div id="modalOverlay" class="modal-overlay" hidden>
+    <div class="modal" id="activeModal">
+      <!-- Modal content inserted by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="settings-v7.js"></script>
+</body>
+</html>

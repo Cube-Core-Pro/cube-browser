@@ -1,0 +1,170 @@
+{
+  "extensionName": {
+    "message": "CUBE Nexum Connect",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Enterprise Browser Automation Platform: AI-Powered Macros (GPT-5.1, Claude 4, Gemini 2.5), Remote Control, Professional Screen Capture with OCR, Document Intelligence, P2P File Sharing, Tauri Desktop Integration, and Smart Autofill.",
+    "description": "Extension description"
+  },
+  "appTitle": {
+    "message": "CUBE Nexum",
+    "description": "App title"
+  },
+  "dashboard": {
+    "message": "Dashboard",
+    "description": "Dashboard tab"
+  },
+  "automation": {
+    "message": "Automation",
+    "description": "Automation tab"
+  },
+  "macros": {
+    "message": "Macros",
+    "description": "Macros section"
+  },
+  "screenshot": {
+    "message": "Screen Capture",
+    "description": "Screenshot section"
+  },
+  "remote": {
+    "message": "Remote Control",
+    "description": "Remote control section"
+  },
+  "settings": {
+    "message": "Settings",
+    "description": "Settings section"
+  },
+  "help": {
+    "message": "Help",
+    "description": "Help section"
+  },
+  "about": {
+    "message": "About",
+    "description": "About section"
+  },
+  "startRecording": {
+    "message": "Start Recording",
+    "description": "Start recording button"
+  },
+  "stopRecording": {
+    "message": "Stop Recording",
+    "description": "Stop recording button"
+  },
+  "autoFill": {
+    "message": "Auto Fill",
+    "description": "Auto fill button"
+  },
+  "detectForms": {
+    "message": "Detect Forms",
+    "description": "Detect forms button"
+  },
+  "detectDocuments": {
+    "message": "Detect Documents",
+    "description": "Detect documents button"
+  },
+  "connected": {
+    "message": "Connected",
+    "description": "Connection status"
+  },
+  "disconnected": {
+    "message": "Disconnected",
+    "description": "Disconnection status"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading text"
+  },
+  "error": {
+    "message": "Error",
+    "description": "Error text"
+  },
+  "success": {
+    "message": "Success",
+    "description": "Success text"
+  },
+  "formsDetected": {
+    "message": "Forms Detected",
+    "description": "Forms detected label"
+  },
+  "documentsDetected": {
+    "message": "Documents Detected",
+    "description": "Documents detected label"
+  },
+  "screenshotsTaken": {
+    "message": "Screenshots Taken",
+    "description": "Screenshots taken label"
+  },
+  "macrosPlayed": {
+    "message": "Macros Played",
+    "description": "Macros played label"
+  },
+  "aiAssistant": {
+    "message": "AI Assistant",
+    "description": "AI assistant label"
+  },
+  "fullPage": {
+    "message": "Full Page",
+    "description": "Full page screenshot"
+  },
+  "visibleArea": {
+    "message": "Visible Area",
+    "description": "Visible area screenshot"
+  },
+  "selectArea": {
+    "message": "Select Area",
+    "description": "Select area screenshot"
+  },
+  "element": {
+    "message": "Element",
+    "description": "Element screenshot"
+  },
+  "screenRecording": {
+    "message": "Screen Recording",
+    "description": "Screen recording feature"
+  },
+  "includeAudio": {
+    "message": "Include audio",
+    "description": "Include audio checkbox"
+  },
+  "recordingInProgress": {
+    "message": "Recording in progress...",
+    "description": "Recording status"
+  },
+  "moreOptions": {
+    "message": "More Options",
+    "description": "More options menu"
+  },
+  "diagnostics": {
+    "message": "Diagnostics",
+    "description": "Diagnostics section"
+  },
+  "p2pSharing": {
+    "message": "P2P File Sharing",
+    "description": "P2P sharing section"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button"
+  },
+  "save": {
+    "message": "Save",
+    "description": "Save button"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "companyName": {
+    "message": "CUBE Advisors, Inc.",
+    "description": "Company name"
+  },
+  "companyLocation": {
+    "message": "Miami, FL",
+    "description": "Company location"
+  },
+  "madeWith": {
+    "message": "Made with ❤️ in Miami",
+    "description": "Made with love text"
+  }
+}

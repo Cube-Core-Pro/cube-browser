@@ -1,0 +1,9 @@
+{
+  "name": "com.cube.elite.native",
+  "description": "CUBE Nexum Native Messaging Host - Tauri Integration",
+  "path": "/Applications/CUBE Nexum.app/Contents/Resources/native-messaging-host",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://EXTENSION_ID_HERE/"
+  ]
+}

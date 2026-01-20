@@ -1,0 +1,73 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg48" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="50%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="faceTop48" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95"/>
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:0.85"/>
+    </linearGradient>
+    <linearGradient id="faceLeft48" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c7d2fe;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#a5b4fc;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="faceRight48" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ddd6fe;stop-opacity:0.85"/>
+      <stop offset="100%" style="stop-color:#c4b5fd;stop-opacity:0.75"/>
+    </linearGradient>
+    <filter id="glow48">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="48" height="48" rx="10" fill="url(#bg48)"/>
+  
+  <!-- Hypercube -->
+  <g transform="translate(24, 24)">
+    <!-- Outer cube -->
+    <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    
+    <!-- Connecting lines -->
+    <line x1="-15" y1="-15" x2="-8.5" y2="-8.5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="15" y1="-15" x2="8.5" y2="-8.5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="-15" y1="15" x2="-8.5" y2="8.5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    <line x1="15" y1="15" x2="8.5" y2="8.5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+    
+    <!-- Inner cube faces -->
+    <polygon points="-8.5,-8.5 8.5,-8.5 5,-3 -5,-3" fill="url(#faceTop48)" stroke="white" stroke-width="1"/>
+    <polygon points="-8.5,-8.5 -5,-3 -5,3 -8.5,8.5" fill="url(#faceLeft48)" stroke="white" stroke-width="1"/>
+    <polygon points="8.5,-8.5 8.5,8.5 5,3 5,-3" fill="url(#faceRight48)" stroke="white" stroke-width="1"/>
+    
+    <!-- Front face (subtle) -->
+    <polygon points="-5,-3 5,-3 5,3 -5,3" fill="rgba(255,255,255,0.12)" stroke="white" stroke-width="0.75"/>
+    
+    <!-- Bottom edges -->
+    <path d="M-8.5 8.5 L8.5 8.5 L5 3" stroke="white" stroke-width="1" fill="none" opacity="0.8"/>
+    <path d="M-8.5 8.5 L-5 3" stroke="white" stroke-width="1" fill="none" opacity="0.8"/>
+    
+    <!-- Center glow -->
+    <circle cx="0" cy="0" r="2" fill="white" opacity="0.9" filter="url(#glow48)"/>
+    
+    <!-- Corner dots inner -->
+    <circle cx="-8.5" cy="-8.5" r="1.2" fill="white" opacity="0.8"/>
+    <circle cx="8.5" cy="-8.5" r="1.2" fill="white" opacity="0.8"/>
+    <circle cx="-8.5" cy="8.5" r="1.2" fill="white" opacity="0.8"/>
+    <circle cx="8.5" cy="8.5" r="1.2" fill="white" opacity="0.8"/>
+    
+    <!-- Corner dots outer -->
+    <circle cx="-15" cy="-15" r="1" fill="white" opacity="0.5"/>
+    <circle cx="15" cy="-15" r="1" fill="white" opacity="0.5"/>
+    <circle cx="-15" cy="15" r="1" fill="white" opacity="0.5"/>
+    <circle cx="15" cy="15" r="1" fill="white" opacity="0.5"/>
+  </g>
+  
+  <!-- Shine -->
+  <ellipse cx="18" cy="14" rx="10" ry="7" fill="white" opacity="0.06"/>
+</svg>

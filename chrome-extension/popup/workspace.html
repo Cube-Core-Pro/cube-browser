@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Workspace - Work Management</title>
+  <link rel="stylesheet" href="../styles/modern-ui.css">
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+  <link rel="stylesheet" href="workspace.css">
+</head>
+<body>
+  <div class="workspace-app">
+    <!-- Header -->
+    <header class="ws-ext-header">
+      <div class="ws-ext-header-left">
+        <button class="ws-ext-back-btn" id="backToMain">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <div class="ws-ext-logo">
+          <span class="ws-ext-logo-icon">📊</span>
+          <span class="ws-ext-logo-text">CUBE Workspace</span>
+        </div>
+      </div>
+      <div class="ws-ext-header-right">
+        <button class="ws-ext-btn ws-ext-btn-icon" id="notificationsBtn" title="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="ws-ext-badge">3</span>
+        </button>
+        <button class="ws-ext-btn ws-ext-btn-primary" id="createBoardBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          <span>New Board</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ws-ext-main">
+      <!-- Sidebar -->
+      <aside class="ws-ext-sidebar" id="sidebar">
+        <div class="ws-ext-sidebar-search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" placeholder="Search..." id="searchBoards">
+        </div>
+        
+        <div class="ws-ext-sidebar-section">
+          <div class="ws-ext-section-header">
+            <span>⭐</span>
+            <span>Favorites</span>
+          </div>
+          <div class="ws-ext-board-list" id="favoriteBoards"></div>
+        </div>
+        
+        <div class="ws-ext-sidebar-section">
+          <div class="ws-ext-section-header">
+            <span>📁</span>
+            <span>My Boards</span>
+            <button class="ws-ext-add-board-btn" id="addBoardSidebar">+</button>
+          </div>
+          <div class="ws-ext-board-list" id="allBoards">
+            <button class="ws-ext-board-item active" data-board-id="board-1">
+              <span class="ws-ext-board-emoji">🚀</span>
+              <span>Project Alpha</span>
+            </button>
+            <button class="ws-ext-board-item" data-board-id="board-2">
+              <span class="ws-ext-board-emoji">💼</span>
+              <span>Marketing</span>
+            </button>
+            <button class="ws-ext-board-item" data-board-id="board-3">
+              <span class="ws-ext-board-emoji">🎨</span>
+              <span>Design Sprint</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="ws-ext-sidebar-footer">
+          <button class="ws-ext-sidebar-action" id="automationsBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <span>Automations</span>
+          </button>
+          <button class="ws-ext-sidebar-action" id="integrationsBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+            <span>Integrations</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Board Content -->
+      <section class="ws-ext-content">
+        <!-- Board Header -->
+        <div class="ws-ext-board-header">
+          <div class="ws-ext-board-info">
+            <button class="ws-ext-toggle-sidebar" id="toggleSidebar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/>
+              </svg>
+            </button>
+            <span class="ws-ext-board-emoji-large" id="boardEmoji">🚀</span>
+            <div class="ws-ext-board-title-group">
+              <h2 id="boardTitle">Project Alpha</h2>
+              <p id="boardDescription">Main project tracking board</p>
+            </div>
+            <button class="ws-ext-star-btn" id="starBoard">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </button>
+          </div>
+          <div class="ws-ext-board-actions">
+            <div class="ws-ext-members" id="boardMembers">
+              <div class="ws-ext-member-avatar" style="background: linear-gradient(135deg, #8b5cf6, #8b5cf6);">JD</div>
+              <div class="ws-ext-member-avatar" style="background: linear-gradient(135deg, #00c875, #00d68f);">SM</div>
+              <button class="ws-ext-invite-btn" id="inviteMember">+</button>
+            </div>
+            <button class="ws-ext-btn ws-ext-btn-secondary" id="shareBoard">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- View Tabs -->
+        <div class="ws-ext-view-tabs">
+          <div class="ws-ext-views">
+            <button class="ws-ext-view-tab active" data-view="table">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/>
+              </svg>
+              <span>Main Table</span>
+            </button>
+            <button class="ws-ext-view-tab" data-view="kanban">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="6" height="18" rx="1"/><rect x="9" y="3" width="6" height="12" rx="1"/><rect x="15" y="3" width="6" height="15" rx="1"/>
+              </svg>
+              <span>Kanban</span>
+            </button>
+            <button class="ws-ext-view-tab" data-view="timeline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+              </svg>
+              <span>Timeline</span>
+            </button>
+            <button class="ws-ext-view-tab" data-view="calendar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+              </svg>
+              <span>Calendar</span>
+            </button>
+            <button class="ws-ext-view-tab" data-view="chart">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>
+              </svg>
+              <span>Chart</span>
+            </button>
+            <button class="ws-ext-add-view-btn" id="addViewBtn">+</button>
+          </div>
+          <div class="ws-ext-view-actions">
+            <button class="ws-ext-filter-btn" id="filterBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+              </svg>
+              <span>Filter</span>
+            </button>
+            <button class="ws-ext-sort-btn" id="sortBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 5h10M11 9h7M11 13h4"/><path d="M3 17l3 3 3-3"/><path d="M6 18V4"/>
+              </svg>
+              <span>Sort</span>
+            </button>
+            <div class="ws-ext-search-items">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input type="text" placeholder="Search items..." id="searchItems">
+            </div>
+          </div>
+        </div>
+
+        <!-- Board View Content -->
+        <div class="ws-ext-board-view" id="boardView">
+          <!-- Table View (Default) -->
+          <div class="ws-ext-table-view" id="tableView">
+            <!-- Table Header -->
+            <div class="ws-ext-table-header">
+              <div class="ws-ext-header-cell ws-ext-cell-checkbox">
+                <input type="checkbox" id="selectAllItems">
+              </div>
+              <div class="ws-ext-header-cell ws-ext-cell-name">Item</div>
+              <div class="ws-ext-header-cell ws-ext-cell-person">Owner</div>
+              <div class="ws-ext-header-cell ws-ext-cell-status">Status</div>
+              <div class="ws-ext-header-cell ws-ext-cell-priority">Priority</div>
+              <div class="ws-ext-header-cell ws-ext-cell-date">Due Date</div>
+              <div class="ws-ext-header-cell ws-ext-cell-progress">Progress</div>
+              <div class="ws-ext-header-cell ws-ext-cell-add">
+                <button class="ws-ext-add-column-btn" id="addColumnBtn">+</button>
+              </div>
+            </div>
+            
+            <!-- Groups -->
+            <div class="ws-ext-groups" id="groupsContainer">
+              <!-- Group 1: Sprint 1 -->
+              <div class="ws-ext-group" data-group-id="group-1">
+                <div class="ws-ext-group-header" style="border-left-color: #00c875;">
+                  <button class="ws-ext-group-toggle">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </button>
+                  <span class="ws-ext-group-name" style="color: #00c875;">Sprint 1</span>
+                  <span class="ws-ext-group-count">3 items</span>
+                  <button class="ws-ext-group-menu">⋯</button>
+                </div>
+                <div class="ws-ext-group-items">
+                  <!-- Item 1 -->
+                  <div class="ws-ext-item-row" data-item-id="item-1">
+                    <div class="ws-ext-item-cell ws-ext-cell-checkbox">
+                      <input type="checkbox">
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-name">
+                      <span class="ws-ext-drag-handle">⋮⋮</span>
+                      <span class="ws-ext-item-text" contenteditable="true">Design system components</span>
+                      <button class="ws-ext-expand-btn">↗</button>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-person">
+                      <div class="ws-ext-person-avatar" style="background: linear-gradient(135deg, #8b5cf6, #8b5cf6);">JD</div>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-status">
+                      <span class="ws-ext-status-badge" style="background: #fdab3d;">Working on it</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-priority">
+                      <span class="ws-ext-status-badge" style="background: #e2445c;">High</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-date">
+                      <span class="ws-ext-date-value">Dec 20</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-progress">
+                      <div class="ws-ext-progress-bar">
+                        <div class="ws-ext-progress-fill" style="width: 65%; background: #00c875;"></div>
+                      </div>
+                      <span class="ws-ext-progress-value">65%</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-actions">
+                      <button class="ws-ext-delete-item-btn">🗑</button>
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="ws-ext-item-row" data-item-id="item-2">
+                    <div class="ws-ext-item-cell ws-ext-cell-checkbox">
+                      <input type="checkbox">
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-name">
+                      <span class="ws-ext-drag-handle">⋮⋮</span>
+                      <span class="ws-ext-item-text" contenteditable="true">API integration</span>
+                      <button class="ws-ext-expand-btn">↗</button>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-person">
+                      <div class="ws-ext-person-avatar" style="background: linear-gradient(135deg, #00c875, #00d68f);">SM</div>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-status">
+                      <span class="ws-ext-status-badge" style="background: #00c875;">Done</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-priority">
+                      <span class="ws-ext-status-badge" style="background: #fdab3d;">Medium</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-date">
+                      <span class="ws-ext-date-value">Dec 18</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-progress">
+                      <div class="ws-ext-progress-bar">
+                        <div class="ws-ext-progress-fill" style="width: 100%; background: #00c875;"></div>
+                      </div>
+                      <span class="ws-ext-progress-value">100%</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-actions">
+                      <button class="ws-ext-delete-item-btn">🗑</button>
+                    </div>
+                  </div>
+                  <!-- Item 3 -->
+                  <div class="ws-ext-item-row" data-item-id="item-3">
+                    <div class="ws-ext-item-cell ws-ext-cell-checkbox">
+                      <input type="checkbox">
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-name">
+                      <span class="ws-ext-drag-handle">⋮⋮</span>
+                      <span class="ws-ext-item-text" contenteditable="true">User authentication flow</span>
+                      <button class="ws-ext-expand-btn">↗</button>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-person">
+                      <button class="ws-ext-add-person-btn">+</button>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-status">
+                      <span class="ws-ext-status-badge" style="background: #797e93;">To Do</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-priority">
+                      <span class="ws-ext-status-badge" style="background: #e2445c;">High</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-date">
+                      <button class="ws-ext-add-date-btn">+ Date</button>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-progress">
+                      <div class="ws-ext-progress-bar">
+                        <div class="ws-ext-progress-fill" style="width: 0%; background: #797e93;"></div>
+                      </div>
+                      <span class="ws-ext-progress-value">0%</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-actions">
+                      <button class="ws-ext-delete-item-btn">🗑</button>
+                    </div>
+                  </div>
+                  <!-- Add Item Row -->
+                  <div class="ws-ext-add-item-row">
+                    <button class="ws-ext-add-item-btn">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                      </svg>
+                      <span>Add Item</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Group 2: Sprint 2 -->
+              <div class="ws-ext-group" data-group-id="group-2">
+                <div class="ws-ext-group-header" style="border-left-color: #579bfc;">
+                  <button class="ws-ext-group-toggle">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </button>
+                  <span class="ws-ext-group-name" style="color: #579bfc;">Sprint 2</span>
+                  <span class="ws-ext-group-count">2 items</span>
+                  <button class="ws-ext-group-menu">⋯</button>
+                </div>
+                <div class="ws-ext-group-items">
+                  <div class="ws-ext-item-row" data-item-id="item-4">
+                    <div class="ws-ext-item-cell ws-ext-cell-checkbox">
+                      <input type="checkbox">
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-name">
+                      <span class="ws-ext-drag-handle">⋮⋮</span>
+                      <span class="ws-ext-item-text" contenteditable="true">Performance optimization</span>
+                      <button class="ws-ext-expand-btn">↗</button>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-person">
+                      <div class="ws-ext-person-avatar" style="background: linear-gradient(135deg, #8b5cf6, #8b5cf6);">JD</div>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-status">
+                      <span class="ws-ext-status-badge" style="background: #e2445c;">Stuck</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-priority">
+                      <span class="ws-ext-status-badge" style="background: #333333;">Critical ⚠️</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-date">
+                      <span class="ws-ext-date-value">Dec 25</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-progress">
+                      <div class="ws-ext-progress-bar">
+                        <div class="ws-ext-progress-fill" style="width: 30%; background: #e2445c;"></div>
+                      </div>
+                      <span class="ws-ext-progress-value">30%</span>
+                    </div>
+                    <div class="ws-ext-item-cell ws-ext-cell-actions">
+                      <button class="ws-ext-delete-item-btn">🗑</button>
+                    </div>
+                  </div>
+                  <div class="ws-ext-add-item-row">
+                    <button class="ws-ext-add-item-btn">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                      </svg>
+                      <span>Add Item</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add Group Button -->
+            <button class="ws-ext-add-group-btn" id="addGroupBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+              <span>Add new group</span>
+            </button>
+          </div>
+          
+          <!-- Kanban View -->
+          <div class="ws-ext-kanban-view" id="kanbanView" style="display: none;">
+            <div class="ws-ext-kanban-column" data-status="todo">
+              <div class="ws-ext-kanban-header" style="background: #797e93;">
+                <span>To Do</span>
+                <span class="ws-ext-kanban-count">1</span>
+              </div>
+              <div class="ws-ext-kanban-cards">
+                <div class="ws-ext-kanban-card" data-item-id="item-3">
+                  <div class="ws-ext-kanban-card-title">User authentication flow</div>
+                  <div class="ws-ext-kanban-card-meta">
+                    <span class="ws-ext-kanban-priority" style="background: #e2445c;">High</span>
+                    <div class="ws-ext-person-avatar small" style="background: linear-gradient(135deg, #8b5cf6, #8b5cf6);">JD</div>
+                  </div>
+                </div>
+                <button class="ws-ext-kanban-add-card">+ Add item</button>
+              </div>
+            </div>
+            <div class="ws-ext-kanban-column" data-status="working">
+              <div class="ws-ext-kanban-header" style="background: #fdab3d;">
+                <span>Working on it</span>
+                <span class="ws-ext-kanban-count">1</span>
+              </div>
+              <div class="ws-ext-kanban-cards">
+                <div class="ws-ext-kanban-card" data-item-id="item-1">
+                  <div class="ws-ext-kanban-card-title">Design system components</div>
+                  <div class="ws-ext-kanban-card-meta">
+                    <span class="ws-ext-kanban-priority" style="background: #e2445c;">High</span>
+                    <div class="ws-ext-person-avatar small" style="background: linear-gradient(135deg, #8b5cf6, #8b5cf6);">JD</div>
+                  </div>
+                </div>
+                <button class="ws-ext-kanban-add-card">+ Add item</button>
+              </div>
+            </div>
+            <div class="ws-ext-kanban-column" data-status="stuck">
+              <div class="ws-ext-kanban-header" style="background: #e2445c;">
+                <span>Stuck</span>
+                <span class="ws-ext-kanban-count">1</span>
+              </div>
+              <div class="ws-ext-kanban-cards">
+                <div class="ws-ext-kanban-card" data-item-id="item-4">
+                  <div class="ws-ext-kanban-card-title">Performance optimization</div>
+                  <div class="ws-ext-kanban-card-meta">
+                    <span class="ws-ext-kanban-priority" style="background: #333333;">Critical ⚠️</span>
+                    <div class="ws-ext-person-avatar small" style="background: linear-gradient(135deg, #8b5cf6, #8b5cf6);">JD</div>
+                  </div>
+                </div>
+                <button class="ws-ext-kanban-add-card">+ Add item</button>
+              </div>
+            </div>
+            <div class="ws-ext-kanban-column" data-status="done">
+              <div class="ws-ext-kanban-header" style="background: #00c875;">
+                <span>Done</span>
+                <span class="ws-ext-kanban-count">1</span>
+              </div>
+              <div class="ws-ext-kanban-cards">
+                <div class="ws-ext-kanban-card" data-item-id="item-2">
+                  <div class="ws-ext-kanban-card-title">API integration</div>
+                  <div class="ws-ext-kanban-card-meta">
+                    <span class="ws-ext-kanban-priority" style="background: #fdab3d;">Medium</span>
+                    <div class="ws-ext-person-avatar small" style="background: linear-gradient(135deg, #00c875, #00d68f);">SM</div>
+                  </div>
+                </div>
+                <button class="ws-ext-kanban-add-card">+ Add item</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline View -->
+          <div class="ws-ext-timeline-view" id="timelineView" style="display: none;">
+            <div class="ws-ext-timeline-header">
+              <div class="ws-ext-timeline-months">
+                <div class="ws-ext-timeline-month">Dec 2025</div>
+                <div class="ws-ext-timeline-month">Jan 2026</div>
+                <div class="ws-ext-timeline-month">Feb 2026</div>
+              </div>
+            </div>
+            <div class="ws-ext-timeline-body">
+              <div class="ws-ext-timeline-row">
+                <div class="ws-ext-timeline-item-name">Design system components</div>
+                <div class="ws-ext-timeline-bar-container">
+                  <div class="ws-ext-timeline-bar" style="background: #00c875; left: 5%; width: 20%;"></div>
+                </div>
+              </div>
+              <div class="ws-ext-timeline-row">
+                <div class="ws-ext-timeline-item-name">API integration</div>
+                <div class="ws-ext-timeline-bar-container">
+                  <div class="ws-ext-timeline-bar" style="background: #fdab3d; left: 10%; width: 15%;"></div>
+                </div>
+              </div>
+              <div class="ws-ext-timeline-row">
+                <div class="ws-ext-timeline-item-name">User authentication</div>
+                <div class="ws-ext-timeline-bar-container">
+                  <div class="ws-ext-timeline-bar" style="background: #579bfc; left: 20%; width: 25%;"></div>
+                </div>
+              </div>
+              <div class="ws-ext-timeline-row">
+                <div class="ws-ext-timeline-item-name">Performance optimization</div>
+                <div class="ws-ext-timeline-bar-container">
+                  <div class="ws-ext-timeline-bar" style="background: #e2445c; left: 15%; width: 30%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Calendar View -->
+          <div class="ws-ext-calendar-view" id="calendarView" style="display: none;">
+            <div class="ws-ext-calendar-header">
+              <button class="ws-ext-calendar-nav">◀</button>
+              <span class="ws-ext-calendar-title">December 2025</span>
+              <button class="ws-ext-calendar-nav">▶</button>
+            </div>
+            <div class="ws-ext-calendar-grid">
+              <div class="ws-ext-calendar-day-header">Sun</div>
+              <div class="ws-ext-calendar-day-header">Mon</div>
+              <div class="ws-ext-calendar-day-header">Tue</div>
+              <div class="ws-ext-calendar-day-header">Wed</div>
+              <div class="ws-ext-calendar-day-header">Thu</div>
+              <div class="ws-ext-calendar-day-header">Fri</div>
+              <div class="ws-ext-calendar-day-header">Sat</div>
+              <!-- Calendar days will be generated by JS -->
+            </div>
+          </div>
+          
+          <!-- Chart View -->
+          <div class="ws-ext-chart-view" id="chartView" style="display: none;">
+            <div class="ws-ext-chart-container">
+              <div class="ws-ext-pie-chart">
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" fill="#00c875" stroke-dasharray="62.8 188.4" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                  <circle cx="50" cy="50" r="40" fill="transparent" stroke="#fdab3d" stroke-width="40" stroke-dasharray="62.8 188.4" stroke-dashoffset="-62.8" transform="rotate(-90 50 50)"/>
+                  <circle cx="50" cy="50" r="40" fill="transparent" stroke="#e2445c" stroke-width="40" stroke-dasharray="62.8 188.4" stroke-dashoffset="-125.6" transform="rotate(-90 50 50)"/>
+                  <circle cx="50" cy="50" r="40" fill="transparent" stroke="#797e93" stroke-width="40" stroke-dasharray="62.8 188.4" stroke-dashoffset="-188.4" transform="rotate(-90 50 50)"/>
+                  <circle cx="50" cy="50" r="25" fill="var(--ws-ext-bg)"/>
+                </svg>
+              </div>
+              <div class="ws-ext-chart-legend">
+                <div class="ws-ext-legend-item">
+                  <span class="ws-ext-legend-color" style="background: #00c875;"></span>
+                  <span>Done</span>
+                  <span class="ws-ext-legend-value">1</span>
+                </div>
+                <div class="ws-ext-legend-item">
+                  <span class="ws-ext-legend-color" style="background: #fdab3d;"></span>
+                  <span>Working on it</span>
+                  <span class="ws-ext-legend-value">1</span>
+                </div>
+                <div class="ws-ext-legend-item">
+                  <span class="ws-ext-legend-color" style="background: #e2445c;"></span>
+                  <span>Stuck</span>
+                  <span class="ws-ext-legend-value">1</span>
+                </div>
+                <div class="ws-ext-legend-item">
+                  <span class="ws-ext-legend-color" style="background: #797e93;"></span>
+                  <span>To Do</span>
+                  <span class="ws-ext-legend-value">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Modals -->
+    <!-- Create Board Modal -->
+    <div class="ws-ext-modal-overlay" id="createBoardModal" style="display: none;">
+      <div class="ws-ext-modal">
+        <div class="ws-ext-modal-header">
+          <h3>Create New Board</h3>
+          <button class="ws-ext-modal-close">&times;</button>
+        </div>
+        <div class="ws-ext-modal-body">
+          <div class="ws-ext-form-group">
+            <label>Board Name</label>
+            <input type="text" placeholder="Enter board name..." id="newBoardName">
+          </div>
+          <div class="ws-ext-form-group">
+            <label>Description</label>
+            <textarea placeholder="What's this board for?" id="newBoardDescription"></textarea>
+          </div>
+          <div class="ws-ext-form-group">
+            <label>Icon</label>
+            <div class="ws-ext-emoji-picker">
+              <button class="ws-ext-emoji-btn selected" data-emoji="🚀">🚀</button>
+              <button class="ws-ext-emoji-btn" data-emoji="💼">💼</button>
+              <button class="ws-ext-emoji-btn" data-emoji="🎨">🎨</button>
+              <button class="ws-ext-emoji-btn" data-emoji="📊">📊</button>
+              <button class="ws-ext-emoji-btn" data-emoji="🎯">🎯</button>
+              <button class="ws-ext-emoji-btn" data-emoji="⚡">⚡</button>
+              <button class="ws-ext-emoji-btn" data-emoji="🔧">🔧</button>
+              <button class="ws-ext-emoji-btn" data-emoji="📝">📝</button>
+            </div>
+          </div>
+          <div class="ws-ext-form-group">
+            <label>Template</label>
+            <select id="newBoardTemplate">
+              <option value="blank">Start from scratch</option>
+              <option value="project">Project Management</option>
+              <option value="crm">CRM</option>
+              <option value="marketing">Marketing Campaign</option>
+              <option value="bugs">Bug Tracking</option>
+            </select>
+          </div>
+        </div>
+        <div class="ws-ext-modal-footer">
+          <button class="ws-ext-btn ws-ext-btn-secondary" id="cancelCreateBoard">Cancel</button>
+          <button class="ws-ext-btn ws-ext-btn-primary" id="confirmCreateBoard">Create Board</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add Column Modal -->
+    <div class="ws-ext-modal-overlay" id="addColumnModal" style="display: none;">
+      <div class="ws-ext-modal">
+        <div class="ws-ext-modal-header">
+          <h3>Add Column</h3>
+          <button class="ws-ext-modal-close">&times;</button>
+        </div>
+        <div class="ws-ext-modal-body">
+          <div class="ws-ext-column-types">
+            <button class="ws-ext-column-type" data-type="status">
+              <span>🎯</span>
+              <span>Status</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="person">
+              <span>👤</span>
+              <span>Person</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="date">
+              <span>📅</span>
+              <span>Date</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="text">
+              <span>📝</span>
+              <span>Text</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="number">
+              <span>🔢</span>
+              <span>Number</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="checkbox">
+              <span>☑️</span>
+              <span>Checkbox</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="timeline">
+              <span>📊</span>
+              <span>Timeline</span>
+            </button>
+            <button class="ws-ext-column-type" data-type="link">
+              <span>🔗</span>
+              <span>Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Automations Panel -->
+    <div class="ws-ext-panel" id="automationsPanel" style="display: none;">
+      <div class="ws-ext-panel-header">
+        <h3>⚡ Automations</h3>
+        <button class="ws-ext-panel-close">&times;</button>
+      </div>
+      <div class="ws-ext-panel-body">
+        <p class="ws-ext-panel-description">Automate repetitive tasks and save time</p>
+        <div class="ws-ext-automation-templates">
+          <h4>Popular Templates</h4>
+          <div class="ws-ext-template-grid">
+            <button class="ws-ext-template-card">
+              <span class="ws-ext-template-icon">🔔</span>
+              <span class="ws-ext-template-name">Notify when status changes</span>
+            </button>
+            <button class="ws-ext-template-card">
+              <span class="ws-ext-template-icon">📅</span>
+              <span class="ws-ext-template-name">Due date reminder</span>
+            </button>
+            <button class="ws-ext-template-card">
+              <span class="ws-ext-template-icon">↔️</span>
+              <span class="ws-ext-template-name">Move item when done</span>
+            </button>
+            <button class="ws-ext-template-card">
+              <span class="ws-ext-template-icon">👤</span>
+              <span class="ws-ext-template-name">Assign owner automatically</span>
+            </button>
+          </div>
+        </div>
+        <div class="ws-ext-active-automations">
+          <h4>Active Automations</h4>
+          <div class="ws-ext-automation-list">
+            <div class="ws-ext-automation-item">
+              <div class="ws-ext-automation-info">
+                <span class="ws-ext-automation-name">When status changes to Done → Notify team</span>
+                <span class="ws-ext-automation-runs">Ran 12 times this week</span>
+              </div>
+              <label class="ws-ext-toggle">
+                <input type="checkbox" checked>
+                <span class="ws-ext-toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button class="ws-ext-btn ws-ext-btn-primary ws-ext-btn-full">
+          <span>+ Create Custom Automation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="workspace.js"></script>
+</body>
+</html>

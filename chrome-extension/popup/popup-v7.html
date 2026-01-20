@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUBE Nexum Connect v7.1.0</title>
+  <!-- Enterprise Elite Styles -->
+  <link rel="stylesheet" href="../styles/popup-elite.css">
+  <link rel="stylesheet" href="../styles/elite-utilities.css">
+  <link rel="stylesheet" href="popup-enterprise.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header" id="main-header">
+    <div class="header-left">
+      <div class="logo" id="logo-container">🚀</div>
+      <div class="header-info">
+        <h1 id="app-name">CUBE Nexum</h1>
+        <span class="license-badge" id="license-badge">Free</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="notification-bell" id="notification-bell">
+        <span class="bell-icon">🔔</span>
+        <span class="notification-badge" id="notification-count">0</span>
+      </div>
+      <div class="user-avatar" id="user-avatar" title="Not logged in">
+        <span>👤</span>
+      </div>
+      <div class="version">v7.1.0</div>
+    </div>
+  </div>
+
+  <!-- ENTERPRISE LOGIN BANNER (Hidden by default) -->
+  <div id="enterprise-banner" class="enterprise-banner hidden">
+    <div class="banner-content">
+      <span class="banner-icon">🏢</span>
+      <div class="banner-text">
+        <strong>Enterprise Mode Available</strong>
+        <span>Login with your organization account</span>
+      </div>
+    </div>
+    <button class="btn-enterprise-login" id="btn-enterprise-login">
+      <span>🔐</span> SSO Login
+    </button>
+  </div>
+
+  <!-- LOGGED IN USER INFO (Hidden by default) -->
+  <div id="user-info-bar" class="user-info-bar hidden">
+    <div class="user-details">
+      <img src="" alt="" id="user-avatar-img" class="user-avatar-img hidden">
+      <div class="user-text">
+        <span class="user-name" id="user-display-name">User</span>
+        <span class="user-org" id="user-organization">Organization</span>
+      </div>
+    </div>
+    <button class="btn-logout" id="btn-logout" title="Logout">
+      <span>🚪</span>
+    </button>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" data-tab="docs">
+      <span class="tab-icon">📄</span>
+      <span class="tab-label">Docs</span>
+    </button>
+    <button class="tab" data-tab="autofill">
+      <span class="tab-icon">📝</span>
+      <span class="tab-label">Autofill</span>
+    </button>
+    <button class="tab" data-tab="notifications">
+      <span class="tab-icon">🔔</span>
+      <span class="tab-label">Alerts</span>
+    </button>
+    <button class="tab" data-tab="analytics">
+      <span class="tab-icon">📊</span>
+      <span class="tab-label">Stats</span>
+    </button>
+    <button class="tab" data-tab="macros">
+      <span class="tab-icon">🎬</span>
+      <span class="tab-label">Macros</span>
+    </button>
+    <button class="tab" data-tab="settings">
+      <span class="tab-icon">⚙️</span>
+      <span class="tab-label">Settings</span>
+    </button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- DOCS PANEL - Document Detection & Parsing -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="docs-panel" class="tab-panel active">
+      
+      <!-- STATS -->
+      <div class="section">
+        <div class="section-title">📊 Document Stats</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-docs-total">0</div>
+            <div class="stat-label">Detected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-docs-parsed">0</div>
+            <div class="stat-label">Parsed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-downloads">0</div>
+            <div class="stat-label">Downloads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-profiles">0</div>
+            <div class="stat-label">Profiles</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETECTION -->
+      <div class="section">
+        <div class="section-title">🔍 Document Detection</div>
+        
+        <div id="detection-status" class="status info hidden">
+          <div class="spinner"></div>
+          <span id="detection-message">Scanning page...</span>
+        </div>
+
+        <button class="btn btn-primary" id="btn-detect-docs">
+          <span>🔍</span>
+          <span>Detect Documents</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-parse-all">
+          <span>⚡</span>
+          <span>Parse All Documents</span>
+        </button>
+      </div>
+
+      <!-- DOCUMENT LIST -->
+      <div class="section">
+        <div class="section-title">📑 Detected Documents</div>
+        
+        <div id="doc-list" class="doc-list">
+          <div class="empty-state">
+            <div class="empty-icon">📄</div>
+            <p>No documents detected</p>
+            <small>Click "Detect Documents" to scan the page</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- AUTOFILL PANEL - Smart Form Filling -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="autofill-panel" class="tab-panel">
+      
+      <!-- PROFILE SELECTOR -->
+      <div class="section">
+        <div class="section-title">👤 Autofill Profile</div>
+        
+        <div class="input-group">
+          <label>Select Profile:</label>
+          <select id="profile-selector" class="select-styled">
+            <option value="">-- Create from Document --</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary" id="btn-autofill-form">
+          <span>✨</span>
+          <span>Fill Current Form</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-create-profile">
+          <span>➕</span>
+          <span>Create Profile from Docs</span>
+        </button>
+      </div>
+
+      <!-- AI ENHANCEMENT -->
+      <div class="section">
+        <div class="section-title">🤖 AI Enhancement <span class="badge badge-pro">PRO</span></div>
+        
+        <button class="btn btn-secondary" id="btn-ai-suggest">
+          <span>✨</span>
+          <span>AI Field Suggestions</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-ai-validate">
+          <span>✓</span>
+          <span>AI Validation Check</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NOTIFICATIONS PANEL - Notification Center -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="notifications-panel" class="tab-panel">
+      
+      <!-- NOTIFICATION HEADER -->
+      <div class="section notification-header">
+        <div class="section-title">
+          <span>🔔 Notification Center</span>
+          <span class="unread-count" id="unread-count">0 unread</span>
+        </div>
+        <div class="notification-actions">
+          <button class="btn-icon" id="btn-mark-all-read" title="Mark all as read">
+            <span>✓✓</span>
+          </button>
+          <button class="btn-icon" id="btn-clear-notifications" title="Clear all">
+            <span>🗑️</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- NOTIFICATION FILTERS -->
+      <div class="notification-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="unread">Unread</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="system">System</button>
+      </div>
+
+      <!-- NOTIFICATION LIST -->
+      <div class="notification-list" id="notification-list">
+        <div class="empty-state">
+          <div class="empty-icon">🔔</div>
+          <p>No notifications</p>
+          <small>You're all caught up!</small>
+        </div>
+      </div>
+
+      <!-- NOTIFICATION PREFERENCES -->
+      <div class="section">
+        <div class="section-title">⚙️ Notification Settings</div>
+        
+        <div class="preference-row">
+          <span>Enable Notifications</span>
+          <label class="toggle">
+            <input type="checkbox" id="pref-notifications-enabled" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="preference-row">
+          <span>Sound Alerts</span>
+          <label class="toggle">
+            <input type="checkbox" id="pref-notification-sound" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="preference-row">
+          <span>Automation Alerts</span>
+          <label class="toggle">
+            <input type="checkbox" id="pref-automation-alerts" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="preference-row">
+          <span>Quiet Hours</span>
+          <label class="toggle">
+            <input type="checkbox" id="pref-quiet-hours">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div id="quiet-hours-config" class="quiet-hours-config hidden">
+          <div class="time-range">
+            <input type="time" id="quiet-hours-start" value="22:00">
+            <span>to</span>
+            <input type="time" id="quiet-hours-end" value="08:00">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- ANALYTICS PANEL - Usage Statistics -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="analytics-panel" class="tab-panel">
+      
+      <!-- SESSION INFO -->
+      <div class="section">
+        <div class="section-title">📊 Current Session</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-session-duration">0m</div>
+            <div class="stat-label">Duration</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-session-events">0</div>
+            <div class="stat-label">Events</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-session-pages">0</div>
+            <div class="stat-label">Pages</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURE USAGE -->
+      <div class="section">
+        <div class="section-title">🎯 Feature Usage</div>
+        <div class="feature-usage-list" id="feature-usage-list">
+          <div class="feature-usage-item">
+            <div class="feature-info">
+              <span class="feature-icon">📄</span>
+              <span class="feature-name">Document Detection</span>
+            </div>
+            <div class="feature-bar-container">
+              <div class="feature-bar" style="width: 0%"></div>
+            </div>
+            <span class="feature-count">0</span>
+          </div>
+          <div class="feature-usage-item">
+            <div class="feature-info">
+              <span class="feature-icon">📝</span>
+              <span class="feature-name">Autofill</span>
+            </div>
+            <div class="feature-bar-container">
+              <div class="feature-bar" style="width: 0%"></div>
+            </div>
+            <span class="feature-count">0</span>
+          </div>
+          <div class="feature-usage-item">
+            <div class="feature-info">
+              <span class="feature-icon">🎬</span>
+              <span class="feature-name">Macros</span>
+            </div>
+            <div class="feature-bar-container">
+              <div class="feature-bar" style="width: 0%"></div>
+            </div>
+            <span class="feature-count">0</span>
+          </div>
+          <div class="feature-usage-item">
+            <div class="feature-info">
+              <span class="feature-icon">🤖</span>
+              <span class="feature-name">AI Calls</span>
+            </div>
+            <div class="feature-bar-container">
+              <div class="feature-bar" style="width: 0%"></div>
+            </div>
+            <span class="feature-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIFETIME STATS -->
+      <div class="section">
+        <div class="section-title">🏆 All-Time Statistics</div>
+        <div class="stats-grid stats-grid-3">
+          <div class="stat-card stat-card-sm">
+            <div class="stat-value" id="stat-total-sessions">0</div>
+            <div class="stat-label">Sessions</div>
+          </div>
+          <div class="stat-card stat-card-sm">
+            <div class="stat-value" id="stat-total-events">0</div>
+            <div class="stat-label">Events</div>
+          </div>
+          <div class="stat-card stat-card-sm">
+            <div class="stat-value" id="stat-total-docs">0</div>
+            <div class="stat-label">Docs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANALYTICS SETTINGS -->
+      <div class="section">
+        <div class="section-title">⚙️ Privacy Settings</div>
+        
+        <div class="preference-row">
+          <span>Enable Analytics</span>
+          <label class="toggle">
+            <input type="checkbox" id="pref-analytics-enabled" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="preference-row">
+          <span>Anonymize Data</span>
+          <label class="toggle">
+            <input type="checkbox" id="pref-analytics-anonymize" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <button class="btn btn-secondary btn-sm" id="btn-export-analytics">
+          <span>📤</span>
+          <span>Export Analytics Data</span>
+        </button>
+
+        <button class="btn btn-danger btn-sm" id="btn-clear-analytics">
+          <span>🗑️</span>
+          <span>Clear Analytics Data</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- MACROS PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="macros-panel" class="tab-panel">
+      
+      <div class="section">
+        <div class="section-title">🎬 Macro Recording <span class="badge badge-pro">PRO</span></div>
+        
+        <div id="recording-status" class="status info hidden">
+          <div class="spinner"></div>
+          <span>Recording in progress...</span>
+        </div>
+
+        <button class="btn btn-primary" id="btn-record-macro">
+          <span>⏺️</span>
+          <span id="btn-record-text">Start Recording</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-view-macros">
+          <span>📋</span>
+          <span>View Saved Macros</span>
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📊 Macro Stats</div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="macro-count">0</div>
+            <div class="stat-label">Saved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="macro-runs">0</div>
+            <div class="stat-label">Runs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAVED MACROS LIST -->
+      <div class="section">
+        <div class="section-title">📋 Saved Macros</div>
+        <div id="macros-list" class="macros-list">
+          <div class="empty-state">
+            <div class="empty-icon">🎬</div>
+            <p>No macros saved</p>
+            <small>Record your first macro to automate tasks</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SETTINGS PANEL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="settings-panel" class="tab-panel">
+      
+      <!-- ENTERPRISE SETTINGS -->
+      <div class="section enterprise-section" id="enterprise-settings-section">
+        <div class="section-title">🏢 Enterprise Settings</div>
+        
+        <div id="enterprise-not-logged-in">
+          <div class="enterprise-promo">
+            <div class="promo-icon">🔐</div>
+            <div class="promo-text">
+              <strong>Enterprise Features</strong>
+              <p>SSO, LDAP, Audit Logs, White-label & more</p>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary" id="btn-sso-login">
+            <span>🔐</span>
+            <span>Login with SSO</span>
+          </button>
+
+          <div class="login-alternatives">
+            <span>Or connect with:</span>
+            <div class="sso-providers">
+              <button class="sso-btn" data-provider="saml" title="SAML">
+                <span>🔑</span> SAML
+              </button>
+              <button class="sso-btn" data-provider="oidc" title="OpenID Connect">
+                <span>🆔</span> OIDC
+              </button>
+              <button class="sso-btn" data-provider="ldap" title="LDAP">
+                <span>📁</span> LDAP
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="enterprise-logged-in" class="hidden">
+          <div class="enterprise-info">
+            <div class="org-info">
+              <span class="org-icon">🏢</span>
+              <div>
+                <div class="org-name" id="org-name">Organization</div>
+                <div class="org-id" id="org-id">ID: org_xxx</div>
+              </div>
+            </div>
+            <div class="license-info">
+              <span class="license-icon">📜</span>
+              <div>
+                <div class="license-type" id="settings-license-type">Enterprise</div>
+                <div class="license-seats" id="settings-license-seats">50 seats</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="enterprise-features">
+            <div class="feature-check">
+              <span>✅</span> SSO Authentication
+            </div>
+            <div class="feature-check">
+              <span>✅</span> Audit Logging
+            </div>
+            <div class="feature-check">
+              <span>✅</span> White-label Branding
+            </div>
+            <div class="feature-check">
+              <span>✅</span> Priority Support
+            </div>
+          </div>
+
+          <button class="btn btn-secondary" id="btn-enterprise-settings">
+            <span>⚙️</span>
+            <span>Manage Enterprise Settings</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- AI PROVIDERS -->
+      <div class="section">
+        <div class="section-title">🤖 AI Providers</div>
+        
+        <div class="input-group">
+          <label>OpenAI API Key:</label>
+          <input type="password" id="openai-key" placeholder="sk-...">
+        </div>
+
+        <div class="input-group">
+          <label>Claude API Key:</label>
+          <input type="password" id="claude-key" placeholder="sk-ant-...">
+        </div>
+
+        <div class="input-group">
+          <label>Gemini API Key:</label>
+          <input type="password" id="gemini-key" placeholder="AIza...">
+        </div>
+
+        <button class="btn btn-primary" id="btn-save-keys">
+          <span>💾</span>
+          <span>Save API Keys</span>
+        </button>
+      </div>
+
+      <!-- GENERAL SETTINGS -->
+      <div class="section">
+        <div class="section-title">⚙️ General Settings</div>
+        
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="auto-detect-docs" checked>
+            Auto-detect documents on page load
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="auto-parse-docs">
+            Auto-parse detected documents
+          </label>
+        </div>
+
+        <button class="btn btn-secondary" id="btn-reset-settings">
+          <span>🔄</span>
+          <span>Reset to Defaults</span>
+        </button>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="section about-section">
+        <div class="section-title">ℹ️ About</div>
+        <div class="about-info">
+          <div class="about-logo">🚀</div>
+          <div class="about-text">
+            <strong>CUBE Nexum Connect</strong>
+            <span>Version 7.1.0 Enterprise</span>
+            <span class="build-info">Build: 2025.01.28</span>
+          </div>
+        </div>
+        <div class="about-links">
+          <a href="https://cubeai.tools/docs" target="_blank">📚 Documentation</a>
+          <a href="https://cubeai.tools/support" target="_blank">💬 Support</a>
+          <a href="https://cubeai.tools/changelog" target="_blank">📋 Changelog</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span id="footer-text">Enterprise Edition | AI-Powered Browser Automation</span>
+  </div>
+
+  <!-- MODALS -->
+  
+  <!-- SSO Login Modal -->
+  <div id="sso-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🔐 SSO Login</h3>
+        <button class="modal-close" id="close-sso-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <label>Organization ID:</label>
+          <input type="text" id="sso-org-id" placeholder="your-organization">
+        </div>
+        <div class="input-group">
+          <label>SSO Provider:</label>
+          <select id="sso-provider-select" class="select-styled">
+            <option value="oidc">OpenID Connect (OIDC)</option>
+            <option value="saml">SAML 2.0</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="btn-start-sso">
+          <span>🚀</span>
+          <span>Start SSO Login</span>
+        </button>
+        <div id="sso-status" class="status hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Detail Modal -->
+  <div id="notification-detail-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="notification-detail-title">Notification</h3>
+        <button class="modal-close" id="close-notification-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="notification-detail-body"></div>
+        <div id="notification-detail-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="popup-v7.js"></script>
+</body>
+</html>
