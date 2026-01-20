@@ -12,7 +12,6 @@ on:
 env:
   CARGO_TERM_COLOR: always
   RUST_BACKTRACE: 1
-  # Optimizaciones de memoria para Rust
   CARGO_INCREMENTAL: 0
   CARGO_NET_RETRY: 10
   RUSTFLAGS: "-C codegen-units=1 -C opt-level=s"
@@ -20,7 +19,6 @@ env:
 
 jobs:
   build-macos-dmg:
-    # macos-14 es M1 con mejor rendimiento
     runs-on: macos-14
     timeout-minutes: 120
     
@@ -35,13 +33,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install system dependencies
+        run: |
+          brew install leptonica tesseract pkg-config
+          echo "PKG_CONFIG_PATH=$(brew --prefix)/lib/pkgconfig" >> $GITHUB_ENV
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Setup Rust (minimal)
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-apple-darwin
@@ -64,21 +67,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-build-
 
-      - name: Install dependencies
-        run: |
-          npm ci --prefer-offline --no-audit
-          echo "Node modules installed"
+      - name: Install npm dependencies
+        run: npm ci --prefer-offline --no-audit
 
-      - name: Check memory before build
+      - name: Check system info
         run: |
           echo "=== System Info ==="
           sysctl hw.memsize | awk '{print "RAM: " $2/1024/1024/1024 " GB"}'
           df -h /
+          echo "PKG_CONFIG_PATH: $PKG_CONFIG_PATH"
+          pkg-config --libs --cflags lept || echo "lept check"
           echo "==================="
 
-      - name: Build Next.js (static export)
-        run: |
-          npm run build
+      - name: Build Next.js
+        run: npm run build
         env:
           TAURI_BUILD: true
           NODE_OPTIONS: '--max-old-space-size=4096'
@@ -86,19 +88,19 @@ jobs:
       - name: Build Tauri DMG
         run: |
           cd src-tauri
-          # Build con optimizaciones de memoria
           cargo build --release --target aarch64-apple-darwin --jobs 2
           cd ..
           npm run tauri:build -- --target aarch64-apple-darwin
         env:
-          CEF_PATH: ""  # Sin CEF por ahora para reducir memoria
+          CEF_PATH: ""
           CARGO_BUILD_JOBS: 2
+          PKG_CONFIG_PATH: /opt/homebrew/lib/pkgconfig
 
       - name: List build artifacts
         run: |
           echo "=== Build Artifacts ==="
-          find src-tauri/target -name "*.dmg" -o -name "*.app" 2>/dev/null | head -20
-          ls -la src-tauri/target/aarch64-apple-darwin/release/bundle/ 2>/dev/null || echo "No bundle yet"
+          find src-tauri/target -name "*.dmg" 2>/dev/null | head -20
+          ls -la src-tauri/target/aarch64-apple-darwin/release/bundle/ 2>/dev/null || true
 
       - name: Upload DMG artifact
         uses: actions/upload-artifact@v4
