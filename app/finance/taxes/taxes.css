@@ -1,0 +1,1537 @@
+/* Tax Management Styles */
+/* Theme: Emerald/Green (#10b981) */
+
+.tax-management {
+  --tax-primary: #10b981;
+  --tax-primary-light: #34d399;
+  --tax-primary-dark: #059669;
+  --tax-secondary: #06b6d4;
+  --tax-accent: #8b5cf6;
+  --tax-bg-dark: #0a0a0f;
+  --tax-bg-card: #12121a;
+  --tax-bg-elevated: #1a1a25;
+  --tax-bg-hover: #22222f;
+  --tax-border: #2a2a3a;
+  --tax-border-light: #3a3a4a;
+  --tax-text-primary: #f8f8fc;
+  --tax-text-secondary: #a0a0b0;
+  --tax-text-muted: #6b6b7b;
+  --tax-success: #10b981;
+  --tax-warning: #f59e0b;
+  --tax-error: #ef4444;
+  --tax-info: #3b82f6;
+  
+  min-height: 100vh;
+  background: var(--tax-bg-dark);
+  color: var(--tax-text-primary);
+  padding: 24px;
+}
+
+/* Header */
+.tax__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--tax-border);
+}
+
+.tax__title-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tax__icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--tax-primary), var(--tax-secondary));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.tax__title-section h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, var(--tax-text-primary), var(--tax-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tax__title-section p {
+  margin: 4px 0 0 0;
+  color: var(--tax-text-secondary);
+  font-size: 14px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Buttons */
+.btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid var(--tax-border);
+  border-radius: 8px;
+  color: var(--tax-text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--tax-bg-elevated);
+  border-color: var(--tax-primary);
+}
+
+.btn-outline.small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--tax-primary), var(--tax-primary-dark));
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-primary.small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tax-bg-card);
+  border: 1px solid var(--tax-border);
+  border-radius: 8px;
+  color: var(--tax-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background: var(--tax-bg-elevated);
+  color: var(--tax-text-primary);
+}
+
+.btn-icon.small {
+  width: 32px;
+  height: 32px;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Summary Cards */
+.tax-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--tax-bg-card);
+  border: 1px solid var(--tax-border);
+  border-radius: 12px;
+}
+
+.summary-card.liability { border-left: 3px solid var(--tax-primary); }
+.summary-card.liability .summary-icon { color: var(--tax-primary); }
+
+.summary-card.paid { border-left: 3px solid var(--tax-info); }
+.summary-card.paid .summary-icon { color: var(--tax-info); }
+
+.summary-card.pending { border-left: 3px solid var(--tax-warning); }
+.summary-card.pending .summary-icon { color: var(--tax-warning); }
+
+.summary-card.deadlines { border-left: 3px solid var(--tax-error); }
+.summary-card.deadlines .summary-icon { color: var(--tax-error); }
+
+.summary-card.rate { border-left: 3px solid var(--tax-accent); }
+.summary-card.rate .summary-icon { color: var(--tax-accent); }
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tax-text-primary);
+}
+
+.summary-label {
+  font-size: 12px;
+  color: var(--tax-text-secondary);
+}
+
+/* Tabs */
+.tax__tabs {
+  display: flex;
+  gap: 8px;
+  padding: 4px;
+  background: var(--tax-bg-card);
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--tax-text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: var(--tax-text-primary);
+  background: var(--tax-bg-elevated);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--tax-primary), var(--tax-primary-dark));
+  color: white;
+}
+
+.tab-badge {
+  padding: 2px 8px;
+  background: var(--tax-bg-elevated);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tab-btn.active .tab-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Content */
+.tax__content {
+  background: var(--tax-bg-card);
+  border: 1px solid var(--tax-border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Overview Tab */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.overview-card {
+  background: var(--tax-bg-elevated);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.overview-card.span-2 {
+  grid-column: span 2;
+}
+
+.overview-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+/* Tax Distribution Chart */
+.tax-distribution {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.donut-chart {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.donut-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.total-label {
+  display: block;
+  font-size: 11px;
+  color: var(--tax-text-muted);
+}
+
+.total-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--tax-text-primary);
+}
+
+.distribution-legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-label {
+  flex: 1;
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.legend-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+/* Compliance Stats */
+.compliance-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.compliance-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--tax-bg-card);
+  border-radius: 8px;
+}
+
+.compliance-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compliance-icon.filed {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--tax-success);
+}
+
+.compliance-icon.pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--tax-warning);
+}
+
+.compliance-icon.overdue {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--tax-error);
+}
+
+.compliance-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.compliance-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tax-text-primary);
+}
+
+.compliance-label {
+  font-size: 11px;
+  color: var(--tax-text-muted);
+}
+
+.compliance-meter {
+  margin-top: 12px;
+}
+
+.meter-bar {
+  height: 8px;
+  background: var(--tax-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tax-primary), var(--tax-primary-light));
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.meter-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--tax-text-muted);
+  text-align: right;
+}
+
+/* Deadlines List */
+.deadlines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--tax-bg-card);
+  border-radius: 8px;
+  border-left: 3px solid var(--tax-border);
+}
+
+.deadline-item.urgent {
+  border-left-color: var(--tax-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.deadline-item.warning {
+  border-left-color: var(--tax-warning);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.deadline-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--tax-bg-elevated);
+  color: var(--tax-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deadline-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.deadline-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tax-text-primary);
+}
+
+.deadline-amount {
+  font-size: 12px;
+  color: var(--tax-text-muted);
+}
+
+.deadline-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--tax-warning);
+  font-weight: 500;
+}
+
+/* Deductions Overview */
+.deductions-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deductions-total {
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+  border-radius: 10px;
+}
+
+.deductions-amount {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--tax-primary);
+}
+
+.deductions-label {
+  font-size: 12px;
+  color: var(--tax-text-muted);
+}
+
+.deductions-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deduction-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deduction-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deduction-category {
+  font-size: 12px;
+  color: var(--tax-text-secondary);
+}
+
+.deduction-amount {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+.deduction-progress {
+  height: 6px;
+  background: var(--tax-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.deduction-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tax-primary), var(--tax-secondary));
+  border-radius: 3px;
+}
+
+/* Rate Analysis */
+.rate-analysis {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.rate-main {
+  flex-shrink: 0;
+}
+
+.rate-circle {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.rate-circle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rate-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.rate-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--tax-text-primary);
+}
+
+.rate-label {
+  font-size: 10px;
+  color: var(--tax-text-muted);
+}
+
+.rate-comparison {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rate-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--tax-bg-card);
+  border-radius: 8px;
+}
+
+.rate-item-label {
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.rate-item-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+/* Obligations Tab */
+.obligations-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--tax-bg-elevated);
+  border: 1px solid var(--tax-border);
+  border-radius: 8px;
+  color: var(--tax-text-secondary);
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  color: var(--tax-text-primary);
+  font-size: 14px;
+  width: 200px;
+}
+
+.search-box input::placeholder {
+  color: var(--tax-text-muted);
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  background: var(--tax-bg-elevated);
+  border: 1px solid var(--tax-border);
+  border-radius: 6px;
+  color: var(--tax-text-primary);
+  font-size: 14px;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 12px;
+}
+
+/* Obligations Layout */
+.obligations-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+}
+
+.obligations-layout:not(:has(.obligation-detail-panel)) {
+  grid-template-columns: 1fr;
+}
+
+/* Obligations Table */
+.obligations-table {
+  background: var(--tax-bg-elevated);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.obligations-table .table-header,
+.obligations-table .table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 0.8fr 1.2fr 1fr 0.8fr 0.6fr;
+  padding: 14px 20px;
+  align-items: center;
+}
+
+.obligations-table .table-header {
+  background: var(--tax-bg-card);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tax-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.obligations-table .table-row {
+  border-top: 1px solid var(--tax-border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.obligations-table .table-row:hover {
+  background: var(--tax-bg-hover);
+}
+
+.obligations-table .table-row.selected {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid var(--tax-primary);
+}
+
+.obligation-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.type-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-icon.federal { background: rgba(59, 130, 246, 0.15); color: var(--tax-info); }
+.type-icon.state { background: rgba(139, 92, 246, 0.15); color: var(--tax-accent); }
+.type-icon.payroll { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+.type-icon.sales { background: rgba(245, 158, 11, 0.15); color: var(--tax-warning); }
+.type-icon.property { background: rgba(16, 185, 129, 0.15); color: var(--tax-success); }
+.type-icon.local { background: rgba(6, 182, 212, 0.15); color: var(--tax-secondary); }
+
+.type-icon.large {
+  width: 44px;
+  height: 44px;
+}
+
+.obligation-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.obligation-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tax-text-primary);
+}
+
+.obligation-type {
+  font-size: 11px;
+  color: var(--tax-text-muted);
+  text-transform: capitalize;
+}
+
+.authority-cell,
+.frequency-cell {
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.date-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.date-cell.urgent {
+  color: var(--tax-error);
+}
+
+.days-badge {
+  padding: 2px 6px;
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--tax-warning);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.amount-cell {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-cell.filed { color: var(--tax-success); }
+.status-cell.paid { color: var(--tax-info); }
+.status-cell.pending { color: var(--tax-warning); }
+.status-cell.overdue { color: var(--tax-error); }
+.status-cell.completed { color: var(--tax-success); }
+.status-cell.scheduled { color: var(--tax-info); }
+.status-cell.processing { color: var(--tax-warning); }
+.status-cell.failed { color: var(--tax-error); }
+
+.actions-cell {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* Obligation Detail Panel */
+.obligation-detail-panel {
+  background: var(--tax-bg-elevated);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 700px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid var(--tax-border);
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.panel-title h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-top: 4px;
+}
+
+.status-badge.filed { background: rgba(16, 185, 129, 0.15); color: var(--tax-success); }
+.status-badge.paid { background: rgba(59, 130, 246, 0.15); color: var(--tax-info); }
+.status-badge.pending { background: rgba(245, 158, 11, 0.15); color: var(--tax-warning); }
+.status-badge.overdue { background: rgba(239, 68, 68, 0.15); color: var(--tax-error); }
+
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.detail-section {
+  margin-bottom: 20px;
+}
+
+.detail-section h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tax-text-muted);
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.authority-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.authority-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.schedule-item {
+  padding: 10px 12px;
+  background: var(--tax-bg-card);
+  border-radius: 8px;
+}
+
+.schedule-label {
+  display: block;
+  font-size: 10px;
+  color: var(--tax-text-muted);
+  text-transform: uppercase;
+}
+
+.schedule-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+/* Estimate Comparison */
+.estimate-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.estimate-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-label {
+  width: 70px;
+  font-size: 12px;
+  color: var(--tax-text-muted);
+}
+
+.bar-fill {
+  height: 8px;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.bar-fill.estimated {
+  background: var(--tax-border);
+}
+
+.bar-fill.actual {
+  background: linear-gradient(90deg, var(--tax-primary), var(--tax-secondary));
+}
+
+.bar-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+}
+
+.estimate-diff {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.diff-positive {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tax-success);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.diff-negative {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tax-error);
+  background: rgba(239, 68, 68, 0.1);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* Related Payments */
+.related-payments h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tax-text-muted);
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.payments-mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.payment-mini-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--tax-bg-card);
+  border-radius: 8px;
+}
+
+.payment-mini-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-period {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tax-text-primary);
+}
+
+.payment-date {
+  font-size: 11px;
+  color: var(--tax-text-muted);
+}
+
+.payment-amount {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tax-success);
+}
+
+.panel-actions {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--tax-border);
+}
+
+.panel-actions button {
+  flex: 1;
+}
+
+/* Payments Tab */
+.payments-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.payments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payments-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.payments-summary {
+  display: flex;
+  gap: 16px;
+}
+
+.payment-stat {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--tax-bg-elevated);
+  border-radius: 10px;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.completed { background: rgba(16, 185, 129, 0.15); color: var(--tax-success); }
+.stat-icon.scheduled { background: rgba(59, 130, 246, 0.15); color: var(--tax-info); }
+.stat-icon.processing { background: rgba(245, 158, 11, 0.15); color: var(--tax-warning); }
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tax-text-primary);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--tax-text-muted);
+}
+
+.payments-table {
+  background: var(--tax-bg-elevated);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.payments-table .table-header,
+.payments-table .table-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 0.8fr 1fr 0.8fr 1fr 0.8fr 0.6fr;
+  padding: 14px 20px;
+  align-items: center;
+}
+
+.payments-table .table-header {
+  background: var(--tax-bg-card);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tax-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.payments-table .table-row {
+  border-top: 1px solid var(--tax-border);
+}
+
+.id-cell {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tax-primary);
+}
+
+.type-cell {
+  font-size: 13px;
+  color: var(--tax-text-primary);
+}
+
+.period-cell {
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.method-cell {
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Documents Tab */
+.documents-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.documents-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.document-card {
+  background: var(--tax-bg-elevated);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--tax-primary), var(--tax-secondary));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tax-text-primary);
+  margin-bottom: 4px;
+}
+
+.doc-meta {
+  display: flex;
+  gap: 8px;
+}
+
+.doc-type,
+.doc-year {
+  font-size: 12px;
+  color: var(--tax-text-muted);
+}
+
+.doc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--tax-border);
+}
+
+.doc-status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.doc-status.draft { background: rgba(107, 114, 128, 0.2); color: var(--tax-text-muted); }
+.doc-status.submitted { background: rgba(59, 130, 246, 0.2); color: var(--tax-info); }
+.doc-status.accepted { background: rgba(16, 185, 129, 0.2); color: var(--tax-success); }
+.doc-status.rejected { background: rgba(239, 68, 68, 0.2); color: var(--tax-error); }
+
+.doc-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Deductions Tab */
+.deductions-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.deductions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deductions-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.deductions-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+  border-radius: 12px;
+}
+
+.summary-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.summary-main .summary-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--tax-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-main .summary-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.summary-main .summary-label {
+  font-size: 13px;
+}
+
+.summary-savings {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--tax-bg-card);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.summary-savings strong {
+  color: var(--tax-success);
+}
+
+.deductions-table {
+  background: var(--tax-bg-elevated);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.deductions-table .table-header,
+.deductions-table .table-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 0.8fr 0.6fr 0.6fr 0.6fr;
+  padding: 14px 20px;
+  align-items: center;
+}
+
+.deductions-table .table-header {
+  background: var(--tax-bg-card);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tax-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deductions-table .table-row {
+  border-top: 1px solid var(--tax-border);
+}
+
+.category-cell {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tax-text-primary);
+}
+
+.description-cell {
+  font-size: 13px;
+  color: var(--tax-text-secondary);
+}
+
+.documented-cell,
+.recurring-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.documented-cell.yes { color: var(--tax-success); }
+.documented-cell.no { color: var(--tax-error); }
+.recurring-cell.yes { color: var(--tax-primary); }
+.recurring-cell.no { color: var(--tax-text-muted); }
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .obligations-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .obligation-detail-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    z-index: 100;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    max-height: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tax-summary {
+    flex-wrap: wrap;
+  }
+  
+  .summary-card {
+    flex: 1 1 calc(33% - 12px);
+    min-width: 150px;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .overview-card.span-2 {
+    grid-column: span 1;
+  }
+  
+  .tax-distribution {
+    flex-direction: column;
+  }
+  
+  .distribution-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .tax__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .tax__tabs {
+    flex-wrap: wrap;
+  }
+  
+  .payments-summary {
+    flex-wrap: wrap;
+  }
+  
+  .payment-stat {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .tax-management {
+    padding: 16px;
+  }
+  
+  .summary-card {
+    flex: 1 1 calc(50% - 8px);
+  }
+  
+  .obligation-detail-panel {
+    width: 100%;
+    left: 0;
+  }
+  
+  .deductions-summary {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .obligations-table .table-header,
+  .obligations-table .table-row {
+    grid-template-columns: 1.5fr 1fr 1fr 0.6fr;
+  }
+  
+  .obligations-table .table-header span:nth-child(3),
+  .obligations-table .table-header span:nth-child(4),
+  .obligations-table .table-header span:nth-child(7),
+  .obligations-table .table-row > *:nth-child(3),
+  .obligations-table .table-row > *:nth-child(4),
+  .obligations-table .table-row > *:nth-child(7) {
+    display: none;
+  }
+  
+  .payments-table .table-header,
+  .payments-table .table-row {
+    grid-template-columns: 1fr 1fr 0.8fr 0.8fr 0.6fr;
+  }
+  
+  .payments-table .table-header span:nth-child(3),
+  .payments-table .table-header span:nth-child(5),
+  .payments-table .table-header span:nth-child(8),
+  .payments-table .table-row > *:nth-child(3),
+  .payments-table .table-row > *:nth-child(5),
+  .payments-table .table-row > *:nth-child(8) {
+    display: none;
+  }
+  
+  .deductions-table .table-header,
+  .deductions-table .table-row {
+    grid-template-columns: 1fr 1fr 0.8fr 0.6fr;
+  }
+  
+  .deductions-table .table-header span:nth-child(4),
+  .deductions-table .table-header span:nth-child(6),
+  .deductions-table .table-header span:nth-child(7),
+  .deductions-table .table-row > *:nth-child(4),
+  .deductions-table .table-row > *:nth-child(6),
+  .deductions-table .table-row > *:nth-child(7) {
+    display: none;
+  }
+}

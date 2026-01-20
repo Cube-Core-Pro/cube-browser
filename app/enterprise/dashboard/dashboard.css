@@ -1,0 +1,706 @@
+/* ============================================
+   CUBE Elite - Enterprise Dashboard
+   Enterprise-grade management interface
+   ============================================ */
+
+/* Variables */
+:root {
+  --ent-primary: #6366f1;
+  --ent-primary-dark: #4f46e5;
+  --ent-success: #22c55e;
+  --ent-warning: #f59e0b;
+  --ent-error: #ef4444;
+  --ent-info: #3b82f6;
+  --ent-purple: #8b5cf6;
+  --ent-bg: #0a0a0f;
+  --ent-surface: #12121a;
+  --ent-surface-2: #1a1a24;
+  --ent-border: #2a2a3a;
+  --ent-text: #ffffff;
+  --ent-text-secondary: #9ca3af;
+  --ent-text-muted: #6b7280;
+}
+
+/* Page Layout */
+.enterprise-dashboard-page {
+  min-height: 100vh;
+  background: var(--ent-bg);
+  padding: 1.5rem 2rem;
+  color: var(--ent-text);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 1rem;
+  color: var(--ent-text-secondary);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title svg {
+  color: var(--ent-primary);
+}
+
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-title p {
+  margin: 0;
+  color: var(--ent-text-secondary);
+  font-size: 0.8125rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--ent-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--ent-primary-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--ent-surface);
+  color: var(--ent-text);
+  border: 1px solid var(--ent-border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--ent-surface-2);
+  border-color: var(--ent-primary);
+}
+
+/* Enterprise Metrics */
+.enterprise-metrics {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.metric-card.teams { border-color: var(--ent-primary); background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent); }
+.metric-card.users { border-color: var(--ent-success); background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), transparent); }
+.metric-card.workflows { border-color: var(--ent-warning); background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), transparent); }
+.metric-card.api { border-color: var(--ent-info); background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent); }
+.metric-card.storage { border-color: var(--ent-purple); background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent); }
+.metric-card.uptime { border-color: var(--ent-success); background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), transparent); }
+.metric-card.security { border-color: var(--ent-primary); background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent); }
+.metric-card.compliance { border-color: var(--ent-info); background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent); }
+
+.metric-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--ent-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ent-text-secondary);
+}
+
+.metric-card.teams .metric-icon { background: rgba(99, 102, 241, 0.15); color: var(--ent-primary); }
+.metric-card.users .metric-icon { background: rgba(34, 197, 94, 0.15); color: var(--ent-success); }
+.metric-card.workflows .metric-icon { background: rgba(245, 158, 11, 0.15); color: var(--ent-warning); }
+.metric-card.api .metric-icon { background: rgba(59, 130, 246, 0.15); color: var(--ent-info); }
+.metric-card.storage .metric-icon { background: rgba(139, 92, 246, 0.15); color: var(--ent-purple); }
+.metric-card.uptime .metric-icon { background: rgba(34, 197, 94, 0.15); color: var(--ent-success); }
+.metric-card.security .metric-icon { background: rgba(99, 102, 241, 0.15); color: var(--ent-primary); }
+.metric-card.compliance .metric-icon { background: rgba(59, 130, 246, 0.15); color: var(--ent-info); }
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ent-text);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--ent-text-secondary);
+}
+
+.metric-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--ent-text-muted);
+}
+
+.metric-badge.positive {
+  color: var(--ent-success);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-header h2 svg {
+  color: var(--ent-primary);
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--ent-text-secondary);
+  font-size: 0.8125rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.view-all:hover {
+  color: var(--ent-primary);
+}
+
+/* Teams Overview */
+.teams-overview {
+  grid-column: span 2;
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  background: var(--ent-surface-2);
+  border-radius: 10px;
+  border-left: 3px solid var(--ent-success);
+}
+
+.team-card.status-warning {
+  border-left-color: var(--ent-warning);
+}
+
+.team-card.status-critical {
+  border-left-color: var(--ent-error);
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ent-text);
+}
+
+.team-plan {
+  font-size: 0.6875rem;
+  color: var(--ent-text-muted);
+}
+
+.team-users {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--ent-text-secondary);
+  font-size: 0.8125rem;
+}
+
+.team-usage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.usage-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--ent-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.usage-fill {
+  height: 100%;
+  background: var(--ent-primary);
+  border-radius: 3px;
+}
+
+.usage-text {
+  font-size: 0.75rem;
+  color: var(--ent-text-secondary);
+  min-width: 35px;
+}
+
+.team-status {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ent-success);
+}
+
+.team-status.status-warning .status-dot {
+  background: var(--ent-warning);
+}
+
+.team-status.status-critical .status-dot {
+  background: var(--ent-error);
+}
+
+/* Usage Metrics */
+.usage-metrics {
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.usage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.usage-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.usage-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.usage-name {
+  font-size: 0.8125rem;
+  color: var(--ent-text);
+}
+
+.usage-values {
+  font-size: 0.75rem;
+  color: var(--ent-text-secondary);
+}
+
+.usage-bar-container {
+  height: 8px;
+  background: var(--ent-surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.usage-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* System Alerts */
+.system-alerts {
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.alert-count {
+  background: var(--ent-error);
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--ent-surface-2);
+  border-radius: 8px;
+}
+
+.alert-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alert-icon.success { background: rgba(34, 197, 94, 0.15); color: var(--ent-success); }
+.alert-icon.warning { background: rgba(245, 158, 11, 0.15); color: var(--ent-warning); }
+.alert-icon.error { background: rgba(239, 68, 68, 0.15); color: var(--ent-error); }
+.alert-icon.info { background: rgba(59, 130, 246, 0.15); color: var(--ent-info); }
+
+.alert-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.alert-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ent-text);
+}
+
+.alert-message {
+  font-size: 0.75rem;
+  color: var(--ent-text-secondary);
+}
+
+.alert-time {
+  font-size: 0.6875rem;
+  color: var(--ent-text-muted);
+  white-space: nowrap;
+}
+
+/* Quick Actions */
+.quick-actions {
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--ent-surface-2);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--ent-text);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.action-card:hover {
+  border-color: var(--ent-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.action-card svg {
+  color: var(--ent-primary);
+}
+
+.action-card span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Infrastructure Status */
+.infrastructure-status {
+  grid-column: span 2;
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge.operational {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--ent-success);
+}
+
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.infra-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--ent-surface-2);
+  border-radius: 10px;
+}
+
+.infra-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ent-primary);
+}
+
+.infra-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.infra-name {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ent-text);
+}
+
+.infra-status {
+  font-size: 0.6875rem;
+  color: var(--ent-text-muted);
+}
+
+.infra-metric {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ent-success);
+}
+
+/* Compliance Section */
+.compliance-section {
+  background: var(--ent-surface);
+  border: 1px solid var(--ent-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.compliance-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--ent-surface-2);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.badge-icon {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ent-primary);
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  color: var(--ent-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .enterprise-metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .teams-overview,
+  .infrastructure-status {
+    grid-column: span 2;
+  }
+  
+  .infra-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .enterprise-dashboard-page {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .enterprise-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .teams-overview,
+  .infrastructure-status {
+    grid-column: span 1;
+  }
+  
+  .team-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .compliance-grid,
+  .infra-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .enterprise-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .compliance-grid,
+  .infra-grid,
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.metric-card,
+.teams-overview,
+.usage-metrics,
+.system-alerts,
+.quick-actions,
+.infrastructure-status,
+.compliance-section {
+  animation: fadeIn 0.4s ease;
+}

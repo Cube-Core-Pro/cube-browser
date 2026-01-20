@@ -1,0 +1,369 @@
+/**
+ * VideoConference.css
+ * Theme-aware styles for video conferencing component
+ * Supports both light and dark themes via CSS variables
+ */
+
+/* =========================================
+   Container Styles
+   ========================================= */
+.video-conference {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* =========================================
+   Header Styles
+   ========================================= */
+.video-conference__header {
+  padding: 1rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.video-conference__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.video-conference__subtitle {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video-conference__recording-indicator {
+  margin-left: 1rem;
+  color: hsl(var(--destructive));
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* =========================================
+   Video Grid Styles
+   ========================================= */
+.video-conference__grid-container {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.video-conference__grid {
+  display: grid;
+  gap: 1rem;
+  height: 100%;
+}
+
+.video-conference__grid--1 {
+  grid-template-columns: 1fr;
+}
+
+.video-conference__grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.video-conference__grid--4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.video-conference__grid--9 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.video-conference__grid--many {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* =========================================
+   Participant Card Styles
+   ========================================= */
+.video-conference__participant {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+.video-conference__participant:hover {
+  border-color: var(--primary);
+}
+
+.video-conference__participant--speaking {
+  border-color: hsl(var(--chart-2));
+  box-shadow: 0 0 0 2px hsl(var(--chart-2) / 0.3);
+}
+
+/* Video Element */
+.video-conference__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--muted);
+}
+
+/* Avatar Placeholder */
+.video-conference__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--muted);
+}
+
+.video-conference__avatar-circle {
+  width: 5rem;
+  height: 5rem;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-foreground);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Participant Info Overlay */
+.video-conference__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  background: linear-gradient(to top, hsl(0 0% 0% / 0.7), transparent);
+}
+
+.video-conference__info-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-conference__name {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.video-conference__indicators {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video-conference__indicator {
+  font-size: 0.875rem;
+}
+
+.video-conference__indicator--hand {
+  color: #facc15;
+}
+
+.video-conference__indicator--muted {
+  color: hsl(var(--destructive));
+}
+
+.video-conference__indicator--screen {
+  color: #3b82f6;
+}
+
+/* Speaking Indicator */
+.video-conference__speaking-dot {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: hsl(var(--chart-2));
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* =========================================
+   Controls Bar Styles
+   ========================================= */
+.video-conference__controls {
+  padding: 1rem;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+.video-conference__controls-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Control Buttons */
+.video-conference__btn {
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+}
+
+.video-conference__btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary);
+}
+
+.video-conference__btn--default {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.video-conference__btn--default:hover {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.video-conference__btn--danger {
+  background: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
+.video-conference__btn--danger:hover {
+  background: hsl(var(--destructive) / 0.9);
+}
+
+.video-conference__btn--active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.video-conference__btn--active:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+.video-conference__btn--warning {
+  background: #eab308;
+  color: white;
+}
+
+.video-conference__btn--warning:hover {
+  background: #ca8a04;
+}
+
+.video-conference__btn--leave {
+  padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  background: hsl(var(--destructive));
+  color: white;
+  font-weight: 500;
+}
+
+.video-conference__btn--leave:hover {
+  background: hsl(var(--destructive) / 0.9);
+}
+
+/* =========================================
+   Loading & Error States
+   ========================================= */
+.video-conference__loading,
+.video-conference__error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+.video-conference__loading {
+  color: var(--muted-foreground);
+}
+
+.video-conference__error {
+  color: hsl(var(--destructive));
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 768px) {
+  .video-conference__grid--4,
+  .video-conference__grid--9,
+  .video-conference__grid--many {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-conference__controls-inner {
+    gap: 0.5rem;
+  }
+
+  .video-conference__btn {
+    padding: 0.75rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+
+  .video-conference__btn--leave {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-conference__grid--2,
+  .video-conference__grid--4,
+  .video-conference__grid--9,
+  .video-conference__grid--many {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Dark Theme Specific Overrides
+   ========================================= */
+[data-theme="dark"] .video-conference__participant,
+.dark .video-conference__participant {
+  background: hsl(240 3.7% 15.9%);
+}
+
+[data-theme="dark"] .video-conference__avatar,
+.dark .video-conference__avatar {
+  background: hsl(240 3.7% 15.9%);
+}
+
+/* =========================================
+   Light Theme Specific Overrides
+   ========================================= */
+[data-theme="light"] .video-conference,
+:root:not(.dark) .video-conference {
+  background: var(--background);
+}
+
+[data-theme="light"] .video-conference__header,
+:root:not(.dark) .video-conference__header {
+  background: var(--card);
+}
+
+[data-theme="light"] .video-conference__controls,
+:root:not(.dark) .video-conference__controls {
+  background: var(--card);
+}

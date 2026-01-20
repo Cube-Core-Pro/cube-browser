@@ -1,0 +1,772 @@
+/* CUBE Browser Elite - Split View Styles */
+/* Superior to Vivaldi's split view with sync scrolling */
+
+/* ==================== Container ==================== */
+.split-view-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary, #0a0a0b);
+  overflow: hidden;
+}
+
+/* ==================== Toolbar ==================== */
+.split-view-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-secondary, #141416);
+  border-bottom: 1px solid var(--border-color, #2a2a2e);
+  min-height: 44px;
+}
+
+.split-view-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.split-view-toolbar-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.split-view-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.split-view-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #f5f5f7);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.split-view-title-icon {
+  font-size: 16px;
+}
+
+/* ==================== Layout Buttons ==================== */
+.layout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-secondary, #86868b);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.layout-button:hover {
+  background: var(--bg-hover, #1e1e22);
+  color: var(--text-primary, #f5f5f7);
+  border-color: var(--border-color, #2a2a2e);
+}
+
+.layout-button.active {
+  background: var(--accent-primary, #0a84ff);
+  color: #ffffff;
+  border-color: var(--accent-primary, #0a84ff);
+}
+
+.layout-button[title]::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: var(--bg-tertiary, #1e1e22);
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.layout-button:hover[title]::after {
+  opacity: 1;
+}
+
+/* ==================== Sync Mode Selector ==================== */
+.sync-mode-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-tertiary, #1e1e22);
+  border-radius: 8px;
+}
+
+.sync-mode-button {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-secondary, #86868b);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sync-mode-button:hover {
+  color: var(--text-primary, #f5f5f7);
+}
+
+.sync-mode-button.active {
+  background: var(--accent-primary, #0a84ff);
+  color: #ffffff;
+}
+
+/* ==================== Panels Container ==================== */
+.split-view-panels {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.split-view-panels.horizontal {
+  flex-direction: row;
+}
+
+.split-view-panels.vertical {
+  flex-direction: column;
+}
+
+.split-view-panels.grid {
+  flex-wrap: wrap;
+}
+
+/* ==================== Individual Panel ==================== */
+.split-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary, #0a0a0b);
+  overflow: hidden;
+  transition: flex 0.2s ease;
+}
+
+.split-panel.active {
+  z-index: 1;
+}
+
+.split-panel.active .panel-header {
+  border-color: var(--accent-primary, #0a84ff);
+}
+
+/* ==================== Panel Header ==================== */
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--bg-secondary, #141416);
+  border-bottom: 2px solid transparent;
+  min-height: 36px;
+  transition: border-color 0.15s ease;
+}
+
+.panel-header.hidden {
+  display: none;
+}
+
+.panel-favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.panel-favicon-placeholder {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary, #1e1e22);
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+.panel-title {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-primary, #f5f5f7);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.panel-url {
+  font-size: 11px;
+  color: var(--text-tertiary, #6e6e73);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.panel-header:hover .panel-actions {
+  opacity: 1;
+}
+
+.panel-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-secondary, #86868b);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.panel-action-button:hover {
+  background: var(--bg-hover, #1e1e22);
+  color: var(--text-primary, #f5f5f7);
+}
+
+.panel-action-button.close:hover {
+  background: #ff453a;
+  color: #ffffff;
+}
+
+/* ==================== Panel Content ==================== */
+.panel-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-content iframe,
+.panel-content webview {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.panel-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary, #86868b);
+  gap: 12px;
+}
+
+.panel-placeholder-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.panel-placeholder-text {
+  font-size: 14px;
+}
+
+/* ==================== Dividers ==================== */
+.split-divider {
+  position: relative;
+  background: var(--border-color, #2a2a2e);
+  z-index: 10;
+  transition: background 0.15s ease;
+}
+
+.split-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--text-tertiary, #6e6e73);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.split-divider:hover,
+.split-divider.dragging {
+  background: var(--accent-primary, #0a84ff);
+}
+
+.split-divider:hover::after,
+.split-divider.dragging::after {
+  opacity: 1;
+}
+
+.split-divider.horizontal {
+  width: 4px;
+  cursor: col-resize;
+}
+
+.split-divider.horizontal::after {
+  width: 2px;
+  height: 40px;
+}
+
+.split-divider.vertical {
+  height: 4px;
+  cursor: row-resize;
+}
+
+.split-divider.vertical::after {
+  width: 40px;
+  height: 2px;
+}
+
+.split-divider.locked {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.split-divider.locked:hover {
+  background: var(--border-color, #2a2a2e);
+}
+
+/* ==================== Empty State ==================== */
+.split-view-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.split-view-empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.split-view-empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary, #f5f5f7);
+  margin-bottom: 8px;
+}
+
+.split-view-empty-description {
+  font-size: 14px;
+  color: var(--text-secondary, #86868b);
+  max-width: 400px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.split-view-empty-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.split-view-start-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent-primary, #0a84ff);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.split-view-start-button:hover {
+  background: var(--accent-primary-hover, #0070d9);
+  transform: translateY(-1px);
+}
+
+/* ==================== Settings Panel ==================== */
+.split-view-settings {
+  position: absolute;
+  top: 52px;
+  right: 12px;
+  width: 320px;
+  background: var(--bg-secondary, #141416);
+  border: 1px solid var(--border-color, #2a2a2e);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color, #2a2a2e);
+}
+
+.settings-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #f5f5f7);
+}
+
+.settings-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-secondary, #86868b);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.settings-close:hover {
+  background: var(--bg-hover, #1e1e22);
+  color: var(--text-primary, #f5f5f7);
+}
+
+.settings-content {
+  padding: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.settings-section {
+  margin-bottom: 20px;
+}
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.settings-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #86868b);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.settings-label {
+  font-size: 13px;
+  color: var(--text-primary, #f5f5f7);
+}
+
+.settings-description {
+  font-size: 11px;
+  color: var(--text-tertiary, #6e6e73);
+  margin-top: 2px;
+}
+
+/* ==================== Toggle Switch ==================== */
+.toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: var(--bg-tertiary, #1e1e22);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.toggle-switch.active {
+  background: var(--accent-primary, #0a84ff);
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.toggle-switch.active::after {
+  transform: translateX(20px);
+}
+
+/* ==================== Select Dropdown ==================== */
+.settings-select {
+  padding: 8px 12px;
+  background: var(--bg-tertiary, #1e1e22);
+  border: 1px solid var(--border-color, #2a2a2e);
+  border-radius: 6px;
+  color: var(--text-primary, #f5f5f7);
+  font-size: 13px;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.settings-select:focus {
+  outline: none;
+  border-color: var(--accent-primary, #0a84ff);
+}
+
+/* ==================== Slider ==================== */
+.settings-slider {
+  width: 120px;
+  height: 4px;
+  -webkit-appearance: none;
+  background: var(--bg-tertiary, #1e1e22);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.settings-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-primary, #0a84ff);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ==================== Saved Layouts ==================== */
+.saved-layouts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.saved-layout-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-tertiary, #1e1e22);
+  border: 1px solid var(--border-color, #2a2a2e);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.saved-layout-item:hover {
+  border-color: var(--accent-primary, #0a84ff);
+  background: var(--bg-hover, #1e1e22);
+}
+
+.saved-layout-icon {
+  font-size: 18px;
+}
+
+.saved-layout-info {
+  flex: 1;
+}
+
+.saved-layout-name {
+  font-size: 13px;
+  color: var(--text-primary, #f5f5f7);
+}
+
+.saved-layout-panels {
+  font-size: 11px;
+  color: var(--text-tertiary, #6e6e73);
+}
+
+.saved-layout-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-tertiary, #6e6e73);
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+.saved-layout-item:hover .saved-layout-delete {
+  opacity: 1;
+}
+
+.saved-layout-delete:hover {
+  background: #ff453a;
+  color: #ffffff;
+}
+
+/* ==================== Stats Display ==================== */
+.split-view-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: var(--bg-tertiary, #1e1e22);
+  border-radius: 8px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary, #f5f5f7);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-secondary, #86868b);
+}
+
+/* ==================== Keyboard Shortcuts ==================== */
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.shortcut-keys {
+  display: flex;
+  gap: 4px;
+}
+
+.shortcut-key {
+  padding: 4px 8px;
+  background: var(--bg-tertiary, #1e1e22);
+  border: 1px solid var(--border-color, #2a2a2e);
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--text-primary, #f5f5f7);
+}
+
+.shortcut-description {
+  font-size: 12px;
+  color: var(--text-secondary, #86868b);
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.split-view-settings {
+  animation: slideIn 0.2s ease;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .split-view-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .split-view-toolbar-center {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 4px 0;
+  }
+
+  .split-view-settings {
+    width: calc(100% - 24px);
+    right: 12px;
+    left: 12px;
+  }
+
+  .panel-url {
+    display: none;
+  }
+}
+
+/* ==================== Theme Integration ==================== */
+:root {
+  --split-view-panel-min-width: 200px;
+  --split-view-panel-min-height: 150px;
+  --split-view-divider-size: 4px;
+  --split-view-header-height: 36px;
+}
+
+/* Light Mode Support */
+@media (prefers-color-scheme: light) {
+  .split-view-container {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --bg-tertiary: #e8e8ed;
+    --bg-hover: #ebebf0;
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --text-tertiary: #86868b;
+    --border-color: #d2d2d7;
+  }
+}

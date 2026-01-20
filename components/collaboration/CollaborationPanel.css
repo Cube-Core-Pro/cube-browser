@@ -1,0 +1,681 @@
+/* ============================================================================
+   COLLABORATION PANEL STYLES - CUBE Nexum v7.0.0
+   Real-time collaboration UI styling
+   ============================================================================ */
+
+/* CSS Variables */
+:root {
+  --collab-primary: #8b5cf6;
+  --collab-secondary: #6366f1;
+  --collab-accent: #f59e0b;
+  --collab-success: #10b981;
+  --collab-error: #ef4444;
+  --collab-bg: #0f0f23;
+  --collab-surface: #1a1a2e;
+  --collab-surface-hover: #252542;
+  --collab-border: rgba(139, 92, 246, 0.2);
+  --collab-text: #e2e8f0;
+  --collab-text-muted: #94a3b8;
+  --collab-text-secondary: #64748b;
+}
+
+/* ============================================================================
+   PANEL
+   ============================================================================ */
+
+.collab-panel {
+  width: 320px;
+  background: var(--collab-surface);
+  border: 1px solid var(--collab-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.collab-panel--compact {
+  width: 280px;
+}
+
+/* ============================================================================
+   LOADING
+   ============================================================================ */
+
+.collab-panel__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--collab-text-muted);
+}
+
+.collab-panel__spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--collab-border);
+  border-top-color: var(--collab-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   ERROR STATE
+   ============================================================================ */
+
+.collab-panel__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  color: var(--collab-text-muted);
+}
+
+.collab-panel__error-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.collab-panel__error h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ef4444;
+}
+
+.collab-panel__error p {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--collab-text-muted);
+}
+
+.collab-panel__retry-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--collab-primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.collab-panel__retry-btn:hover {
+  background: var(--collab-primary-hover, #4f46e5);
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.collab-panel__header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--collab-border);
+  background: var(--collab-bg);
+}
+
+.collab-panel__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.collab-panel__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--collab-text);
+}
+
+.collab-panel__status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--collab-text-secondary);
+}
+
+.collab-panel__status--connected {
+  background: var(--collab-success);
+  box-shadow: 0 0 6px var(--collab-success);
+}
+
+.collab-panel__close {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--collab-text-muted);
+  cursor: pointer;
+}
+
+.collab-panel__close:hover {
+  background: var(--collab-surface-hover);
+  color: var(--collab-text);
+}
+
+.collab-panel__subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--collab-text-muted);
+}
+
+.collab-panel__separator {
+  color: var(--collab-text-secondary);
+}
+
+/* ============================================================================
+   QUICK ACTIONS
+   ============================================================================ */
+
+.collab-panel__quick-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--collab-border);
+}
+
+.collab-panel__action-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: var(--collab-bg);
+  border: 1px solid var(--collab-border);
+  border-radius: 8px;
+  color: var(--collab-text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.collab-panel__action-btn:hover {
+  background: var(--collab-surface-hover);
+  border-color: var(--collab-primary);
+  color: var(--collab-text);
+}
+
+/* ============================================================================
+   SECTIONS
+   ============================================================================ */
+
+.collab-panel__section {
+  padding: 0.75rem 0;
+}
+
+.collab-panel__section-header {
+  padding: 0 1.25rem 0.5rem;
+}
+
+.collab-panel__section-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--collab-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.collab-panel__members {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* ============================================================================
+   AVATAR
+   ============================================================================ */
+
+.collab-avatar {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid var(--collab-border);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.collab-avatar--sm {
+  width: 28px;
+  height: 28px;
+}
+
+.collab-avatar--md {
+  width: 36px;
+  height: 36px;
+}
+
+.collab-avatar--lg {
+  width: 48px;
+  height: 48px;
+}
+
+.collab-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collab-avatar__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.collab-avatar--sm .collab-avatar__placeholder {
+  font-size: 0.7rem;
+}
+
+.collab-avatar--lg .collab-avatar__placeholder {
+  font-size: 1.1rem;
+}
+
+.collab-avatar__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--collab-surface);
+}
+
+/* ============================================================================
+   MEMBER ITEM
+   ============================================================================ */
+
+.collab-member {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  transition: background 0.2s ease;
+}
+
+.collab-member:hover {
+  background: var(--collab-surface-hover);
+}
+
+.collab-member--offline {
+  opacity: 0.6;
+}
+
+.collab-member__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.collab-member__name {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--collab-text);
+}
+
+.collab-member__you {
+  font-size: 0.75rem;
+  color: var(--collab-text-secondary);
+  font-weight: 400;
+}
+
+.collab-member__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  margin-top: 0.125rem;
+}
+
+.collab-member__role {
+  font-weight: 500;
+}
+
+.collab-member__separator {
+  color: var(--collab-text-secondary);
+}
+
+.collab-member__actions {
+  position: relative;
+}
+
+.collab-member__action-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--collab-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.collab-member:hover .collab-member__action-btn {
+  opacity: 1;
+}
+
+.collab-member__action-btn:hover {
+  background: var(--collab-bg);
+}
+
+.collab-member__menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--collab-surface);
+  border: 1px solid var(--collab-border);
+  border-radius: 10px;
+  padding: 0.375rem;
+  z-index: 10;
+  min-width: 160px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.collab-member__menu button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--collab-text);
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.collab-member__menu button:hover {
+  background: var(--collab-bg);
+}
+
+.collab-member__menu-divider {
+  height: 1px;
+  background: var(--collab-border);
+  margin: 0.25rem 0;
+}
+
+.collab-member__menu-danger {
+  color: var(--collab-error) !important;
+}
+
+/* ============================================================================
+   AVATAR STACK
+   ============================================================================ */
+
+.collab-avatar-stack {
+  display: flex;
+  cursor: pointer;
+}
+
+.collab-avatar-stack__item {
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--collab-surface);
+  transition: transform 0.2s ease;
+}
+
+.collab-avatar-stack__item:first-child {
+  margin-left: 0;
+}
+
+.collab-avatar-stack:hover .collab-avatar-stack__item {
+  margin-left: -4px;
+}
+
+.collab-avatar-stack:hover .collab-avatar-stack__item:first-child {
+  margin-left: 0;
+}
+
+.collab-avatar-stack__more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-left: -8px;
+  background: var(--collab-bg);
+  border: 2px solid var(--collab-surface);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--collab-text-muted);
+}
+
+/* ============================================================================
+   CURSORS
+   ============================================================================ */
+
+.collab-cursors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.collab-cursor {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+}
+
+.collab-cursor__pointer {
+  width: 16px;
+  height: 16px;
+}
+
+.collab-cursor__label {
+  margin-left: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   INVITE MODAL
+   ============================================================================ */
+
+.collab-invite-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.collab-invite-modal {
+  background: var(--collab-surface);
+  border: 1px solid var(--collab-border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+}
+
+.collab-invite-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--collab-border);
+}
+
+.collab-invite-modal__header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--collab-text);
+}
+
+.collab-invite-modal__header button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--collab-text-muted);
+  cursor: pointer;
+}
+
+.collab-invite-modal__content {
+  padding: 1.25rem;
+}
+
+.collab-invite-modal__content p {
+  margin: 0 0 0.75rem;
+  color: var(--collab-text-muted);
+  font-size: 0.9rem;
+}
+
+.collab-invite-modal__link-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.collab-invite-modal__link-box input {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  background: var(--collab-bg);
+  border: 1px solid var(--collab-border);
+  border-radius: 8px;
+  color: var(--collab-text);
+  font-size: 0.85rem;
+}
+
+.collab-invite-modal__link-box button {
+  padding: 0.625rem 1rem;
+  background: var(--collab-primary);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.collab-invite-modal__options {
+  display: flex;
+  gap: 1rem;
+}
+
+.collab-invite-modal__options label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.collab-invite-modal__options span {
+  font-size: 0.8rem;
+  color: var(--collab-text-muted);
+}
+
+.collab-invite-modal__options select {
+  padding: 0.5rem 0.75rem;
+  background: var(--collab-bg);
+  border: 1px solid var(--collab-border);
+  border-radius: 6px;
+  color: var(--collab-text);
+  font-size: 0.85rem;
+}
+
+.collab-invite-modal__footer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--collab-border);
+  background: var(--collab-bg);
+}
+
+.collab-invite-modal__share-btn {
+  flex: 1;
+  padding: 0.625rem;
+  background: var(--collab-surface);
+  border: 1px solid var(--collab-border);
+  border-radius: 8px;
+  color: var(--collab-text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.collab-invite-modal__share-btn:hover {
+  background: var(--collab-surface-hover);
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 480px) {
+  .collab-panel {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* ============================================================================
+   DARK/LIGHT MODE
+   ============================================================================ */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --collab-bg: #f8fafc;
+    --collab-surface: #ffffff;
+    --collab-surface-hover: #f1f5f9;
+    --collab-border: rgba(139, 92, 246, 0.15);
+    --collab-text: #1e293b;
+    --collab-text-muted: #64748b;
+    --collab-text-secondary: #94a3b8;
+  }
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .collab-panel__spinner,
+  .collab-cursor {
+    animation: none;
+    transition: none;
+  }
+}

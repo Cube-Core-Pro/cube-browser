@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Smart Selector Picker Styles
+   ========================================================================== */
+
+/* Progress bars - using CSS custom properties for dynamic widths */
+.selector-progress-bar {
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: all 150ms ease;
+  width: var(--progress-width, 0%);
+}
+
+.selector-progress-bar--confidence {
+  background-color: rgb(59, 130, 246); /* blue-500 */
+}
+
+.selector-progress-bar--stability {
+  background-color: rgb(34, 197, 94); /* green-500 */
+}
+
+.selector-progress-bar--specificity {
+  background-color: rgb(168, 85, 247); /* purple-500 */
+}

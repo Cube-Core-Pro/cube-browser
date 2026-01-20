@@ -1,0 +1,752 @@
+/* ===================================================
+   CUBE Nexum - Investors Page Styles
+   Professional investment pitch page
+   =================================================== */
+
+.investors-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%);
+  color: #ffffff;
+}
+
+/* Hero Section */
+.investor-hero {
+  padding: 120px 24px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.investor-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 24px;
+  font-size: 14px;
+  color: #a78bfa;
+  margin-bottom: 24px;
+}
+
+.investor-hero h1 {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #a1a1aa;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-item svg {
+  color: #8b5cf6;
+}
+
+.stat-item div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #71717a;
+}
+
+.hero-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Section Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #a1a1aa;
+}
+
+/* Market Section */
+.market-section {
+  padding: 80px 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+}
+
+.market-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.market-value {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.market-label {
+  font-size: 14px;
+  color: #a1a1aa;
+}
+
+.market-growth {
+  font-size: 14px;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.market-narrative {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.market-narrative h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.market-narrative ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.market-narrative li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #d4d4d8;
+}
+
+/* Advantages Section */
+.advantages-section {
+  padding: 80px 24px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+}
+
+.advantage-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.advantage-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+}
+
+.advantage-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+  border-radius: 16px;
+  color: #8b5cf6;
+  margin-bottom: 20px;
+}
+
+.advantage-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.advantage-card p {
+  font-size: 15px;
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+/* Competitors Comparison */
+.competitors-comparison {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.competitors-comparison h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.competitors-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.competitors-comparison th,
+.competitors-comparison td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.competitors-comparison th {
+  font-weight: 600;
+  color: #a1a1aa;
+  font-size: 14px;
+}
+
+.competitors-comparison th:first-child,
+.competitors-comparison td:first-child {
+  text-align: left;
+}
+
+.competitors-comparison th:nth-child(2) {
+  color: #8b5cf6;
+}
+
+/* Investment Tiers */
+.tiers-section {
+  padding: 80px 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 48px;
+}
+
+.tier-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.tier-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+}
+
+.tier-card.highlighted {
+  border-color: #8b5cf6;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+.tier-card.selected {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 32px rgba(139, 92, 246, 0.3);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tier-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.tier-investment {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.investment-range {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.equity-range {
+  font-size: 16px;
+  color: #22c55e;
+}
+
+.tier-benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.tier-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #d4d4d8;
+}
+
+.tier-cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tier-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+
+.investment-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  font-size: 14px;
+  color: #a1a1aa;
+}
+
+.investment-note svg {
+  flex-shrink: 0;
+  color: #8b5cf6;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+  padding: 80px 24px;
+}
+
+.roadmap-timeline {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.roadmap-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  position: relative;
+  padding: 0 16px;
+}
+
+.roadmap-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-item.current .roadmap-marker {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  border-color: #8b5cf6;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.roadmap-item.upcoming .roadmap-marker {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.roadmap-quarter {
+  display: block;
+  font-size: 14px;
+  color: #71717a;
+  margin-bottom: 4px;
+}
+
+.roadmap-milestone {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Funds Section */
+.funds-section {
+  padding: 80px 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.funds-allocation {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fund-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fund-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
+}
+
+.fund-bar-40 {
+  width: 40%;
+}
+
+.fund-bar-30 {
+  width: 30%;
+}
+
+.fund-bar-15 {
+  width: 15%;
+}
+
+.fund-details {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fund-percentage {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8b5cf6;
+  min-width: 60px;
+}
+
+.fund-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.fund-description {
+  font-size: 14px;
+  color: #71717a;
+  margin-left: auto;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 24px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d4d4d8;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #71717a;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.form-actions .btn-primary {
+  justify-content: center;
+}
+
+.form-actions .btn-secondary {
+  text-align: center;
+  font-size: 14px;
+}
+
+.legal-disclaimer {
+  max-width: 600px;
+  margin: 48px auto 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.legal-disclaimer p {
+  font-size: 12px;
+  color: #71717a;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .roadmap-timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .roadmap-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 16px 0;
+  }
+
+  .roadmap-marker {
+    margin: 0;
+  }
+
+  .fund-details {
+    flex-wrap: wrap;
+  }
+
+  .fund-description {
+    width: 100%;
+    margin-left: 76px;
+    margin-top: -8px;
+  }
+}

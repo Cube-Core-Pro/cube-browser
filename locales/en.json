@@ -1,0 +1,2505 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "logout": "Logout",
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email",
+    "name": "Name",
+    "description": "Description",
+    "date": "Date",
+    "time": "Time",
+    "status": "Status",
+    "actions": "Actions",
+    "more": "More",
+    "less": "Less",
+    "all": "All",
+    "none": "None",
+    "select": "Select",
+    "selected": "Selected",
+    "noData": "No data available",
+    "noDataDescription": "There are no {entity} to display yet.",
+    "noResults": "No results found",
+    "noResultsFor": "No results found for \"{term}\"",
+    "tryDifferentSearch": "Try adjusting your search or filter to find what you're looking for.",
+    "retry": "Try Again",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "download": "Download",
+    "upload": "Upload",
+    "import": "Import",
+    "export": "Export",
+    "clear": "Clear",
+    "reset": "Reset",
+    "apply": "Apply",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "active": "Active",
+    "inactive": "Inactive",
+    "online": "Online",
+    "offline": "Offline",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "creating": "Creating...",
+    "joining": "Joining...",
+    "or": "OR"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "browser": "Browser",
+    "passwordManager": "Password Manager",
+    "collections": "Collections",
+    "readingList": "Reading List",
+    "mediaPlayer": "Media Player",
+    "terminal": "Terminal",
+    "downloads": "Downloads",
+    "automation": "Automation",
+    "settings": "Settings",
+    "tools": "Tools",
+    "communications": "Communications"
+  },
+  "browser": {
+    "newTab": "New Tab",
+    "tabs": "Tabs",
+    "history": "History",
+    "bookmarks": "Bookmarks",
+    "extensions": "Extensions",
+    "addressBar": "Enter URL or search",
+    "reload": "Reload",
+    "stop": "Stop",
+    "forward": "Forward",
+    "back": "Back",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "fullscreen": "Full Screen",
+    "print": "Print",
+    "developer": "Developer Tools",
+    "incognito": "Incognito Mode",
+    "clearData": "Clear Browsing Data"
+  },
+  "passwordManager": {
+    "title": "Password Manager",
+    "vaultLocked": "Vault Locked",
+    "unlockVault": "Unlock Vault",
+    "createVault": "Create Vault",
+    "masterPassword": "Master Password",
+    "confirmPassword": "Confirm Password",
+    "addPassword": "Add Password",
+    "editPassword": "Edit Password",
+    "generatePassword": "Generate Password",
+    "passwordStrength": "Password Strength",
+    "weak": "Weak",
+    "fair": "Fair",
+    "good": "Good",
+    "strong": "Strong",
+    "veryStrong": "Very Strong",
+    "website": "Website",
+    "username": "Username",
+    "notes": "Notes",
+    "category": "Category",
+    "favorites": "Favorites",
+    "allItems": "All Items",
+    "recentlyUsed": "Recently Used",
+    "searchPasswords": "Search passwords...",
+    "copyPassword": "Copy Password",
+    "copyUsername": "Copy Username",
+    "showPassword": "Show Password",
+    "hidePassword": "Hide Password",
+    "passwordCopied": "Password copied to clipboard",
+    "usernameCopied": "Username copied to clipboard",
+    "autoFill": "Auto-fill",
+    "securityReport": "Security Report",
+    "exportVault": "Export Vault",
+    "importPasswords": "Import Passwords",
+    "categories": {
+      "login": "Login",
+      "creditCard": "Credit Card",
+      "identity": "Identity",
+      "secureNote": "Secure Note",
+      "socialMedia": "Social Media",
+      "banking": "Banking",
+      "email": "Email",
+      "work": "Work",
+      "shopping": "Shopping",
+      "entertainment": "Entertainment"
+    }
+  },
+  "collections": {
+    "title": "Collections",
+    "newCollection": "New Collection",
+    "editCollection": "Edit Collection",
+    "deleteCollection": "Delete Collection",
+    "addPage": "Add Page",
+    "addLink": "Add Link",
+    "searchCollections": "Search collections...",
+    "emptyCollection": "This collection is empty",
+    "collectionName": "Collection Name",
+    "collectionDescription": "Description",
+    "color": "Color",
+    "icon": "Icon",
+    "pages": "Pages",
+    "links": "Links",
+    "items": "Items",
+    "lastModified": "Last Modified",
+    "createdAt": "Created",
+    "sortBy": "Sort by",
+    "viewAs": "View as",
+    "grid": "Grid",
+    "list": "List"
+  },
+  "readingList": {
+    "title": "Reading List",
+    "addArticle": "Add Article",
+    "removeArticle": "Remove Article",
+    "markAsRead": "Mark as Read",
+    "markAsUnread": "Mark as Unread",
+    "archive": "Archive",
+    "unarchive": "Unarchive",
+    "searchArticles": "Search articles...",
+    "unread": "Unread",
+    "read": "Read",
+    "archived": "Archived",
+    "all": "All",
+    "estimatedReadTime": "Estimated read time",
+    "minutes": "min",
+    "addedOn": "Added on",
+    "source": "Source",
+    "tags": "Tags",
+    "addTag": "Add tag",
+    "emptyReadingList": "Your reading list is empty"
+  },
+  "mediaPlayer": {
+    "title": "Media Player",
+    "nowPlaying": "Now Playing",
+    "queue": "Queue",
+    "playlist": "Playlist",
+    "playlists": "Playlists",
+    "newPlaylist": "New Playlist",
+    "addToPlaylist": "Add to Playlist",
+    "removeFromPlaylist": "Remove from Playlist",
+    "play": "Play",
+    "pause": "Pause",
+    "stop": "Stop",
+    "previous": "Previous",
+    "next": "Next",
+    "shuffle": "Shuffle",
+    "repeat": "Repeat",
+    "repeatOne": "Repeat One",
+    "repeatAll": "Repeat All",
+    "volume": "Volume",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "fullscreen": "Fullscreen",
+    "subtitles": "Subtitles",
+    "audioTrack": "Audio Track",
+    "playbackSpeed": "Playback Speed",
+    "equalizer": "Equalizer",
+    "visualizer": "Visualizer",
+    "openFile": "Open File",
+    "openFolder": "Open Folder",
+    "addToQueue": "Add to Queue",
+    "clearQueue": "Clear Queue",
+    "artist": "Artist",
+    "album": "Album",
+    "genre": "Genre",
+    "duration": "Duration",
+    "bitrate": "Bitrate",
+    "sampleRate": "Sample Rate",
+    "channels": "Channels",
+    "loading": {
+      "library": "Loading Media Library...",
+      "preparing": "Preparing your collection"
+    },
+    "errors": {
+      "title": "Failed to Load Media",
+      "loadFailed": "Failed to load media library"
+    },
+    "empty": {
+      "noMedia": "No Media Found",
+      "noMediaDesc": "Add some audio or video files to get started with your media library.",
+      "noResults": "No Results Found",
+      "noResultsDesc": "Try adjusting your search or filter to find what you're looking for."
+    },
+    "actions": {
+      "addMedia": "Add Media",
+      "shuffleAll": "Play all shuffled",
+      "shuffleAllLabel": "Shuffle All",
+      "addToFavorites": "Add to favorites",
+      "removeFromFavorites": "Remove from favorites"
+    }
+  },
+  "terminal": {
+    "title": "Terminal",
+    "newTerminal": "New Terminal",
+    "closeTerminal": "Close Terminal",
+    "splitHorizontal": "Split Horizontal",
+    "splitVertical": "Split Vertical",
+    "clear": "Clear",
+    "copy": "Copy",
+    "paste": "Paste",
+    "selectAll": "Select All",
+    "find": "Find",
+    "shell": "Shell",
+    "fontSize": "Font Size",
+    "fontFamily": "Font Family",
+    "theme": "Theme",
+    "cursorStyle": "Cursor Style",
+    "scrollback": "Scrollback Lines",
+    "commandHistory": "Command History",
+    "themes": {
+      "dark": "Dark",
+      "light": "Light",
+      "monokai": "Monokai",
+      "dracula": "Dracula",
+      "solarized": "Solarized"
+    }
+  },
+  "downloads": {
+    "title": "Downloads",
+    "activeDownloads": "Active Downloads",
+    "completedDownloads": "Completed",
+    "pausedDownloads": "Paused",
+    "failedDownloads": "Failed",
+    "allDownloads": "All Downloads",
+    "addDownload": "Add Download",
+    "pauseDownload": "Pause",
+    "resumeDownload": "Resume",
+    "cancelDownload": "Cancel",
+    "retryDownload": "Retry",
+    "removeDownload": "Remove",
+    "clearCompleted": "Clear Completed",
+    "openFile": "Open File",
+    "openFolder": "Open Folder",
+    "copyLink": "Copy Link",
+    "downloadSpeed": "Download Speed",
+    "uploadSpeed": "Upload Speed",
+    "progress": "Progress",
+    "timeRemaining": "Time Remaining",
+    "destination": "Destination",
+    "fileName": "File Name",
+    "fileSize": "File Size",
+    "downloaded": "Downloaded",
+    "startTime": "Start Time",
+    "endTime": "End Time"
+  },
+  "automation": {
+    "title": "Automation Studio",
+    "newWorkflow": "New Workflow",
+    "editWorkflow": "Edit Workflow",
+    "runWorkflow": "Run Workflow",
+    "stopWorkflow": "Stop Workflow",
+    "saveWorkflow": "Save Workflow",
+    "deleteWorkflow": "Delete Workflow",
+    "duplicateWorkflow": "Duplicate Workflow",
+    "importWorkflow": "Import Workflow",
+    "exportWorkflow": "Export Workflow",
+    "workflowName": "Workflow Name",
+    "workflowDescription": "Description",
+    "triggers": "Triggers",
+    "actions": "Actions",
+    "conditions": "Conditions",
+    "variables": "Variables",
+    "logs": "Logs",
+    "history": "History",
+    "schedule": "Schedule",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "running": "Running",
+    "completed": "Completed",
+    "failed": "Failed",
+    "paused": "Paused",
+    "nodes": {
+      "click": "Click Element",
+      "type": "Type Text",
+      "navigate": "Navigate",
+      "wait": "Wait",
+      "screenshot": "Screenshot",
+      "extract": "Extract Data",
+      "condition": "Condition",
+      "loop": "Loop",
+      "script": "Custom Script"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your preferences and configurations",
+    "general": "General",
+    "appearance": "Appearance",
+    "privacy": "Privacy & Security",
+    "notifications": "Notifications",
+    "language": "Language",
+    "languageDescription": "Select your preferred language. The app will automatically detect your system language on first launch.",
+    "languages": {
+      "en": "English",
+      "es": "Spanish",
+      "pt": "Portuguese",
+      "it": "Italian",
+      "de": "German",
+      "fr": "French",
+      "tr": "Turkish",
+      "zh": "Chinese",
+      "ja": "Japanese",
+      "ko": "Korean",
+      "ar": "Arabic",
+      "ru": "Russian"
+    },
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "accentColor": "Accent Color",
+    "fontSize": "Font Size",
+    "startPage": "Start Page",
+    "defaultDownloadLocation": "Default Download Location",
+    "clearBrowsingData": "Clear Browsing Data",
+    "importData": "Import Data",
+    "exportData": "Export Data",
+    "resetSettings": "Reset to Defaults",
+    "autoUpdate": "Auto Update",
+    "checkForUpdates": "Check for Updates",
+    "version": "Version",
+    "licenses": "Licenses",
+    "feedback": "Send Feedback",
+    "account": "Account"
+  },
+  "account": {
+    "title": "Account Settings",
+    "profile": "Profile",
+    "profileInfo": "Profile Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "displayName": "Display Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "company": "Company",
+    "role": "Role / Position",
+    "timezone": "Timezone",
+    "bio": "Bio",
+    "avatar": "Profile Photo",
+    "uploadAvatar": "Upload Photo",
+    "removeAvatar": "Remove Photo",
+    "dragDropAvatar": "Drag and drop an image or click to upload",
+    "avatarFormats": "JPG, PNG or GIF. Max 5MB",
+    "billingAddress": "Billing Address",
+    "streetAddress": "Street Address",
+    "addressLine2": "Address Line 2",
+    "city": "City",
+    "state": "State / Province",
+    "postalCode": "Postal Code",
+    "country": "Country",
+    "vatNumber": "VAT Number",
+    "preferences": "Preferences",
+    "communicationPrefs": "Communication Preferences",
+    "emailNotifications": "Email Notifications",
+    "smsNotifications": "SMS Notifications",
+    "marketingEmails": "Marketing Emails",
+    "productUpdates": "Product Updates",
+    "securityAlerts": "Security Alerts",
+    "billingHistory": "Billing History",
+    "viewAllInvoices": "View All Invoices",
+    "invoice": "Invoice",
+    "paid": "Paid",
+    "pending": "Pending",
+    "failed": "Failed",
+    "saveChanges": "Save Changes",
+    "changesSaved": "Changes saved successfully",
+    "changePassword": "Change Password",
+    "deleteAccount": "Delete Account",
+    "accountSecurity": "Account Security",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "connectedDevices": "Connected Devices",
+    "activeSessions": "Active Sessions"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "sales": "Sales",
+    "licenses": "Licenses",
+    "downloads": "Downloads",
+    "users": "Users",
+    "apiKeys": "API Keys",
+    "services": "Services",
+    "analytics": "Analytics",
+    "logs": "Logs",
+    "settings": "Settings",
+    "totalRevenue": "Total Revenue",
+    "totalUsers": "Total Users",
+    "activeLicenses": "Active Licenses",
+    "totalDownloads": "Total Downloads",
+    "recentSales": "Recent Sales",
+    "customer": "Customer",
+    "product": "Product",
+    "amount": "Amount",
+    "status": "Status",
+    "date": "Date",
+    "completed": "Completed",
+    "pending": "Pending",
+    "refunded": "Refunded",
+    "licenseKey": "License Key",
+    "licensePlan": "Plan",
+    "licenseStatus": "Status",
+    "devices": "Devices",
+    "expiresAt": "Expires",
+    "active": "Active",
+    "expired": "Expired",
+    "revoked": "Revoked",
+    "suspended": "Suspended",
+    "downloadStats": "Download Statistics",
+    "platformDistribution": "Platform Distribution",
+    "recentDownloads": "Recent Downloads",
+    "version": "Version",
+    "platform": "Platform",
+    "downloadDate": "Download Date"
+  },
+  "updates": {
+    "title": "Updates & Sync",
+    "checkForUpdates": "Check for Updates",
+    "checking": "Checking...",
+    "downloading": "Downloading...",
+    "installing": "Installing...",
+    "currentVersion": "Current Version",
+    "latestVersion": "Latest Version",
+    "updateAvailable": "Update Available",
+    "upToDate": "Up to Date",
+    "downloadUpdate": "Download Update",
+    "installUpdate": "Install & Restart",
+    "viewReleaseNotes": "View Release Notes",
+    "lastChecked": "Last checked",
+    "releaseDate": "Release date",
+    "size": "Size",
+    "autoCheck": "Auto-check for updates",
+    "autoDownload": "Auto-download updates",
+    "installOnExit": "Install on exit",
+    "checkInterval": "Check interval",
+    "hourly": "Every hour",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "manual": "Manual only",
+    "updateChannel": "Update channel",
+    "stable": "Stable",
+    "beta": "Beta",
+    "nightly": "Nightly",
+    "updateHistory": "Update History",
+    "whatsNew": "What's New"
+  },
+  "cloudSync": {
+    "title": "Cloud Sync",
+    "connected": "Connected",
+    "disconnected": "Not Connected",
+    "syncNow": "Sync Now",
+    "syncing": "Syncing...",
+    "lastSync": "Last sync",
+    "pendingChanges": "pending changes",
+    "signInPrompt": "Sign in to sync your settings across devices",
+    "signIn": "Sign In",
+    "syncEnabled": "Enable sync",
+    "syncEnabledDesc": "Keep your data in sync across devices",
+    "syncOnStartup": "Sync on startup",
+    "syncOnStartupDesc": "Automatically sync when app opens",
+    "syncFrequency": "Sync frequency",
+    "realtime": "Real-time",
+    "everyFiveMin": "Every 5 minutes",
+    "everyFifteenMin": "Every 15 minutes",
+    "everyThirtyMin": "Every 30 minutes",
+    "dataToSync": "Data to Sync",
+    "settings": "Settings",
+    "passwords": "Passwords",
+    "bookmarks": "Bookmarks",
+    "collections": "Collections",
+    "macros": "Macros",
+    "workflows": "Workflows",
+    "themes": "Themes",
+    "extensions": "Extensions",
+    "onlineAccount": "Online Account",
+    "accountSettings": "Account Settings",
+    "billingSubscription": "Billing & Subscription",
+    "upgradePlan": "Upgrade Plan"
+  },
+  "devices": {
+    "title": "Connected Devices",
+    "description": "Manage devices synced to your account",
+    "noDevices": "No devices connected",
+    "noDevicesDesc": "Sign in on other devices to see them here",
+    "thisDevice": "This device",
+    "lastActive": "Last active",
+    "remove": "Remove"
+  },
+  "backups": {
+    "title": "Cloud Backups",
+    "autoBackup": "Auto backup",
+    "autoBackupDesc": "Automatically backup your data",
+    "backupFrequency": "Backup frequency",
+    "createNow": "Create Backup Now",
+    "yourBackups": "Your Backups",
+    "noBackups": "No backups yet",
+    "noBackupsDesc": "Create a backup to protect your data",
+    "restore": "Restore",
+    "delete": "Delete"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "network": "Connection Error",
+    "server": "Server Error",
+    "auth": "Authentication Required",
+    "notFound": "Not Found",
+    "validation": "Validation Error",
+    "networkDescription": "Unable to connect to the server. Please check your internet connection and try again.",
+    "serverDescription": "The server encountered an error. Our team has been notified. Please try again later.",
+    "authDescription": "Your session has expired or you don't have permission to access this resource.",
+    "notFoundDescription": "The requested resource could not be found.",
+    "validationDescription": "Please check the form for errors and try again.",
+    "code": "Error Code",
+    "showDetails": "Show technical details",
+    "retry": "Try Again",
+    "login": "Login",
+    "networkError": "Network error. Please check your connection.",
+    "unauthorized": "Unauthorized. Please login.",
+    "forbidden": "Access denied",
+    "serverError": "Server error. Please try again later.",
+    "timeout": "Request timed out",
+    "invalidInput": "Invalid input",
+    "requiredField": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "invalidUrl": "Invalid URL",
+    "passwordMismatch": "Passwords do not match",
+    "weakPassword": "Password is too weak",
+    "fileTooLarge": "File is too large",
+    "invalidFileType": "Invalid file type",
+    "downloadFailed": "Download failed",
+    "uploadFailed": "Upload failed",
+    "saveFailed": "Failed to save",
+    "deleteFailed": "Failed to delete",
+    "loadFailed": "Failed to load data"
+  },
+  "success": {
+    "saved": "Saved successfully",
+    "deleted": "Deleted successfully",
+    "updated": "Updated successfully",
+    "copied": "Copied to clipboard",
+    "downloaded": "Downloaded successfully",
+    "uploaded": "Uploaded successfully",
+    "imported": "Imported successfully",
+    "exported": "Exported successfully",
+    "passwordChanged": "Password changed successfully",
+    "settingsSaved": "Settings saved"
+  },
+  "confirmations": {
+    "delete": "Are you sure you want to delete this?",
+    "deleteMultiple": "Are you sure you want to delete {count} items?",
+    "discard": "Discard unsaved changes?",
+    "logout": "Are you sure you want to logout?",
+    "clearData": "This will permanently delete all your data. Continue?",
+    "reset": "Reset all settings to defaults?"
+  },
+  "crm": {
+    "title": "CRM Enterprise",
+    "subtitle": "Customer Relationship Management",
+    "contacts": {
+      "title": "Contacts",
+      "addContact": "Add Contact",
+      "editContact": "Edit Contact",
+      "importContacts": "Import Contacts",
+      "exportContacts": "Export Contacts",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "company": "Company",
+      "phone": "Phone",
+      "mobile": "Mobile",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "postalCode": "Postal Code",
+      "notes": "Notes",
+      "tags": "Tags",
+      "source": "Lead Source",
+      "status": "Status",
+      "assignedTo": "Assigned To",
+      "lastContact": "Last Contact",
+      "nextFollowUp": "Next Follow-up",
+      "totalDeals": "Total Deals",
+      "totalValue": "Total Value",
+      "duplicates": "Merge Duplicates",
+      "segments": "Segments",
+      "customFields": "Custom Fields"
+    },
+    "companies": {
+      "title": "Companies",
+      "addCompany": "Add Company",
+      "companyName": "Company Name",
+      "industry": "Industry",
+      "size": "Company Size",
+      "revenue": "Annual Revenue",
+      "website": "Website",
+      "employees": "Employees",
+      "headquarters": "Headquarters",
+      "founded": "Founded",
+      "linkedContacts": "Linked Contacts"
+    },
+    "deals": {
+      "title": "Deals",
+      "addDeal": "Add Deal",
+      "editDeal": "Edit Deal",
+      "dealName": "Deal Name",
+      "value": "Deal Value",
+      "probability": "Probability",
+      "expectedClose": "Expected Close",
+      "actualClose": "Actual Close",
+      "stage": "Stage",
+      "pipeline": "Pipeline",
+      "wonDeals": "Won Deals",
+      "lostDeals": "Lost Deals",
+      "openDeals": "Open Deals",
+      "totalPipeline": "Total Pipeline Value",
+      "weightedValue": "Weighted Value",
+      "lostReason": "Lost Reason",
+      "competitor": "Competitor",
+      "stages": {
+        "lead": "Lead",
+        "qualified": "Qualified",
+        "proposal": "Proposal",
+        "negotiation": "Negotiation",
+        "closed_won": "Closed Won",
+        "closed_lost": "Closed Lost"
+      }
+    },
+    "pipeline": {
+      "title": "Pipeline",
+      "newPipeline": "New Pipeline",
+      "editPipeline": "Edit Pipeline",
+      "stages": "Stages",
+      "addStage": "Add Stage",
+      "stageName": "Stage Name",
+      "probability": "Win Probability",
+      "rottenDays": "Days Until Rotten",
+      "kanban": "Kanban View",
+      "list": "List View",
+      "forecast": "Forecast"
+    },
+    "activities": {
+      "title": "Activities",
+      "addActivity": "Add Activity",
+      "call": "Call",
+      "email": "Email",
+      "meeting": "Meeting",
+      "task": "Task",
+      "note": "Note",
+      "deadline": "Deadline",
+      "reminder": "Reminder",
+      "completed": "Completed",
+      "pending": "Pending",
+      "overdue": "Overdue",
+      "todayTasks": "Today's Tasks",
+      "upcoming": "Upcoming",
+      "history": "Activity History"
+    },
+    "reports": {
+      "title": "Reports",
+      "salesReport": "Sales Report",
+      "pipelineReport": "Pipeline Report",
+      "activityReport": "Activity Report",
+      "winRate": "Win Rate",
+      "avgDealSize": "Average Deal Size",
+      "avgSalesCycle": "Average Sales Cycle",
+      "conversionRate": "Conversion Rate",
+      "revenueByMonth": "Revenue by Month",
+      "dealsByStage": "Deals by Stage",
+      "topPerformers": "Top Performers",
+      "lostReasons": "Lost Deal Reasons",
+      "sourceAnalysis": "Lead Source Analysis"
+    },
+    "loading": {
+      "hub": "Loading CRM...",
+      "preparing": "Preparing your contacts and deals"
+    },
+    "errors": {
+      "title": "Failed to Load CRM",
+      "loadFailed": "Failed to load CRM data"
+    },
+    "settings": {
+      "title": "CRM Settings",
+      "comingSoon": "Configuration options coming soon"
+    },
+    "actions": {
+      "quickAdd": "Quick Add (⌘N)"
+    }
+  },
+  "marketing": {
+    "title": "Marketing Hub",
+    "subtitle": "All-in-one Marketing Automation",
+    "campaigns": {
+      "title": "Campaigns",
+      "newCampaign": "New Campaign",
+      "editCampaign": "Edit Campaign",
+      "campaignName": "Campaign Name",
+      "type": "Campaign Type",
+      "status": "Status",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "budget": "Budget",
+      "spent": "Spent",
+      "roi": "ROI",
+      "leads": "Leads Generated",
+      "conversions": "Conversions",
+      "types": {
+        "email": "Email Campaign",
+        "sms": "SMS Campaign",
+        "social": "Social Media",
+        "ads": "Paid Advertising",
+        "content": "Content Marketing",
+        "event": "Event",
+        "webinar": "Webinar"
+      }
+    },
+    "email": {
+      "title": "Email Marketing",
+      "compose": "Compose Email",
+      "templates": "Email Templates",
+      "sequences": "Email Sequences",
+      "broadcasts": "Broadcasts",
+      "subject": "Subject Line",
+      "previewText": "Preview Text",
+      "fromName": "From Name",
+      "fromEmail": "From Email",
+      "replyTo": "Reply To",
+      "recipients": "Recipients",
+      "schedule": "Schedule Send",
+      "sendNow": "Send Now",
+      "testEmail": "Send Test",
+      "openRate": "Open Rate",
+      "clickRate": "Click Rate",
+      "bounceRate": "Bounce Rate",
+      "unsubscribeRate": "Unsubscribe Rate",
+      "delivered": "Delivered",
+      "opened": "Opened",
+      "clicked": "Clicked",
+      "replied": "Replied"
+    },
+    "sms": {
+      "title": "SMS Marketing",
+      "compose": "Compose SMS",
+      "templates": "SMS Templates",
+      "campaigns": "SMS Campaigns",
+      "sender": "Sender ID",
+      "message": "Message",
+      "characters": "Characters",
+      "segments": "Segments",
+      "deliveryRate": "Delivery Rate",
+      "responseRate": "Response Rate",
+      "optOut": "Opt-outs"
+    },
+    "landing": {
+      "title": "Landing Pages",
+      "newPage": "New Landing Page",
+      "editPage": "Edit Page",
+      "templates": "Page Templates",
+      "pageName": "Page Name",
+      "slug": "URL Slug",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "preview": "Preview",
+      "duplicate": "Duplicate",
+      "views": "Views",
+      "conversions": "Conversions",
+      "conversionRate": "Conversion Rate",
+      "abTest": "A/B Testing",
+      "variants": "Variants",
+      "winner": "Winner"
+    },
+    "funnels": {
+      "title": "Funnels",
+      "newFunnel": "New Funnel",
+      "editFunnel": "Edit Funnel",
+      "funnelName": "Funnel Name",
+      "steps": "Steps",
+      "addStep": "Add Step",
+      "optIn": "Opt-in Page",
+      "salesPage": "Sales Page",
+      "checkout": "Checkout",
+      "upsell": "Upsell",
+      "downsell": "Downsell",
+      "thankYou": "Thank You Page",
+      "entries": "Entries",
+      "completions": "Completions",
+      "dropoff": "Drop-off Rate"
+    },
+    "forms": {
+      "title": "Forms",
+      "newForm": "New Form",
+      "editForm": "Edit Form",
+      "formName": "Form Name",
+      "fields": "Form Fields",
+      "addField": "Add Field",
+      "required": "Required",
+      "placeholder": "Placeholder",
+      "submissions": "Submissions",
+      "embed": "Embed Code",
+      "popup": "Popup Form",
+      "inline": "Inline Form",
+      "fieldTypes": {
+        "text": "Text",
+        "email": "Email",
+        "phone": "Phone",
+        "select": "Dropdown",
+        "radio": "Radio Buttons",
+        "checkbox": "Checkboxes",
+        "textarea": "Text Area",
+        "date": "Date",
+        "file": "File Upload"
+      }
+    },
+    "automation": {
+      "title": "Marketing Automation",
+      "workflows": "Workflows",
+      "newWorkflow": "New Workflow",
+      "triggers": "Triggers",
+      "actions": "Actions",
+      "conditions": "Conditions",
+      "delays": "Delays",
+      "active": "Active",
+      "paused": "Paused",
+      "draft": "Draft",
+      "enrolled": "Enrolled",
+      "completed": "Completed",
+      "triggerTypes": {
+        "formSubmit": "Form Submitted",
+        "tagAdded": "Tag Added",
+        "tagRemoved": "Tag Removed",
+        "listJoined": "Joined List",
+        "linkClicked": "Link Clicked",
+        "emailOpened": "Email Opened",
+        "pageVisited": "Page Visited",
+        "dealCreated": "Deal Created",
+        "custom": "Custom Event"
+      }
+    },
+    "surveys": {
+      "title": "Surveys",
+      "newSurvey": "New Survey",
+      "questions": "Questions",
+      "addQuestion": "Add Question",
+      "responses": "Responses",
+      "completionRate": "Completion Rate",
+      "avgTime": "Average Time",
+      "nps": "NPS Score"
+    },
+    "loading": {
+      "hub": "Loading Marketing Hub...",
+      "preparing": "Preparing your campaigns"
+    },
+    "errors": {
+      "title": "Failed to Load Marketing Hub",
+      "loadFailed": "Failed to load marketing data"
+    },
+    "settings": {
+      "title": "Marketing Settings",
+      "comingSoon": "Configuration options coming soon"
+    }
+  },
+  "calendar": {
+    "title": "Calendar",
+    "subtitle": "Scheduling & Bookings",
+    "newEvent": "New Event",
+    "editEvent": "Edit Event",
+    "eventTitle": "Event Title",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "allDay": "All Day",
+    "location": "Location",
+    "description": "Description",
+    "attendees": "Attendees",
+    "reminder": "Reminder",
+    "recurring": "Recurring",
+    "color": "Color",
+    "views": {
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "agenda": "Agenda"
+    },
+    "booking": {
+      "title": "Booking Links",
+      "newLink": "New Booking Link",
+      "linkName": "Link Name",
+      "duration": "Duration",
+      "availability": "Availability",
+      "buffer": "Buffer Time",
+      "maxBookings": "Max Bookings per Day",
+      "confirmationEmail": "Confirmation Email",
+      "reminderEmail": "Reminder Email",
+      "customQuestions": "Custom Questions",
+      "embed": "Embed Widget"
+    }
+  },
+  "payments": {
+    "title": "Payments",
+    "subtitle": "Invoicing & Billing",
+    "invoices": {
+      "title": "Invoices",
+      "newInvoice": "New Invoice",
+      "invoiceNumber": "Invoice Number",
+      "issueDate": "Issue Date",
+      "dueDate": "Due Date",
+      "items": "Line Items",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "discount": "Discount",
+      "total": "Total",
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "overdue": "Overdue",
+      "draft": "Draft",
+      "send": "Send Invoice",
+      "markPaid": "Mark as Paid",
+      "recordPayment": "Record Payment"
+    },
+    "products": {
+      "title": "Products",
+      "newProduct": "New Product",
+      "productName": "Product Name",
+      "price": "Price",
+      "recurring": "Recurring",
+      "oneTime": "One-time",
+      "subscription": "Subscription",
+      "billingCycle": "Billing Cycle",
+      "trialDays": "Trial Days",
+      "setupFee": "Setup Fee"
+    },
+    "subscriptions": {
+      "title": "Subscriptions",
+      "active": "Active",
+      "cancelled": "Cancelled",
+      "past_due": "Past Due",
+      "mrr": "Monthly Recurring Revenue",
+      "arr": "Annual Recurring Revenue",
+      "churn": "Churn Rate",
+      "ltv": "Lifetime Value"
+    }
+  },
+  "courses": {
+    "title": "Courses & Memberships",
+    "subtitle": "Online Learning Platform",
+    "newCourse": "New Course",
+    "editCourse": "Edit Course",
+    "courseName": "Course Name",
+    "description": "Description",
+    "instructor": "Instructor",
+    "price": "Price",
+    "modules": "Modules",
+    "lessons": "Lessons",
+    "addModule": "Add Module",
+    "addLesson": "Add Lesson",
+    "video": "Video",
+    "audio": "Audio",
+    "text": "Text Content",
+    "quiz": "Quiz",
+    "assignment": "Assignment",
+    "certificate": "Certificate",
+    "students": "Students",
+    "enrolled": "Enrolled",
+    "completed": "Completed",
+    "progress": "Progress",
+    "drip": "Drip Content",
+    "membership": {
+      "title": "Memberships",
+      "levels": "Membership Levels",
+      "access": "Access Rules",
+      "members": "Members",
+      "content": "Protected Content"
+    }
+  },
+  "social": {
+    "title": "Social Hub",
+    "subtitle": "Social Media Command Center",
+    "accounts": "Connected Accounts",
+    "connectAccount": "Connect Account",
+    "platforms": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter/X",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "pinterest": "Pinterest",
+      "threads": "Threads"
+    },
+    "posts": {
+      "title": "Posts",
+      "newPost": "New Post",
+      "schedule": "Schedule Post",
+      "draft": "Save as Draft",
+      "publish": "Publish Now",
+      "caption": "Caption",
+      "media": "Media",
+      "hashtags": "Hashtags",
+      "mentions": "Mentions",
+      "scheduled": "Scheduled",
+      "published": "Published",
+      "failed": "Failed"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "followers": "Followers",
+      "following": "Following",
+      "engagement": "Engagement Rate",
+      "reach": "Reach",
+      "impressions": "Impressions",
+      "likes": "Likes",
+      "comments": "Comments",
+      "shares": "Shares",
+      "saves": "Saves",
+      "clicks": "Clicks",
+      "growth": "Growth",
+      "bestTime": "Best Time to Post",
+      "topPosts": "Top Performing Posts"
+    },
+    "video": {
+      "title": "Video Creator",
+      "newVideo": "Create Video",
+      "templates": "Templates",
+      "scenes": "Scenes",
+      "addScene": "Add Scene",
+      "text": "Text Overlay",
+      "music": "Background Music",
+      "voiceover": "Voiceover",
+      "transitions": "Transitions",
+      "effects": "Effects",
+      "aspectRatio": "Aspect Ratio",
+      "duration": "Duration",
+      "export": "Export Video",
+      "formats": {
+        "reels": "Instagram Reels",
+        "shorts": "YouTube Shorts",
+        "tiktok": "TikTok",
+        "story": "Stories"
+      }
+    },
+    "viral": {
+      "title": "Viral Analytics",
+      "trendScore": "Trend Score",
+      "viralPotential": "Viral Potential",
+      "optimalTiming": "Optimal Timing",
+      "hashtagAnalysis": "Hashtag Analysis",
+      "competitorAnalysis": "Competitor Analysis",
+      "contentSuggestions": "Content Suggestions",
+      "trendingTopics": "Trending Topics",
+      "audienceInsights": "Audience Insights"
+    },
+    "inbox": {
+      "title": "Unified Inbox",
+      "messages": "Messages",
+      "comments": "Comments",
+      "mentions": "Mentions",
+      "reply": "Reply",
+      "archive": "Archive",
+      "unread": "Unread",
+      "starred": "Starred",
+      "assigned": "Assigned to Me"
+    }
+  },
+  "aiSearch": {
+    "title": "AI Search Engine",
+    "subtitle": "Intelligent Search with AI",
+    "searchPlaceholder": "Ask anything...",
+    "webSearch": "Web Search",
+    "deepResearch": "Deep Research",
+    "imageSearch": "Image Search",
+    "videoSearch": "Video Search",
+    "newsSearch": "News Search",
+    "academicSearch": "Academic Search",
+    "sources": "Sources",
+    "citations": "Citations",
+    "summary": "AI Summary",
+    "relatedQuestions": "Related Questions",
+    "filters": "Search Filters",
+    "dateRange": "Date Range",
+    "region": "Region",
+    "language": "Language",
+    "safeSearch": "Safe Search",
+    "searchHistory": "Search History",
+    "savedSearches": "Saved Searches",
+    "modes": {
+      "quick": "Quick Answer",
+      "comprehensive": "Comprehensive",
+      "creative": "Creative",
+      "precise": "Precise"
+    }
+  },
+  "intelligence": {
+    "title": "Intelligence Center",
+    "subtitle": "Deep Research & Analysis",
+    "newResearch": "New Research",
+    "researchTopic": "Research Topic",
+    "sources": "Sources",
+    "analysis": "Analysis",
+    "report": "Report",
+    "timeline": "Timeline",
+    "entities": "Entities",
+    "relationships": "Relationships",
+    "sentiment": "Sentiment Analysis",
+    "trends": "Trend Analysis",
+    "factCheck": "Fact Check",
+    "citations": "Citations",
+    "exportReport": "Export Report",
+    "collaborate": "Collaborate",
+    "categories": {
+      "market": "Market Research",
+      "competitive": "Competitive Analysis",
+      "technical": "Technical Research",
+      "academic": "Academic Research",
+      "news": "News Intelligence",
+      "social": "Social Listening"
+    }
+  },
+  "support": {
+    "title": "Support Center",
+    "subtitle": "Help Desk & Ticketing",
+    "tickets": {
+      "title": "Tickets",
+      "newTicket": "New Ticket",
+      "subject": "Subject",
+      "priority": "Priority",
+      "status": "Status",
+      "assignee": "Assignee",
+      "requester": "Requester",
+      "created": "Created",
+      "updated": "Last Updated",
+      "resolved": "Resolved",
+      "firstResponse": "First Response Time",
+      "priorities": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "urgent": "Urgent"
+      },
+      "statuses": {
+        "open": "Open",
+        "pending": "Pending",
+        "in_progress": "In Progress",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      }
+    },
+    "knowledgeBase": {
+      "title": "Knowledge Base",
+      "articles": "Articles",
+      "categories": "Categories",
+      "newArticle": "New Article",
+      "views": "Views",
+      "helpful": "Was this helpful?",
+      "search": "Search knowledge base..."
+    },
+    "chat": {
+      "title": "Live Chat",
+      "online": "Online",
+      "offline": "Offline",
+      "typing": "is typing...",
+      "send": "Send",
+      "transcript": "Chat Transcript",
+      "rating": "Rate this conversation",
+      "cannedResponses": "Canned Responses"
+    }
+  },
+  "whiteLabel": {
+    "title": "White Label",
+    "subtitle": "Customize Your Brand",
+    "branding": {
+      "title": "Branding",
+      "logo": "Logo",
+      "favicon": "Favicon",
+      "appName": "Application Name",
+      "primaryColor": "Primary Color",
+      "secondaryColor": "Secondary Color",
+      "accentColor": "Accent Color"
+    },
+    "domain": {
+      "title": "Custom Domain",
+      "addDomain": "Add Domain",
+      "verify": "Verify Domain",
+      "ssl": "SSL Certificate",
+      "status": "Status"
+    },
+    "emails": {
+      "title": "Email Branding",
+      "fromName": "From Name",
+      "fromEmail": "From Email",
+      "replyTo": "Reply-To",
+      "signature": "Email Signature",
+      "templates": "Email Templates"
+    }
+  },
+  "aiAssistant": {
+    "title": "AI Assistant",
+    "subtitle": "Your Intelligent Helper",
+    "chat": "Chat with AI",
+    "commands": "Commands",
+    "suggestions": "Suggestions",
+    "capabilities": {
+      "writeEmail": "Write Email",
+      "analyzeData": "Analyze Data",
+      "createContent": "Create Content",
+      "summarize": "Summarize",
+      "translate": "Translate",
+      "codeHelp": "Code Help",
+      "research": "Research",
+      "schedule": "Schedule"
+    },
+    "modules": {
+      "title": "AI Module Control",
+      "manage": "Manage Modules",
+      "execute": "Execute Action",
+      "automate": "Automate Task",
+      "permissions": "AI Permissions",
+      "history": "Action History"
+    },
+    "voice": {
+      "title": "Voice Commands",
+      "listening": "Listening...",
+      "speak": "Speak Now",
+      "stop": "Stop",
+      "language": "Voice Language"
+    }
+  },
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "Welcome to CUBE Nexum",
+        "description": "The most powerful browser automation platform"
+      },
+      "profile": {
+        "title": "Create Your Profile",
+        "description": "Tell us a bit about yourself"
+      },
+      "useCase": {
+        "title": "Your Use Case",
+        "description": "Help us personalize your experience"
+      },
+      "features": {
+        "title": "Choose Features",
+        "description": "Select the tools you want to use"
+      },
+      "browserSetup": {
+        "title": "Browser Setup",
+        "description": "Configure your browser preferences"
+      },
+      "extension": {
+        "title": "Install Extension",
+        "description": "Get the Chrome extension for enhanced features"
+      },
+      "security": {
+        "title": "Security Setup",
+        "description": "Protect your data with encryption"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "description": "Stay updated on what matters"
+      },
+      "tour": {
+        "title": "Quick Tour",
+        "description": "Learn the basics in 2 minutes"
+      },
+      "complete": {
+        "title": "All Set!",
+        "description": "You're ready to start automating"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "title": "Personal Use",
+        "description": "Autofill forms, save passwords, automate daily tasks"
+      },
+      "business": {
+        "title": "Business",
+        "description": "Enterprise automation, team collaboration, CRM integration"
+      },
+      "developer": {
+        "title": "Developer",
+        "description": "API testing, web scraping, workflow automation"
+      },
+      "dataAnalyst": {
+        "title": "Data Analyst",
+        "description": "Data extraction, web scraping, report generation"
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "Social media automation, lead generation, analytics"
+      },
+      "research": {
+        "title": "Research",
+        "description": "Data collection, content analysis, archiving"
+      }
+    },
+    "featureTours": {
+      "autofillBasics": {
+        "name": "Autofill Basics",
+        "description": "Learn how to create and use autofill profiles",
+        "steps": {
+          "createProfile": {
+            "title": "Create a Profile",
+            "description": "Click here to create your first autofill profile"
+          },
+          "fillDetails": {
+            "title": "Fill in Details",
+            "description": "Enter your information. We'll use this to fill forms automatically."
+          },
+          "saveProfile": {
+            "title": "Save Profile",
+            "description": "Save your profile and start autofilling forms!"
+          }
+        }
+      },
+      "automationBasics": {
+        "name": "Automation Basics",
+        "description": "Create your first workflow",
+        "steps": {
+          "createWorkflow": {
+            "title": "Create Workflow",
+            "description": "Click to start building a new automation workflow"
+          },
+          "addNodes": {
+            "title": "Add Nodes",
+            "description": "Drag nodes from here to build your workflow"
+          },
+          "connectNodes": {
+            "title": "Connect Nodes",
+            "description": "Connect nodes by dragging from one handle to another"
+          },
+          "runWorkflow": {
+            "title": "Run Workflow",
+            "description": "Click to execute your workflow"
+          }
+        }
+      },
+      "passwordVault": {
+        "name": "Password Vault",
+        "description": "Securely store your passwords",
+        "steps": {
+          "addCredential": {
+            "title": "Add Credential",
+            "description": "Store a new login credential"
+          },
+          "generatePassword": {
+            "title": "Generate Password",
+            "description": "Create a strong, unique password instantly"
+          },
+          "securitySettings": {
+            "title": "Security Settings",
+            "description": "Configure encryption and auto-lock settings"
+          }
+        }
+      },
+      "aiAssistant": {
+        "name": "AI Assistant",
+        "description": "Get help from AI",
+        "steps": {
+          "askAI": {
+            "title": "Ask AI",
+            "description": "Type your question or describe what you want to automate"
+          },
+          "suggestions": {
+            "title": "AI Suggestions",
+            "description": "AI will analyze and suggest actions"
+          },
+          "apply": {
+            "title": "Apply Changes",
+            "description": "Review and apply AI-generated solutions"
+          }
+        }
+      }
+    }
+  },
+  "tours": {
+    "welcome": {
+      "title": "Welcome to CUBE Elite",
+      "description": "Let us show you around your new power workspace"
+    },
+    "browser": {
+      "title": "Full Browser Experience",
+      "description": "Navigate any website with full browser capabilities"
+    },
+    "crm": {
+      "title": "CRM & Contacts",
+      "description": "Manage all your contacts, companies and deals in one place"
+    },
+    "marketing": {
+      "title": "Marketing Automation",
+      "description": "Create campaigns, emails, landing pages and funnels"
+    },
+    "social": {
+      "title": "Social Media Hub",
+      "description": "Manage all your social accounts from one dashboard"
+    },
+    "aiSearch": {
+      "title": "AI-Powered Search",
+      "description": "Get intelligent answers with citations and deep research"
+    },
+    "intelligence": {
+      "title": "Intelligence Center",
+      "description": "Conduct deep research and competitive analysis"
+    },
+    "aiAssistant": {
+      "title": "AI Assistant",
+      "description": "Your AI can control any module and execute tasks for you"
+    },
+    "steps": {
+      "next": "Next",
+      "previous": "Previous",
+      "skip": "Skip Tour",
+      "finish": "Get Started"
+    }
+  },
+  "social": {
+    "title": "Social Command Center",
+    "badge": {
+      "pro": "PRO"
+    },
+    "tabs": {
+      "dashboard": "View dashboard overview",
+      "dashboardLabel": "Dashboard",
+      "create": "Create new content",
+      "createLabel": "Create",
+      "schedule": "View content schedule",
+      "scheduleLabel": "Schedule",
+      "aiStudio": "Open AI Studio",
+      "aiStudioLabel": "AI Studio",
+      "trends": "View trending content",
+      "trendsLabel": "Trends",
+      "analytics": "View analytics",
+      "analyticsLabel": "Analytics"
+    },
+    "actions": {
+      "quickPost": "Create a quick post",
+      "quickPostLabel": "Quick Post",
+      "notifications": "View notifications",
+      "tour": "Start guided tour"
+    },
+    "loading": {
+      "initializing": "Loading Social Command Center...",
+      "connectingAccounts": "Connecting to your social accounts",
+      "accounts": "Loading accounts...",
+      "posts": "Loading scheduled posts...",
+      "trends": "Loading trending content..."
+    },
+    "errors": {
+      "unknownError": "An unknown error occurred",
+      "loadFailed": "Failed to Load Social Data",
+      "tryAgain": "Please try again later",
+      "accountsLoadFailed": "Failed to load accounts",
+      "postsLoadFailed": "Failed to load scheduled posts",
+      "trendsLoadFailed": "Failed to load trends"
+    },
+    "empty": {
+      "noAccounts": "No Social Accounts Connected",
+      "noAccountsDesc": "Connect your first social media account to start managing your content.",
+      "connectAccount": "Connect Account",
+      "noPosts": "No Scheduled Posts",
+      "noPostsDesc": "Create and schedule your first post to see it here.",
+      "createPost": "Create Post",
+      "noTrends": "No Trending Content Available",
+      "noTrendsDesc": "Check back later for the latest trends."
+    }
+  },
+  "metrics": {
+    "title": "📊 Metrics",
+    "loading": "Loading metrics...",
+    "webVitals": "Web Vitals",
+    "performance": "Performance",
+    "session": "Session",
+    "domLoaded": "DOM Loaded",
+    "pageLoad": "Page Load",
+    "resources": "Resources",
+    "resourceCount": "Count",
+    "transferSize": "Transfer",
+    "memory": "Memory",
+    "heapUsed": "Heap Used",
+    "heapTotal": "Heap Total",
+    "sessionId": "Session ID",
+    "spans": "Spans",
+    "errors": "Errors",
+    "export": "Export",
+    "flush": "Flush",
+    "fcp": "First Contentful Paint",
+    "lcp": "Largest Contentful Paint",
+    "fid": "First Input Delay",
+    "cls": "Cumulative Layout Shift",
+    "ttfb": "Time to First Byte",
+    "inp": "Interaction to Next Paint",
+    "good": "Good",
+    "needsImprovement": "Needs Improvement",
+    "poor": "Poor"
+  },
+  "research": {
+    "title": "Intelligence Center",
+    "subtitle": "OSINT & Due Diligence Platform",
+    "tabs": {
+      "search": "Search",
+      "investigations": "Investigations",
+      "reports": "Reports",
+      "sources": "Data Sources"
+    },
+    "actions": {
+      "history": "Search history",
+      "viewHistory": "View search history",
+      "settings": "Settings",
+      "tour": "Start guided tour"
+    },
+    "loading": {
+      "center": "Loading Intelligence Center...",
+      "sources": "Connecting to data sources"
+    },
+    "errors": {
+      "title": "Failed to Load Intelligence Center",
+      "loadFailed": "Failed to initialize Intelligence Center"
+    },
+    "empty": {
+      "noResults": "No Results Found",
+      "noResultsDesc": "Try a different search query or adjust your filters.",
+      "noInvestigations": "No Investigations",
+      "noInvestigationsDesc": "Create your first investigation to start tracking subjects."
+    },
+    "searchTypes": {
+      "person": "Person",
+      "company": "Company",
+      "domain": "Domain",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  },
+  "communications": {
+    "voip": {
+      "title": "VoIP Communications",
+      "subtitle": "WebRTC-powered audio and video calls",
+      "tabs": {
+        "contacts": "Contacts",
+        "call": "Call",
+        "activeCall": "Active Call",
+        "history": "History",
+        "settings": "Settings"
+      },
+      "loading": {
+        "service": "Initializing VoIP Service...",
+        "description": "Setting up WebRTC and connecting to signaling server"
+      },
+      "errors": {
+        "title": "VoIP Service Error",
+        "initFailed": "Failed to initialize VoIP service"
+      },
+      "actions": {
+        "call": "Call",
+        "videoCall": "Video Call",
+        "endCall": "End Call",
+        "mute": "Mute",
+        "unmute": "Unmute",
+        "hold": "Hold",
+        "transfer": "Transfer"
+      }
+    },
+    "videoconference": {
+      "title": "Video Conference",
+      "subtitle": "Create or join a conference room",
+      "tabs": {
+        "create": "Create Room",
+        "join": "Join Room"
+      },
+      "form": {
+        "displayName": "Display Name",
+        "displayNamePlaceholder": "Enter your name",
+        "displayNameHint": "Enter your display name for the video call",
+        "roomName": "Room Name",
+        "roomNamePlaceholder": "Enter room name",
+        "roomNameHint": "Enter the name for your video conference room",
+        "maxParticipants": "Max Participants",
+        "maxParticipantsHint": "Select maximum number of participants",
+        "requirePassword": "Require password",
+        "password": "Password",
+        "passwordPlaceholder": "Enter room password",
+        "passwordHint": "Set a password for the room",
+        "accessCode": "Access Code",
+        "accessCodePlaceholder": "Enter 6-digit code",
+        "accessCodeHint": "Enter the 6-digit room access code"
+      },
+      "loading": {
+        "room": "Creating Conference Room...",
+        "description": "Setting up WebRTC and preparing media devices"
+      },
+      "errors": {
+        "title": "Conference Error",
+        "createFailed": "Failed to create conference room",
+        "joinFailed": "Failed to join conference room",
+        "mediaFailed": "Failed to access camera/microphone"
+      },
+      "actions": {
+        "createRoom": "Create Room",
+        "joinRoom": "Join Room",
+        "leaveRoom": "Leave Room",
+        "toggleAudio": "Toggle Audio",
+        "toggleVideo": "Toggle Video",
+        "shareScreen": "Share Screen",
+        "stopSharing": "Stop Sharing",
+        "raiseHand": "Raise Hand",
+        "lowerHand": "Lower Hand",
+        "startRecording": "Start Recording",
+        "stopRecording": "Stop Recording"
+      }
+    }
+  },
+  "chat": {
+    "title": "Chat",
+    "subtitle": "Team messaging and collaboration",
+    "loading": {
+      "rooms": "Loading Chat Rooms...",
+      "description": "Fetching your conversations and channels",
+      "messages": "Loading messages..."
+    },
+    "errors": {
+      "title": "Chat Error",
+      "loadRoomsFailed": "Failed to load chat rooms",
+      "loadMessagesFailed": "Failed to load messages",
+      "sendFailed": "Failed to send message"
+    },
+    "empty": {
+      "noRooms": "No Rooms Yet",
+      "noRoomsDesc": "Create a room to start chatting with your team.",
+      "noMessages": "No Messages",
+      "noMessagesDesc": "Start the conversation by sending a message."
+    },
+    "actions": {
+      "createRoom": "Create Room",
+      "searchChats": "Search chats",
+      "sendMessage": "Send message",
+      "attachFile": "Attach file",
+      "addReaction": "Add reaction",
+      "editMessage": "Edit message",
+      "deleteMessage": "Delete message",
+      "pinMessage": "Pin message",
+      "startThread": "Start thread"
+    },
+    "form": {
+      "messagePlaceholder": "Type a message...",
+      "roomName": "Room Name"
+    }
+  },
+  "browserElite": {
+    "title": "Browser Elite",
+    "subtitle": "Arc-like browsing experience",
+    "loading": {
+      "title": "Starting Browser...",
+      "description": "Initializing proxy service and browser engine"
+    },
+    "errors": {
+      "title": "Browser Error",
+      "proxyFailed": "Failed to start proxy service",
+      "loadFailed": "Failed to load page"
+    },
+    "spaces": {
+      "title": "Spaces",
+      "newSpace": "New Space",
+      "personal": "Personal",
+      "work": "Work",
+      "research": "Research"
+    },
+    "tabs": {
+      "title": "Tabs",
+      "newTab": "New Tab",
+      "closeTab": "Close Tab",
+      "pinTab": "Pin Tab",
+      "muteTab": "Mute Tab"
+    },
+    "actions": {
+      "back": "Go Back",
+      "forward": "Go Forward",
+      "reload": "Reload",
+      "home": "Home",
+      "share": "Share",
+      "qrCode": "QR Code",
+      "print": "Print",
+      "download": "Download",
+      "readingMode": "Reading Mode",
+      "screenshot": "Screenshot"
+    },
+    "security": {
+      "adBlocker": "Ad Blocker",
+      "trackerProtection": "Tracker Protection",
+      "blockedItems": "Blocked Items"
+    },
+    "profiles": {
+      "title": "Profiles",
+      "switchProfile": "Switch Profile",
+      "newProfile": "New Profile",
+      "default": "Default",
+      "work": "Work",
+      "private": "Private"
+    }
+  },
+  "downloads": {
+    "title": "Download Manager",
+    "subtitle": "Advanced download accelerator with scheduler",
+    "loading": {
+      "title": "Loading Downloads...",
+      "description": "Fetching download queue and history"
+    },
+    "errors": {
+      "title": "Download Error",
+      "loadFailed": "Failed to load downloads"
+    },
+    "empty": {
+      "title": "No Downloads",
+      "description": "Your download queue is empty. Start downloading files to see them here."
+    },
+    "actions": {
+      "videoGrabber": "Video Grabber",
+      "schedule": "Schedule",
+      "settings": "Settings",
+      "newDownload": "New Download",
+      "pause": "Pause",
+      "resume": "Resume",
+      "cancel": "Cancel",
+      "retry": "Retry",
+      "clear": "Clear Completed",
+      "openFile": "Open File",
+      "openFolder": "Open Folder"
+    },
+    "status": {
+      "downloading": "Downloading",
+      "paused": "Paused",
+      "completed": "Completed",
+      "failed": "Failed",
+      "queued": "Queued",
+      "scheduled": "Scheduled"
+    }
+  },
+  "vpn": {
+    "title": "VPN Protection",
+    "subtitle": "Secure your connection with enterprise-grade encryption",
+    "loading": {
+      "title": "Loading VPN...",
+      "description": "Connecting to VPN service"
+    },
+    "errors": {
+      "title": "VPN Error",
+      "loadFailed": "Failed to load VPN data",
+      "connectionFailed": "Failed to connect to VPN server"
+    },
+    "status": {
+      "connected": "Protected",
+      "disconnected": "Not Protected",
+      "connecting": "Connecting...",
+      "connectionSecure": "Your connection is secure"
+    },
+    "actions": {
+      "tour": "Tour",
+      "customVpn": "Custom VPN",
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+      "quickConnect": "Quick Connect",
+      "selectServer": "Select Server",
+      "addServer": "Add Server"
+    },
+    "servers": {
+      "title": "Servers",
+      "recommended": "Recommended",
+      "favorites": "Favorites",
+      "allServers": "All Servers",
+      "load": "Load",
+      "ping": "Ping"
+    },
+    "security": {
+      "killSwitch": "Kill Switch",
+      "dnsProtection": "DNS Protection",
+      "ipv6Protection": "IPv6 Protection",
+      "splitTunneling": "Split Tunneling"
+    }
+  },
+  "database": {
+    "title": "Database Server",
+    "subtitle": "Docker-powered database management",
+    "loading": {
+      "title": "Loading Databases...",
+      "description": "Connecting to Docker service"
+    },
+    "errors": {
+      "title": "Database Error",
+      "loadFailed": "Failed to connect to Docker",
+      "createFailed": "Failed to create container"
+    },
+    "empty": {
+      "title": "No Containers",
+      "description": "No database containers found. Create one to get started."
+    },
+    "actions": {
+      "refresh": "Refresh",
+      "newContainer": "New Container",
+      "start": "Start",
+      "stop": "Stop",
+      "restart": "Restart",
+      "viewLogs": "View Logs",
+      "deleteContainer": "Delete Container"
+    },
+    "dialogs": {
+      "createTitle": "Create Database Container",
+      "deleteTitle": "Delete Container",
+      "deleteDescription": "Are you sure you want to delete \"{name}\"? This will also remove the associated volume and all data."
+    },
+    "form": {
+      "name": "Container Name",
+      "type": "Database Type",
+      "version": "Version",
+      "port": "Port",
+      "password": "Password"
+    }
+  },
+  "terminal": {
+    "title": "Terminal",
+    "subtitle": "Real command execution with PTY support",
+    "loading": {
+      "title": "Starting Terminal...",
+      "description": "Initializing shell session"
+    },
+    "errors": {
+      "title": "Terminal Error",
+      "loadFailed": "Failed to load terminal",
+      "settingsFailed": "Failed to save settings"
+    },
+    "actions": {
+      "newSession": "New Session",
+      "closeSession": "Close Session",
+      "fileExplorer": "File Explorer",
+      "history": "History Search",
+      "exportHistory": "Export History",
+      "settings": "Settings",
+      "maximize": "Maximize",
+      "minimize": "Minimize",
+      "clear": "Clear",
+      "copy": "Copy",
+      "paste": "Paste"
+    },
+    "sessions": {
+      "title": "Sessions",
+      "active": "Active",
+      "idle": "Idle"
+    },
+    "notifications": {
+      "settingsSaved": "Settings Saved",
+      "sessionCreated": "Session Created",
+      "sessionClosed": "Session Closed"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Configure your CUBE Nexum preferences and integrations",
+    "tabs": {
+      "general": "General",
+      "account": "Account",
+      "updates": "Updates",
+      "apiKeys": "API Keys",
+      "email": "Email",
+      "browser": "Browser",
+      "automation": "Automation",
+      "data": "Data"
+    },
+    "general": {
+      "appearance": "Appearance",
+      "appearanceDescription": "Customize the look and feel of the application",
+      "theme": "Theme",
+      "language": "Language",
+      "notifications": "Notifications"
+    },
+    "apiKeys": {
+      "title": "API Keys",
+      "description": "Configure API keys for AI and external services",
+      "openai": "OpenAI API Key",
+      "anthropic": "Anthropic API Key",
+      "testConnection": "Test Connection",
+      "connectionSuccess": "Connection successful",
+      "connectionFailed": "Connection failed"
+    },
+    "browser": {
+      "title": "Browser Settings",
+      "description": "Configure browser behavior and defaults",
+      "defaultEngine": "Default Search Engine",
+      "adBlocking": "Ad Blocking",
+      "trackingProtection": "Tracking Protection"
+    },
+    "automation": {
+      "title": "Automation Settings",
+      "description": "Configure automation behavior",
+      "autoSave": "Auto-save workflows",
+      "retryOnError": "Retry on error"
+    },
+    "data": {
+      "title": "Data & Privacy",
+      "description": "Manage your data and privacy settings",
+      "clearCache": "Clear Cache",
+      "exportData": "Export Data",
+      "deleteAccount": "Delete Account"
+    }
+  },
+  "pricing": {
+    "badge": "Pricing Plans",
+    "title": "Choose Your Perfect Plan",
+    "subtitle": "Unlock the full potential of CUBE Nexum with our flexible pricing options",
+    "billing": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "save17": "Save up to 17%"
+    },
+    "plans": {
+      "free": "Free",
+      "pro": "Pro",
+      "elite": "Elite"
+    },
+    "actions": {
+      "currentPlan": "Current Plan",
+      "upgrade": "Upgrade",
+      "getStarted": "Get Started",
+      "startTrial": "Start Free Trial",
+      "contactSales": "Contact Sales"
+    },
+    "features": {
+      "title": "Compare All Features",
+      "showAll": "Show All Features",
+      "hideAll": "Hide Features"
+    }
+  },
+  "autofill": {
+    "title": "Autofill AI",
+    "subtitle": "Smart form autofill with AI-powered field detection",
+    "loading": {
+      "title": "Loading Profiles...",
+      "description": "Fetching your autofill profiles"
+    },
+    "errors": {
+      "title": "Autofill Error",
+      "loadFailed": "Failed to load autofill profiles"
+    },
+    "empty": {
+      "title": "No Profiles",
+      "description": "Create your first autofill profile to get started."
+    },
+    "actions": {
+      "analyzeForm": "Analyze Form",
+      "exportProfiles": "Export Profiles",
+      "importProfiles": "Import Profiles",
+      "autofillRules": "Autofill Rules",
+      "addNewRule": "Add New Rule",
+      "newProfile": "New Profile",
+      "editProfile": "Edit Profile",
+      "deleteProfile": "Delete Profile"
+    },
+    "categories": {
+      "personal": "Personal",
+      "business": "Business",
+      "shipping": "Shipping",
+      "payment": "Payment"
+    }
+  },
+  "automation": {
+    "title": "Automation Center",
+    "subtitle": "Create and manage automated workflows and macros",
+    "loading": {
+      "title": "Loading Automations...",
+      "description": "Fetching workflows and macros"
+    },
+    "errors": {
+      "title": "Automation Error",
+      "loadFailed": "Failed to load automation data"
+    },
+    "actions": {
+      "openBuilder": "Open Builder",
+      "newWorkspace": "New Workspace",
+      "createWorkspace": "Create Workspace",
+      "deleteWorkspace": "Delete Workspace",
+      "runMacro": "Run Macro",
+      "editMacro": "Edit Macro"
+    },
+    "stats": {
+      "workflowBuilder": "Workflow Builder",
+      "totalWorkspaces": "Total Workspaces",
+      "macros": "Macros",
+      "runningTasks": "Running Tasks"
+    }
+  },
+  "securityLab": {
+    "title": "Security Lab",
+    "subtitle": "Enterprise vulnerability scanning and penetration testing",
+    "loading": {
+      "title": "Loading Security Lab...",
+      "description": "Initializing security tools"
+    },
+    "errors": {
+      "title": "Security Error",
+      "loadFailed": "Failed to load security lab"
+    },
+    "actions": {
+      "newScan": "New Scan",
+      "viewFindings": "View Findings",
+      "startExploit": "Start Exploit",
+      "generateReport": "Generate Report"
+    },
+    "views": {
+      "dashboard": "Dashboard",
+      "findings": "Findings",
+      "exploit": "Exploit"
+    }
+  },
+  "passwordManager": {
+    "title": "Password Manager",
+    "subtitle": "Enterprise-grade password vault with inline autofill, TOTP, passkeys, phishing protection & AI assistance",
+    "loading": {
+      "title": "Loading Vault...",
+      "description": "Decrypting password vault"
+    },
+    "errors": {
+      "title": "Vault Error",
+      "loadFailed": "Failed to load password vault",
+      "unlockFailed": "Failed to unlock vault"
+    },
+    "actions": {
+      "securityReport": "Security Report",
+      "lock": "Lock",
+      "unlock": "Unlock",
+      "addPassword": "Add Password",
+      "generatePassword": "Generate Password",
+      "copyPassword": "Copy Password"
+    },
+    "stats": {
+      "securityScore": "Security Score",
+      "totalPasswords": "Total Passwords",
+      "weakPasswords": "Weak Passwords",
+      "twoFactorCodes": "2FA Codes"
+    }
+  },
+  "dataExtractor": {
+    "title": "Data Extractor",
+    "subtitle": "Visual web scraping tool with point-and-click interface",
+    "loading": {
+      "title": "Loading Data Extractor...",
+      "description": "Initializing scraping tools"
+    },
+    "errors": {
+      "title": "Extraction Error",
+      "loadFailed": "Failed to load data extractor"
+    },
+    "actions": {
+      "newSchema": "New Schema",
+      "startExtraction": "Start Extraction",
+      "previewData": "Preview Data",
+      "exportData": "Export Data",
+      "saveSchema": "Save Schema"
+    },
+    "modes": {
+      "idle": "Idle",
+      "editing": "Editing",
+      "selecting": "Selecting",
+      "previewing": "Previewing"
+    }
+  },
+  "enterprise": {
+    "badge": "Enterprise Suite",
+    "title": "CUBE Nexum Enterprise",
+    "subtitle": "Comprehensive enterprise-grade tools for automation, integration, and data management at scale.",
+    "stats": {
+      "modules": "Modules",
+      "integrations": "Integrations",
+      "uptime": "Uptime SLA"
+    },
+    "errors": {
+      "loadFailed": "Failed to load enterprise module"
+    },
+    "benefits": {
+      "title": "Enterprise Benefits",
+      "security": {
+        "title": "Enterprise Security",
+        "description": "SOC 2 Type II, GDPR, and HIPAA compliant with end-to-end encryption."
+      },
+      "performance": {
+        "title": "High Performance",
+        "description": "Process millions of events per second with sub-millisecond latency."
+      },
+      "uptime": {
+        "title": "99.9% Uptime",
+        "description": "Enterprise SLA with automatic failover and disaster recovery."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Dedicated support team with 1-hour response time guarantee."
+      }
+    },
+    "workflows": {
+      "title": "Workflow Designer",
+      "description": "Design and manage complex automation workflows with visual drag-and-drop interface.",
+      "loading": "Loading workflows...",
+      "actions": {
+        "save": "Save Workflow",
+        "execute": "Execute Workflow",
+        "debug": "Debug Workflow"
+      }
+    },
+    "integrations": {
+      "title": "Integration Hub",
+      "description": "Connect to 500+ applications and services with pre-built connectors.",
+      "loading": "Loading integrations...",
+      "actions": {
+        "connect": "Connect",
+        "disconnect": "Disconnect",
+        "sync": "Sync",
+        "configure": "Configure"
+      }
+    },
+    "apiGateway": {
+      "title": "API Gateway",
+      "description": "Manage, secure, and monitor your APIs with enterprise-grade features.",
+      "loading": "Loading API endpoints...",
+      "actions": {
+        "createEndpoint": "Create Endpoint",
+        "updateEndpoint": "Update Endpoint",
+        "deleteEndpoint": "Delete Endpoint",
+        "testEndpoint": "Test Endpoint"
+      }
+    },
+    "pipelines": {
+      "title": "Data Pipelines",
+      "description": "Build ETL/ELT pipelines with visual designer and real-time monitoring.",
+      "loading": "Loading pipelines...",
+      "actions": {
+        "save": "Save Pipeline",
+        "execute": "Execute Pipeline",
+        "schedule": "Schedule Pipeline"
+      },
+      "status": {
+        "idle": "Idle",
+        "running": "Running",
+        "completed": "Completed",
+        "failed": "Failed"
+      }
+    },
+    "observability": {
+      "title": "Observability",
+      "description": "Monitor metrics, traces, and logs with AI-powered insights.",
+      "loading": "Loading dashboard...",
+      "actions": {
+        "createAlert": "Create Alert",
+        "acknowledgeAlert": "Acknowledge Alert",
+        "createDashboard": "Create Dashboard"
+      },
+      "timeRanges": {
+        "1h": "Last Hour",
+        "6h": "Last 6 Hours",
+        "24h": "Last 24 Hours",
+        "7d": "Last 7 Days",
+        "30d": "Last 30 Days"
+      }
+    },
+    "security": {
+      "title": "Security & Compliance",
+      "description": "Manage access control, audit logs, and compliance frameworks.",
+      "loading": "Loading security settings...",
+      "actions": {
+        "createUser": "Create User",
+        "createRole": "Create Role",
+        "updatePolicy": "Update Policy",
+        "viewAuditLog": "View Audit Log"
+      }
+    }
+  },
+  "fileTransfer": {
+    "title": "File Transfer",
+    "subtitle": "Secure FTP/SFTP file transfer with dual-pane interface",
+    "loading": {
+      "title": "Loading File Transfer...",
+      "description": "Connecting to servers"
+    },
+    "errors": {
+      "title": "Transfer Error",
+      "loadFailed": "Failed to load file transfer",
+      "connectionFailed": "Connection failed"
+    },
+    "actions": {
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+      "upload": "Upload",
+      "download": "Download",
+      "refresh": "Refresh",
+      "newSite": "New Site"
+    }
+  },
+  "collections": {
+    "title": "Collections",
+    "subtitle": "Organize and share your saved pages",
+    "loading": {
+      "title": "Loading Collections...",
+      "description": "Fetching your collections"
+    },
+    "errors": {
+      "title": "Collection Error",
+      "loadFailed": "Failed to load collections"
+    },
+    "empty": {
+      "title": "No Collections",
+      "description": "Create your first collection to organize your saved pages."
+    },
+    "actions": {
+      "newCollection": "New Collection",
+      "share": "Share",
+      "delete": "Delete"
+    }
+  },
+  "readingList": {
+    "title": "Reading List",
+    "subtitle": "Save articles for later reading",
+    "loading": {
+      "title": "Loading Reading List...",
+      "description": "Fetching your articles"
+    },
+    "errors": {
+      "title": "Reading List Error",
+      "loadFailed": "Failed to load reading list"
+    },
+    "empty": {
+      "title": "No Articles",
+      "description": "Save articles from the web to read later."
+    },
+    "tabs": {
+      "all": "All",
+      "unread": "Unread",
+      "read": "Read"
+    }
+  },
+  "remote": {
+    "title": "Remote Desktop",
+    "subtitle": "Connect to remote computers via SSH, RDP, and VNC",
+    "loading": {
+      "title": "Loading Remote Sessions...",
+      "description": "Fetching saved connections"
+    },
+    "errors": {
+      "title": "Connection Error",
+      "loadFailed": "Failed to load remote sessions"
+    },
+    "actions": {
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+      "newSession": "New Session",
+      "createRoom": "Create Room",
+      "joinRoom": "Join Room"
+    }
+  },
+  "ftp": {
+    "title": "FTP Manager",
+    "subtitle": "Manage FTP/SFTP connections and transfers",
+    "loading": {
+      "title": "Loading FTP...",
+      "description": "Connecting to server"
+    },
+    "errors": {
+      "title": "FTP Error",
+      "loadFailed": "Failed to load FTP connections"
+    },
+    "actions": {
+      "upload": "Upload",
+      "download": "Download",
+      "newSite": "New Site",
+      "refresh": "Refresh"
+    }
+  },
+  "extensions": {
+    "title": "Extensions",
+    "subtitle": "Manage browser extensions and add-ons",
+    "loading": {
+      "title": "Loading Extensions...",
+      "description": "Fetching installed extensions"
+    },
+    "errors": {
+      "title": "Extension Error",
+      "loadFailed": "Failed to load extensions"
+    },
+    "tabs": {
+      "installed": "Installed",
+      "webstore": "Web Store",
+      "install": "Install",
+      "settings": "Settings"
+    },
+    "actions": {
+      "enable": "Enable",
+      "disable": "Disable",
+      "uninstall": "Uninstall",
+      "install": "Install"
+    }
+  },
+  "help": {
+    "title": "Help Center",
+    "subtitle": "Documentation & Support",
+    "sections": {
+      "documentation": "Documentation",
+      "tutorials": "Video Tutorials",
+      "community": "Community",
+      "support": "Contact Support"
+    }
+  },
+  "monitoring": {
+    "title": "Website Monitor",
+    "subtitle": "Monitor website uptime and performance",
+    "loading": {
+      "title": "Loading Monitor...",
+      "description": "Fetching monitored sites"
+    },
+    "errors": {
+      "title": "Monitor Error",
+      "loadFailed": "Failed to load monitoring data"
+    }
+  },
+  "dataSources": {
+    "title": "Data Sources",
+    "subtitle": "Connect and manage external data sources",
+    "loading": {
+      "title": "Loading Data Sources...",
+      "description": "Fetching connections"
+    },
+    "errors": {
+      "title": "Data Source Error",
+      "loadFailed": "Failed to load data sources"
+    },
+    "empty": {
+      "title": "No Data Sources",
+      "description": "Connect your first data source to get started."
+    },
+    "types": {
+      "database": "Database",
+      "api": "API",
+      "file": "File",
+      "cloud": "Cloud"
+    }
+  },
+  "integration": {
+    "title": "Integration Hub",
+    "subtitle": "Cross-module integration management",
+    "loading": {
+      "title": "Loading Integrations...",
+      "description": "Fetching module connections"
+    }
+  },
+  "workspace": {
+    "title": "Workspace",
+    "subtitle": "Project management with boards, views, and automation",
+    "loading": {
+      "title": "Loading Workspace...",
+      "description": "Fetching boards and projects"
+    },
+    "errors": {
+      "title": "Workspace Error",
+      "loadFailed": "Failed to load workspace"
+    },
+    "views": {
+      "table": "Table",
+      "kanban": "Kanban",
+      "timeline": "Timeline",
+      "chart": "Chart"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "System administration and configuration",
+    "loading": {
+      "title": "Loading Admin Panel...",
+      "description": "Fetching system settings"
+    }
+  },
+  "search": {
+    "title": "AI Search",
+    "subtitle": "Intelligent search powered by AI",
+    "loading": {
+      "title": "Loading Search...",
+      "description": "Initializing AI search engine"
+    }
+  },
+  "p2p": {
+    "title": "P2P Transfer",
+    "subtitle": "Peer-to-peer file sharing and collaboration",
+    "loading": {
+      "title": "Loading P2P...",
+      "description": "Initializing peer network"
+    },
+    "errors": {
+      "title": "P2P Error",
+      "loadFailed": "Failed to connect to peer network"
+    },
+    "actions": {
+      "createRoom": "Create Room",
+      "joinRoom": "Join Room",
+      "shareFiles": "Share Files",
+      "disconnect": "Disconnect"
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "products": "Products",
+    "partners": "Partners",
+    "investors": "Investors",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "products": {
+    "browserAutomation": "Browser Automation",
+    "privateEmail": "Private Email",
+    "enterpriseSuite": "Enterprise Suite"
+  },
+  "hero": {
+    "badge": "Powered by GPT-5.2 AI • Part of CUBE AI Ecosystem",
+    "title1": "Enterprise AI Tools.",
+    "title2": "Unlimited Potential.",
+    "subtitle": "CUBE Nexum: The most powerful browser automation platform. Coming soon: CUBE Core - All-in-One Enterprise Suite with ERP, HR, CRM, Banking & 200+ modules.",
+    "startTrial": "Start Free Trial",
+    "watchDemo": "Watch Demo",
+    "trustedBy": "Trusted by teams at"
+  },
+  "landing": {
+    "cubemailPromo": {
+      "title": "🎉 Introducing CubeMail - Free Private Email",
+      "description": "Get your free @cubemail.pro address with 25GB storage, no ads, and AI-powered email screening.",
+      "cta": "Get Free Email"
+    },
+    "featuresTitle": "Everything You Need to Automate the Web",
+    "featuresSubtitle": "Powerful features that make browser automation accessible to everyone",
+    "pricingTitle": "Simple, Transparent Pricing",
+    "pricingSubtitle": "Start free, scale as you grow",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "savePercent": "Save 20%",
+    "ctaTitle": "Ready to Automate?",
+    "ctaSubtitle": "Join 50,000+ users who trust CUBE Nexum for their automation needs.",
+    "freeTrial": "14-day free trial",
+    "noCard": "No credit card required",
+    "cancelAnytime": "Cancel anytime"
+  }
+}

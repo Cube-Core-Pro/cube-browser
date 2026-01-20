@@ -1,0 +1,1554 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "refresh": "تحديث",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "confirm": "تأكيد",
+    "yes": "نعم",
+    "no": "لا",
+    "ok": "موافق",
+    "settings": "الإعدادات",
+    "help": "مساعدة",
+    "about": "حول",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "name": "الاسم",
+    "description": "الوصف",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "status": "الحالة",
+    "actions": "الإجراءات",
+    "more": "المزيد",
+    "less": "أقل",
+    "all": "الكل",
+    "none": "لا شيء",
+    "select": "اختيار",
+    "selected": "محدد",
+    "noData": "لا توجد بيانات",
+    "noResults": "لم يتم العثور على نتائج",
+    "copy": "نسخ",
+    "copied": "تم النسخ!",
+    "download": "تنزيل",
+    "upload": "رفع",
+    "import": "استيراد",
+    "export": "تصدير",
+    "clear": "مسح",
+    "reset": "إعادة تعيين",
+    "apply": "تطبيق",
+    "enabled": "مفعل",
+    "disabled": "معطل",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "online": "متصل",
+    "offline": "غير متصل",
+    "connected": "متصل",
+    "disconnected": "منقطع"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "dashboard": "لوحة التحكم",
+    "browser": "المتصفح",
+    "passwordManager": "مدير كلمات المرور",
+    "collections": "المجموعات",
+    "readingList": "قائمة القراءة",
+    "mediaPlayer": "مشغل الوسائط",
+    "terminal": "الطرفية",
+    "downloads": "التنزيلات",
+    "automation": "الأتمتة",
+    "settings": "الإعدادات",
+    "tools": "الأدوات",
+    "communications": "الاتصالات"
+  },
+  "browser": {
+    "newTab": "علامة تبويب جديدة",
+    "tabs": "علامات التبويب",
+    "history": "السجل",
+    "bookmarks": "الإشارات المرجعية",
+    "extensions": "الإضافات",
+    "addressBar": "أدخل عنوان URL أو ابحث",
+    "reload": "إعادة تحميل",
+    "stop": "إيقاف",
+    "forward": "للأمام",
+    "back": "للخلف",
+    "zoomIn": "تكبير",
+    "zoomOut": "تصغير",
+    "fullscreen": "ملء الشاشة",
+    "print": "طباعة",
+    "developer": "أدوات المطور",
+    "incognito": "وضع التصفح الخاص",
+    "clearData": "مسح بيانات التصفح"
+  },
+  "passwordManager": {
+    "title": "مدير كلمات المرور",
+    "vaultLocked": "الخزنة مقفلة",
+    "unlockVault": "فتح الخزنة",
+    "createVault": "إنشاء خزنة",
+    "masterPassword": "كلمة المرور الرئيسية",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "addPassword": "إضافة كلمة مرور",
+    "editPassword": "تعديل كلمة المرور",
+    "generatePassword": "إنشاء كلمة مرور",
+    "passwordStrength": "القوة",
+    "weak": "ضعيفة",
+    "fair": "متوسطة",
+    "good": "جيدة",
+    "strong": "قوية",
+    "veryStrong": "قوية جداً",
+    "website": "الموقع",
+    "username": "اسم المستخدم",
+    "notes": "ملاحظات",
+    "category": "الفئة",
+    "favorites": "المفضلة",
+    "allItems": "الكل",
+    "recentlyUsed": "المستخدمة مؤخراً",
+    "searchPasswords": "البحث في كلمات المرور...",
+    "copyPassword": "نسخ كلمة المرور",
+    "copyUsername": "نسخ اسم المستخدم",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "passwordCopied": "تم نسخ كلمة المرور",
+    "usernameCopied": "تم نسخ اسم المستخدم",
+    "autoFill": "الملء التلقائي",
+    "securityReport": "تقرير الأمان",
+    "exportVault": "تصدير الخزنة",
+    "importPasswords": "استيراد كلمات المرور",
+    "categories": {
+      "login": "تسجيل دخول",
+      "creditCard": "بطاقة ائتمان",
+      "identity": "هوية",
+      "secureNote": "ملاحظة آمنة",
+      "socialMedia": "وسائل التواصل",
+      "banking": "بنك",
+      "email": "بريد إلكتروني",
+      "work": "عمل",
+      "shopping": "تسوق",
+      "entertainment": "ترفيه"
+    }
+  },
+  "collections": {
+    "title": "المجموعات",
+    "newCollection": "مجموعة جديدة",
+    "editCollection": "تعديل المجموعة",
+    "deleteCollection": "حذف المجموعة",
+    "addPage": "إضافة صفحة",
+    "addLink": "إضافة رابط",
+    "searchCollections": "البحث في المجموعات...",
+    "emptyCollection": "هذه المجموعة فارغة",
+    "collectionName": "الاسم",
+    "collectionDescription": "الوصف",
+    "color": "اللون",
+    "icon": "الأيقونة",
+    "pages": "الصفحات",
+    "links": "الروابط",
+    "items": "العناصر",
+    "lastModified": "آخر تعديل",
+    "createdAt": "تاريخ الإنشاء",
+    "sortBy": "ترتيب حسب",
+    "viewAs": "عرض كـ",
+    "grid": "شبكة",
+    "list": "قائمة"
+  },
+  "readingList": {
+    "title": "قائمة القراءة",
+    "addArticle": "إضافة مقال",
+    "removeArticle": "إزالة المقال",
+    "markAsRead": "تحديد كمقروء",
+    "markAsUnread": "تحديد كغير مقروء",
+    "archive": "أرشفة",
+    "unarchive": "إلغاء الأرشفة",
+    "searchArticles": "البحث في المقالات...",
+    "unread": "غير مقروء",
+    "read": "مقروء",
+    "archived": "مؤرشف",
+    "all": "الكل",
+    "estimatedReadTime": "وقت القراءة المقدر",
+    "minutes": "دقيقة",
+    "addedOn": "أضيف في",
+    "source": "المصدر",
+    "tags": "الوسوم",
+    "addTag": "إضافة وسم",
+    "emptyReadingList": "قائمة القراءة فارغة"
+  },
+  "mediaPlayer": {
+    "title": "مشغل الوسائط",
+    "nowPlaying": "قيد التشغيل",
+    "queue": "قائمة الانتظار",
+    "playlist": "قائمة التشغيل",
+    "playlists": "قوائم التشغيل",
+    "newPlaylist": "قائمة جديدة",
+    "addToPlaylist": "إضافة إلى القائمة",
+    "removeFromPlaylist": "إزالة من القائمة",
+    "play": "تشغيل",
+    "pause": "إيقاف مؤقت",
+    "stop": "إيقاف",
+    "previous": "السابق",
+    "next": "التالي",
+    "shuffle": "خلط",
+    "repeat": "تكرار",
+    "repeatOne": "تكرار واحد",
+    "repeatAll": "تكرار الكل",
+    "volume": "مستوى الصوت",
+    "mute": "كتم",
+    "unmute": "إلغاء الكتم",
+    "fullscreen": "ملء الشاشة",
+    "subtitles": "الترجمة",
+    "audioTrack": "المسار الصوتي",
+    "playbackSpeed": "سرعة التشغيل",
+    "equalizer": "المعادل",
+    "visualizer": "المرئيات",
+    "openFile": "فتح ملف",
+    "openFolder": "فتح مجلد",
+    "addToQueue": "إضافة للانتظار",
+    "clearQueue": "مسح الانتظار",
+    "artist": "الفنان",
+    "album": "الألبوم",
+    "genre": "النوع",
+    "duration": "المدة",
+    "bitrate": "معدل البت",
+    "sampleRate": "معدل العينة",
+    "channels": "القنوات"
+  },
+  "terminal": {
+    "title": "الطرفية",
+    "newTerminal": "طرفية جديدة",
+    "closeTerminal": "إغلاق الطرفية",
+    "splitHorizontal": "تقسيم أفقي",
+    "splitVertical": "تقسيم عمودي",
+    "clear": "مسح",
+    "copy": "نسخ",
+    "paste": "لصق",
+    "selectAll": "تحديد الكل",
+    "find": "بحث",
+    "shell": "الصدفة",
+    "fontSize": "حجم الخط",
+    "fontFamily": "نوع الخط",
+    "theme": "السمة",
+    "cursorStyle": "نمط المؤشر",
+    "scrollback": "سطور السجل",
+    "commandHistory": "سجل الأوامر",
+    "themes": {
+      "dark": "داكن",
+      "light": "فاتح",
+      "monokai": "Monokai",
+      "dracula": "Dracula",
+      "solarized": "Solarized"
+    }
+  },
+  "downloads": {
+    "title": "التنزيلات",
+    "activeDownloads": "نشطة",
+    "completedDownloads": "مكتملة",
+    "pausedDownloads": "متوقفة",
+    "failedDownloads": "فاشلة",
+    "allDownloads": "الكل",
+    "addDownload": "إضافة تنزيل",
+    "pauseDownload": "إيقاف مؤقت",
+    "resumeDownload": "استئناف",
+    "cancelDownload": "إلغاء",
+    "retryDownload": "إعادة المحاولة",
+    "removeDownload": "إزالة",
+    "clearCompleted": "مسح المكتملة",
+    "openFile": "فتح الملف",
+    "openFolder": "فتح المجلد",
+    "copyLink": "نسخ الرابط",
+    "downloadSpeed": "سرعة التنزيل",
+    "uploadSpeed": "سرعة الرفع",
+    "progress": "التقدم",
+    "timeRemaining": "الوقت المتبقي",
+    "destination": "الوجهة",
+    "fileName": "اسم الملف",
+    "fileSize": "الحجم",
+    "downloaded": "تم التنزيل",
+    "startTime": "وقت البدء",
+    "endTime": "وقت الانتهاء"
+  },
+  "automation": {
+    "title": "الأتمتة",
+    "newWorkflow": "سير عمل جديد",
+    "editWorkflow": "تعديل سير العمل",
+    "runWorkflow": "تشغيل سير العمل",
+    "stopWorkflow": "إيقاف سير العمل",
+    "saveWorkflow": "حفظ سير العمل",
+    "deleteWorkflow": "حذف سير العمل",
+    "duplicateWorkflow": "تكرار سير العمل",
+    "importWorkflow": "استيراد سير العمل",
+    "exportWorkflow": "تصدير سير العمل",
+    "workflowName": "اسم سير العمل",
+    "workflowDescription": "الوصف",
+    "triggers": "المشغلات",
+    "actions": "الإجراءات",
+    "conditions": "الشروط",
+    "variables": "المتغيرات",
+    "logs": "السجلات",
+    "history": "السجل",
+    "schedule": "جدولة",
+    "enabled": "مفعل",
+    "disabled": "معطل",
+    "running": "قيد التشغيل",
+    "completed": "مكتمل",
+    "failed": "فشل",
+    "paused": "متوقف",
+    "nodes": {
+      "click": "نقر",
+      "type": "كتابة نص",
+      "navigate": "تنقل",
+      "wait": "انتظار",
+      "screenshot": "لقطة شاشة",
+      "extract": "استخراج بيانات",
+      "condition": "شرط",
+      "loop": "حلقة",
+      "script": "نص برمجي مخصص"
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "general": "عام",
+    "appearance": "المظهر",
+    "privacy": "الخصوصية والأمان",
+    "notifications": "الإشعارات",
+    "language": "اللغة",
+    "languages": {
+      "en": "الإنجليزية",
+      "es": "الإسبانية",
+      "pt": "البرتغالية",
+      "it": "الإيطالية",
+      "de": "الألمانية",
+      "fr": "الفرنسية",
+      "tr": "التركية",
+      "zh": "الصينية",
+      "ja": "اليابانية",
+      "ko": "الكورية",
+      "ar": "العربية",
+      "ru": "الروسية"
+    },
+    "theme": "السمة",
+    "themes": {
+      "light": "فاتح",
+      "dark": "داكن",
+      "system": "النظام"
+    },
+    "accentColor": "لون التمييز",
+    "fontSize": "حجم الخط",
+    "startPage": "صفحة البداية",
+    "defaultDownloadLocation": "موقع التنزيل",
+    "clearBrowsingData": "مسح بيانات التصفح",
+    "importData": "استيراد البيانات",
+    "exportData": "تصدير البيانات",
+    "resetSettings": "إعادة تعيين الإعدادات",
+    "autoUpdate": "التحديث التلقائي",
+    "checkForUpdates": "البحث عن تحديثات",
+    "version": "الإصدار",
+    "licenses": "التراخيص",
+    "feedback": "إرسال ملاحظات",
+    "account": "الحساب"
+  },
+  "account": {
+    "title": "إعدادات الحساب",
+    "profile": "الملف الشخصي",
+    "profileInfo": "معلومات الملف الشخصي",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "displayName": "الاسم المعروض",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "company": "الشركة",
+    "role": "المنصب",
+    "timezone": "المنطقة الزمنية",
+    "bio": "نبذة",
+    "avatar": "الصورة الرمزية",
+    "uploadAvatar": "رفع صورة",
+    "removeAvatar": "إزالة الصورة",
+    "dragDropAvatar": "اسحب وأفلت صورة أو انقر للرفع",
+    "avatarFormats": "JPG أو PNG أو GIF. الحد الأقصى 5 ميجابايت",
+    "billingAddress": "عنوان الفوترة",
+    "streetAddress": "العنوان",
+    "addressLine2": "السطر 2",
+    "city": "المدينة",
+    "state": "المنطقة",
+    "postalCode": "الرمز البريدي",
+    "country": "البلد",
+    "vatNumber": "الرقم الضريبي",
+    "preferences": "التفضيلات",
+    "communicationPrefs": "تفضيلات التواصل",
+    "emailNotifications": "إشعارات البريد",
+    "smsNotifications": "إشعارات الرسائل",
+    "marketingEmails": "رسائل التسويق",
+    "productUpdates": "تحديثات المنتج",
+    "securityAlerts": "تنبيهات الأمان",
+    "billingHistory": "سجل الفوترة",
+    "viewAllInvoices": "عرض كل الفواتير",
+    "invoice": "فاتورة",
+    "paid": "مدفوع",
+    "pending": "قيد الانتظار",
+    "failed": "فشل",
+    "saveChanges": "حفظ التغييرات",
+    "changesSaved": "تم حفظ التغييرات",
+    "changePassword": "تغيير كلمة المرور",
+    "deleteAccount": "حذف الحساب",
+    "accountSecurity": "أمان الحساب",
+    "twoFactorAuth": "المصادقة الثنائية",
+    "connectedDevices": "الأجهزة المتصلة",
+    "activeSessions": "الجلسات النشطة"
+  },
+  "admin": {
+    "title": "لوحة الإدارة",
+    "dashboard": "لوحة التحكم",
+    "overview": "نظرة عامة",
+    "sales": "المبيعات",
+    "licenses": "التراخيص",
+    "downloads": "التنزيلات",
+    "users": "المستخدمون",
+    "apiKeys": "مفاتيح API",
+    "services": "الخدمات",
+    "analytics": "التحليلات",
+    "logs": "السجلات",
+    "settings": "الإعدادات",
+    "totalRevenue": "إجمالي الإيرادات",
+    "totalUsers": "إجمالي المستخدمين",
+    "activeLicenses": "التراخيص النشطة",
+    "totalDownloads": "إجمالي التنزيلات",
+    "recentSales": "المبيعات الأخيرة",
+    "customer": "العميل",
+    "product": "المنتج",
+    "amount": "المبلغ",
+    "status": "الحالة",
+    "date": "التاريخ",
+    "completed": "مكتمل",
+    "pending": "قيد الانتظار",
+    "refunded": "مسترد",
+    "licenseKey": "مفتاح الترخيص",
+    "licensePlan": "الخطة",
+    "licenseStatus": "الحالة",
+    "devices": "الأجهزة",
+    "expiresAt": "ينتهي في",
+    "active": "نشط",
+    "expired": "منتهي",
+    "revoked": "ملغى",
+    "suspended": "معلق",
+    "downloadStats": "إحصائيات التنزيل",
+    "platformDistribution": "توزيع المنصات",
+    "recentDownloads": "التنزيلات الأخيرة",
+    "version": "الإصدار",
+    "platform": "المنصة",
+    "downloadDate": "تاريخ التنزيل"
+  },
+  "updates": {
+    "title": "التحديثات والمزامنة",
+    "checkForUpdates": "البحث عن تحديثات",
+    "checking": "جاري التحقق...",
+    "downloading": "جاري التنزيل...",
+    "installing": "جاري التثبيت...",
+    "currentVersion": "الإصدار الحالي",
+    "latestVersion": "أحدث إصدار",
+    "updateAvailable": "تحديث متاح",
+    "upToDate": "محدث",
+    "downloadUpdate": "تنزيل التحديث",
+    "installUpdate": "تثبيت وإعادة التشغيل",
+    "viewReleaseNotes": "عرض ملاحظات الإصدار",
+    "lastChecked": "آخر تحقق",
+    "releaseDate": "تاريخ الإصدار",
+    "size": "الحجم",
+    "autoCheck": "التحقق التلقائي من التحديثات",
+    "autoDownload": "تنزيل التحديثات تلقائياً",
+    "installOnExit": "التثبيت عند الإغلاق",
+    "checkInterval": "فترة التحقق",
+    "hourly": "كل ساعة",
+    "daily": "يومياً",
+    "weekly": "أسبوعياً",
+    "manual": "يدوي فقط",
+    "updateChannel": "قناة التحديث",
+    "stable": "مستقر",
+    "beta": "تجريبي",
+    "nightly": "ليلي",
+    "updateHistory": "سجل التحديثات",
+    "whatsNew": "الجديد"
+  },
+  "cloudSync": {
+    "title": "المزامنة السحابية",
+    "connected": "متصل",
+    "disconnected": "غير متصل",
+    "syncNow": "مزامنة الآن",
+    "syncing": "جاري المزامنة...",
+    "lastSync": "آخر مزامنة",
+    "pendingChanges": "تغييرات معلقة",
+    "signInPrompt": "سجل الدخول لمزامنة إعداداتك بين الأجهزة",
+    "signIn": "تسجيل الدخول",
+    "syncEnabled": "تفعيل المزامنة",
+    "syncEnabledDesc": "حافظ على مزامنة بياناتك بين الأجهزة",
+    "syncOnStartup": "المزامنة عند البدء",
+    "syncOnStartupDesc": "مزامنة تلقائية عند فتح التطبيق",
+    "syncFrequency": "تكرار المزامنة",
+    "realtime": "فوري",
+    "everyFiveMin": "كل 5 دقائق",
+    "everyFifteenMin": "كل 15 دقيقة",
+    "everyThirtyMin": "كل 30 دقيقة",
+    "dataToSync": "البيانات للمزامنة",
+    "settings": "الإعدادات",
+    "passwords": "كلمات المرور",
+    "bookmarks": "الإشارات المرجعية",
+    "collections": "المجموعات",
+    "macros": "الماكرو",
+    "workflows": "سير العمل",
+    "themes": "السمات",
+    "extensions": "الإضافات",
+    "onlineAccount": "الحساب عبر الإنترنت",
+    "accountSettings": "إعدادات الحساب",
+    "billingSubscription": "الفوترة والاشتراك",
+    "upgradePlan": "ترقية الخطة"
+  },
+  "devices": {
+    "title": "الأجهزة المتصلة",
+    "description": "إدارة الأجهزة المتزامنة مع حسابك",
+    "noDevices": "لا توجد أجهزة متصلة",
+    "noDevicesDesc": "سجل الدخول على أجهزة أخرى لرؤيتها هنا",
+    "thisDevice": "هذا الجهاز",
+    "lastActive": "آخر نشاط",
+    "remove": "إزالة"
+  },
+  "backups": {
+    "title": "النسخ الاحتياطي السحابي",
+    "autoBackup": "نسخ احتياطي تلقائي",
+    "autoBackupDesc": "نسخ بياناتك احتياطياً تلقائياً",
+    "backupFrequency": "تكرار النسخ الاحتياطي",
+    "createNow": "إنشاء نسخة الآن",
+    "yourBackups": "نسخك الاحتياطية",
+    "noBackups": "لا توجد نسخ احتياطية",
+    "noBackupsDesc": "أنشئ نسخة احتياطية لحماية بياناتك",
+    "restore": "استعادة",
+    "delete": "حذف"
+  },
+  "errors": {
+    "generic": "حدث خطأ ما",
+    "networkError": "خطأ في الشبكة. تحقق من اتصالك.",
+    "notFound": "غير موجود",
+    "unauthorized": "غير مصرح. يرجى تسجيل الدخول.",
+    "forbidden": "تم رفض الوصول",
+    "serverError": "خطأ في الخادم. حاول لاحقاً.",
+    "timeout": "انتهت المهلة",
+    "invalidInput": "إدخال غير صالح",
+    "requiredField": "هذا الحقل مطلوب",
+    "invalidEmail": "بريد إلكتروني غير صالح",
+    "invalidUrl": "رابط غير صالح",
+    "passwordMismatch": "كلمات المرور غير متطابقة",
+    "weakPassword": "كلمة المرور ضعيفة جداً",
+    "fileTooLarge": "الملف كبير جداً",
+    "invalidFileType": "نوع ملف غير صالح",
+    "downloadFailed": "فشل التنزيل",
+    "uploadFailed": "فشل الرفع",
+    "saveFailed": "فشل الحفظ",
+    "deleteFailed": "فشل الحذف",
+    "loadFailed": "فشل تحميل البيانات"
+  },
+  "success": {
+    "saved": "تم الحفظ بنجاح",
+    "deleted": "تم الحذف بنجاح",
+    "updated": "تم التحديث بنجاح",
+    "copied": "تم النسخ إلى الحافظة",
+    "downloaded": "تم التنزيل بنجاح",
+    "uploaded": "تم الرفع بنجاح",
+    "imported": "تم الاستيراد بنجاح",
+    "exported": "تم التصدير بنجاح",
+    "passwordChanged": "تم تغيير كلمة المرور",
+    "settingsSaved": "تم حفظ الإعدادات"
+  },
+  "confirmations": {
+    "delete": "هل أنت متأكد من الحذف؟",
+    "deleteMultiple": "هل أنت متأكد من حذف {count} عناصر؟",
+    "discard": "تجاهل التغييرات غير المحفوظة؟",
+    "logout": "هل أنت متأكد من تسجيل الخروج؟",
+    "clearData": "سيتم حذف جميع بياناتك نهائياً. متابعة؟",
+    "reset": "إعادة تعيين جميع الإعدادات؟"
+  },
+  "crm": {
+    "title": "نظام إدارة علاقات العملاء",
+    "subtitle": "إدارة علاقات العملاء",
+    "contacts": {
+      "title": "جهات الاتصال",
+      "addContact": "إضافة جهة اتصال",
+      "editContact": "تعديل جهة اتصال",
+      "importContacts": "استيراد جهات الاتصال",
+      "exportContacts": "تصدير جهات الاتصال",
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "company": "الشركة",
+      "phone": "الهاتف",
+      "mobile": "الجوال",
+      "email": "البريد الإلكتروني",
+      "address": "العنوان",
+      "city": "المدينة",
+      "state": "الولاية/المنطقة",
+      "country": "البلد",
+      "postalCode": "الرمز البريدي",
+      "notes": "ملاحظات",
+      "tags": "الوسوم",
+      "source": "مصدر العميل المحتمل",
+      "status": "الحالة",
+      "assignedTo": "مُعيّن إلى",
+      "lastContact": "آخر اتصال",
+      "nextFollowUp": "المتابعة التالية",
+      "totalDeals": "إجمالي الصفقات",
+      "totalValue": "القيمة الإجمالية",
+      "duplicates": "دمج المكرر",
+      "segments": "الشرائح",
+      "customFields": "حقول مخصصة"
+    },
+    "companies": {
+      "title": "الشركات",
+      "addCompany": "إضافة شركة",
+      "companyName": "اسم الشركة",
+      "industry": "الصناعة",
+      "size": "حجم الشركة",
+      "revenue": "الإيرادات السنوية",
+      "website": "الموقع الإلكتروني",
+      "employees": "الموظفون",
+      "headquarters": "المقر الرئيسي",
+      "founded": "تاريخ التأسيس",
+      "linkedContacts": "جهات الاتصال المرتبطة"
+    },
+    "deals": {
+      "title": "الصفقات",
+      "addDeal": "إضافة صفقة",
+      "editDeal": "تعديل صفقة",
+      "dealName": "اسم الصفقة",
+      "value": "قيمة الصفقة",
+      "probability": "الاحتمالية",
+      "expectedClose": "تاريخ الإغلاق المتوقع",
+      "actualClose": "تاريخ الإغلاق الفعلي",
+      "stage": "المرحلة",
+      "pipeline": "خط الأنابيب",
+      "wonDeals": "الصفقات المكسوبة",
+      "lostDeals": "الصفقات الخاسرة",
+      "openDeals": "الصفقات المفتوحة",
+      "totalPipeline": "إجمالي قيمة خط الأنابيب",
+      "weightedValue": "القيمة المرجحة",
+      "lostReason": "سبب الخسارة",
+      "competitor": "المنافس",
+      "stages": {
+        "lead": "عميل محتمل",
+        "qualified": "مؤهل",
+        "proposal": "عرض",
+        "negotiation": "تفاوض",
+        "closed_won": "مغلق مكسوب",
+        "closed_lost": "مغلق خاسر"
+      }
+    },
+    "pipeline": {
+      "title": "خط الأنابيب",
+      "newPipeline": "خط أنابيب جديد",
+      "editPipeline": "تعديل خط الأنابيب",
+      "stages": "المراحل",
+      "addStage": "إضافة مرحلة",
+      "stageName": "اسم المرحلة",
+      "probability": "احتمالية الإغلاق",
+      "rottenDays": "أيام عدم النشاط",
+      "kanban": "عرض كانبان",
+      "list": "عرض القائمة",
+      "forecast": "التنبؤ"
+    },
+    "activities": {
+      "title": "الأنشطة",
+      "addActivity": "إضافة نشاط",
+      "call": "مكالمة",
+      "email": "بريد إلكتروني",
+      "meeting": "اجتماع",
+      "task": "مهمة",
+      "note": "ملاحظة",
+      "deadline": "الموعد النهائي",
+      "reminder": "تذكير",
+      "completed": "مكتمل",
+      "pending": "قيد الانتظار",
+      "overdue": "متأخر",
+      "todayTasks": "مهام اليوم",
+      "upcoming": "القادمة",
+      "history": "سجل الأنشطة"
+    },
+    "reports": {
+      "title": "التقارير",
+      "salesReport": "تقرير المبيعات",
+      "pipelineReport": "تقرير خط الأنابيب",
+      "activityReport": "تقرير الأنشطة",
+      "winRate": "معدل الفوز",
+      "avgDealSize": "متوسط حجم الصفقة",
+      "avgSalesCycle": "متوسط دورة المبيعات",
+      "conversionRate": "معدل التحويل",
+      "revenueByMonth": "الإيرادات حسب الشهر",
+      "dealsByStage": "الصفقات حسب المرحلة",
+      "topPerformers": "أفضل مندوبي المبيعات",
+      "lostReasons": "أسباب الخسارة",
+      "sourceAnalysis": "تحليل مصادر العملاء المحتملين"
+    }
+  },
+  "marketing": {
+    "title": "مركز التسويق",
+    "subtitle": "أتمتة التسويق الشاملة",
+    "campaigns": {
+      "title": "الحملات",
+      "newCampaign": "حملة جديدة",
+      "editCampaign": "تعديل الحملة",
+      "campaignName": "اسم الحملة",
+      "type": "نوع الحملة",
+      "status": "الحالة",
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الانتهاء",
+      "budget": "الميزانية",
+      "spent": "المصروف",
+      "roi": "العائد على الاستثمار",
+      "leads": "العملاء المحتملون المولدون",
+      "conversions": "التحويلات",
+      "types": {
+        "email": "حملة بريد إلكتروني",
+        "sms": "حملة رسائل قصيرة",
+        "social": "وسائل التواصل الاجتماعي",
+        "ads": "الإعلانات المدفوعة",
+        "content": "تسويق المحتوى",
+        "event": "حدث",
+        "webinar": "ندوة عبر الإنترنت"
+      }
+    },
+    "email": {
+      "title": "التسويق بالبريد الإلكتروني",
+      "compose": "كتابة بريد إلكتروني",
+      "templates": "قوالب البريد الإلكتروني",
+      "sequences": "تسلسلات البريد الإلكتروني",
+      "broadcasts": "الرسائل الجماعية",
+      "subject": "سطر الموضوع",
+      "previewText": "نص المعاينة",
+      "fromName": "اسم المرسل",
+      "fromEmail": "بريد المرسل",
+      "replyTo": "الرد على",
+      "recipients": "المستلمون",
+      "schedule": "جدولة الإرسال",
+      "sendNow": "إرسال الآن",
+      "testEmail": "إرسال اختبار",
+      "openRate": "معدل الفتح",
+      "clickRate": "معدل النقر",
+      "bounceRate": "معدل الارتداد",
+      "unsubscribeRate": "معدل إلغاء الاشتراك",
+      "delivered": "تم التسليم",
+      "opened": "تم الفتح",
+      "clicked": "النقرات",
+      "replied": "تم الرد"
+    },
+    "sms": {
+      "title": "التسويق عبر الرسائل القصيرة",
+      "compose": "كتابة رسالة قصيرة",
+      "templates": "قوالب الرسائل القصيرة",
+      "campaigns": "حملات الرسائل القصيرة",
+      "sender": "معرف المرسل",
+      "message": "الرسالة",
+      "characters": "الأحرف",
+      "segments": "الأجزاء",
+      "deliveryRate": "معدل التسليم",
+      "responseRate": "معدل الاستجابة",
+      "optOut": "إلغاء الاشتراك"
+    },
+    "landing": {
+      "title": "صفحات الهبوط",
+      "newPage": "صفحة جديدة",
+      "editPage": "تعديل الصفحة",
+      "templates": "القوالب",
+      "pageName": "اسم الصفحة",
+      "slug": "رابط الصفحة",
+      "publish": "نشر",
+      "unpublish": "إلغاء النشر",
+      "preview": "معاينة",
+      "duplicate": "نسخ",
+      "views": "المشاهدات",
+      "conversions": "التحويلات",
+      "conversionRate": "معدل التحويل",
+      "abTest": "اختبارات A/B",
+      "variants": "المتغيرات",
+      "winner": "الفائز"
+    },
+    "funnels": {
+      "title": "قمع المبيعات",
+      "newFunnel": "قمع جديد",
+      "editFunnel": "تعديل القمع",
+      "funnelName": "اسم القمع",
+      "steps": "الخطوات",
+      "addStep": "إضافة خطوة",
+      "optIn": "صفحة التسجيل",
+      "salesPage": "صفحة المبيعات",
+      "checkout": "الدفع",
+      "upsell": "عرض إضافي",
+      "downsell": "عرض بديل",
+      "thankYou": "صفحة الشكر",
+      "entries": "المدخلات",
+      "completions": "المكتملة",
+      "dropoff": "معدل التخلي"
+    },
+    "forms": {
+      "title": "النماذج",
+      "newForm": "نموذج جديد",
+      "editForm": "تعديل النموذج",
+      "formName": "اسم النموذج",
+      "fields": "الحقول",
+      "addField": "إضافة حقل",
+      "required": "مطلوب",
+      "placeholder": "نص توضيحي",
+      "submissions": "الإرسالات",
+      "embed": "كود التضمين",
+      "popup": "نموذج منبثق",
+      "inline": "نموذج مضمن",
+      "fieldTypes": {
+        "text": "نص",
+        "email": "بريد إلكتروني",
+        "phone": "هاتف",
+        "select": "قائمة منسدلة",
+        "radio": "أزرار اختيار",
+        "checkbox": "مربعات اختيار",
+        "textarea": "منطقة نص",
+        "date": "تاريخ",
+        "file": "رفع ملف"
+      }
+    },
+    "automation": {
+      "title": "أتمتة التسويق",
+      "workflows": "سير العمل",
+      "newWorkflow": "سير عمل جديد",
+      "triggers": "المحفزات",
+      "actions": "الإجراءات",
+      "conditions": "الشروط",
+      "delays": "التأخيرات",
+      "active": "نشط",
+      "paused": "متوقف مؤقتاً",
+      "draft": "مسودة",
+      "enrolled": "المسجلون",
+      "completed": "المكتمل",
+      "triggerTypes": {
+        "formSubmit": "إرسال نموذج",
+        "tagAdded": "إضافة وسم",
+        "tagRemoved": "إزالة وسم",
+        "listJoined": "الانضمام لقائمة",
+        "linkClicked": "النقر على رابط",
+        "emailOpened": "فتح بريد إلكتروني",
+        "pageVisited": "زيارة صفحة",
+        "dealCreated": "إنشاء صفقة",
+        "custom": "حدث مخصص"
+      }
+    },
+    "surveys": {
+      "title": "الاستبيانات",
+      "newSurvey": "استبيان جديد",
+      "questions": "الأسئلة",
+      "addQuestion": "إضافة سؤال",
+      "responses": "الردود",
+      "completionRate": "معدل الإكمال",
+      "avgTime": "متوسط الوقت",
+      "nps": "درجة NPS"
+    }
+  },
+  "calendar": {
+    "title": "التقويم",
+    "subtitle": "الجدولة والحجوزات",
+    "newEvent": "حدث جديد",
+    "editEvent": "تعديل الحدث",
+    "eventTitle": "عنوان الحدث",
+    "startTime": "وقت البدء",
+    "endTime": "وقت الانتهاء",
+    "allDay": "طوال اليوم",
+    "location": "الموقع",
+    "description": "الوصف",
+    "attendees": "الحضور",
+    "reminder": "تذكير",
+    "recurring": "متكرر",
+    "color": "اللون",
+    "views": {
+      "day": "يوم",
+      "week": "أسبوع",
+      "month": "شهر",
+      "agenda": "جدول الأعمال"
+    },
+    "booking": {
+      "title": "روابط الحجز",
+      "newLink": "رابط حجز جديد",
+      "linkName": "اسم الرابط",
+      "duration": "المدة",
+      "availability": "التوفر",
+      "buffer": "وقت الفاصل",
+      "maxBookings": "الحد الأقصى للحجوزات يومياً",
+      "confirmationEmail": "بريد التأكيد",
+      "reminderEmail": "بريد التذكير",
+      "customQuestions": "أسئلة مخصصة",
+      "embed": "عنصر التضمين"
+    }
+  },
+  "payments": {
+    "title": "المدفوعات",
+    "subtitle": "الفواتير والتحصيل",
+    "invoices": {
+      "title": "الفواتير",
+      "newInvoice": "فاتورة جديدة",
+      "invoiceNumber": "رقم الفاتورة",
+      "issueDate": "تاريخ الإصدار",
+      "dueDate": "تاريخ الاستحقاق",
+      "items": "بنود المنتج",
+      "subtotal": "المجموع الفرعي",
+      "tax": "الضرائب",
+      "discount": "الخصم",
+      "total": "الإجمالي",
+      "paid": "مدفوع",
+      "unpaid": "غير مدفوع",
+      "overdue": "متأخر",
+      "draft": "مسودة",
+      "send": "إرسال الفاتورة",
+      "markPaid": "تحديد كمدفوع",
+      "recordPayment": "تسجيل الدفع"
+    },
+    "products": {
+      "title": "المنتجات",
+      "newProduct": "منتج جديد",
+      "productName": "اسم المنتج",
+      "price": "السعر",
+      "recurring": "متكرر",
+      "oneTime": "لمرة واحدة",
+      "subscription": "اشتراك",
+      "billingCycle": "دورة الفوترة",
+      "trialDays": "أيام التجربة",
+      "setupFee": "رسوم الإعداد"
+    },
+    "subscriptions": {
+      "title": "الاشتراكات",
+      "active": "نشطة",
+      "cancelled": "ملغاة",
+      "past_due": "متأخرة",
+      "mrr": "الإيراد الشهري المتكرر",
+      "arr": "الإيراد السنوي المتكرر",
+      "churn": "معدل الإلغاء",
+      "ltv": "القيمة الدائمة للعميل"
+    }
+  },
+  "courses": {
+    "title": "الدورات والعضويات",
+    "subtitle": "منصة التعلم عبر الإنترنت",
+    "newCourse": "دورة جديدة",
+    "editCourse": "تعديل الدورة",
+    "courseName": "اسم الدورة",
+    "description": "الوصف",
+    "instructor": "المدرب",
+    "price": "السعر",
+    "modules": "الوحدات",
+    "lessons": "الدروس",
+    "addModule": "إضافة وحدة",
+    "addLesson": "إضافة درس",
+    "video": "فيديو",
+    "audio": "صوت",
+    "text": "محتوى نصي",
+    "quiz": "اختبار",
+    "assignment": "مهمة",
+    "certificate": "شهادة",
+    "students": "الطلاب",
+    "enrolled": "المسجلون",
+    "completed": "المكتملون",
+    "progress": "التقدم",
+    "drip": "المحتوى التدريجي",
+    "membership": {
+      "title": "العضويات",
+      "levels": "مستويات العضوية",
+      "access": "قواعد الوصول",
+      "members": "الأعضاء",
+      "content": "المحتوى المحمي"
+    }
+  },
+  "social": {
+    "title": "مركز التواصل الاجتماعي",
+    "subtitle": "مركز قيادة وسائل التواصل الاجتماعي",
+    "accounts": "الحسابات المتصلة",
+    "connectAccount": "ربط حساب",
+    "platforms": {
+      "facebook": "فيسبوك",
+      "instagram": "إنستغرام",
+      "twitter": "تويتر/X",
+      "linkedin": "لينكد إن",
+      "youtube": "يوتيوب",
+      "tiktok": "تيك توك",
+      "pinterest": "بنترست",
+      "threads": "ثريدز"
+    },
+    "posts": {
+      "title": "المنشورات",
+      "newPost": "منشور جديد",
+      "schedule": "جدولة المنشور",
+      "draft": "حفظ كمسودة",
+      "publish": "نشر الآن",
+      "caption": "الوصف",
+      "media": "الوسائط",
+      "hashtags": "الهاشتاقات",
+      "mentions": "الإشارات",
+      "scheduled": "المجدولة",
+      "published": "المنشورة",
+      "failed": "الفاشلة"
+    },
+    "analytics": {
+      "title": "التحليلات",
+      "followers": "المتابعون",
+      "following": "يتابع",
+      "engagement": "معدل التفاعل",
+      "reach": "الوصول",
+      "impressions": "الانطباعات",
+      "likes": "الإعجابات",
+      "comments": "التعليقات",
+      "shares": "المشاركات",
+      "saves": "المحفوظات",
+      "clicks": "النقرات",
+      "growth": "النمو",
+      "bestTime": "أفضل وقت للنشر",
+      "topPosts": "أفضل المنشورات"
+    },
+    "video": {
+      "title": "منشئ الفيديو",
+      "newVideo": "إنشاء فيديو",
+      "templates": "القوالب",
+      "scenes": "المشاهد",
+      "addScene": "إضافة مشهد",
+      "text": "نص متراكب",
+      "music": "موسيقى خلفية",
+      "voiceover": "تعليق صوتي",
+      "transitions": "الانتقالات",
+      "effects": "المؤثرات",
+      "aspectRatio": "نسبة العرض إلى الارتفاع",
+      "duration": "المدة",
+      "export": "تصدير الفيديو",
+      "formats": {
+        "reels": "ريلز إنستغرام",
+        "shorts": "شورتس يوتيوب",
+        "tiktok": "تيك توك",
+        "story": "القصص"
+      }
+    },
+    "viral": {
+      "title": "تحليلات الانتشار",
+      "trendScore": "درجة الاتجاه",
+      "viralPotential": "احتمالية الانتشار",
+      "optimalTiming": "التوقيت الأمثل",
+      "hashtagAnalysis": "تحليل الهاشتاقات",
+      "competitorAnalysis": "تحليل المنافسين",
+      "contentSuggestions": "اقتراحات المحتوى",
+      "trendingTopics": "المواضيع الرائجة",
+      "audienceInsights": "رؤى الجمهور"
+    },
+    "inbox": {
+      "title": "صندوق الوارد الموحد",
+      "messages": "الرسائل",
+      "comments": "التعليقات",
+      "mentions": "الإشارات",
+      "reply": "الرد",
+      "archive": "أرشفة",
+      "unread": "غير مقروء",
+      "starred": "المميزة",
+      "assigned": "المعينة لي"
+    }
+  },
+  "aiSearch": {
+    "title": "محرك البحث بالذكاء الاصطناعي",
+    "subtitle": "بحث ذكي بالذكاء الاصطناعي",
+    "searchPlaceholder": "اسأل عن أي شيء تريده...",
+    "webSearch": "بحث الويب",
+    "deepResearch": "بحث معمق",
+    "imageSearch": "بحث الصور",
+    "videoSearch": "بحث الفيديو",
+    "newsSearch": "بحث الأخبار",
+    "academicSearch": "البحث الأكاديمي",
+    "sources": "المصادر",
+    "citations": "الاقتباسات",
+    "summary": "ملخص الذكاء الاصطناعي",
+    "relatedQuestions": "أسئلة ذات صلة",
+    "filters": "فلاتر البحث",
+    "dateRange": "نطاق التاريخ",
+    "region": "المنطقة",
+    "language": "اللغة",
+    "safeSearch": "البحث الآمن",
+    "searchHistory": "سجل البحث",
+    "savedSearches": "البحث المحفوظ",
+    "modes": {
+      "quick": "إجابة سريعة",
+      "comprehensive": "شاملة",
+      "creative": "إبداعية",
+      "precise": "دقيقة"
+    }
+  },
+  "intelligence": {
+    "title": "مركز الاستخبارات",
+    "subtitle": "البحث والتحليل المعمق",
+    "newResearch": "بحث جديد",
+    "researchTopic": "موضوع البحث",
+    "sources": "المصادر",
+    "analysis": "التحليل",
+    "report": "التقرير",
+    "timeline": "الجدول الزمني",
+    "entities": "الكيانات",
+    "relationships": "العلاقات",
+    "sentiment": "تحليل المشاعر",
+    "trends": "تحليل الاتجاهات",
+    "factCheck": "التحقق من الحقائق",
+    "citations": "الاقتباسات",
+    "exportReport": "تصدير التقرير",
+    "collaborate": "التعاون",
+    "categories": {
+      "market": "بحث السوق",
+      "competitive": "التحليل التنافسي",
+      "technical": "البحث التقني",
+      "academic": "البحث الأكاديمي",
+      "news": "استخبارات الأخبار",
+      "social": "الاستماع الاجتماعي"
+    }
+  },
+  "support": {
+    "title": "مركز الدعم",
+    "subtitle": "مكتب المساعدة والتذاكر",
+    "tickets": {
+      "title": "التذاكر",
+      "newTicket": "تذكرة جديدة",
+      "subject": "الموضوع",
+      "priority": "الأولوية",
+      "status": "الحالة",
+      "assignee": "مُعيّن إلى",
+      "requester": "مقدم الطلب",
+      "created": "تم الإنشاء",
+      "updated": "آخر تحديث",
+      "resolved": "تم الحل",
+      "firstResponse": "وقت الاستجابة الأولى",
+      "priorities": {
+        "low": "منخفضة",
+        "medium": "متوسطة",
+        "high": "عالية",
+        "urgent": "عاجلة"
+      },
+      "statuses": {
+        "open": "مفتوح",
+        "pending": "قيد الانتظار",
+        "in_progress": "قيد التنفيذ",
+        "resolved": "تم الحل",
+        "closed": "مغلق"
+      }
+    },
+    "knowledgeBase": {
+      "title": "قاعدة المعرفة",
+      "articles": "المقالات",
+      "categories": "الفئات",
+      "newArticle": "مقالة جديدة",
+      "views": "المشاهدات",
+      "helpful": "هل كان مفيداً؟",
+      "search": "البحث في قاعدة المعرفة..."
+    },
+    "chat": {
+      "title": "الدردشة المباشرة",
+      "online": "متصل",
+      "offline": "غير متصل",
+      "typing": "يكتب...",
+      "send": "إرسال",
+      "transcript": "نص المحادثة",
+      "rating": "تقييم هذه المحادثة",
+      "cannedResponses": "ردود جاهزة"
+    }
+  },
+  "whiteLabel": {
+    "title": "العلامة البيضاء",
+    "subtitle": "خصص علامتك التجارية",
+    "branding": {
+      "title": "العلامة التجارية",
+      "logo": "الشعار",
+      "favicon": "الأيقونة المفضلة",
+      "appName": "اسم التطبيق",
+      "primaryColor": "اللون الأساسي",
+      "secondaryColor": "اللون الثانوي",
+      "accentColor": "لون التمييز"
+    },
+    "domain": {
+      "title": "النطاق المخصص",
+      "addDomain": "إضافة نطاق",
+      "verify": "التحقق من النطاق",
+      "ssl": "شهادة SSL",
+      "status": "الحالة"
+    },
+    "emails": {
+      "title": "علامة البريد الإلكتروني",
+      "fromName": "اسم المرسل",
+      "fromEmail": "بريد المرسل",
+      "replyTo": "الرد على",
+      "signature": "توقيع البريد",
+      "templates": "قوالب البريد الإلكتروني"
+    }
+  },
+  "aiAssistant": {
+    "title": "مساعد الذكاء الاصطناعي",
+    "subtitle": "مساعدك الذكي",
+    "chat": "الدردشة مع الذكاء الاصطناعي",
+    "commands": "الأوامر",
+    "suggestions": "الاقتراحات",
+    "capabilities": {
+      "writeEmail": "كتابة بريد إلكتروني",
+      "analyzeData": "تحليل البيانات",
+      "createContent": "إنشاء محتوى",
+      "summarize": "تلخيص",
+      "translate": "ترجمة",
+      "codeHelp": "مساعدة في البرمجة",
+      "research": "بحث",
+      "schedule": "جدولة"
+    },
+    "modules": {
+      "title": "التحكم في وحدات الذكاء الاصطناعي",
+      "manage": "إدارة الوحدات",
+      "execute": "تنفيذ الإجراء",
+      "automate": "أتمتة المهمة",
+      "permissions": "أذونات الذكاء الاصطناعي",
+      "history": "سجل الإجراءات"
+    },
+    "voice": {
+      "title": "الأوامر الصوتية",
+      "listening": "يستمع...",
+      "speak": "تحدث الآن",
+      "stop": "إيقاف",
+      "language": "لغة الصوت"
+    }
+  },
+  "tours": {
+    "welcome": {
+      "title": "مرحباً بك في CUBE Elite",
+      "description": "دعنا نعرفك على مساحة عملك القوية الجديدة"
+    },
+    "browser": {
+      "title": "تجربة المتصفح الكاملة",
+      "description": "تصفح أي موقع ويب مع جميع إمكانيات المتصفح"
+    },
+    "crm": {
+      "title": "إدارة علاقات العملاء وجهات الاتصال",
+      "description": "أدر جميع جهات الاتصال والشركات والصفقات في مكان واحد"
+    },
+    "marketing": {
+      "title": "أتمتة التسويق",
+      "description": "أنشئ الحملات والبريد الإلكتروني وصفحات الهبوط وقمع المبيعات"
+    },
+    "social": {
+      "title": "مركز وسائل التواصل الاجتماعي",
+      "description": "أدر جميع حساباتك الاجتماعية من لوحة تحكم واحدة"
+    },
+    "aiSearch": {
+      "title": "البحث بالذكاء الاصطناعي",
+      "description": "احصل على إجابات ذكية مع الاقتباسات والبحث المعمق"
+    },
+    "intelligence": {
+      "title": "مركز الاستخبارات",
+      "description": "قم بإجراء بحث معمق وتحليل تنافسي"
+    },
+    "aiAssistant": {
+      "title": "مساعد الذكاء الاصطناعي",
+      "description": "يمكن للذكاء الاصطناعي التحكم في أي وحدة وتنفيذ المهام نيابة عنك"
+    },
+    "steps": {
+      "next": "التالي",
+      "previous": "السابق",
+      "skip": "تخطي الجولة",
+      "finish": "ابدأ"
+    }
+  },
+  "dataExtractor": {
+    "title": "مستخرج البيانات",
+    "subtitle": "أداة تجريف الويب المرئية مع واجهة النقر والتوجيه",
+    "loading": {
+      "title": "جارٍ تحميل مستخرج البيانات...",
+      "description": "تهيئة أدوات الاستخراج"
+    },
+    "errors": {
+      "title": "خطأ في الاستخراج",
+      "loadFailed": "فشل في تحميل مستخرج البيانات"
+    },
+    "actions": {
+      "newSchema": "مخطط جديد",
+      "startExtraction": "بدء الاستخراج",
+      "previewData": "معاينة البيانات",
+      "exportData": "تصدير البيانات",
+      "saveSchema": "حفظ المخطط"
+    }
+  },
+  "enterprise": {
+    "badge": "الحزمة المؤسسية",
+    "title": "CUBE Nexum Enterprise",
+    "subtitle": "أدوات مؤسسية شاملة للأتمتة والتكامل وإدارة البيانات على نطاق واسع.",
+    "stats": {
+      "modules": "الوحدات",
+      "integrations": "التكاملات",
+      "uptime": "SLA وقت التشغيل"
+    },
+    "errors": {
+      "loadFailed": "فشل في تحميل الوحدة المؤسسية"
+    },
+    "benefits": {
+      "title": "المزايا المؤسسية",
+      "security": {
+        "title": "الأمان المؤسسي",
+        "description": "متوافق مع SOC 2 Type II و GDPR و HIPAA مع التشفير الشامل."
+      },
+      "performance": {
+        "title": "أداء عالي",
+        "description": "معالجة ملايين الأحداث في الثانية مع زمن استجابة أقل من ميلي ثانية."
+      },
+      "uptime": {
+        "title": "99.9% وقت التشغيل",
+        "description": "SLA مؤسسي مع تجاوز الفشل التلقائي واستعادة الكوارث."
+      },
+      "support": {
+        "title": "دعم 24/7",
+        "description": "فريق دعم مخصص مع ضمان الاستجابة خلال ساعة واحدة."
+      }
+    }
+  },
+  "fileTransfer": {
+    "title": "نقل الملفات",
+    "subtitle": "نقل FTP/SFTP آمن مع واجهة لوحة مزدوجة",
+    "loading": { "title": "جاري تحميل النقل...", "description": "الاتصال بالخوادم" },
+    "errors": { "title": "خطأ في النقل", "loadFailed": "فشل تحميل نقل الملفات" },
+    "actions": { "connect": "اتصال", "disconnect": "قطع الاتصال", "upload": "رفع", "download": "تنزيل", "refresh": "تحديث", "newSite": "موقع جديد" }
+  },
+  "collections": {
+    "title": "المجموعات",
+    "subtitle": "تنظيم ومشاركة صفحاتك المحفوظة",
+    "loading": { "title": "جاري تحميل المجموعات...", "description": "جلب مجموعاتك" },
+    "errors": { "title": "خطأ في المجموعة", "loadFailed": "فشل تحميل المجموعات" },
+    "empty": { "title": "لا توجد مجموعات", "description": "أنشئ مجموعتك الأولى." },
+    "actions": { "newCollection": "مجموعة جديدة", "share": "مشاركة", "delete": "حذف" }
+  },
+  "readingList": {
+    "title": "قائمة القراءة",
+    "subtitle": "احفظ المقالات للقراءة لاحقاً",
+    "loading": { "title": "جاري تحميل القائمة...", "description": "جلب المقالات" },
+    "errors": { "title": "خطأ في القائمة", "loadFailed": "فشل تحميل القائمة" },
+    "empty": { "title": "لا توجد مقالات", "description": "احفظ مقالات من الويب." },
+    "tabs": { "all": "الكل", "unread": "غير مقروء", "read": "مقروء" }
+  },
+  "remote": {
+    "title": "سطح المكتب البعيد",
+    "subtitle": "الاتصال بالحواسيب البعيدة عبر SSH وRDP وVNC",
+    "loading": { "title": "جاري تحميل الجلسات...", "description": "جلب الاتصالات" },
+    "errors": { "title": "خطأ في الاتصال", "loadFailed": "فشل تحميل الجلسات" },
+    "actions": { "connect": "اتصال", "disconnect": "قطع", "newSession": "جلسة جديدة", "createRoom": "إنشاء غرفة", "joinRoom": "انضمام" }
+  },
+  "ftp": {
+    "title": "مدير FTP",
+    "subtitle": "إدارة اتصالات ونقل FTP/SFTP",
+    "loading": { "title": "جاري تحميل FTP...", "description": "الاتصال بالخادم" },
+    "errors": { "title": "خطأ FTP", "loadFailed": "فشل تحميل اتصالات FTP" },
+    "actions": { "upload": "رفع", "download": "تنزيل", "newSite": "موقع جديد", "refresh": "تحديث" }
+  },
+  "extensions": {
+    "title": "الإضافات",
+    "subtitle": "إدارة إضافات وملحقات المتصفح",
+    "loading": { "title": "جاري تحميل الإضافات...", "description": "جلب المثبتة" },
+    "errors": { "title": "خطأ في الإضافة", "loadFailed": "فشل تحميل الإضافات" },
+    "tabs": { "installed": "مثبتة", "webstore": "متجر الويب", "install": "تثبيت", "settings": "الإعدادات" },
+    "actions": { "enable": "تفعيل", "disable": "تعطيل", "uninstall": "إلغاء التثبيت", "install": "تثبيت" }
+  },
+  "help": {
+    "title": "مركز المساعدة",
+    "subtitle": "التوثيق والدعم",
+    "sections": { "documentation": "التوثيق", "tutorials": "دروس فيديو", "community": "المجتمع", "support": "اتصل بالدعم" }
+  },
+  "monitoring": {
+    "title": "مراقبة المواقع",
+    "subtitle": "مراقبة وقت التشغيل والأداء للمواقع",
+    "loading": { "title": "جاري تحميل المراقبة...", "description": "جلب المواقع المراقبة" },
+    "errors": { "title": "خطأ في المراقبة", "loadFailed": "فشل تحميل البيانات" }
+  },
+  "dataSources": {
+    "title": "مصادر البيانات",
+    "subtitle": "توصيل وإدارة مصادر البيانات الخارجية",
+    "loading": { "title": "جاري تحميل المصادر...", "description": "جلب الاتصالات" },
+    "errors": { "title": "خطأ في مصدر البيانات", "loadFailed": "فشل تحميل المصادر" },
+    "empty": { "title": "لا توجد مصادر", "description": "قم بتوصيل مصدر بياناتك الأول." },
+    "types": { "database": "قاعدة بيانات", "api": "API", "file": "ملف", "cloud": "سحابة" }
+  },
+  "integration": {
+    "title": "مركز التكامل",
+    "subtitle": "إدارة التكامل بين الوحدات",
+    "loading": { "title": "جاري تحميل التكاملات...", "description": "جلب الاتصالات" }
+  },
+  "workspace": {
+    "title": "مساحة العمل",
+    "subtitle": "إدارة المشاريع بالألواح والعروض والأتمتة",
+    "loading": { "title": "جاري تحميل المساحة...", "description": "جلب الألواح والمشاريع" },
+    "errors": { "title": "خطأ في المساحة", "loadFailed": "فشل تحميل المساحة" },
+    "views": { "table": "جدول", "kanban": "كانبان", "timeline": "خط زمني", "chart": "رسم بياني" }
+  },
+  "admin": {
+    "title": "لوحة الإدارة",
+    "subtitle": "إدارة وتكوين النظام",
+    "loading": { "title": "جاري تحميل الإدارة...", "description": "جلب إعدادات النظام" }
+  },
+  "search": {
+    "title": "بحث الذكاء الاصطناعي",
+    "subtitle": "بحث ذكي مدعوم بالذكاء الاصطناعي",
+    "loading": { "title": "جاري تحميل البحث...", "description": "تهيئة محرك البحث" }
+  },
+  "p2p": {
+    "title": "نقل P2P",
+    "subtitle": "مشاركة الملفات والتعاون نظير لنظير",
+    "loading": { "title": "جاري تحميل P2P...", "description": "تهيئة شبكة الأقران" },
+    "errors": { "title": "خطأ P2P", "loadFailed": "فشل الاتصال بشبكة الأقران" },
+    "actions": { "createRoom": "إنشاء غرفة", "joinRoom": "انضمام", "shareFiles": "مشاركة الملفات", "disconnect": "قطع" }
+  },
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "مرحباً بك في CUBE Nexum",
+        "description": "أقوى منصة لأتمتة المتصفح"
+      },
+      "profile": {
+        "title": "أنشئ ملفك الشخصي",
+        "description": "أخبرنا قليلاً عن نفسك"
+      },
+      "useCase": {
+        "title": "حالة الاستخدام الخاصة بك",
+        "description": "ساعدنا في تخصيص تجربتك"
+      },
+      "features": {
+        "title": "اختر الميزات",
+        "description": "حدد الأدوات التي تريد استخدامها"
+      },
+      "browserSetup": {
+        "title": "إعداد المتصفح",
+        "description": "قم بتكوين تفضيلات المتصفح الخاصة بك"
+      },
+      "extension": {
+        "title": "تثبيت الإضافة",
+        "description": "احصل على إضافة Chrome للميزات المحسنة"
+      },
+      "security": {
+        "title": "إعداد الأمان",
+        "description": "احمِ بياناتك بالتشفير"
+      },
+      "notifications": {
+        "title": "الإشعارات",
+        "description": "ابقَ على اطلاع بما يهم"
+      },
+      "tour": {
+        "title": "جولة سريعة",
+        "description": "تعلم الأساسيات في دقيقتين"
+      },
+      "complete": {
+        "title": "كل شيء جاهز!",
+        "description": "أنت مستعد لبدء الأتمتة"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "title": "الاستخدام الشخصي",
+        "description": "ملء النماذج، حفظ كلمات المرور، أتمتة المهام اليومية"
+      },
+      "business": {
+        "title": "الأعمال",
+        "description": "أتمتة المؤسسات، تعاون الفريق، تكامل CRM"
+      },
+      "developer": {
+        "title": "المطور",
+        "description": "اختبار API، استخراج الويب، أتمتة سير العمل"
+      },
+      "dataAnalyst": {
+        "title": "محلل البيانات",
+        "description": "استخراج البيانات، استخراج الويب، إنشاء التقارير"
+      },
+      "marketing": {
+        "title": "التسويق",
+        "description": "أتمتة وسائل التواصل الاجتماعي، توليد العملاء المحتملين، التحليلات"
+      },
+      "research": {
+        "title": "البحث",
+        "description": "جمع البيانات، تحليل المحتوى، الأرشفة"
+      }
+    },
+    "featureTours": {
+      "autofillBasics": {
+        "name": "أساسيات الملء التلقائي",
+        "description": "تعلم كيفية إنشاء واستخدام ملفات تعريف الملء التلقائي",
+        "steps": {
+          "createProfile": {
+            "title": "إنشاء ملف تعريف",
+            "description": "انقر هنا لإنشاء أول ملف تعريف للملء التلقائي"
+          },
+          "fillDetails": {
+            "title": "املأ التفاصيل",
+            "description": "أدخل معلوماتك. سنستخدمها لملء النماذج تلقائياً."
+          },
+          "saveProfile": {
+            "title": "حفظ الملف الشخصي",
+            "description": "احفظ ملفك الشخصي وابدأ بملء النماذج تلقائياً!"
+          }
+        }
+      },
+      "automationBasics": {
+        "name": "أساسيات الأتمتة",
+        "description": "أنشئ أول سير عمل لك",
+        "steps": {
+          "createWorkflow": {
+            "title": "إنشاء سير العمل",
+            "description": "انقر لبدء بناء سير عمل أتمتة جديد"
+          },
+          "addNodes": {
+            "title": "إضافة العقد",
+            "description": "اسحب العقد من هنا لبناء سير العمل الخاص بك"
+          },
+          "connectNodes": {
+            "title": "توصيل العقد",
+            "description": "قم بتوصيل العقد بالسحب من مقبض إلى آخر"
+          },
+          "runWorkflow": {
+            "title": "تشغيل سير العمل",
+            "description": "انقر لتنفيذ سير العمل الخاص بك"
+          }
+        }
+      },
+      "passwordVault": {
+        "name": "خزنة كلمات المرور",
+        "description": "خزّن كلمات مرورك بأمان",
+        "steps": {
+          "addCredential": {
+            "title": "إضافة بيانات الاعتماد",
+            "description": "خزّن بيانات اعتماد تسجيل دخول جديدة"
+          },
+          "generatePassword": {
+            "title": "إنشاء كلمة مرور",
+            "description": "أنشئ كلمة مرور قوية وفريدة فوراً"
+          },
+          "securitySettings": {
+            "title": "إعدادات الأمان",
+            "description": "قم بتكوين التشفير والقفل التلقائي"
+          }
+        }
+      },
+      "aiAssistant": {
+        "name": "مساعد الذكاء الاصطناعي",
+        "description": "احصل على مساعدة من الذكاء الاصطناعي",
+        "steps": {
+          "askAI": {
+            "title": "اسأل الذكاء الاصطناعي",
+            "description": "اكتب سؤالك أو صف ما تريد أتمتته"
+          },
+          "suggestions": {
+            "title": "اقتراحات الذكاء الاصطناعي",
+            "description": "سيحلل الذكاء الاصطناعي ويقترح الإجراءات"
+          },
+          "apply": {
+            "title": "تطبيق التغييرات",
+            "description": "راجع وطبق الحلول المولدة من الذكاء الاصطناعي"
+          }
+        }
+      }
+    }
+  }
+}

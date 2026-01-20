@@ -1,0 +1,19 @@
+# CUBE Browser - Railway Configuration
+# Build service for creating DMG/EXE/AppImage releases
+# Uses Railway Pro with 32GB RAM
+
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile.build"
+buildCommand = ""
+
+[deploy]
+# No deploy - this is a build-only service
+numReplicas = 0
+startCommand = "echo 'Build artifacts available in /app/dist'"
+
+[env]
+NODE_ENV = "production"
+RUST_BACKTRACE = "1"
+CARGO_TERM_COLOR = "always"
+CEF_PATH = "/root/.local/share/cef"

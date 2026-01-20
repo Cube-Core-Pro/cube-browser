@@ -1,0 +1,76 @@
+/* ==========================================================================
+   AI Floating Chat Complete Styles
+   ========================================================================== */
+
+/* Floating button - position controlled via CSS custom properties */
+.ai-floating-button {
+  position: fixed;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  background: linear-gradient(to bottom right, rgb(124, 58, 237), rgb(147, 51, 234), rgb(99, 102, 241));
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  left: var(--floating-x, 20px);
+  top: var(--floating-y, calc(100vh - 100px));
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.ai-floating-button:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  background: linear-gradient(to bottom right, rgb(139, 92, 246), rgb(168, 85, 247), rgb(129, 140, 248));
+  transform: translateZ(0) scale(1.1);
+}
+
+.ai-floating-button--dragging {
+  cursor: grabbing;
+  transform: translateZ(0) scale(1.1);
+  transition: none;
+}
+
+.ai-floating-button--idle {
+  cursor: grab;
+}
+
+/* Floating chat window */
+.ai-floating-window {
+  position: fixed;
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 300ms ease-out;
+}
+
+.ai-floating-window--normal {
+  height: 700px;
+  width: 480px;
+  right: 24px;
+  bottom: 24px;
+}
+
+.ai-floating-window--minimized {
+  height: 3.5rem;
+  width: 24rem;
+  right: 24px;
+  bottom: 24px;
+}
+
+.ai-floating-window--maximized {
+  inset: 1rem;
+}

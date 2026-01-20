@@ -1,0 +1,48 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "CUBE Nexum",
+  "version": "0.1.0",
+  "identifier": "tools.cubeai.nexum",
+  "build": {
+    "frontendDist": "../out",
+    "devUrl": "http://localhost:3002",
+    "beforeDevCommand": "cp .env.tauri .env.local && npm run dev",
+    "beforeBuildCommand": "cp .env.tauri .env.local && npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "CUBE Nexum - Enterprise Browser",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 1024,
+        "minHeight": 768,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "transparent": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; connect-src 'self' https: wss: ws:; font-src 'self' data:; media-src 'self' https: blob:;",
+      "dangerousDisableAssetCspModification": false
+    },
+    "withGlobalTauri": true
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": [
+      "browser/**/*"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

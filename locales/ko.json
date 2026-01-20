@@ -1,0 +1,1554 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "save": "저장",
+    "cancel": "취소",
+    "delete": "삭제",
+    "edit": "편집",
+    "add": "추가",
+    "search": "검색",
+    "filter": "필터",
+    "sort": "정렬",
+    "refresh": "새로고침",
+    "close": "닫기",
+    "back": "뒤로",
+    "next": "다음",
+    "previous": "이전",
+    "submit": "제출",
+    "confirm": "확인",
+    "yes": "예",
+    "no": "아니오",
+    "ok": "확인",
+    "settings": "설정",
+    "help": "도움말",
+    "about": "정보",
+    "logout": "로그아웃",
+    "login": "로그인",
+    "username": "사용자명",
+    "password": "비밀번호",
+    "email": "이메일",
+    "name": "이름",
+    "description": "설명",
+    "date": "날짜",
+    "time": "시간",
+    "status": "상태",
+    "actions": "작업",
+    "more": "더보기",
+    "less": "접기",
+    "all": "전체",
+    "none": "없음",
+    "select": "선택",
+    "selected": "선택됨",
+    "noData": "데이터가 없습니다",
+    "noResults": "결과가 없습니다",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "download": "다운로드",
+    "upload": "업로드",
+    "import": "가져오기",
+    "export": "내보내기",
+    "clear": "지우기",
+    "reset": "초기화",
+    "apply": "적용",
+    "enabled": "활성화",
+    "disabled": "비활성화",
+    "active": "활성",
+    "inactive": "비활성",
+    "online": "온라인",
+    "offline": "오프라인",
+    "connected": "연결됨",
+    "disconnected": "연결 끊김"
+  },
+  "navigation": {
+    "home": "홈",
+    "dashboard": "대시보드",
+    "browser": "브라우저",
+    "passwordManager": "비밀번호 관리자",
+    "collections": "컬렉션",
+    "readingList": "읽기 목록",
+    "mediaPlayer": "미디어 플레이어",
+    "terminal": "터미널",
+    "downloads": "다운로드",
+    "automation": "자동화",
+    "settings": "설정",
+    "tools": "도구",
+    "communications": "커뮤니케이션"
+  },
+  "browser": {
+    "newTab": "새 탭",
+    "tabs": "탭",
+    "history": "방문 기록",
+    "bookmarks": "북마크",
+    "extensions": "확장 프로그램",
+    "addressBar": "URL 입력 또는 검색",
+    "reload": "새로고침",
+    "stop": "중지",
+    "forward": "앞으로",
+    "back": "뒤로",
+    "zoomIn": "확대",
+    "zoomOut": "축소",
+    "fullscreen": "전체 화면",
+    "print": "인쇄",
+    "developer": "개발자 도구",
+    "incognito": "시크릿 모드",
+    "clearData": "인터넷 사용 기록 삭제"
+  },
+  "passwordManager": {
+    "title": "비밀번호 관리자",
+    "vaultLocked": "금고 잠김",
+    "unlockVault": "금고 잠금 해제",
+    "createVault": "금고 만들기",
+    "masterPassword": "마스터 비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "addPassword": "비밀번호 추가",
+    "editPassword": "비밀번호 편집",
+    "generatePassword": "비밀번호 생성",
+    "passwordStrength": "강도",
+    "weak": "약함",
+    "fair": "보통",
+    "good": "좋음",
+    "strong": "강함",
+    "veryStrong": "매우 강함",
+    "website": "웹사이트",
+    "username": "사용자명",
+    "notes": "메모",
+    "category": "카테고리",
+    "favorites": "즐겨찾기",
+    "allItems": "전체",
+    "recentlyUsed": "최근 사용",
+    "searchPasswords": "비밀번호 검색...",
+    "copyPassword": "비밀번호 복사",
+    "copyUsername": "사용자명 복사",
+    "showPassword": "비밀번호 표시",
+    "hidePassword": "비밀번호 숨기기",
+    "passwordCopied": "비밀번호 복사됨",
+    "usernameCopied": "사용자명 복사됨",
+    "autoFill": "자동 완성",
+    "securityReport": "보안 보고서",
+    "exportVault": "금고 내보내기",
+    "importPasswords": "비밀번호 가져오기",
+    "categories": {
+      "login": "로그인",
+      "creditCard": "신용카드",
+      "identity": "신원",
+      "secureNote": "보안 메모",
+      "socialMedia": "소셜 미디어",
+      "banking": "은행",
+      "email": "이메일",
+      "work": "업무",
+      "shopping": "쇼핑",
+      "entertainment": "엔터테인먼트"
+    }
+  },
+  "collections": {
+    "title": "컬렉션",
+    "newCollection": "새 컬렉션",
+    "editCollection": "컬렉션 편집",
+    "deleteCollection": "컬렉션 삭제",
+    "addPage": "페이지 추가",
+    "addLink": "링크 추가",
+    "searchCollections": "컬렉션 검색...",
+    "emptyCollection": "이 컬렉션은 비어 있습니다",
+    "collectionName": "이름",
+    "collectionDescription": "설명",
+    "color": "색상",
+    "icon": "아이콘",
+    "pages": "페이지",
+    "links": "링크",
+    "items": "항목",
+    "lastModified": "마지막 수정",
+    "createdAt": "생성일",
+    "sortBy": "정렬 기준",
+    "viewAs": "보기 형식",
+    "grid": "그리드",
+    "list": "목록"
+  },
+  "readingList": {
+    "title": "읽기 목록",
+    "addArticle": "기사 추가",
+    "removeArticle": "기사 삭제",
+    "markAsRead": "읽음으로 표시",
+    "markAsUnread": "읽지 않음으로 표시",
+    "archive": "보관",
+    "unarchive": "보관 취소",
+    "searchArticles": "기사 검색...",
+    "unread": "읽지 않음",
+    "read": "읽음",
+    "archived": "보관됨",
+    "all": "전체",
+    "estimatedReadTime": "예상 읽기 시간",
+    "minutes": "분",
+    "addedOn": "추가된 날짜",
+    "source": "출처",
+    "tags": "태그",
+    "addTag": "태그 추가",
+    "emptyReadingList": "읽기 목록이 비어 있습니다"
+  },
+  "mediaPlayer": {
+    "title": "미디어 플레이어",
+    "nowPlaying": "지금 재생 중",
+    "queue": "대기열",
+    "playlist": "재생목록",
+    "playlists": "재생목록",
+    "newPlaylist": "새 재생목록",
+    "addToPlaylist": "재생목록에 추가",
+    "removeFromPlaylist": "재생목록에서 삭제",
+    "play": "재생",
+    "pause": "일시정지",
+    "stop": "중지",
+    "previous": "이전",
+    "next": "다음",
+    "shuffle": "셔플",
+    "repeat": "반복",
+    "repeatOne": "한 곡 반복",
+    "repeatAll": "전체 반복",
+    "volume": "볼륨",
+    "mute": "음소거",
+    "unmute": "음소거 해제",
+    "fullscreen": "전체 화면",
+    "subtitles": "자막",
+    "audioTrack": "오디오 트랙",
+    "playbackSpeed": "재생 속도",
+    "equalizer": "이퀄라이저",
+    "visualizer": "비주얼라이저",
+    "openFile": "파일 열기",
+    "openFolder": "폴더 열기",
+    "addToQueue": "대기열에 추가",
+    "clearQueue": "대기열 비우기",
+    "artist": "아티스트",
+    "album": "앨범",
+    "genre": "장르",
+    "duration": "재생시간",
+    "bitrate": "비트레이트",
+    "sampleRate": "샘플레이트",
+    "channels": "채널"
+  },
+  "terminal": {
+    "title": "터미널",
+    "newTerminal": "새 터미널",
+    "closeTerminal": "터미널 닫기",
+    "splitHorizontal": "수평 분할",
+    "splitVertical": "수직 분할",
+    "clear": "지우기",
+    "copy": "복사",
+    "paste": "붙여넣기",
+    "selectAll": "전체 선택",
+    "find": "찾기",
+    "shell": "셸",
+    "fontSize": "글꼴 크기",
+    "fontFamily": "글꼴",
+    "theme": "테마",
+    "cursorStyle": "커서 스타일",
+    "scrollback": "스크롤백 라인",
+    "commandHistory": "명령 기록",
+    "themes": {
+      "dark": "다크",
+      "light": "라이트",
+      "monokai": "Monokai",
+      "dracula": "Dracula",
+      "solarized": "Solarized"
+    }
+  },
+  "downloads": {
+    "title": "다운로드",
+    "activeDownloads": "활성",
+    "completedDownloads": "완료",
+    "pausedDownloads": "일시정지",
+    "failedDownloads": "실패",
+    "allDownloads": "전체",
+    "addDownload": "다운로드 추가",
+    "pauseDownload": "일시정지",
+    "resumeDownload": "재개",
+    "cancelDownload": "취소",
+    "retryDownload": "다시 시도",
+    "removeDownload": "삭제",
+    "clearCompleted": "완료 항목 삭제",
+    "openFile": "파일 열기",
+    "openFolder": "폴더 열기",
+    "copyLink": "링크 복사",
+    "downloadSpeed": "다운로드 속도",
+    "uploadSpeed": "업로드 속도",
+    "progress": "진행률",
+    "timeRemaining": "남은 시간",
+    "destination": "저장 위치",
+    "fileName": "파일명",
+    "fileSize": "크기",
+    "downloaded": "다운로드됨",
+    "startTime": "시작 시간",
+    "endTime": "종료 시간"
+  },
+  "automation": {
+    "title": "자동화",
+    "newWorkflow": "새 워크플로우",
+    "editWorkflow": "워크플로우 편집",
+    "runWorkflow": "워크플로우 실행",
+    "stopWorkflow": "워크플로우 중지",
+    "saveWorkflow": "워크플로우 저장",
+    "deleteWorkflow": "워크플로우 삭제",
+    "duplicateWorkflow": "워크플로우 복제",
+    "importWorkflow": "워크플로우 가져오기",
+    "exportWorkflow": "워크플로우 내보내기",
+    "workflowName": "워크플로우 이름",
+    "workflowDescription": "설명",
+    "triggers": "트리거",
+    "actions": "작업",
+    "conditions": "조건",
+    "variables": "변수",
+    "logs": "로그",
+    "history": "기록",
+    "schedule": "예약",
+    "enabled": "활성화",
+    "disabled": "비활성화",
+    "running": "실행 중",
+    "completed": "완료",
+    "failed": "실패",
+    "paused": "일시정지",
+    "nodes": {
+      "click": "클릭",
+      "type": "텍스트 입력",
+      "navigate": "이동",
+      "wait": "대기",
+      "screenshot": "스크린샷",
+      "extract": "데이터 추출",
+      "condition": "조건",
+      "loop": "반복",
+      "script": "커스텀 스크립트"
+    }
+  },
+  "settings": {
+    "title": "설정",
+    "general": "일반",
+    "appearance": "외관",
+    "privacy": "개인정보 및 보안",
+    "notifications": "알림",
+    "language": "언어",
+    "languages": {
+      "en": "영어",
+      "es": "스페인어",
+      "pt": "포르투갈어",
+      "it": "이탈리아어",
+      "de": "독일어",
+      "fr": "프랑스어",
+      "tr": "터키어",
+      "zh": "중국어",
+      "ja": "일본어",
+      "ko": "한국어",
+      "ar": "아랍어",
+      "ru": "러시아어"
+    },
+    "theme": "테마",
+    "themes": {
+      "light": "라이트",
+      "dark": "다크",
+      "system": "시스템"
+    },
+    "accentColor": "강조 색상",
+    "fontSize": "글꼴 크기",
+    "startPage": "시작 페이지",
+    "defaultDownloadLocation": "다운로드 위치",
+    "clearBrowsingData": "인터넷 사용 기록 삭제",
+    "importData": "데이터 가져오기",
+    "exportData": "데이터 내보내기",
+    "resetSettings": "설정 초기화",
+    "autoUpdate": "자동 업데이트",
+    "checkForUpdates": "업데이트 확인",
+    "version": "버전",
+    "licenses": "라이선스",
+    "feedback": "피드백 보내기",
+    "account": "계정"
+  },
+  "account": {
+    "title": "계정 설정",
+    "profile": "프로필",
+    "profileInfo": "프로필 정보",
+    "firstName": "이름",
+    "lastName": "성",
+    "displayName": "표시 이름",
+    "email": "이메일",
+    "phone": "전화번호",
+    "company": "회사",
+    "role": "직책",
+    "timezone": "시간대",
+    "bio": "자기소개",
+    "avatar": "프로필 사진",
+    "uploadAvatar": "사진 업로드",
+    "removeAvatar": "사진 삭제",
+    "dragDropAvatar": "이미지를 끌어서 놓거나 클릭하여 업로드",
+    "avatarFormats": "JPG, PNG 또는 GIF. 최대 5MB",
+    "billingAddress": "청구 주소",
+    "streetAddress": "주소",
+    "addressLine2": "상세 주소",
+    "city": "도시",
+    "state": "시/도",
+    "postalCode": "우편번호",
+    "country": "국가",
+    "vatNumber": "사업자 등록번호",
+    "preferences": "환경설정",
+    "communicationPrefs": "커뮤니케이션 설정",
+    "emailNotifications": "이메일 알림",
+    "smsNotifications": "SMS 알림",
+    "marketingEmails": "마케팅 이메일",
+    "productUpdates": "제품 업데이트",
+    "securityAlerts": "보안 알림",
+    "billingHistory": "결제 내역",
+    "viewAllInvoices": "모든 청구서 보기",
+    "invoice": "청구서",
+    "paid": "결제 완료",
+    "pending": "보류 중",
+    "failed": "실패",
+    "saveChanges": "변경 사항 저장",
+    "changesSaved": "변경 사항이 저장되었습니다",
+    "changePassword": "비밀번호 변경",
+    "deleteAccount": "계정 삭제",
+    "accountSecurity": "계정 보안",
+    "twoFactorAuth": "2단계 인증",
+    "connectedDevices": "연결된 기기",
+    "activeSessions": "활성 세션"
+  },
+  "admin": {
+    "title": "관리자 패널",
+    "dashboard": "대시보드",
+    "overview": "개요",
+    "sales": "판매",
+    "licenses": "라이선스",
+    "downloads": "다운로드",
+    "users": "사용자",
+    "apiKeys": "API 키",
+    "services": "서비스",
+    "analytics": "분석",
+    "logs": "로그",
+    "settings": "설정",
+    "totalRevenue": "총 수익",
+    "totalUsers": "총 사용자",
+    "activeLicenses": "활성 라이선스",
+    "totalDownloads": "총 다운로드",
+    "recentSales": "최근 판매",
+    "customer": "고객",
+    "product": "제품",
+    "amount": "금액",
+    "status": "상태",
+    "date": "날짜",
+    "completed": "완료",
+    "pending": "보류 중",
+    "refunded": "환불됨",
+    "licenseKey": "라이선스 키",
+    "licensePlan": "플랜",
+    "licenseStatus": "상태",
+    "devices": "기기",
+    "expiresAt": "만료일",
+    "active": "활성",
+    "expired": "만료됨",
+    "revoked": "취소됨",
+    "suspended": "정지됨",
+    "downloadStats": "다운로드 통계",
+    "platformDistribution": "플랫폼 분포",
+    "recentDownloads": "최근 다운로드",
+    "version": "버전",
+    "platform": "플랫폼",
+    "downloadDate": "다운로드 날짜"
+  },
+  "updates": {
+    "title": "업데이트 및 동기화",
+    "checkForUpdates": "업데이트 확인",
+    "checking": "확인 중...",
+    "downloading": "다운로드 중...",
+    "installing": "설치 중...",
+    "currentVersion": "현재 버전",
+    "latestVersion": "최신 버전",
+    "updateAvailable": "업데이트 가능",
+    "upToDate": "최신 상태",
+    "downloadUpdate": "업데이트 다운로드",
+    "installUpdate": "설치 및 재시작",
+    "viewReleaseNotes": "릴리스 노트 보기",
+    "lastChecked": "마지막 확인",
+    "releaseDate": "릴리스 날짜",
+    "size": "크기",
+    "autoCheck": "자동으로 업데이트 확인",
+    "autoDownload": "자동으로 업데이트 다운로드",
+    "installOnExit": "종료 시 설치",
+    "checkInterval": "확인 간격",
+    "hourly": "매시간",
+    "daily": "매일",
+    "weekly": "매주",
+    "manual": "수동만",
+    "updateChannel": "업데이트 채널",
+    "stable": "안정",
+    "beta": "베타",
+    "nightly": "나이틀리",
+    "updateHistory": "업데이트 기록",
+    "whatsNew": "새로운 기능"
+  },
+  "cloudSync": {
+    "title": "클라우드 동기화",
+    "connected": "연결됨",
+    "disconnected": "연결 안 됨",
+    "syncNow": "지금 동기화",
+    "syncing": "동기화 중...",
+    "lastSync": "마지막 동기화",
+    "pendingChanges": "보류 중인 변경사항",
+    "signInPrompt": "로그인하여 기기 간 설정을 동기화하세요",
+    "signIn": "로그인",
+    "syncEnabled": "동기화 활성화",
+    "syncEnabledDesc": "기기 간 데이터 동기화 유지",
+    "syncOnStartup": "시작 시 동기화",
+    "syncOnStartupDesc": "앱 시작 시 자동 동기화",
+    "syncFrequency": "동기화 빈도",
+    "realtime": "실시간",
+    "everyFiveMin": "5분마다",
+    "everyFifteenMin": "15분마다",
+    "everyThirtyMin": "30분마다",
+    "dataToSync": "동기화할 데이터",
+    "settings": "설정",
+    "passwords": "비밀번호",
+    "bookmarks": "북마크",
+    "collections": "컬렉션",
+    "macros": "매크로",
+    "workflows": "워크플로우",
+    "themes": "테마",
+    "extensions": "확장 프로그램",
+    "onlineAccount": "온라인 계정",
+    "accountSettings": "계정 설정",
+    "billingSubscription": "결제 및 구독",
+    "upgradePlan": "플랜 업그레이드"
+  },
+  "devices": {
+    "title": "연결된 기기",
+    "description": "계정에 동기화된 기기 관리",
+    "noDevices": "연결된 기기 없음",
+    "noDevicesDesc": "다른 기기에서 로그인하면 여기에 표시됩니다",
+    "thisDevice": "이 기기",
+    "lastActive": "마지막 활동",
+    "remove": "삭제"
+  },
+  "backups": {
+    "title": "클라우드 백업",
+    "autoBackup": "자동 백업",
+    "autoBackupDesc": "자동으로 데이터 백업",
+    "backupFrequency": "백업 빈도",
+    "createNow": "지금 백업 만들기",
+    "yourBackups": "내 백업",
+    "noBackups": "아직 백업 없음",
+    "noBackupsDesc": "데이터를 보호하기 위해 백업을 만드세요",
+    "restore": "복원",
+    "delete": "삭제"
+  },
+  "errors": {
+    "generic": "문제가 발생했습니다",
+    "networkError": "네트워크 오류. 연결을 확인하세요.",
+    "notFound": "찾을 수 없음",
+    "unauthorized": "인증되지 않음. 로그인하세요.",
+    "forbidden": "접근 거부",
+    "serverError": "서버 오류. 나중에 다시 시도하세요.",
+    "timeout": "시간 초과",
+    "invalidInput": "잘못된 입력",
+    "requiredField": "필수 항목입니다",
+    "invalidEmail": "잘못된 이메일",
+    "invalidUrl": "잘못된 URL",
+    "passwordMismatch": "비밀번호가 일치하지 않습니다",
+    "weakPassword": "비밀번호가 너무 약합니다",
+    "fileTooLarge": "파일이 너무 큽니다",
+    "invalidFileType": "잘못된 파일 형식",
+    "downloadFailed": "다운로드 실패",
+    "uploadFailed": "업로드 실패",
+    "saveFailed": "저장 실패",
+    "deleteFailed": "삭제 실패",
+    "loadFailed": "데이터 로드 실패"
+  },
+  "success": {
+    "saved": "저장되었습니다",
+    "deleted": "삭제되었습니다",
+    "updated": "업데이트되었습니다",
+    "copied": "클립보드에 복사됨",
+    "downloaded": "다운로드되었습니다",
+    "uploaded": "업로드되었습니다",
+    "imported": "가져오기 완료",
+    "exported": "내보내기 완료",
+    "passwordChanged": "비밀번호가 변경되었습니다",
+    "settingsSaved": "설정이 저장되었습니다"
+  },
+  "confirmations": {
+    "delete": "정말 삭제하시겠습니까?",
+    "deleteMultiple": "{count}개 항목을 삭제하시겠습니까?",
+    "discard": "저장하지 않은 변경사항을 버리시겠습니까?",
+    "logout": "정말 로그아웃하시겠습니까?",
+    "clearData": "모든 데이터가 영구적으로 삭제됩니다. 계속하시겠습니까?",
+    "reset": "모든 설정을 초기화하시겠습니까?"
+  },
+  "crm": {
+    "title": "기업용 CRM",
+    "subtitle": "고객 관계 관리",
+    "contacts": {
+      "title": "연락처",
+      "addContact": "연락처 추가",
+      "editContact": "연락처 편집",
+      "importContacts": "연락처 가져오기",
+      "exportContacts": "연락처 내보내기",
+      "firstName": "이름",
+      "lastName": "성",
+      "company": "회사",
+      "phone": "전화",
+      "mobile": "휴대폰",
+      "email": "이메일",
+      "address": "주소",
+      "city": "도시",
+      "state": "시/도",
+      "country": "국가",
+      "postalCode": "우편번호",
+      "notes": "메모",
+      "tags": "태그",
+      "source": "리드 출처",
+      "status": "상태",
+      "assignedTo": "담당자",
+      "lastContact": "마지막 연락",
+      "nextFollowUp": "다음 후속 조치",
+      "totalDeals": "총 거래",
+      "totalValue": "총 가치",
+      "duplicates": "중복 병합",
+      "segments": "세그먼트",
+      "customFields": "사용자 정의 필드"
+    },
+    "companies": {
+      "title": "회사",
+      "addCompany": "회사 추가",
+      "companyName": "회사명",
+      "industry": "산업",
+      "size": "회사 규모",
+      "revenue": "연간 매출",
+      "website": "웹사이트",
+      "employees": "직원 수",
+      "headquarters": "본사",
+      "founded": "설립",
+      "linkedContacts": "연결된 연락처"
+    },
+    "deals": {
+      "title": "거래",
+      "addDeal": "거래 추가",
+      "editDeal": "거래 편집",
+      "dealName": "거래명",
+      "value": "거래 가치",
+      "probability": "확률",
+      "expectedClose": "예상 마감일",
+      "actualClose": "실제 마감일",
+      "stage": "단계",
+      "pipeline": "파이프라인",
+      "wonDeals": "성사된 거래",
+      "lostDeals": "실패한 거래",
+      "openDeals": "진행 중인 거래",
+      "totalPipeline": "총 파이프라인 가치",
+      "weightedValue": "가중치 가치",
+      "lostReason": "실패 사유",
+      "competitor": "경쟁사",
+      "stages": {
+        "lead": "리드",
+        "qualified": "적격",
+        "proposal": "제안",
+        "negotiation": "협상",
+        "closed_won": "성사",
+        "closed_lost": "실패"
+      }
+    },
+    "pipeline": {
+      "title": "파이프라인",
+      "newPipeline": "새 파이프라인",
+      "editPipeline": "파이프라인 편집",
+      "stages": "단계",
+      "addStage": "단계 추가",
+      "stageName": "단계명",
+      "probability": "성사 확률",
+      "rottenDays": "정체 일수",
+      "kanban": "칸반 보기",
+      "list": "목록 보기",
+      "forecast": "예측"
+    },
+    "activities": {
+      "title": "활동",
+      "addActivity": "활동 추가",
+      "call": "전화",
+      "email": "이메일",
+      "meeting": "회의",
+      "task": "작업",
+      "note": "메모",
+      "deadline": "마감일",
+      "reminder": "알림",
+      "completed": "완료",
+      "pending": "보류 중",
+      "overdue": "기한 지남",
+      "todayTasks": "오늘의 작업",
+      "upcoming": "예정됨",
+      "history": "활동 기록"
+    },
+    "reports": {
+      "title": "보고서",
+      "salesReport": "판매 보고서",
+      "pipelineReport": "파이프라인 보고서",
+      "activityReport": "활동 보고서",
+      "winRate": "성사율",
+      "avgDealSize": "평균 거래 규모",
+      "avgSalesCycle": "평균 판매 주기",
+      "conversionRate": "전환율",
+      "revenueByMonth": "월별 매출",
+      "dealsByStage": "단계별 거래",
+      "topPerformers": "최고 성과자",
+      "lostReasons": "실패 사유",
+      "sourceAnalysis": "리드 출처 분석"
+    }
+  },
+  "marketing": {
+    "title": "마케팅 허브",
+    "subtitle": "올인원 마케팅 자동화",
+    "campaigns": {
+      "title": "캠페인",
+      "newCampaign": "새 캠페인",
+      "editCampaign": "캠페인 편집",
+      "campaignName": "캠페인명",
+      "type": "캠페인 유형",
+      "status": "상태",
+      "startDate": "시작일",
+      "endDate": "종료일",
+      "budget": "예산",
+      "spent": "지출",
+      "roi": "ROI",
+      "leads": "생성된 리드",
+      "conversions": "전환",
+      "types": {
+        "email": "이메일 캠페인",
+        "sms": "SMS 캠페인",
+        "social": "소셜 미디어",
+        "ads": "유료 광고",
+        "content": "콘텐츠 마케팅",
+        "event": "이벤트",
+        "webinar": "웨비나"
+      }
+    },
+    "email": {
+      "title": "이메일 마케팅",
+      "compose": "이메일 작성",
+      "templates": "이메일 템플릿",
+      "sequences": "이메일 시퀀스",
+      "broadcasts": "일괄 발송",
+      "subject": "제목",
+      "previewText": "미리보기 텍스트",
+      "fromName": "발신자명",
+      "fromEmail": "발신자 이메일",
+      "replyTo": "회신 주소",
+      "recipients": "수신자",
+      "schedule": "예약 발송",
+      "sendNow": "지금 보내기",
+      "testEmail": "테스트 발송",
+      "openRate": "오픈율",
+      "clickRate": "클릭률",
+      "bounceRate": "반송률",
+      "unsubscribeRate": "구독 취소율",
+      "delivered": "전달됨",
+      "opened": "열림",
+      "clicked": "클릭됨",
+      "replied": "회신됨"
+    },
+    "sms": {
+      "title": "SMS 마케팅",
+      "compose": "SMS 작성",
+      "templates": "SMS 템플릿",
+      "campaigns": "SMS 캠페인",
+      "sender": "발신자 ID",
+      "message": "메시지",
+      "characters": "문자",
+      "segments": "세그먼트",
+      "deliveryRate": "전달률",
+      "responseRate": "응답률",
+      "optOut": "수신 거부"
+    },
+    "landing": {
+      "title": "랜딩 페이지",
+      "newPage": "새 페이지",
+      "editPage": "페이지 편집",
+      "templates": "템플릿",
+      "pageName": "페이지명",
+      "slug": "URL 슬러그",
+      "publish": "게시",
+      "unpublish": "게시 취소",
+      "preview": "미리보기",
+      "duplicate": "복제",
+      "views": "조회수",
+      "conversions": "전환",
+      "conversionRate": "전환율",
+      "abTest": "A/B 테스트",
+      "variants": "변형",
+      "winner": "우승자"
+    },
+    "funnels": {
+      "title": "퍼널",
+      "newFunnel": "새 퍼널",
+      "editFunnel": "퍼널 편집",
+      "funnelName": "퍼널명",
+      "steps": "단계",
+      "addStep": "단계 추가",
+      "optIn": "옵트인 페이지",
+      "salesPage": "판매 페이지",
+      "checkout": "결제",
+      "upsell": "업셀",
+      "downsell": "다운셀",
+      "thankYou": "감사 페이지",
+      "entries": "진입",
+      "completions": "완료",
+      "dropoff": "이탈률"
+    },
+    "forms": {
+      "title": "양식",
+      "newForm": "새 양식",
+      "editForm": "양식 편집",
+      "formName": "양식명",
+      "fields": "필드",
+      "addField": "필드 추가",
+      "required": "필수",
+      "placeholder": "플레이스홀더",
+      "submissions": "제출",
+      "embed": "임베드 코드",
+      "popup": "팝업 양식",
+      "inline": "인라인 양식",
+      "fieldTypes": {
+        "text": "텍스트",
+        "email": "이메일",
+        "phone": "전화",
+        "select": "드롭다운",
+        "radio": "라디오 버튼",
+        "checkbox": "체크박스",
+        "textarea": "텍스트 영역",
+        "date": "날짜",
+        "file": "파일 업로드"
+      }
+    },
+    "automation": {
+      "title": "마케팅 자동화",
+      "workflows": "워크플로우",
+      "newWorkflow": "새 워크플로우",
+      "triggers": "트리거",
+      "actions": "작업",
+      "conditions": "조건",
+      "delays": "지연",
+      "active": "활성",
+      "paused": "일시정지",
+      "draft": "초안",
+      "enrolled": "등록됨",
+      "completed": "완료",
+      "triggerTypes": {
+        "formSubmit": "양식 제출",
+        "tagAdded": "태그 추가됨",
+        "tagRemoved": "태그 제거됨",
+        "listJoined": "목록 가입",
+        "linkClicked": "링크 클릭",
+        "emailOpened": "이메일 열림",
+        "pageVisited": "페이지 방문",
+        "dealCreated": "거래 생성됨",
+        "custom": "사용자 정의 이벤트"
+      }
+    },
+    "surveys": {
+      "title": "설문조사",
+      "newSurvey": "새 설문조사",
+      "questions": "질문",
+      "addQuestion": "질문 추가",
+      "responses": "응답",
+      "completionRate": "완료율",
+      "avgTime": "평균 시간",
+      "nps": "NPS 점수"
+    }
+  },
+  "calendar": {
+    "title": "캘린더",
+    "subtitle": "일정 및 예약",
+    "newEvent": "새 일정",
+    "editEvent": "일정 편집",
+    "eventTitle": "일정 제목",
+    "startTime": "시작 시간",
+    "endTime": "종료 시간",
+    "allDay": "종일",
+    "location": "위치",
+    "description": "설명",
+    "attendees": "참석자",
+    "reminder": "알림",
+    "recurring": "반복",
+    "color": "색상",
+    "views": {
+      "day": "일",
+      "week": "주",
+      "month": "월",
+      "agenda": "일정"
+    },
+    "booking": {
+      "title": "예약 링크",
+      "newLink": "새 예약 링크",
+      "linkName": "링크명",
+      "duration": "기간",
+      "availability": "가용성",
+      "buffer": "여유 시간",
+      "maxBookings": "일일 최대 예약",
+      "confirmationEmail": "확인 이메일",
+      "reminderEmail": "알림 이메일",
+      "customQuestions": "사용자 정의 질문",
+      "embed": "임베드 위젯"
+    }
+  },
+  "payments": {
+    "title": "결제",
+    "subtitle": "청구 및 수금",
+    "invoices": {
+      "title": "청구서",
+      "newInvoice": "새 청구서",
+      "invoiceNumber": "청구서 번호",
+      "issueDate": "발행일",
+      "dueDate": "만기일",
+      "items": "품목",
+      "subtotal": "소계",
+      "tax": "세금",
+      "discount": "할인",
+      "total": "합계",
+      "paid": "결제 완료",
+      "unpaid": "미결제",
+      "overdue": "연체",
+      "draft": "초안",
+      "send": "청구서 보내기",
+      "markPaid": "결제 완료로 표시",
+      "recordPayment": "결제 기록"
+    },
+    "products": {
+      "title": "제품",
+      "newProduct": "새 제품",
+      "productName": "제품명",
+      "price": "가격",
+      "recurring": "정기",
+      "oneTime": "일회성",
+      "subscription": "구독",
+      "billingCycle": "청구 주기",
+      "trialDays": "체험 기간",
+      "setupFee": "설치비"
+    },
+    "subscriptions": {
+      "title": "구독",
+      "active": "활성",
+      "cancelled": "취소됨",
+      "past_due": "연체",
+      "mrr": "월간 반복 매출",
+      "arr": "연간 반복 매출",
+      "churn": "이탈률",
+      "ltv": "고객 생애 가치"
+    }
+  },
+  "courses": {
+    "title": "강좌 및 멤버십",
+    "subtitle": "온라인 학습 플랫폼",
+    "newCourse": "새 강좌",
+    "editCourse": "강좌 편집",
+    "courseName": "강좌명",
+    "description": "설명",
+    "instructor": "강사",
+    "price": "가격",
+    "modules": "모듈",
+    "lessons": "레슨",
+    "addModule": "모듈 추가",
+    "addLesson": "레슨 추가",
+    "video": "비디오",
+    "audio": "오디오",
+    "text": "텍스트 콘텐츠",
+    "quiz": "퀴즈",
+    "assignment": "과제",
+    "certificate": "수료증",
+    "students": "학생",
+    "enrolled": "등록됨",
+    "completed": "완료",
+    "progress": "진행률",
+    "drip": "드립 콘텐츠",
+    "membership": {
+      "title": "멤버십",
+      "levels": "멤버십 레벨",
+      "access": "접근 규칙",
+      "members": "멤버",
+      "content": "보호된 콘텐츠"
+    }
+  },
+  "social": {
+    "title": "소셜 허브",
+    "subtitle": "소셜 미디어 커맨드 센터",
+    "accounts": "연결된 계정",
+    "connectAccount": "계정 연결",
+    "platforms": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter/X",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "pinterest": "Pinterest",
+      "threads": "Threads"
+    },
+    "posts": {
+      "title": "게시물",
+      "newPost": "새 게시물",
+      "schedule": "게시 예약",
+      "draft": "초안으로 저장",
+      "publish": "지금 게시",
+      "caption": "캡션",
+      "media": "미디어",
+      "hashtags": "해시태그",
+      "mentions": "멘션",
+      "scheduled": "예약됨",
+      "published": "게시됨",
+      "failed": "실패"
+    },
+    "analytics": {
+      "title": "분석",
+      "followers": "팔로워",
+      "following": "팔로잉",
+      "engagement": "참여율",
+      "reach": "도달",
+      "impressions": "노출",
+      "likes": "좋아요",
+      "comments": "댓글",
+      "shares": "공유",
+      "saves": "저장",
+      "clicks": "클릭",
+      "growth": "성장",
+      "bestTime": "최적 게시 시간",
+      "topPosts": "인기 게시물"
+    },
+    "video": {
+      "title": "비디오 크리에이터",
+      "newVideo": "비디오 만들기",
+      "templates": "템플릿",
+      "scenes": "장면",
+      "addScene": "장면 추가",
+      "text": "오버레이 텍스트",
+      "music": "배경 음악",
+      "voiceover": "내레이션",
+      "transitions": "전환",
+      "effects": "효과",
+      "aspectRatio": "화면 비율",
+      "duration": "길이",
+      "export": "비디오 내보내기",
+      "formats": {
+        "reels": "Instagram 릴스",
+        "shorts": "YouTube Shorts",
+        "tiktok": "TikTok",
+        "story": "스토리"
+      }
+    },
+    "viral": {
+      "title": "바이럴 분석",
+      "trendScore": "트렌드 점수",
+      "viralPotential": "바이럴 잠재력",
+      "optimalTiming": "최적 타이밍",
+      "hashtagAnalysis": "해시태그 분석",
+      "competitorAnalysis": "경쟁사 분석",
+      "contentSuggestions": "콘텐츠 제안",
+      "trendingTopics": "트렌딩 토픽",
+      "audienceInsights": "오디언스 인사이트"
+    },
+    "inbox": {
+      "title": "통합 인박스",
+      "messages": "메시지",
+      "comments": "댓글",
+      "mentions": "멘션",
+      "reply": "답장",
+      "archive": "보관",
+      "unread": "읽지 않음",
+      "starred": "별표",
+      "assigned": "나에게 할당됨"
+    }
+  },
+  "aiSearch": {
+    "title": "AI 검색 엔진",
+    "subtitle": "AI 기반 스마트 검색",
+    "searchPlaceholder": "무엇이든 물어보세요...",
+    "webSearch": "웹 검색",
+    "deepResearch": "심층 연구",
+    "imageSearch": "이미지 검색",
+    "videoSearch": "비디오 검색",
+    "newsSearch": "뉴스 검색",
+    "academicSearch": "학술 검색",
+    "sources": "출처",
+    "citations": "인용",
+    "summary": "AI 요약",
+    "relatedQuestions": "관련 질문",
+    "filters": "검색 필터",
+    "dateRange": "날짜 범위",
+    "region": "지역",
+    "language": "언어",
+    "safeSearch": "세이프 서치",
+    "searchHistory": "검색 기록",
+    "savedSearches": "저장된 검색",
+    "modes": {
+      "quick": "빠른 답변",
+      "comprehensive": "포괄적",
+      "creative": "창의적",
+      "precise": "정확한"
+    }
+  },
+  "intelligence": {
+    "title": "인텔리전스 센터",
+    "subtitle": "심층 연구 및 분석",
+    "newResearch": "새 연구",
+    "researchTopic": "연구 주제",
+    "sources": "출처",
+    "analysis": "분석",
+    "report": "보고서",
+    "timeline": "타임라인",
+    "entities": "엔티티",
+    "relationships": "관계",
+    "sentiment": "감성 분석",
+    "trends": "트렌드 분석",
+    "factCheck": "팩트 체크",
+    "citations": "인용",
+    "exportReport": "보고서 내보내기",
+    "collaborate": "협업",
+    "categories": {
+      "market": "시장 조사",
+      "competitive": "경쟁사 분석",
+      "technical": "기술 연구",
+      "academic": "학술 연구",
+      "news": "뉴스 인텔리전스",
+      "social": "소셜 리스닝"
+    }
+  },
+  "support": {
+    "title": "지원 센터",
+    "subtitle": "헬프데스크 및 티켓",
+    "tickets": {
+      "title": "티켓",
+      "newTicket": "새 티켓",
+      "subject": "제목",
+      "priority": "우선순위",
+      "status": "상태",
+      "assignee": "담당자",
+      "requester": "요청자",
+      "created": "생성됨",
+      "updated": "마지막 업데이트",
+      "resolved": "해결됨",
+      "firstResponse": "첫 응답 시간",
+      "priorities": {
+        "low": "낮음",
+        "medium": "보통",
+        "high": "높음",
+        "urgent": "긴급"
+      },
+      "statuses": {
+        "open": "열림",
+        "pending": "보류 중",
+        "in_progress": "진행 중",
+        "resolved": "해결됨",
+        "closed": "닫힘"
+      }
+    },
+    "knowledgeBase": {
+      "title": "지식 베이스",
+      "articles": "문서",
+      "categories": "카테고리",
+      "newArticle": "새 문서",
+      "views": "조회수",
+      "helpful": "도움이 되었나요?",
+      "search": "지식 베이스 검색..."
+    },
+    "chat": {
+      "title": "실시간 채팅",
+      "online": "온라인",
+      "offline": "오프라인",
+      "typing": "입력 중...",
+      "send": "보내기",
+      "transcript": "채팅 기록",
+      "rating": "이 대화 평가",
+      "cannedResponses": "템플릿 응답"
+    }
+  },
+  "whiteLabel": {
+    "title": "화이트 라벨",
+    "subtitle": "브랜드 커스터마이즈",
+    "branding": {
+      "title": "브랜딩",
+      "logo": "로고",
+      "favicon": "파비콘",
+      "appName": "앱 이름",
+      "primaryColor": "기본 색상",
+      "secondaryColor": "보조 색상",
+      "accentColor": "강조 색상"
+    },
+    "domain": {
+      "title": "커스텀 도메인",
+      "addDomain": "도메인 추가",
+      "verify": "도메인 인증",
+      "ssl": "SSL 인증서",
+      "status": "상태"
+    },
+    "emails": {
+      "title": "이메일 브랜딩",
+      "fromName": "발신자명",
+      "fromEmail": "발신자 이메일",
+      "replyTo": "회신 주소",
+      "signature": "이메일 서명",
+      "templates": "이메일 템플릿"
+    }
+  },
+  "aiAssistant": {
+    "title": "AI 어시스턴트",
+    "subtitle": "당신의 스마트 도우미",
+    "chat": "AI와 채팅",
+    "commands": "명령",
+    "suggestions": "제안",
+    "capabilities": {
+      "writeEmail": "이메일 작성",
+      "analyzeData": "데이터 분석",
+      "createContent": "콘텐츠 생성",
+      "summarize": "요약",
+      "translate": "번역",
+      "codeHelp": "코드 도움",
+      "research": "연구",
+      "schedule": "일정"
+    },
+    "modules": {
+      "title": "AI 모듈 제어",
+      "manage": "모듈 관리",
+      "execute": "작업 실행",
+      "automate": "작업 자동화",
+      "permissions": "AI 권한",
+      "history": "작업 기록"
+    },
+    "voice": {
+      "title": "음성 명령",
+      "listening": "듣고 있습니다...",
+      "speak": "말씀하세요",
+      "stop": "중지",
+      "language": "음성 언어"
+    }
+  },
+  "tours": {
+    "welcome": {
+      "title": "CUBE Elite에 오신 것을 환영합니다",
+      "description": "강력한 새 워크스페이스를 안내해 드리겠습니다"
+    },
+    "browser": {
+      "title": "풀 브라우저 경험",
+      "description": "모든 브라우저 기능으로 어떤 웹사이트든 탐색"
+    },
+    "crm": {
+      "title": "CRM 및 연락처",
+      "description": "모든 연락처, 회사, 거래를 한 곳에서 관리"
+    },
+    "marketing": {
+      "title": "마케팅 자동화",
+      "description": "캠페인, 이메일, 랜딩 페이지, 퍼널 생성"
+    },
+    "social": {
+      "title": "소셜 미디어 허브",
+      "description": "모든 소셜 계정을 하나의 대시보드에서 관리"
+    },
+    "aiSearch": {
+      "title": "AI 검색",
+      "description": "인용과 심층 연구로 스마트한 답변 받기"
+    },
+    "intelligence": {
+      "title": "인텔리전스 센터",
+      "description": "심층 연구 및 경쟁사 분석 수행"
+    },
+    "aiAssistant": {
+      "title": "AI 어시스턴트",
+      "description": "AI가 모든 모듈을 제어하고 작업을 수행"
+    },
+    "steps": {
+      "next": "다음",
+      "previous": "이전",
+      "skip": "투어 건너뛰기",
+      "finish": "시작"
+    }
+  },
+  "dataExtractor": {
+    "title": "데이터 추출기",
+    "subtitle": "포인트 앤 클릭 인터페이스를 갖춘 비주얼 웹 스크래핑 도구",
+    "loading": {
+      "title": "데이터 추출기 로딩 중...",
+      "description": "추출 도구 초기화 중"
+    },
+    "errors": {
+      "title": "추출 오류",
+      "loadFailed": "데이터 추출기 로드 실패"
+    },
+    "actions": {
+      "newSchema": "새 스키마",
+      "startExtraction": "추출 시작",
+      "previewData": "데이터 미리보기",
+      "exportData": "데이터 내보내기",
+      "saveSchema": "스키마 저장"
+    }
+  },
+  "enterprise": {
+    "badge": "엔터프라이즈 스위트",
+    "title": "CUBE Nexum Enterprise",
+    "subtitle": "대규모 자동화, 통합 및 데이터 관리를 위한 종합 엔터프라이즈 도구.",
+    "stats": {
+      "modules": "모듈",
+      "integrations": "통합",
+      "uptime": "가동률 SLA"
+    },
+    "errors": {
+      "loadFailed": "엔터프라이즈 모듈 로드 실패"
+    },
+    "benefits": {
+      "title": "엔터프라이즈 혜택",
+      "security": {
+        "title": "엔터프라이즈 보안",
+        "description": "SOC 2 Type II, GDPR, HIPAA 준수 및 엔드투엔드 암호화."
+      },
+      "performance": {
+        "title": "고성능",
+        "description": "밀리초 이하의 지연 시간으로 초당 수백만 이벤트 처리."
+      },
+      "uptime": {
+        "title": "99.9% 가동률",
+        "description": "자동 페일오버 및 재해 복구가 포함된 엔터프라이즈 SLA."
+      },
+      "support": {
+        "title": "24/7 지원",
+        "description": "1시간 응답 보장의 전담 지원 팀."
+      }
+    }
+  },
+  "fileTransfer": {
+    "title": "파일 전송",
+    "subtitle": "듀얼 패널 인터페이스로 안전한 FTP/SFTP 전송",
+    "loading": { "title": "전송 로드 중...", "description": "서버에 연결 중" },
+    "errors": { "title": "전송 오류", "loadFailed": "파일 전송 로드 실패" },
+    "actions": { "connect": "연결", "disconnect": "연결 해제", "upload": "업로드", "download": "다운로드", "refresh": "새로고침", "newSite": "새 사이트" }
+  },
+  "collections": {
+    "title": "컬렉션",
+    "subtitle": "저장된 페이지 정리 및 공유",
+    "loading": { "title": "컬렉션 로드 중...", "description": "컬렉션 가져오는 중" },
+    "errors": { "title": "컬렉션 오류", "loadFailed": "컬렉션 로드 실패" },
+    "empty": { "title": "컬렉션 없음", "description": "첫 번째 컬렉션을 만드세요." },
+    "actions": { "newCollection": "새 컬렉션", "share": "공유", "delete": "삭제" }
+  },
+  "readingList": {
+    "title": "읽기 목록",
+    "subtitle": "나중에 읽을 기사 저장",
+    "loading": { "title": "목록 로드 중...", "description": "기사 가져오는 중" },
+    "errors": { "title": "목록 오류", "loadFailed": "목록 로드 실패" },
+    "empty": { "title": "기사 없음", "description": "웹에서 기사를 저장하세요." },
+    "tabs": { "all": "전체", "unread": "읽지 않음", "read": "읽음" }
+  },
+  "remote": {
+    "title": "원격 데스크톱",
+    "subtitle": "SSH, RDP, VNC로 원격 컴퓨터에 연결",
+    "loading": { "title": "세션 로드 중...", "description": "연결 가져오는 중" },
+    "errors": { "title": "연결 오류", "loadFailed": "세션 로드 실패" },
+    "actions": { "connect": "연결", "disconnect": "연결 해제", "newSession": "새 세션", "createRoom": "룸 생성", "joinRoom": "참여" }
+  },
+  "ftp": {
+    "title": "FTP 관리자",
+    "subtitle": "FTP/SFTP 연결 및 전송 관리",
+    "loading": { "title": "FTP 로드 중...", "description": "서버에 연결 중" },
+    "errors": { "title": "FTP 오류", "loadFailed": "FTP 연결 로드 실패" },
+    "actions": { "upload": "업로드", "download": "다운로드", "newSite": "새 사이트", "refresh": "새로고침" }
+  },
+  "extensions": {
+    "title": "확장 프로그램",
+    "subtitle": "브라우저 확장 프로그램 및 애드온 관리",
+    "loading": { "title": "확장 프로그램 로드 중...", "description": "설치된 것 가져오는 중" },
+    "errors": { "title": "확장 프로그램 오류", "loadFailed": "확장 프로그램 로드 실패" },
+    "tabs": { "installed": "설치됨", "webstore": "웹 스토어", "install": "설치", "settings": "설정" },
+    "actions": { "enable": "활성화", "disable": "비활성화", "uninstall": "제거", "install": "설치" }
+  },
+  "help": {
+    "title": "도움말 센터",
+    "subtitle": "문서 및 지원",
+    "sections": { "documentation": "문서", "tutorials": "비디오 튜토리얼", "community": "커뮤니티", "support": "지원 문의" }
+  },
+  "monitoring": {
+    "title": "웹사이트 모니터링",
+    "subtitle": "웹사이트 가동 시간 및 성능 모니터링",
+    "loading": { "title": "모니터 로드 중...", "description": "모니터링 사이트 가져오는 중" },
+    "errors": { "title": "모니터 오류", "loadFailed": "데이터 로드 실패" }
+  },
+  "dataSources": {
+    "title": "데이터 소스",
+    "subtitle": "외부 데이터 소스 연결 및 관리",
+    "loading": { "title": "데이터 소스 로드 중...", "description": "연결 가져오는 중" },
+    "errors": { "title": "데이터 소스 오류", "loadFailed": "데이터 소스 로드 실패" },
+    "empty": { "title": "데이터 소스 없음", "description": "첫 번째 데이터 소스를 연결하세요." },
+    "types": { "database": "데이터베이스", "api": "API", "file": "파일", "cloud": "클라우드" }
+  },
+  "integration": {
+    "title": "통합 허브",
+    "subtitle": "모듈 간 통합 관리",
+    "loading": { "title": "통합 로드 중...", "description": "연결 가져오는 중" }
+  },
+  "workspace": {
+    "title": "워크스페이스",
+    "subtitle": "보드, 뷰, 자동화로 프로젝트 관리",
+    "loading": { "title": "워크스페이스 로드 중...", "description": "보드와 프로젝트 가져오는 중" },
+    "errors": { "title": "워크스페이스 오류", "loadFailed": "워크스페이스 로드 실패" },
+    "views": { "table": "테이블", "kanban": "칸반", "timeline": "타임라인", "chart": "차트" }
+  },
+  "admin": {
+    "title": "관리자 패널",
+    "subtitle": "시스템 관리 및 설정",
+    "loading": { "title": "관리자 패널 로드 중...", "description": "시스템 설정 가져오는 중" }
+  },
+  "search": {
+    "title": "AI 검색",
+    "subtitle": "AI 기반 지능형 검색",
+    "loading": { "title": "검색 로드 중...", "description": "AI 검색 엔진 초기화 중" }
+  },
+  "p2p": {
+    "title": "P2P 전송",
+    "subtitle": "피어투피어 파일 공유 및 협업",
+    "loading": { "title": "P2P 로드 중...", "description": "피어 네트워크 초기화 중" },
+    "errors": { "title": "P2P 오류", "loadFailed": "피어 네트워크 연결 실패" },
+    "actions": { "createRoom": "룸 생성", "joinRoom": "참여", "shareFiles": "파일 공유", "disconnect": "연결 해제" }
+  },
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "CUBE Nexum에 오신 것을 환영합니다",
+        "description": "가장 강력한 브라우저 자동화 플랫폼"
+      },
+      "profile": {
+        "title": "프로필 만들기",
+        "description": "자신에 대해 조금 알려주세요"
+      },
+      "useCase": {
+        "title": "사용 목적",
+        "description": "경험을 맞춤화하는 데 도움을 주세요"
+      },
+      "features": {
+        "title": "기능 선택",
+        "description": "사용하려는 도구를 선택하세요"
+      },
+      "browserSetup": {
+        "title": "브라우저 설정",
+        "description": "브라우저 환경설정을 구성하세요"
+      },
+      "extension": {
+        "title": "확장 프로그램 설치",
+        "description": "향상된 기능을 위해 Chrome 확장 프로그램을 받으세요"
+      },
+      "security": {
+        "title": "보안 설정",
+        "description": "암호화로 데이터를 보호하세요"
+      },
+      "notifications": {
+        "title": "알림",
+        "description": "중요한 사항에 대한 최신 정보를 받으세요"
+      },
+      "tour": {
+        "title": "빠른 둘러보기",
+        "description": "2분 만에 기본 사항 배우기"
+      },
+      "complete": {
+        "title": "모두 완료!",
+        "description": "자동화를 시작할 준비가 되었습니다"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "title": "개인 사용",
+        "description": "양식 작성, 비밀번호 저장, 일상 작업 자동화"
+      },
+      "business": {
+        "title": "비즈니스",
+        "description": "기업 자동화, 팀 협업, CRM 통합"
+      },
+      "developer": {
+        "title": "개발자",
+        "description": "API 테스트, 웹 스크래핑, 워크플로우 자동화"
+      },
+      "dataAnalyst": {
+        "title": "데이터 분석가",
+        "description": "데이터 추출, 웹 스크래핑, 보고서 생성"
+      },
+      "marketing": {
+        "title": "마케팅",
+        "description": "소셜 미디어 자동화, 리드 생성, 분석"
+      },
+      "research": {
+        "title": "연구",
+        "description": "데이터 수집, 콘텐츠 분석, 아카이브"
+      }
+    },
+    "featureTours": {
+      "autofillBasics": {
+        "name": "자동 완성 기본",
+        "description": "자동 완성 프로필을 만들고 사용하는 방법 배우기",
+        "steps": {
+          "createProfile": {
+            "title": "프로필 만들기",
+            "description": "여기를 클릭하여 첫 번째 자동 완성 프로필을 만드세요"
+          },
+          "fillDetails": {
+            "title": "세부 정보 입력",
+            "description": "정보를 입력하세요. 양식을 자동으로 작성하는 데 사용합니다."
+          },
+          "saveProfile": {
+            "title": "프로필 저장",
+            "description": "프로필을 저장하고 양식 자동 작성을 시작하세요!"
+          }
+        }
+      },
+      "automationBasics": {
+        "name": "자동화 기본",
+        "description": "첫 번째 워크플로우 만들기",
+        "steps": {
+          "createWorkflow": {
+            "title": "워크플로우 만들기",
+            "description": "클릭하여 새 자동화 워크플로우 구축 시작"
+          },
+          "addNodes": {
+            "title": "노드 추가",
+            "description": "여기서 노드를 드래그하여 워크플로우를 구축하세요"
+          },
+          "connectNodes": {
+            "title": "노드 연결",
+            "description": "핸들에서 핸들로 드래그하여 노드를 연결하세요"
+          },
+          "runWorkflow": {
+            "title": "워크플로우 실행",
+            "description": "클릭하여 워크플로우 실행"
+          }
+        }
+      },
+      "passwordVault": {
+        "name": "비밀번호 금고",
+        "description": "비밀번호를 안전하게 저장",
+        "steps": {
+          "addCredential": {
+            "title": "자격 증명 추가",
+            "description": "새 로그인 자격 증명 저장"
+          },
+          "generatePassword": {
+            "title": "비밀번호 생성",
+            "description": "강력하고 고유한 비밀번호를 즉시 생성"
+          },
+          "securitySettings": {
+            "title": "보안 설정",
+            "description": "암호화 및 자동 잠금 설정 구성"
+          }
+        }
+      },
+      "aiAssistant": {
+        "name": "AI 어시스턴트",
+        "description": "AI의 도움 받기",
+        "steps": {
+          "askAI": {
+            "title": "AI에게 질문",
+            "description": "질문을 입력하거나 자동화하려는 내용을 설명하세요"
+          },
+          "suggestions": {
+            "title": "AI 제안",
+            "description": "AI가 분석하고 작업을 제안합니다"
+          },
+          "apply": {
+            "title": "변경 사항 적용",
+            "description": "AI가 생성한 솔루션을 검토하고 적용"
+          }
+        }
+      }
+    }
+  }
+}

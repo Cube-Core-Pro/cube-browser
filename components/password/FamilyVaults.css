@@ -1,0 +1,260 @@
+/* ============================================================================
+   FAMILY VAULTS - Shared Password Management for Families
+   ============================================================================ */
+
+.family-vaults {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.vaults-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.vaults-header .header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: white;
+}
+
+/* Member Cards */
+.member-card {
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.member-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.member-card.owner {
+  border-left-color: #a855f7;
+  background: linear-gradient(to right, rgba(168, 85, 247, 0.03), transparent);
+}
+
+.member-card.admin {
+  border-left-color: #3b82f6;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.03), transparent);
+}
+
+.member-card.member {
+  border-left-color: #22c55e;
+}
+
+.member-card.limited {
+  border-left-color: #9ca3af;
+}
+
+/* Collection Cards */
+.collection-card {
+  transition: all 0.2s ease;
+}
+
+.collection-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.collection-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+/* Emergency Access Cards */
+.emergency-card {
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.emergency-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-card.confirmed {
+  border-left-color: #22c55e;
+}
+
+.emergency-card.pending {
+  border-left-color: #eab308;
+  background: linear-gradient(to right, rgba(234, 179, 8, 0.03), transparent);
+}
+
+.emergency-card.requested {
+  border-left-color: #ef4444;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.05), transparent);
+  animation: emergencyPulse 2s ease-in-out infinite;
+}
+
+.emergency-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.emergency-icon.confirmed {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.emergency-icon.pending {
+  background-color: #fefce8;
+  color: #ca8a04;
+}
+
+.emergency-icon.requested {
+  background-color: #fef2f2;
+  color: #dc2626;
+  animation: iconPulse 1s ease-in-out infinite;
+}
+
+@keyframes emergencyPulse {
+  0%, 100% {
+    background: linear-gradient(to right, rgba(239, 68, 68, 0.05), transparent);
+  }
+  50% {
+    background: linear-gradient(to right, rgba(239, 68, 68, 0.1), transparent);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Role Badges */
+.role-badge-owner {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: white;
+}
+
+.role-badge-admin {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: white;
+}
+
+/* Avatar Stack */
+.avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-stack > * {
+  margin-left: -8px;
+}
+
+.avatar-stack > *:first-child {
+  margin-left: 0;
+}
+
+/* Feature Pills */
+.feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* Dark Mode */
+:root.dark .family-vaults,
+.dark .family-vaults {
+  --member-card-owner-bg: rgba(168, 85, 247, 0.1);
+  --member-card-admin-bg: rgba(59, 130, 246, 0.1);
+}
+
+:root.dark .member-card.owner,
+.dark .member-card.owner {
+  background: linear-gradient(to right, rgba(168, 85, 247, 0.1), transparent);
+}
+
+:root.dark .member-card.admin,
+.dark .member-card.admin {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent);
+}
+
+:root.dark .emergency-card.pending,
+.dark .emergency-card.pending {
+  background: linear-gradient(to right, rgba(234, 179, 8, 0.1), transparent);
+}
+
+:root.dark .emergency-card.requested,
+.dark .emergency-card.requested {
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.1), transparent);
+}
+
+:root.dark .emergency-icon.confirmed,
+.dark .emergency-icon.confirmed {
+  background-color: rgba(22, 163, 74, 0.2);
+}
+
+:root.dark .emergency-icon.pending,
+.dark .emergency-icon.pending {
+  background-color: rgba(202, 138, 4, 0.2);
+}
+
+:root.dark .emergency-icon.requested,
+.dark .emergency-icon.requested {
+  background-color: rgba(220, 38, 38, 0.2);
+}
+
+:root.dark .collection-icon,
+.dark .collection-icon {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .family-vaults {
+    padding: 1rem;
+  }
+
+  .vaults-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .vaults-header > div:first-child {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .vaults-header .header-icon {
+    margin: 0 auto;
+  }
+
+  .member-card [class*="CardContent"],
+  .collection-card [class*="CardContent"],
+  .emergency-card [class*="CardContent"] {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

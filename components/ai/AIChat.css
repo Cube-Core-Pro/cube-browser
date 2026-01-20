@@ -1,0 +1,1092 @@
+/* ============================================================================
+   AI CHAT INTERFACE - Arc+ Premium Design
+   ============================================================================ */
+
+.ai-chat-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--shadow-black-60);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  backdrop-filter: saturate(160%) blur(16px);
+  z-index: var(--z-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-chat-container {
+  width: 90%;
+  max-width: 800px;
+  height: 85vh;
+  max-height: 700px;
+  /* Arc+ Glass Effect */
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  backdrop-filter: saturate(140%) blur(12px);
+  background: var(--glass-bg-dark-surface);
+  border-radius: 16px;
+  border: 1px solid var(--border-gray-80);
+  box-shadow: 
+    0 0 40px var(--glow-brand-06),
+    0 20px 60px var(--shadow-black-45),
+    inset 0 1px 0 var(--glass-white-15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Arc+ Premium Header with Gradient */
+.ai-chat-header {
+  padding: var(--space-5) var(--space-6);
+  background: linear-gradient(135deg, 
+    var(--gradient-brand-link-95),
+    var(--gradient-brand-secondary-90)
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-gray-75);
+  box-shadow: 
+    0 4px 16px var(--shadow-black-20),
+    inset 0 -1px 0 var(--border-medium);
+}
+
+.ai-chat-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.ai-chat-title .icon {
+  font-size: 28px;
+  filter: drop-shadow(0 2px 8px var(--shadow-black-30));
+  animation: iconPulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.ai-chat-subtitle {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 4px;
+  font-weight: 400;
+  text-shadow: 0 1px 2px var(--shadow-black-20);
+}
+
+.ai-chat-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* Arc+ Premium Action Buttons */
+.action-button {
+  background: var(--border-gray-20);
+  border: 1px solid var(--border-gray-60);
+  color: var(--text-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  transition: 
+    background 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-button:hover {
+  background: var(--border-gray-30);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 20px var(--shadow-black-35),
+    0 0 20px var(--glow-brand-06);
+}
+
+.action-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.close-button {
+  background: var(--border-gray-20);
+  border: 1px solid var(--border-gray-60);
+  color: var(--text-white);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    background 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button:hover {
+  background: var(--border-gray-30);
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Arc+ Premium Messages Area */
+.ai-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  /* Arc+ Subtle Glass Background */
+  -webkit-backdrop-filter: saturate(110%) blur(4px);
+  backdrop-filter: saturate(110%) blur(4px);
+  background: var(--bg-dark-surface);
+  scroll-behavior: smooth;
+}
+
+/* Arc+ Premium Scrollbar */
+.ai-chat-messages::-webkit-scrollbar {
+  width: 10px;
+}
+
+.ai-chat-messages::-webkit-scrollbar-track {
+  background: var(--shadow-black-03);
+  border-radius: var(--radius-full);
+  margin: 8px 0;
+}
+
+.ai-chat-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+    var(--gradient-brand-link-38),
+    var(--gradient-brand-link-50)
+  );
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-chat-messages::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,
+    var(--gradient-brand-link-60),
+    var(--gradient-brand-link-72)
+  );
+}
+
+.message-group {
+  margin-bottom: 24px;
+  animation: messageSlideIn 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.message-wrapper {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.message-wrapper.user {
+  flex-direction: row-reverse;
+}
+
+/* Arc+ Premium Avatar with Glow */
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 20px var(--glow-success-18);
+}
+
+.message-avatar.user {
+  background: linear-gradient(135deg, 
+    var(--success-95), 
+    var(--success-hover)
+  );
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 20px var(--glow-success-25);
+}
+
+.message-avatar.assistant {
+  background: linear-gradient(135deg, 
+    var(--gradient-brand-link-95), 
+    var(--gradient-brand-secondary-90)
+  );
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 20px var(--glow-accent-25);
+}
+
+.message-avatar.system {
+  background: linear-gradient(135deg, 
+    var(--warning-95), 
+    var(--warning-hover)
+  );
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 20px var(--glow-warning-25);
+}
+
+/* Arc+ Glass Message Bubbles */
+.message-bubble {
+  padding: var(--space-3-5) var(--space-4-5);
+  border-radius: var(--radius-xl);
+  max-width: 75%;
+  word-wrap: break-word;
+  position: relative;
+  line-height: 1.5;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.message-bubble:hover {
+  transform: translateY(-1px);
+}
+
+.message-bubble.user {
+  background: linear-gradient(135deg, 
+    var(--color-success), 
+    var(--color-success-dark)
+  );
+  color: white;
+  border-bottom-right-radius: var(--radius-sm);
+  box-shadow: 
+    0 4px 16px var(--shadow-black-12),
+    0 0 20px var(--glow-success-15);
+}
+
+.message-bubble.assistant {
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+  background: var(--glass-bg-dark-surface);
+  color: var(--text-white);
+  border: 1px solid var(--border-gray-80);
+  border-bottom-left-radius: var(--radius-sm);
+  box-shadow: 
+    0 4px 16px var(--shadow-black-08),
+    inset 0 1px 0 var(--border-gray-30);
+}
+
+.message-bubble.system {
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+  background: linear-gradient(135deg, 
+    var(--warning-bg-15-glass),
+    var(--warning-bg-18-glass)
+  );
+  color: var(--text-white);
+  border: 1px solid var(--glow-warning);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 4px 16px var(--shadow-black-08),
+    0 0 20px var(--glow-warning-10);
+}
+
+.message-content {
+  font-size: 14px;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.message-timestamp {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Arc+ Premium Action Badge */
+.message-action {
+  font-size: 12px;
+  margin-top: 8px;
+  padding: var(--space-2) var(--space-3);
+  -webkit-backdrop-filter: saturate(110%) blur(4px);
+  backdrop-filter: saturate(110%) blur(4px);
+  background: var(--bg-dark-surface-hover);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gray-40);
+  font-family: 'SF Mono', 'Menlo', monospace;
+}
+
+.message-action strong {
+  color: var(--color-brand-500);
+  font-weight: 600;
+}
+
+.message-result {
+  font-size: 12px;
+  margin-top: 8px;
+  padding: var(--space-2) var(--space-3);
+  -webkit-backdrop-filter: saturate(110%) blur(4px);
+  backdrop-filter: saturate(110%) blur(4px);
+  background: color-mix(in srgb, var(--color-success) 12%, transparent);
+  border-radius: var(--radius-lg);
+  color: var(--color-success-dark);
+  border-left: 3px solid var(--color-success);
+  box-shadow: 0 0 16px var(--glow-success-10);
+}
+
+.typing-indicator {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-6) 0;
+}
+
+/* Arc+ Glass Typing Dots Container */
+.typing-dots {
+  display: flex;
+  gap: var(--space-1-5);
+  padding: var(--space-3-5) var(--space-4-5);
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+  background: var(--glass-bg-dark-surface);
+  border-radius: var(--radius-xl);
+  border-bottom-left-radius: var(--radius-sm);
+  border: 1px solid var(--border-gray-60);
+  box-shadow: 
+    0 4px 16px var(--shadow-black-08),
+    inset 0 1px 0 var(--border-gray-30);
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand-500);
+  box-shadow: 0 0 8px var(--glow-brand-40);
+  animation: typingDot 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Arc+ Glass Suggestions Panel */
+.suggestions-container {
+  padding: var(--space-4) var(--space-6);
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  backdrop-filter: saturate(120%) blur(8px);
+  background: var(--glass-bg-elevated-80);
+  border-top: 1px solid var(--border-gray-60);
+  border-bottom: 1px solid var(--border-gray-60);
+}
+
+.suggestions-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.suggestions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Arc+ Premium Suggestion Chips with Glow */
+.suggestion-chip {
+  -webkit-backdrop-filter: saturate(130%) blur(8px);
+  backdrop-filter: saturate(130%) blur(8px);
+  background: linear-gradient(135deg, 
+    var(--gradient-brand-link-18-glass),
+    var(--gradient-brand-secondary-14-glass)
+  );
+  border: 1px solid var(--border-brand-link-22);
+  color: var(--gradient-brand-link-95);
+  padding: var(--space-2) var(--space-3-5);
+  border-radius: var(--radius-2xl);
+  font-size: 13px;
+  cursor: pointer;
+  transition: 
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.suggestion-chip:hover {
+  background: linear-gradient(135deg, 
+    var(--gradient-brand-link-95), 
+    var(--gradient-brand-secondary-90)
+  );
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 6px 16px var(--shadow-black-15),
+    0 0 24px var(--glow-accent-28);
+  border-color: transparent;
+}
+
+.suggestion-chip:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Arc+ Glass Input Container */
+.ai-chat-input-container {
+  padding: var(--space-5) var(--space-6);
+  -webkit-backdrop-filter: saturate(130%) blur(12px);
+  backdrop-filter: saturate(130%) blur(12px);
+  background: var(--glass-bg-dark-button-hover);
+  border-top: 1px solid var(--border-gray-80);
+  box-shadow: 
+    0 -6px 22px var(--shadow-black-45),
+    inset 0 1px 0 var(--glass-white-10);
+}
+
+.ai-chat-input-wrapper {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+/* Arc+ Premium Input Field */
+.ai-chat-input {
+  flex: 1;
+  padding: var(--space-3-5) var(--space-4-5);
+  -webkit-backdrop-filter: saturate(110%) blur(8px);
+  backdrop-filter: saturate(110%) blur(8px);
+  background: var(--bg-dark-surface-hover);
+  border: 2px solid var(--border-gray-80);
+  border-radius: var(--radius-2xl);
+  font-size: 14px;
+  color: var(--text-white);
+  resize: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: 
+    border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 120px;
+  line-height: 1.5;
+}
+
+.ai-chat-input:focus {
+  outline: none;
+  border-color: transparent;
+  background: var(--bg-dark-surface-hover-85);
+  box-shadow: 
+    0 0 0 3px var(--glow-accent-strong),
+    0 0 20px var(--glow-brand-18);
+}
+
+.ai-chat-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* Arc+ Premium Voice Button */
+.voice-button {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, 
+    var(--gradient-danger-95), 
+    var(--gradient-danger-dark)
+  );
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+  0 0 20px var(--glow-error);
+}
+
+.voice-button:hover {
+  transform: scale(1.08);
+  box-shadow: 
+    0 6px 16px var(--shadow-black-20),
+    0 0 28px var(--glow-danger-40);
+}
+
+.voice-button:active {
+  transform: scale(0.95);
+}
+
+.voice-button.listening {
+  animation: voicePulse 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  background: linear-gradient(135deg, 
+    var(--success-95), 
+    var(--success-hover)
+  );
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 24px var(--glow-success-38);
+}
+
+@keyframes voicePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 4px 12px var(--shadow-black-15),
+      0 0 24px var(--glow-success-40);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 
+      0 6px 16px var(--shadow-black-20),
+      0 0 32px var(--glow-success-60);
+  }
+}
+
+/* Arc+ Premium Send Button */
+.send-button {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, 
+    var(--gradient-brand-link-95), 
+    var(--gradient-brand-secondary-90)
+  );
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 20px var(--glow-accent-30);
+}
+
+.send-button:hover:not(:disabled) {
+  transform: scale(1.08);
+  box-shadow: 
+    0 6px 16px var(--shadow-black-20),
+    0 0 28px var(--glow-brand-40);
+}
+
+.send-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.send-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: 
+    0 2px 8px var(--shadow-black-08);
+}
+
+/* Arc+ Glass Context Info */
+.context-info {
+  padding: var(--space-3) var(--space-6);
+  -webkit-backdrop-filter: saturate(110%) blur(8px);
+  backdrop-filter: saturate(110%) blur(8px);
+  background: linear-gradient(135deg, 
+    var(--bg-dark-surface-70),
+    var(--bg-dark-surface-80)
+  );
+  border-top: 1px solid var(--border-gray-60);
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.context-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.context-item .icon {
+  font-size: 14px;
+}
+
+.context-item strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes messageSlideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px var(--glow-success-30);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px var(--glow-success-50);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-chat-container {
+    width: 95%;
+    height: 90vh;
+    border-radius: 12px;
+  }
+  .ai-chat-header {
+    padding: var(--space-4) var(--space-5);
+  }
+  .ai-chat-title {
+    font-size: 18px;
+  }
+  .ai-chat-messages {
+    padding: var(--space-4);
+  }
+  .message-bubble {
+    max-width: 85%;
+  }
+  .ai-chat-input-container {
+    padding: var(--space-4) var(--space-5);
+  }
+  .suggestions-container {
+    padding: var(--space-3) var(--space-5);
+  }
+  .context-info {
+    padding: var(--space-2-5) var(--space-5);
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-chat-container {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  .ai-chat-title {
+    font-size: 16px;
+  }
+  .ai-chat-subtitle {
+    display: none;
+  }
+  .action-button {
+    padding: var(--space-1-5) var(--space-3);
+    font-size: 12px;
+  }
+  .message-bubble {
+    max-width: 90%;
+    padding: var(--space-3) var(--space-4);
+  }
+  .message-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  .voice-button,
+  .send-button {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .ai-chat-container {
+    background: linear-gradient(135deg, var(--bg-dark-surface) 0%, var(--bg-dark-elevated) 100%);
+  }
+  .ai-chat-messages {
+    background: var(--bg-dark-surface);
+  }
+  .message-bubble.assistant {
+    background: var(--bg-dark-elevated);
+    color: var(--text-light);
+    border-color: var(--border-gray-50);
+  }
+  .typing-dots {
+    background: var(--bg-dark-elevated);
+  }
+  .typing-dot {
+    background: var(--text-muted);
+  }
+  .suggestions-container {
+    background: var(--bg-dark-elevated);
+    border-color: var(--border-gray-50);
+  }
+  .suggestions-title {
+    color: var(--text-muted);
+  }
+  .ai-chat-input-container {
+    background: var(--bg-dark-elevated);
+    border-color: var(--border-gray-50);
+  }
+  .ai-chat-input {
+    background: var(--bg-dark-surface);
+    color: var(--text-light);
+    border-color: var(--border-gray-80);
+  }
+  .ai-chat-input::placeholder {
+    color: var(--text-muted);
+  }
+  .context-info {
+    background: linear-gradient(135deg, var(--bg-dark-elevated) 0%, var(--bg-dark-surface-hover) 100%);
+    color: var(--text-muted);
+    border-color: var(--border-gray-50);
+  }
+  .context-item strong {
+    color: var(--text-light);
+  }
+  .message-action {
+    background: var(--bg-dark-surface-25);
+  }
+  .message-result {
+    background: var(--success-bg-20);
+    color: var(--success-light);
+  }
+  .ai-chat-messages::-webkit-scrollbar-track {
+    background: var(--bg-dark-surface-25);
+  }
+  .ai-chat-messages::-webkit-scrollbar-thumb {
+    background: var(--border-gray-80);
+  }
+  .ai-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--border-gray);
+  }
+}
+
+/* Arc+ Responsive Focus Enhancement */
+.ai-chat-container:focus-within {
+  box-shadow: 
+    0 0 50px var(--glow-accent-15),
+    0 20px 60px var(--shadow-black-35),
+    inset 0 1px 0 var(--border-gray-40);
+}
+
+/* Arc+ Premium Focus States */
+button:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px var(--glow-accent-45),
+    0 0 20px var(--glow-accent-20);
+}
+
+.ai-chat-input:focus-visible {
+  outline: none;
+  border-color: transparent;
+  background: var(--bg-primary-85);
+  box-shadow: 
+    0 0 0 3px var(--glow-accent-45),
+    0 0 20px var(--glow-accent-20);
+}
+
+/* Arc+ Settings Modal with Glass Effect */
+.settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--shadow-black-70);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  backdrop-filter: saturate(160%) blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  animation: fadeIn 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Arc+ Premium Settings Modal */
+.settings-modal {
+  -webkit-backdrop-filter: saturate(140%) blur(16px);
+  backdrop-filter: saturate(140%) blur(16px);
+  background: var(--glass-bg-dark-surface-90);
+  border-radius: 16px;
+  border: 1px solid var(--border-gray-80);
+  box-shadow: 
+    0 0 40px var(--glow-brand-06),
+    0 25px 80px var(--shadow-black-45),
+    inset 0 1px 0 var(--border-gray-15);
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+  animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-7);
+  background: linear-gradient(135deg, 
+    var(--color-brand-500), 
+    var(--color-accent-400)
+  );
+  color: white;
+  border-bottom: 1px solid var(--border-gray-75);
+  box-shadow: 
+    0 4px 16px var(--shadow-black-20),
+    inset 0 -1px 0 var(--border-gray-50);
+}
+
+.settings-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  letter-spacing: -0.3px;
+}
+
+.close-modal-btn {
+  background: var(--glass-light-36);
+  border: 1px solid var(--glass-light-50);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    background 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-modal-btn:hover {
+  background: var(--glass-light-56);
+  transform: rotate(90deg) scale(1.05);
+}
+
+.settings-content {
+  padding: var(--space-7);
+}
+
+.settings-group {
+  margin-bottom: 24px;
+}
+
+.settings-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+/* Arc+ Premium Form Inputs */
+.settings-input,
+.settings-select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  -webkit-backdrop-filter: saturate(110%) blur(6px);
+  backdrop-filter: saturate(110%) blur(6px);
+  background: var(--bg-primary-70);
+  border: 2px solid var(--border-gray-60);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: 
+    border-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-input:focus,
+.settings-select:focus {
+  outline: none;
+  border-color: transparent;
+  background: var(--bg-primary-85);
+  box-shadow: 
+    0 0 0 3px var(--glow-accent-45),
+    0 0 20px var(--glow-accent-20);
+}
+
+.settings-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.settings-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Arc+ Premium Footer */
+.settings-footer {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-gray-40);
+}
+
+.settings-btn {
+  flex: 1;
+  padding: var(--space-3) var(--space-6);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cancel-btn {
+  -webkit-backdrop-filter: saturate(110%) blur(6px);
+  backdrop-filter: saturate(110%) blur(6px);
+  background: var(--glass-bg-secondary-60);
+  color: var(--text-primary);
+  border: 1px solid var(--border-gray-40);
+}
+
+.cancel-btn:hover {
+  background: var(--glass-bg-secondary-75);
+  transform: translateY(-1px);
+}
+
+.save-btn {
+  background: linear-gradient(135deg, 
+    var(--color-brand-500), 
+    var(--color-accent-400)
+  );
+  color: white;
+  box-shadow: 
+    0 4px 12px var(--shadow-black-15),
+    0 0 20px var(--glow-brand-25);
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 16px var(--shadow-black-20),
+    0 0 28px var(--glow-brand-35);
+}
+
+.save-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Arc+ Premium Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dark mode for settings modal */
+@media (prefers-color-scheme: dark) {
+  .settings-modal {
+    background: linear-gradient(135deg, var(--bg-dark-elevated) 0%, var(--bg-dark-surface) 100%);
+  }
+  
+  .settings-label {
+    color: var(--text-light);
+  }
+  
+  .settings-input,
+  .settings-select {
+    background: var(--bg-dark-surface);
+    border-color: var(--border-gray-80);
+    color: var(--text-light);
+  }
+  
+  .settings-hint {
+    color: var(--text-muted);
+  }
+  
+  .settings-footer {
+    border-color: var(--border-gray-50);
+  }
+  
+  .cancel-btn {
+    background: var(--bg-dark-surface-50);
+    color: var(--text-light);
+  }
+  
+  .cancel-btn:hover {
+    background: var(--bg-dark-surface-75);
+  }
+}

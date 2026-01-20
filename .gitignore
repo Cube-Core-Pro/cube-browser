@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+.next/
+out/
+dist/
+*.dmg
+*.exe
+*.msi
+*.AppImage
+*.deb
+
+# Rust/Tauri
+src-tauri/target/
+*.rs.bk
+
+# Environment
+.env
+.env.local
+.env.production
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+.playwright/
+
+# Cache
+.cache/
+*.tsbuildinfo
+
+# CEF (downloaded separately)
+cef/
+*.tar.bz2

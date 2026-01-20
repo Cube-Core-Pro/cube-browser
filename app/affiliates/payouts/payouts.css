@@ -1,0 +1,872 @@
+/* ============================================
+   CUBE Elite - Affiliate Payouts Page
+   Styles for payout and commission management
+   ============================================ */
+
+/* Variables */
+:root {
+  --apy-primary: #f59e0b;
+  --apy-primary-dark: #d97706;
+  --apy-success: #22c55e;
+  --apy-warning: #eab308;
+  --apy-error: #ef4444;
+  --apy-pending: #8b5cf6;
+  --apy-processing: #3b82f6;
+  --apy-bg: #0a0a0f;
+  --apy-surface: #12121a;
+  --apy-surface-2: #1a1a24;
+  --apy-border: #2a2a3a;
+  --apy-text: #ffffff;
+  --apy-text-secondary: #9ca3af;
+  --apy-text-muted: #6b7280;
+}
+
+/* Page Layout */
+.payouts-page {
+  min-height: 100vh;
+  background: var(--apy-bg);
+  padding: 2rem;
+  color: var(--apy-text);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 1rem;
+  color: var(--apy-text-secondary);
+}
+
+.loading-container svg {
+  color: var(--apy-primary);
+}
+
+/* Header */
+.payouts-header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title svg {
+  color: var(--apy-primary);
+}
+
+.header-title h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-title p {
+  margin: 0;
+  color: var(--apy-text-secondary);
+  font-size: 0.875rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Stats */
+.payouts-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+}
+
+.stat-card {
+  background: var(--apy-surface);
+  border: 1px solid var(--apy-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-card.available {
+  border-color: var(--apy-success);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), transparent);
+}
+
+.stat-card.pending {
+  border-color: var(--apy-pending);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--apy-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apy-text-secondary);
+}
+
+.stat-card.available .stat-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--apy-success);
+}
+
+.stat-card.pending .stat-icon {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--apy-pending);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--apy-text);
+}
+
+.stat-card.available .stat-value {
+  color: var(--apy-success);
+}
+
+.stat-card.pending .stat-value {
+  color: var(--apy-pending);
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--apy-text-secondary);
+}
+
+/* Tabs */
+.payouts-tabs {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  background: var(--apy-surface);
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--apy-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: var(--apy-text);
+}
+
+.tab-btn.active {
+  background: var(--apy-primary);
+  color: #000;
+}
+
+/* Filters */
+.payouts-filters {
+  display: flex;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto 1.5rem;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--apy-surface);
+  border: 1px solid var(--apy-border);
+  border-radius: 8px;
+  padding: 0 1rem;
+}
+
+.filter-group svg {
+  color: var(--apy-text-muted);
+}
+
+.filter-group select {
+  background: transparent;
+  border: none;
+  color: var(--apy-text);
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  outline: none;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--apy-surface);
+  border: 1px solid var(--apy-border);
+  color: var(--apy-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background: var(--apy-surface-2);
+  color: var(--apy-primary);
+  border-color: var(--apy-primary);
+}
+
+/* Payouts List */
+.payouts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.payout-card {
+  background: var(--apy-surface);
+  border: 1px solid var(--apy-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.payout-card.completed {
+  border-left: 3px solid var(--apy-success);
+}
+
+.payout-card.processing {
+  border-left: 3px solid var(--apy-processing);
+}
+
+.payout-card.pending {
+  border-left: 3px solid var(--apy-pending);
+}
+
+.payout-card.failed {
+  border-left: 3px solid var(--apy-error);
+}
+
+.payout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.payout-method {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--apy-text);
+}
+
+.payout-method .capitalize {
+  text-transform: capitalize;
+}
+
+.payout-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.payout-status.completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--apy-success);
+}
+
+.payout-status.processing {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--apy-processing);
+}
+
+.payout-status.pending {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--apy-pending);
+}
+
+.payout-status.failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--apy-error);
+}
+
+.payout-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.payout-amount .gross {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--apy-text);
+}
+
+.payout-amount .fees {
+  font-size: 0.8125rem;
+  color: var(--apy-error);
+}
+
+.payout-amount .net {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--apy-success);
+}
+
+.payout-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.payout-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--apy-text-secondary);
+}
+
+.payout-tx {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--apy-surface-2);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.payout-tx .tx-label {
+  font-size: 0.75rem;
+  color: var(--apy-text-muted);
+}
+
+.payout-tx code {
+  font-size: 0.75rem;
+  color: var(--apy-text);
+  font-family: monospace;
+  flex: 1;
+}
+
+.btn-copy {
+  background: transparent;
+  border: none;
+  color: var(--apy-text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.btn-copy:hover {
+  color: var(--apy-primary);
+}
+
+.payout-commissions {
+  font-size: 0.8125rem;
+  color: var(--apy-text-secondary);
+}
+
+/* Commissions Table */
+.commissions-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.commissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--apy-surface);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.commissions-table th,
+.commissions-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--apy-border);
+}
+
+.commissions-table th {
+  background: var(--apy-surface-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--apy-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.commissions-table td {
+  font-size: 0.875rem;
+  color: var(--apy-text);
+}
+
+.commissions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.commissions-table tr:hover td {
+  background: var(--apy-surface-2);
+}
+
+.commission-id {
+  font-family: monospace;
+  font-size: 0.8125rem;
+  color: var(--apy-text-secondary);
+}
+
+.referral-name {
+  font-weight: 500;
+}
+
+.product {
+  color: var(--apy-text-secondary);
+}
+
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.level-badge.level-1 {
+  background: linear-gradient(135deg, var(--apy-primary), var(--apy-primary-dark));
+  color: #000;
+}
+
+.level-badge.level-2 {
+  background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
+  color: #000;
+}
+
+.level-badge.level-3 {
+  background: linear-gradient(135deg, #cd7f32, #8b4513);
+  color: #fff;
+}
+
+.rate {
+  font-weight: 500;
+  color: var(--apy-primary);
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--apy-success);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--apy-pending);
+}
+
+.status-badge.approved {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--apy-processing);
+}
+
+.status-badge.paid {
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--apy-success);
+}
+
+.date {
+  color: var(--apy-text-secondary);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--apy-surface);
+  border-radius: 12px;
+  color: var(--apy-text-secondary);
+}
+
+.empty-state svg {
+  color: var(--apy-text-muted);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: var(--apy-text);
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: var(--apy-surface);
+  border: 1px solid var(--apy-border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--apy-border);
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--apy-surface-2);
+  border: none;
+  color: var(--apy-text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--apy-border);
+  color: var(--apy-text);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.available-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.available-info .label {
+  font-size: 0.875rem;
+  color: var(--apy-text-secondary);
+}
+
+.available-info .value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--apy-success);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--apy-text);
+  margin-bottom: 0.5rem;
+}
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  background: var(--apy-surface-2);
+  border: 1px solid var(--apy-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.amount-input .currency {
+  padding: 0 1rem;
+  color: var(--apy-text-muted);
+  font-size: 1.25rem;
+  background: var(--apy-border);
+}
+
+.amount-input input {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--apy-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.amount-input input::placeholder {
+  color: var(--apy-text-muted);
+}
+
+.amount-input input:focus {
+  outline: none;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: var(--apy-text-muted);
+  margin-top: 0.5rem;
+}
+
+.method-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.method-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--apy-surface-2);
+  border: 2px solid var(--apy-border);
+  border-radius: 10px;
+  color: var(--apy-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.method-btn:hover {
+  border-color: var(--apy-primary);
+  color: var(--apy-text);
+}
+
+.method-btn.selected {
+  border-color: var(--apy-primary);
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--apy-text);
+}
+
+.method-btn .fee {
+  font-size: 0.7rem;
+  color: var(--apy-text-muted);
+}
+
+.withdrawal-summary {
+  background: var(--apy-surface-2);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  color: var(--apy-text-secondary);
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--apy-border);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-weight: 600;
+  color: var(--apy-text);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--apy-border);
+}
+
+/* Buttons */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--apy-surface);
+  color: var(--apy-text);
+  border: 1px solid var(--apy-border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  background: var(--apy-surface-2);
+  border-color: var(--apy-primary);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, var(--apy-primary), var(--apy-primary-dark));
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .payouts-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .payouts-page {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .payouts-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .payouts-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .method-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.payout-card {
+  animation: fadeIn 0.3s ease;
+}

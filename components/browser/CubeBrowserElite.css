@@ -1,0 +1,449 @@
+/* CUBE Browser Elite - Real Chromium Integration Styles */
+/* Premium browser UI that renders Chromium frames inside Tauri */
+
+.cube-browser-elite {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Loading State */
+.cube-browser-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 48px;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(100, 200, 255, 0.2);
+  border-top-color: #64c8ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  font-size: 16px;
+  color: #a0a0a0;
+  margin: 8px 0;
+}
+
+.loading-subtitle {
+  font-size: 12px !important;
+  color: #666 !important;
+}
+
+/* Error State */
+.cube-browser-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-container {
+  text-align: center;
+  padding: 48px;
+  max-width: 400px;
+}
+
+.error-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.error-container h3 {
+  color: #ff6b6b;
+  margin: 0 0 8px;
+}
+
+.error-container p {
+  color: #888;
+  margin: 0 0 24px;
+}
+
+.error-container button {
+  background: linear-gradient(135deg, #64c8ff 0%, #4a90d9 100%);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.error-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 200, 255, 0.3);
+}
+
+/* Tab Bar */
+.cube-browser-tabs {
+  display: flex;
+  align-items: center;
+  background: #0d0d1a;
+  padding: 8px 8px 0;
+  gap: 2px;
+  min-height: 42px;
+  overflow-x: auto;
+}
+
+.cube-browser-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.cube-browser-tabs::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+.cube-browser-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #1a1a2e;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  min-width: 120px;
+  max-width: 200px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.cube-browser-tab:hover {
+  background: #252540;
+}
+
+.cube-browser-tab.active {
+  background: #1e1e3a;
+  border-top: 2px solid #64c8ff;
+}
+
+.tab-favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.tab-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.cube-browser-tab.active .tab-title {
+  color: #fff;
+}
+
+.tab-close {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-close:hover {
+  background: rgba(255, 100, 100, 0.2);
+  color: #ff6b6b;
+}
+
+.cube-browser-new-tab {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: #64c8ff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.cube-browser-new-tab:hover {
+  background: rgba(100, 200, 255, 0.1);
+}
+
+/* Navigation Bar */
+.cube-browser-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #1e1e3a;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-address-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0d0d1a;
+  border: 1px solid #2a2a4a;
+  border-radius: 20px;
+  padding: 6px 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nav-address-bar:focus-within {
+  border-color: #64c8ff;
+  box-shadow: 0 0 0 3px rgba(100, 200, 255, 0.1);
+}
+
+.address-icon {
+  font-size: 12px;
+  color: #4caf50;
+}
+
+.address-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+.address-input::placeholder {
+  color: #555;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Engine Badge */
+.cube-browser-engine-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: linear-gradient(90deg, rgba(100, 200, 255, 0.1) 0%, transparent 100%);
+  border-bottom: 1px solid #2a2a4a;
+  font-size: 11px;
+}
+
+.engine-icon {
+  font-size: 12px;
+}
+
+.engine-name {
+  color: #64c8ff;
+  font-weight: 500;
+}
+
+.engine-status {
+  font-size: 8px;
+  animation: pulse 2s infinite;
+}
+
+.engine-status.active {
+  color: #4caf50;
+}
+
+.engine-status.loading {
+  color: #ffa726;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Content Area */
+.cube-browser-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.cube-browser-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: default;
+}
+
+/* Fullscreen mode */
+.cube-browser-elite.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  border-radius: 0;
+}
+
+/* DevTools Panel (future feature) */
+.cube-browser-devtools {
+  height: 300px;
+  background: #1a1a2e;
+  border-top: 1px solid #2a2a4a;
+  display: none;
+}
+
+.cube-browser-devtools.open {
+  display: block;
+}
+
+/* Context Menu */
+.cube-browser-context-menu {
+  position: fixed;
+  background: #1e1e3a;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  padding: 4px 0;
+  min-width: 180px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 10000;
+}
+
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #e0e0e0;
+  transition: background 0.2s;
+}
+
+.context-menu-item:hover {
+  background: rgba(100, 200, 255, 0.1);
+}
+
+.context-menu-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.context-menu-divider {
+  height: 1px;
+  background: #2a2a4a;
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cube-browser-tab {
+    min-width: 80px;
+    max-width: 120px;
+    padding: 6px 8px;
+  }
+
+  .tab-title {
+    font-size: 11px;
+  }
+
+  .nav-address-bar {
+    padding: 4px 8px;
+  }
+
+  .address-input {
+    font-size: 12px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .cube-browser-tabs,
+  .cube-browser-nav,
+  .cube-browser-engine-badge {
+    display: none;
+  }
+
+  .cube-browser-content {
+    position: static;
+  }
+}

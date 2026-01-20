@@ -1,0 +1,784 @@
+/**
+ * CUBE Mail - Styles
+ * 
+ * Modern, clean email client styling inspired by:
+ * - Gmail (efficiency)
+ * - HEY (innovation)
+ * - ProtonMail (security)
+ * - Superhuman (speed)
+ */
+
+/* ============================================================================
+   BASE LAYOUT
+   ============================================================================ */
+
+.cube-mail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+}
+
+.cube-mail--loading,
+.cube-mail--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+}
+
+.cube-mail__loader,
+.cube-mail__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ============================================================================
+   SIDEBAR
+   ============================================================================ */
+
+.cube-mail__sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  background: var(--card);
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.cube-mail__compose-btn {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.cube-mail__compose-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.cube-mail__account-switcher {
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 0.875rem;
+  height: auto;
+  padding: 0.5rem;
+}
+
+/* Folders */
+.cube-mail__folders {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cube-mail__folder-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  transition: all 0.15s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.cube-mail__folder-item:hover {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.cube-mail__folder-item--active {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 500;
+}
+
+/* Labels */
+.cube-mail__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cube-mail__labels-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+}
+
+.cube-mail__label-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  transition: all 0.15s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.cube-mail__label-item:hover {
+  background: var(--accent);
+}
+
+/* Storage */
+.cube-mail__storage {
+  padding: 0.75rem;
+  margin-top: auto;
+}
+
+.cube-mail__storage-bar {
+  height: 4px;
+  background: var(--muted);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.cube-mail__storage-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ============================================================================
+   MAIN CONTENT
+   ============================================================================ */
+
+.cube-mail__main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Toolbar */
+.cube-mail__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.cube-mail__search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 500px;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--muted);
+  border-radius: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.cube-mail__search:focus-within {
+  background: var(--background);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.cube-mail__search-input {
+  border: none;
+  background: transparent;
+  height: auto;
+  padding: 0;
+}
+
+.cube-mail__search-input:focus {
+  box-shadow: none;
+}
+
+.cube-mail__toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+/* Content Area */
+.cube-mail__content {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ============================================================================
+   EMAIL LIST
+   ============================================================================ */
+
+.cube-mail__list {
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.cube-mail__list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cube-mail__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  position: relative;
+}
+
+.cube-mail__list-item:hover {
+  background: var(--accent);
+}
+
+.cube-mail__list-item--selected {
+  background: var(--accent);
+}
+
+.cube-mail__list-item--unread {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.cube-mail__list-item--unread::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: #3b82f6;
+  border-radius: 0 2px 2px 0;
+}
+
+.cube-mail__list-item-check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 2px;
+}
+
+.cube-mail__star-btn {
+  padding: 0.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  border-radius: 0.25rem;
+  transition: all 0.15s ease;
+}
+
+.cube-mail__star-btn:hover {
+  color: #eab308;
+}
+
+.cube-mail__star-btn--active {
+  color: #eab308;
+}
+
+.cube-mail__star-btn--active svg {
+  fill: #eab308;
+}
+
+.cube-mail__list-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.cube-mail__list-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cube-mail__list-item-from {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cube-mail__list-item-date {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+.cube-mail__list-item-subject {
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cube-mail__list-item-snippet {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cube-mail__list-item-indicators {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 2px;
+}
+
+.cube-mail__list-item-actions {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 2px;
+}
+
+.cube-mail__list-item:hover .cube-mail__list-item-actions {
+  display: flex;
+}
+
+.cube-mail__list-item:hover .cube-mail__list-item-indicators {
+  display: none;
+}
+
+.cube-mail__list-item-actions button {
+  padding: 0.375rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  border-radius: 0.25rem;
+  transition: all 0.15s ease;
+}
+
+.cube-mail__list-item-actions button:hover {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ============================================================================
+   EMAIL VIEWER
+   ============================================================================ */
+
+.cube-mail__viewer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.cube-mail__viewer-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cube-mail__email-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cube-mail__email-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cube-mail__email-subject h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cube-mail__email-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.cube-mail__email-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.cube-mail__email-sender {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cube-mail__email-sender-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.cube-mail__email-security {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.cube-mail__email-body {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.cube-mail__email-html {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.cube-mail__email-html img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cube-mail__email-html a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.cube-mail__email-html a:hover {
+  text-decoration: underline;
+}
+
+.cube-mail__email-text {
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+/* Attachments */
+.cube-mail__email-attachments {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--muted);
+}
+
+.cube-mail__attachment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cube-mail__attachment-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cube-mail__attachment-item:hover {
+  border-color: #3b82f6;
+}
+
+/* Footer */
+.cube-mail__email-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--background);
+}
+
+/* ============================================================================
+   COMPOSE MODAL
+   ============================================================================ */
+
+.cube-mail__compose-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.cube-mail__compose-modal {
+  width: 560px;
+  max-width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.cube-mail__compose-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.cube-mail__compose-header h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cube-mail__compose-fields {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+}
+
+.cube-mail__compose-field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cube-mail__compose-field:last-child {
+  border-bottom: none;
+}
+
+.cube-mail__compose-field label {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.cube-mail__compose-field input {
+  border: none;
+  background: transparent;
+  height: auto;
+  padding: 0.25rem 0;
+}
+
+.cube-mail__compose-field input:focus {
+  box-shadow: none;
+}
+
+.cube-mail__compose-body {
+  flex: 1;
+  min-height: 200px;
+  padding: 1rem;
+  border: none;
+  resize: none;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.cube-mail__compose-body:focus {
+  outline: none;
+}
+
+.cube-mail__compose-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--card);
+}
+
+.cube-mail__compose-options {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.cube-mail__compose-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .cube-mail {
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .cube-mail__content {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cube-mail {
+    grid-template-columns: 1fr;
+  }
+  
+  .cube-mail__sidebar {
+    display: none;
+  }
+  
+  .cube-mail__content {
+    grid-template-columns: 1fr;
+  }
+  
+  .cube-mail__viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+  }
+  
+  .cube-mail__compose-overlay {
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+  }
+  
+  .cube-mail__compose-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+}
+
+/* ============================================================================
+   DARK MODE ADJUSTMENTS
+   ============================================================================ */
+
+:root {
+  --cube-mail-accent: #3b82f6;
+  --cube-mail-accent-hover: #2563eb;
+}
+
+.dark .cube-mail__list-item--unread {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.dark .cube-mail__email-html {
+  color-scheme: dark;
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cube-mail__compose-overlay {
+  animation: fadeIn 0.15s ease;
+}
+
+.cube-mail__compose-modal {
+  animation: slideInRight 0.2s ease;
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  .cube-mail__sidebar,
+  .cube-mail__toolbar,
+  .cube-mail__list,
+  .cube-mail__email-footer,
+  .cube-mail__email-actions {
+    display: none !important;
+  }
+  
+  .cube-mail {
+    grid-template-columns: 1fr;
+  }
+  
+  .cube-mail__content {
+    grid-template-columns: 1fr;
+  }
+  
+  .cube-mail__email-body {
+    overflow: visible;
+  }
+}

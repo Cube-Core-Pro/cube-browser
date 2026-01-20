@@ -1,0 +1,99 @@
+/**
+ * Download Stats Styles
+ * CUBE Nexum Platform v2.0
+ */
+
+.download-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 0 2rem 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.stat-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-card.speed {
+  grid-column: span 2;
+}
+
+.stat-progress {
+  margin-top: 0.5rem;
+}
+
+.stat-progress .progress-bar {
+  width: var(--progress-width, 0%);
+  height: 4px;
+  background: linear-gradient(90deg, #a78bfa 0%, #8b5cf6 100%);
+  border-radius: 2px;
+  margin-bottom: 0.25rem;
+}
+
+.stat-progress .progress-bar > div {
+  height: 100%;
+  background: linear-gradient(90deg, #a78bfa 0%, #8b5cf6 100%);
+  transition: width 0.3s ease;
+}
+
+.stat-progress .progress-text {
+  font-size: 0.625rem;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .download-stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem 1rem;
+  }
+
+  .stat-card.speed {
+    grid-column: span 2;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+}

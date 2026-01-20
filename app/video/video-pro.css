@@ -1,0 +1,2549 @@
+/* Video Conference Pro - Enterprise-Grade Styles
+ * CUBE Nexum - Better than Zoom
+ * Theme-aware using global CSS variables from globals.css
+ */
+
+/* ==================== Variables - Uses Global Theme ==================== */
+:root, .dark {
+  --vc-bg-primary: var(--color-bg-primary);
+  --vc-bg-secondary: var(--color-bg-secondary);
+  --vc-bg-tertiary: var(--color-bg-tertiary);
+  --vc-accent: var(--color-accent);
+  --vc-accent-hover: var(--color-accent-hover);
+  --vc-success: var(--color-success);
+  --vc-danger: var(--color-danger);
+  --vc-warning: var(--color-warning);
+  --vc-text-primary: var(--color-text-primary);
+  --vc-text-secondary: var(--color-text-secondary);
+  --vc-text-muted: var(--color-text-muted);
+  --vc-border: var(--color-border);
+  --vc-gradient: linear-gradient(135deg, var(--color-accent) 0%, #8b5cf6 50%, #ec4899 100%);
+  --vc-shadow: var(--shadow-xl);
+  --vc-radius: 12px;
+  --vc-radius-sm: 8px;
+  --vc-input-bg: var(--color-bg-tertiary);
+  --vc-input-border: var(--color-border);
+  --vc-card-bg: var(--color-bg-secondary);
+  --vc-overlay-bg: rgba(0, 0, 0, 0.8);
+}
+
+/* Light mode inherits from globals.css automatically */
+
+/* ==================== Main Container ==================== */
+.video-conference-pro {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--vc-bg-primary);
+  color: var(--vc-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* ==================== Top Bar ==================== */
+.vc-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--vc-bg-secondary);
+  border-bottom: 1px solid var(--vc-border);
+  z-index: 100;
+}
+
+.vc-top-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vc-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--vc-bg-tertiary);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-back-btn:hover {
+  background: var(--vc-accent);
+}
+
+.vc-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: var(--vc-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vc-logo svg {
+  color: var(--vc-accent);
+}
+
+.vc-top-center {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vc-room-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+}
+
+.vc-room-id {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--vc-text-primary);
+  letter-spacing: 0.05em;
+}
+
+.vc-copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  color: var(--vc-accent);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.vc-copy-btn:hover {
+  color: var(--vc-accent-hover);
+}
+
+.vc-recording-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--vc-danger);
+  border-radius: var(--vc-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  animation: pulse-recording 2s infinite;
+}
+
+@keyframes pulse-recording {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.vc-recording-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.vc-top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vc-timer {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  color: var(--vc-text-secondary);
+}
+
+.vc-participant-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+  font-size: 0.875rem;
+  color: var(--vc-text-secondary);
+}
+
+.vc-qr-btn, .vc-settings-btn, .vc-fullscreen-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--vc-bg-tertiary);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-qr-btn:hover, .vc-settings-btn:hover, .vc-fullscreen-btn:hover {
+  background: var(--vc-accent);
+  color: white;
+}
+
+/* ==================== Main Content ==================== */
+.vc-main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ==================== Video Area ==================== */
+.vc-video-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==================== Video Grid ==================== */
+.vc-video-grid {
+  flex: 1;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  overflow: auto;
+}
+
+/* Grid layouts */
+.vc-video-grid.grid-1 {
+  grid-template-columns: 1fr;
+}
+
+.vc-video-grid.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.vc-video-grid.grid-3,
+.vc-video-grid.grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.vc-video-grid.grid-5,
+.vc-video-grid.grid-6 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.vc-video-grid.grid-7,
+.vc-video-grid.grid-8,
+.vc-video-grid.grid-9 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* Speaker view */
+.vc-video-grid.speaker-view {
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 1fr;
+}
+
+.vc-video-grid.speaker-view .vc-video-tile.speaker {
+  grid-row: 1 / -1;
+}
+
+.vc-video-grid.speaker-view .vc-thumbnail-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ==================== Video Tile ==================== */
+.vc-video-tile {
+  position: relative;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  min-height: 0;
+}
+
+.vc-video-tile.local {
+  border: 2px solid var(--vc-accent);
+}
+
+.vc-video-tile.speaking {
+  border: 2px solid var(--vc-success);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.vc-video-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: black;
+}
+
+.vc-video-tile.video-off video {
+  display: none;
+}
+
+.vc-avatar-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #374151, #1f2937);
+}
+
+.vc-avatar {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vc-gradient);
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.vc-tile-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.vc-participant-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.vc-host-badge {
+  padding: 2px 6px;
+  background: var(--vc-accent);
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.vc-tile-indicators {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vc-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.vc-indicator.muted {
+  color: var(--vc-danger);
+}
+
+.vc-indicator.video-off {
+  color: var(--vc-danger);
+}
+
+.vc-indicator.hand-raised {
+  color: var(--vc-warning);
+  animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-20deg); }
+}
+
+.vc-indicator.screen-sharing {
+  color: var(--vc-success);
+}
+
+/* ==================== Screen Share View ==================== */
+.vc-screen-share-container {
+  position: absolute;
+  inset: 16px;
+  background: black;
+  border-radius: var(--vc-radius);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.vc-screen-share-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.vc-screen-share-banner {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--vc-accent);
+  border-radius: var(--vc-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ==================== Reactions Overlay ==================== */
+.vc-reactions-overlay {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.vc-reaction {
+  font-size: 2.5rem;
+  animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) scale(0.5);
+  }
+}
+
+/* ==================== Bottom Toolbar - Improved Compact Design ==================== */
+.vc-bottom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 20px;
+  background: var(--vc-bg-secondary);
+  border-top: 1px solid var(--vc-border);
+  flex-wrap: wrap;
+}
+
+.vc-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-right: 1px solid var(--vc-border);
+}
+
+.vc-toolbar-group:last-child {
+  border-right: none;
+}
+
+.vc-toolbar-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 56px;
+  height: 50px;
+  background: var(--vc-bg-tertiary);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-toolbar-btn:hover {
+  background: #3f3f4f;
+  transform: translateY(-2px);
+}
+
+.vc-toolbar-btn.active {
+  background: var(--vc-accent);
+}
+
+.vc-toolbar-btn.danger {
+  background: var(--vc-danger);
+}
+
+.vc-toolbar-btn.danger:hover {
+  background: #dc2626;
+}
+
+.vc-toolbar-btn.off {
+  background: #dc2626;
+}
+
+.vc-toolbar-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.vc-toolbar-btn span {
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.vc-toolbar-btn .vc-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  background: var(--vc-danger);
+  border-radius: 7px;
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+
+/* Responsive toolbar for smaller screens */
+@media (max-width: 900px) {
+  .vc-bottom-toolbar {
+    padding: 10px 16px;
+    gap: 4px;
+  }
+  
+  .vc-toolbar-group {
+    padding: 0 8px;
+    gap: 4px;
+  }
+  
+  .vc-toolbar-btn {
+    width: 50px;
+    height: 46px;
+  }
+  
+  .vc-toolbar-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .vc-toolbar-btn span {
+    font-size: 0.55rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .vc-bottom-toolbar {
+    justify-content: space-around;
+    padding: 8px 12px;
+  }
+  
+  .vc-toolbar-group {
+    border-right: none;
+    padding: 0 4px;
+  }
+  
+  .vc-toolbar-btn {
+    width: 44px;
+    height: 42px;
+  }
+  
+  .vc-toolbar-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .vc-toolbar-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .vc-toolbar-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ==================== Side Panels ==================== */
+.vc-side-panel {
+  width: 320px;
+  background: var(--vc-bg-secondary);
+  border-left: 1px solid var(--vc-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.vc-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--vc-border);
+}
+
+.vc-panel-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.vc-panel-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+}
+
+.vc-panel-close:hover {
+  background: var(--vc-bg-tertiary);
+  color: white;
+}
+
+.vc-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* ==================== Chat Panel ==================== */
+.vc-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vc-chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+}
+
+.vc-chat-message.own {
+  background: var(--vc-accent);
+  margin-left: 24px;
+}
+
+.vc-chat-sender {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vc-accent);
+}
+
+.vc-chat-message.own .vc-chat-sender {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.vc-chat-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.vc-chat-time {
+  font-size: 0.625rem;
+  color: var(--vc-text-muted);
+  align-self: flex-end;
+}
+
+.vc-chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--vc-border);
+}
+
+.vc-chat-input input {
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  font-size: 0.875rem;
+}
+
+.vc-chat-input input:focus {
+  outline: none;
+  border-color: var(--vc-accent);
+}
+
+.vc-chat-input button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--vc-accent);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.vc-chat-input button:hover {
+  background: var(--vc-accent-hover);
+}
+
+/* ==================== Participants Panel ==================== */
+.vc-participants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vc-participant-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius-sm);
+}
+
+.vc-participant-item.waiting {
+  border: 1px dashed var(--vc-warning);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.vc-participant-avatar {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vc-gradient);
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.vc-participant-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.vc-participant-info-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.vc-participant-role {
+  font-size: 0.625rem;
+  color: var(--vc-text-muted);
+}
+
+.vc-participant-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vc-participant-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+}
+
+.vc-participant-actions button:hover {
+  background: var(--vc-bg-primary);
+  color: white;
+}
+
+.vc-participant-actions button.danger:hover {
+  color: var(--vc-danger);
+}
+
+.vc-waiting-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.vc-waiting-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vc-admit-btn {
+  background: var(--vc-success);
+  color: white;
+}
+
+.vc-deny-btn {
+  background: var(--vc-danger);
+  color: white;
+}
+
+/* ==================== Reactions Panel ==================== */
+.vc-reactions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.vc-reaction-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  background: var(--vc-bg-tertiary);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-reaction-btn:hover {
+  background: var(--vc-accent);
+  transform: scale(1.1);
+}
+
+/* ==================== QR Code Modal ==================== */
+.vc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.vc-modal {
+  background: var(--vc-bg-secondary);
+  border-radius: var(--vc-radius);
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--vc-shadow);
+  animation: scaleIn 0.2s;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.vc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.vc-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.vc-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+}
+
+.vc-modal-close:hover {
+  background: var(--vc-bg-tertiary);
+  color: white;
+}
+
+.vc-qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.vc-qr-code {
+  padding: 16px;
+  background: white;
+  border-radius: var(--vc-radius);
+}
+
+.vc-qr-code canvas {
+  display: block;
+}
+
+.vc-share-link {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.vc-share-link input {
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  font-size: 0.875rem;
+  font-family: 'SF Mono', monospace;
+}
+
+.vc-share-link button {
+  padding: 10px 16px;
+  background: var(--vc-accent);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vc-share-link button:hover {
+  background: var(--vc-accent-hover);
+}
+
+/* ==================== Waiting Room ==================== */
+.vc-waiting-room {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--vc-bg-primary);
+  z-index: 100;
+}
+
+.vc-waiting-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.vc-waiting-spinner {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  border: 4px solid var(--vc-bg-tertiary);
+  border-top-color: var(--vc-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.vc-waiting-content h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.vc-waiting-content p {
+  margin: 0;
+  color: var(--vc-text-secondary);
+}
+
+/* ==================== Lobby Screen ==================== */
+.vc-lobby {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #0f0f12 0%, #1a1a2e 100%);
+}
+
+.vc-lobby-card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--vc-bg-secondary);
+  border-radius: var(--vc-radius);
+  padding: 32px;
+  box-shadow: var(--vc-shadow);
+}
+
+.vc-lobby-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.vc-lobby-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--vc-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vc-lobby-subtitle {
+  color: var(--vc-text-secondary);
+  margin: 0;
+}
+
+.vc-lobby-tabs {
+  display: flex;
+  margin-bottom: 24px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius-sm);
+  padding: 4px;
+}
+
+.vc-lobby-tab {
+  flex: 1;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--vc-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-lobby-tab:hover {
+  color: var(--vc-text-primary);
+}
+
+.vc-lobby-tab.active {
+  background: var(--vc-accent);
+  color: white;
+}
+
+.vc-lobby-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vc-form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--vc-text-secondary);
+}
+
+.vc-form-group input {
+  padding: 12px 16px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  font-size: 1rem;
+}
+
+.vc-form-group input:focus {
+  outline: none;
+  border-color: var(--vc-accent);
+}
+
+.vc-room-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.vc-room-input-group input {
+  flex: 1;
+  font-family: 'SF Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.vc-generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+}
+
+.vc-generate-btn:hover {
+  background: var(--vc-accent);
+  border-color: var(--vc-accent);
+  color: white;
+}
+
+.vc-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vc-checkbox-group input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--vc-accent);
+}
+
+.vc-checkbox-group label {
+  font-size: 0.875rem;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+}
+
+.vc-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--vc-gradient);
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.vc-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.vc-lobby-features {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--vc-border);
+}
+
+.vc-lobby-features h4 {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--vc-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vc-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.vc-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius-sm);
+  font-size: 0.8125rem;
+  color: var(--vc-text-secondary);
+}
+
+.vc-feature-item svg {
+  color: var(--vc-accent);
+  flex-shrink: 0;
+}
+
+/* ==================== Picture-in-Picture Mode ==================== */
+.video-conference-pro.pip-mode {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 360px;
+  height: 240px;
+  z-index: 10000;
+  border-radius: var(--vc-radius);
+  box-shadow: var(--vc-shadow);
+  overflow: hidden;
+  resize: both;
+  min-width: 280px;
+  min-height: 180px;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+.video-conference-pro.pip-mode .vc-top-bar {
+  display: none;
+}
+
+.video-conference-pro.pip-mode .vc-bottom-toolbar {
+  display: none;
+}
+
+.video-conference-pro.pip-mode .vc-side-panel {
+  display: none;
+}
+
+.video-conference-pro.pip-mode .vc-video-grid {
+  padding: 0;
+}
+
+.video-conference-pro.pip-mode .vc-video-tile {
+  border-radius: 0;
+}
+
+.video-conference-pro.pip-mode .vc-tile-info {
+  padding: 8px;
+}
+
+.video-conference-pro.pip-mode .vc-participant-name {
+  font-size: 0.75rem;
+}
+
+.vc-pip-controls {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: var(--vc-radius);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.video-conference-pro.pip-mode:hover .vc-pip-controls {
+  opacity: 1;
+}
+
+.vc-pip-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--vc-bg-tertiary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.vc-pip-controls button:hover {
+  background: var(--vc-accent);
+}
+
+.vc-pip-controls button.danger {
+  background: var(--vc-danger);
+}
+
+/* ==================== Virtual Background Selector ==================== */
+.vc-bg-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vc-bg-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.vc-bg-option {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--vc-radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.vc-bg-option:hover {
+  border-color: var(--vc-accent);
+}
+
+.vc-bg-option.selected {
+  border-color: var(--vc-accent);
+  box-shadow: 0 0 0 2px var(--vc-accent);
+}
+
+.vc-bg-option.none {
+  background: linear-gradient(45deg, #333 25%, #444 25%, #444 50%, #333 50%, #333 75%, #444 75%);
+  background-size: 20px 20px;
+}
+
+.vc-bg-option.blur {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  filter: blur(8px);
+}
+
+/* ==================== Settings Panel ==================== */
+.vc-settings-section {
+  margin-bottom: 24px;
+}
+
+.vc-settings-section h4 {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--vc-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vc-settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius-sm);
+  margin-bottom: 8px;
+}
+
+.vc-settings-item label {
+  font-size: 0.875rem;
+}
+
+.vc-settings-item select {
+  padding: 6px 12px;
+  background: var(--vc-bg-primary);
+  border: 1px solid var(--vc-border);
+  border-radius: 4px;
+  color: var(--vc-text-primary);
+  font-size: 0.875rem;
+}
+
+.vc-toggle {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: var(--vc-bg-primary);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.vc-toggle.active {
+  background: var(--vc-accent);
+}
+
+.vc-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.vc-toggle.active::after {
+  transform: translateX(24px);
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 1024px) {
+  .vc-side-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+  }
+}
+
+@media (max-width: 768px) {
+  .vc-top-bar {
+    padding: 8px 16px;
+    flex-wrap: wrap;
+  }
+  
+  .vc-top-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  
+  .vc-bottom-toolbar {
+    padding: 12px;
+    gap: 4px;
+  }
+  
+  .vc-toolbar-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .vc-toolbar-btn span {
+    display: none;
+  }
+  
+  .vc-side-panel {
+    width: 100%;
+  }
+  
+  .vc-lobby-card {
+    padding: 24px;
+  }
+  
+  .vc-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .vc-video-grid {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .vc-video-grid.grid-2,
+  .vc-video-grid.grid-3,
+  .vc-video-grid.grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .vc-toolbar-group {
+    padding: 0 8px;
+  }
+}
+
+/* ==================== Animations ==================== */
+.vc-fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.vc-slide-up {
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==================== Whiteboard Overlay ==================== */
+.vc-whiteboard-overlay {
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: 50;
+}
+
+.vc-whiteboard-toolbar {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--vc-bg-secondary);
+  border-radius: var(--vc-radius);
+  box-shadow: var(--vc-shadow);
+}
+
+.vc-whiteboard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--vc-bg-tertiary);
+  border: none;
+  border-radius: 6px;
+  color: var(--vc-text-primary);
+  cursor: pointer;
+}
+
+.vc-whiteboard-btn:hover,
+.vc-whiteboard-btn.active {
+  background: var(--vc-accent);
+}
+
+.vc-whiteboard-canvas {
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+/* ==================== Breakout Rooms ==================== */
+.vc-breakout-rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vc-breakout-room {
+  padding: 16px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+}
+
+.vc-breakout-room-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.vc-breakout-room-header h4 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.vc-breakout-participants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vc-breakout-participant {
+  padding: 4px 10px;
+  background: var(--vc-bg-primary);
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+/* ==================== Network Quality Indicator ==================== */
+.vc-network-quality {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+
+.vc-network-bar {
+  width: 4px;
+  background: var(--vc-success);
+  border-radius: 1px;
+}
+
+.vc-network-bar:nth-child(1) { height: 4px; }
+.vc-network-bar:nth-child(2) { height: 8px; }
+.vc-network-bar:nth-child(3) { height: 12px; }
+.vc-network-bar:nth-child(4) { height: 16px; }
+
+.vc-network-quality.poor .vc-network-bar { background: var(--vc-danger); }
+.vc-network-quality.poor .vc-network-bar:nth-child(n+2) { opacity: 0.3; }
+
+.vc-network-quality.fair .vc-network-bar { background: var(--vc-warning); }
+.vc-network-quality.fair .vc-network-bar:nth-child(n+3) { opacity: 0.3; }
+
+.vc-network-quality.good .vc-network-bar:nth-child(4) { opacity: 0.3; }
+
+/* ==================== Whiteboard Overlay ==================== */
+.vc-whiteboard-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vc-whiteboard-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  max-height: 90vh;
+  background: var(--vc-bg-secondary);
+  border-radius: var(--vc-radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.vc-whiteboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--vc-bg-tertiary);
+  border-bottom: 1px solid var(--vc-border);
+}
+
+.vc-whiteboard-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vc-text-primary);
+}
+
+.vc-whiteboard-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vc-tool-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--vc-bg-primary);
+  border-radius: var(--vc-radius-sm);
+  position: relative;
+}
+
+.vc-tool-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vc-tool-btn:hover {
+  background: var(--vc-bg-tertiary);
+  color: var(--vc-text-primary);
+}
+
+.vc-tool-btn.active {
+  background: var(--vc-accent);
+  color: white;
+}
+
+.vc-tool-btn.color-btn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--vc-border);
+  padding: 4px;
+}
+
+.vc-tool-btn .color-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.vc-color-picker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius-sm);
+  border: 1px solid var(--vc-border);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  z-index: 10;
+  box-shadow: var(--vc-shadow);
+}
+
+.vc-color-option {
+  width: 28px;
+  height: 28px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.vc-color-option:hover {
+  transform: scale(1.1);
+}
+
+.vc-color-option.active {
+  border-color: var(--vc-accent);
+}
+
+.vc-brush-select {
+  padding: 6px 12px;
+  background: var(--vc-bg-primary);
+  border: 1px solid var(--vc-border);
+  border-radius: 6px;
+  color: var(--vc-text-primary);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.vc-brush-select:focus {
+  outline: none;
+  border-color: var(--vc-accent);
+}
+
+.vc-whiteboard-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vc-whiteboard-close:hover {
+  background: var(--vc-danger);
+  color: white;
+}
+
+.vc-whiteboard-canvas {
+  flex: 1;
+  background: #1e1e2e;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+/* ==================== Virtual Background Picker ==================== */
+.vc-background-picker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vc-background-picker {
+  width: 100%;
+  max-width: 600px;
+  background: var(--vc-bg-secondary);
+  border-radius: var(--vc-radius);
+  overflow: hidden;
+  box-shadow: var(--vc-shadow);
+}
+
+.vc-background-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--vc-bg-tertiary);
+  border-bottom: 1px solid var(--vc-border);
+}
+
+.vc-background-picker-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.vc-background-picker-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vc-background-picker-close:hover {
+  background: var(--vc-danger);
+  color: white;
+}
+
+.vc-background-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.vc-background-option {
+  aspect-ratio: 16/9;
+  background: var(--vc-bg-tertiary);
+  border: 2px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vc-background-option:hover {
+  border-color: var(--vc-accent);
+  transform: scale(1.02);
+}
+
+.vc-background-option.active {
+  border-color: var(--vc-accent);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.bg-option-none {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--vc-text-secondary);
+}
+
+.bg-option-none span,
+.bg-option-blur span,
+.bg-option-color span,
+.bg-option-image span {
+  font-size: 0.625rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bg-option-blur {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.bg-option-color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.bg-option-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.vc-background-custom {
+  padding: 16px 20px;
+  border-top: 1px solid var(--vc-border);
+}
+
+.vc-custom-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--vc-bg-tertiary);
+  border: 2px dashed var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.vc-custom-upload:hover {
+  border-color: var(--vc-accent);
+  color: var(--vc-text-primary);
+}
+
+.vc-custom-upload input {
+  display: none;
+}
+
+/* ==================== Connection Status Indicator ==================== */
+.vc-connection-status {
+  position: fixed;
+  bottom: 100px;
+  left: 20px;
+  padding: 8px 12px;
+  background: var(--vc-bg-secondary);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--vc-border);
+  z-index: 100;
+}
+
+.vc-connection-status.connected {
+  border-color: var(--vc-success);
+}
+
+.vc-connection-status .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vc-success);
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ==================== Speaker Layout ==================== */
+.video-conference-pro.speaker-layout .vc-video-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-conference-pro.speaker-layout .vc-video-tile:first-child {
+  flex: 1;
+  max-height: none;
+}
+
+.video-conference-pro.speaker-layout .vc-video-tile:not(:first-child) {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+  border-radius: var(--vc-radius);
+  overflow: hidden;
+  box-shadow: var(--vc-shadow);
+}
+
+/* ==================== Remote Video Styles ==================== */
+.vc-remote-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================== Enterprise Invite System ==================== */
+.vc-modal-large {
+  max-width: 700px;
+  width: 95%;
+}
+
+.vc-modal-body {
+  padding: 0 24px 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Invite Tabs */
+.vc-invite-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0;
+  margin: -24px -24px 20px -24px;
+  padding: 0 16px;
+  background: var(--vc-bg-tertiary);
+  border-bottom: 1px solid var(--vc-border);
+}
+
+.vc-invite-tab {
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  color: var(--vc-text-secondary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.vc-invite-tab:hover {
+  color: var(--vc-text-primary);
+}
+
+.vc-invite-tab.active {
+  color: var(--vc-accent);
+}
+
+.vc-invite-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--vc-accent);
+}
+
+/* Quick Invite Grid */
+.vc-quick-invite-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .vc-quick-invite-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vc-qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.vc-qr-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.vc-qr-hint {
+  font-size: 0.75rem;
+  color: var(--vc-text-muted);
+  text-align: center;
+}
+
+/* Meeting Info Section */
+.vc-meeting-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vc-meeting-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vc-meeting-detail label {
+  font-size: 0.75rem;
+  color: var(--vc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.vc-copy-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  padding: 8px 12px;
+}
+
+.vc-copy-field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--vc-text-primary);
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.vc-meeting-id {
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vc-text-primary);
+  flex: 1;
+}
+
+.vc-btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  color: var(--vc-text-primary);
+}
+
+.vc-btn-icon:hover {
+  opacity: 1;
+}
+
+/* Share Methods */
+.vc-share-methods {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .vc-share-methods {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.vc-share-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 70px;
+}
+
+.vc-share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.vc-share-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.vc-share-btn .label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Email Share Button */
+.vc-share-email {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  border-color: #4a5568;
+}
+.vc-share-email svg { fill: #fff; }
+.vc-share-email:hover { background: linear-gradient(135deg, #5a6578 0%, #3d4758 100%); }
+
+/* SMS Share Button */
+.vc-share-sms {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  border-color: #3B82F6;
+}
+.vc-share-sms svg { fill: #fff; }
+.vc-share-sms:hover { background: linear-gradient(135deg, #4B92FF 0%, #3573FB 100%); }
+
+/* WhatsApp Share Button */
+.vc-share-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-color: #25D366;
+}
+.vc-share-whatsapp svg { fill: #fff; }
+.vc-share-whatsapp:hover { background: linear-gradient(135deg, #2EE370 0%, #159E8E 100%); }
+
+/* Telegram Share Button */
+.vc-share-telegram {
+  background: linear-gradient(135deg, #0088cc 0%, #229ED9 100%);
+  border-color: #0088cc;
+}
+.vc-share-telegram svg { fill: #fff; }
+.vc-share-telegram:hover { background: linear-gradient(135deg, #1199dd 0%, #32AEE9 100%); }
+
+/* Slack Share Button */
+.vc-share-slack {
+  background: linear-gradient(135deg, #4A154B 0%, #611f69 100%);
+  border-color: #4A154B;
+}
+.vc-share-slack svg { fill: #fff; }
+.vc-share-slack:hover { background: linear-gradient(135deg, #5A256B 0%, #712f79 100%); }
+
+/* Copy Share Button */
+.vc-share-copy {
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  border-color: #6366F1;
+}
+.vc-share-copy svg { fill: #fff; }
+.vc-share-copy:hover { background: linear-gradient(135deg, #7376FF 0%, #5F56F5 100%); }
+
+/* Button Styles */
+.vc-btn {
+  padding: 10px 16px;
+  border-radius: var(--vc-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.vc-btn-sm {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.vc-btn-primary {
+  background: var(--vc-accent);
+  color: white;
+}
+
+.vc-btn-primary:hover {
+  background: var(--vc-accent-hover);
+}
+
+.vc-btn-secondary {
+  background: var(--vc-bg-tertiary);
+  color: var(--vc-text-primary);
+  border: 1px solid var(--vc-border);
+}
+
+.vc-btn-secondary:hover {
+  background: var(--vc-bg-secondary);
+}
+
+/* Contacts Tab */
+.vc-contacts-search input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.vc-contacts-list {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.vc-contacts-empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--vc-text-secondary);
+}
+
+.vc-contacts-empty p {
+  margin: 12px 0;
+}
+
+.vc-invite-direct {
+  padding-top: 16px;
+  border-top: 1px solid var(--vc-border);
+}
+
+.vc-invite-direct label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--vc-text-secondary);
+  margin-bottom: 8px;
+}
+
+.vc-email-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.vc-email-input-group input {
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+}
+
+/* Calendar Tab */
+.vc-calendar-integrations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.vc-calendar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  background: var(--vc-bg-tertiary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc-calendar-btn:hover {
+  border-color: var(--vc-accent);
+  background: var(--vc-bg-secondary);
+}
+
+.vc-calendar-btn .icon {
+  font-size: 2rem;
+}
+
+.vc-calendar-btn .name {
+  font-weight: 500;
+  color: var(--vc-text-primary);
+}
+
+.vc-calendar-btn .action {
+  font-size: 0.75rem;
+  color: var(--vc-accent);
+}
+
+.vc-schedule-meeting {
+  padding: 20px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+}
+
+.vc-schedule-meeting h4 {
+  margin: 0 0 16px 0;
+  color: var(--vc-text-primary);
+}
+
+.vc-form-group {
+  margin-bottom: 12px;
+}
+
+.vc-form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--vc-text-secondary);
+  margin-bottom: 6px;
+}
+
+.vc-form-group input,
+.vc-form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--vc-bg-secondary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+  font-size: 0.9rem;
+}
+
+/* Advanced Tab */
+.vc-advanced-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vc-option-group {
+  padding: 16px;
+  background: var(--vc-bg-tertiary);
+  border-radius: var(--vc-radius);
+}
+
+.vc-option-group h4 {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+  color: var(--vc-text-primary);
+}
+
+.vc-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--vc-text-primary);
+  border-bottom: 1px solid var(--vc-border);
+}
+
+.vc-toggle-label:last-child {
+  border-bottom: none;
+}
+
+.vc-toggle-label input {
+  display: none;
+}
+
+.vc-toggle-slider {
+  width: 36px;
+  height: 20px;
+  background: var(--vc-bg-secondary);
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.vc-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.vc-toggle-label input:checked + .vc-toggle-slider {
+  background: var(--vc-accent);
+}
+
+.vc-toggle-label input:checked + .vc-toggle-slider::before {
+  transform: translateX(16px);
+}
+
+.vc-password-field {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  margin-left: 48px;
+}
+
+.vc-password-field input {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--vc-bg-secondary);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius-sm);
+  color: var(--vc-text-primary);
+}
+
+/* ==================== Responsive Whiteboard ==================== */
+@media (max-width: 768px) {
+  .vc-whiteboard-tools {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .vc-tool-group {
+    padding: 2px;
+  }
+  
+  .vc-tool-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .vc-background-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

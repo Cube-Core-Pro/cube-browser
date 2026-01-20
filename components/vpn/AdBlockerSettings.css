@@ -1,0 +1,251 @@
+/* AdBlockerSettings.css - Ad Blocker Configuration Styles */
+
+.adblocker-settings {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Master Toggle */
+.master-toggle {
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.master-toggle.enabled {
+  border-color: #22c55e;
+  background: linear-gradient(to right, rgba(34, 197, 94, 0.05), transparent);
+}
+
+.master-toggle.disabled {
+  border-color: var(--border);
+  opacity: 0.9;
+}
+
+.toggle-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+}
+
+.toggle-icon.active {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  animation: shield-pulse 2s infinite;
+}
+
+@keyframes shield-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--stat-color);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--stat-color) 15%, transparent);
+  color: var(--stat-color);
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.stat-subvalue {
+  font-size: 0.65rem;
+  color: var(--muted-foreground);
+  opacity: 0.8;
+}
+
+/* Categories */
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.category-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.category-toggle.enabled {
+  background: linear-gradient(to right, rgba(34, 197, 94, 0.08), var(--muted));
+}
+
+.category-toggle.disabled {
+  opacity: 0.7;
+}
+
+.category-toggle:hover {
+  transform: translateX(4px);
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.category-info {
+  flex: 1;
+}
+
+/* Whitelist */
+.add-whitelist {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.add-whitelist input {
+  flex: 1;
+}
+
+.whitelist-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.whitelist-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--muted);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.whitelist-entry:hover {
+  background: color-mix(in srgb, var(--muted) 80%, var(--foreground));
+}
+
+/* Stats Breakdown */
+.stats-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--muted);
+  border-radius: 8px;
+}
+
+.stat-label-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat-number {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .category-toggle {
+    flex-wrap: wrap;
+  }
+  
+  .toggle-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .master-toggle.enabled {
+    background: linear-gradient(to right, rgba(34, 197, 94, 0.1), transparent);
+  }
+  
+  .category-toggle.enabled {
+    background: linear-gradient(to right, rgba(34, 197, 94, 0.12), var(--muted));
+  }
+}

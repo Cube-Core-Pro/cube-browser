@@ -1,0 +1,651 @@
+/* Deals Manager Styles - Theme-aware */
+
+.deals-manager {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Header */
+.deals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.deals-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.pipeline-selector .pipeline-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.pipeline-btn:hover {
+  border-color: var(--color-border-hover);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 200px;
+}
+
+.search-box svg {
+  color: var(--color-text-tertiary);
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+/* Buttons */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.btn-filter:hover,
+.btn-filter.active {
+  border-color: var(--color-accent);
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+/* View Toggle */
+.view-toggle {
+  display: flex;
+  background: var(--color-bg-tertiary);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.view-toggle button {
+  padding: 6px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.view-toggle button:hover {
+  color: var(--color-text-primary);
+}
+
+.view-toggle button.active {
+  background: var(--color-bg-primary);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 100px;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.stat-item.highlight .stat-value {
+  color: var(--color-accent);
+}
+
+.stat-item.success .stat-value {
+  color: #10b981;
+}
+
+/* Stage Tabs */
+.stage-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.stage-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.stage-tabs button:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.stage-tabs button.active {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.stage-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--stage-color, var(--color-text-tertiary));
+}
+
+.stage-tabs .count {
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--color-bg-tertiary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Deals Table */
+.deals-content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px 24px;
+}
+
+.deals-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.deals-table th {
+  text-align: left;
+  padding: 12px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.deals-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+  background: var(--color-bg-primary);
+}
+
+.deals-table tr:hover td {
+  background: var(--color-bg-hover);
+}
+
+.deals-table tr.overdue td {
+  background: rgba(239, 68, 68, 0.03);
+}
+
+/* Name Cell */
+.deal-name h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0 0 4px;
+}
+
+.deal-company {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+/* Value Cell */
+.deal-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Stage Badge */
+.stage-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Probability Cell */
+.probability-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.probability-bar {
+  width: 60px;
+  height: 6px;
+  background: var(--color-bg-tertiary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.probability-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+/* Contact Cell */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  overflow: hidden;
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.contact-email {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+}
+
+/* Date Cell */
+.date-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.date-cell.overdue {
+  color: #ef4444;
+}
+
+.date-cell svg {
+  color: #ef4444;
+}
+
+/* Owner Cell */
+.owner-cell {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Actions Cell */
+.actions-cell {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.deals-table tr:hover .actions-cell {
+  opacity: 1;
+}
+
+/* Kanban Board */
+.kanban-board {
+  display: flex;
+  gap: 16px;
+  height: calc(100vh - 280px);
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.kanban-column {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.column-header {
+  padding: 14px 16px;
+  border-top: 3px solid var(--stage-color, var(--color-accent));
+  background: var(--color-bg-tertiary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.column-count {
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--color-bg-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--color-text-secondary);
+}
+
+.column-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.column-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Kanban Card */
+.kanban-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 14px;
+  cursor: grab;
+  transition: all 0.2s;
+}
+
+.kanban-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.kanban-card.overdue {
+  border-left: 3px solid #ef4444;
+}
+
+.kanban-card:active {
+  cursor: grabbing;
+}
+
+.kanban-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.card-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.kanban-card .card-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.kanban-card .card-company {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.kanban-card .card-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.mini-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: white;
+}
+
+.kanban-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.close-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+}
+
+.close-date.overdue {
+  color: #ef4444;
+}
+
+.probability {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-tertiary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Add Deal Button */
+.add-deal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  background: transparent;
+  border: 2px dashed var(--color-border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-deal-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .kanban-board {
+    height: calc(100vh - 320px);
+  }
+  
+  .kanban-column {
+    flex: 0 0 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .deals-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .header-right {
+    flex-wrap: wrap;
+  }
+  
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .deals-table th:nth-child(n+5),
+  .deals-table td:nth-child(n+5) {
+    display: none;
+  }
+}

@@ -1,0 +1,450 @@
+/* ============================================================================
+   VPN Elite - Main Styles
+   Enterprise VPN client with threat protection and meshnet
+   ============================================================================ */
+
+.vpn-elite {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.vpn-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+}
+
+/* Connection Status Card */
+.connection-status-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.connection-status-card.connected {
+  border-color: #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(34, 197, 94, 0.02) 100%);
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.status-icon.connected {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+.status-icon.disconnected {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+@keyframes pulse-green {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+  }
+}
+
+/* Server Cards */
+.server-card {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.server-card:hover {
+  background-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.server-card.connected {
+  border-color: #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.02) 100%);
+}
+
+/* Load Indicators */
+.load-indicator {
+  width: 40px;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.load-indicator-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.load-indicator-fill.low {
+  background: #22c55e;
+}
+
+.load-indicator-fill.medium {
+  background: #eab308;
+}
+
+.load-indicator-fill.high {
+  background: #ef4444;
+}
+
+/* Feature Cards */
+.feature-card {
+  transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.feature-icon.kill-switch {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+.feature-icon.split-tunnel {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.feature-icon.double-vpn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+}
+
+.feature-icon.obfuscated {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+}
+
+/* Threat Protection */
+.threat-stat {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.threat-stat:hover {
+  transform: scale(1.02);
+}
+
+.threat-stat-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.threat-stat-icon.malware {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.threat-stat-icon.tracker {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.threat-stat-icon.ads {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.threat-stat-icon.phishing {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.threat-stat-icon.crypto {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+/* Protection Toggle */
+.protection-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.protection-toggle:hover {
+  background: var(--accent);
+}
+
+.protection-toggle.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Meshnet */
+.meshnet-empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.meshnet-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+.device-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.device-card:hover {
+  background: var(--accent);
+  border-color: var(--primary);
+}
+
+.device-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--muted);
+}
+
+.device-icon.online {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.device-icon.offline {
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* Speed Indicators */
+.speed-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--muted);
+}
+
+.speed-indicator.download {
+  color: #3b82f6;
+}
+
+.speed-indicator.upload {
+  color: #22c55e;
+}
+
+/* Connection Line Animation */
+.connection-line {
+  position: relative;
+  height: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.connection-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  animation: connection-flow 2s ease-in-out infinite;
+}
+
+@keyframes connection-flow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Country Flag */
+.country-flag {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Quick Stats */
+.quick-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.quick-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.quick-stat-icon.threats {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.quick-stat-icon.ads {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.quick-stat-icon.data {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.quick-stat-icon.countries {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+/* Tab Styling */
+.vpn-elite [data-state="active"] {
+  font-weight: 500;
+}
+
+/* Server Groups */
+.server-group {
+  margin-bottom: 1.5rem;
+}
+
+.server-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+/* Protocol Badge */
+.protocol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.protocol-badge.nordlynx {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.protocol-badge.wireguard {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.protocol-badge.openvpn {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.protocol-badge.ikev2 {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vpn-elite {
+    padding: 1rem;
+  }
+
+  .vpn-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .connection-status-card .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .status-icon.disconnected {
+    background: #1e293b;
+    color: #64748b;
+  }
+
+  .server-card.connected {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.05) 100%);
+  }
+
+  .connection-status-card.connected {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.03) 100%);
+  }
+}

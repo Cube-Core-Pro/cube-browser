@@ -1,0 +1,585 @@
+/**
+ * SSO Settings Panel Styles
+ * Enterprise SSO/LDAP configuration styling
+ */
+
+.sso-settings {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-primary, #ffffff);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Header */
+.sso-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  background: var(--bg-secondary, #f9fafb);
+}
+
+.sso-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sso-header-title h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.sso-header-title svg {
+  color: var(--primary-color, #3b82f6);
+}
+
+.sso-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Error Banner */
+.sso-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fef2f2;
+  border-bottom: 1px solid #fecaca;
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.sso-error button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Tabs */
+.sso-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  background: var(--bg-primary, #ffffff);
+}
+
+.sso-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #6b7280);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sso-tab:hover {
+  background: var(--bg-hover, #f3f4f6);
+  color: var(--text-primary, #1f2937);
+}
+
+.sso-tab.active {
+  background: var(--primary-color, #3b82f6);
+  color: white;
+}
+
+/* Content */
+.sso-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Section Header */
+.sso-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sso-section-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+/* Empty State */
+.sso-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sso-empty svg {
+  color: var(--text-tertiary, #9ca3af);
+  margin-bottom: 16px;
+}
+
+.sso-empty h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.sso-empty p {
+  margin: 0 0 24px;
+  color: var(--text-secondary, #6b7280);
+  max-width: 400px;
+}
+
+/* Provider List */
+.sso-provider-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sso-provider-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.sso-provider-card:hover {
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sso-provider-card.disabled {
+  opacity: 0.6;
+}
+
+.provider-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 10px;
+  color: var(--primary-color, #3b82f6);
+}
+
+.provider-info {
+  flex: 1;
+}
+
+.provider-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  margin-bottom: 4px;
+}
+
+.provider-badge {
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.provider-badge.saml {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.provider-badge.oidc {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.provider-status {
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.provider-status.active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.provider-status.inactive {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.provider-status.testing {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.provider-details {
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 8px;
+}
+
+.provider-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.provider-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* LDAP */
+.sso-ldap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sso-ldap-card {
+  background: var(--bg-secondary, #f9fafb);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sso-ldap-card.disabled {
+  opacity: 0.6;
+}
+
+.ldap-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-primary, #ffffff);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.ldap-header svg {
+  color: var(--primary-color, #3b82f6);
+}
+
+.ldap-name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.ldap-status {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.ldap-status.success {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.ldap-status.error {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.ldap-status.unknown {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.ldap-details {
+  padding: 16px;
+}
+
+.ldap-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.ldap-row:last-child {
+  border-bottom: none;
+}
+
+.ldap-row span:first-child {
+  color: var(--text-secondary, #6b7280);
+}
+
+.ldap-row span:last-child {
+  color: var(--text-primary, #1f2937);
+  font-family: monospace;
+}
+
+.ldap-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg-tertiary, #f3f4f6);
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+/* LDAP Groups */
+.ldap-groups {
+  margin-top: 24px;
+}
+
+.ldap-groups h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.ldap-groups-list {
+  background: var(--bg-secondary, #f9fafb);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ldap-group-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.ldap-group-row:last-child {
+  border-bottom: none;
+}
+
+.ldap-group-row svg {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.group-name {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-primary, #1f2937);
+}
+
+.group-count {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.ldap-group-row select {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--bg-primary, #ffffff);
+  cursor: pointer;
+}
+
+/* Audit Log */
+.audit-log h3 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.audit-table {
+  background: var(--bg-secondary, #f9fafb);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.audit-header {
+  display: grid;
+  grid-template-columns: 180px 1fr 150px 140px 80px;
+  padding: 12px 16px;
+  background: var(--bg-tertiary, #f3f4f6);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.audit-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 150px 140px 80px;
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  align-items: center;
+}
+
+.audit-row:last-child {
+  border-bottom: none;
+}
+
+.audit-row.success {
+  background: var(--bg-primary, #ffffff);
+}
+
+.audit-row.failure {
+  background: #fef2f2;
+}
+
+.audit-row span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.text-green {
+  color: #16a34a;
+}
+
+.text-red {
+  color: #dc2626;
+}
+
+.error-tooltip {
+  color: #dc2626;
+  cursor: help;
+}
+
+.audit-loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Loading */
+.sso-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Buttons */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary-color, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover, #2563eb);
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover, #f9fafb);
+  border-color: var(--primary-color, #3b82f6);
+}
+
+.btn-ghost {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #6b7280);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary, #1f2937);
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 6px;
+  color: var(--text-secondary, #6b7280);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  border-color: var(--primary-color, #3b82f6);
+  color: var(--primary-color, #3b82f6);
+}
+
+.btn-icon.danger:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.btn-icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Animations */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

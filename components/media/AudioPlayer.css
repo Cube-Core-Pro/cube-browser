@@ -1,0 +1,114 @@
+/**
+ * Audio Player Styles
+ * CUBE Nexum Platform v2.0
+ */
+
+.audio-player {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.album-art {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-art .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  font-size: 6rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.audio-visualizer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.audio-visualizer canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.track-info {
+  margin-bottom: 2rem;
+}
+
+.track-info h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.track-info .artist {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.track-info .album {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+audio {
+  display: none;
+}
+
+/* Visualizer animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.audio-visualizer.active canvas {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .album-art {
+    width: 250px;
+    height: 250px;
+  }
+
+  .track-info h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .album-art {
+    width: 200px;
+    height: 200px;
+  }
+
+  .audio-visualizer {
+    height: 60px;
+  }
+}

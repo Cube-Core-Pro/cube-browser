@@ -1,0 +1,129 @@
+/* ServerManager Component Styles */
+
+.server-manager {
+  min-width: 600px;
+  max-width: 700px;
+}
+
+/* Site List */
+.site-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.site-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.site-list::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.4);
+}
+
+.site-list::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.6);
+  border-radius: 4px;
+}
+
+.site-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.8);
+}
+
+/* Site Item */
+.site-item {
+  padding: 1.25rem;
+  background: rgba(31, 41, 55, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.site-item:hover {
+  background: rgba(31, 41, 55, 0.6);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.site-item.selected {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+/* Site Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.site-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.site-protocol {
+  padding: 0.375rem 0.75rem;
+  background-color: var(--protocol-color, rgba(102, 126, 234, 0.2));
+  color: white;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Site Details */
+.site-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.site-detail {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.detail-label {
+  color: #9ca3af;
+  min-width: 80px;
+}
+
+.detail-value {
+  color: #f9fafb;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* Site Actions */
+.site-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-actions button {
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .server-manager {
+    min-width: 95vw;
+  }
+
+  .site-item {
+    padding: 1rem;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

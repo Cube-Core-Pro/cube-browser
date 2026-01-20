@@ -1,0 +1,231 @@
+/* ============================================================================
+   Privacy Mode Component Styles
+   ============================================================================ */
+
+.privacy-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.privacy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  border-radius: 12px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.privacy-header.active {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.privacy-header .header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.privacy-header h2 {
+  color: white;
+}
+
+.privacy-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Status Banner */
+.privacy-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 0.875rem;
+  animation: pulse-banner 2s infinite;
+}
+
+@keyframes pulse-banner {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Stats Grid */
+.privacy-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.stat-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.stat-icon.green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.stat-icon.purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.stat-icon.yellow {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Zone Card */
+.zone-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.zone-card:hover {
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.zone-card.disabled {
+  opacity: 0.5;
+}
+
+.zone-effect-indicator {
+  width: 4px;
+  height: 40px;
+  border-radius: 2px;
+}
+
+.zone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: hsl(var(--muted) / 0.5);
+  border-radius: 10px;
+  color: hsl(var(--muted-foreground));
+}
+
+.zone-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.zone-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Trigger Toggle */
+.trigger-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background: hsl(var(--muted) / 0.3);
+  border-radius: 8px;
+}
+
+.trigger-info {
+  flex: 1;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .zone-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .zone-effect-indicator {
+    width: 100%;
+    height: 4px;
+  }
+
+  .zone-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,304 @@
+/* SelfHealingSelectors.css - Self-Healing Selector Styles */
+
+.self-healing-selectors {
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+.healing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+}
+
+.header-icon.active {
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  color: white;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Stats */
+.healing-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.stat-icon.yellow {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.stat-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.stat-icon.purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+/* Healing Event Card */
+.healing-event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.healing-event-card.success {
+  border-left-color: #22c55e;
+}
+
+.healing-event-card.failed {
+  border-left-color: #ef4444;
+}
+
+.event-status-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.event-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.selector-change {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.selector-change code {
+  padding: 0.25rem 0.5rem;
+  background: var(--background);
+  border-radius: 4px;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-actions {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Selector Health Card */
+.selector-health-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.selector-health-card:hover {
+  transform: translateX(4px);
+}
+
+.health-indicator {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.health-indicator.green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.health-indicator.yellow {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.health-indicator.red {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.selector-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.selector-health-score {
+  text-align: right;
+  min-width: 60px;
+}
+
+.selector-actions {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Strategies Grid */
+.strategies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.strategy-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.strategy-card:hover {
+  background: color-mix(in srgb, var(--muted) 80%, var(--primary));
+}
+
+.strategy-card.active {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.strategy-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.strategy-info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .healing-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .strategies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .selector-change {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .selector-change code {
+    max-width: 100%;
+  }
+  
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .strategy-card.active {
+    background: rgba(99, 102, 241, 0.15);
+  }
+}

@@ -1,0 +1,322 @@
+/* EmailSettings.css */
+/* Styles for the Email Settings component */
+
+.email-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Provider selection cards */
+.email-settings__provider-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.email-settings__provider-card:hover {
+  border-color: var(--primary);
+  background: var(--accent);
+}
+
+.email-settings__provider-card--active {
+  border-color: var(--primary);
+  background: hsl(var(--primary) / 0.1);
+}
+
+.email-settings__provider-card--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.email-settings__provider-card--disabled:hover {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+/* Provider icons */
+.email-settings__provider-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.email-settings__provider-icon--smtp {
+  color: var(--blue-500, #3b82f6);
+}
+
+.email-settings__provider-icon--sendgrid {
+  color: var(--purple-500, #a855f7);
+}
+
+.email-settings__provider-icon--none {
+  color: var(--muted-foreground);
+}
+
+/* Form fields */
+.email-settings__form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .email-settings__form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.email-settings__form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.email-settings__form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.email-settings__form-hint {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+/* Password field with toggle */
+.email-settings__password-field {
+  position: relative;
+}
+
+.email-settings__password-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+}
+
+.email-settings__password-toggle:hover {
+  color: var(--foreground);
+}
+
+/* Status indicators */
+.email-settings__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.email-settings__status-badge--success {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--green-500, #22c55e);
+}
+
+.email-settings__status-badge--error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--red-500, #ef4444);
+}
+
+.email-settings__status-badge--warning {
+  background: rgba(234, 179, 8, 0.1);
+  color: var(--yellow-500, #eab308);
+}
+
+/* Test result cards */
+.email-settings__test-result {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.email-settings__test-result--success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.email-settings__test-result--error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.email-settings__test-result-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.email-settings__test-result-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.email-settings__test-result-icon--success {
+  color: #22c55e;
+}
+
+.email-settings__test-result-icon--error {
+  color: #ef4444;
+}
+
+.email-settings__test-result-message {
+  font-weight: 500;
+}
+
+.email-settings__test-result-details {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+/* Info box */
+.email-settings__info-box {
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 0.5rem;
+}
+
+.email-settings__info-box-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.email-settings__info-box-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.email-settings__info-box-item {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  padding: 0.25rem 0;
+}
+
+/* Rate limiting stats */
+.email-settings__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .email-settings__stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.email-settings__stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.email-settings__stat-label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.email-settings__stat-value {
+  font-weight: 500;
+}
+
+/* Button groups */
+.email-settings__button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-settings__button-group--end {
+  justify-content: flex-end;
+}
+
+/* Loading state */
+.email-settings__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.email-settings__loading-spinner {
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1s linear infinite;
+  color: var(--muted-foreground);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toggle button styles */
+.email-settings__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.email-settings__toggle-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.email-settings__toggle-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.email-settings__toggle-description {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+/* Error display */
+.email-settings__error {
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.email-settings__error-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.email-settings__error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+}

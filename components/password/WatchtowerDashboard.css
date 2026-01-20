@@ -1,0 +1,342 @@
+/* ============================================================================
+   WATCHTOWER DASHBOARD - Security Monitoring & Breach Detection
+   ============================================================================ */
+
+.watchtower-dashboard {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.watchtower-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.watchtower-header .header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: white;
+}
+
+/* Alert Cards */
+.alert-card {
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.alert-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.alert-card.critical {
+  border-left-color: #ef4444;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.03), transparent);
+}
+
+.alert-card.high {
+  border-left-color: #f97316;
+  background: linear-gradient(to right, rgba(249, 115, 22, 0.03), transparent);
+}
+
+.alert-card.medium {
+  border-left-color: #eab308;
+  background: linear-gradient(to right, rgba(234, 179, 8, 0.03), transparent);
+}
+
+.alert-card.low {
+  border-left-color: #3b82f6;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.03), transparent);
+}
+
+.alert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alert-icon.critical {
+  background-color: #fef2f2;
+}
+
+.alert-icon.high {
+  background-color: #fff7ed;
+}
+
+.alert-icon.medium {
+  background-color: #fefce8;
+}
+
+.alert-icon.low {
+  background-color: #eff6ff;
+}
+
+/* Breach Cards */
+.breach-card {
+  transition: all 0.2s ease;
+}
+
+.breach-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.breach-card.resolved {
+  opacity: 0.75;
+}
+
+.breach-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fef2f2;
+  color: #dc2626;
+  flex-shrink: 0;
+}
+
+.breach-icon.resolved {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Security Score Ring */
+.security-score-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.security-score-ring svg {
+  transform: rotate(-90deg);
+}
+
+.security-score-ring .score-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.security-score-ring .score-number {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.security-score-ring .score-label {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+/* Timeline */
+.timeline-event {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: -1.5rem;
+  width: 2px;
+  background-color: var(--border);
+}
+
+.timeline-event:last-child::before {
+  display: none;
+}
+
+.timeline-event .event-dot {
+  position: absolute;
+  left: -3px;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border: 2px solid var(--background);
+}
+
+/* Stats Cards */
+.stat-card-critical {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, transparent 100%);
+}
+
+.stat-card-warning {
+  border-color: #f97316;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, transparent 100%);
+}
+
+.stat-card-success {
+  border-color: #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, transparent 100%);
+}
+
+/* Monitoring Status */
+.monitoring-active {
+  animation: monitoringPulse 2s ease-in-out infinite;
+}
+
+@keyframes monitoringPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Scan Progress */
+.scan-progress {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.scan-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: scanSweep 1.5s infinite;
+}
+
+@keyframes scanSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Critical Alert Banner */
+.critical-banner {
+  border: 2px solid #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+  animation: criticalPulse 2s ease-in-out infinite;
+}
+
+@keyframes criticalPulse {
+  0%, 100% {
+    border-color: #ef4444;
+  }
+  50% {
+    border-color: #f87171;
+  }
+}
+
+/* Dark Mode */
+:root.dark .watchtower-dashboard,
+.dark .watchtower-dashboard {
+  --alert-bg-critical: rgba(239, 68, 68, 0.1);
+  --alert-bg-high: rgba(249, 115, 22, 0.1);
+  --alert-bg-medium: rgba(234, 179, 8, 0.1);
+  --alert-bg-low: rgba(59, 130, 246, 0.1);
+}
+
+:root.dark .alert-card.critical,
+.dark .alert-card.critical {
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.1), transparent);
+}
+
+:root.dark .alert-card.high,
+.dark .alert-card.high {
+  background: linear-gradient(to right, rgba(249, 115, 22, 0.1), transparent);
+}
+
+:root.dark .alert-card.medium,
+.dark .alert-card.medium {
+  background: linear-gradient(to right, rgba(234, 179, 8, 0.1), transparent);
+}
+
+:root.dark .alert-card.low,
+.dark .alert-card.low {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent);
+}
+
+:root.dark .alert-icon.critical,
+.dark .alert-icon.critical {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+:root.dark .alert-icon.high,
+.dark .alert-icon.high {
+  background-color: rgba(249, 115, 22, 0.2);
+}
+
+:root.dark .alert-icon.medium,
+.dark .alert-icon.medium {
+  background-color: rgba(234, 179, 8, 0.2);
+}
+
+:root.dark .alert-icon.low,
+.dark .alert-icon.low {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+:root.dark .breach-icon,
+.dark .breach-icon {
+  background-color: rgba(220, 38, 38, 0.2);
+}
+
+:root.dark .breach-icon.resolved,
+.dark .breach-icon.resolved {
+  background-color: rgba(22, 163, 74, 0.2);
+}
+
+:root.dark .critical-banner,
+.dark .critical-banner {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, rgba(185, 28, 28, 0.3) 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .watchtower-dashboard {
+    padding: 1rem;
+  }
+
+  .watchtower-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .watchtower-header > div:first-child {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .watchtower-header .header-icon {
+    margin: 0 auto;
+  }
+}

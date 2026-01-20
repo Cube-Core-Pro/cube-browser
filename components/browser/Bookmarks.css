@@ -1,0 +1,865 @@
+/* CUBE Browser Elite - Bookmarks Styles */
+/* Advanced bookmark manager with Arc-like aesthetics */
+
+/* ==================== Overlay & Panel ==================== */
+
+.bookmarks-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bookmarks-panel {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Header ==================== */
+
+.bookmarks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bookmarks-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bookmarks-icon {
+  font-size: 28px;
+}
+
+.bookmarks-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.bookmarks-count {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bookmarks-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bookmarks-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.bookmarks-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* ==================== Buttons ==================== */
+
+.bookmarks-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bookmarks-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bookmarks-btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: transparent;
+}
+
+.bookmarks-btn-primary:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  transform: translateY(-1px);
+}
+
+.bookmarks-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==================== Tabs ==================== */
+
+.bookmarks-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.bookmarks-tab {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bookmarks-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.bookmarks-tab.active {
+  background: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+/* ==================== Controls ==================== */
+
+.bookmarks-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.bookmarks-search {
+  flex: 1;
+}
+
+.bookmarks-search input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-left: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.bookmarks-search input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bookmarks-search input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bookmarks-sort select {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.bookmarks-sort select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.bookmarks-view-modes {
+  display: flex;
+  gap: 4px;
+}
+
+.view-mode-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.view-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.view-mode-btn.active {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+  color: #ffffff;
+}
+
+/* ==================== Tag & Folder Selectors ==================== */
+
+.bookmarks-tag-selector,
+.bookmarks-folder-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tag-btn,
+.folder-btn {
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-btn {
+  border-left: 3px solid #6366f1;
+  border-radius: 0 16px 16px 0;
+}
+
+.tag-btn:hover,
+.folder-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tag-btn.active,
+.folder-btn.active {
+  background: rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+  color: #ffffff;
+}
+
+/* ==================== Batch Actions ==================== */
+
+.bookmarks-batch-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: rgba(99, 102, 241, 0.2);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.bookmarks-batch-actions span {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.bookmarks-batch-actions button,
+.bookmarks-batch-actions select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.bookmarks-batch-actions button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==================== Error & Loading ==================== */
+
+.bookmarks-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: rgba(239, 68, 68, 0.2);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.bookmarks-error button {
+  background: transparent;
+  border: none;
+  color: #fca5a5;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.bookmarks-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  color: rgba(255, 255, 255, 0.6);
+  gap: 16px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== Content ==================== */
+
+.bookmarks-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.bookmarks-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.bookmarks-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bookmarks-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.bookmarks-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Empty State ==================== */
+
+.bookmarks-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  text-align: center;
+}
+
+.bookmarks-empty .empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.bookmarks-empty p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+}
+
+/* ==================== Bookmark Item ==================== */
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.bookmark-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.bookmark-item.selected {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.bookmark-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #6366f1;
+  cursor: pointer;
+}
+
+.bookmark-favicon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.bookmark-favicon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.default-favicon {
+  font-size: 16px;
+}
+
+.bookmark-info {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.bookmark-title {
+  font-weight: 500;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.bookmark-url {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookmark-tags {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.bookmark-tag {
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  font-size: 0.7rem;
+}
+
+.bookmark-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.bookmark-item:hover .bookmark-actions {
+  opacity: 1;
+}
+
+.bookmark-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.bookmark-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bookmark-action-btn.active {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.bookmark-action-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* ==================== Grid View ==================== */
+
+.bookmarks-view-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.bookmarks-view-grid .bookmark-item {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+.bookmarks-view-grid .bookmark-favicon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.bookmarks-view-grid .bookmark-info {
+  width: 100%;
+}
+
+.bookmarks-view-grid .bookmark-actions {
+  margin-top: 12px;
+  opacity: 1;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+/* ==================== Compact View ==================== */
+
+.bookmarks-view-compact .bookmark-item {
+  padding: 8px 12px;
+  margin-bottom: 4px;
+}
+
+.bookmarks-view-compact .bookmark-favicon {
+  width: 24px;
+  height: 24px;
+}
+
+.bookmarks-view-compact .bookmark-tags {
+  display: none;
+}
+
+.bookmarks-view-compact .bookmark-action-btn {
+  width: 28px;
+  height: 28px;
+  font-size: 0.8rem;
+}
+
+/* ==================== Footer ==================== */
+
+.bookmarks-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.footer-actions button {
+  background: transparent;
+  border: none;
+  color: #6366f1;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.footer-actions button:hover {
+  text-decoration: underline;
+}
+
+/* ==================== Modal ==================== */
+
+.bookmarks-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookmarks-modal {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.2s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==================== Import/Export Section ==================== */
+
+.import-export-section {
+  margin-bottom: 24px;
+}
+
+.import-export-section h4 {
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.import-export-section p {
+  margin: 0 0 16px 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.import-dropzone {
+  position: relative;
+  padding: 32px;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.import-dropzone:hover {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.import-dropzone input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.import-dropzone span {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 768px) {
+  .bookmarks-panel {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+  
+  .bookmarks-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .bookmarks-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .bookmarks-sort,
+  .bookmarks-view-modes {
+    width: 100%;
+  }
+  
+  .bookmarks-sort select {
+    width: 100%;
+  }
+  
+  .bookmarks-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+  }
+  
+  .bookmarks-tab {
+    white-space: nowrap;
+  }
+  
+  .bookmarks-view-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== Light Mode ==================== */
+
+@media (prefers-color-scheme: light) {
+  .bookmarks-panel {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+  
+  .bookmarks-header h2,
+  .bookmark-title,
+  .modal-header h3 {
+    color: #1e293b;
+  }
+  
+  .bookmarks-count,
+  .bookmark-url {
+    color: #64748b;
+  }
+  
+  .bookmark-item {
+    background: rgba(0, 0, 0, 0.02);
+  }
+  
+  .bookmark-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .bookmarks-tab,
+  .bookmarks-btn {
+    color: #475569;
+  }
+  
+  .bookmarks-search input,
+  .bookmarks-sort select,
+  .form-group input,
+  .form-group select {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #1e293b;
+  }
+}

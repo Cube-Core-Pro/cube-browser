@@ -1,0 +1,380 @@
+/* ============================================================================
+   VaultHealthDashboard Component Styles
+   Comprehensive Vault Security Analysis Interface
+   ============================================================================ */
+
+.vault-health-dashboard {
+  padding: 1.5rem;
+  min-height: 100%;
+  background: var(--bg-secondary, #f8fafc);
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.dashboard-header .header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Score Circle */
+.score-circle {
+  position: relative;
+}
+
+.score-circle svg circle {
+  transition: all 0.5s ease;
+}
+
+/* Category Cards */
+.vault-health-dashboard .category-card {
+  transition: all 0.2s ease;
+}
+
+.vault-health-dashboard .category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Issue Items */
+.issue-item {
+  transition: all 0.2s ease;
+}
+
+.issue-item:hover {
+  border-color: var(--primary, #6366f1);
+}
+
+.issue-item .recommendation-box {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.1));
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Action Items */
+.action-item {
+  transition: all 0.2s ease;
+}
+
+.action-item:hover {
+  background: var(--bg-hover, #f1f5f9);
+  border-color: var(--primary, #6366f1);
+}
+
+.action-item .priority-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+/* Progress Bars */
+.vault-health-dashboard .progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-muted, #e2e8f0);
+}
+
+.vault-health-dashboard .progress-bar .fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.vault-health-dashboard .progress-bar .fill.excellent {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.vault-health-dashboard .progress-bar .fill.good {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.vault-health-dashboard .progress-bar .fill.poor {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+/* Severity Badges */
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.severity-badge.critical {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.severity-badge.high {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.severity-badge.medium {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.severity-badge.low {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.severity-badge.info {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Stats Cards */
+.vault-health-dashboard .stats-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.vault-health-dashboard .stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.vault-health-dashboard .stats-card .value {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.vault-health-dashboard .stats-card .label {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+  text-transform: capitalize;
+}
+
+/* Trend Indicators */
+.trend-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.trend-indicator.improving {
+  color: #059669;
+}
+
+.trend-indicator.declining {
+  color: #dc2626;
+}
+
+.trend-indicator.stable {
+  color: #6b7280;
+}
+
+/* Empty State */
+.vault-health-dashboard .empty-state {
+  padding: 3rem;
+  text-align: center;
+}
+
+.vault-health-dashboard .empty-state .icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Tips Section */
+.tips-section {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(251, 191, 36, 0.1));
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.tips-section .tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #4b5563);
+}
+
+/* Tabs */
+.vault-health-dashboard .tabs-list {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+/* Animations */
+@keyframes scoreReveal {
+  from {
+    stroke-dashoffset: 440;
+  }
+}
+
+.score-circle svg circle:last-child {
+  animation: scoreReveal 1s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vault-health-dashboard .card {
+  animation: slideUp 0.3s ease;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .vault-health-dashboard {
+    background: var(--bg-secondary, #0f172a);
+  }
+
+  .dashboard-header {
+    border-color: var(--border-color, #334155);
+  }
+
+  .severity-badge.critical {
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+  }
+
+  .severity-badge.high {
+    background: rgba(249, 115, 22, 0.2);
+    color: #fdba74;
+  }
+
+  .severity-badge.medium {
+    background: rgba(234, 179, 8, 0.2);
+    color: #fde047;
+  }
+
+  .severity-badge.low {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+  }
+
+  .severity-badge.info {
+    background: rgba(107, 114, 128, 0.2);
+    color: #d1d5db;
+  }
+
+  .issue-item .recommendation-box {
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  .tips-section {
+    background: rgba(234, 179, 8, 0.1);
+  }
+
+  .action-item:hover {
+    background: rgba(99, 102, 241, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .vault-health-dashboard .grid.grid-cols-4 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .vault-health-dashboard .grid.grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vault-health-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .vault-health-dashboard .grid.grid-cols-4,
+  .vault-health-dashboard .grid.grid-cols-3,
+  .vault-health-dashboard .grid.grid-cols-5 {
+    grid-template-columns: 1fr;
+  }
+
+  .vault-health-dashboard .col-span-1,
+  .vault-health-dashboard .col-span-3 {
+    grid-column: span 1;
+  }
+
+  .issue-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .issue-item .actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .action-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .vault-health-dashboard {
+    background: white;
+    padding: 0;
+  }
+
+  .dashboard-header button {
+    display: none;
+  }
+
+  .vault-health-dashboard .card {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+    break-inside: avoid;
+  }
+
+  .issue-item button {
+    display: none;
+  }
+}

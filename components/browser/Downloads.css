@@ -1,0 +1,849 @@
+/**
+ * CUBE Browser Elite - Downloads Manager Styles
+ * Superior to Chrome, Firefox, Safari, Brave download managers
+ */
+
+.downloads-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+}
+
+.downloads-page.loading {
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loading-spinner span {
+  font-size: 48px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+/* ==================== Header ==================== */
+
+.downloads-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  background: var(--bg-secondary, #f9fafb);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.downloads-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-count {
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+  background: var(--bg-tertiary, #f3f4f6);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==================== Buttons ==================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--primary-color, #3b82f6);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover, #2563eb);
+}
+
+.btn.secondary {
+  background: var(--bg-tertiary, #f3f4f6);
+  color: var(--text-primary, #1f2937);
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.btn.secondary:hover {
+  background: var(--bg-hover, #e5e7eb);
+}
+
+.btn.icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 18px;
+  background: transparent;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+}
+
+.btn.icon:hover {
+  background: var(--bg-hover, #f3f4f6);
+}
+
+/* ==================== Error Banner ==================== */
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #fef2f2;
+  border-bottom: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.error-banner button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #dc2626;
+}
+
+/* ==================== Stats Bar ==================== */
+
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 24px;
+  background: var(--bg-secondary, #f9fafb);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.stat-value.speed {
+  color: var(--primary-color, #3b82f6);
+}
+
+/* ==================== Filter Bar ==================== */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary, #6b7280);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 36px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.clear-search {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-secondary, #6b7280);
+  padding: 4px;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+}
+
+/* ==================== Bulk Actions ==================== */
+
+.bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: var(--primary-color, #3b82f6);
+  color: white;
+}
+
+.bulk-actions span {
+  font-weight: 500;
+  margin-right: auto;
+}
+
+.bulk-actions button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bulk-actions button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Downloads List Header ==================== */
+
+.downloads-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  background: var(--bg-tertiary, #f3f4f6);
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.select-all input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.sort-options button {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-secondary, #6b7280);
+}
+
+.sort-options button:hover,
+.sort-options button.active {
+  background: var(--bg-hover, #e5e7eb);
+  color: var(--text-primary, #1f2937);
+}
+
+/* ==================== Downloads List ==================== */
+
+.downloads-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text-primary, #1f2937);
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+  margin: 0;
+}
+
+/* ==================== Download Item ==================== */
+
+.download-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.download-item:hover {
+  background: var(--bg-hover, #f9fafb);
+}
+
+.download-item.selected {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.download-item.status-downloading {
+  border-left: 3px solid #3b82f6;
+}
+
+.download-item.status-paused {
+  border-left: 3px solid #6b7280;
+}
+
+.download-item.status-completed {
+  border-left: 3px solid #10b981;
+}
+
+.download-item.status-failed {
+  border-left: 3px solid #ef4444;
+}
+
+.download-checkbox {
+  flex-shrink: 0;
+}
+
+.download-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.download-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.download-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.download-filename {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary, #1f2937);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.download-url {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 4px;
+}
+
+.download-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.download-speed {
+  color: var(--primary-color, #3b82f6);
+  font-weight: 500;
+}
+
+.download-eta {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.download-category {
+  background: var(--bg-tertiary, #f3f4f6);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* ==================== Progress Bar ==================== */
+
+.download-progress {
+  width: 200px;
+  position: relative;
+  height: 8px;
+  background: var(--bg-tertiary, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.download-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.download-percentage {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* ==================== Status Badge ==================== */
+
+.download-status {
+  flex-shrink: 0;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+}
+
+/* ==================== Actions ==================== */
+
+.download-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary, #f3f4f6);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: var(--bg-hover, #e5e7eb);
+  transform: scale(1.1);
+}
+
+.action-btn.cancel:hover {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.action-btn.retry:hover {
+  background: #f0fdf4;
+  color: #10b981;
+}
+
+/* ==================== Download Menu ==================== */
+
+.download-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-width: 180px;
+  overflow: hidden;
+}
+
+.download-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--text-primary, #1f2937);
+  text-align: left;
+  cursor: pointer;
+}
+
+.download-menu button:hover {
+  background: var(--bg-hover, #f3f4f6);
+}
+
+.download-menu button.danger {
+  color: #ef4444;
+}
+
+.download-menu button.danger:hover {
+  background: #fef2f2;
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--border-color, #e5e7eb);
+  margin: 4px 0;
+}
+
+/* ==================== Modals ==================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--bg-primary, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-secondary, #6b7280);
+  padding: 4px;
+}
+
+.close-btn:hover {
+  color: var(--text-primary, #1f2937);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+/* ==================== Add Download Modal ==================== */
+
+.add-download-modal form {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-primary, #1f2937);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ==================== Settings Modal ==================== */
+
+.settings-modal {
+  max-width: 600px;
+}
+
+.settings-content {
+  padding: 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.settings-section {
+  margin-bottom: 32px;
+}
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.settings-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.setting-item {
+  margin-bottom: 16px;
+}
+
+.setting-item:last-child {
+  margin-bottom: 0;
+}
+
+.setting-item label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--text-primary, #1f2937);
+}
+
+.setting-item input[type="text"],
+.setting-item input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+}
+
+.setting-item input[type="text"]:focus,
+.setting-item input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary-color, #3b82f6);
+}
+
+.setting-item.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting-item.toggle label {
+  margin-bottom: 0;
+}
+
+.setting-item.toggle input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ==================== Dark Mode Support ==================== */
+
+@media (prefers-color-scheme: dark) {
+  .downloads-page {
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
+    --bg-tertiary: #374151;
+    --bg-hover: #374151;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --text-tertiary: #6b7280;
+    --border-color: #374151;
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+  }
+
+  .error-banner {
+    background: #450a0a;
+    border-color: #7f1d1d;
+    color: #fca5a5;
+  }
+
+  .modal {
+    background: #1f2937;
+  }
+
+  .download-menu {
+    background: #1f2937;
+    border-color: #374151;
+  }
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 768px) {
+  .downloads-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    max-width: none;
+  }
+
+  .download-item {
+    flex-wrap: wrap;
+  }
+
+  .download-progress {
+    width: 100%;
+    order: 10;
+  }
+
+  .download-actions {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,136 @@
+/**
+ * Notes List Styles
+ */
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note-item {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.note-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+.note-item.selected {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+.note-item.pinned {
+  border-left: 3px solid #fbbf24;
+}
+
+.note-item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.note-item-icons {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.note-item-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.note-item-preview {
+  margin: 0 0 0.75rem;
+  opacity: 0.7;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.note-item-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.note-category-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: rgba(107, 114, 128, 0.2);
+  color: var(--badge-color, #6b7280);
+}
+
+@supports (background-color: color-mix(in srgb, red 50%, blue)) {
+  .note-category-badge {
+    background-color: color-mix(in srgb, var(--badge-color, #6b7280) 20%, transparent);
+  }
+}
+
+.note-tags-preview {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.note-tag-mini {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.note-tags-more {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+.note-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-date {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+.note-item-actions {
+  display: flex;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.note-item:hover .note-item-actions {
+  opacity: 1;
+}
+
+.note-action-btn {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.note-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.note-action-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.3);
+}

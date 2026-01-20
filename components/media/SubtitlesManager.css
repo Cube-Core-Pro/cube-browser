@@ -1,0 +1,180 @@
+/**
+ * Subtitles Manager Styles
+ * CUBE Nexum Platform v2.0
+ */
+
+.subtitles-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.subtitles-panel {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.subtitles-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subtitles-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.subtitles-content {
+  padding: 1.5rem;
+}
+
+.subtitles-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.subtitle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subtitle-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.subtitle-item.active {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+.subtitle-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.subtitle-label {
+  font-weight: 500;
+}
+
+.subtitle-language {
+  padding: 0.125rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.subtitle-format {
+  padding: 0.125rem 0.375rem;
+  background: rgba(167, 139, 250, 0.2);
+  border-radius: 3px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: #a78bfa;
+}
+
+.remove-btn {
+  width: 28px;
+  height: 28px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 4px;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.subtitle-item:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.add-subtitle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px dashed rgba(167, 139, 250, 0.3);
+  border-radius: 8px;
+  color: #a78bfa;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-subtitle-btn:hover {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+.add-subtitle-btn .icon {
+  font-size: 1.25rem;
+}
+
+/* Scrollbar styling */
+.subtitles-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.subtitles-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.subtitles-list::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.3);
+  border-radius: 3px;
+}
+
+.subtitles-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .subtitles-panel {
+    width: 95%;
+  }
+
+  .subtitle-info {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

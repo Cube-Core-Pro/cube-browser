@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab - CUBE Browser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #e8e8e8;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .logo {
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 15px 25px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus-within {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #6366f1;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #fff;
+        }
+        
+        .search-box input::placeholder {
+            color: #666;
+        }
+        
+        .search-icon {
+            font-size: 20px;
+            margin-right: 15px;
+            color: #666;
+        }
+        
+        .shortcuts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .shortcut {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .shortcut:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        
+        .shortcut-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .shortcut-name {
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            color: #555;
+            font-size: 12px;
+        }
+        
+        .time {
+            font-size: 72px;
+            font-weight: 200;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time" id="time">--:--</div>
+        <div class="date" id="date"></div>
+        
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search or enter URL..." autofocus>
+        </div>
+        
+        <div class="shortcuts">
+            <a href="https://google.com" class="shortcut">
+                <div class="shortcut-icon">🔍</div>
+                <div class="shortcut-name">Google</div>
+            </a>
+            <a href="https://youtube.com" class="shortcut">
+                <div class="shortcut-icon">📺</div>
+                <div class="shortcut-name">YouTube</div>
+            </a>
+            <a href="https://github.com" class="shortcut">
+                <div class="shortcut-icon">💻</div>
+                <div class="shortcut-name">GitHub</div>
+            </a>
+            <a href="https://twitter.com" class="shortcut">
+                <div class="shortcut-icon">🐦</div>
+                <div class="shortcut-name">Twitter</div>
+            </a>
+            <a href="https://reddit.com" class="shortcut">
+                <div class="shortcut-icon">🔴</div>
+                <div class="shortcut-name">Reddit</div>
+            </a>
+            <a href="https://netflix.com" class="shortcut">
+                <div class="shortcut-icon">🎬</div>
+                <div class="shortcut-name">Netflix</div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        CUBE Browser v7.0 - Enterprise Edition
+    </div>
+    
+    <script>
+        // Update time
+        function updateTime() {
+            const now = new Date();
+            const timeEl = document.getElementById('time');
+            const dateEl = document.getElementById('date');
+            
+            timeEl.textContent = now.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: false
+            });
+            
+            dateEl.textContent = now.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query) {
+                    if (query.includes('.') && !query.includes(' ')) {
+                        // Looks like a URL
+                        window.location.href = query.startsWith('http') ? query : 'https://' + query;
+                    } else {
+                        // Search query
+                        window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                    }
+                }
+            }
+        });
+        
+        // Handle shortcut clicks
+        document.querySelectorAll('.shortcut').forEach(shortcut => {
+            shortcut.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = shortcut.href;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+/* ============================================================================
+   Threat Protection Dashboard - Styles
+   DNS filtering, malware blocking, and threat monitoring
+   ============================================================================ */
+
+.threat-protection-dashboard {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.header-icon.enabled {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
+.header-icon.disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+/* Stat Cards */
+.stat-card {
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.stat-icon-blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.stat-icon-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.stat-icon-orange {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.stat-icon-purple {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.stat-icon-pink {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+.stat-icon-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+/* Threat Event Cards */
+.threat-event-card {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.threat-event-card:hover {
+  background: var(--accent);
+}
+
+.threat-event-card.severity-critical {
+  border-left-color: #ef4444;
+}
+
+.threat-event-card.severity-high {
+  border-left-color: #f97316;
+}
+
+.threat-event-card.severity-medium {
+  border-left-color: #eab308;
+}
+
+.threat-event-card.severity-low {
+  border-left-color: #3b82f6;
+}
+
+/* Threat Icons */
+.threat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.threat-icon-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.threat-icon-orange {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.threat-icon-blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.threat-icon-purple {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.threat-icon-pink {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+.threat-icon-gray {
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* DNS Category Cards */
+.dns-category-card {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.dns-category-card:hover {
+  background: var(--accent);
+}
+
+.dns-category-card.blocked {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.03);
+}
+
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+}
+
+.category-icon.active {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+}
+
+/* Whitelist Items */
+.whitelist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.whitelist-item:hover {
+  background: var(--accent);
+  border-color: var(--primary);
+}
+
+/* Analytics Charts */
+.chart-container {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--muted);
+}
+
+/* Protection Summary */
+.protection-summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary-stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--muted);
+}
+
+.summary-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+/* Activity Timeline */
+.activity-timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  transform: translateX(-50%);
+}
+
+.timeline-item.critical::before {
+  background: #ef4444;
+}
+
+.timeline-item.high::before {
+  background: #f97316;
+}
+
+.timeline-item.medium::before {
+  background: #eab308;
+}
+
+.timeline-item.low::before {
+  background: #3b82f6;
+}
+
+/* Filter Badges */
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.filter-badge.active {
+  background: var(--primary);
+  color: white;
+}
+
+.filter-badge:not(.active) {
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+.filter-badge:hover:not(.active) {
+  border-color: var(--primary);
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.status-indicator.active {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.status-indicator.inactive {
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* Pulse Animation for Live Updates */
+.live-indicator {
+  position: relative;
+}
+
+.live-indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .threat-protection-dashboard .grid-cols-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .threat-protection-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .threat-protection-dashboard .grid-cols-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .threat-protection-dashboard .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .header-icon.disabled {
+    background: #1e293b;
+    color: #64748b;
+  }
+
+  .dns-category-card.blocked {
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .threat-event-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

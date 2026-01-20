@@ -1,0 +1,32 @@
+/* ==========================================================================
+   AI Floating Chat Styles (Simple version)
+   ========================================================================== */
+
+/* Floating chat window - position controlled via CSS custom properties */
+.ai-chat-window {
+  position: fixed;
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  transition: all 150ms ease;
+  left: var(--chat-x, calc(100vw - 450px));
+  top: var(--chat-y, calc(100vh - 650px));
+}
+
+.ai-chat-window--normal {
+  height: 600px;
+  width: 420px;
+}
+
+.ai-chat-window--minimized {
+  height: 3.5rem;
+  width: 20rem;
+}
+
+.ai-chat-window--dragging {
+  cursor: move;
+}

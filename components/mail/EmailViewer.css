@@ -1,0 +1,452 @@
+/**
+ * CUBE Mail - Email Viewer Styles
+ * 
+ * Clean, readable email display with proper formatting
+ * 
+ * @version 1.0.0
+ */
+
+/* ============================================================================
+   CONTAINER
+   ============================================================================ */
+
+.email-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--background);
+}
+
+.email-viewer--empty {
+  align-items: center;
+  justify-content: center;
+}
+
+.email-viewer__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 48px;
+}
+
+.email-viewer__empty-state h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.email-viewer__empty-state p {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.email-viewer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.email-viewer__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ============================================================================
+   SCROLL CONTENT
+   ============================================================================ */
+
+.email-viewer__scroll {
+  flex: 1;
+  overflow: auto;
+}
+
+.email-viewer__scroll > div {
+  padding: 24px;
+}
+
+/* ============================================================================
+   SUBJECT
+   ============================================================================ */
+
+.email-viewer__subject {
+  margin-bottom: 20px;
+}
+
+.email-viewer__subject h1 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--foreground);
+  margin: 0 0 8px 0;
+}
+
+.email-viewer__labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ============================================================================
+   SENDER INFO
+   ============================================================================ */
+
+.email-viewer__sender {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.email-viewer__sender-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.email-viewer__sender-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.email-viewer__sender-name span.text-muted-foreground {
+  font-size: 12px;
+}
+
+.email-viewer__recipients {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.email-viewer__recipients:hover {
+  color: var(--foreground);
+}
+
+.email-viewer__date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   DETAILS PANEL
+   ============================================================================ */
+
+.email-viewer__details {
+  padding: 16px;
+  margin: 12px 0;
+  background: var(--muted);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.email-viewer__detail-row {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.email-viewer__detail-label {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  min-width: 80px;
+}
+
+/* ============================================================================
+   SECURITY BADGE
+   ============================================================================ */
+
+.email-viewer__security {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin: 16px 0;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.email-viewer__security--secure {
+  background: #10b98115;
+  color: #10b981;
+  border: 1px solid #10b98130;
+}
+
+.email-viewer__security--warning {
+  background: #f59e0b15;
+  color: #f59e0b;
+  border: 1px solid #f59e0b30;
+}
+
+/* ============================================================================
+   ATTACHMENTS
+   ============================================================================ */
+
+.email-viewer__attachments {
+  margin: 16px 0;
+  padding: 12px;
+  background: var(--muted);
+  border-radius: 8px;
+}
+
+.email-viewer__attachments-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.email-viewer__attachments-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.email-viewer__attachment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 200px;
+}
+
+.email-viewer__attachment-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--muted);
+  border-radius: 6px;
+  color: var(--muted-foreground);
+}
+
+.email-viewer__attachment-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-viewer__attachment-name {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-viewer__attachment-size {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+
+/* ============================================================================
+   EMAIL BODY
+   ============================================================================ */
+
+.email-viewer__body {
+  padding: 24px 0;
+  min-height: 200px;
+}
+
+.email-viewer__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px;
+  color: var(--muted-foreground);
+}
+
+.email-viewer__html {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--foreground);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* HTML Email Content Styling */
+.email-viewer__html img {
+  max-width: 100%;
+  height: auto;
+}
+
+.email-viewer__html a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.email-viewer__html blockquote {
+  margin: 16px 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--border);
+  color: var(--muted-foreground);
+}
+
+.email-viewer__html pre {
+  background: var(--muted);
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+
+.email-viewer__html table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.email-viewer__html td,
+.email-viewer__html th {
+  border: 1px solid var(--border);
+  padding: 8px;
+}
+
+.email-viewer__text {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.email-viewer__source {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: var(--muted);
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.email-viewer__no-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px;
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+/* ============================================================================
+   QUICK REPLY
+   ============================================================================ */
+
+.email-viewer__quick-reply {
+  display: flex;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 640px) {
+  .email-viewer__scroll > div {
+    padding: 16px;
+  }
+
+  .email-viewer__subject h1 {
+    font-size: 18px;
+  }
+
+  .email-viewer__sender {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .email-viewer__date {
+    margin-left: 52px;
+  }
+
+  .email-viewer__attachment {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .email-viewer__quick-reply {
+    flex-direction: column;
+  }
+
+  .email-viewer__quick-reply button {
+    width: 100%;
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  .email-viewer__header,
+  .email-viewer__quick-reply {
+    display: none !important;
+  }
+
+  .email-viewer {
+    height: auto;
+  }
+
+  .email-viewer__scroll {
+    overflow: visible;
+  }
+
+  .email-viewer__body {
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================================================
+   DARK MODE
+   ============================================================================ */
+
+.dark .email-viewer__html {
+  color-scheme: dark;
+}
+
+.dark .email-viewer__html img {
+  filter: brightness(0.9);
+}

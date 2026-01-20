@@ -1,0 +1,653 @@
+/* ============================================================================
+   CUBE Nexum Elite - VPN Upgrade Prompt Styles
+   ============================================================================ */
+
+/* ============================================================================
+   Main Container
+   ============================================================================ */
+
+.vpn-upgrade-prompt {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  padding: 32px;
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.vpn-upgrade-prompt.loading,
+.vpn-upgrade-prompt.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  min-height: 100px;
+}
+
+.vpn-upgrade-prompt.compact {
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #1e3a5f 0%, #2d1f5f 100%);
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-icon {
+  font-size: 24px;
+}
+
+/* ============================================================================
+   Close Button
+   ============================================================================ */
+
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+
+.prompt-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.prompt-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prompt-header p {
+  font-size: 16px;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   Upgrade Options Grid
+   ============================================================================ */
+
+.upgrade-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* ============================================================================
+   Upgrade Cards
+   ============================================================================ */
+
+.upgrade-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.upgrade-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.upgrade-card.cube-pro {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.upgrade-card.cube-pro:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.upgrade-card.cube-elite {
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.upgrade-card.cube-elite:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(168, 85, 247, 0.1);
+}
+
+.upgrade-card.purevpn {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+}
+
+.upgrade-card.purevpn:hover {
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+/* ============================================================================
+   Card Badges
+   ============================================================================ */
+
+.card-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-badge.premium {
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+}
+
+.card-badge.affiliate {
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+}
+
+/* ============================================================================
+   Card Content
+   ============================================================================ */
+
+.upgrade-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 8px 0 16px 0;
+  color: #fff;
+}
+
+.card-price {
+  margin-bottom: 20px;
+}
+
+.card-price .price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card-price .price-original {
+  font-size: 18px;
+  color: #64748b;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.card-price .period {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ============================================================================
+   Features List
+   ============================================================================ */
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+.features-list .check {
+  color: #22c55e;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.features-list.purevpn-features li {
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+/* ============================================================================
+   Upgrade Buttons
+   ============================================================================ */
+
+.upgrade-button {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upgrade-button.pro {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff;
+}
+
+.upgrade-button.pro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.upgrade-button.elite {
+  background: linear-gradient(135deg, #a855f7 0%, var(--color-accent) 100%);
+  color: #fff;
+}
+
+.upgrade-button.elite:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+}
+
+.upgrade-button.purevpn-btn {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+}
+
+.upgrade-button.purevpn-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+}
+
+/* ============================================================================
+   PureVPN Specific
+   ============================================================================ */
+
+.purevpn-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 16px 0;
+}
+
+.purevpn-logo .logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.purevpn-logo .partner-badge {
+  font-size: 10px;
+  font-weight: 600;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.promo-code {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px dashed rgba(34, 197, 94, 0.4);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #a7f3d0;
+  margin-bottom: 16px;
+}
+
+.promo-code strong {
+  color: #22c55e;
+  font-size: 15px;
+}
+
+.money-back {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 12px;
+}
+
+/* ============================================================================
+   Affiliate Benefits
+   ============================================================================ */
+
+.affiliate-benefits {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.affiliate-benefits h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #fff;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.benefit-icon {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   Compact Mode
+   ============================================================================ */
+
+.compact-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.compact-icon {
+  font-size: 20px;
+}
+
+.compact-text {
+  flex: 1;
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+.compact-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.compact-button:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================================================
+   VPN Upgrade Banner
+   ============================================================================ */
+
+.vpn-upgrade-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #1e3a5f 0%, #2d1f5f 100%);
+  border-radius: 10px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vpn-upgrade-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.banner-icon {
+  font-size: 20px;
+}
+
+.banner-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.banner-discount {
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.banner-arrow {
+  font-size: 18px;
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+}
+
+.vpn-upgrade-banner:hover .banner-arrow {
+  transform: translateX(4px);
+  color: #3b82f6;
+}
+
+/* ============================================================================
+   PureVPN Feature Card
+   ============================================================================ */
+
+.purevpn-feature-card {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  border-radius: 16px;
+  padding: 24px;
+  color: #fff;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.purevpn-branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.discount-badge {
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.card-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 8px 0 0 0;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.card-features {
+  margin-bottom: 20px;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+.feature-check {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.card-pricing {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.original-price {
+  font-size: 16px;
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.current-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.billing-note {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.get-purevpn-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.get-purevpn-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+}
+
+.promo-hint {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 12px;
+}
+
+.promo-hint strong {
+  color: #22c55e;
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .vpn-upgrade-prompt {
+    padding: 24px 16px;
+    margin: 16px;
+  }
+
+  .prompt-header h2 {
+    font-size: 22px;
+  }
+
+  .upgrade-options {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

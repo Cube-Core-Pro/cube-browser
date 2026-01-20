@@ -1,0 +1,320 @@
+/* ============================================================================
+   SecureSend Component Styles
+   Password-Protected Self-Destructing Link Sharing
+   ============================================================================ */
+
+.secure-send {
+  padding: 1.5rem;
+  min-height: 100%;
+  background: var(--bg-secondary, #f8fafc);
+}
+
+.secure-send-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.secure-send-header .header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Send Card */
+.secure-send-card {
+  transition: all 0.2s ease;
+}
+
+.secure-send-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary, #6366f1);
+}
+
+.secure-send-card .send-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.secure-send-card .send-icon.expired {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+}
+
+/* Type Icons */
+.type-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.type-selector .type-option {
+  padding: 1rem;
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.type-selector .type-option:hover {
+  border-color: var(--primary, #6366f1);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.type-selector .type-option.selected {
+  border-color: var(--primary, #6366f1);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.step-indicator .step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.step-indicator .step.active {
+  background: var(--primary, #6366f1);
+  color: white;
+}
+
+.step-indicator .step.completed {
+  background: #10b981;
+  color: white;
+}
+
+.step-indicator .step.pending {
+  background: var(--bg-muted, #e2e8f0);
+  color: var(--text-muted, #6b7280);
+}
+
+.step-indicator .step-line {
+  width: 48px;
+  height: 2px;
+  background: var(--border-color, #e2e8f0);
+}
+
+.step-indicator .step-line.completed {
+  background: #10b981;
+}
+
+/* Stats Cards */
+.secure-send .stats-card {
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.secure-send .stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Link Display */
+.link-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-muted, #f1f5f9);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.link-display code {
+  flex: 1;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Access Log */
+.access-log-item {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.access-log-item:hover {
+  background: var(--bg-hover, #f8fafc);
+}
+
+.access-log-item.failed {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+/* QR Code */
+.qr-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.qr-display .qr-code {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons .filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons .filter-btn.active {
+  background: var(--primary, #6366f1);
+  color: white;
+}
+
+/* Empty State */
+.secure-send .empty-state {
+  padding: 3rem;
+  text-align: center;
+}
+
+.secure-send .empty-state .icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  opacity: 0.5;
+}
+
+/* Options Form */
+.options-form {
+  space-y: 1rem;
+}
+
+.options-form .option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.options-form .option-row:last-child {
+  border-bottom: none;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.secure-send-card {
+  animation: slideIn 0.3s ease;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .secure-send {
+    background: var(--bg-secondary, #0f172a);
+  }
+
+  .secure-send-header {
+    border-color: var(--border-color, #334155);
+  }
+
+  .link-display {
+    background: #1e293b;
+  }
+
+  .access-log-item.failed {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.1);
+  }
+
+  .type-selector .type-option:hover {
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  .qr-display .qr-code {
+    background: #1e293b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .secure-send {
+    padding: 1rem;
+  }
+
+  .secure-send-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .secure-send .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .type-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .secure-send-card .flex.items-start {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+}

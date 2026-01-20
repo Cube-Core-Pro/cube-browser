@@ -1,0 +1,1554 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "add": "追加",
+    "search": "検索",
+    "filter": "フィルター",
+    "sort": "並べ替え",
+    "refresh": "更新",
+    "close": "閉じる",
+    "back": "戻る",
+    "next": "次へ",
+    "previous": "前へ",
+    "submit": "送信",
+    "confirm": "確認",
+    "yes": "はい",
+    "no": "いいえ",
+    "ok": "OK",
+    "settings": "設定",
+    "help": "ヘルプ",
+    "about": "について",
+    "logout": "ログアウト",
+    "login": "ログイン",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "email": "メール",
+    "name": "名前",
+    "description": "説明",
+    "date": "日付",
+    "time": "時間",
+    "status": "ステータス",
+    "actions": "アクション",
+    "more": "もっと見る",
+    "less": "少なく",
+    "all": "すべて",
+    "none": "なし",
+    "select": "選択",
+    "selected": "選択済み",
+    "noData": "データがありません",
+    "noResults": "結果が見つかりません",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "download": "ダウンロード",
+    "upload": "アップロード",
+    "import": "インポート",
+    "export": "エクスポート",
+    "clear": "クリア",
+    "reset": "リセット",
+    "apply": "適用",
+    "enabled": "有効",
+    "disabled": "無効",
+    "active": "アクティブ",
+    "inactive": "非アクティブ",
+    "online": "オンライン",
+    "offline": "オフライン",
+    "connected": "接続済み",
+    "disconnected": "切断"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "dashboard": "ダッシュボード",
+    "browser": "ブラウザ",
+    "passwordManager": "パスワードマネージャー",
+    "collections": "コレクション",
+    "readingList": "リーディングリスト",
+    "mediaPlayer": "メディアプレーヤー",
+    "terminal": "ターミナル",
+    "downloads": "ダウンロード",
+    "automation": "自動化",
+    "settings": "設定",
+    "tools": "ツール",
+    "communications": "通信"
+  },
+  "browser": {
+    "newTab": "新しいタブ",
+    "tabs": "タブ",
+    "history": "履歴",
+    "bookmarks": "ブックマーク",
+    "extensions": "拡張機能",
+    "addressBar": "URLを入力または検索",
+    "reload": "再読み込み",
+    "stop": "停止",
+    "forward": "進む",
+    "back": "戻る",
+    "zoomIn": "拡大",
+    "zoomOut": "縮小",
+    "fullscreen": "フルスクリーン",
+    "print": "印刷",
+    "developer": "開発者ツール",
+    "incognito": "シークレットモード",
+    "clearData": "閲覧データを削除"
+  },
+  "passwordManager": {
+    "title": "パスワードマネージャー",
+    "vaultLocked": "金庫がロック中",
+    "unlockVault": "金庫を解除",
+    "createVault": "金庫を作成",
+    "masterPassword": "マスターパスワード",
+    "confirmPassword": "パスワードを確認",
+    "addPassword": "パスワードを追加",
+    "editPassword": "パスワードを編集",
+    "generatePassword": "パスワードを生成",
+    "passwordStrength": "強度",
+    "weak": "弱い",
+    "fair": "普通",
+    "good": "良い",
+    "strong": "強い",
+    "veryStrong": "とても強い",
+    "website": "ウェブサイト",
+    "username": "ユーザー名",
+    "notes": "メモ",
+    "category": "カテゴリー",
+    "favorites": "お気に入り",
+    "allItems": "すべて",
+    "recentlyUsed": "最近使用",
+    "searchPasswords": "パスワードを検索...",
+    "copyPassword": "パスワードをコピー",
+    "copyUsername": "ユーザー名をコピー",
+    "showPassword": "パスワードを表示",
+    "hidePassword": "パスワードを隠す",
+    "passwordCopied": "パスワードをコピーしました",
+    "usernameCopied": "ユーザー名をコピーしました",
+    "autoFill": "自動入力",
+    "securityReport": "セキュリティレポート",
+    "exportVault": "金庫をエクスポート",
+    "importPasswords": "パスワードをインポート",
+    "categories": {
+      "login": "ログイン",
+      "creditCard": "クレジットカード",
+      "identity": "身分証明",
+      "secureNote": "セキュアノート",
+      "socialMedia": "ソーシャルメディア",
+      "banking": "銀行",
+      "email": "メール",
+      "work": "仕事",
+      "shopping": "ショッピング",
+      "entertainment": "エンターテイメント"
+    }
+  },
+  "collections": {
+    "title": "コレクション",
+    "newCollection": "新しいコレクション",
+    "editCollection": "コレクションを編集",
+    "deleteCollection": "コレクションを削除",
+    "addPage": "ページを追加",
+    "addLink": "リンクを追加",
+    "searchCollections": "コレクションを検索...",
+    "emptyCollection": "このコレクションは空です",
+    "collectionName": "名前",
+    "collectionDescription": "説明",
+    "color": "色",
+    "icon": "アイコン",
+    "pages": "ページ",
+    "links": "リンク",
+    "items": "アイテム",
+    "lastModified": "最終更新",
+    "createdAt": "作成日",
+    "sortBy": "並べ替え",
+    "viewAs": "表示形式",
+    "grid": "グリッド",
+    "list": "リスト"
+  },
+  "readingList": {
+    "title": "リーディングリスト",
+    "addArticle": "記事を追加",
+    "removeArticle": "記事を削除",
+    "markAsRead": "既読にする",
+    "markAsUnread": "未読にする",
+    "archive": "アーカイブ",
+    "unarchive": "アーカイブ解除",
+    "searchArticles": "記事を検索...",
+    "unread": "未読",
+    "read": "既読",
+    "archived": "アーカイブ済み",
+    "all": "すべて",
+    "estimatedReadTime": "読了時間",
+    "minutes": "分",
+    "addedOn": "追加日",
+    "source": "ソース",
+    "tags": "タグ",
+    "addTag": "タグを追加",
+    "emptyReadingList": "リーディングリストは空です"
+  },
+  "mediaPlayer": {
+    "title": "メディアプレーヤー",
+    "nowPlaying": "再生中",
+    "queue": "キュー",
+    "playlist": "プレイリスト",
+    "playlists": "プレイリスト",
+    "newPlaylist": "新しいプレイリスト",
+    "addToPlaylist": "プレイリストに追加",
+    "removeFromPlaylist": "プレイリストから削除",
+    "play": "再生",
+    "pause": "一時停止",
+    "stop": "停止",
+    "previous": "前へ",
+    "next": "次へ",
+    "shuffle": "シャッフル",
+    "repeat": "リピート",
+    "repeatOne": "1曲リピート",
+    "repeatAll": "全曲リピート",
+    "volume": "音量",
+    "mute": "ミュート",
+    "unmute": "ミュート解除",
+    "fullscreen": "フルスクリーン",
+    "subtitles": "字幕",
+    "audioTrack": "オーディオトラック",
+    "playbackSpeed": "再生速度",
+    "equalizer": "イコライザー",
+    "visualizer": "ビジュアライザー",
+    "openFile": "ファイルを開く",
+    "openFolder": "フォルダーを開く",
+    "addToQueue": "キューに追加",
+    "clearQueue": "キューをクリア",
+    "artist": "アーティスト",
+    "album": "アルバム",
+    "genre": "ジャンル",
+    "duration": "時間",
+    "bitrate": "ビットレート",
+    "sampleRate": "サンプルレート",
+    "channels": "チャンネル"
+  },
+  "terminal": {
+    "title": "ターミナル",
+    "newTerminal": "新しいターミナル",
+    "closeTerminal": "ターミナルを閉じる",
+    "splitHorizontal": "水平分割",
+    "splitVertical": "垂直分割",
+    "clear": "クリア",
+    "copy": "コピー",
+    "paste": "貼り付け",
+    "selectAll": "すべて選択",
+    "find": "検索",
+    "shell": "シェル",
+    "fontSize": "フォントサイズ",
+    "fontFamily": "フォントファミリー",
+    "theme": "テーマ",
+    "cursorStyle": "カーソルスタイル",
+    "scrollback": "履歴行数",
+    "commandHistory": "コマンド履歴",
+    "themes": {
+      "dark": "ダーク",
+      "light": "ライト",
+      "monokai": "Monokai",
+      "dracula": "Dracula",
+      "solarized": "Solarized"
+    }
+  },
+  "downloads": {
+    "title": "ダウンロード",
+    "activeDownloads": "アクティブ",
+    "completedDownloads": "完了",
+    "pausedDownloads": "一時停止",
+    "failedDownloads": "失敗",
+    "allDownloads": "すべて",
+    "addDownload": "ダウンロードを追加",
+    "pauseDownload": "一時停止",
+    "resumeDownload": "再開",
+    "cancelDownload": "キャンセル",
+    "retryDownload": "再試行",
+    "removeDownload": "削除",
+    "clearCompleted": "完了を削除",
+    "openFile": "ファイルを開く",
+    "openFolder": "フォルダーを開く",
+    "copyLink": "リンクをコピー",
+    "downloadSpeed": "ダウンロード速度",
+    "uploadSpeed": "アップロード速度",
+    "progress": "進捗",
+    "timeRemaining": "残り時間",
+    "destination": "保存先",
+    "fileName": "ファイル名",
+    "fileSize": "サイズ",
+    "downloaded": "ダウンロード済み",
+    "startTime": "開始時間",
+    "endTime": "終了時間"
+  },
+  "automation": {
+    "title": "自動化",
+    "newWorkflow": "新しいワークフロー",
+    "editWorkflow": "ワークフローを編集",
+    "runWorkflow": "ワークフローを実行",
+    "stopWorkflow": "ワークフローを停止",
+    "saveWorkflow": "ワークフローを保存",
+    "deleteWorkflow": "ワークフローを削除",
+    "duplicateWorkflow": "ワークフローを複製",
+    "importWorkflow": "ワークフローをインポート",
+    "exportWorkflow": "ワークフローをエクスポート",
+    "workflowName": "ワークフロー名",
+    "workflowDescription": "説明",
+    "triggers": "トリガー",
+    "actions": "アクション",
+    "conditions": "条件",
+    "variables": "変数",
+    "logs": "ログ",
+    "history": "履歴",
+    "schedule": "スケジュール",
+    "enabled": "有効",
+    "disabled": "無効",
+    "running": "実行中",
+    "completed": "完了",
+    "failed": "失敗",
+    "paused": "一時停止",
+    "nodes": {
+      "click": "クリック",
+      "type": "テキスト入力",
+      "navigate": "ナビゲート",
+      "wait": "待機",
+      "screenshot": "スクリーンショット",
+      "extract": "データ抽出",
+      "condition": "条件",
+      "loop": "ループ",
+      "script": "カスタムスクリプト"
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "general": "一般",
+    "appearance": "外観",
+    "privacy": "プライバシーとセキュリティ",
+    "notifications": "通知",
+    "language": "言語",
+    "languages": {
+      "en": "英語",
+      "es": "スペイン語",
+      "pt": "ポルトガル語",
+      "it": "イタリア語",
+      "de": "ドイツ語",
+      "fr": "フランス語",
+      "tr": "トルコ語",
+      "zh": "中国語",
+      "ja": "日本語",
+      "ko": "韓国語",
+      "ar": "アラビア語",
+      "ru": "ロシア語"
+    },
+    "theme": "テーマ",
+    "themes": {
+      "light": "ライト",
+      "dark": "ダーク",
+      "system": "システム"
+    },
+    "accentColor": "アクセントカラー",
+    "fontSize": "フォントサイズ",
+    "startPage": "スタートページ",
+    "defaultDownloadLocation": "ダウンロード場所",
+    "clearBrowsingData": "閲覧データを削除",
+    "importData": "データをインポート",
+    "exportData": "データをエクスポート",
+    "resetSettings": "設定をリセット",
+    "autoUpdate": "自動更新",
+    "checkForUpdates": "更新を確認",
+    "version": "バージョン",
+    "licenses": "ライセンス",
+    "feedback": "フィードバックを送信",
+    "account": "アカウント"
+  },
+  "account": {
+    "title": "アカウント設定",
+    "profile": "プロフィール",
+    "profileInfo": "プロフィール情報",
+    "firstName": "名",
+    "lastName": "姓",
+    "displayName": "表示名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "company": "会社",
+    "role": "役職",
+    "timezone": "タイムゾーン",
+    "bio": "自己紹介",
+    "avatar": "アバター",
+    "uploadAvatar": "写真をアップロード",
+    "removeAvatar": "写真を削除",
+    "dragDropAvatar": "画像をドラッグ＆ドロップまたはクリックしてアップロード",
+    "avatarFormats": "JPG、PNGまたはGIF。最大5MB",
+    "billingAddress": "請求先住所",
+    "streetAddress": "住所",
+    "addressLine2": "住所2",
+    "city": "市区町村",
+    "state": "都道府県",
+    "postalCode": "郵便番号",
+    "country": "国",
+    "vatNumber": "法人番号",
+    "preferences": "設定",
+    "communicationPrefs": "通信設定",
+    "emailNotifications": "メール通知",
+    "smsNotifications": "SMS通知",
+    "marketingEmails": "マーケティングメール",
+    "productUpdates": "製品アップデート",
+    "securityAlerts": "セキュリティアラート",
+    "billingHistory": "請求履歴",
+    "viewAllInvoices": "すべての請求書を見る",
+    "invoice": "請求書",
+    "paid": "支払済み",
+    "pending": "保留中",
+    "failed": "失敗",
+    "saveChanges": "変更を保存",
+    "changesSaved": "変更が保存されました",
+    "changePassword": "パスワードを変更",
+    "deleteAccount": "アカウントを削除",
+    "accountSecurity": "アカウントセキュリティ",
+    "twoFactorAuth": "二段階認証",
+    "connectedDevices": "接続されたデバイス",
+    "activeSessions": "アクティブなセッション"
+  },
+  "admin": {
+    "title": "管理パネル",
+    "dashboard": "ダッシュボード",
+    "overview": "概要",
+    "sales": "売上",
+    "licenses": "ライセンス",
+    "downloads": "ダウンロード",
+    "users": "ユーザー",
+    "apiKeys": "APIキー",
+    "services": "サービス",
+    "analytics": "分析",
+    "logs": "ログ",
+    "settings": "設定",
+    "totalRevenue": "総収益",
+    "totalUsers": "総ユーザー数",
+    "activeLicenses": "アクティブライセンス",
+    "totalDownloads": "総ダウンロード数",
+    "recentSales": "最近の売上",
+    "customer": "顧客",
+    "product": "製品",
+    "amount": "金額",
+    "status": "ステータス",
+    "date": "日付",
+    "completed": "完了",
+    "pending": "保留中",
+    "refunded": "返金済み",
+    "licenseKey": "ライセンスキー",
+    "licensePlan": "プラン",
+    "licenseStatus": "ステータス",
+    "devices": "デバイス",
+    "expiresAt": "有効期限",
+    "active": "アクティブ",
+    "expired": "期限切れ",
+    "revoked": "取り消し",
+    "suspended": "停止中",
+    "downloadStats": "ダウンロード統計",
+    "platformDistribution": "プラットフォーム分布",
+    "recentDownloads": "最近のダウンロード",
+    "version": "バージョン",
+    "platform": "プラットフォーム",
+    "downloadDate": "ダウンロード日"
+  },
+  "updates": {
+    "title": "更新と同期",
+    "checkForUpdates": "更新を確認",
+    "checking": "確認中...",
+    "downloading": "ダウンロード中...",
+    "installing": "インストール中...",
+    "currentVersion": "現在のバージョン",
+    "latestVersion": "最新バージョン",
+    "updateAvailable": "更新があります",
+    "upToDate": "最新です",
+    "downloadUpdate": "更新をダウンロード",
+    "installUpdate": "インストールして再起動",
+    "viewReleaseNotes": "リリースノートを見る",
+    "lastChecked": "最終確認",
+    "releaseDate": "リリース日",
+    "size": "サイズ",
+    "autoCheck": "自動的に更新を確認",
+    "autoDownload": "自動的に更新をダウンロード",
+    "installOnExit": "終了時にインストール",
+    "checkInterval": "確認間隔",
+    "hourly": "毎時",
+    "daily": "毎日",
+    "weekly": "毎週",
+    "manual": "手動のみ",
+    "updateChannel": "更新チャンネル",
+    "stable": "安定版",
+    "beta": "ベータ",
+    "nightly": "ナイトリー",
+    "updateHistory": "更新履歴",
+    "whatsNew": "新機能"
+  },
+  "cloudSync": {
+    "title": "クラウド同期",
+    "connected": "接続済み",
+    "disconnected": "未接続",
+    "syncNow": "今すぐ同期",
+    "syncing": "同期中...",
+    "lastSync": "最終同期",
+    "pendingChanges": "保留中の変更",
+    "signInPrompt": "サインインしてデバイス間で設定を同期",
+    "signIn": "サインイン",
+    "syncEnabled": "同期を有効にする",
+    "syncEnabledDesc": "デバイス間でデータを同期します",
+    "syncOnStartup": "起動時に同期",
+    "syncOnStartupDesc": "アプリ起動時に自動同期",
+    "syncFrequency": "同期頻度",
+    "realtime": "リアルタイム",
+    "everyFiveMin": "5分ごと",
+    "everyFifteenMin": "15分ごと",
+    "everyThirtyMin": "30分ごと",
+    "dataToSync": "同期するデータ",
+    "settings": "設定",
+    "passwords": "パスワード",
+    "bookmarks": "ブックマーク",
+    "collections": "コレクション",
+    "macros": "マクロ",
+    "workflows": "ワークフロー",
+    "themes": "テーマ",
+    "extensions": "拡張機能",
+    "onlineAccount": "オンラインアカウント",
+    "accountSettings": "アカウント設定",
+    "billingSubscription": "請求とサブスクリプション",
+    "upgradePlan": "プランをアップグレード"
+  },
+  "devices": {
+    "title": "接続されたデバイス",
+    "description": "アカウントに同期されたデバイスを管理",
+    "noDevices": "接続されたデバイスはありません",
+    "noDevicesDesc": "他のデバイスでサインインすると表示されます",
+    "thisDevice": "このデバイス",
+    "lastActive": "最終アクティブ",
+    "remove": "削除"
+  },
+  "backups": {
+    "title": "クラウドバックアップ",
+    "autoBackup": "自動バックアップ",
+    "autoBackupDesc": "データを自動的にバックアップ",
+    "backupFrequency": "バックアップ頻度",
+    "createNow": "今すぐバックアップを作成",
+    "yourBackups": "バックアップ",
+    "noBackups": "バックアップはまだありません",
+    "noBackupsDesc": "データを保護するためにバックアップを作成",
+    "restore": "復元",
+    "delete": "削除"
+  },
+  "errors": {
+    "generic": "問題が発生しました",
+    "networkError": "ネットワークエラー。接続を確認してください。",
+    "notFound": "見つかりません",
+    "unauthorized": "認証されていません。ログインしてください。",
+    "forbidden": "アクセスが拒否されました",
+    "serverError": "サーバーエラー。後でもう一度お試しください。",
+    "timeout": "タイムアウト",
+    "invalidInput": "無効な入力",
+    "requiredField": "この項目は必須です",
+    "invalidEmail": "無効なメールアドレス",
+    "invalidUrl": "無効なURL",
+    "passwordMismatch": "パスワードが一致しません",
+    "weakPassword": "パスワードが弱すぎます",
+    "fileTooLarge": "ファイルが大きすぎます",
+    "invalidFileType": "無効なファイルタイプ",
+    "downloadFailed": "ダウンロードに失敗しました",
+    "uploadFailed": "アップロードに失敗しました",
+    "saveFailed": "保存に失敗しました",
+    "deleteFailed": "削除に失敗しました",
+    "loadFailed": "データの読み込みに失敗しました"
+  },
+  "success": {
+    "saved": "正常に保存されました",
+    "deleted": "正常に削除されました",
+    "updated": "正常に更新されました",
+    "copied": "クリップボードにコピーされました",
+    "downloaded": "正常にダウンロードされました",
+    "uploaded": "正常にアップロードされました",
+    "imported": "正常にインポートされました",
+    "exported": "正常にエクスポートされました",
+    "passwordChanged": "パスワードが変更されました",
+    "settingsSaved": "設定が保存されました"
+  },
+  "confirmations": {
+    "delete": "本当に削除しますか？",
+    "deleteMultiple": "{count}個のアイテムを削除しますか？",
+    "discard": "保存されていない変更を破棄しますか？",
+    "logout": "本当にログアウトしますか？",
+    "clearData": "これによりすべてのデータが完全に削除されます。続行しますか？",
+    "reset": "すべての設定をリセットしますか？"
+  },
+  "crm": {
+    "title": "エンタープライズCRM",
+    "subtitle": "顧客関係管理",
+    "contacts": {
+      "title": "連絡先",
+      "addContact": "連絡先を追加",
+      "editContact": "連絡先を編集",
+      "importContacts": "連絡先をインポート",
+      "exportContacts": "連絡先をエクスポート",
+      "firstName": "名",
+      "lastName": "姓",
+      "company": "会社",
+      "phone": "電話",
+      "mobile": "携帯",
+      "email": "メール",
+      "address": "住所",
+      "city": "市区町村",
+      "state": "都道府県",
+      "country": "国",
+      "postalCode": "郵便番号",
+      "notes": "メモ",
+      "tags": "タグ",
+      "source": "リード獲得元",
+      "status": "ステータス",
+      "assignedTo": "担当者",
+      "lastContact": "最終コンタクト",
+      "nextFollowUp": "次回フォローアップ",
+      "totalDeals": "総取引数",
+      "totalValue": "総額",
+      "duplicates": "重複を統合",
+      "segments": "セグメント",
+      "customFields": "カスタムフィールド"
+    },
+    "companies": {
+      "title": "会社",
+      "addCompany": "会社を追加",
+      "companyName": "会社名",
+      "industry": "業種",
+      "size": "会社規模",
+      "revenue": "年間収益",
+      "website": "ウェブサイト",
+      "employees": "従業員数",
+      "headquarters": "本社",
+      "founded": "設立",
+      "linkedContacts": "関連する連絡先"
+    },
+    "deals": {
+      "title": "取引",
+      "addDeal": "取引を追加",
+      "editDeal": "取引を編集",
+      "dealName": "取引名",
+      "value": "取引額",
+      "probability": "確率",
+      "expectedClose": "予定クローズ日",
+      "actualClose": "実際のクローズ日",
+      "stage": "ステージ",
+      "pipeline": "パイプライン",
+      "wonDeals": "成約済み",
+      "lostDeals": "失注",
+      "openDeals": "進行中",
+      "totalPipeline": "パイプライン総額",
+      "weightedValue": "加重値",
+      "lostReason": "失注理由",
+      "competitor": "競合",
+      "stages": {
+        "lead": "リード",
+        "qualified": "認定済み",
+        "proposal": "提案",
+        "negotiation": "交渉",
+        "closed_won": "成約",
+        "closed_lost": "失注"
+      }
+    },
+    "pipeline": {
+      "title": "パイプライン",
+      "newPipeline": "新しいパイプライン",
+      "editPipeline": "パイプラインを編集",
+      "stages": "ステージ",
+      "addStage": "ステージを追加",
+      "stageName": "ステージ名",
+      "probability": "クローズ確率",
+      "rottenDays": "停滞日数",
+      "kanban": "カンバンビュー",
+      "list": "リストビュー",
+      "forecast": "予測"
+    },
+    "activities": {
+      "title": "活動",
+      "addActivity": "活動を追加",
+      "call": "電話",
+      "email": "メール",
+      "meeting": "会議",
+      "task": "タスク",
+      "note": "メモ",
+      "deadline": "期限",
+      "reminder": "リマインダー",
+      "completed": "完了",
+      "pending": "保留中",
+      "overdue": "期限切れ",
+      "todayTasks": "今日のタスク",
+      "upcoming": "今後",
+      "history": "活動履歴"
+    },
+    "reports": {
+      "title": "レポート",
+      "salesReport": "売上レポート",
+      "pipelineReport": "パイプラインレポート",
+      "activityReport": "活動レポート",
+      "winRate": "成約率",
+      "avgDealSize": "平均取引額",
+      "avgSalesCycle": "平均セールスサイクル",
+      "conversionRate": "コンバージョン率",
+      "revenueByMonth": "月別収益",
+      "dealsByStage": "ステージ別取引",
+      "topPerformers": "トップセールス",
+      "lostReasons": "失注理由",
+      "sourceAnalysis": "リード獲得元分析"
+    }
+  },
+  "marketing": {
+    "title": "マーケティングハブ",
+    "subtitle": "オールインワンマーケティング自動化",
+    "campaigns": {
+      "title": "キャンペーン",
+      "newCampaign": "新しいキャンペーン",
+      "editCampaign": "キャンペーンを編集",
+      "campaignName": "キャンペーン名",
+      "type": "キャンペーンタイプ",
+      "status": "ステータス",
+      "startDate": "開始日",
+      "endDate": "終了日",
+      "budget": "予算",
+      "spent": "支出",
+      "roi": "ROI",
+      "leads": "獲得リード",
+      "conversions": "コンバージョン",
+      "types": {
+        "email": "メールキャンペーン",
+        "sms": "SMSキャンペーン",
+        "social": "ソーシャルメディア",
+        "ads": "有料広告",
+        "content": "コンテンツマーケティング",
+        "event": "イベント",
+        "webinar": "ウェビナー"
+      }
+    },
+    "email": {
+      "title": "メールマーケティング",
+      "compose": "メールを作成",
+      "templates": "メールテンプレート",
+      "sequences": "メールシーケンス",
+      "broadcasts": "一斉送信",
+      "subject": "件名",
+      "previewText": "プレビューテキスト",
+      "fromName": "送信者名",
+      "fromEmail": "送信者メール",
+      "replyTo": "返信先",
+      "recipients": "受信者",
+      "schedule": "送信予約",
+      "sendNow": "今すぐ送信",
+      "testEmail": "テスト送信",
+      "openRate": "開封率",
+      "clickRate": "クリック率",
+      "bounceRate": "バウンス率",
+      "unsubscribeRate": "配信停止率",
+      "delivered": "配信済み",
+      "opened": "開封済み",
+      "clicked": "クリック済み",
+      "replied": "返信済み"
+    },
+    "sms": {
+      "title": "SMSマーケティング",
+      "compose": "SMSを作成",
+      "templates": "SMSテンプレート",
+      "campaigns": "SMSキャンペーン",
+      "sender": "送信者ID",
+      "message": "メッセージ",
+      "characters": "文字数",
+      "segments": "セグメント",
+      "deliveryRate": "配信率",
+      "responseRate": "応答率",
+      "optOut": "配信停止"
+    },
+    "landing": {
+      "title": "ランディングページ",
+      "newPage": "新しいページ",
+      "editPage": "ページを編集",
+      "templates": "テンプレート",
+      "pageName": "ページ名",
+      "slug": "URLスラッグ",
+      "publish": "公開",
+      "unpublish": "非公開",
+      "preview": "プレビュー",
+      "duplicate": "複製",
+      "views": "閲覧数",
+      "conversions": "コンバージョン",
+      "conversionRate": "コンバージョン率",
+      "abTest": "A/Bテスト",
+      "variants": "バリアント",
+      "winner": "勝者"
+    },
+    "funnels": {
+      "title": "ファネル",
+      "newFunnel": "新しいファネル",
+      "editFunnel": "ファネルを編集",
+      "funnelName": "ファネル名",
+      "steps": "ステップ",
+      "addStep": "ステップを追加",
+      "optIn": "オプトインページ",
+      "salesPage": "セールスページ",
+      "checkout": "チェックアウト",
+      "upsell": "アップセル",
+      "downsell": "ダウンセル",
+      "thankYou": "サンキューページ",
+      "entries": "エントリー",
+      "completions": "完了",
+      "dropoff": "離脱率"
+    },
+    "forms": {
+      "title": "フォーム",
+      "newForm": "新しいフォーム",
+      "editForm": "フォームを編集",
+      "formName": "フォーム名",
+      "fields": "フィールド",
+      "addField": "フィールドを追加",
+      "required": "必須",
+      "placeholder": "プレースホルダー",
+      "submissions": "送信",
+      "embed": "埋め込みコード",
+      "popup": "ポップアップフォーム",
+      "inline": "インラインフォーム",
+      "fieldTypes": {
+        "text": "テキスト",
+        "email": "メール",
+        "phone": "電話",
+        "select": "ドロップダウン",
+        "radio": "ラジオボタン",
+        "checkbox": "チェックボックス",
+        "textarea": "テキストエリア",
+        "date": "日付",
+        "file": "ファイルアップロード"
+      }
+    },
+    "automation": {
+      "title": "マーケティング自動化",
+      "workflows": "ワークフロー",
+      "newWorkflow": "新しいワークフロー",
+      "triggers": "トリガー",
+      "actions": "アクション",
+      "conditions": "条件",
+      "delays": "遅延",
+      "active": "アクティブ",
+      "paused": "一時停止",
+      "draft": "下書き",
+      "enrolled": "登録済み",
+      "completed": "完了",
+      "triggerTypes": {
+        "formSubmit": "フォーム送信",
+        "tagAdded": "タグ追加",
+        "tagRemoved": "タグ削除",
+        "listJoined": "リスト登録",
+        "linkClicked": "リンククリック",
+        "emailOpened": "メール開封",
+        "pageVisited": "ページ訪問",
+        "dealCreated": "取引作成",
+        "custom": "カスタムイベント"
+      }
+    },
+    "surveys": {
+      "title": "アンケート",
+      "newSurvey": "新しいアンケート",
+      "questions": "質問",
+      "addQuestion": "質問を追加",
+      "responses": "回答",
+      "completionRate": "完了率",
+      "avgTime": "平均時間",
+      "nps": "NPSスコア"
+    }
+  },
+  "calendar": {
+    "title": "カレンダー",
+    "subtitle": "スケジュールと予約",
+    "newEvent": "新しいイベント",
+    "editEvent": "イベントを編集",
+    "eventTitle": "イベントタイトル",
+    "startTime": "開始時間",
+    "endTime": "終了時間",
+    "allDay": "終日",
+    "location": "場所",
+    "description": "説明",
+    "attendees": "参加者",
+    "reminder": "リマインダー",
+    "recurring": "繰り返し",
+    "color": "色",
+    "views": {
+      "day": "日",
+      "week": "週",
+      "month": "月",
+      "agenda": "アジェンダ"
+    },
+    "booking": {
+      "title": "予約リンク",
+      "newLink": "新しい予約リンク",
+      "linkName": "リンク名",
+      "duration": "時間",
+      "availability": "空き時間",
+      "buffer": "バッファ時間",
+      "maxBookings": "1日の最大予約数",
+      "confirmationEmail": "確認メール",
+      "reminderEmail": "リマインダーメール",
+      "customQuestions": "カスタム質問",
+      "embed": "埋め込みウィジェット"
+    }
+  },
+  "payments": {
+    "title": "支払い",
+    "subtitle": "請求と回収",
+    "invoices": {
+      "title": "請求書",
+      "newInvoice": "新しい請求書",
+      "invoiceNumber": "請求書番号",
+      "issueDate": "発行日",
+      "dueDate": "支払期日",
+      "items": "明細",
+      "subtotal": "小計",
+      "tax": "税金",
+      "discount": "割引",
+      "total": "合計",
+      "paid": "支払済み",
+      "unpaid": "未払い",
+      "overdue": "延滞",
+      "draft": "下書き",
+      "send": "請求書を送信",
+      "markPaid": "支払済みにする",
+      "recordPayment": "支払いを記録"
+    },
+    "products": {
+      "title": "製品",
+      "newProduct": "新しい製品",
+      "productName": "製品名",
+      "price": "価格",
+      "recurring": "定期",
+      "oneTime": "一回",
+      "subscription": "サブスクリプション",
+      "billingCycle": "請求サイクル",
+      "trialDays": "トライアル日数",
+      "setupFee": "設定費用"
+    },
+    "subscriptions": {
+      "title": "サブスクリプション",
+      "active": "アクティブ",
+      "cancelled": "キャンセル済み",
+      "past_due": "延滞",
+      "mrr": "月間経常収益",
+      "arr": "年間経常収益",
+      "churn": "解約率",
+      "ltv": "顧客生涯価値"
+    }
+  },
+  "courses": {
+    "title": "コースとメンバーシップ",
+    "subtitle": "オンライン学習プラットフォーム",
+    "newCourse": "新しいコース",
+    "editCourse": "コースを編集",
+    "courseName": "コース名",
+    "description": "説明",
+    "instructor": "講師",
+    "price": "価格",
+    "modules": "モジュール",
+    "lessons": "レッスン",
+    "addModule": "モジュールを追加",
+    "addLesson": "レッスンを追加",
+    "video": "動画",
+    "audio": "音声",
+    "text": "テキストコンテンツ",
+    "quiz": "クイズ",
+    "assignment": "課題",
+    "certificate": "修了証",
+    "students": "受講者",
+    "enrolled": "登録済み",
+    "completed": "完了",
+    "progress": "進捗",
+    "drip": "ドリップコンテンツ",
+    "membership": {
+      "title": "メンバーシップ",
+      "levels": "メンバーシップレベル",
+      "access": "アクセスルール",
+      "members": "メンバー",
+      "content": "保護されたコンテンツ"
+    }
+  },
+  "social": {
+    "title": "ソーシャルハブ",
+    "subtitle": "ソーシャルメディアコマンドセンター",
+    "accounts": "接続されたアカウント",
+    "connectAccount": "アカウントを接続",
+    "platforms": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter/X",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "pinterest": "Pinterest",
+      "threads": "Threads"
+    },
+    "posts": {
+      "title": "投稿",
+      "newPost": "新しい投稿",
+      "schedule": "投稿をスケジュール",
+      "draft": "下書きとして保存",
+      "publish": "今すぐ公開",
+      "caption": "キャプション",
+      "media": "メディア",
+      "hashtags": "ハッシュタグ",
+      "mentions": "メンション",
+      "scheduled": "スケジュール済み",
+      "published": "公開済み",
+      "failed": "失敗"
+    },
+    "analytics": {
+      "title": "分析",
+      "followers": "フォロワー",
+      "following": "フォロー中",
+      "engagement": "エンゲージメント率",
+      "reach": "リーチ",
+      "impressions": "インプレッション",
+      "likes": "いいね",
+      "comments": "コメント",
+      "shares": "シェア",
+      "saves": "保存",
+      "clicks": "クリック",
+      "growth": "成長",
+      "bestTime": "最適な投稿時間",
+      "topPosts": "人気の投稿"
+    },
+    "video": {
+      "title": "動画クリエイター",
+      "newVideo": "動画を作成",
+      "templates": "テンプレート",
+      "scenes": "シーン",
+      "addScene": "シーンを追加",
+      "text": "オーバーレイテキスト",
+      "music": "BGM",
+      "voiceover": "ナレーション",
+      "transitions": "トランジション",
+      "effects": "エフェクト",
+      "aspectRatio": "アスペクト比",
+      "duration": "長さ",
+      "export": "動画をエクスポート",
+      "formats": {
+        "reels": "Instagram リール",
+        "shorts": "YouTube ショート",
+        "tiktok": "TikTok",
+        "story": "ストーリーズ"
+      }
+    },
+    "viral": {
+      "title": "バイラル分析",
+      "trendScore": "トレンドスコア",
+      "viralPotential": "バイラルポテンシャル",
+      "optimalTiming": "最適なタイミング",
+      "hashtagAnalysis": "ハッシュタグ分析",
+      "competitorAnalysis": "競合分析",
+      "contentSuggestions": "コンテンツ提案",
+      "trendingTopics": "トレンドトピック",
+      "audienceInsights": "オーディエンスインサイト"
+    },
+    "inbox": {
+      "title": "統合インボックス",
+      "messages": "メッセージ",
+      "comments": "コメント",
+      "mentions": "メンション",
+      "reply": "返信",
+      "archive": "アーカイブ",
+      "unread": "未読",
+      "starred": "スター付き",
+      "assigned": "自分に割り当て"
+    }
+  },
+  "aiSearch": {
+    "title": "AI検索エンジン",
+    "subtitle": "AIによるスマート検索",
+    "searchPlaceholder": "何でも聞いてください...",
+    "webSearch": "ウェブ検索",
+    "deepResearch": "詳細調査",
+    "imageSearch": "画像検索",
+    "videoSearch": "動画検索",
+    "newsSearch": "ニュース検索",
+    "academicSearch": "学術検索",
+    "sources": "ソース",
+    "citations": "引用",
+    "summary": "AIサマリー",
+    "relatedQuestions": "関連する質問",
+    "filters": "検索フィルター",
+    "dateRange": "日付範囲",
+    "region": "地域",
+    "language": "言語",
+    "safeSearch": "セーフサーチ",
+    "searchHistory": "検索履歴",
+    "savedSearches": "保存した検索",
+    "modes": {
+      "quick": "クイック回答",
+      "comprehensive": "包括的",
+      "creative": "クリエイティブ",
+      "precise": "正確"
+    }
+  },
+  "intelligence": {
+    "title": "インテリジェンスセンター",
+    "subtitle": "詳細調査と分析",
+    "newResearch": "新しい調査",
+    "researchTopic": "調査トピック",
+    "sources": "ソース",
+    "analysis": "分析",
+    "report": "レポート",
+    "timeline": "タイムライン",
+    "entities": "エンティティ",
+    "relationships": "関係性",
+    "sentiment": "感情分析",
+    "trends": "トレンド分析",
+    "factCheck": "ファクトチェック",
+    "citations": "引用",
+    "exportReport": "レポートをエクスポート",
+    "collaborate": "コラボレーション",
+    "categories": {
+      "market": "市場調査",
+      "competitive": "競合分析",
+      "technical": "技術調査",
+      "academic": "学術調査",
+      "news": "ニュースインテリジェンス",
+      "social": "ソーシャルリスニング"
+    }
+  },
+  "support": {
+    "title": "サポートセンター",
+    "subtitle": "ヘルプデスクとチケット",
+    "tickets": {
+      "title": "チケット",
+      "newTicket": "新しいチケット",
+      "subject": "件名",
+      "priority": "優先度",
+      "status": "ステータス",
+      "assignee": "担当者",
+      "requester": "リクエスター",
+      "created": "作成日",
+      "updated": "最終更新",
+      "resolved": "解決済み",
+      "firstResponse": "初回応答時間",
+      "priorities": {
+        "low": "低",
+        "medium": "中",
+        "high": "高",
+        "urgent": "緊急"
+      },
+      "statuses": {
+        "open": "オープン",
+        "pending": "保留中",
+        "in_progress": "進行中",
+        "resolved": "解決済み",
+        "closed": "クローズ"
+      }
+    },
+    "knowledgeBase": {
+      "title": "ナレッジベース",
+      "articles": "記事",
+      "categories": "カテゴリー",
+      "newArticle": "新しい記事",
+      "views": "閲覧数",
+      "helpful": "役に立ちましたか？",
+      "search": "ナレッジベースを検索..."
+    },
+    "chat": {
+      "title": "ライブチャット",
+      "online": "オンライン",
+      "offline": "オフライン",
+      "typing": "入力中...",
+      "send": "送信",
+      "transcript": "チャット履歴",
+      "rating": "この会話を評価",
+      "cannedResponses": "定型文"
+    }
+  },
+  "whiteLabel": {
+    "title": "ホワイトラベル",
+    "subtitle": "ブランドをカスタマイズ",
+    "branding": {
+      "title": "ブランディング",
+      "logo": "ロゴ",
+      "favicon": "ファビコン",
+      "appName": "アプリ名",
+      "primaryColor": "プライマリカラー",
+      "secondaryColor": "セカンダリカラー",
+      "accentColor": "アクセントカラー"
+    },
+    "domain": {
+      "title": "カスタムドメイン",
+      "addDomain": "ドメインを追加",
+      "verify": "ドメインを認証",
+      "ssl": "SSL証明書",
+      "status": "ステータス"
+    },
+    "emails": {
+      "title": "メールブランディング",
+      "fromName": "送信者名",
+      "fromEmail": "送信者メール",
+      "replyTo": "返信先",
+      "signature": "メール署名",
+      "templates": "メールテンプレート"
+    }
+  },
+  "aiAssistant": {
+    "title": "AIアシスタント",
+    "subtitle": "あなたのスマートヘルパー",
+    "chat": "AIとチャット",
+    "commands": "コマンド",
+    "suggestions": "提案",
+    "capabilities": {
+      "writeEmail": "メールを書く",
+      "analyzeData": "データを分析",
+      "createContent": "コンテンツを作成",
+      "summarize": "要約する",
+      "translate": "翻訳する",
+      "codeHelp": "コードヘルプ",
+      "research": "調査する",
+      "schedule": "スケジュールする"
+    },
+    "modules": {
+      "title": "AIモジュールコントロール",
+      "manage": "モジュールを管理",
+      "execute": "アクションを実行",
+      "automate": "タスクを自動化",
+      "permissions": "AI権限",
+      "history": "アクション履歴"
+    },
+    "voice": {
+      "title": "音声コマンド",
+      "listening": "聞いています...",
+      "speak": "話してください",
+      "stop": "停止",
+      "language": "音声言語"
+    }
+  },
+  "tours": {
+    "welcome": {
+      "title": "CUBE Eliteへようこそ",
+      "description": "パワフルな新しいワークスペースをご案内します"
+    },
+    "browser": {
+      "title": "フルブラウザ体験",
+      "description": "すべてのブラウザ機能であらゆるウェブサイトを閲覧"
+    },
+    "crm": {
+      "title": "CRMと連絡先",
+      "description": "すべての連絡先、会社、取引を一箇所で管理"
+    },
+    "marketing": {
+      "title": "マーケティング自動化",
+      "description": "キャンペーン、メール、ランディングページ、ファネルを作成"
+    },
+    "social": {
+      "title": "ソーシャルメディアハブ",
+      "description": "すべてのソーシャルアカウントを一つのダッシュボードで管理"
+    },
+    "aiSearch": {
+      "title": "AI検索",
+      "description": "引用と詳細調査でスマートな回答を取得"
+    },
+    "intelligence": {
+      "title": "インテリジェンスセンター",
+      "description": "詳細調査と競合分析を実施"
+    },
+    "aiAssistant": {
+      "title": "AIアシスタント",
+      "description": "AIがあらゆるモジュールを制御し、タスクを実行"
+    },
+    "steps": {
+      "next": "次へ",
+      "previous": "前へ",
+      "skip": "ツアーをスキップ",
+      "finish": "始める"
+    }
+  },
+  "dataExtractor": {
+    "title": "データ抽出ツール",
+    "subtitle": "ポイント＆クリックインターフェースによるビジュアルWebスクレイピングツール",
+    "loading": {
+      "title": "データ抽出ツールを読み込み中...",
+      "description": "抽出ツールを初期化中"
+    },
+    "errors": {
+      "title": "抽出エラー",
+      "loadFailed": "データ抽出ツールの読み込みに失敗しました"
+    },
+    "actions": {
+      "newSchema": "新規スキーマ",
+      "startExtraction": "抽出開始",
+      "previewData": "データプレビュー",
+      "exportData": "データエクスポート",
+      "saveSchema": "スキーマ保存"
+    }
+  },
+  "enterprise": {
+    "badge": "エンタープライズスイート",
+    "title": "CUBE Nexum Enterprise",
+    "subtitle": "自動化、統合、大規模データ管理のための包括的なエンタープライズツール。",
+    "stats": {
+      "modules": "モジュール",
+      "integrations": "統合",
+      "uptime": "稼働率SLA"
+    },
+    "errors": {
+      "loadFailed": "エンタープライズモジュールの読み込みに失敗しました"
+    },
+    "benefits": {
+      "title": "エンタープライズの利点",
+      "security": {
+        "title": "エンタープライズセキュリティ",
+        "description": "SOC 2 Type II、GDPR、HIPAAに準拠し、エンドツーエンド暗号化を採用。"
+      },
+      "performance": {
+        "title": "高性能",
+        "description": "ミリ秒以下のレイテンシで毎秒数百万のイベントを処理。"
+      },
+      "uptime": {
+        "title": "99.9%稼働率",
+        "description": "自動フェイルオーバーと災害復旧を備えたエンタープライズSLA。"
+      },
+      "support": {
+        "title": "24時間365日サポート",
+        "description": "1時間の応答保証を持つ専任サポートチーム。"
+      }
+    }
+  },
+  "fileTransfer": {
+    "title": "ファイル転送",
+    "subtitle": "デュアルパネルインターフェースによる安全なFTP/SFTP転送",
+    "loading": { "title": "転送を読み込み中...", "description": "サーバーに接続中" },
+    "errors": { "title": "転送エラー", "loadFailed": "ファイル転送の読み込みに失敗" },
+    "actions": { "connect": "接続", "disconnect": "切断", "upload": "アップロード", "download": "ダウンロード", "refresh": "更新", "newSite": "新規サイト" }
+  },
+  "collections": {
+    "title": "コレクション",
+    "subtitle": "保存したページを整理して共有",
+    "loading": { "title": "コレクションを読み込み中...", "description": "コレクションを取得中" },
+    "errors": { "title": "コレクションエラー", "loadFailed": "コレクションの読み込みに失敗" },
+    "empty": { "title": "コレクションなし", "description": "最初のコレクションを作成してください。" },
+    "actions": { "newCollection": "新規コレクション", "share": "共有", "delete": "削除" }
+  },
+  "readingList": {
+    "title": "リーディングリスト",
+    "subtitle": "後で読む記事を保存",
+    "loading": { "title": "リストを読み込み中...", "description": "記事を取得中" },
+    "errors": { "title": "リストエラー", "loadFailed": "リストの読み込みに失敗" },
+    "empty": { "title": "記事なし", "description": "Webから記事を保存してください。" },
+    "tabs": { "all": "すべて", "unread": "未読", "read": "既読" }
+  },
+  "remote": {
+    "title": "リモートデスクトップ",
+    "subtitle": "SSH、RDP、VNC経由でリモートコンピューターに接続",
+    "loading": { "title": "セッションを読み込み中...", "description": "接続を取得中" },
+    "errors": { "title": "接続エラー", "loadFailed": "セッションの読み込みに失敗" },
+    "actions": { "connect": "接続", "disconnect": "切断", "newSession": "新規セッション", "createRoom": "ルーム作成", "joinRoom": "参加" }
+  },
+  "ftp": {
+    "title": "FTPマネージャー",
+    "subtitle": "FTP/SFTP接続と転送を管理",
+    "loading": { "title": "FTPを読み込み中...", "description": "サーバーに接続中" },
+    "errors": { "title": "FTPエラー", "loadFailed": "FTP接続の読み込みに失敗" },
+    "actions": { "upload": "アップロード", "download": "ダウンロード", "newSite": "新規サイト", "refresh": "更新" }
+  },
+  "extensions": {
+    "title": "拡張機能",
+    "subtitle": "ブラウザの拡張機能とアドオンを管理",
+    "loading": { "title": "拡張機能を読み込み中...", "description": "インストール済みを取得中" },
+    "errors": { "title": "拡張機能エラー", "loadFailed": "拡張機能の読み込みに失敗" },
+    "tabs": { "installed": "インストール済み", "webstore": "Webストア", "install": "インストール", "settings": "設定" },
+    "actions": { "enable": "有効化", "disable": "無効化", "uninstall": "アンインストール", "install": "インストール" }
+  },
+  "help": {
+    "title": "ヘルプセンター",
+    "subtitle": "ドキュメントとサポート",
+    "sections": { "documentation": "ドキュメント", "tutorials": "ビデオチュートリアル", "community": "コミュニティ", "support": "サポートに連絡" }
+  },
+  "monitoring": {
+    "title": "Webサイト監視",
+    "subtitle": "Webサイトの稼働時間とパフォーマンスを監視",
+    "loading": { "title": "監視を読み込み中...", "description": "監視サイトを取得中" },
+    "errors": { "title": "監視エラー", "loadFailed": "データの読み込みに失敗" }
+  },
+  "dataSources": {
+    "title": "データソース",
+    "subtitle": "外部データソースを接続して管理",
+    "loading": { "title": "データソースを読み込み中...", "description": "接続を取得中" },
+    "errors": { "title": "データソースエラー", "loadFailed": "データソースの読み込みに失敗" },
+    "empty": { "title": "データソースなし", "description": "最初のデータソースを接続してください。" },
+    "types": { "database": "データベース", "api": "API", "file": "ファイル", "cloud": "クラウド" }
+  },
+  "integration": {
+    "title": "統合ハブ",
+    "subtitle": "モジュール間の統合管理",
+    "loading": { "title": "統合を読み込み中...", "description": "接続を取得中" }
+  },
+  "workspace": {
+    "title": "ワークスペース",
+    "subtitle": "ボード、ビュー、自動化によるプロジェクト管理",
+    "loading": { "title": "ワークスペースを読み込み中...", "description": "ボードとプロジェクトを取得中" },
+    "errors": { "title": "ワークスペースエラー", "loadFailed": "ワークスペースの読み込みに失敗" },
+    "views": { "table": "テーブル", "kanban": "カンバン", "timeline": "タイムライン", "chart": "チャート" }
+  },
+  "admin": {
+    "title": "管理パネル",
+    "subtitle": "システム管理と設定",
+    "loading": { "title": "管理パネルを読み込み中...", "description": "システム設定を取得中" }
+  },
+  "search": {
+    "title": "AI検索",
+    "subtitle": "AIによるインテリジェント検索",
+    "loading": { "title": "検索を読み込み中...", "description": "AI検索エンジンを初期化中" }
+  },
+  "p2p": {
+    "title": "P2P転送",
+    "subtitle": "ピアツーピアのファイル共有とコラボレーション",
+    "loading": { "title": "P2Pを読み込み中...", "description": "ピアネットワークを初期化中" },
+    "errors": { "title": "P2Pエラー", "loadFailed": "ピアネットワークへの接続に失敗" },
+    "actions": { "createRoom": "ルーム作成", "joinRoom": "参加", "shareFiles": "ファイル共有", "disconnect": "切断" }
+  },
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "CUBE Nexumへようこそ",
+        "description": "最も強力なブラウザ自動化プラットフォーム"
+      },
+      "profile": {
+        "title": "プロフィールを作成",
+        "description": "あなたについて少し教えてください"
+      },
+      "useCase": {
+        "title": "ご利用目的",
+        "description": "体験をカスタマイズするためにご協力ください"
+      },
+      "features": {
+        "title": "機能を選択",
+        "description": "使用したいツールを選択してください"
+      },
+      "browserSetup": {
+        "title": "ブラウザ設定",
+        "description": "ブラウザの設定を構成します"
+      },
+      "extension": {
+        "title": "拡張機能をインストール",
+        "description": "高度な機能のためにChrome拡張機能を取得"
+      },
+      "security": {
+        "title": "セキュリティ設定",
+        "description": "暗号化でデータを保護"
+      },
+      "notifications": {
+        "title": "通知",
+        "description": "重要な情報を常に把握"
+      },
+      "tour": {
+        "title": "クイックツアー",
+        "description": "2分で基本を学ぶ"
+      },
+      "complete": {
+        "title": "準備完了！",
+        "description": "自動化を開始する準備ができました"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "title": "個人利用",
+        "description": "フォーム入力、パスワード保存、日常タスクの自動化"
+      },
+      "business": {
+        "title": "ビジネス",
+        "description": "エンタープライズ自動化、チームコラボレーション、CRM統合"
+      },
+      "developer": {
+        "title": "開発者",
+        "description": "APIテスト、Webスクレイピング、ワークフロー自動化"
+      },
+      "dataAnalyst": {
+        "title": "データアナリスト",
+        "description": "データ抽出、Webスクレイピング、レポート生成"
+      },
+      "marketing": {
+        "title": "マーケティング",
+        "description": "ソーシャルメディア自動化、リード生成、分析"
+      },
+      "research": {
+        "title": "研究",
+        "description": "データ収集、コンテンツ分析、アーカイブ"
+      }
+    },
+    "featureTours": {
+      "autofillBasics": {
+        "name": "自動入力の基本",
+        "description": "自動入力プロファイルの作成と使用方法を学ぶ",
+        "steps": {
+          "createProfile": {
+            "title": "プロファイルを作成",
+            "description": "ここをクリックして最初の自動入力プロファイルを作成"
+          },
+          "fillDetails": {
+            "title": "詳細を入力",
+            "description": "情報を入力してください。フォームを自動入力するために使用します。"
+          },
+          "saveProfile": {
+            "title": "プロファイルを保存",
+            "description": "プロファイルを保存して自動入力を開始！"
+          }
+        }
+      },
+      "automationBasics": {
+        "name": "自動化の基本",
+        "description": "最初のワークフローを作成",
+        "steps": {
+          "createWorkflow": {
+            "title": "ワークフローを作成",
+            "description": "クリックして新しい自動化ワークフローの構築を開始"
+          },
+          "addNodes": {
+            "title": "ノードを追加",
+            "description": "ここからノードをドラッグしてワークフローを構築"
+          },
+          "connectNodes": {
+            "title": "ノードを接続",
+            "description": "ハンドルからハンドルへドラッグしてノードを接続"
+          },
+          "runWorkflow": {
+            "title": "ワークフローを実行",
+            "description": "クリックしてワークフローを実行"
+          }
+        }
+      },
+      "passwordVault": {
+        "name": "パスワード保管庫",
+        "description": "パスワードを安全に保存",
+        "steps": {
+          "addCredential": {
+            "title": "認証情報を追加",
+            "description": "新しいログイン認証情報を保存"
+          },
+          "generatePassword": {
+            "title": "パスワードを生成",
+            "description": "強力でユニークなパスワードを即座に作成"
+          },
+          "securitySettings": {
+            "title": "セキュリティ設定",
+            "description": "暗号化と自動ロックの設定を構成"
+          }
+        }
+      },
+      "aiAssistant": {
+        "name": "AIアシスタント",
+        "description": "AIからヘルプを得る",
+        "steps": {
+          "askAI": {
+            "title": "AIに質問",
+            "description": "質問を入力するか、自動化したいことを説明"
+          },
+          "suggestions": {
+            "title": "AIの提案",
+            "description": "AIが分析してアクションを提案します"
+          },
+          "apply": {
+            "title": "変更を適用",
+            "description": "AIが生成したソリューションを確認して適用"
+          }
+        }
+      }
+    }
+  }
+}

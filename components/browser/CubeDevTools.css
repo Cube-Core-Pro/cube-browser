@@ -1,0 +1,501 @@
+/**
+ * CUBE DevTools Styles
+ * Professional browser inspector styling
+ */
+
+/* Main Container */
+.cube-devtools {
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Position Variants */
+.devtools-bottom {
+  height: 300px;
+  min-height: 200px;
+  max-height: 60vh;
+  resize: vertical;
+  overflow: hidden;
+}
+
+.devtools-right {
+  width: 400px;
+  min-width: 300px;
+  max-width: 50vw;
+  height: 100%;
+  border-left: 1px solid var(--border);
+  border-top: none;
+  resize: horizontal;
+}
+
+.devtools-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 800px;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  z-index: 9999;
+  resize: both;
+  overflow: hidden;
+}
+
+/* Header */
+.devtools-header {
+  background: var(--muted);
+  border-bottom: 1px solid var(--border);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* DOM Tree */
+.dom-node {
+  line-height: 1.6;
+}
+
+.dom-node-header {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dom-node-header:hover {
+  background: var(--accent);
+}
+
+.dom-attr {
+  margin-left: 4px;
+}
+
+.dom-text {
+  display: inline;
+  font-style: italic;
+}
+
+.dom-children {
+  border-left: 1px dotted var(--border);
+  margin-left: 8px;
+}
+
+/* Console */
+.console-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.console-entry.error {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.console-entry.warn {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.console-entry.command {
+  background: var(--muted);
+}
+
+/* Network Table */
+.network-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.network-table th {
+  text-align: left;
+  padding: 8px;
+  background: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.network-table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.network-table tr:hover td {
+  background: var(--accent);
+}
+
+/* Performance Metrics */
+.perf-metric {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--muted);
+}
+
+.perf-metric-label {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.perf-metric-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.perf-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--muted);
+  overflow: hidden;
+}
+
+.perf-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+/* Storage */
+.storage-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.storage-key {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.storage-value {
+  color: var(--muted-foreground);
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* AI Inspector */
+.ai-suggestion {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--muted);
+  margin-bottom: 8px;
+}
+
+.ai-suggestion-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.ai-suggestion-description {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.ai-suggestion-score {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ai-suggestion-score.good {
+  background: rgba(34, 197, 94, 0.2);
+  color: rgb(34, 197, 94);
+}
+
+.ai-suggestion-score.warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: rgb(245, 158, 11);
+}
+
+.ai-suggestion-score.bad {
+  background: rgba(239, 68, 68, 0.2);
+  color: rgb(239, 68, 68);
+}
+
+/* Syntax Highlighting */
+.syntax-tag {
+  color: #c678dd;
+}
+
+.syntax-attr-name {
+  color: #d19a66;
+}
+
+.syntax-attr-value {
+  color: #98c379;
+}
+
+.syntax-text {
+  color: #abb2bf;
+}
+
+.syntax-comment {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.syntax-string {
+  color: #98c379;
+}
+
+.syntax-number {
+  color: #d19a66;
+}
+
+.syntax-keyword {
+  color: #c678dd;
+}
+
+.syntax-function {
+  color: #61afef;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] .cube-devtools,
+.light .cube-devtools {
+  background: #ffffff;
+}
+
+[data-theme="light"] .syntax-tag,
+.light .syntax-tag {
+  color: #a626a4;
+}
+
+[data-theme="light"] .syntax-attr-name,
+.light .syntax-attr-name {
+  color: #986801;
+}
+
+[data-theme="light"] .syntax-attr-value,
+.light .syntax-attr-value {
+  color: #50a14f;
+}
+
+[data-theme="light"] .syntax-text,
+.light .syntax-text {
+  color: #383a42;
+}
+
+/* Scrollbar Styling */
+.cube-devtools ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.cube-devtools ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cube-devtools ::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.cube-devtools ::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Resize Handle */
+.devtools-resize-handle {
+  position: absolute;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.devtools-resize-handle:hover {
+  background: var(--primary);
+}
+
+.devtools-bottom .devtools-resize-handle {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.devtools-right .devtools-resize-handle {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+/* Animation */
+@keyframes devtools-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes devtools-slide-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.devtools-bottom {
+  animation: devtools-slide-up 0.2s ease-out;
+}
+
+.devtools-right {
+  animation: devtools-slide-right 0.2s ease-out;
+}
+
+.devtools-floating {
+  animation: devtools-slide-up 0.3s ease-out;
+}
+
+/* Tab Indicator */
+.devtools-tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: left 0.2s ease, width 0.2s ease;
+}
+
+/* Console Input */
+.console-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-top: 1px solid var(--border);
+  background: var(--muted);
+}
+
+.console-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--foreground);
+}
+
+.console-input::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* Network Status Colors */
+.status-success {
+  color: rgb(34, 197, 94);
+}
+
+.status-redirect {
+  color: rgb(59, 130, 246);
+}
+
+.status-client-error {
+  color: rgb(245, 158, 11);
+}
+
+.status-server-error {
+  color: rgb(239, 68, 68);
+}
+
+/* Waterfall Chart (for Network) */
+.waterfall-bar {
+  height: 12px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.waterfall-dns {
+  background: rgb(59, 130, 246);
+}
+
+.waterfall-connect {
+  background: rgb(245, 158, 11);
+}
+
+.waterfall-ssl {
+  background: rgb(139, 92, 246);
+}
+
+.waterfall-request {
+  background: rgb(34, 197, 94);
+}
+
+.waterfall-response {
+  background: rgb(236, 72, 153);
+}
+
+/* Element Highlight Overlay */
+.element-highlight {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999;
+  background: rgba(59, 130, 246, 0.2);
+  border: 2px solid rgb(59, 130, 246);
+  transition: all 0.15s ease;
+}
+
+.element-highlight-label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: rgb(59, 130, 246);
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* Tooltip */
+.devtools-tooltip {
+  position: absolute;
+  background: var(--popover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  max-width: 300px;
+}
+
+/* Copy Button Animation */
+.copy-success {
+  animation: copy-flash 0.3s ease;
+}
+
+@keyframes copy-flash {
+  0% {
+    background: rgba(34, 197, 94, 0.3);
+  }
+  100% {
+    background: transparent;
+  }
+}

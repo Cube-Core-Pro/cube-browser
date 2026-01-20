@@ -1,0 +1,1742 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "add": "Hinzufügen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "refresh": "Aktualisieren",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige",
+    "submit": "Absenden",
+    "confirm": "Bestätigen",
+    "yes": "Ja",
+    "no": "Nein",
+    "ok": "OK",
+    "settings": "Einstellungen",
+    "help": "Hilfe",
+    "about": "Über",
+    "logout": "Abmelden",
+    "login": "Anmelden",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "email": "E-Mail",
+    "name": "Name",
+    "description": "Beschreibung",
+    "date": "Datum",
+    "time": "Zeit",
+    "status": "Status",
+    "actions": "Aktionen",
+    "more": "Mehr",
+    "less": "Weniger",
+    "all": "Alle",
+    "none": "Keine",
+    "select": "Auswählen",
+    "selected": "Ausgewählt",
+    "noData": "Keine Daten verfügbar",
+    "noResults": "Keine Ergebnisse gefunden",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "download": "Herunterladen",
+    "upload": "Hochladen",
+    "import": "Importieren",
+    "export": "Exportieren",
+    "preview": "Vorschau",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "create": "Erstellen",
+    "update": "Aktualisieren",
+    "remove": "Entfernen",
+    "clear": "Leeren",
+    "reset": "Zurücksetzen",
+    "apply": "Anwenden",
+    "done": "Fertig",
+    "continue": "Fortfahren",
+    "skip": "Überspringen",
+    "retry": "Erneut versuchen",
+    "connect": "Verbinden",
+    "disconnect": "Trennen",
+    "start": "Starten",
+    "stop": "Stoppen",
+    "pause": "Pausieren",
+    "resume": "Fortsetzen",
+    "play": "Abspielen",
+    "new": "Neu",
+    "open": "Öffnen",
+    "share": "Teilen",
+    "send": "Senden",
+    "receive": "Empfangen"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "dashboard": "Dashboard",
+    "browser": "Browser",
+    "passwords": "Passwörter",
+    "collections": "Sammlungen",
+    "readingList": "Leseliste",
+    "mediaPlayer": "Mediaplayer",
+    "terminal": "Terminal",
+    "downloads": "Downloads",
+    "automation": "Automatisierung",
+    "settings": "Einstellungen",
+    "dataExtractor": "Daten-Extraktor",
+    "fileTransfer": "Dateiübertragung",
+    "p2p": "P2P",
+    "vpn": "VPN",
+    "security": "Sicherheit",
+    "tools": "Werkzeuge",
+    "ai": "KI-Assistent",
+    "voip": "VoIP",
+    "video": "Video",
+    "remote": "Fernzugriff",
+    "ftp": "FTP",
+    "chat": "Chat",
+    "enterprise": "Unternehmen",
+    "crm": "CRM",
+    "marketing": "Marketing",
+    "calendar": "Kalender",
+    "payments": "Zahlungen",
+    "courses": "Kurse",
+    "social": "Soziale Medien",
+    "aiSearch": "KI-Suche",
+    "intelligence": "Intelligence-Zentrum",
+    "support": "Support"
+  },
+  "browser": {
+    "title": "Webbrowser",
+    "newTab": "Neuer Tab",
+    "closeTab": "Tab schließen",
+    "reload": "Neu laden",
+    "back": "Zurück",
+    "forward": "Vorwärts",
+    "home": "Startseite",
+    "bookmarks": "Lesezeichen",
+    "history": "Verlauf",
+    "addBookmark": "Lesezeichen hinzufügen",
+    "removeBookmark": "Lesezeichen entfernen",
+    "clearHistory": "Verlauf löschen",
+    "searchOrEnterUrl": "Suchen oder URL eingeben",
+    "privateMode": "Privater Modus",
+    "zoom": "Zoom",
+    "fullscreen": "Vollbild",
+    "print": "Drucken",
+    "viewSource": "Quelltext anzeigen",
+    "devTools": "Entwicklertools",
+    "certificates": "Zertifikate",
+    "cookies": "Cookies",
+    "permissions": "Berechtigungen",
+    "extensions": "Erweiterungen",
+    "adBlock": "Werbeblocker",
+    "darkReader": "Dunkler Modus",
+    "screenshot": "Screenshot",
+    "translate": "Seite übersetzen"
+  },
+  "passwordManager": {
+    "title": "Passwort-Manager",
+    "subtitle": "Sicherer Passwort-Tresor",
+    "addPassword": "Passwort hinzufügen",
+    "editPassword": "Passwort bearbeiten",
+    "deletePassword": "Passwort löschen",
+    "website": "Webseite",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "showPassword": "Passwort anzeigen",
+    "hidePassword": "Passwort verbergen",
+    "generatePassword": "Passwort generieren",
+    "passwordStrength": "Passwortstärke",
+    "weak": "Schwach",
+    "medium": "Mittel",
+    "strong": "Stark",
+    "veryStrong": "Sehr stark",
+    "copyUsername": "Benutzername kopieren",
+    "copyPassword": "Passwort kopieren",
+    "autoFill": "Automatisch ausfüllen",
+    "notes": "Notizen",
+    "category": "Kategorie",
+    "favorites": "Favoriten",
+    "addToFavorites": "Zu Favoriten hinzufügen",
+    "removeFromFavorites": "Aus Favoriten entfernen",
+    "lastModified": "Zuletzt geändert",
+    "securityScore": "Sicherheitsbewertung",
+    "duplicatePasswords": "Doppelte Passwörter",
+    "weakPasswords": "Schwache Passwörter",
+    "oldPasswords": "Alte Passwörter",
+    "breachCheck": "Datenleck-Prüfung",
+    "totpCode": "2FA-Code",
+    "setupTotp": "2FA einrichten",
+    "importPasswords": "Passwörter importieren",
+    "exportPasswords": "Passwörter exportieren",
+    "masterPassword": "Master-Passwort",
+    "changeMasterPassword": "Master-Passwort ändern",
+    "biometricUnlock": "Biometrische Entsperrung",
+    "autoLock": "Automatische Sperre",
+    "autoLockTime": "Automatische Sperrzeit"
+  },
+  "collections": {
+    "title": "Sammlungen",
+    "subtitle": "Organisieren Sie Ihre Inhalte",
+    "newCollection": "Neue Sammlung",
+    "editCollection": "Sammlung bearbeiten",
+    "deleteCollection": "Sammlung löschen",
+    "collectionName": "Sammlungsname",
+    "addItem": "Element hinzufügen",
+    "removeItem": "Element entfernen",
+    "itemCount": "Elemente",
+    "emptyCollection": "Sammlung ist leer",
+    "sortByDate": "Nach Datum sortieren",
+    "sortByName": "Nach Name sortieren",
+    "sortByType": "Nach Typ sortieren",
+    "gridView": "Rasteransicht",
+    "listView": "Listenansicht",
+    "shareCollection": "Sammlung teilen",
+    "duplicateCollection": "Sammlung duplizieren",
+    "exportCollection": "Sammlung exportieren",
+    "importCollection": "Sammlung importieren",
+    "tags": "Tags",
+    "addTag": "Tag hinzufügen",
+    "filterByTag": "Nach Tag filtern",
+    "color": "Farbe",
+    "icon": "Symbol"
+  },
+  "readingList": {
+    "title": "Leseliste",
+    "subtitle": "Artikel für später speichern",
+    "addArticle": "Artikel hinzufügen",
+    "removeArticle": "Artikel entfernen",
+    "markAsRead": "Als gelesen markieren",
+    "markAsUnread": "Als ungelesen markieren",
+    "readLater": "Später lesen",
+    "archive": "Archiv",
+    "unread": "Ungelesen",
+    "all": "Alle",
+    "favorites": "Favoriten",
+    "estimatedReadTime": "Geschätzte Lesezeit",
+    "minutes": "Min",
+    "saveOffline": "Offline speichern",
+    "textToSpeech": "Text vorlesen",
+    "fontSize": "Schriftgröße",
+    "readerMode": "Lesemodus",
+    "highlight": "Hervorheben",
+    "addNote": "Notiz hinzufügen",
+    "shareArticle": "Artikel teilen"
+  },
+  "mediaPlayer": {
+    "title": "Mediaplayer",
+    "subtitle": "Musik und Video",
+    "nowPlaying": "Wird gerade abgespielt",
+    "queue": "Warteschlange",
+    "addToQueue": "Zur Warteschlange hinzufügen",
+    "clearQueue": "Warteschlange leeren",
+    "shuffle": "Zufallswiedergabe",
+    "repeat": "Wiederholen",
+    "repeatOne": "Einen wiederholen",
+    "repeatAll": "Alle wiederholen",
+    "volume": "Lautstärke",
+    "mute": "Stumm",
+    "unmute": "Ton einschalten",
+    "fullscreen": "Vollbild",
+    "miniPlayer": "Mini-Player",
+    "playbackSpeed": "Wiedergabegeschwindigkeit",
+    "audioTrack": "Audiospur",
+    "subtitles": "Untertitel",
+    "loadSubtitles": "Untertitel laden",
+    "playlists": "Wiedergabelisten",
+    "newPlaylist": "Neue Wiedergabeliste",
+    "addToPlaylist": "Zur Wiedergabeliste hinzufügen",
+    "removeFromPlaylist": "Aus Wiedergabeliste entfernen",
+    "recentlyPlayed": "Zuletzt abgespielt",
+    "localFiles": "Lokale Dateien",
+    "streaming": "Streaming",
+    "equalizer": "Equalizer",
+    "visualizer": "Visualisierung",
+    "lyrics": "Liedtexte",
+    "musicLibrary": "Musikbibliothek",
+    "videoLibrary": "Videothek"
+  },
+  "terminal": {
+    "title": "Terminal",
+    "subtitle": "Befehlszeilen-Schnittstelle",
+    "newTerminal": "Neues Terminal",
+    "closeTerminal": "Terminal schließen",
+    "clear": "Leeren",
+    "copy": "Kopieren",
+    "paste": "Einfügen",
+    "selectAll": "Alles auswählen",
+    "find": "Suchen",
+    "split": "Teilen",
+    "tabs": "Tabs",
+    "profiles": "Profile",
+    "defaultShell": "Standard-Shell",
+    "bash": "Bash",
+    "zsh": "Zsh",
+    "powershell": "PowerShell",
+    "cmd": "Eingabeaufforderung",
+    "fontSize": "Schriftgröße",
+    "fontFamily": "Schriftart",
+    "theme": "Design",
+    "cursor": "Cursor",
+    "scrollback": "Scrollverlauf",
+    "ssh": "SSH-Verbindung",
+    "sshKeys": "SSH-Schlüssel",
+    "saveOutput": "Ausgabe speichern",
+    "runCommand": "Befehl ausführen",
+    "commandHistory": "Befehlsverlauf",
+    "snippets": "Code-Schnipsel",
+    "addSnippet": "Schnipsel hinzufügen"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "subtitle": "Download-Manager",
+    "activeDownloads": "Aktive Downloads",
+    "completedDownloads": "Abgeschlossene Downloads",
+    "pausedDownloads": "Pausierte Downloads",
+    "failedDownloads": "Fehlgeschlagene Downloads",
+    "downloadSpeed": "Download-Geschwindigkeit",
+    "timeRemaining": "Verbleibende Zeit",
+    "pauseDownload": "Pausieren",
+    "resumeDownload": "Fortsetzen",
+    "cancelDownload": "Abbrechen",
+    "retryDownload": "Erneut versuchen",
+    "openFile": "Datei öffnen",
+    "openFolder": "Ordner öffnen",
+    "deleteFile": "Datei löschen",
+    "clearCompleted": "Abgeschlossene löschen",
+    "downloadLocation": "Download-Speicherort",
+    "changeLocation": "Speicherort ändern",
+    "simultaneousDownloads": "Gleichzeitige Downloads",
+    "bandwidthLimit": "Bandbreitenbegrenzung",
+    "scheduleDownload": "Download planen",
+    "categories": "Kategorien",
+    "documents": "Dokumente",
+    "images": "Bilder",
+    "videos": "Videos",
+    "audio": "Audio",
+    "archives": "Archive",
+    "other": "Sonstige"
+  },
+  "automation": {
+    "title": "Automatisierung",
+    "subtitle": "Workflows und Skripte",
+    "newWorkflow": "Neuer Workflow",
+    "editWorkflow": "Workflow bearbeiten",
+    "deleteWorkflow": "Workflow löschen",
+    "runWorkflow": "Workflow ausführen",
+    "stopWorkflow": "Workflow stoppen",
+    "scheduleWorkflow": "Workflow planen",
+    "workflowName": "Workflow-Name",
+    "description": "Beschreibung",
+    "trigger": "Auslöser",
+    "actions": "Aktionen",
+    "conditions": "Bedingungen",
+    "variables": "Variablen",
+    "logs": "Protokolle",
+    "history": "Verlauf",
+    "templates": "Vorlagen",
+    "import": "Importieren",
+    "export": "Exportieren",
+    "triggers": {
+      "manual": "Manuell",
+      "schedule": "Zeitplan",
+      "webhook": "Webhook",
+      "fileChange": "Dateiänderung",
+      "email": "Eingehende E-Mail",
+      "rss": "RSS-Feed",
+      "api": "API-Anfrage"
+    },
+    "actionTypes": {
+      "http": "HTTP-Anfrage",
+      "email": "E-Mail senden",
+      "file": "Dateioperation",
+      "script": "Skript ausführen",
+      "notification": "Benachrichtigung",
+      "database": "Datenbankabfrage",
+      "transform": "Daten transformieren",
+      "condition": "Bedingung",
+      "loop": "Schleife",
+      "delay": "Verzögerung"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "running": "Läuft",
+      "completed": "Abgeschlossen",
+      "failed": "Fehlgeschlagen",
+      "scheduled": "Geplant"
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "general": "Allgemein",
+    "appearance": "Erscheinungsbild",
+    "security": "Sicherheit",
+    "privacy": "Datenschutz",
+    "notifications": "Benachrichtigungen",
+    "language": "Sprache",
+    "theme": "Design",
+    "darkMode": "Dunkler Modus",
+    "lightMode": "Heller Modus",
+    "systemDefault": "Systemstandard",
+    "fontSize": "Schriftgröße",
+    "fontFamily": "Schriftart",
+    "accentColor": "Akzentfarbe",
+    "startupPage": "Startseite",
+    "defaultBrowser": "Standardbrowser",
+    "downloadLocation": "Download-Speicherort",
+    "clearBrowsingData": "Browserdaten löschen",
+    "clearCache": "Cache leeren",
+    "clearCookies": "Cookies löschen",
+    "clearHistory": "Verlauf löschen",
+    "autoUpdate": "Automatische Updates",
+    "checkForUpdates": "Nach Updates suchen",
+    "about": "Über",
+    "version": "Version",
+    "changelog": "Änderungsprotokoll",
+    "license": "Lizenz",
+    "feedback": "Feedback",
+    "reportBug": "Fehler melden",
+    "suggestFeature": "Funktion vorschlagen",
+    "shortcuts": "Tastenkürzel",
+    "customizeShortcuts": "Tastenkürzel anpassen",
+    "resetToDefault": "Auf Standard zurücksetzen",
+    "importSettings": "Einstellungen importieren",
+    "exportSettings": "Einstellungen exportieren",
+    "proxy": "Proxy",
+    "proxySettings": "Proxy-Einstellungen",
+    "noProxy": "Kein Proxy",
+    "systemProxy": "System-Proxy",
+    "manualProxy": "Manueller Proxy",
+    "proxyHost": "Host",
+    "proxyPort": "Port",
+    "proxyUsername": "Benutzername",
+    "proxyPassword": "Passwort",
+    "developerMode": "Entwicklermodus",
+    "experimentalFeatures": "Experimentelle Funktionen",
+    "betaUpdates": "Beta-Updates",
+    "telemetry": "Telemetrie",
+    "sendUsageData": "Nutzungsdaten senden",
+    "crashReports": "Absturzberichte"
+  },
+  "account": {
+    "title": "Konto",
+    "profile": "Profil",
+    "editProfile": "Profil bearbeiten",
+    "avatar": "Avatar",
+    "changeAvatar": "Avatar ändern",
+    "displayName": "Anzeigename",
+    "email": "E-Mail",
+    "verifyEmail": "E-Mail verifizieren",
+    "changeEmail": "E-Mail ändern",
+    "phone": "Telefon",
+    "changePhone": "Telefon ändern",
+    "password": "Passwort",
+    "changePassword": "Passwort ändern",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "twoFactor": "Zwei-Faktor-Authentifizierung",
+    "enable2FA": "2FA aktivieren",
+    "disable2FA": "2FA deaktivieren",
+    "backupCodes": "Backup-Codes",
+    "generateCodes": "Codes generieren",
+    "sessions": "Aktive Sitzungen",
+    "devices": "Geräte",
+    "removeDevice": "Gerät entfernen",
+    "signOutAllDevices": "Von allen Geräten abmelden",
+    "accountDeletion": "Kontolöschung",
+    "deleteAccount": "Konto löschen",
+    "downloadData": "Meine Daten herunterladen",
+    "subscription": "Abonnement",
+    "plan": "Tarif",
+    "upgradePlan": "Tarif upgraden",
+    "billing": "Abrechnung",
+    "paymentMethod": "Zahlungsmethode",
+    "invoices": "Rechnungen",
+    "nextBilling": "Nächste Abrechnung"
+  },
+  "admin": {
+    "title": "Administration",
+    "dashboard": "Dashboard",
+    "users": "Benutzer",
+    "addUser": "Benutzer hinzufügen",
+    "editUser": "Benutzer bearbeiten",
+    "deleteUser": "Benutzer löschen",
+    "roles": "Rollen",
+    "permissions": "Berechtigungen",
+    "teams": "Teams",
+    "createTeam": "Team erstellen",
+    "teamMembers": "Teammitglieder",
+    "inviteUser": "Benutzer einladen",
+    "pendingInvites": "Ausstehende Einladungen",
+    "activityLog": "Aktivitätsprotokoll",
+    "auditLog": "Prüfprotokoll",
+    "systemHealth": "Systemzustand",
+    "storage": "Speicher",
+    "bandwidth": "Bandbreite",
+    "apiKeys": "API-Schlüssel",
+    "generateApiKey": "API-Schlüssel generieren",
+    "webhooks": "Webhooks",
+    "integrations": "Integrationen",
+    "customization": "Anpassung",
+    "branding": "Branding",
+    "whiteLabel": "White-Label"
+  },
+  "updates": {
+    "title": "Updates",
+    "checkingForUpdates": "Nach Updates suchen...",
+    "updateAvailable": "Update verfügbar",
+    "noUpdatesAvailable": "Keine Updates verfügbar",
+    "currentVersion": "Aktuelle Version",
+    "latestVersion": "Neueste Version",
+    "downloadUpdate": "Update herunterladen",
+    "installUpdate": "Update installieren",
+    "restartToUpdate": "Für Update neu starten",
+    "releaseNotes": "Versionshinweise",
+    "autoDownload": "Automatisch herunterladen",
+    "autoInstall": "Automatisch installieren",
+    "updateHistory": "Update-Verlauf"
+  },
+  "cloudSync": {
+    "title": "Cloud-Synchronisierung",
+    "syncStatus": "Synchronisierungsstatus",
+    "lastSync": "Letzte Synchronisierung",
+    "syncNow": "Jetzt synchronisieren",
+    "syncInProgress": "Synchronisierung läuft...",
+    "syncComplete": "Synchronisierung abgeschlossen",
+    "syncFailed": "Synchronisierung fehlgeschlagen",
+    "enableSync": "Synchronisierung aktivieren",
+    "disableSync": "Synchronisierung deaktivieren",
+    "syncSettings": "Synchronisierungseinstellungen",
+    "syncPasswords": "Passwörter synchronisieren",
+    "syncBookmarks": "Lesezeichen synchronisieren",
+    "syncHistory": "Verlauf synchronisieren",
+    "syncCollections": "Sammlungen synchronisieren",
+    "syncAutomations": "Automatisierungen synchronisieren",
+    "conflictResolution": "Konfliktlösung",
+    "keepLocal": "Lokal behalten",
+    "keepRemote": "Remote behalten",
+    "keepBoth": "Beide behalten"
+  },
+  "devices": {
+    "title": "Geräte",
+    "currentDevice": "Aktuelles Gerät",
+    "otherDevices": "Andere Geräte",
+    "deviceName": "Gerätename",
+    "deviceType": "Gerätetyp",
+    "lastActive": "Zuletzt aktiv",
+    "browser": "Browser",
+    "os": "Betriebssystem",
+    "location": "Standort",
+    "rename": "Umbenennen",
+    "remove": "Entfernen",
+    "trustDevice": "Gerät vertrauen",
+    "revokeAccess": "Zugriff widerrufen"
+  },
+  "backups": {
+    "title": "Backups",
+    "createBackup": "Backup erstellen",
+    "restoreBackup": "Backup wiederherstellen",
+    "deleteBackup": "Backup löschen",
+    "backupName": "Backup-Name",
+    "backupDate": "Backup-Datum",
+    "backupSize": "Backup-Größe",
+    "autoBackup": "Automatisches Backup",
+    "backupFrequency": "Backup-Häufigkeit",
+    "daily": "Täglich",
+    "weekly": "Wöchentlich",
+    "monthly": "Monatlich",
+    "backupLocation": "Backup-Speicherort",
+    "localBackup": "Lokales Backup",
+    "cloudBackup": "Cloud-Backup",
+    "includePasswords": "Passwörter einschließen",
+    "includeCollections": "Sammlungen einschließen",
+    "includeAutomations": "Automatisierungen einschließen",
+    "encryptBackup": "Backup verschlüsseln"
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen",
+    "network": "Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung",
+    "timeout": "Zeitüberschreitung der Anfrage",
+    "notFound": "Nicht gefunden",
+    "unauthorized": "Nicht autorisiert",
+    "forbidden": "Zugriff verweigert",
+    "serverError": "Serverfehler",
+    "validation": "Validierungsfehler",
+    "required": "Dieses Feld ist erforderlich",
+    "invalidEmail": "Ungültige E-Mail",
+    "invalidPassword": "Ungültiges Passwort",
+    "passwordMismatch": "Passwörter stimmen nicht überein",
+    "fileTooBig": "Datei ist zu groß",
+    "invalidFileType": "Ungültiger Dateityp",
+    "uploadFailed": "Upload fehlgeschlagen",
+    "downloadFailed": "Download fehlgeschlagen",
+    "syncFailed": "Synchronisierung fehlgeschlagen",
+    "loginFailed": "Anmeldung fehlgeschlagen",
+    "sessionExpired": "Sitzung abgelaufen",
+    "connectionLost": "Verbindung verloren",
+    "tryAgain": "Bitte erneut versuchen"
+  },
+  "success": {
+    "saved": "Erfolgreich gespeichert",
+    "deleted": "Erfolgreich gelöscht",
+    "updated": "Erfolgreich aktualisiert",
+    "copied": "In Zwischenablage kopiert",
+    "downloaded": "Erfolgreich heruntergeladen",
+    "uploaded": "Erfolgreich hochgeladen",
+    "imported": "Erfolgreich importiert",
+    "exported": "Erfolgreich exportiert",
+    "passwordChanged": "Passwort geändert",
+    "settingsSaved": "Einstellungen gespeichert"
+  },
+  "confirmations": {
+    "delete": "Sind Sie sicher, dass Sie löschen möchten?",
+    "deleteMultiple": "Sind Sie sicher, dass Sie {count} Elemente löschen möchten?",
+    "discard": "Nicht gespeicherte Änderungen verwerfen?",
+    "logout": "Sind Sie sicher, dass Sie sich abmelden möchten?",
+    "clearData": "Alle Ihre Daten werden dauerhaft gelöscht. Fortfahren?",
+    "reset": "Alle Einstellungen zurücksetzen?"
+  },
+  "crm": {
+    "title": "Business-CRM",
+    "subtitle": "Kundenbeziehungsmanagement",
+    "contacts": {
+      "title": "Kontakte",
+      "addContact": "Kontakt hinzufügen",
+      "editContact": "Kontakt bearbeiten",
+      "importContacts": "Kontakte importieren",
+      "exportContacts": "Kontakte exportieren",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "company": "Unternehmen",
+      "phone": "Telefon",
+      "mobile": "Mobil",
+      "email": "E-Mail",
+      "address": "Adresse",
+      "city": "Stadt",
+      "state": "Bundesland",
+      "country": "Land",
+      "postalCode": "Postleitzahl",
+      "notes": "Notizen",
+      "tags": "Tags",
+      "source": "Lead-Quelle",
+      "status": "Status",
+      "assignedTo": "Zugewiesen an",
+      "lastContact": "Letzter Kontakt",
+      "nextFollowUp": "Nächste Nachverfolgung",
+      "totalDeals": "Deals gesamt",
+      "totalValue": "Gesamtwert",
+      "duplicates": "Duplikate zusammenführen",
+      "segments": "Segmente",
+      "customFields": "Benutzerdefinierte Felder"
+    },
+    "companies": {
+      "title": "Unternehmen",
+      "addCompany": "Unternehmen hinzufügen",
+      "companyName": "Unternehmensname",
+      "industry": "Branche",
+      "size": "Unternehmensgröße",
+      "revenue": "Jahresumsatz",
+      "website": "Webseite",
+      "employees": "Mitarbeiter",
+      "headquarters": "Hauptsitz",
+      "founded": "Gegründet",
+      "linkedContacts": "Verknüpfte Kontakte"
+    },
+    "deals": {
+      "title": "Deals",
+      "addDeal": "Deal hinzufügen",
+      "editDeal": "Deal bearbeiten",
+      "dealName": "Deal-Name",
+      "value": "Deal-Wert",
+      "probability": "Wahrscheinlichkeit",
+      "expectedClose": "Erwarteter Abschluss",
+      "actualClose": "Tatsächlicher Abschluss",
+      "stage": "Phase",
+      "pipeline": "Pipeline",
+      "wonDeals": "Gewonnene Deals",
+      "lostDeals": "Verlorene Deals",
+      "openDeals": "Offene Deals",
+      "totalPipeline": "Pipeline-Gesamtwert",
+      "weightedValue": "Gewichteter Wert",
+      "lostReason": "Verlustgrund",
+      "competitor": "Wettbewerber",
+      "stages": {
+        "lead": "Lead",
+        "qualified": "Qualifiziert",
+        "proposal": "Angebot",
+        "negotiation": "Verhandlung",
+        "closed_won": "Abgeschlossen gewonnen",
+        "closed_lost": "Abgeschlossen verloren"
+      }
+    },
+    "pipeline": {
+      "title": "Pipeline",
+      "newPipeline": "Neue Pipeline",
+      "editPipeline": "Pipeline bearbeiten",
+      "stages": "Phasen",
+      "addStage": "Phase hinzufügen",
+      "stageName": "Phasenname",
+      "probability": "Abschlusswahrscheinlichkeit",
+      "rottenDays": "Tage bis Inaktivität",
+      "kanban": "Kanban-Ansicht",
+      "list": "Listenansicht",
+      "forecast": "Prognose"
+    },
+    "activities": {
+      "title": "Aktivitäten",
+      "addActivity": "Aktivität hinzufügen",
+      "call": "Anruf",
+      "email": "E-Mail",
+      "meeting": "Meeting",
+      "task": "Aufgabe",
+      "note": "Notiz",
+      "deadline": "Frist",
+      "reminder": "Erinnerung",
+      "completed": "Erledigt",
+      "pending": "Ausstehend",
+      "overdue": "Überfällig",
+      "todayTasks": "Aufgaben heute",
+      "upcoming": "Anstehend",
+      "history": "Aktivitätsverlauf"
+    },
+    "reports": {
+      "title": "Berichte",
+      "salesReport": "Verkaufsbericht",
+      "pipelineReport": "Pipeline-Bericht",
+      "activityReport": "Aktivitätsbericht",
+      "winRate": "Gewinnrate",
+      "avgDealSize": "Durchschn. Deal-Größe",
+      "avgSalesCycle": "Durchschn. Verkaufszyklus",
+      "conversionRate": "Konversionsrate",
+      "revenueByMonth": "Umsatz nach Monat",
+      "dealsByStage": "Deals nach Phase",
+      "topPerformers": "Top-Verkäufer",
+      "lostReasons": "Verlustgründe",
+      "sourceAnalysis": "Lead-Quellenanalyse"
+    }
+  },
+  "marketing": {
+    "title": "Marketing-Hub",
+    "subtitle": "All-in-One Marketing-Automatisierung",
+    "campaigns": {
+      "title": "Kampagnen",
+      "newCampaign": "Neue Kampagne",
+      "editCampaign": "Kampagne bearbeiten",
+      "campaignName": "Kampagnenname",
+      "type": "Kampagnentyp",
+      "status": "Status",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "budget": "Budget",
+      "spent": "Ausgegeben",
+      "roi": "ROI",
+      "leads": "Generierte Leads",
+      "conversions": "Konversionen",
+      "types": {
+        "email": "E-Mail-Kampagne",
+        "sms": "SMS-Kampagne",
+        "social": "Social Media",
+        "ads": "Bezahlte Werbung",
+        "content": "Content-Marketing",
+        "event": "Event",
+        "webinar": "Webinar"
+      }
+    },
+    "email": {
+      "title": "E-Mail-Marketing",
+      "compose": "E-Mail verfassen",
+      "templates": "E-Mail-Vorlagen",
+      "sequences": "E-Mail-Sequenzen",
+      "broadcasts": "Broadcasts",
+      "subject": "Betreffzeile",
+      "previewText": "Vorschautext",
+      "fromName": "Absendername",
+      "fromEmail": "Absender-E-Mail",
+      "replyTo": "Antwort an",
+      "recipients": "Empfänger",
+      "schedule": "Versand planen",
+      "sendNow": "Jetzt senden",
+      "testEmail": "Test-E-Mail senden",
+      "openRate": "Öffnungsrate",
+      "clickRate": "Klickrate",
+      "bounceRate": "Absprungrate",
+      "unsubscribeRate": "Abmelderate",
+      "delivered": "Zugestellt",
+      "opened": "Geöffnet",
+      "clicked": "Geklickt",
+      "replied": "Geantwortet"
+    },
+    "sms": {
+      "title": "SMS-Marketing",
+      "compose": "SMS verfassen",
+      "templates": "SMS-Vorlagen",
+      "campaigns": "SMS-Kampagnen",
+      "sender": "Absender-ID",
+      "message": "Nachricht",
+      "characters": "Zeichen",
+      "segments": "Segmente",
+      "deliveryRate": "Zustellrate",
+      "responseRate": "Antwortrate",
+      "optOut": "Abmeldungen"
+    },
+    "landing": {
+      "title": "Landingpages",
+      "newPage": "Neue Seite",
+      "editPage": "Seite bearbeiten",
+      "templates": "Vorlagen",
+      "pageName": "Seitenname",
+      "slug": "URL-Slug",
+      "publish": "Veröffentlichen",
+      "unpublish": "Veröffentlichung aufheben",
+      "preview": "Vorschau",
+      "duplicate": "Duplizieren",
+      "views": "Aufrufe",
+      "conversions": "Konversionen",
+      "conversionRate": "Konversionsrate",
+      "abTest": "A/B-Tests",
+      "variants": "Varianten",
+      "winner": "Gewinner"
+    },
+    "funnels": {
+      "title": "Funnels",
+      "newFunnel": "Neuer Funnel",
+      "editFunnel": "Funnel bearbeiten",
+      "funnelName": "Funnel-Name",
+      "steps": "Schritte",
+      "addStep": "Schritt hinzufügen",
+      "optIn": "Opt-in-Seite",
+      "salesPage": "Verkaufsseite",
+      "checkout": "Checkout",
+      "upsell": "Upsell",
+      "downsell": "Downsell",
+      "thankYou": "Danke-Seite",
+      "entries": "Einträge",
+      "completions": "Abschlüsse",
+      "dropoff": "Abbruchrate"
+    },
+    "forms": {
+      "title": "Formulare",
+      "newForm": "Neues Formular",
+      "editForm": "Formular bearbeiten",
+      "formName": "Formularname",
+      "fields": "Felder",
+      "addField": "Feld hinzufügen",
+      "required": "Pflichtfeld",
+      "placeholder": "Platzhaltertext",
+      "submissions": "Einreichungen",
+      "embed": "Einbettungscode",
+      "popup": "Popup-Formular",
+      "inline": "Inline-Formular",
+      "fieldTypes": {
+        "text": "Text",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "select": "Dropdown",
+        "radio": "Radiobuttons",
+        "checkbox": "Checkboxen",
+        "textarea": "Textbereich",
+        "date": "Datum",
+        "file": "Datei-Upload"
+      }
+    },
+    "automation": {
+      "title": "Marketing-Automatisierung",
+      "workflows": "Workflows",
+      "newWorkflow": "Neuer Workflow",
+      "triggers": "Trigger",
+      "actions": "Aktionen",
+      "conditions": "Bedingungen",
+      "delays": "Verzögerungen",
+      "active": "Aktiv",
+      "paused": "Pausiert",
+      "draft": "Entwurf",
+      "enrolled": "Eingeschrieben",
+      "completed": "Abgeschlossen",
+      "triggerTypes": {
+        "formSubmit": "Formular gesendet",
+        "tagAdded": "Tag hinzugefügt",
+        "tagRemoved": "Tag entfernt",
+        "listJoined": "Liste beigetreten",
+        "linkClicked": "Link geklickt",
+        "emailOpened": "E-Mail geöffnet",
+        "pageVisited": "Seite besucht",
+        "dealCreated": "Deal erstellt",
+        "custom": "Benutzerdefiniertes Ereignis"
+      }
+    },
+    "surveys": {
+      "title": "Umfragen",
+      "newSurvey": "Neue Umfrage",
+      "questions": "Fragen",
+      "addQuestion": "Frage hinzufügen",
+      "responses": "Antworten",
+      "completionRate": "Abschlussrate",
+      "avgTime": "Durchschn. Zeit",
+      "nps": "NPS-Wert"
+    }
+  },
+  "calendar": {
+    "title": "Kalender",
+    "subtitle": "Terminplanung und Buchungen",
+    "newEvent": "Neuer Termin",
+    "editEvent": "Termin bearbeiten",
+    "eventTitle": "Terminbezeichnung",
+    "startTime": "Startzeit",
+    "endTime": "Endzeit",
+    "allDay": "Ganztägig",
+    "location": "Ort",
+    "description": "Beschreibung",
+    "attendees": "Teilnehmer",
+    "reminder": "Erinnerung",
+    "recurring": "Wiederkehrend",
+    "color": "Farbe",
+    "views": {
+      "day": "Tag",
+      "week": "Woche",
+      "month": "Monat",
+      "agenda": "Agenda"
+    },
+    "booking": {
+      "title": "Buchungslinks",
+      "newLink": "Neuer Buchungslink",
+      "linkName": "Link-Name",
+      "duration": "Dauer",
+      "availability": "Verfügbarkeit",
+      "buffer": "Pufferzeit",
+      "maxBookings": "Max. Buchungen pro Tag",
+      "confirmationEmail": "Bestätigungs-E-Mail",
+      "reminderEmail": "Erinnerungs-E-Mail",
+      "customQuestions": "Benutzerdefinierte Fragen",
+      "embed": "Einbettungs-Widget"
+    }
+  },
+  "payments": {
+    "title": "Zahlungen",
+    "subtitle": "Rechnungsstellung und Inkasso",
+    "invoices": {
+      "title": "Rechnungen",
+      "newInvoice": "Neue Rechnung",
+      "invoiceNumber": "Rechnungsnummer",
+      "issueDate": "Ausstellungsdatum",
+      "dueDate": "Fälligkeitsdatum",
+      "items": "Positionen",
+      "subtotal": "Zwischensumme",
+      "tax": "Steuern",
+      "discount": "Rabatt",
+      "total": "Gesamtsumme",
+      "paid": "Bezahlt",
+      "unpaid": "Unbezahlt",
+      "overdue": "Überfällig",
+      "draft": "Entwurf",
+      "send": "Rechnung senden",
+      "markPaid": "Als bezahlt markieren",
+      "recordPayment": "Zahlung erfassen"
+    },
+    "products": {
+      "title": "Produkte",
+      "newProduct": "Neues Produkt",
+      "productName": "Produktname",
+      "price": "Preis",
+      "recurring": "Wiederkehrend",
+      "oneTime": "Einmalig",
+      "subscription": "Abonnement",
+      "billingCycle": "Abrechnungszyklus",
+      "trialDays": "Testtage",
+      "setupFee": "Einrichtungsgebühr"
+    },
+    "subscriptions": {
+      "title": "Abonnements",
+      "active": "Aktiv",
+      "cancelled": "Gekündigt",
+      "past_due": "Überfällig",
+      "mrr": "Monatlich wiederkehrender Umsatz",
+      "arr": "Jährlich wiederkehrender Umsatz",
+      "churn": "Abwanderungsrate",
+      "ltv": "Customer Lifetime Value"
+    }
+  },
+  "courses": {
+    "title": "Kurse und Mitgliedschaften",
+    "subtitle": "Online-Lernplattform",
+    "newCourse": "Neuer Kurs",
+    "editCourse": "Kurs bearbeiten",
+    "courseName": "Kursname",
+    "description": "Beschreibung",
+    "instructor": "Dozent",
+    "price": "Preis",
+    "modules": "Module",
+    "lessons": "Lektionen",
+    "addModule": "Modul hinzufügen",
+    "addLesson": "Lektion hinzufügen",
+    "video": "Video",
+    "audio": "Audio",
+    "text": "Textinhalt",
+    "quiz": "Quiz",
+    "assignment": "Aufgabe",
+    "certificate": "Zertifikat",
+    "students": "Teilnehmer",
+    "enrolled": "Eingeschrieben",
+    "completed": "Abgeschlossen",
+    "progress": "Fortschritt",
+    "drip": "Drip-Content",
+    "membership": {
+      "title": "Mitgliedschaften",
+      "levels": "Mitgliedschaftsstufen",
+      "access": "Zugriffsregeln",
+      "members": "Mitglieder",
+      "content": "Geschützter Inhalt"
+    }
+  },
+  "social": {
+    "title": "Social Hub",
+    "subtitle": "Social-Media-Kommandozentrale",
+    "accounts": "Verbundene Konten",
+    "connectAccount": "Konto verbinden",
+    "platforms": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter/X",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "pinterest": "Pinterest",
+      "threads": "Threads"
+    },
+    "posts": {
+      "title": "Beiträge",
+      "newPost": "Neuer Beitrag",
+      "schedule": "Beitrag planen",
+      "draft": "Als Entwurf speichern",
+      "publish": "Jetzt veröffentlichen",
+      "caption": "Beschreibung",
+      "media": "Medien",
+      "hashtags": "Hashtags",
+      "mentions": "Erwähnungen",
+      "scheduled": "Geplant",
+      "published": "Veröffentlicht",
+      "failed": "Fehlgeschlagen"
+    },
+    "analytics": {
+      "title": "Analysen",
+      "followers": "Follower",
+      "following": "Folge ich",
+      "engagement": "Engagement-Rate",
+      "reach": "Reichweite",
+      "impressions": "Impressionen",
+      "likes": "Likes",
+      "comments": "Kommentare",
+      "shares": "Shares",
+      "saves": "Speicherungen",
+      "clicks": "Klicks",
+      "growth": "Wachstum",
+      "bestTime": "Beste Posting-Zeit",
+      "topPosts": "Top-Beiträge"
+    },
+    "video": {
+      "title": "Video-Ersteller",
+      "newVideo": "Video erstellen",
+      "templates": "Vorlagen",
+      "scenes": "Szenen",
+      "addScene": "Szene hinzufügen",
+      "text": "Texteinblendung",
+      "music": "Hintergrundmusik",
+      "voiceover": "Voiceover",
+      "transitions": "Übergänge",
+      "effects": "Effekte",
+      "aspectRatio": "Seitenverhältnis",
+      "duration": "Dauer",
+      "export": "Video exportieren",
+      "formats": {
+        "reels": "Instagram Reels",
+        "shorts": "YouTube Shorts",
+        "tiktok": "TikTok",
+        "story": "Stories"
+      }
+    },
+    "viral": {
+      "title": "Viral-Analysen",
+      "trendScore": "Trend-Wert",
+      "viralPotential": "Viral-Potenzial",
+      "optimalTiming": "Optimales Timing",
+      "hashtagAnalysis": "Hashtag-Analyse",
+      "competitorAnalysis": "Wettbewerbsanalyse",
+      "contentSuggestions": "Inhaltsvorschläge",
+      "trendingTopics": "Trending-Themen",
+      "audienceInsights": "Zielgruppen-Insights"
+    },
+    "inbox": {
+      "title": "Einheitlicher Posteingang",
+      "messages": "Nachrichten",
+      "comments": "Kommentare",
+      "mentions": "Erwähnungen",
+      "reply": "Antworten",
+      "archive": "Archivieren",
+      "unread": "Ungelesen",
+      "starred": "Markiert",
+      "assigned": "Mir zugewiesen"
+    }
+  },
+  "aiSearch": {
+    "title": "KI-Suchmaschine",
+    "subtitle": "Intelligente KI-gestützte Suche",
+    "searchPlaceholder": "Fragen Sie was Sie möchten...",
+    "webSearch": "Websuche",
+    "deepResearch": "Tiefenrecherche",
+    "imageSearch": "Bildersuche",
+    "videoSearch": "Videosuche",
+    "newsSearch": "Nachrichtensuche",
+    "academicSearch": "Akademische Suche",
+    "sources": "Quellen",
+    "citations": "Zitate",
+    "summary": "KI-Zusammenfassung",
+    "relatedQuestions": "Verwandte Fragen",
+    "filters": "Suchfilter",
+    "dateRange": "Zeitraum",
+    "region": "Region",
+    "language": "Sprache",
+    "safeSearch": "Sichere Suche",
+    "searchHistory": "Suchverlauf",
+    "savedSearches": "Gespeicherte Suchen",
+    "modes": {
+      "quick": "Schnelle Antwort",
+      "comprehensive": "Umfassend",
+      "creative": "Kreativ",
+      "precise": "Präzise"
+    }
+  },
+  "intelligence": {
+    "title": "Intelligence-Zentrum",
+    "subtitle": "Tiefenrecherche und Analyse",
+    "newResearch": "Neue Recherche",
+    "researchTopic": "Recherchethema",
+    "sources": "Quellen",
+    "analysis": "Analyse",
+    "report": "Bericht",
+    "timeline": "Zeitachse",
+    "entities": "Entitäten",
+    "relationships": "Beziehungen",
+    "sentiment": "Stimmungsanalyse",
+    "trends": "Trendanalyse",
+    "factCheck": "Faktenprüfung",
+    "citations": "Zitate",
+    "exportReport": "Bericht exportieren",
+    "collaborate": "Zusammenarbeiten",
+    "categories": {
+      "market": "Marktforschung",
+      "competitive": "Wettbewerbsanalyse",
+      "technical": "Technische Recherche",
+      "academic": "Akademische Recherche",
+      "news": "News-Intelligence",
+      "social": "Social Listening"
+    }
+  },
+  "support": {
+    "title": "Support-Center",
+    "subtitle": "Helpdesk und Tickets",
+    "tickets": {
+      "title": "Tickets",
+      "newTicket": "Neues Ticket",
+      "subject": "Betreff",
+      "priority": "Priorität",
+      "status": "Status",
+      "assignee": "Bearbeiter",
+      "requester": "Anfragender",
+      "created": "Erstellt",
+      "updated": "Aktualisiert",
+      "resolved": "Gelöst",
+      "firstResponse": "Erstantwortzeit",
+      "priorities": {
+        "low": "Niedrig",
+        "medium": "Mittel",
+        "high": "Hoch",
+        "urgent": "Dringend"
+      },
+      "statuses": {
+        "open": "Offen",
+        "pending": "Ausstehend",
+        "in_progress": "In Bearbeitung",
+        "resolved": "Gelöst",
+        "closed": "Geschlossen"
+      }
+    },
+    "knowledgeBase": {
+      "title": "Wissensdatenbank",
+      "articles": "Artikel",
+      "categories": "Kategorien",
+      "newArticle": "Neuer Artikel",
+      "views": "Aufrufe",
+      "helpful": "War das hilfreich?",
+      "search": "In Wissensdatenbank suchen..."
+    },
+    "chat": {
+      "title": "Live-Chat",
+      "online": "Online",
+      "offline": "Offline",
+      "typing": "schreibt...",
+      "send": "Senden",
+      "transcript": "Chat-Protokoll",
+      "rating": "Diesen Chat bewerten",
+      "cannedResponses": "Vorgefertigte Antworten"
+    }
+  },
+  "whiteLabel": {
+    "title": "White-Label",
+    "subtitle": "Passen Sie Ihre Marke an",
+    "branding": {
+      "title": "Branding",
+      "logo": "Logo",
+      "favicon": "Favicon",
+      "appName": "App-Name",
+      "primaryColor": "Primärfarbe",
+      "secondaryColor": "Sekundärfarbe",
+      "accentColor": "Akzentfarbe"
+    },
+    "domain": {
+      "title": "Benutzerdefinierte Domain",
+      "addDomain": "Domain hinzufügen",
+      "verify": "Domain verifizieren",
+      "ssl": "SSL-Zertifikat",
+      "status": "Status"
+    },
+    "emails": {
+      "title": "E-Mail-Branding",
+      "fromName": "Absendername",
+      "fromEmail": "Absender-E-Mail",
+      "replyTo": "Antwort an",
+      "signature": "E-Mail-Signatur",
+      "templates": "E-Mail-Vorlagen"
+    }
+  },
+  "aiAssistant": {
+    "title": "KI-Assistent",
+    "subtitle": "Ihr intelligenter Helfer",
+    "chat": "Mit KI chatten",
+    "commands": "Befehle",
+    "suggestions": "Vorschläge",
+    "capabilities": {
+      "writeEmail": "E-Mail schreiben",
+      "analyzeData": "Daten analysieren",
+      "createContent": "Inhalte erstellen",
+      "summarize": "Zusammenfassen",
+      "translate": "Übersetzen",
+      "codeHelp": "Code-Hilfe",
+      "research": "Recherchieren",
+      "schedule": "Terminieren"
+    },
+    "modules": {
+      "title": "KI-Modulsteuerung",
+      "manage": "Module verwalten",
+      "execute": "Aktion ausführen",
+      "automate": "Aufgabe automatisieren",
+      "permissions": "KI-Berechtigungen",
+      "history": "Aktionsverlauf"
+    },
+    "voice": {
+      "title": "Sprachbefehle",
+      "listening": "Höre zu...",
+      "speak": "Jetzt sprechen",
+      "stop": "Stoppen",
+      "language": "Sprachsprache"
+    }
+  },
+  "tours": {
+    "welcome": {
+      "title": "Willkommen bei CUBE Elite",
+      "description": "Lassen Sie uns Ihren neuen Power-Arbeitsbereich vorstellen"
+    },
+    "browser": {
+      "title": "Vollständiges Browser-Erlebnis",
+      "description": "Surfen Sie mit allen Browser-Funktionen auf jeder Webseite"
+    },
+    "crm": {
+      "title": "CRM und Kontakte",
+      "description": "Verwalten Sie alle Kontakte, Unternehmen und Deals an einem Ort"
+    },
+    "marketing": {
+      "title": "Marketing-Automatisierung",
+      "description": "Erstellen Sie Kampagnen, E-Mails, Landingpages und Funnels"
+    },
+    "social": {
+      "title": "Social-Media-Hub",
+      "description": "Verwalten Sie alle Social-Media-Konten von einem Dashboard"
+    },
+    "aiSearch": {
+      "title": "KI-Suche",
+      "description": "Erhalten Sie intelligente Antworten mit Zitaten und Tiefenrecherche"
+    },
+    "intelligence": {
+      "title": "Intelligence-Zentrum",
+      "description": "Führen Sie Tiefenrecherchen und Wettbewerbsanalysen durch"
+    },
+    "aiAssistant": {
+      "title": "KI-Assistent",
+      "description": "Ihre KI kann jedes Modul steuern und Aufgaben für Sie ausführen"
+    },
+    "steps": {
+      "next": "Weiter",
+      "previous": "Zurück",
+      "skip": "Tour überspringen",
+      "finish": "Loslegen"
+    }
+  },
+  "dataExtractor": {
+    "title": "Datenextraktor",
+    "subtitle": "Visuelles Web-Scraping-Tool mit Point-and-Click-Oberfläche",
+    "loading": {
+      "title": "Datenextraktor wird geladen...",
+      "description": "Extraktionswerkzeuge werden initialisiert"
+    },
+    "errors": {
+      "title": "Extraktionsfehler",
+      "loadFailed": "Datenextraktor konnte nicht geladen werden"
+    },
+    "actions": {
+      "newSchema": "Neues Schema",
+      "startExtraction": "Extraktion starten",
+      "previewData": "Datenvorschau",
+      "exportData": "Daten exportieren",
+      "saveSchema": "Schema speichern"
+    }
+  },
+  "enterprise": {
+    "badge": "Enterprise-Suite",
+    "title": "CUBE Nexum Enterprise",
+    "subtitle": "Umfassende Enterprise-Tools für Automatisierung, Integration und Datenverwaltung im großen Maßstab.",
+    "stats": {
+      "modules": "Module",
+      "integrations": "Integrationen",
+      "uptime": "Uptime SLA"
+    },
+    "errors": {
+      "loadFailed": "Enterprise-Modul konnte nicht geladen werden"
+    },
+    "benefits": {
+      "title": "Enterprise-Vorteile",
+      "security": {
+        "title": "Enterprise-Sicherheit",
+        "description": "SOC 2 Type II, DSGVO und HIPAA-konform mit End-to-End-Verschlüsselung."
+      },
+      "performance": {
+        "title": "Hohe Leistung",
+        "description": "Verarbeitet Millionen von Ereignissen pro Sekunde mit Submillisekunden-Latenz."
+      },
+      "uptime": {
+        "title": "99,9% Uptime",
+        "description": "Enterprise-SLA mit automatischem Failover und Disaster Recovery."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Dediziertes Support-Team mit 1-Stunden-Antwortgarantie."
+      }
+    },
+    "workflows": {
+      "title": "Workflow-Designer",
+      "description": "Entwerfen und verwalten Sie komplexe Automatisierungs-Workflows mit visueller Drag-and-Drop-Oberfläche."
+    },
+    "integrations": {
+      "title": "Integrations-Hub",
+      "description": "Verbinden Sie sich mit über 500 Anwendungen mit vorgefertigten Konnektoren."
+    },
+    "apiGateway": {
+      "title": "API-Gateway",
+      "description": "Verwalten, sichern und überwachen Sie Ihre APIs mit Enterprise-Funktionen."
+    },
+    "pipelines": {
+      "title": "Datenpipelines",
+      "description": "Erstellen Sie ETL/ELT-Pipelines mit visuellem Designer und Echtzeit-Überwachung."
+    },
+    "observability": {
+      "title": "Observability",
+      "description": "Überwachen Sie Metriken, Traces und Logs mit KI-gestützten Insights."
+    },
+    "security": {
+      "title": "Sicherheit & Compliance",
+      "description": "Verwalten Sie Zugriffssteuerung, Audit-Logs und Compliance-Frameworks."
+    }
+  },
+  "fileTransfer": {
+    "title": "Dateiübertragung",
+    "subtitle": "Sichere FTP/SFTP-Übertragung mit Dual-Panel-Oberfläche",
+    "loading": {
+      "title": "Übertragung wird geladen...",
+      "description": "Verbindung zu Servern"
+    },
+    "errors": {
+      "title": "Übertragungsfehler",
+      "loadFailed": "Dateiübertragung konnte nicht geladen werden",
+      "connectionFailed": "Verbindung fehlgeschlagen"
+    },
+    "actions": {
+      "connect": "Verbinden",
+      "disconnect": "Trennen",
+      "upload": "Hochladen",
+      "download": "Herunterladen",
+      "refresh": "Aktualisieren",
+      "newSite": "Neue Seite"
+    }
+  },
+  "collections": {
+    "title": "Sammlungen",
+    "subtitle": "Organisieren und teilen Sie Ihre gespeicherten Seiten",
+    "loading": {
+      "title": "Sammlungen werden geladen...",
+      "description": "Ihre Sammlungen werden abgerufen"
+    },
+    "errors": {
+      "title": "Sammlungsfehler",
+      "loadFailed": "Sammlungen konnten nicht geladen werden"
+    },
+    "empty": {
+      "title": "Keine Sammlungen",
+      "description": "Erstellen Sie Ihre erste Sammlung, um Ihre gespeicherten Seiten zu organisieren."
+    },
+    "actions": {
+      "newCollection": "Neue Sammlung",
+      "share": "Teilen",
+      "delete": "Löschen"
+    }
+  },
+  "readingList": {
+    "title": "Leseliste",
+    "subtitle": "Artikel zum späteren Lesen speichern",
+    "loading": {
+      "title": "Leseliste wird geladen...",
+      "description": "Ihre Artikel werden abgerufen"
+    },
+    "errors": {
+      "title": "Leselistenfehler",
+      "loadFailed": "Leseliste konnte nicht geladen werden"
+    },
+    "empty": {
+      "title": "Keine Artikel",
+      "description": "Speichern Sie Artikel aus dem Web zum späteren Lesen."
+    },
+    "tabs": {
+      "all": "Alle",
+      "unread": "Ungelesen",
+      "read": "Gelesen"
+    }
+  },
+  "remote": {
+    "title": "Remote-Desktop",
+    "subtitle": "Verbinden Sie sich über SSH, RDP und VNC mit Remote-Computern",
+    "loading": {
+      "title": "Remote-Sitzungen werden geladen...",
+      "description": "Gespeicherte Verbindungen werden abgerufen"
+    },
+    "errors": {
+      "title": "Verbindungsfehler",
+      "loadFailed": "Remote-Sitzungen konnten nicht geladen werden"
+    },
+    "actions": {
+      "connect": "Verbinden",
+      "disconnect": "Trennen",
+      "newSession": "Neue Sitzung",
+      "createRoom": "Raum erstellen",
+      "joinRoom": "Raum beitreten"
+    }
+  },
+  "ftp": {
+    "title": "FTP-Manager",
+    "subtitle": "FTP/SFTP-Verbindungen und -Übertragungen verwalten",
+    "loading": {
+      "title": "FTP wird geladen...",
+      "description": "Verbindung zum Server"
+    },
+    "errors": {
+      "title": "FTP-Fehler",
+      "loadFailed": "FTP-Verbindungen konnten nicht geladen werden"
+    },
+    "actions": {
+      "upload": "Hochladen",
+      "download": "Herunterladen",
+      "newSite": "Neue Seite",
+      "refresh": "Aktualisieren"
+    }
+  },
+  "extensions": {
+    "title": "Erweiterungen",
+    "subtitle": "Browser-Erweiterungen und Add-ons verwalten",
+    "loading": {
+      "title": "Erweiterungen werden geladen...",
+      "description": "Installierte Erweiterungen werden abgerufen"
+    },
+    "errors": {
+      "title": "Erweiterungsfehler",
+      "loadFailed": "Erweiterungen konnten nicht geladen werden"
+    },
+    "tabs": {
+      "installed": "Installiert",
+      "webstore": "Web Store",
+      "install": "Installieren",
+      "settings": "Einstellungen"
+    },
+    "actions": {
+      "enable": "Aktivieren",
+      "disable": "Deaktivieren",
+      "uninstall": "Deinstallieren",
+      "install": "Installieren"
+    }
+  },
+  "help": {
+    "title": "Hilfezentrum",
+    "subtitle": "Dokumentation & Support",
+    "sections": {
+      "documentation": "Dokumentation",
+      "tutorials": "Video-Tutorials",
+      "community": "Community",
+      "support": "Support kontaktieren"
+    }
+  },
+  "monitoring": {
+    "title": "Website-Überwachung",
+    "subtitle": "Website-Verfügbarkeit und -Leistung überwachen",
+    "loading": {
+      "title": "Monitor wird geladen...",
+      "description": "Überwachte Seiten werden abgerufen"
+    },
+    "errors": {
+      "title": "Überwachungsfehler",
+      "loadFailed": "Überwachungsdaten konnten nicht geladen werden"
+    }
+  },
+  "dataSources": {
+    "title": "Datenquellen",
+    "subtitle": "Externe Datenquellen verbinden und verwalten",
+    "loading": {
+      "title": "Datenquellen werden geladen...",
+      "description": "Verbindungen werden abgerufen"
+    },
+    "errors": {
+      "title": "Datenquellenfehler",
+      "loadFailed": "Datenquellen konnten nicht geladen werden"
+    },
+    "empty": {
+      "title": "Keine Datenquellen",
+      "description": "Verbinden Sie Ihre erste Datenquelle, um zu beginnen."
+    },
+    "types": {
+      "database": "Datenbank",
+      "api": "API",
+      "file": "Datei",
+      "cloud": "Cloud"
+    }
+  },
+  "integration": {
+    "title": "Integrations-Hub",
+    "subtitle": "Modulübergreifende Integrationsverwaltung",
+    "loading": {
+      "title": "Integrationen werden geladen...",
+      "description": "Modulverbindungen werden abgerufen"
+    }
+  },
+  "workspace": {
+    "title": "Arbeitsbereich",
+    "subtitle": "Projektmanagement mit Boards, Ansichten und Automatisierung",
+    "loading": {
+      "title": "Arbeitsbereich wird geladen...",
+      "description": "Boards und Projekte werden abgerufen"
+    },
+    "errors": {
+      "title": "Arbeitsbereichsfehler",
+      "loadFailed": "Arbeitsbereich konnte nicht geladen werden"
+    },
+    "views": {
+      "table": "Tabelle",
+      "kanban": "Kanban",
+      "timeline": "Zeitleiste",
+      "chart": "Diagramm"
+    }
+  },
+  "admin": {
+    "title": "Admin-Panel",
+    "subtitle": "Systemadministration und -konfiguration",
+    "loading": {
+      "title": "Admin-Panel wird geladen...",
+      "description": "Systemeinstellungen werden abgerufen"
+    }
+  },
+  "search": {
+    "title": "KI-Suche",
+    "subtitle": "Intelligente Suche mit KI-Unterstützung",
+    "loading": {
+      "title": "Suche wird geladen...",
+      "description": "KI-Suchmaschine wird initialisiert"
+    }
+  },
+  "p2p": {
+    "title": "P2P-Übertragung",
+    "subtitle": "Peer-to-Peer-Dateifreigabe und Zusammenarbeit",
+    "loading": {
+      "title": "P2P wird geladen...",
+      "description": "Peer-Netzwerk wird initialisiert"
+    },
+    "errors": {
+      "title": "P2P-Fehler",
+      "loadFailed": "Verbindung zum Peer-Netzwerk fehlgeschlagen"
+    },
+    "actions": {
+      "createRoom": "Raum erstellen",
+      "joinRoom": "Raum beitreten",
+      "shareFiles": "Dateien teilen",
+      "disconnect": "Trennen"
+    }
+  },
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "Willkommen bei CUBE Nexum",
+        "description": "Die leistungsstärkste Browser-Automatisierungsplattform"
+      },
+      "profile": {
+        "title": "Erstelle dein Profil",
+        "description": "Erzähle uns etwas über dich"
+      },
+      "useCase": {
+        "title": "Dein Anwendungsfall",
+        "description": "Hilf uns, dein Erlebnis zu personalisieren"
+      },
+      "features": {
+        "title": "Funktionen wählen",
+        "description": "Wähle die Tools, die du nutzen möchtest"
+      },
+      "browserSetup": {
+        "title": "Browser-Einrichtung",
+        "description": "Konfiguriere deine Browser-Einstellungen"
+      },
+      "extension": {
+        "title": "Erweiterung installieren",
+        "description": "Hole dir die Chrome-Erweiterung für erweiterte Funktionen"
+      },
+      "security": {
+        "title": "Sicherheits-Setup",
+        "description": "Schütze deine Daten mit Verschlüsselung"
+      },
+      "notifications": {
+        "title": "Benachrichtigungen",
+        "description": "Bleibe über das Wichtige informiert"
+      },
+      "tour": {
+        "title": "Schnelltour",
+        "description": "Lerne die Grundlagen in 2 Minuten"
+      },
+      "complete": {
+        "title": "Alles bereit!",
+        "description": "Du bist bereit, mit der Automatisierung zu beginnen"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "title": "Persönliche Nutzung",
+        "description": "Formulare ausfüllen, Passwörter speichern, tägliche Aufgaben automatisieren"
+      },
+      "business": {
+        "title": "Business",
+        "description": "Unternehmensautomatisierung, Team-Zusammenarbeit, CRM-Integration"
+      },
+      "developer": {
+        "title": "Entwickler",
+        "description": "API-Tests, Web-Scraping, Workflow-Automatisierung"
+      },
+      "dataAnalyst": {
+        "title": "Datenanalyst",
+        "description": "Datenextraktion, Web-Scraping, Berichterstellung"
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "Social-Media-Automatisierung, Lead-Generierung, Analytics"
+      },
+      "research": {
+        "title": "Forschung",
+        "description": "Datensammlung, Inhaltsanalyse, Archivierung"
+      }
+    },
+    "featureTours": {
+      "autofillBasics": {
+        "name": "Autofill-Grundlagen",
+        "description": "Lerne, wie du Autofill-Profile erstellst und verwendest",
+        "steps": {
+          "createProfile": {
+            "title": "Profil erstellen",
+            "description": "Klicke hier, um dein erstes Autofill-Profil zu erstellen"
+          },
+          "fillDetails": {
+            "title": "Details eingeben",
+            "description": "Gib deine Informationen ein. Wir verwenden sie, um Formulare automatisch auszufüllen."
+          },
+          "saveProfile": {
+            "title": "Profil speichern",
+            "description": "Speichere dein Profil und beginne mit dem automatischen Ausfüllen!"
+          }
+        }
+      },
+      "automationBasics": {
+        "name": "Automatisierungs-Grundlagen",
+        "description": "Erstelle deinen ersten Workflow",
+        "steps": {
+          "createWorkflow": {
+            "title": "Workflow erstellen",
+            "description": "Klicke, um einen neuen Automatisierungs-Workflow zu erstellen"
+          },
+          "addNodes": {
+            "title": "Knoten hinzufügen",
+            "description": "Ziehe Knoten hierher, um deinen Workflow zu erstellen"
+          },
+          "connectNodes": {
+            "title": "Knoten verbinden",
+            "description": "Verbinde Knoten, indem du von einem Handle zum anderen ziehst"
+          },
+          "runWorkflow": {
+            "title": "Workflow ausführen",
+            "description": "Klicke, um deinen Workflow auszuführen"
+          }
+        }
+      },
+      "passwordVault": {
+        "name": "Passwort-Tresor",
+        "description": "Speichere deine Passwörter sicher",
+        "steps": {
+          "addCredential": {
+            "title": "Zugangsdaten hinzufügen",
+            "description": "Speichere neue Anmeldedaten"
+          },
+          "generatePassword": {
+            "title": "Passwort generieren",
+            "description": "Erstelle sofort ein starkes, einzigartiges Passwort"
+          },
+          "securitySettings": {
+            "title": "Sicherheitseinstellungen",
+            "description": "Konfiguriere Verschlüsselung und automatische Sperre"
+          }
+        }
+      },
+      "aiAssistant": {
+        "name": "KI-Assistent",
+        "description": "Erhalte Hilfe von der KI",
+        "steps": {
+          "askAI": {
+            "title": "KI fragen",
+            "description": "Gib deine Frage ein oder beschreibe, was du automatisieren möchtest"
+          },
+          "suggestions": {
+            "title": "KI-Vorschläge",
+            "description": "Die KI analysiert und schlägt Aktionen vor"
+          },
+          "apply": {
+            "title": "Änderungen anwenden",
+            "description": "Überprüfe und wende KI-generierte Lösungen an"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+/* ConnectionDialog Component Styles */
+
+.connection-dialog {
+  min-width: 600px;
+  max-width: 700px;
+}
+
+/* Dialog Tabs */
+.dialog-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: rgba(75, 85, 99, 0.2);
+  color: #f9fafb;
+}
+
+.tab.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* Site Card (for site selection) */
+.site-card {
+  padding: 1.25rem;
+  background: rgba(31, 41, 55, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0.75rem;
+}
+
+.site-card:hover {
+  background: rgba(31, 41, 55, 0.6);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.site-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.site-card-details {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* New Site Form */
+.new-site-form {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.new-site-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.new-site-form::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.4);
+}
+
+.new-site-form::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.6);
+  border-radius: 4px;
+}
+
+.new-site-form::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.8);
+}
+
+.form-error {
+  padding: 0.75rem 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 0.5rem;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Protocol Selector */
+.protocol-selector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.protocol-option {
+  padding: 1rem;
+  background: rgba(31, 41, 55, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.protocol-option:hover {
+  background: rgba(31, 41, 55, 0.6);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.protocol-option.selected {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+.protocol-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 0.25rem;
+}
+
+.protocol-desc {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .connection-dialog {
+    min-width: 95vw;
+  }
+
+  .protocol-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .new-site-form {
+    max-height: 400px;
+  }
+}

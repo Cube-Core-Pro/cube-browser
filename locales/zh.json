@@ -1,0 +1,1554 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "refresh": "刷新",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "submit": "提交",
+    "confirm": "确认",
+    "yes": "是",
+    "no": "否",
+    "ok": "确定",
+    "settings": "设置",
+    "help": "帮助",
+    "about": "关于",
+    "logout": "退出登录",
+    "login": "登录",
+    "username": "用户名",
+    "password": "密码",
+    "email": "邮箱",
+    "name": "名称",
+    "description": "描述",
+    "date": "日期",
+    "time": "时间",
+    "status": "状态",
+    "actions": "操作",
+    "more": "更多",
+    "less": "收起",
+    "all": "全部",
+    "none": "无",
+    "select": "选择",
+    "selected": "已选择",
+    "noData": "暂无数据",
+    "noResults": "未找到结果",
+    "copy": "复制",
+    "copied": "已复制！",
+    "download": "下载",
+    "upload": "上传",
+    "import": "导入",
+    "export": "导出",
+    "clear": "清除",
+    "reset": "重置",
+    "apply": "应用",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "active": "活跃",
+    "inactive": "不活跃",
+    "online": "在线",
+    "offline": "离线",
+    "connected": "已连接",
+    "disconnected": "已断开"
+  },
+  "navigation": {
+    "home": "首页",
+    "dashboard": "控制台",
+    "browser": "浏览器",
+    "passwordManager": "密码管理器",
+    "collections": "收藏夹",
+    "readingList": "阅读列表",
+    "mediaPlayer": "媒体播放器",
+    "terminal": "终端",
+    "downloads": "下载",
+    "automation": "自动化",
+    "settings": "设置",
+    "tools": "工具",
+    "communications": "通讯"
+  },
+  "browser": {
+    "newTab": "新标签页",
+    "tabs": "标签页",
+    "history": "历史记录",
+    "bookmarks": "书签",
+    "extensions": "扩展",
+    "addressBar": "输入网址或搜索",
+    "reload": "刷新",
+    "stop": "停止",
+    "forward": "前进",
+    "back": "后退",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "fullscreen": "全屏",
+    "print": "打印",
+    "developer": "开发者工具",
+    "incognito": "隐私模式",
+    "clearData": "清除浏览数据"
+  },
+  "passwordManager": {
+    "title": "密码管理器",
+    "vaultLocked": "保险库已锁定",
+    "unlockVault": "解锁保险库",
+    "createVault": "创建保险库",
+    "masterPassword": "主密码",
+    "confirmPassword": "确认密码",
+    "addPassword": "添加密码",
+    "editPassword": "编辑密码",
+    "generatePassword": "生成密码",
+    "passwordStrength": "强度",
+    "weak": "弱",
+    "fair": "一般",
+    "good": "良好",
+    "strong": "强",
+    "veryStrong": "非常强",
+    "website": "网站",
+    "username": "用户名",
+    "notes": "备注",
+    "category": "分类",
+    "favorites": "收藏",
+    "allItems": "全部",
+    "recentlyUsed": "最近使用",
+    "searchPasswords": "搜索密码...",
+    "copyPassword": "复制密码",
+    "copyUsername": "复制用户名",
+    "showPassword": "显示密码",
+    "hidePassword": "隐藏密码",
+    "passwordCopied": "密码已复制",
+    "usernameCopied": "用户名已复制",
+    "autoFill": "自动填充",
+    "securityReport": "安全报告",
+    "exportVault": "导出保险库",
+    "importPasswords": "导入密码",
+    "categories": {
+      "login": "登录",
+      "creditCard": "信用卡",
+      "identity": "身份",
+      "secureNote": "安全备注",
+      "socialMedia": "社交媒体",
+      "banking": "银行",
+      "email": "邮箱",
+      "work": "工作",
+      "shopping": "购物",
+      "entertainment": "娱乐"
+    }
+  },
+  "collections": {
+    "title": "收藏夹",
+    "newCollection": "新建收藏夹",
+    "editCollection": "编辑收藏夹",
+    "deleteCollection": "删除收藏夹",
+    "addPage": "添加页面",
+    "addLink": "添加链接",
+    "searchCollections": "搜索收藏夹...",
+    "emptyCollection": "此收藏夹为空",
+    "collectionName": "名称",
+    "collectionDescription": "描述",
+    "color": "颜色",
+    "icon": "图标",
+    "pages": "页面",
+    "links": "链接",
+    "items": "项目",
+    "lastModified": "最后修改",
+    "createdAt": "创建于",
+    "sortBy": "排序方式",
+    "viewAs": "查看方式",
+    "grid": "网格",
+    "list": "列表"
+  },
+  "readingList": {
+    "title": "阅读列表",
+    "addArticle": "添加文章",
+    "removeArticle": "删除文章",
+    "markAsRead": "标记为已读",
+    "markAsUnread": "标记为未读",
+    "archive": "归档",
+    "unarchive": "取消归档",
+    "searchArticles": "搜索文章...",
+    "unread": "未读",
+    "read": "已读",
+    "archived": "已归档",
+    "all": "全部",
+    "estimatedReadTime": "预计阅读时间",
+    "minutes": "分钟",
+    "addedOn": "添加于",
+    "source": "来源",
+    "tags": "标签",
+    "addTag": "添加标签",
+    "emptyReadingList": "您的阅读列表为空"
+  },
+  "mediaPlayer": {
+    "title": "媒体播放器",
+    "nowPlaying": "正在播放",
+    "queue": "播放队列",
+    "playlist": "播放列表",
+    "playlists": "播放列表",
+    "newPlaylist": "新建播放列表",
+    "addToPlaylist": "添加到播放列表",
+    "removeFromPlaylist": "从播放列表移除",
+    "play": "播放",
+    "pause": "暂停",
+    "stop": "停止",
+    "previous": "上一首",
+    "next": "下一首",
+    "shuffle": "随机播放",
+    "repeat": "重复",
+    "repeatOne": "单曲循环",
+    "repeatAll": "全部循环",
+    "volume": "音量",
+    "mute": "静音",
+    "unmute": "取消静音",
+    "fullscreen": "全屏",
+    "subtitles": "字幕",
+    "audioTrack": "音轨",
+    "playbackSpeed": "播放速度",
+    "equalizer": "均衡器",
+    "visualizer": "可视化",
+    "openFile": "打开文件",
+    "openFolder": "打开文件夹",
+    "addToQueue": "添加到队列",
+    "clearQueue": "清空队列",
+    "artist": "艺术家",
+    "album": "专辑",
+    "genre": "流派",
+    "duration": "时长",
+    "bitrate": "比特率",
+    "sampleRate": "采样率",
+    "channels": "声道"
+  },
+  "terminal": {
+    "title": "终端",
+    "newTerminal": "新建终端",
+    "closeTerminal": "关闭终端",
+    "splitHorizontal": "水平拆分",
+    "splitVertical": "垂直拆分",
+    "clear": "清除",
+    "copy": "复制",
+    "paste": "粘贴",
+    "selectAll": "全选",
+    "find": "查找",
+    "shell": "Shell",
+    "fontSize": "字体大小",
+    "fontFamily": "字体",
+    "theme": "主题",
+    "cursorStyle": "光标样式",
+    "scrollback": "历史行数",
+    "commandHistory": "命令历史",
+    "themes": {
+      "dark": "深色",
+      "light": "浅色",
+      "monokai": "Monokai",
+      "dracula": "Dracula",
+      "solarized": "Solarized"
+    }
+  },
+  "downloads": {
+    "title": "下载",
+    "activeDownloads": "进行中",
+    "completedDownloads": "已完成",
+    "pausedDownloads": "已暂停",
+    "failedDownloads": "失败",
+    "allDownloads": "全部",
+    "addDownload": "添加下载",
+    "pauseDownload": "暂停",
+    "resumeDownload": "继续",
+    "cancelDownload": "取消",
+    "retryDownload": "重试",
+    "removeDownload": "移除",
+    "clearCompleted": "清除已完成",
+    "openFile": "打开文件",
+    "openFolder": "打开文件夹",
+    "copyLink": "复制链接",
+    "downloadSpeed": "下载速度",
+    "uploadSpeed": "上传速度",
+    "progress": "进度",
+    "timeRemaining": "剩余时间",
+    "destination": "保存位置",
+    "fileName": "文件名",
+    "fileSize": "大小",
+    "downloaded": "已下载",
+    "startTime": "开始时间",
+    "endTime": "结束时间"
+  },
+  "automation": {
+    "title": "自动化",
+    "newWorkflow": "新建工作流",
+    "editWorkflow": "编辑工作流",
+    "runWorkflow": "运行工作流",
+    "stopWorkflow": "停止工作流",
+    "saveWorkflow": "保存工作流",
+    "deleteWorkflow": "删除工作流",
+    "duplicateWorkflow": "复制工作流",
+    "importWorkflow": "导入工作流",
+    "exportWorkflow": "导出工作流",
+    "workflowName": "工作流名称",
+    "workflowDescription": "描述",
+    "triggers": "触发器",
+    "actions": "操作",
+    "conditions": "条件",
+    "variables": "变量",
+    "logs": "日志",
+    "history": "历史",
+    "schedule": "计划",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "running": "运行中",
+    "completed": "已完成",
+    "failed": "失败",
+    "paused": "已暂停",
+    "nodes": {
+      "click": "点击",
+      "type": "输入文本",
+      "navigate": "导航",
+      "wait": "等待",
+      "screenshot": "截图",
+      "extract": "提取数据",
+      "condition": "条件",
+      "loop": "循环",
+      "script": "自定义脚本"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "general": "通用",
+    "appearance": "外观",
+    "privacy": "隐私与安全",
+    "notifications": "通知",
+    "language": "语言",
+    "languages": {
+      "en": "英语",
+      "es": "西班牙语",
+      "pt": "葡萄牙语",
+      "it": "意大利语",
+      "de": "德语",
+      "fr": "法语",
+      "tr": "土耳其语",
+      "zh": "中文",
+      "ja": "日语",
+      "ko": "韩语",
+      "ar": "阿拉伯语",
+      "ru": "俄语"
+    },
+    "theme": "主题",
+    "themes": {
+      "light": "浅色",
+      "dark": "深色",
+      "system": "跟随系统"
+    },
+    "accentColor": "强调色",
+    "fontSize": "字体大小",
+    "startPage": "起始页",
+    "defaultDownloadLocation": "下载位置",
+    "clearBrowsingData": "清除浏览数据",
+    "importData": "导入数据",
+    "exportData": "导出数据",
+    "resetSettings": "重置设置",
+    "autoUpdate": "自动更新",
+    "checkForUpdates": "检查更新",
+    "version": "版本",
+    "licenses": "许可证",
+    "feedback": "发送反馈",
+    "account": "账户"
+  },
+  "account": {
+    "title": "账户设置",
+    "profile": "个人资料",
+    "profileInfo": "个人信息",
+    "firstName": "名",
+    "lastName": "姓",
+    "displayName": "显示名称",
+    "email": "邮箱",
+    "phone": "电话",
+    "company": "公司",
+    "role": "职位",
+    "timezone": "时区",
+    "bio": "简介",
+    "avatar": "头像",
+    "uploadAvatar": "上传头像",
+    "removeAvatar": "删除头像",
+    "dragDropAvatar": "拖放图片或点击上传",
+    "avatarFormats": "JPG、PNG或GIF，最大5MB",
+    "billingAddress": "账单地址",
+    "streetAddress": "街道地址",
+    "addressLine2": "地址行2",
+    "city": "城市",
+    "state": "省份",
+    "postalCode": "邮编",
+    "country": "国家",
+    "vatNumber": "税号",
+    "preferences": "偏好设置",
+    "communicationPrefs": "通讯偏好",
+    "emailNotifications": "邮件通知",
+    "smsNotifications": "短信通知",
+    "marketingEmails": "营销邮件",
+    "productUpdates": "产品更新",
+    "securityAlerts": "安全警报",
+    "billingHistory": "账单历史",
+    "viewAllInvoices": "查看所有发票",
+    "invoice": "发票",
+    "paid": "已付款",
+    "pending": "待处理",
+    "failed": "失败",
+    "saveChanges": "保存更改",
+    "changesSaved": "更改已保存",
+    "changePassword": "更改密码",
+    "deleteAccount": "删除账户",
+    "accountSecurity": "账户安全",
+    "twoFactorAuth": "双重认证",
+    "connectedDevices": "已连接设备",
+    "activeSessions": "活跃会话"
+  },
+  "admin": {
+    "title": "管理面板",
+    "dashboard": "仪表板",
+    "overview": "概览",
+    "sales": "销售",
+    "licenses": "许可证",
+    "downloads": "下载",
+    "users": "用户",
+    "apiKeys": "API密钥",
+    "services": "服务",
+    "analytics": "分析",
+    "logs": "日志",
+    "settings": "设置",
+    "totalRevenue": "总收入",
+    "totalUsers": "总用户数",
+    "activeLicenses": "活跃许可证",
+    "totalDownloads": "总下载量",
+    "recentSales": "最近销售",
+    "customer": "客户",
+    "product": "产品",
+    "amount": "金额",
+    "status": "状态",
+    "date": "日期",
+    "completed": "已完成",
+    "pending": "待处理",
+    "refunded": "已退款",
+    "licenseKey": "许可证密钥",
+    "licensePlan": "计划",
+    "licenseStatus": "状态",
+    "devices": "设备",
+    "expiresAt": "过期时间",
+    "active": "活跃",
+    "expired": "已过期",
+    "revoked": "已撤销",
+    "suspended": "已暂停",
+    "downloadStats": "下载统计",
+    "platformDistribution": "平台分布",
+    "recentDownloads": "最近下载",
+    "version": "版本",
+    "platform": "平台",
+    "downloadDate": "下载日期"
+  },
+  "updates": {
+    "title": "更新与同步",
+    "checkForUpdates": "检查更新",
+    "checking": "检查中...",
+    "downloading": "下载中...",
+    "installing": "安装中...",
+    "currentVersion": "当前版本",
+    "latestVersion": "最新版本",
+    "updateAvailable": "有可用更新",
+    "upToDate": "已是最新",
+    "downloadUpdate": "下载更新",
+    "installUpdate": "安装并重启",
+    "viewReleaseNotes": "查看发布说明",
+    "lastChecked": "上次检查",
+    "releaseDate": "发布日期",
+    "size": "大小",
+    "autoCheck": "自动检查更新",
+    "autoDownload": "自动下载更新",
+    "installOnExit": "退出时安装",
+    "checkInterval": "检查间隔",
+    "hourly": "每小时",
+    "daily": "每天",
+    "weekly": "每周",
+    "manual": "仅手动",
+    "updateChannel": "更新通道",
+    "stable": "稳定版",
+    "beta": "测试版",
+    "nightly": "每日构建",
+    "updateHistory": "更新历史",
+    "whatsNew": "新功能"
+  },
+  "cloudSync": {
+    "title": "云同步",
+    "connected": "已连接",
+    "disconnected": "未连接",
+    "syncNow": "立即同步",
+    "syncing": "同步中...",
+    "lastSync": "上次同步",
+    "pendingChanges": "待同步更改",
+    "signInPrompt": "登录以在设备间同步设置",
+    "signIn": "登录",
+    "syncEnabled": "启用同步",
+    "syncEnabledDesc": "保持设备间数据同步",
+    "syncOnStartup": "启动时同步",
+    "syncOnStartupDesc": "打开应用时自动同步",
+    "syncFrequency": "同步频率",
+    "realtime": "实时",
+    "everyFiveMin": "每5分钟",
+    "everyFifteenMin": "每15分钟",
+    "everyThirtyMin": "每30分钟",
+    "dataToSync": "同步数据",
+    "settings": "设置",
+    "passwords": "密码",
+    "bookmarks": "书签",
+    "collections": "收藏夹",
+    "macros": "宏",
+    "workflows": "工作流",
+    "themes": "主题",
+    "extensions": "扩展",
+    "onlineAccount": "在线账户",
+    "accountSettings": "账户设置",
+    "billingSubscription": "账单与订阅",
+    "upgradePlan": "升级计划"
+  },
+  "devices": {
+    "title": "已连接设备",
+    "description": "管理与账户同步的设备",
+    "noDevices": "没有已连接的设备",
+    "noDevicesDesc": "在其他设备登录后会显示在这里",
+    "thisDevice": "当前设备",
+    "lastActive": "最后活跃",
+    "remove": "移除"
+  },
+  "backups": {
+    "title": "云备份",
+    "autoBackup": "自动备份",
+    "autoBackupDesc": "自动备份您的数据",
+    "backupFrequency": "备份频率",
+    "createNow": "立即创建备份",
+    "yourBackups": "您的备份",
+    "noBackups": "暂无备份",
+    "noBackupsDesc": "创建备份以保护您的数据",
+    "restore": "恢复",
+    "delete": "删除"
+  },
+  "errors": {
+    "generic": "出现错误",
+    "networkError": "网络错误，请检查您的连接。",
+    "notFound": "未找到",
+    "unauthorized": "未授权，请登录。",
+    "forbidden": "访问被拒绝",
+    "serverError": "服务器错误，请稍后重试。",
+    "timeout": "请求超时",
+    "invalidInput": "无效输入",
+    "requiredField": "此字段为必填项",
+    "invalidEmail": "无效的邮箱地址",
+    "invalidUrl": "无效的URL",
+    "passwordMismatch": "密码不匹配",
+    "weakPassword": "密码强度太弱",
+    "fileTooLarge": "文件太大",
+    "invalidFileType": "无效的文件类型",
+    "downloadFailed": "下载失败",
+    "uploadFailed": "上传失败",
+    "saveFailed": "保存失败",
+    "deleteFailed": "删除失败",
+    "loadFailed": "加载数据失败"
+  },
+  "success": {
+    "saved": "保存成功",
+    "deleted": "删除成功",
+    "updated": "更新成功",
+    "copied": "已复制到剪贴板",
+    "downloaded": "下载成功",
+    "uploaded": "上传成功",
+    "imported": "导入成功",
+    "exported": "导出成功",
+    "passwordChanged": "密码已更改",
+    "settingsSaved": "设置已保存"
+  },
+  "confirmations": {
+    "delete": "确定要删除吗？",
+    "deleteMultiple": "确定要删除 {count} 个项目吗？",
+    "discard": "放弃未保存的更改？",
+    "logout": "确定要退出登录吗？",
+    "clearData": "这将永久删除所有数据。继续？",
+    "reset": "重置所有设置？"
+  },
+  "crm": {
+    "title": "企业CRM",
+    "subtitle": "客户关系管理",
+    "contacts": {
+      "title": "联系人",
+      "addContact": "添加联系人",
+      "editContact": "编辑联系人",
+      "importContacts": "导入联系人",
+      "exportContacts": "导出联系人",
+      "firstName": "名",
+      "lastName": "姓",
+      "company": "公司",
+      "phone": "电话",
+      "mobile": "手机",
+      "email": "邮箱",
+      "address": "地址",
+      "city": "城市",
+      "state": "省份",
+      "country": "国家",
+      "postalCode": "邮编",
+      "notes": "备注",
+      "tags": "标签",
+      "source": "线索来源",
+      "status": "状态",
+      "assignedTo": "分配给",
+      "lastContact": "最后联系",
+      "nextFollowUp": "下次跟进",
+      "totalDeals": "总交易数",
+      "totalValue": "总价值",
+      "duplicates": "合并重复",
+      "segments": "细分",
+      "customFields": "自定义字段"
+    },
+    "companies": {
+      "title": "公司",
+      "addCompany": "添加公司",
+      "companyName": "公司名称",
+      "industry": "行业",
+      "size": "公司规模",
+      "revenue": "年收入",
+      "website": "网站",
+      "employees": "员工数",
+      "headquarters": "总部",
+      "founded": "成立时间",
+      "linkedContacts": "关联联系人"
+    },
+    "deals": {
+      "title": "交易",
+      "addDeal": "添加交易",
+      "editDeal": "编辑交易",
+      "dealName": "交易名称",
+      "value": "交易价值",
+      "probability": "概率",
+      "expectedClose": "预计成交",
+      "actualClose": "实际成交",
+      "stage": "阶段",
+      "pipeline": "管道",
+      "wonDeals": "已成交",
+      "lostDeals": "已失败",
+      "openDeals": "进行中",
+      "totalPipeline": "管道总值",
+      "weightedValue": "加权价值",
+      "lostReason": "失败原因",
+      "competitor": "竞争对手",
+      "stages": {
+        "lead": "线索",
+        "qualified": "已确认",
+        "proposal": "提案",
+        "negotiation": "谈判",
+        "closed_won": "已成交",
+        "closed_lost": "已失败"
+      }
+    },
+    "pipeline": {
+      "title": "管道",
+      "newPipeline": "新建管道",
+      "editPipeline": "编辑管道",
+      "stages": "阶段",
+      "addStage": "添加阶段",
+      "stageName": "阶段名称",
+      "probability": "成交概率",
+      "rottenDays": "停滞天数",
+      "kanban": "看板视图",
+      "list": "列表视图",
+      "forecast": "预测"
+    },
+    "activities": {
+      "title": "活动",
+      "addActivity": "添加活动",
+      "call": "电话",
+      "email": "邮件",
+      "meeting": "会议",
+      "task": "任务",
+      "note": "备注",
+      "deadline": "截止日期",
+      "reminder": "提醒",
+      "completed": "已完成",
+      "pending": "待处理",
+      "overdue": "已逾期",
+      "todayTasks": "今日任务",
+      "upcoming": "即将到来",
+      "history": "活动历史"
+    },
+    "reports": {
+      "title": "报告",
+      "salesReport": "销售报告",
+      "pipelineReport": "管道报告",
+      "activityReport": "活动报告",
+      "winRate": "成交率",
+      "avgDealSize": "平均交易规模",
+      "avgSalesCycle": "平均销售周期",
+      "conversionRate": "转化率",
+      "revenueByMonth": "月收入",
+      "dealsByStage": "按阶段交易",
+      "topPerformers": "最佳销售",
+      "lostReasons": "失败原因",
+      "sourceAnalysis": "线索来源分析"
+    }
+  },
+  "marketing": {
+    "title": "营销中心",
+    "subtitle": "一体化营销自动化",
+    "campaigns": {
+      "title": "活动",
+      "newCampaign": "新建活动",
+      "editCampaign": "编辑活动",
+      "campaignName": "活动名称",
+      "type": "活动类型",
+      "status": "状态",
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "budget": "预算",
+      "spent": "已花费",
+      "roi": "投资回报率",
+      "leads": "生成线索",
+      "conversions": "转化",
+      "types": {
+        "email": "邮件活动",
+        "sms": "短信活动",
+        "social": "社交媒体",
+        "ads": "付费广告",
+        "content": "内容营销",
+        "event": "活动",
+        "webinar": "网络研讨会"
+      }
+    },
+    "email": {
+      "title": "邮件营销",
+      "compose": "撰写邮件",
+      "templates": "邮件模板",
+      "sequences": "邮件序列",
+      "broadcasts": "群发",
+      "subject": "主题",
+      "previewText": "预览文本",
+      "fromName": "发件人名称",
+      "fromEmail": "发件人邮箱",
+      "replyTo": "回复地址",
+      "recipients": "收件人",
+      "schedule": "预定发送",
+      "sendNow": "立即发送",
+      "testEmail": "发送测试",
+      "openRate": "打开率",
+      "clickRate": "点击率",
+      "bounceRate": "退信率",
+      "unsubscribeRate": "退订率",
+      "delivered": "已送达",
+      "opened": "已打开",
+      "clicked": "已点击",
+      "replied": "已回复"
+    },
+    "sms": {
+      "title": "短信营销",
+      "compose": "撰写短信",
+      "templates": "短信模板",
+      "campaigns": "短信活动",
+      "sender": "发送者ID",
+      "message": "消息",
+      "characters": "字符",
+      "segments": "分段",
+      "deliveryRate": "送达率",
+      "responseRate": "响应率",
+      "optOut": "退订"
+    },
+    "landing": {
+      "title": "落地页",
+      "newPage": "新建页面",
+      "editPage": "编辑页面",
+      "templates": "模板",
+      "pageName": "页面名称",
+      "slug": "URL别名",
+      "publish": "发布",
+      "unpublish": "取消发布",
+      "preview": "预览",
+      "duplicate": "复制",
+      "views": "浏览量",
+      "conversions": "转化",
+      "conversionRate": "转化率",
+      "abTest": "A/B测试",
+      "variants": "变体",
+      "winner": "胜出者"
+    },
+    "funnels": {
+      "title": "漏斗",
+      "newFunnel": "新建漏斗",
+      "editFunnel": "编辑漏斗",
+      "funnelName": "漏斗名称",
+      "steps": "步骤",
+      "addStep": "添加步骤",
+      "optIn": "订阅页",
+      "salesPage": "销售页",
+      "checkout": "结账",
+      "upsell": "追加销售",
+      "downsell": "降级销售",
+      "thankYou": "感谢页",
+      "entries": "进入数",
+      "completions": "完成数",
+      "dropoff": "流失率"
+    },
+    "forms": {
+      "title": "表单",
+      "newForm": "新建表单",
+      "editForm": "编辑表单",
+      "formName": "表单名称",
+      "fields": "字段",
+      "addField": "添加字段",
+      "required": "必填",
+      "placeholder": "占位符",
+      "submissions": "提交数",
+      "embed": "嵌入代码",
+      "popup": "弹出表单",
+      "inline": "内嵌表单",
+      "fieldTypes": {
+        "text": "文本",
+        "email": "邮箱",
+        "phone": "电话",
+        "select": "下拉框",
+        "radio": "单选按钮",
+        "checkbox": "复选框",
+        "textarea": "文本区域",
+        "date": "日期",
+        "file": "文件上传"
+      }
+    },
+    "automation": {
+      "title": "营销自动化",
+      "workflows": "工作流",
+      "newWorkflow": "新建工作流",
+      "triggers": "触发器",
+      "actions": "操作",
+      "conditions": "条件",
+      "delays": "延迟",
+      "active": "活跃",
+      "paused": "已暂停",
+      "draft": "草稿",
+      "enrolled": "已注册",
+      "completed": "已完成",
+      "triggerTypes": {
+        "formSubmit": "表单提交",
+        "tagAdded": "添加标签",
+        "tagRemoved": "移除标签",
+        "listJoined": "加入列表",
+        "linkClicked": "点击链接",
+        "emailOpened": "打开邮件",
+        "pageVisited": "访问页面",
+        "dealCreated": "创建交易",
+        "custom": "自定义事件"
+      }
+    },
+    "surveys": {
+      "title": "问卷",
+      "newSurvey": "新建问卷",
+      "questions": "问题",
+      "addQuestion": "添加问题",
+      "responses": "回复",
+      "completionRate": "完成率",
+      "avgTime": "平均时间",
+      "nps": "NPS评分"
+    }
+  },
+  "calendar": {
+    "title": "日历",
+    "subtitle": "日程与预约",
+    "newEvent": "新建事件",
+    "editEvent": "编辑事件",
+    "eventTitle": "事件标题",
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "allDay": "全天",
+    "location": "地点",
+    "description": "描述",
+    "attendees": "参与者",
+    "reminder": "提醒",
+    "recurring": "重复",
+    "color": "颜色",
+    "views": {
+      "day": "日",
+      "week": "周",
+      "month": "月",
+      "agenda": "日程"
+    },
+    "booking": {
+      "title": "预约链接",
+      "newLink": "新建预约链接",
+      "linkName": "链接名称",
+      "duration": "时长",
+      "availability": "可用时间",
+      "buffer": "缓冲时间",
+      "maxBookings": "每日最大预约数",
+      "confirmationEmail": "确认邮件",
+      "reminderEmail": "提醒邮件",
+      "customQuestions": "自定义问题",
+      "embed": "嵌入小部件"
+    }
+  },
+  "payments": {
+    "title": "支付",
+    "subtitle": "账单与收款",
+    "invoices": {
+      "title": "发票",
+      "newInvoice": "新建发票",
+      "invoiceNumber": "发票号",
+      "issueDate": "开票日期",
+      "dueDate": "到期日期",
+      "items": "项目",
+      "subtotal": "小计",
+      "tax": "税额",
+      "discount": "折扣",
+      "total": "总计",
+      "paid": "已付款",
+      "unpaid": "未付款",
+      "overdue": "已逾期",
+      "draft": "草稿",
+      "send": "发送发票",
+      "markPaid": "标记为已付",
+      "recordPayment": "记录付款"
+    },
+    "products": {
+      "title": "产品",
+      "newProduct": "新建产品",
+      "productName": "产品名称",
+      "price": "价格",
+      "recurring": "定期",
+      "oneTime": "一次性",
+      "subscription": "订阅",
+      "billingCycle": "账单周期",
+      "trialDays": "试用天数",
+      "setupFee": "设置费"
+    },
+    "subscriptions": {
+      "title": "订阅",
+      "active": "活跃",
+      "cancelled": "已取消",
+      "past_due": "逾期",
+      "mrr": "月经常性收入",
+      "arr": "年经常性收入",
+      "churn": "流失率",
+      "ltv": "客户终身价值"
+    }
+  },
+  "courses": {
+    "title": "课程与会员",
+    "subtitle": "在线学习平台",
+    "newCourse": "新建课程",
+    "editCourse": "编辑课程",
+    "courseName": "课程名称",
+    "description": "描述",
+    "instructor": "讲师",
+    "price": "价格",
+    "modules": "模块",
+    "lessons": "课时",
+    "addModule": "添加模块",
+    "addLesson": "添加课时",
+    "video": "视频",
+    "audio": "音频",
+    "text": "文字内容",
+    "quiz": "测验",
+    "assignment": "作业",
+    "certificate": "证书",
+    "students": "学员",
+    "enrolled": "已注册",
+    "completed": "已完成",
+    "progress": "进度",
+    "drip": "滴灌内容",
+    "membership": {
+      "title": "会员",
+      "levels": "会员等级",
+      "access": "访问规则",
+      "members": "会员",
+      "content": "受保护内容"
+    }
+  },
+  "social": {
+    "title": "社交中心",
+    "subtitle": "社交媒体指挥中心",
+    "accounts": "已连接账户",
+    "connectAccount": "连接账户",
+    "platforms": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter/X",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "pinterest": "Pinterest",
+      "threads": "Threads"
+    },
+    "posts": {
+      "title": "帖子",
+      "newPost": "新建帖子",
+      "schedule": "定时发布",
+      "draft": "保存草稿",
+      "publish": "立即发布",
+      "caption": "描述",
+      "media": "媒体",
+      "hashtags": "话题标签",
+      "mentions": "提及",
+      "scheduled": "已安排",
+      "published": "已发布",
+      "failed": "失败"
+    },
+    "analytics": {
+      "title": "分析",
+      "followers": "粉丝",
+      "following": "关注",
+      "engagement": "互动率",
+      "reach": "触达",
+      "impressions": "曝光",
+      "likes": "点赞",
+      "comments": "评论",
+      "shares": "分享",
+      "saves": "收藏",
+      "clicks": "点击",
+      "growth": "增长",
+      "bestTime": "最佳发布时间",
+      "topPosts": "热门帖子"
+    },
+    "video": {
+      "title": "视频创作者",
+      "newVideo": "创建视频",
+      "templates": "模板",
+      "scenes": "场景",
+      "addScene": "添加场景",
+      "text": "叠加文字",
+      "music": "背景音乐",
+      "voiceover": "旁白",
+      "transitions": "转场",
+      "effects": "特效",
+      "aspectRatio": "纵横比",
+      "duration": "时长",
+      "export": "导出视频",
+      "formats": {
+        "reels": "Instagram Reels",
+        "shorts": "YouTube Shorts",
+        "tiktok": "TikTok",
+        "story": "故事"
+      }
+    },
+    "viral": {
+      "title": "病毒分析",
+      "trendScore": "趋势分数",
+      "viralPotential": "病毒潜力",
+      "optimalTiming": "最佳时机",
+      "hashtagAnalysis": "话题标签分析",
+      "competitorAnalysis": "竞争对手分析",
+      "contentSuggestions": "内容建议",
+      "trendingTopics": "热门话题",
+      "audienceInsights": "受众洞察"
+    },
+    "inbox": {
+      "title": "统一收件箱",
+      "messages": "消息",
+      "comments": "评论",
+      "mentions": "提及",
+      "reply": "回复",
+      "archive": "归档",
+      "unread": "未读",
+      "starred": "星标",
+      "assigned": "分配给我"
+    }
+  },
+  "aiSearch": {
+    "title": "AI搜索引擎",
+    "subtitle": "AI驱动的智能搜索",
+    "searchPlaceholder": "问我任何问题...",
+    "webSearch": "网页搜索",
+    "deepResearch": "深度研究",
+    "imageSearch": "图片搜索",
+    "videoSearch": "视频搜索",
+    "newsSearch": "新闻搜索",
+    "academicSearch": "学术搜索",
+    "sources": "来源",
+    "citations": "引用",
+    "summary": "AI摘要",
+    "relatedQuestions": "相关问题",
+    "filters": "搜索过滤",
+    "dateRange": "日期范围",
+    "region": "地区",
+    "language": "语言",
+    "safeSearch": "安全搜索",
+    "searchHistory": "搜索历史",
+    "savedSearches": "已保存搜索",
+    "modes": {
+      "quick": "快速回答",
+      "comprehensive": "全面",
+      "creative": "创意",
+      "precise": "精确"
+    }
+  },
+  "intelligence": {
+    "title": "情报中心",
+    "subtitle": "深度研究与分析",
+    "newResearch": "新建研究",
+    "researchTopic": "研究主题",
+    "sources": "来源",
+    "analysis": "分析",
+    "report": "报告",
+    "timeline": "时间线",
+    "entities": "实体",
+    "relationships": "关系",
+    "sentiment": "情感分析",
+    "trends": "趋势分析",
+    "factCheck": "事实核查",
+    "citations": "引用",
+    "exportReport": "导出报告",
+    "collaborate": "协作",
+    "categories": {
+      "market": "市场研究",
+      "competitive": "竞争分析",
+      "technical": "技术研究",
+      "academic": "学术研究",
+      "news": "新闻情报",
+      "social": "社交监听"
+    }
+  },
+  "support": {
+    "title": "支持中心",
+    "subtitle": "帮助台与工单",
+    "tickets": {
+      "title": "工单",
+      "newTicket": "新建工单",
+      "subject": "主题",
+      "priority": "优先级",
+      "status": "状态",
+      "assignee": "分配给",
+      "requester": "请求者",
+      "created": "创建时间",
+      "updated": "最后更新",
+      "resolved": "已解决",
+      "firstResponse": "首次响应时间",
+      "priorities": {
+        "low": "低",
+        "medium": "中",
+        "high": "高",
+        "urgent": "紧急"
+      },
+      "statuses": {
+        "open": "开放",
+        "pending": "待处理",
+        "in_progress": "进行中",
+        "resolved": "已解决",
+        "closed": "已关闭"
+      }
+    },
+    "knowledgeBase": {
+      "title": "知识库",
+      "articles": "文章",
+      "categories": "分类",
+      "newArticle": "新建文章",
+      "views": "浏览量",
+      "helpful": "这有帮助吗？",
+      "search": "搜索知识库..."
+    },
+    "chat": {
+      "title": "在线客服",
+      "online": "在线",
+      "offline": "离线",
+      "typing": "正在输入...",
+      "send": "发送",
+      "transcript": "聊天记录",
+      "rating": "评价此对话",
+      "cannedResponses": "快捷回复"
+    }
+  },
+  "whiteLabel": {
+    "title": "白标",
+    "subtitle": "定制您的品牌",
+    "branding": {
+      "title": "品牌",
+      "logo": "Logo",
+      "favicon": "网站图标",
+      "appName": "应用名称",
+      "primaryColor": "主色",
+      "secondaryColor": "辅助色",
+      "accentColor": "强调色"
+    },
+    "domain": {
+      "title": "自定义域名",
+      "addDomain": "添加域名",
+      "verify": "验证域名",
+      "ssl": "SSL证书",
+      "status": "状态"
+    },
+    "emails": {
+      "title": "邮件品牌",
+      "fromName": "发件人名称",
+      "fromEmail": "发件人邮箱",
+      "replyTo": "回复地址",
+      "signature": "邮件签名",
+      "templates": "邮件模板"
+    }
+  },
+  "aiAssistant": {
+    "title": "AI助手",
+    "subtitle": "您的智能助手",
+    "chat": "与AI对话",
+    "commands": "命令",
+    "suggestions": "建议",
+    "capabilities": {
+      "writeEmail": "写邮件",
+      "analyzeData": "分析数据",
+      "createContent": "创建内容",
+      "summarize": "总结",
+      "translate": "翻译",
+      "codeHelp": "代码帮助",
+      "research": "研究",
+      "schedule": "日程"
+    },
+    "modules": {
+      "title": "AI模块控制",
+      "manage": "管理模块",
+      "execute": "执行操作",
+      "automate": "自动化任务",
+      "permissions": "AI权限",
+      "history": "操作历史"
+    },
+    "voice": {
+      "title": "语音命令",
+      "listening": "正在听...",
+      "speak": "请说话",
+      "stop": "停止",
+      "language": "语音语言"
+    }
+  },
+  "tours": {
+    "welcome": {
+      "title": "欢迎使用CUBE Elite",
+      "description": "让我们带您了解您强大的新工作空间"
+    },
+    "browser": {
+      "title": "完整浏览器体验",
+      "description": "使用完整的浏览器功能浏览任何网站"
+    },
+    "crm": {
+      "title": "CRM与联系人",
+      "description": "在一个地方管理所有联系人、公司和交易"
+    },
+    "marketing": {
+      "title": "营销自动化",
+      "description": "创建活动、邮件、落地页和漏斗"
+    },
+    "social": {
+      "title": "社交媒体中心",
+      "description": "在一个仪表板管理所有社交账户"
+    },
+    "aiSearch": {
+      "title": "AI搜索",
+      "description": "获取带引用和深度研究的智能答案"
+    },
+    "intelligence": {
+      "title": "情报中心",
+      "description": "进行深度研究和竞争分析"
+    },
+    "aiAssistant": {
+      "title": "AI助手",
+      "description": "AI可以控制任何模块并为您执行任务"
+    },
+    "steps": {
+      "next": "下一步",
+      "previous": "上一步",
+      "skip": "跳过导览",
+      "finish": "开始"
+    }
+  },
+  "dataExtractor": {
+    "title": "数据提取器",
+    "subtitle": "具有点击界面的可视化网页抓取工具",
+    "loading": {
+      "title": "正在加载数据提取器...",
+      "description": "正在初始化提取工具"
+    },
+    "errors": {
+      "title": "提取错误",
+      "loadFailed": "无法加载数据提取器"
+    },
+    "actions": {
+      "newSchema": "新建架构",
+      "startExtraction": "开始提取",
+      "previewData": "预览数据",
+      "exportData": "导出数据",
+      "saveSchema": "保存架构"
+    }
+  },
+  "enterprise": {
+    "badge": "企业套件",
+    "title": "CUBE Nexum Enterprise",
+    "subtitle": "用于大规模自动化、集成和数据管理的全面企业级工具。",
+    "stats": {
+      "modules": "模块",
+      "integrations": "集成",
+      "uptime": "正常运行时间SLA"
+    },
+    "errors": {
+      "loadFailed": "无法加载企业模块"
+    },
+    "benefits": {
+      "title": "企业优势",
+      "security": {
+        "title": "企业安全",
+        "description": "符合SOC 2 Type II、GDPR和HIPAA标准，采用端到端加密。"
+      },
+      "performance": {
+        "title": "高性能",
+        "description": "以亚毫秒延迟每秒处理数百万事件。"
+      },
+      "uptime": {
+        "title": "99.9%正常运行时间",
+        "description": "具有自动故障转移和灾难恢复的企业SLA。"
+      },
+      "support": {
+        "title": "24/7支持",
+        "description": "专职支持团队，1小时响应保证。"
+      }
+    }
+  },
+  "fileTransfer": {
+    "title": "文件传输",
+    "subtitle": "双面板界面的安全FTP/SFTP传输",
+    "loading": { "title": "加载传输中...", "description": "连接服务器" },
+    "errors": { "title": "传输错误", "loadFailed": "无法加载文件传输" },
+    "actions": { "connect": "连接", "disconnect": "断开", "upload": "上传", "download": "下载", "refresh": "刷新", "newSite": "新站点" }
+  },
+  "collections": {
+    "title": "收藏夹",
+    "subtitle": "整理和分享已保存的页面",
+    "loading": { "title": "加载收藏夹...", "description": "获取收藏夹" },
+    "errors": { "title": "收藏夹错误", "loadFailed": "无法加载收藏夹" },
+    "empty": { "title": "无收藏夹", "description": "创建您的第一个收藏夹。" },
+    "actions": { "newCollection": "新建收藏夹", "share": "分享", "delete": "删除" }
+  },
+  "readingList": {
+    "title": "阅读列表",
+    "subtitle": "保存文章稍后阅读",
+    "loading": { "title": "加载列表中...", "description": "获取文章" },
+    "errors": { "title": "列表错误", "loadFailed": "无法加载列表" },
+    "empty": { "title": "无文章", "description": "从网页保存文章。" },
+    "tabs": { "all": "全部", "unread": "未读", "read": "已读" }
+  },
+  "remote": {
+    "title": "远程桌面",
+    "subtitle": "通过SSH、RDP、VNC连接远程计算机",
+    "loading": { "title": "加载会话中...", "description": "获取连接" },
+    "errors": { "title": "连接错误", "loadFailed": "无法加载会话" },
+    "actions": { "connect": "连接", "disconnect": "断开", "newSession": "新建会话", "createRoom": "创建房间", "joinRoom": "加入" }
+  },
+  "ftp": {
+    "title": "FTP管理器",
+    "subtitle": "管理FTP/SFTP连接和传输",
+    "loading": { "title": "加载FTP中...", "description": "连接服务器" },
+    "errors": { "title": "FTP错误", "loadFailed": "无法加载FTP连接" },
+    "actions": { "upload": "上传", "download": "下载", "newSite": "新站点", "refresh": "刷新" }
+  },
+  "extensions": {
+    "title": "扩展程序",
+    "subtitle": "管理浏览器扩展和插件",
+    "loading": { "title": "加载扩展中...", "description": "获取已安装" },
+    "errors": { "title": "扩展错误", "loadFailed": "无法加载扩展" },
+    "tabs": { "installed": "已安装", "webstore": "网上商店", "install": "安装", "settings": "设置" },
+    "actions": { "enable": "启用", "disable": "禁用", "uninstall": "卸载", "install": "安装" }
+  },
+  "help": {
+    "title": "帮助中心",
+    "subtitle": "文档和支持",
+    "sections": { "documentation": "文档", "tutorials": "视频教程", "community": "社区", "support": "联系支持" }
+  },
+  "monitoring": {
+    "title": "网站监控",
+    "subtitle": "监控网站运行时间和性能",
+    "loading": { "title": "加载监控中...", "description": "获取监控站点" },
+    "errors": { "title": "监控错误", "loadFailed": "无法加载数据" }
+  },
+  "dataSources": {
+    "title": "数据源",
+    "subtitle": "连接和管理外部数据源",
+    "loading": { "title": "加载数据源...", "description": "获取连接" },
+    "errors": { "title": "数据源错误", "loadFailed": "无法加载数据源" },
+    "empty": { "title": "无数据源", "description": "连接您的第一个数据源。" },
+    "types": { "database": "数据库", "api": "API", "file": "文件", "cloud": "云" }
+  },
+  "integration": {
+    "title": "集成中心",
+    "subtitle": "跨模块集成管理",
+    "loading": { "title": "加载集成中...", "description": "获取连接" }
+  },
+  "workspace": {
+    "title": "工作区",
+    "subtitle": "使用看板、视图和自动化管理项目",
+    "loading": { "title": "加载工作区...", "description": "获取看板和项目" },
+    "errors": { "title": "工作区错误", "loadFailed": "无法加载工作区" },
+    "views": { "table": "表格", "kanban": "看板", "timeline": "时间线", "chart": "图表" }
+  },
+  "admin": {
+    "title": "管理面板",
+    "subtitle": "系统管理和配置",
+    "loading": { "title": "加载管理面板...", "description": "获取系统设置" }
+  },
+  "search": {
+    "title": "AI搜索",
+    "subtitle": "AI驱动的智能搜索",
+    "loading": { "title": "加载搜索中...", "description": "初始化AI搜索引擎" }
+  },
+  "p2p": {
+    "title": "P2P传输",
+    "subtitle": "点对点文件共享和协作",
+    "loading": { "title": "加载P2P中...", "description": "初始化对等网络" },
+    "errors": { "title": "P2P错误", "loadFailed": "无法连接对等网络" },
+    "actions": { "createRoom": "创建房间", "joinRoom": "加入", "shareFiles": "共享文件", "disconnect": "断开" }
+  },
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "欢迎使用 CUBE Nexum",
+        "description": "最强大的浏览器自动化平台"
+      },
+      "profile": {
+        "title": "创建您的个人资料",
+        "description": "告诉我们一些关于您的信息"
+      },
+      "useCase": {
+        "title": "您的使用场景",
+        "description": "帮助我们个性化您的体验"
+      },
+      "features": {
+        "title": "选择功能",
+        "description": "选择您想使用的工具"
+      },
+      "browserSetup": {
+        "title": "浏览器设置",
+        "description": "配置您的浏览器偏好"
+      },
+      "extension": {
+        "title": "安装扩展",
+        "description": "获取Chrome扩展以获得增强功能"
+      },
+      "security": {
+        "title": "安全设置",
+        "description": "使用加密保护您的数据"
+      },
+      "notifications": {
+        "title": "通知",
+        "description": "随时了解重要事项"
+      },
+      "tour": {
+        "title": "快速导览",
+        "description": "2分钟学会基础操作"
+      },
+      "complete": {
+        "title": "准备就绪！",
+        "description": "您已准备好开始自动化"
+      }
+    },
+    "useCases": {
+      "personal": {
+        "title": "个人使用",
+        "description": "填写表单、保存密码、自动化日常任务"
+      },
+      "business": {
+        "title": "商业",
+        "description": "企业自动化、团队协作、CRM集成"
+      },
+      "developer": {
+        "title": "开发者",
+        "description": "API测试、网页抓取、工作流自动化"
+      },
+      "dataAnalyst": {
+        "title": "数据分析师",
+        "description": "数据提取、网页抓取、报告生成"
+      },
+      "marketing": {
+        "title": "市场营销",
+        "description": "社交媒体自动化、潜在客户生成、分析"
+      },
+      "research": {
+        "title": "研究",
+        "description": "数据收集、内容分析、存档"
+      }
+    },
+    "featureTours": {
+      "autofillBasics": {
+        "name": "自动填充基础",
+        "description": "学习如何创建和使用自动填充配置文件",
+        "steps": {
+          "createProfile": {
+            "title": "创建配置文件",
+            "description": "点击此处创建您的第一个自动填充配置文件"
+          },
+          "fillDetails": {
+            "title": "填写详细信息",
+            "description": "输入您的信息。我们将使用它来自动填写表单。"
+          },
+          "saveProfile": {
+            "title": "保存配置文件",
+            "description": "保存您的配置文件并开始自动填写表单！"
+          }
+        }
+      },
+      "automationBasics": {
+        "name": "自动化基础",
+        "description": "创建您的第一个工作流",
+        "steps": {
+          "createWorkflow": {
+            "title": "创建工作流",
+            "description": "点击开始构建新的自动化工作流"
+          },
+          "addNodes": {
+            "title": "添加节点",
+            "description": "从这里拖动节点来构建您的工作流"
+          },
+          "connectNodes": {
+            "title": "连接节点",
+            "description": "通过从一个句柄拖动到另一个来连接节点"
+          },
+          "runWorkflow": {
+            "title": "运行工作流",
+            "description": "点击执行您的工作流"
+          }
+        }
+      },
+      "passwordVault": {
+        "name": "密码保管库",
+        "description": "安全存储您的密码",
+        "steps": {
+          "addCredential": {
+            "title": "添加凭证",
+            "description": "存储新的登录凭证"
+          },
+          "generatePassword": {
+            "title": "生成密码",
+            "description": "立即创建强大且独特的密码"
+          },
+          "securitySettings": {
+            "title": "安全设置",
+            "description": "配置加密和自动锁定设置"
+          }
+        }
+      },
+      "aiAssistant": {
+        "name": "AI助手",
+        "description": "获取AI帮助",
+        "steps": {
+          "askAI": {
+            "title": "询问AI",
+            "description": "输入您的问题或描述您想要自动化的内容"
+          },
+          "suggestions": {
+            "title": "AI建议",
+            "description": "AI将分析并建议操作"
+          },
+          "apply": {
+            "title": "应用更改",
+            "description": "查看并应用AI生成的解决方案"
+          }
+        }
+      }
+    }
+  }
+}

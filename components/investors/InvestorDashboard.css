@@ -1,0 +1,1171 @@
+/**
+ * Investor Dashboard Styles
+ * Complete styling for the investor portal
+ */
+
+.investor-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #f8fafc;
+  padding: 2rem;
+}
+
+.investor-dashboard.loading,
+.investor-dashboard.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #94a3b8;
+}
+
+.loading-spinner svg {
+  color: #8b5cf6;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.error-message svg {
+  color: #ef4444;
+}
+
+.error-message h2 {
+  font-size: 1.5rem;
+  color: #f8fafc;
+}
+
+.error-message p {
+  color: #94a3b8;
+}
+
+.retry-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.retry-btn:hover {
+  background: #7c3aed;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.header-left h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-left p {
+  color: #94a3b8;
+  margin: 0.25rem 0 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-right button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 0.5rem;
+  color: #a5b4fc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-right button:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.notifications-btn {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 18px;
+  height: 18px;
+  background: #ef4444;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tabs */
+.dashboard-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: rgba(15, 23, 42, 0.5);
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.dashboard-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.dashboard-tabs button:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #e2e8f0;
+}
+
+.dashboard-tabs button.active {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.stat-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.stat-card.primary .stat-icon {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a5b4fc;
+}
+
+.stat-card.success .stat-icon {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.stat-card.info .stat-icon {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.stat-card.warning .stat-icon {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.stat-change.positive {
+  color: #10b981;
+}
+
+.stat-change.negative {
+  color: #ef4444;
+}
+
+.stat-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Quick Actions */
+.quick-actions {
+  margin-bottom: 2rem;
+}
+
+.quick-actions h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #f8fafc;
+  transition: all 0.2s;
+}
+
+.action-card:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateX(4px);
+}
+
+.action-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.action-title {
+  font-weight: 600;
+  display: block;
+}
+
+.action-desc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.action-card svg:last-child {
+  margin-left: auto;
+  color: #64748b;
+}
+
+/* Activity Section */
+.activity-section {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.activity-header h2 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #8b5cf6;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.notification-item:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.notification-item.unread {
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid #8b5cf6;
+}
+
+.notification-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notification-icon.payout {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.notification-icon.token {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.notification-icon.product {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.notification-icon.contract {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a5b4fc;
+}
+
+.notification-icon.announcement {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f9a8d4;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.notification-message {
+  display: block;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notification-date {
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* Investments Section */
+.investments-section .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.investments-section .section-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(139, 92, 246, 0.1);
+  color: #a5b4fc;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.investments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.investment-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.investment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.investment-tier {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid;
+}
+
+.tier-icon {
+  font-size: 1.5rem;
+}
+
+.tier-name {
+  font-weight: 600;
+}
+
+.investment-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.investment-status.active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.investment-status.pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.investment-status.matured {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.investment-body {
+  padding: 1.5rem;
+}
+
+.investment-amount {
+  margin-bottom: 1.5rem;
+}
+
+.investment-amount .label {
+  display: block;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.investment-amount .value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.investment-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.investment-details .detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.investment-details .detail svg {
+  color: #8b5cf6;
+}
+
+.investment-progress {
+  margin-bottom: 1rem;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%);
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.contract-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.contract-info svg:first-child {
+  color: #8b5cf6;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.2s;
+}
+
+.copy-btn:hover {
+  color: #8b5cf6;
+}
+
+.investment-footer {
+  padding: 1rem 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-top: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.view-details {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #8b5cf6;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.view-details:hover {
+  text-decoration: underline;
+}
+
+/* Payouts Section */
+.payouts-section .section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.payouts-section .section-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.payout-summary {
+  display: flex;
+  gap: 2rem;
+}
+
+.summary-item {
+  text-align: right;
+}
+
+.summary-item .label {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.summary-item .value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.summary-item .value.success {
+  color: #10b981;
+}
+
+.payouts-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.payouts-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.payout-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.payout-marker {
+  position: absolute;
+  left: -2rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e1b4b;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  z-index: 1;
+}
+
+.payout-item.paid .payout-marker {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.payout-item.scheduled .payout-marker {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+}
+
+.payout-content {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.payout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.payout-date {
+  font-weight: 600;
+}
+
+.payout-type {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.payout-type.interest {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.payout-type.principal {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.payout-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.payout-tx {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Tokens Section */
+.tokens-section .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.tokens-section .section-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.token-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+  .token-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+.token-card.main {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 1rem;
+}
+
+.token-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.token-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.token-label {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.token-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.token-usd {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.token-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 0.75rem;
+}
+
+.breakdown-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breakdown-icon.staked {
+  background: rgba(139, 92, 246, 0.2);
+  color: #a5b4fc;
+}
+
+.breakdown-icon.available {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.breakdown-icon.rewards {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.breakdown-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.breakdown-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.breakdown-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.staking-info {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.staking-info h3 {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.staking-tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .staking-tiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.staking-tier {
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.staking-tier.active {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: #8b5cf6;
+}
+
+.staking-tier .tier-name {
+  display: block;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.staking-tier .tier-requirement {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0.25rem 0;
+}
+
+.staking-tier .tier-benefit {
+  display: block;
+  font-size: 0.875rem;
+  color: #10b981;
+}
+
+.staking-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Products Section */
+.products-section .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.products-section .section-header h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+}
+
+.products-section .section-header p {
+  color: #94a3b8;
+  margin: 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-license-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.product-license-card .product-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.product-license-card .product-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-license-card .product-info h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.product-license-card .product-tier {
+  font-size: 0.75rem;
+  color: #10b981;
+  padding: 0.25rem 0.5rem;
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.product-details {
+  padding: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.detail-item svg {
+  color: #8b5cf6;
+}
+
+.license-key {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.key-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.key-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.key-value code {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #a5b4fc;
+}
+
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border-top: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.product-actions a {
+  flex: 1;
+  justify-content: center;
+}
+
+.upcoming-products {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.upcoming-products h3 {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.upcoming-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.upcoming-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px dashed rgba(139, 92, 246, 0.3);
+  border-radius: 0.75rem;
+}
+
+.upcoming-card svg {
+  color: #8b5cf6;
+}
+
+.upcoming-name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.upcoming-date {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}

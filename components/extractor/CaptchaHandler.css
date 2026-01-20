@@ -1,0 +1,282 @@
+/* CaptchaHandler.css - CAPTCHA Handling Styles */
+
+.captcha-handler {
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+.handler-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+}
+
+.header-icon.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: white;
+}
+
+/* Stats */
+.captcha-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.stat-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.stat-icon.yellow {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.stat-icon.purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+/* Methods Grid */
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.method-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.method-card:hover {
+  background: color-mix(in srgb, var(--muted) 80%, var(--primary));
+}
+
+.method-card.selected {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.method-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.method-cost {
+  flex-shrink: 0;
+}
+
+/* CAPTCHA Types Grid */
+.captcha-types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.captcha-type {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--muted);
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.captcha-type.unsupported {
+  opacity: 0.6;
+}
+
+/* Event Row */
+.captcha-event-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--muted);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+}
+
+.captcha-event-row.success {
+  border-left-color: #22c55e;
+}
+
+.captcha-event-row.failed {
+  border-left-color: #ef4444;
+}
+
+.event-icon {
+  flex-shrink: 0;
+}
+
+.event-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.event-method {
+  min-width: 120px;
+}
+
+.event-time {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  min-width: 60px;
+}
+
+.event-cost {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  min-width: 60px;
+}
+
+.event-timestamp {
+  font-size: 0.75rem;
+  margin-left: auto;
+}
+
+/* API Key Rows */
+.api-key-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--muted);
+  border-radius: 8px;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .captcha-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .methods-grid,
+  .captcha-types-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .captcha-event-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .event-type,
+  .event-method {
+    min-width: unset;
+  }
+  
+  .event-timestamp {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .method-card.selected {
+    background: rgba(99, 102, 241, 0.15);
+  }
+}

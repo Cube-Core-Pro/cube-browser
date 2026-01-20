@@ -1,0 +1,102 @@
+/* DataNode.css - Orange theme for data processing */
+
+.data-node {
+  min-width: 200px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border: 2px solid #b45309;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  transition: all 0.2s ease;
+}
+
+.data-node.selected {
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3), 0 8px 20px rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+}
+
+.data-node:hover {
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3);
+  transform: translateY(-1px);
+}
+
+.data-node .node-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px 10px 0 0;
+}
+
+.data-node .node-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+.data-node .node-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  flex: 1;
+}
+
+.data-node .node-tier {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.data-node .node-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+  font-size: 12px;
+}
+
+.data-node .config-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.data-node .config-label {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.data-node .config-value {
+  opacity: 0.85;
+  font-family: 'Monaco', 'Consolas', monospace;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.data-handle-input,
+.data-handle-output {
+  width: 12px;
+  height: 12px;
+  background: #fbbf24;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.data-handle-input:hover,
+.data-handle-output:hover {
+  width: 14px;
+  height: 14px;
+  background: #fcd34d;
+}

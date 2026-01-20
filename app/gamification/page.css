@@ -1,0 +1,535 @@
+/* ============================================================================
+   GAMIFICATION PAGE STYLES - CUBE Nexum v7.0.0
+   Complete styling for gamification hub page
+   ============================================================================ */
+
+/* CSS Variables */
+:root {
+  --gamification-primary: #8b5cf6;
+  --gamification-secondary: #6366f1;
+  --gamification-accent: #f59e0b;
+  --gamification-success: #10b981;
+  --gamification-error: #ef4444;
+  --gamification-warning: #f59e0b;
+  --gamification-bg: #0f0f23;
+  --gamification-surface: #1a1a2e;
+  --gamification-border: rgba(139, 92, 246, 0.2);
+  --gamification-text: #e2e8f0;
+  --gamification-text-muted: #94a3b8;
+}
+
+/* ============================================================================
+   PAGE LAYOUT
+   ============================================================================ */
+
+.gamification-page {
+  min-height: 100vh;
+  background: var(--gamification-bg);
+  color: var(--gamification-text);
+  overflow-x: hidden;
+}
+
+/* ============================================================================
+   LOADING STATE
+   ============================================================================ */
+
+.gamification-page__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  color: var(--gamification-text-muted);
+}
+
+.gamification-page__loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--gamification-border);
+  border-top-color: var(--gamification-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   ERROR STATE
+   ============================================================================ */
+
+.gamification-page__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.gamification-page__error-icon {
+  font-size: 4rem;
+}
+
+.gamification-page__error h2 {
+  font-size: 1.5rem;
+  color: var(--gamification-error);
+  margin: 0;
+}
+
+.gamification-page__error p {
+  color: var(--gamification-text-muted);
+  max-width: 400px;
+}
+
+.gamification-page__retry-button {
+  padding: 0.75rem 2rem;
+  background: var(--gamification-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gamification-page__retry-button:hover {
+  background: var(--gamification-secondary);
+  transform: translateY(-2px);
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.gamification-page__header {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+  border-bottom: 1px solid var(--gamification-border);
+  padding: 2rem;
+}
+
+.gamification-page__header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.gamification-page__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, var(--gamification-primary), var(--gamification-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gamification-page__title-icon {
+  font-size: 2.5rem;
+  -webkit-text-fill-color: initial;
+}
+
+.gamification-page__subtitle {
+  color: var(--gamification-text-muted);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ============================================================================
+   QUICK STATS BAR
+   ============================================================================ */
+
+.gamification-page__quick-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--gamification-surface);
+  border-radius: 12px;
+  border: 1px solid var(--gamification-border);
+  flex-wrap: wrap;
+}
+
+.gamification-page__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gamification-page__stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gamification-primary);
+}
+
+.gamification-page__stat-label {
+  font-size: 0.75rem;
+  color: var(--gamification-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gamification-page__checkin-button {
+  margin-left: auto;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--gamification-success), #059669);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gamification-page__checkin-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.gamification-page__checkin-button:active {
+  transform: translateY(0);
+}
+
+/* ============================================================================
+   MAIN CONTENT
+   ============================================================================ */
+
+.gamification-page__main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ============================================================================
+   NOTIFICATIONS
+   ============================================================================ */
+
+.gamification-page__notifications {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.gamification-page__notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--gamification-surface);
+  border-radius: 12px;
+  border: 1px solid var(--gamification-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.gamification-page__notification--xp {
+  border-left: 4px solid var(--gamification-accent);
+}
+
+.gamification-page__notification--achievement {
+  border-left: 4px solid var(--gamification-primary);
+}
+
+.gamification-page__notification--level-up {
+  border-left: 4px solid var(--gamification-success);
+  background: linear-gradient(135deg, var(--gamification-surface), rgba(16, 185, 129, 0.1));
+}
+
+.gamification-page__notification--success {
+  border-left: 4px solid var(--gamification-success);
+}
+
+.gamification-page__notification--error {
+  border-left: 4px solid var(--gamification-error);
+}
+
+.gamification-page__notification--info {
+  border-left: 4px solid var(--gamification-secondary);
+}
+
+.gamification-page__notification-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.gamification-page__notification-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.gamification-page__notification-message {
+  color: var(--gamification-text-muted);
+  font-size: 0.85rem;
+}
+
+.gamification-page__notification-dismiss {
+  background: transparent;
+  border: none;
+  color: var(--gamification-text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.gamification-page__notification-dismiss:hover {
+  opacity: 1;
+}
+
+/* ============================================================================
+   WELCOME MODAL
+   ============================================================================ */
+
+.gamification-page__modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gamification-page__welcome-modal {
+  background: var(--gamification-surface);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid var(--gamification-border);
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.gamification-page__welcome-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.gamification-page__welcome-modal h2 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, var(--gamification-primary), var(--gamification-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gamification-page__welcome-modal p {
+  color: var(--gamification-text-muted);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.gamification-page__welcome-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gamification-page__welcome-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.gamification-page__welcome-feature span:first-child {
+  font-size: 1.25rem;
+}
+
+.gamification-page__welcome-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--gamification-primary), var(--gamification-secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gamification-page__welcome-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .gamification-page__header {
+    padding: 1.5rem 1rem;
+  }
+
+  .gamification-page__title {
+    font-size: 1.5rem;
+  }
+
+  .gamification-page__quick-stats {
+    gap: 1rem;
+    padding: 0.75rem;
+    justify-content: center;
+  }
+
+  .gamification-page__stat-value {
+    font-size: 1.25rem;
+  }
+
+  .gamification-page__checkin-button {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .gamification-page__main {
+    padding: 1rem;
+  }
+
+  .gamification-page__notifications {
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+  }
+
+  .gamification-page__welcome-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================================
+   DARK/LIGHT MODE SUPPORT
+   ============================================================================ */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --gamification-bg: #f8fafc;
+    --gamification-surface: #ffffff;
+    --gamification-border: rgba(139, 92, 246, 0.15);
+    --gamification-text: #1e293b;
+    --gamification-text-muted: #64748b;
+  }
+
+  .gamification-page__notification {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .gamification-page__modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.gamification-page__stat-value {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.gamification-page__checkin-button:focus {
+  outline: 2px solid var(--gamification-success);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .gamification-page__loading-spinner {
+    animation: none;
+  }
+
+  .gamification-page__notification {
+    animation: none;
+  }
+
+  .gamification-page__modal-overlay,
+  .gamification-page__welcome-modal {
+    animation: none;
+  }
+
+  .gamification-page__stat-value {
+    animation: none;
+  }
+}
+
+/* Focus visible styles */
+.gamification-page__retry-button:focus-visible,
+.gamification-page__checkin-button:focus-visible,
+.gamification-page__welcome-button:focus-visible,
+.gamification-page__notification-dismiss:focus-visible {
+  outline: 2px solid var(--gamification-primary);
+  outline-offset: 2px;
+}

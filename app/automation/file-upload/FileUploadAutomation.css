@@ -1,0 +1,520 @@
+/**
+ * 📁 FILE UPLOAD AUTOMATION - STYLES
+ * 
+ * CSS styles for the file upload automation component.
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTAINER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.file-upload-automation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-primary, #0a0a0a);
+  color: var(--text-primary, #ffffff);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.file-upload-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+}
+
+.file-upload-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-upload-header p {
+  margin: 4px 0 0 0;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DROP ZONE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.drop-zone {
+  margin: 20px;
+  padding: 40px;
+  border: 2px dashed var(--border-color, #2a2a2a);
+  border-radius: 12px;
+  background: var(--bg-secondary, #111111);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.drop-zone.dragging {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  transform: scale(1.02);
+}
+
+.drop-zone-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: var(--text-secondary, #888);
+}
+
+.drop-zone-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 8px;
+}
+
+.drop-zone-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #888);
+  margin-bottom: 16px;
+}
+
+.drop-zone-formats {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.format-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--bg-tertiary, #1a1a1a);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #888);
+}
+
+.format-badge-icon {
+  font-size: 0.875rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FILE LIST
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.files-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px 20px;
+}
+
+.files-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.files-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.file-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-secondary, #111111);
+  border: 1px solid var(--border-color, #2a2a2a);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-item:hover {
+  border-color: #8b5cf6;
+}
+
+.file-item.selected {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.file-item.parsing {
+  border-color: #f59e0b;
+  animation: pulse 1.5s infinite;
+}
+
+.file-item.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.file-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary, #1a1a1a);
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #888);
+}
+
+.file-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.8125rem;
+}
+
+.file-status.pending { color: var(--text-secondary, #888); }
+.file-status.parsing { color: #f59e0b; }
+.file-status.parsed { color: #10b981; }
+.file-status.error { color: #ef4444; }
+
+.file-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.file-action-btn {
+  padding: 8px;
+  background: transparent;
+  border: 1px solid var(--border-color, #2a2a2a);
+  border-radius: 6px;
+  color: var(--text-secondary, #888);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-action-btn:hover {
+  background: var(--bg-tertiary, #1a1a1a);
+  color: var(--text-primary, #ffffff);
+}
+
+.file-action-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   INSTRUCTIONS PANEL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.instructions-panel {
+  padding: 20px;
+  background: var(--bg-secondary, #111111);
+  border-top: 1px solid var(--border-color, #2a2a2a);
+}
+
+.instructions-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.instructions-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instructions-count {
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #888);
+  padding: 4px 10px;
+  background: var(--bg-tertiary, #1a1a1a);
+  border-radius: 20px;
+}
+
+.instructions-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.instruction-item:hover {
+  background: var(--bg-tertiary, #1a1a1a);
+}
+
+.instruction-number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #8b5cf6;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.instruction-content {
+  flex: 1;
+}
+
+.instruction-action {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--bg-tertiary, #1a1a1a);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  margin-bottom: 4px;
+}
+
+.instruction-desc {
+  font-size: 0.875rem;
+  color: var(--text-primary, #ffffff);
+  line-height: 1.4;
+}
+
+.instruction-confidence {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #888);
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   OPTIONS PANEL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.options-panel {
+  padding: 16px 20px;
+  background: var(--bg-tertiary, #1a1a1a);
+  border-top: 1px solid var(--border-color, #2a2a2a);
+}
+
+.options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.option-label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #888);
+}
+
+.option-toggle {
+  width: 40px;
+  height: 22px;
+  background: var(--border-color, #2a2a2a);
+  border-radius: 11px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.option-toggle.active {
+  background: #8b5cf6;
+}
+
+.option-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.option-toggle.active::after {
+  transform: translateX(18px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACTION BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.upload-actions {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--bg-secondary, #111111);
+  border-top: 1px solid var(--border-color, #2a2a2a);
+}
+
+.btn-upload {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-upload:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-upload.primary {
+  background: #8b5cf6;
+  color: white;
+}
+
+.btn-upload.primary:hover:not(:disabled) {
+  background: var(--color-accent);
+}
+
+.btn-upload.secondary {
+  background: var(--bg-tertiary, #1a1a1a);
+  color: var(--text-primary, #ffffff);
+  border: 1px solid var(--border-color, #2a2a2a);
+}
+
+.btn-upload.secondary:hover:not(:disabled) {
+  background: var(--border-color, #2a2a2a);
+}
+
+.btn-upload.success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-upload.success:hover:not(:disabled) {
+  background: #059669;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EMPTY STATE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary, #888);
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #ffffff);
+  margin-bottom: 8px;
+}
+
+.empty-state-desc {
+  font-size: 0.875rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .drop-zone {
+    padding: 24px;
+    margin: 12px;
+  }
+
+  .file-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .file-actions {
+    justify-content: flex-end;
+    margin-top: 12px;
+  }
+
+  .options-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .upload-actions {
+    flex-direction: column;
+  }
+}

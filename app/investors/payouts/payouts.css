@@ -1,0 +1,658 @@
+/* ============================================
+   CUBE Elite - Investor Payouts Page
+   Styles for investor returns and payouts
+   ============================================ */
+
+/* Variables */
+:root {
+  --ipay-primary: #10b981;
+  --ipay-primary-dark: #059669;
+  --ipay-secondary: #6366f1;
+  --ipay-success: #22c55e;
+  --ipay-warning: #f59e0b;
+  --ipay-token: #8b5cf6;
+  --ipay-bg: #0a0a0f;
+  --ipay-surface: #12121a;
+  --ipay-surface-2: #1a1a24;
+  --ipay-border: #2a2a3a;
+  --ipay-text: #ffffff;
+  --ipay-text-secondary: #9ca3af;
+  --ipay-text-muted: #6b7280;
+}
+
+/* Page Layout */
+.investor-payouts-page {
+  min-height: 100vh;
+  background: var(--ipay-bg);
+  padding: 2rem;
+  color: var(--ipay-text);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 1rem;
+  color: var(--ipay-text-secondary);
+}
+
+.loading-container svg {
+  color: var(--ipay-primary);
+}
+
+/* Header */
+.payouts-header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title svg {
+  color: var(--ipay-primary);
+}
+
+.header-title h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-title p {
+  margin: 0;
+  color: var(--ipay-text-secondary);
+  font-size: 0.875rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Stats */
+.payouts-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+}
+
+.stat-card {
+  background: var(--ipay-surface);
+  border: 1px solid var(--ipay-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-card.highlight {
+  border-color: var(--ipay-primary);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);
+}
+
+.stat-card.next-payout {
+  border-color: var(--ipay-secondary);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent);
+}
+
+.stat-card.tokens {
+  border-color: var(--ipay-token);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--ipay-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ipay-text-secondary);
+}
+
+.stat-card.highlight .stat-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--ipay-primary);
+}
+
+.stat-card.next-payout .stat-icon {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--ipay-secondary);
+}
+
+.stat-card.tokens .stat-icon {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--ipay-token);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ipay-text);
+}
+
+.stat-card.highlight .stat-value {
+  color: var(--ipay-primary);
+}
+
+.stat-card.tokens .stat-value {
+  color: var(--ipay-token);
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--ipay-text-secondary);
+}
+
+/* Content Layout */
+.payouts-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Main Payouts Section */
+.payouts-main {
+  min-height: 400px;
+}
+
+/* Tabs */
+.payouts-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--ipay-surface);
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--ipay-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: var(--ipay-text);
+}
+
+.tab-btn.active {
+  background: var(--ipay-primary);
+  color: white;
+}
+
+/* Filters */
+.payouts-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ipay-surface);
+  border: 1px solid var(--ipay-border);
+  border-radius: 8px;
+  padding: 0 1rem;
+}
+
+.filter-group svg {
+  color: var(--ipay-text-muted);
+}
+
+.filter-group select {
+  background: transparent;
+  border: none;
+  color: var(--ipay-text);
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  outline: none;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--ipay-surface);
+  border: 1px solid var(--ipay-border);
+  color: var(--ipay-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background: var(--ipay-surface-2);
+  color: var(--ipay-primary);
+  border-color: var(--ipay-primary);
+}
+
+/* Payouts List */
+.payouts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.payout-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--ipay-surface);
+  border: 1px solid var(--ipay-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s;
+}
+
+.payout-card:hover {
+  border-color: var(--ipay-primary);
+}
+
+.payout-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payout-card.dividend .payout-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--ipay-primary);
+}
+
+.payout-card.interest .payout-icon {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--ipay-secondary);
+}
+
+.payout-card.principal .payout-icon {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--ipay-warning);
+}
+
+.payout-card.token_reward .payout-icon {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--ipay-token);
+}
+
+.payout-info {
+  flex: 1;
+}
+
+.payout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.payout-type {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ipay-text);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.status-badge.completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--ipay-success);
+}
+
+.status-badge.processing {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.status-badge.scheduled {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--ipay-token);
+}
+
+.status-badge.pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--ipay-warning);
+}
+
+.payout-amount {
+  margin-bottom: 0.5rem;
+}
+
+.cash-amount {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--ipay-primary);
+}
+
+.token-amount {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--ipay-token);
+}
+
+.payout-meta {
+  display: flex;
+  gap: 1rem;
+}
+
+.investment-tier,
+.payout-date {
+  font-size: 0.8125rem;
+  color: var(--ipay-text-secondary);
+}
+
+.tx-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--ipay-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ipay-text-muted);
+  transition: all 0.2s;
+}
+
+.tx-link:hover {
+  background: var(--ipay-primary);
+  color: white;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--ipay-surface);
+  border-radius: 12px;
+  color: var(--ipay-text-secondary);
+}
+
+.empty-state svg {
+  color: var(--ipay-text-muted);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: var(--ipay-text);
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Sidebar */
+.payouts-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.schedule-card,
+.summary-card {
+  background: var(--ipay-surface);
+  border: 1px solid var(--ipay-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.schedule-card h3,
+.summary-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+}
+
+.schedule-card h3 svg {
+  color: var(--ipay-primary);
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--ipay-surface-2);
+  border-radius: 10px;
+}
+
+.schedule-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48px;
+  padding: 0.5rem;
+  background: var(--ipay-primary);
+  border-radius: 8px;
+  color: white;
+}
+
+.schedule-date .month {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.schedule-date .day {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.schedule-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.schedule-type {
+  font-size: 0.8125rem;
+  color: var(--ipay-text-secondary);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.schedule-amount {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ipay-text);
+}
+
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--ipay-border);
+  border-radius: 8px;
+  color: var(--ipay-text-secondary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-all-btn:hover {
+  background: var(--ipay-surface-2);
+  color: var(--ipay-primary);
+  border-color: var(--ipay-primary);
+}
+
+/* Summary Card */
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ipay-border);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-size: 0.875rem;
+  color: var(--ipay-text-secondary);
+}
+
+.summary-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ipay-text);
+}
+
+.summary-value.highlight {
+  color: var(--ipay-primary);
+}
+
+/* Buttons */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--ipay-surface);
+  color: var(--ipay-text);
+  border: 1px solid var(--ipay-border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--ipay-surface-2);
+  border-color: var(--ipay-primary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .payouts-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .payouts-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .payouts-sidebar {
+    flex-direction: row;
+  }
+  
+  .schedule-card,
+  .summary-card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .investor-payouts-page {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .payouts-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .payouts-sidebar {
+    flex-direction: column;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.payout-card {
+  animation: fadeIn 0.3s ease;
+}
+
+.schedule-card,
+.summary-card {
+  animation: fadeIn 0.4s ease;
+}

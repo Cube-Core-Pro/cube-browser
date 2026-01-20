@@ -1,0 +1,248 @@
+/* ============================================================================
+   Version History Component Styles
+   ============================================================================ */
+
+.version-history {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.history-header .header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.history-header h2 {
+  color: white;
+}
+
+.history-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Stats Grid */
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.stat-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.stat-icon.purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.stat-icon.green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.stat-icon.yellow {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* File Version Card */
+.file-version-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-version-card:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Version List */
+.version-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.version-entry {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.version-entry.current .version-content {
+  background: rgba(34, 197, 94, 0.05);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin: -0.75rem;
+}
+
+.version-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: hsl(var(--muted));
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.timeline-dot.current {
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: hsl(var(--border));
+  margin-top: 4px;
+}
+
+.version-entry:last-child .timeline-line {
+  display: none;
+}
+
+.version-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.version-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .file-version-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .version-entry {
+    flex-direction: column;
+  }
+
+  .version-timeline {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-line {
+    width: auto;
+    height: 2px;
+    flex: 1;
+    margin-top: 0;
+    margin-left: 4px;
+  }
+
+  .version-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

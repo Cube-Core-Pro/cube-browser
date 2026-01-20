@@ -1,0 +1,1961 @@
+/**
+ * CubeMail.pro Landing Page Styles
+ * 
+ * Premium email service landing page with modern design.
+ * Competing with Gmail, Yahoo, Outlook, AOL.
+ */
+
+/* ============================================================================
+   CSS VARIABLES
+   ============================================================================ */
+
+:root {
+  /* Brand Colors */
+  --cubemail-primary: #2563eb;
+  --cubemail-primary-dark: #1d4ed8;
+  --cubemail-primary-light: #3b82f6;
+  --cubemail-secondary: #8b5cf6;
+  --cubemail-accent: #06b6d4;
+  
+  /* Neutrals */
+  --cubemail-white: #ffffff;
+  --cubemail-gray-50: #f9fafb;
+  --cubemail-gray-100: #f3f4f6;
+  --cubemail-gray-200: #e5e7eb;
+  --cubemail-gray-300: #d1d5db;
+  --cubemail-gray-400: #9ca3af;
+  --cubemail-gray-500: #6b7280;
+  --cubemail-gray-600: #4b5563;
+  --cubemail-gray-700: #374151;
+  --cubemail-gray-800: #1f2937;
+  --cubemail-gray-900: #111827;
+  
+  /* Semantic */
+  --cubemail-success: #10b981;
+  --cubemail-warning: #f59e0b;
+  --cubemail-danger: #ef4444;
+  
+  /* Gradients */
+  --cubemail-gradient-primary: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+  --cubemail-gradient-hero: linear-gradient(180deg, #f0f5ff 0%, #ffffff 50%);
+  --cubemail-gradient-card: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  
+  /* Shadows */
+  --cubemail-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --cubemail-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --cubemail-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --cubemail-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --cubemail-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+  /* Spacing */
+  --cubemail-section-padding: 6rem;
+  --cubemail-container-width: 1200px;
+  
+  /* Transitions */
+  --cubemail-transition: all 0.2s ease;
+  --cubemail-transition-slow: all 0.3s ease;
+}
+
+/* ============================================================================
+   BASE STYLES
+   ============================================================================ */
+
+.cubemail-landing {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--cubemail-gray-800);
+  background: var(--cubemail-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.cubemail-landing * {
+  box-sizing: border-box;
+}
+
+/* ============================================================================
+   NAVBAR
+   ============================================================================ */
+
+.cubemail-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  transition: var(--cubemail-transition-slow);
+  background: transparent;
+}
+
+.cubemail-nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--cubemail-shadow-md);
+  padding: 0.75rem 2rem;
+}
+
+.cubemail-nav__content {
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cubemail-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cubemail-primary);
+  text-decoration: none;
+}
+
+.cubemail-nav__links {
+  display: flex;
+  gap: 2rem;
+}
+
+.cubemail-nav__links a {
+  color: var(--cubemail-gray-600);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-nav__links a:hover {
+  color: var(--cubemail-primary);
+}
+
+.cubemail-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cubemail-nav__login {
+  color: var(--cubemail-gray-600);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-nav__login:hover {
+  color: var(--cubemail-primary);
+}
+
+.cubemail-nav__signup {
+  background: var(--cubemail-primary);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-nav__signup:hover {
+  background: var(--cubemail-primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.cubemail-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.cubemail-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cubemail-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: var(--cubemail-gradient-hero);
+}
+
+.cubemail-hero__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.cubemail-hero__content {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: calc((100vw - var(--cubemail-container-width)) / 2);
+  padding-left: 2rem;
+}
+
+.cubemail-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.cubemail-hero__title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  color: var(--cubemail-gray-900);
+}
+
+.cubemail-hero__title-gradient {
+  background: var(--cubemail-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cubemail-hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--cubemail-gray-600);
+  margin: 0 0 2rem;
+  line-height: 1.7;
+}
+
+.cubemail-hero__signup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cubemail-hero__input-wrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid var(--cubemail-gray-200);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-hero__input-wrapper:focus-within {
+  border-color: var(--cubemail-primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.cubemail-hero__input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 140px;
+  background: transparent;
+}
+
+.cubemail-hero__domain {
+  color: var(--cubemail-gray-500);
+  font-weight: 500;
+}
+
+.cubemail-hero__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--cubemail-gradient-primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: var(--cubemail-transition);
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-hero__button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cubemail-shadow-xl);
+}
+
+.cubemail-hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.cubemail-hero__stat {
+  text-align: center;
+}
+
+.cubemail-hero__stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cubemail-gray-900);
+}
+
+.cubemail-hero__stat-label {
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-500);
+}
+
+.cubemail-hero__stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--cubemail-gray-200);
+}
+
+.cubemail-hero__trusted {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cubemail-hero__trusted span {
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-500);
+}
+
+.cubemail-hero__logos {
+  display: flex;
+  gap: 2rem;
+}
+
+.cubemail-hero__logo {
+  color: var(--cubemail-gray-400);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Hero Preview - Interactive */
+.cubemail-hero__preview {
+  position: absolute;
+  right: -5%;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 55%;
+  z-index: 1;
+  pointer-events: auto;
+  transition: transform 0.5s ease;
+}
+
+.cubemail-hero__preview:hover {
+  transform: translateY(-50%) scale(1.02);
+}
+
+.cubemail-hero__browser {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--cubemail-shadow-xl), 0 0 60px rgba(37, 99, 235, 0.15);
+  overflow: hidden;
+  transform: perspective(1500px) rotateY(-5deg) rotateX(2deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.cubemail-hero__preview:hover .cubemail-hero__browser {
+  transform: perspective(1500px) rotateY(-2deg) rotateX(1deg);
+  box-shadow: var(--cubemail-shadow-xl), 0 0 100px rgba(37, 99, 235, 0.25);
+}
+
+.cubemail-hero__browser-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--cubemail-gray-100);
+  border-bottom: 1px solid var(--cubemail-gray-200);
+}
+
+.cubemail-hero__browser-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cubemail-hero__browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cubemail-gray-300);
+}
+
+.cubemail-hero__browser-dots span:first-child {
+  background: #ef4444;
+}
+
+.cubemail-hero__browser-dots span:nth-child(2) {
+  background: #f59e0b;
+}
+
+.cubemail-hero__browser-dots span:last-child {
+  background: #10b981;
+}
+
+.cubemail-hero__browser-url {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--cubemail-gray-600);
+  flex: 1;
+  max-width: 300px;
+}
+
+.cubemail-hero__browser-content {
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Email Preview */
+.cubemail-preview {
+  display: flex;
+  height: 100%;
+}
+
+.cubemail-preview__sidebar {
+  width: 200px;
+  padding: 1rem;
+  border-right: 1px solid var(--cubemail-gray-200);
+  background: var(--cubemail-gray-50);
+}
+
+.cubemail-preview__compose {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--cubemail-primary);
+  color: white;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-preview__compose:hover {
+  background: var(--cubemail-primary-dark);
+  transform: scale(1.02);
+}
+
+.cubemail-preview__folders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cubemail-preview__folder {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-600);
+  cursor: pointer;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-preview__folder:hover,
+.cubemail-preview__folder.active {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+}
+
+.cubemail-preview__badge {
+  margin-left: auto;
+  background: var(--cubemail-primary);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 100px;
+  font-weight: 600;
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.cubemail-preview__list {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cubemail-preview__email {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--cubemail-transition);
+  background: white;
+  border: 1px solid transparent;
+}
+
+.cubemail-preview__email:hover {
+  border-color: var(--cubemail-primary-light);
+  box-shadow: var(--cubemail-shadow-md);
+  transform: translateX(4px);
+}
+
+.cubemail-preview__email.unread {
+  background: rgba(37, 99, 235, 0.05);
+  border-color: rgba(37, 99, 235, 0.15);
+  animation: email-slide-in 0.5s ease-out;
+}
+
+@keyframes email-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cubemail-preview__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cubemail-gradient-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.cubemail-preview__email:hover .cubemail-preview__avatar {
+  transform: scale(1.1);
+}
+
+.cubemail-preview__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cubemail-preview__from {
+  font-weight: 600;
+  color: var(--cubemail-gray-900);
+  font-size: 0.9rem;
+}
+
+.cubemail-preview__subject {
+  color: var(--cubemail-gray-700);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cubemail-preview__snippet {
+  color: var(--cubemail-gray-500);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cubemail-preview__time {
+  font-size: 0.75rem;
+  color: var(--cubemail-gray-500);
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   FEATURES SECTION
+   ============================================================================ */
+
+.cubemail-features {
+  padding: var(--cubemail-section-padding) 2rem;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+}
+
+.cubemail-features__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cubemail-features__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-features__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1rem;
+}
+
+.cubemail-features__subtitle {
+  font-size: 1.125rem;
+  color: var(--cubemail-gray-600);
+  margin: 0;
+}
+
+.cubemail-features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.cubemail-feature {
+  padding: 2rem;
+  background: var(--cubemail-gradient-card);
+  border: 1px solid var(--cubemail-gray-200);
+  border-radius: 16px;
+  transition: var(--cubemail-transition-slow);
+}
+
+.cubemail-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-feature__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.cubemail-feature--blue .cubemail-feature__icon {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+}
+
+.cubemail-feature--purple .cubemail-feature__icon {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.cubemail-feature--cyan .cubemail-feature__icon {
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+}
+
+.cubemail-feature--yellow .cubemail-feature__icon {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.cubemail-feature--green .cubemail-feature__icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.cubemail-feature--pink .cubemail-feature__icon {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+.cubemail-feature__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 0.75rem;
+}
+
+.cubemail-feature__description {
+  color: var(--cubemail-gray-600);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   COMPARISON SECTION
+   ============================================================================ */
+
+.cubemail-comparison {
+  padding: var(--cubemail-section-padding) 2rem;
+  background: var(--cubemail-gray-50);
+}
+
+.cubemail-comparison__header {
+  text-align: center;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto 4rem;
+}
+
+.cubemail-comparison__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-comparison__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1rem;
+}
+
+.cubemail-comparison__subtitle {
+  font-size: 1.125rem;
+  color: var(--cubemail-gray-600);
+  margin: 0;
+}
+
+.cubemail-comparison__table-wrapper {
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.cubemail-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-comparison__table th,
+.cubemail-comparison__table td {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.cubemail-comparison__table th {
+  background: var(--cubemail-gray-100);
+  font-weight: 600;
+  color: var(--cubemail-gray-700);
+  border-bottom: 2px solid var(--cubemail-gray-200);
+}
+
+.cubemail-comparison__table th:first-child {
+  text-align: left;
+}
+
+.cubemail-comparison__table th.highlight {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+}
+
+.cubemail-comparison__table td {
+  border-bottom: 1px solid var(--cubemail-gray-100);
+  color: var(--cubemail-gray-700);
+}
+
+.cubemail-comparison__table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.cubemail-comparison__table td.highlight {
+  background: rgba(37, 99, 235, 0.03);
+  font-weight: 600;
+}
+
+.cubemail-comparison__table tr:hover td {
+  background: var(--cubemail-gray-50);
+}
+
+.cubemail-comparison__table tr:hover td.highlight {
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.cubemail-comparison__provider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cubemail-comparison__note {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-500);
+  margin-top: 1rem;
+}
+
+/* ============================================================================
+   SCREENER SECTION
+   ============================================================================ */
+
+.cubemail-screener {
+  padding: var(--cubemail-section-padding) 2rem;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+}
+
+.cubemail-screener__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.cubemail-screener__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-screener__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.cubemail-screener__description {
+  font-size: 1.125rem;
+  color: var(--cubemail-gray-600);
+  margin: 0 0 1.5rem;
+  line-height: 1.7;
+}
+
+.cubemail-screener__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.cubemail-screener__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  color: var(--cubemail-gray-700);
+}
+
+.cubemail-screener__list li svg {
+  color: var(--cubemail-success);
+  flex-shrink: 0;
+}
+
+.cubemail-screener__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cubemail-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-screener__link:hover {
+  gap: 0.75rem;
+}
+
+/* Screener Demo Card */
+.cubemail-screener__card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--cubemail-shadow-xl);
+  overflow: hidden;
+}
+
+.cubemail-screener__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--cubemail-gray-100);
+  border-bottom: 1px solid var(--cubemail-gray-200);
+  font-weight: 600;
+  color: var(--cubemail-gray-700);
+}
+
+.cubemail-screener__pending {
+  margin-left: auto;
+  background: var(--cubemail-warning);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cubemail-screener__card-body {
+  padding: 1rem;
+}
+
+.cubemail-screener__sender {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  background: var(--cubemail-gray-50);
+  border: 1px solid var(--cubemail-gray-200);
+}
+
+.cubemail-screener__sender.suspicious {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.cubemail-screener__sender-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.cubemail-screener__sender-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cubemail-gradient-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.cubemail-screener__sender-avatar.warning {
+  background: rgba(239, 68, 68, 0.1);
+  font-size: 1rem;
+}
+
+.cubemail-screener__sender-name {
+  font-weight: 600;
+  color: var(--cubemail-gray-900);
+  font-size: 0.9rem;
+}
+
+.cubemail-screener__sender-email {
+  color: var(--cubemail-gray-500);
+  font-size: 0.8rem;
+}
+
+.cubemail-screener__sender-score {
+  text-align: center;
+}
+
+.cubemail-screener__score {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.cubemail-screener__score.good {
+  color: var(--cubemail-success);
+}
+
+.cubemail-screener__score.bad {
+  color: var(--cubemail-danger);
+}
+
+.cubemail-screener__sender-score span:last-child {
+  font-size: 0.7rem;
+  color: var(--cubemail-gray-500);
+}
+
+.cubemail-screener__sender-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cubemail-screener__btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-screener__btn.approve {
+  background: var(--cubemail-success);
+  color: white;
+}
+
+.cubemail-screener__btn.approve:hover {
+  background: #059669;
+}
+
+.cubemail-screener__btn.block {
+  background: var(--cubemail-gray-200);
+  color: var(--cubemail-gray-600);
+}
+
+.cubemail-screener__btn.block:hover {
+  background: var(--cubemail-danger);
+  color: white;
+}
+
+/* ============================================================================
+   APPS SECTION
+   ============================================================================ */
+
+.cubemail-apps {
+  padding: var(--cubemail-section-padding) 2rem;
+  background: var(--cubemail-gray-50);
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+}
+
+.cubemail-apps__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cubemail-apps__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-apps__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1rem;
+}
+
+.cubemail-apps__subtitle {
+  font-size: 1.125rem;
+  color: var(--cubemail-gray-600);
+  margin: 0;
+}
+
+.cubemail-apps__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.cubemail-app {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--cubemail-gray-200);
+  transition: var(--cubemail-transition-slow);
+}
+
+.cubemail-app:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-app__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cubemail-primary);
+}
+
+.cubemail-app h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 0.5rem;
+}
+
+.cubemail-app p {
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-600);
+  margin: 0 0 1rem;
+}
+
+.cubemail-app__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cubemail-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-app__link:hover {
+  gap: 0.75rem;
+}
+
+.cubemail-apps__cube {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid rgba(37, 99, 235, 0.2);
+  text-align: center;
+}
+
+.cubemail-apps__cube-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  background: var(--cubemail-gradient-primary);
+  color: white;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-apps__cube p {
+  color: var(--cubemail-gray-600);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cubemail-apps__link {
+  color: var(--cubemail-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cubemail-apps__link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   SECURITY SECTION
+   ============================================================================ */
+
+.cubemail-security {
+  padding: var(--cubemail-section-padding) 2rem;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+}
+
+.cubemail-security__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.cubemail-security__visual {
+  text-align: center;
+}
+
+.cubemail-security__shield {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2rem;
+  background: var(--cubemail-gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+}
+
+.cubemail-security__badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cubemail-security__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  background: var(--cubemail-gray-100);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cubemail-gray-700);
+}
+
+.cubemail-security__label {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--cubemail-success);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-security__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.cubemail-security__description {
+  font-size: 1.125rem;
+  color: var(--cubemail-gray-600);
+  margin: 0 0 2rem;
+  line-height: 1.7;
+}
+
+.cubemail-security__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cubemail-security__feature h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 0.25rem;
+}
+
+.cubemail-security__feature p {
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-600);
+  margin: 0;
+}
+
+/* ============================================================================
+   PRICING SECTION
+   ============================================================================ */
+
+.cubemail-pricing {
+  padding: var(--cubemail-section-padding) 2rem;
+  background: var(--cubemail-gray-50);
+}
+
+.cubemail-pricing__header {
+  text-align: center;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto 4rem;
+}
+
+.cubemail-pricing__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-pricing__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1rem;
+}
+
+.cubemail-pricing__subtitle {
+  font-size: 1.125rem;
+  color: var(--cubemail-gray-600);
+  margin: 0;
+}
+
+.cubemail-pricing__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+  align-items: start;
+}
+
+.cubemail-pricing__card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 2px solid var(--cubemail-gray-200);
+  position: relative;
+  transition: var(--cubemail-transition-slow);
+}
+
+.cubemail-pricing__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-pricing__card.featured {
+  border-color: var(--cubemail-primary);
+  box-shadow: var(--cubemail-shadow-xl), 0 0 0 4px rgba(37, 99, 235, 0.1);
+  transform: scale(1.05);
+}
+
+.cubemail-pricing__card.featured:hover {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.cubemail-pricing__popular {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cubemail-gradient-primary);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cubemail-pricing__card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--cubemail-gray-200);
+}
+
+.cubemail-pricing__card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cubemail-gray-900);
+  margin: 0 0 1rem;
+}
+
+.cubemail-pricing__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.cubemail-pricing__amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+}
+
+.cubemail-pricing__period {
+  color: var(--cubemail-gray-500);
+  font-size: 1rem;
+}
+
+.cubemail-pricing__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.cubemail-pricing__features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: var(--cubemail-gray-700);
+  font-size: 0.95rem;
+}
+
+.cubemail-pricing__features li svg {
+  color: var(--cubemail-success);
+  flex-shrink: 0;
+}
+
+.cubemail-pricing__button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-pricing__button.primary {
+  background: var(--cubemail-gradient-primary);
+  color: white;
+}
+
+.cubemail-pricing__button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-pricing__button.secondary {
+  background: var(--cubemail-gray-100);
+  color: var(--cubemail-gray-700);
+}
+
+.cubemail-pricing__button.secondary:hover {
+  background: var(--cubemail-gray-200);
+}
+
+/* ============================================================================
+   TESTIMONIALS SECTION
+   ============================================================================ */
+
+.cubemail-testimonials {
+  padding: var(--cubemail-section-padding) 2rem;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+}
+
+.cubemail-testimonials__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cubemail-testimonials__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-testimonials__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0;
+}
+
+.cubemail-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.cubemail-testimonial {
+  background: var(--cubemail-gradient-card);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--cubemail-gray-200);
+}
+
+.cubemail-testimonial__stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.cubemail-testimonial__content {
+  font-size: 1rem;
+  color: var(--cubemail-gray-700);
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.cubemail-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cubemail-testimonial__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--cubemail-gradient-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.cubemail-testimonial__name {
+  font-weight: 600;
+  color: var(--cubemail-gray-900);
+}
+
+.cubemail-testimonial__role {
+  font-size: 0.875rem;
+  color: var(--cubemail-gray-500);
+}
+
+/* ============================================================================
+   FAQ SECTION
+   ============================================================================ */
+
+.cubemail-faq {
+  padding: var(--cubemail-section-padding) 2rem;
+  background: var(--cubemail-gray-50);
+}
+
+.cubemail-faq__header {
+  text-align: center;
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto 4rem;
+}
+
+.cubemail-faq__badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--cubemail-primary);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cubemail-faq__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--cubemail-gray-900);
+  margin: 0;
+}
+
+.cubemail-faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cubemail-faq__item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--cubemail-gray-200);
+  cursor: pointer;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-faq__item:hover {
+  border-color: var(--cubemail-primary);
+}
+
+.cubemail-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  color: var(--cubemail-gray-900);
+}
+
+.cubemail-faq__question svg {
+  color: var(--cubemail-gray-400);
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-faq__item.open .cubemail-faq__question svg {
+  transform: rotate(90deg);
+  color: var(--cubemail-primary);
+}
+
+.cubemail-faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.cubemail-faq__item.open .cubemail-faq__answer {
+  max-height: 200px;
+}
+
+.cubemail-faq__answer p {
+  padding: 0 1.5rem 1.25rem;
+  margin: 0;
+  color: var(--cubemail-gray-600);
+  line-height: 1.7;
+}
+
+/* ============================================================================
+   CTA SECTION
+   ============================================================================ */
+
+.cubemail-cta {
+  padding: var(--cubemail-section-padding) 2rem;
+  background: var(--cubemail-gradient-primary);
+}
+
+.cubemail-cta__content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cubemail-cta__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem;
+}
+
+.cubemail-cta__subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem;
+}
+
+.cubemail-cta__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cubemail-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-cta__button.primary {
+  background: white;
+  color: var(--cubemail-primary);
+}
+
+.cubemail-cta__button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cubemail-shadow-lg);
+}
+
+.cubemail-cta__button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cubemail-cta__button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.cubemail-footer {
+  background: var(--cubemail-gray-900);
+  color: white;
+  padding: 5rem 2rem 2rem;
+}
+
+.cubemail-footer__content {
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cubemail-footer__brand {
+  padding-right: 2rem;
+}
+
+.cubemail-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cubemail-footer__tagline {
+  color: var(--cubemail-gray-400);
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cubemail-footer__social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cubemail-footer__social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-footer__social a:hover {
+  background: var(--cubemail-primary);
+  transform: translateY(-2px);
+}
+
+.cubemail-footer__column h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cubemail-gray-300);
+  margin: 0 0 1.25rem;
+}
+
+.cubemail-footer__column a {
+  display: block;
+  color: var(--cubemail-gray-400);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  transition: var(--cubemail-transition);
+}
+
+.cubemail-footer__column a:hover {
+  color: white;
+  padding-left: 4px;
+}
+
+.cubemail-footer__bottom {
+  max-width: var(--cubemail-container-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cubemail-gray-400);
+  font-size: 0.875rem;
+}
+
+.cubemail-footer__cube-link {
+  color: var(--cubemail-primary-light);
+  text-decoration: none;
+}
+
+.cubemail-footer__cube-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .cubemail-hero__preview {
+    display: none;
+  }
+  
+  .cubemail-hero__content {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .cubemail-hero__signup {
+    justify-content: center;
+  }
+  
+  .cubemail-hero__stats {
+    justify-content: center;
+  }
+  
+  .cubemail-hero__trusted {
+    align-items: center;
+  }
+  
+  .cubemail-features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cubemail-screener__content,
+  .cubemail-security__content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .cubemail-apps__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cubemail-pricing__cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .cubemail-pricing__card.featured {
+    transform: none;
+    order: -1;
+  }
+  
+  .cubemail-pricing__card.featured:hover {
+    transform: translateY(-4px);
+  }
+  
+  .cubemail-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cubemail-footer__content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .cubemail-footer__brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cubemail-section-padding: 4rem;
+  }
+  
+  .cubemail-nav__links {
+    display: none;
+  }
+  
+  .cubemail-hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .cubemail-hero__subtitle {
+    font-size: 1rem;
+  }
+  
+  .cubemail-hero__signup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cubemail-hero__stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cubemail-hero__stat-divider {
+    display: none;
+  }
+  
+  .cubemail-features__grid,
+  .cubemail-apps__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cubemail-features__title,
+  .cubemail-comparison__title,
+  .cubemail-pricing__title,
+  .cubemail-testimonials__title,
+  .cubemail-faq__title,
+  .cubemail-cta__title {
+    font-size: 2rem;
+  }
+  
+  .cubemail-screener__title,
+  .cubemail-security__title {
+    font-size: 1.75rem;
+  }
+  
+  .cubemail-comparison__table {
+    font-size: 0.875rem;
+  }
+  
+  .cubemail-comparison__table th,
+  .cubemail-comparison__table td {
+    padding: 1rem;
+  }
+  
+  .cubemail-footer__content {
+    grid-template-columns: 1fr;
+  }
+  
+  .cubemail-footer__brand {
+    grid-column: span 1;
+  }
+  
+  .cubemail-footer__bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cubemail-hero {
+    padding: 6rem 1rem 3rem;
+  }
+  
+  .cubemail-hero__title {
+    font-size: 2rem;
+  }
+  
+  .cubemail-nav {
+    padding: 1rem;
+  }
+  
+  .cubemail-nav__signup {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .cubemail-pricing__amount {
+    font-size: 2.5rem;
+  }
+}

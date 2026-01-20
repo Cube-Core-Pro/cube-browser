@@ -1,0 +1,332 @@
+/* ============================================================================
+   DARK WEB MONITOR - Continuous Data Exposure Monitoring
+   ============================================================================ */
+
+.dark-web-monitor {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.monitor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.monitor-header .header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%);
+  color: white;
+}
+
+/* Monitored Item Cards */
+.monitored-item-card {
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.monitored-item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.monitored-item-card.safe {
+  border-left-color: #22c55e;
+}
+
+.monitored-item-card.compromised {
+  border-left-color: #ef4444;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.03), transparent);
+}
+
+.monitored-item-card.monitoring {
+  border-left-color: #3b82f6;
+}
+
+.item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.item-icon.safe {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.item-icon.compromised {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.item-icon.monitoring {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* Exposure Cards */
+.exposure-card {
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.exposure-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.exposure-card.critical {
+  border-left-color: #ef4444;
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.03), transparent);
+}
+
+.exposure-card.high {
+  border-left-color: #f97316;
+  background: linear-gradient(to right, rgba(249, 115, 22, 0.03), transparent);
+}
+
+.exposure-card.medium {
+  border-left-color: #eab308;
+  background: linear-gradient(to right, rgba(234, 179, 8, 0.03), transparent);
+}
+
+.exposure-card.low {
+  border-left-color: #3b82f6;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.03), transparent);
+}
+
+.exposure-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exposure-icon.critical {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.exposure-icon.high {
+  background-color: #fff7ed;
+  color: #ea580c;
+}
+
+.exposure-icon.medium {
+  background-color: #fefce8;
+  color: #ca8a04;
+}
+
+.exposure-icon.low {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* Scan Animation */
+.scan-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-animation::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.3) 50%,
+    transparent 100%
+  );
+  animation: scannerSweep 2s ease-in-out infinite;
+}
+
+@keyframes scannerSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Radar Animation */
+.radar-icon {
+  animation: radarPulse 2s ease-in-out infinite;
+}
+
+@keyframes radarPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Status Indicators */
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-indicator.safe {
+  background-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.status-indicator.compromised {
+  background-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+  animation: dangerPulse 1s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes dangerPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+/* Critical Banner */
+.critical-exposure-banner {
+  border: 2px solid #ef4444;
+  animation: criticalBanner 2s ease-in-out infinite;
+}
+
+@keyframes criticalBanner {
+  0%, 100% {
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.05);
+  }
+  50% {
+    border-color: #f87171;
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+}
+
+/* Dark Mode */
+:root.dark .dark-web-monitor,
+.dark .dark-web-monitor {
+  --exposure-bg-critical: rgba(239, 68, 68, 0.1);
+  --exposure-bg-high: rgba(249, 115, 22, 0.1);
+  --exposure-bg-medium: rgba(234, 179, 8, 0.1);
+  --exposure-bg-low: rgba(59, 130, 246, 0.1);
+}
+
+:root.dark .monitored-item-card.compromised,
+.dark .monitored-item-card.compromised {
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.1), transparent);
+}
+
+:root.dark .exposure-card.critical,
+.dark .exposure-card.critical {
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.1), transparent);
+}
+
+:root.dark .exposure-card.high,
+.dark .exposure-card.high {
+  background: linear-gradient(to right, rgba(249, 115, 22, 0.1), transparent);
+}
+
+:root.dark .exposure-card.medium,
+.dark .exposure-card.medium {
+  background: linear-gradient(to right, rgba(234, 179, 8, 0.1), transparent);
+}
+
+:root.dark .exposure-card.low,
+.dark .exposure-card.low {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent);
+}
+
+:root.dark .item-icon.safe,
+.dark .item-icon.safe {
+  background-color: rgba(22, 163, 74, 0.2);
+}
+
+:root.dark .item-icon.compromised,
+.dark .item-icon.compromised {
+  background-color: rgba(220, 38, 38, 0.2);
+}
+
+:root.dark .item-icon.monitoring,
+.dark .item-icon.monitoring {
+  background-color: rgba(37, 99, 235, 0.2);
+}
+
+:root.dark .exposure-icon.critical,
+.dark .exposure-icon.critical {
+  background-color: rgba(220, 38, 38, 0.2);
+}
+
+:root.dark .exposure-icon.high,
+.dark .exposure-icon.high {
+  background-color: rgba(234, 88, 12, 0.2);
+}
+
+:root.dark .exposure-icon.medium,
+.dark .exposure-icon.medium {
+  background-color: rgba(202, 138, 4, 0.2);
+}
+
+:root.dark .exposure-icon.low,
+.dark .exposure-icon.low {
+  background-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dark-web-monitor {
+    padding: 1rem;
+  }
+
+  .monitor-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .monitor-header > div:first-child {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .monitor-header .header-icon {
+    margin: 0 auto;
+  }
+
+  .monitored-item-card [class*="CardContent"] {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

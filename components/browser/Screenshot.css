@@ -1,0 +1,1046 @@
+/* ====================================================
+   CUBE Browser Elite - Screenshot CSS
+   Advanced screenshot capture with editor and annotations
+   ==================================================== */
+
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Screenshot Colors */
+  --ss-primary: #3b82f6;
+  --ss-primary-hover: #2563eb;
+  --ss-success: #22c55e;
+  --ss-warning: #f59e0b;
+  --ss-danger: #ef4444;
+  --ss-purple: #8b5cf6;
+  --ss-pink: #ec4899;
+  --ss-cyan: #06b6d4;
+  
+  /* Editor Colors */
+  --ss-canvas-bg: #1f2937;
+  --ss-toolbar-bg: #111827;
+  --ss-panel-bg: #ffffff;
+  --ss-border-color: #e5e7eb;
+  --ss-text-primary: #1f2937;
+  --ss-text-secondary: #6b7280;
+  --ss-text-muted: #9ca3af;
+  
+  /* Annotation Colors */
+  --ss-ann-red: #ef4444;
+  --ss-ann-orange: #f97316;
+  --ss-ann-yellow: #fbbf24;
+  --ss-ann-green: #22c55e;
+  --ss-ann-blue: #3b82f6;
+  --ss-ann-purple: #8b5cf6;
+  --ss-ann-pink: #ec4899;
+  --ss-ann-white: #ffffff;
+  --ss-ann-black: #000000;
+}
+
+/* Dark Mode */
+.dark {
+  --ss-canvas-bg: #0f172a;
+  --ss-toolbar-bg: #020617;
+  --ss-panel-bg: #1e293b;
+  --ss-border-color: #334155;
+  --ss-text-primary: #f1f5f9;
+  --ss-text-secondary: #94a3b8;
+  --ss-text-muted: #64748b;
+}
+
+/* ==================== Screenshot Toolbar ==================== */
+.screenshot-toolbar {
+  position: fixed;
+  top: 60px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: var(--ss-toolbar-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.screenshot-toolbar-horizontal {
+  flex-direction: row;
+  top: 60px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+.screenshot-toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.screenshot-toolbar-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.screenshot-toolbar-btn.active {
+  background: var(--ss-primary);
+  color: #ffffff;
+}
+
+.screenshot-toolbar-btn.recording {
+  background: var(--ss-danger);
+  animation: pulse-recording 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-recording {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+.screenshot-toolbar-divider {
+  width: 24px;
+  height: 1px;
+  background: #374151;
+  margin: 4px 8px;
+}
+
+.screenshot-toolbar-horizontal .screenshot-toolbar-divider {
+  width: 1px;
+  height: 24px;
+  margin: 8px 4px;
+}
+
+/* ==================== Capture Mode Selector ==================== */
+.capture-mode-selector {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: var(--ss-panel-bg);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+
+.capture-mode-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 32px;
+  background: rgba(59, 130, 246, 0.05);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.capture-mode-option:hover {
+  border-color: var(--ss-primary);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.capture-mode-option.selected {
+  border-color: var(--ss-primary);
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.capture-mode-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ss-primary);
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+.capture-mode-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ss-text-primary);
+}
+
+.capture-mode-desc {
+  font-size: 12px;
+  color: var(--ss-text-muted);
+}
+
+/* ==================== Region Selection Overlay ==================== */
+.region-selection-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: crosshair;
+  z-index: 9999;
+}
+
+.region-selection-box {
+  position: absolute;
+  border: 2px dashed var(--ss-primary);
+  background: rgba(59, 130, 246, 0.1);
+  pointer-events: none;
+}
+
+.region-selection-info {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  padding: 4px 8px;
+  background: var(--ss-primary);
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.region-selection-handles {
+  position: absolute;
+  inset: -5px;
+}
+
+.region-selection-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 2px solid var(--ss-primary);
+  border-radius: 2px;
+}
+
+.region-selection-handle.nw { top: 0; left: 0; cursor: nwse-resize; }
+.region-selection-handle.ne { top: 0; right: 0; cursor: nesw-resize; }
+.region-selection-handle.sw { bottom: 0; left: 0; cursor: nesw-resize; }
+.region-selection-handle.se { bottom: 0; right: 0; cursor: nwse-resize; }
+.region-selection-handle.n { top: 0; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.region-selection-handle.s { bottom: 0; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.region-selection-handle.w { top: 50%; left: 0; transform: translateY(-50%); cursor: ew-resize; }
+.region-selection-handle.e { top: 50%; right: 0; transform: translateY(-50%); cursor: ew-resize; }
+
+/* ==================== Screenshot Editor ==================== */
+.screenshot-editor {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--ss-canvas-bg);
+  z-index: 10000;
+}
+
+.screenshot-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--ss-toolbar-bg);
+  border-bottom: 1px solid var(--ss-border-color);
+}
+
+.screenshot-editor-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.screenshot-editor-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.screenshot-editor-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.screenshot-editor-btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.screenshot-editor-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.screenshot-editor-btn.primary {
+  background: var(--ss-primary);
+  color: #ffffff;
+}
+
+.screenshot-editor-btn.primary:hover {
+  background: var(--ss-primary-hover);
+}
+
+.screenshot-editor-btn.danger {
+  background: var(--ss-danger);
+  color: #ffffff;
+}
+
+.screenshot-editor-btn.danger:hover {
+  background: #dc2626;
+}
+
+/* ==================== Editor Canvas Area ==================== */
+.screenshot-editor-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.screenshot-canvas-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: auto;
+}
+
+.screenshot-canvas {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+/* ==================== Editor Sidebar ==================== */
+.screenshot-editor-sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  background: var(--ss-toolbar-bg);
+  border-left: 1px solid #1f2937;
+}
+
+.screenshot-sidebar-section {
+  padding: 16px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.screenshot-sidebar-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* ==================== Annotation Tools ==================== */
+.annotation-tools {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.annotation-tool-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.annotation-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.annotation-tool-btn.active {
+  background: var(--ss-primary);
+  color: #ffffff;
+}
+
+.annotation-tool-icon {
+  font-size: 18px;
+}
+
+.annotation-tool-label {
+  font-size: 10px;
+}
+
+/* ==================== Color Picker ==================== */
+.annotation-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.annotation-color-btn {
+  width: 28px;
+  height: 28px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.annotation-color-btn:hover {
+  transform: scale(1.1);
+}
+
+.annotation-color-btn.selected {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Stroke Width ==================== */
+.stroke-width-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stroke-width-input {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #374151;
+  border-radius: 2px;
+}
+
+.stroke-width-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--ss-primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.stroke-width-value {
+  font-size: 12px;
+  color: #9ca3af;
+  min-width: 32px;
+  text-align: center;
+}
+
+/* ==================== Screenshot Gallery ==================== */
+.screenshot-gallery {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 320px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  background: var(--ss-panel-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.screenshot-gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ss-border-color);
+}
+
+.screenshot-gallery-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ss-text-primary);
+}
+
+.screenshot-gallery-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--ss-text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.screenshot-gallery-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ss-text-primary);
+}
+
+.screenshot-gallery-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.screenshot-gallery-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.screenshot-gallery-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.screenshot-gallery-thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #f3f4f6;
+}
+
+.screenshot-gallery-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.screenshot-gallery-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ss-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.screenshot-gallery-meta {
+  font-size: 11px;
+  color: var(--ss-text-muted);
+  margin-top: 4px;
+}
+
+.screenshot-gallery-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.screenshot-gallery-item:hover .screenshot-gallery-actions {
+  opacity: 1;
+}
+
+.screenshot-gallery-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--ss-text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.screenshot-gallery-action:hover {
+  background: var(--ss-primary);
+  color: #ffffff;
+}
+
+.screenshot-gallery-action.delete:hover {
+  background: var(--ss-danger);
+}
+
+/* ==================== Recording Indicator ==================== */
+.recording-indicator {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
+  z-index: 10001;
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--ss-danger);
+  border-radius: 50%;
+  animation: recording-pulse 1s ease-in-out infinite;
+}
+
+@keyframes recording-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.recording-timer {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'SF Mono', Monaco, monospace;
+}
+
+.recording-controls {
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.recording-control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.recording-control-btn.pause {
+  background: var(--ss-warning);
+  color: #ffffff;
+}
+
+.recording-control-btn.stop {
+  background: var(--ss-danger);
+  color: #ffffff;
+}
+
+.recording-control-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ==================== Preview Modal ==================== */
+.screenshot-preview-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10001;
+}
+
+.screenshot-preview-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.screenshot-preview-image {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.screenshot-preview-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.screenshot-preview-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.screenshot-preview-toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ==================== Settings Panel ==================== */
+.screenshot-settings {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  max-height: 80vh;
+  background: var(--ss-panel-bg);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 10001;
+}
+
+.screenshot-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ss-border-color);
+}
+
+.screenshot-settings-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ss-text-primary);
+}
+
+.screenshot-settings-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--ss-text-muted);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.screenshot-settings-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ss-text-primary);
+}
+
+.screenshot-settings-body {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(80vh - 120px);
+}
+
+.screenshot-settings-section {
+  margin-bottom: 24px;
+}
+
+.screenshot-settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.screenshot-settings-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ss-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.screenshot-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--ss-border-color);
+}
+
+.screenshot-setting-row:last-child {
+  border-bottom: none;
+}
+
+.screenshot-setting-info {
+  flex: 1;
+}
+
+.screenshot-setting-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ss-text-primary);
+}
+
+.screenshot-setting-desc {
+  font-size: 12px;
+  color: var(--ss-text-muted);
+  margin-top: 2px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #d1d5db;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.toggle-switch.active {
+  background: var(--ss-primary);
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active::after {
+  transform: translateX(20px);
+}
+
+/* Select Dropdown */
+.screenshot-select {
+  padding: 8px 12px;
+  border: 1px solid var(--ss-border-color);
+  border-radius: 8px;
+  background: var(--ss-panel-bg);
+  color: var(--ss-text-primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.screenshot-select:focus {
+  outline: none;
+  border-color: var(--ss-primary);
+}
+
+/* ==================== Toast Notification ==================== */
+.screenshot-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #1f2937;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 10002;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.screenshot-toast.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.screenshot-toast-icon {
+  font-size: 20px;
+}
+
+.screenshot-toast-message {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.screenshot-toast-action {
+  padding: 6px 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.screenshot-toast-action:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+  .screenshot-toolbar {
+    top: auto;
+    bottom: 16px;
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+  }
+
+  .screenshot-gallery {
+    width: calc(100% - 32px);
+    left: 16px;
+    right: 16px;
+  }
+
+  .screenshot-settings {
+    width: calc(100% - 32px);
+    max-height: 90vh;
+  }
+
+  .capture-mode-selector {
+    flex-direction: column;
+    width: calc(100% - 32px);
+    max-width: 320px;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .capture-mode-option {
+    flex-direction: row;
+    padding: 16px;
+  }
+
+  .capture-mode-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .screenshot-editor-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    border-left: none;
+    border-top: 1px solid #1f2937;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+/* ==================== Animations ==================== */
+@keyframes screenshot-flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.screenshot-flash {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  pointer-events: none;
+  animation: screenshot-flash 0.3s ease-out;
+  z-index: 10003;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.capture-mode-selector,
+.screenshot-settings {
+  animation: zoom-in 0.2s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.screenshot-gallery {
+  animation: slide-up 0.2s ease-out;
+}
+
+/* ==================== Crosshair Cursor ==================== */
+.screenshot-capture-mode {
+  cursor: crosshair !important;
+}
+
+.screenshot-capture-mode * {
+  cursor: crosshair !important;
+}
+
+/* ==================== Scrollable Area ==================== */
+.screenshot-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.screenshot-scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.screenshot-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.screenshot-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.screenshot-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Keyboard Shortcut Hints ==================== */
+.shortcut-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'SF Mono', Monaco, monospace;
+  color: var(--ss-text-muted);
+}
+
+.dark .shortcut-hint {
+  background: rgba(255, 255, 255, 0.1);
+}
