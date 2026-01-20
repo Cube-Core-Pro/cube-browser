@@ -20,7 +20,7 @@ env:
 jobs:
   build-macos-dmg:
     runs-on: macos-14
-    timeout-minutes: 120
+    timeout-minutes: 180
     
     steps:
       - name: Free disk space
@@ -28,6 +28,7 @@ jobs:
           df -h
           sudo rm -rf /Library/Developer/CommandLineTools
           sudo rm -rf /Users/runner/Library/Android
+          sudo rm -rf /Users/runner/.rustup/toolchains/*/share/doc
           df -h
 
       - name: Checkout repository
@@ -35,8 +36,10 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          brew install leptonica tesseract pkg-config
+          brew install leptonica tesseract pkg-config sccache
           echo "PKG_CONFIG_PATH=$(brew --prefix)/lib/pkgconfig" >> $GITHUB_ENV
+          echo "SCCACHE_DIR=$HOME/.cache/sccache" >> $GITHUB_ENV
+          echo "RUSTC_WRAPPER=sccache" >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -67,6 +70,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-build-
 
+      - name: Cache sccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/sccache
+          key: ${{ runner.os }}-sccache-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-sccache-
+
       - name: Install npm dependencies
         run: npm ci --prefer-offline --no-audit
 
@@ -87,14 +98,19 @@ jobs:
 
       - name: Build Tauri DMG
         run: |
+          # Show sccache stats before build
+          sccache --show-stats || true
           cd src-tauri
-          cargo build --release --target aarch64-apple-darwin --jobs 2
+          cargo build --release --target aarch64-apple-darwin --jobs 1
           cd ..
           npm run tauri:build -- --target aarch64-apple-darwin
+          # Show sccache stats after build
+          sccache --show-stats || true
         env:
           CEF_PATH: ""
-          CARGO_BUILD_JOBS: 2
+          CARGO_BUILD_JOBS: 1
           PKG_CONFIG_PATH: /opt/homebrew/lib/pkgconfig
+          RUSTC_WRAPPER: sccache
 
       - name: List build artifacts
         run: |
