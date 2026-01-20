@@ -10,6 +10,7 @@ use tauri::Manager;
 
 // Core modules
 mod autofill;
+#[cfg(feature = "cef-browser")]
 mod cef;
 mod commands;
 mod database;
@@ -4362,64 +4363,68 @@ pub fn run() {
             app.manage(security_compliance_state);
             info!("🛡️ Security & Compliance State initialized (alerts, incidents, playbooks, SIEM, frameworks)");
 
-            // ========================================================================
-            // CEF BROWSER ENGINE - CHROMIUM EMBEDDED FRAMEWORK
-            // ========================================================================
-            
-            // Initialize CEF integration for real browser functionality
-            // Note: CEF requires specific environment setup:
-            //   - CEF_PATH environment variable pointing to CEF binaries
-            //   - On macOS: ~/.local/share/cef with framework files
+            #[cfg(feature = "cef-browser")]
             {
-                use tokio::sync::mpsc;
+                // ========================================================================
+                // CEF BROWSER ENGINE - CHROMIUM EMBEDDED FRAMEWORK
+                // ========================================================================
                 
-                // Create event channel for CEF browser events
-                let (event_tx, mut event_rx) = mpsc::unbounded_channel::<cef::types::BrowserEvent>();
-                
-                // Initialize CEF integration
-                let cef_integration = cef::cef_integration::CefIntegration::new(event_tx);
-                
-                // Try to initialize CEF (may fail if CEF binaries not installed)
-                match cef_integration.initialize_cef() {
-                    Ok(()) => {
-                        info!("🌐 CEF Browser Engine initialized successfully");
-                        info!("   - Chromium version: 143.0.7499.193");
-                        info!("   - DRM/Widevine: Enabled");
-                        info!("   - DevTools: Port 9222");
-                    }
-                    Err(e) => {
-                        warn!("⚠️ CEF Browser Engine initialization failed: {}", e);
-                        warn!("   Browser features will use fallback WebView implementation");
-                        warn!("   To enable CEF, set CEF_PATH environment variable");
-                    }
-                }
-                
-                // Store CEF integration for use by browser commands
-                app.manage(std::sync::Arc::new(std::sync::RwLock::new(Some(cef_integration))));
-                
-                // Spawn background task to handle CEF events and emit to frontend
-                let app_handle = app.handle().clone();
-                tauri::async_runtime::spawn(async move {
-                    while let Some(event) = event_rx.recv().await {
-                        // Create event handler and emit to frontend
-                        let handler = cef::handlers::EventHandler::new();
-                        let mut handler_with_app = handler;
-                        handler_with_app.set_app_handle(app_handle.clone());
-                        handler_with_app.emit(event);
-                    }
-                });
-                
-                // Spawn CEF message loop worker for macOS
-                #[cfg(target_os = "macos")]
+                // Initialize CEF integration for real browser functionality
+                // Note: CEF requires specific environment setup:
+                //   - CEF_PATH environment variable pointing to CEF binaries
+                //   - On macOS: ~/.local/share/cef with framework files
                 {
-                    use std::time::Duration;
-                    tauri::async_runtime::spawn(async {
-                        loop {
-                            cef::cef_integration::CefIntegration::do_message_loop_work();
-                            tokio::time::sleep(Duration::from_millis(16)).await; // ~60fps
+                    use tokio::sync::mpsc;
+                    
+                    // Create event channel for CEF browser events
+                    let (event_tx, mut event_rx) = mpsc::unbounded_channel::<cef::types::BrowserEvent>();
+                    
+                    // Initialize CEF integration
+                    let cef_integration = cef::cef_integration::CefIntegration::new(event_tx);
+                    
+                    // Try to initialize CEF (may fail if CEF binaries not installed)
+                    match cef_integration.initialize_cef() {
+                        Ok(()) => {
+                            info!("🌐 CEF Browser Engine initialized successfully");
+                            info!("   - Chromium version: 143.0.7499.193");
+                            info!("   - DRM/Widevine: Enabled");
+                            info!("   - DevTools: Port 9222");
+                        }
+                        Err(e) => {
+                            warn!("⚠️ CEF Browser Engine initialization failed: {}", e);
+                            warn!("   Browser features will use fallback WebView implementation");
+                            warn!("   To enable CEF, set CEF_PATH environment variable");
+                        }
+                    }
+                    
+                    // Store CEF integration for use by browser commands
+                    app.manage(std::sync::Arc::new(std::sync::RwLock::new(Some(cef_integration))));
+                    
+                    // Spawn background task to handle CEF events and emit to frontend
+                    let app_handle = app.handle().clone();
+                    tauri::async_runtime::spawn(async move {
+                        while let Some(event) = event_rx.recv().await {
+                            // Create event handler and emit to frontend
+                            let handler = cef::handlers::EventHandler::new();
+                            let mut handler_with_app = handler;
+                            handler_with_app.set_app_handle(app_handle.clone());
+                            handler_with_app.emit(event);
                         }
                     });
+                    
+                    // Spawn CEF message loop worker for macOS
+                    #[cfg(target_os = "macos")]
+                    {
+                        use std::time::Duration;
+                        tauri::async_runtime::spawn(async {
+                            loop {
+                                cef::cef_integration::CefIntegration::do_message_loop_work();
+                                tokio::time::sleep(Duration::from_millis(16)).await; // ~60fps
+                            }
+                        });
+                    }
                 }
+    
             }
 
             // ========================================================================

@@ -111,8 +111,8 @@ chromiumoxide = { version = "0.7", features = ["tokio-runtime"], optional = true
 
 # CEF (Chromium Embedded Framework) - Full Browser Engine
 # Provides: Full Chromium, Widevine DRM, VP9/H.264/AV1 codecs, Chrome extensions
-cef = "143.7"
-raw-window-handle = "0.6"
+cef = { version = "143.7", optional = true }
+raw-window-handle = { version = "0.6", optional = true }
 
 # File System & Monitoring
 notify = "6.1"
@@ -166,3 +166,5 @@ once_cell = "1.21.3"
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]
+cef-browser = ["cef", "raw-window-handle"]
+default = []
